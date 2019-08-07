@@ -1,14 +1,13 @@
 import React from 'react';
 import Banner from './Banner.jsx';
 
-
-
 class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
 
-        <Banner appName="LK" />
+        <Banner appName="JP" />
+
 
         <div className="container ">
           <div className="row justify-content-md-center">
