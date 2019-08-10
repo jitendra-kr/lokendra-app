@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from "history";
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 import 'antd/dist/antd.css';
 import ReactDOM from 'react-dom';
 import { Route, Switch, Router } from 'react-router-dom';

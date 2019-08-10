@@ -4,10 +4,11 @@ const { Footer } = Layout;
 
 
 
+
 const MainFooter = ({ appName }) => {
 
     return (
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer className = "site-footer" style={{ textAlign: 'center',  position: "relative", bottom: "0"}}>Jimmy Point ©2018</Footer>
   )
 };
 
