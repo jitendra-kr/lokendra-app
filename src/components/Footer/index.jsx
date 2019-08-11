@@ -8,7 +8,8 @@ const { Footer } = Layout;
 const MainFooter = ({ appName }) => {
 
     return (
-        <Footer className = "site-footer" style={{ textAlign: 'center',  position: "relative", bottom: "0"}}>Jimmy Point ©2018</Footer>
+        <Footer className = "site-footer" style={{ textAlign: 'center',  position: "relative", bottom: "0"}}>
+          Jimmy Point © 2019. All Rights Reserved</Footer>
   )
 };
 

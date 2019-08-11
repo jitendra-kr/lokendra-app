@@ -9,6 +9,7 @@ const MainHeader = ({ appName }) => {
     return (
 <Header>
       <div className="logo" />
+      <span style={{color: "#ffffff", fontSize: "x-large", fontStyle: "italic"}}>JIMMY POINT</span>
       <Menu
         theme="dark"
         mode="horizontal"
