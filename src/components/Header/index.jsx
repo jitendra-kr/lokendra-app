@@ -9,7 +9,7 @@ const MainHeader = ({ appName }) => {
     return (
 <Header>
       <div className="logo" />
-      <span style={{color: "#ffffff", fontSize: "x-large", fontStyle: "italic"}}>JIMMY POINT</span>
+      <span style={{color: "#ffffff", fontSize: "x-large", fontStyle: "italic"}}>JP</span>
       <Menu
         theme="dark"
         mode="horizontal"
@@ -20,7 +20,7 @@ const MainHeader = ({ appName }) => {
         <Menu.Item key="2">Login</Menu.Item>
         <Menu.Item key="3">Signup</Menu.Item>
       </Menu>
-    </Header> 
+    </Header>
   )
 };
 
