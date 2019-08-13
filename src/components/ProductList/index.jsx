@@ -1,5 +1,5 @@
 import React from "react";
-import { Rate } from "antd";
+import "./product-list.css";
 
 const ProductList = ({ appName }) => {
   const data = [
@@ -64,21 +64,30 @@ const ProductList = ({ appName }) => {
     }
   ];
 
+    const calculateTitle = (title) => {
+        const limit = 80;
+        if (title.length > limit) {
+            return title.substring(0, limit) + "..."
+        }
+        return title;
+  };
   return (
-    <div className="row">
-      {data.map(function(key) {
+    <div className="row blogs-list">
+      {data.map(function(item, i) {
         return (
-          <div className="col-lg-3">
-            {/* <span>
-              <img
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                alt="jp"
-                style={{ width: "100%" }}
-              />
-            </span> */}
-            <Rate disabled defaultValue={key.stars} /> (123)
-            <div>
-              <a href="/">{key.title}</a>
+          <div className="col-lg-4" key={i} >
+            <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}>
+              <span>
+                <img
+                  className="image"
+                  src="images/zookeeper.PNG"
+                  alt="jp"
+                  style={{ width: "100%", height: "70%" }}
+                />
+              </span>
+              <div className="blog-title">
+                <a href="/">{calculateTitle(item.title)}</a>
+              </div>
             </div>
           </div>
         );

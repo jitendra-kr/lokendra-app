@@ -8,12 +8,13 @@ const { Footer } = Layout;
 const MainFooter = ({ appName }) => {
 
     return (
-        <Footer className = "site-footer" style={{ 
-          textAlign: 'center',  
-          position: "relative", 
+        <Footer className = "site-footer" style={{
+          textAlign: 'center',
+          position: "relative",
           bottom: "0",
           color: "#ffffff"}}>
-          Jimmy Point © 2019. All Rights Reserved</Footer>
+        {/* Lokendra © 2019. All Rights Reserved */}
+          </Footer>
   )
 };
 
