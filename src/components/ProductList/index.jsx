@@ -64,18 +64,18 @@ const ProductList = ({ appName }) => {
     }
   ];
 
-    const calculateTitle = (title) => {
-        const limit = 80;
-        if (title.length > limit) {
-            return title.substring(0, limit) + "..."
-        }
-        return title;
+  const calculateTitle = title => {
+    const limit = 80;
+    if (title.length > limit) {
+      return title.substring(0, limit) + "...";
+    }
+    return title;
   };
   return (
     <div className="row blogs-list">
       {data.map(function(item, i) {
         return (
-          <div className="col-lg-4" key={i} >
+          <div className="col-lg-4" key={i}>
             <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}>
               <span>
                 <img
