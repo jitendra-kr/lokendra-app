@@ -1,5 +1,6 @@
 import React from "react";
 import "./product-list.css";
+import { Link } from "react-router-dom";
 
 const ProductList = ({ appName }) => {
   const data = [
@@ -86,7 +87,7 @@ const ProductList = ({ appName }) => {
                 />
               </span>
               <div className="blog-title">
-                <a href="/">{calculateTitle(item.title)}</a>
+                        <Link to="/home">{calculateTitle(item.title)}</Link>
               </div>
             </div>
           </div>
