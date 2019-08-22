@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
  * Components
  */
 import App from './components/App';
-import ProductDetail from "./components/ProductDetail";
+// import ProductDetail from "./components/ProductDetail";
 
 /**
  * CSS
@@ -19,8 +19,7 @@ import 'antd/dist/antd.css';
 ReactDOM.render(
     <Router history={createBrowserHistory()}>
       <Switch>
-      <Route exact path="/" component={App} />
-      <Route path="/home" component={ProductDetail}/>
+      <Route path="/" component={App} />
       </Switch>
     </Router>,
     document.getElementById('root'),

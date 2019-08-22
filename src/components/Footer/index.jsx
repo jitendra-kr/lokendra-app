@@ -13,7 +13,7 @@ const MainFooter = ({ appName }) => {
           position: "relative",
           bottom: "0",
           color: "#ffffff"}}>
-        Lokendra © 2019. All Rights Reserved
+        Jitendra © 2019. All Rights Reserved
           </Footer>
   )
 };

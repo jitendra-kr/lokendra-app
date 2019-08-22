@@ -2,10 +2,11 @@ import React from "react";
 import "./product-list.css";
 import { Link } from "react-router-dom";
 
+
 const ProductList = ({ appName }) => {
   const data = [
     {
-      title: "Optimum Nutrition (ON) Gold Standard 100% Whey Protein Powder",
+      title: "Optimum Nutrition ON Gold Standard 100 Whey Protein Powder",
       img: "images/bitcoin-coin.jpg",
       stars: 3
     },
@@ -66,17 +67,18 @@ const ProductList = ({ appName }) => {
   ];
 
   const calculateTitle = title => {
-    const limit = 80;
+    const limit = 63;
     if (title.length > limit) {
       return title.substring(0, limit) + "...";
     }
     return title;
   };
+
   return (
-    <div className="row blogs-list">
+    <div className="row">
       {data.map(function(item, i) {
         return (
-          <div className="col-lg-4" key={i}>
+          <div className="col-lg-3" key={i}>
             <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}>
               <span>
                 <img
@@ -87,7 +89,7 @@ const ProductList = ({ appName }) => {
                 />
               </span>
               <div className="blog-title">
-                        <Link to="/home">{calculateTitle(item.title)}</Link>
+                <Link to={`/home/${item.title.replace(/ /g,"-").toLowerCase()}`}>{calculateTitle(item.title)}</Link>
               </div>
             </div>
           </div>
