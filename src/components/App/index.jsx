@@ -5,7 +5,8 @@ import MainFooter from "../Footer";
 import { Home } from "../../components";
 import { Route, Switch } from 'react-router-dom';
 import { ProductDetail } from "../../components";
-import {ProductReview} from "../../components";
+import { ProductReview } from "../../components";
+import { BuyNow } from "../../components";
 
 const App = props => {
   return (
@@ -14,7 +15,8 @@ const App = props => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/home/:id" component={ProductDetail} />
-        <Route path="/product-reviews/:id" component={ProductReview}/>
+        <Route path="/product-reviews/:id" component={ProductReview} />
+        <Route path="/checkout" component={BuyNow}/>
       </Switch>
       <MainFooter />
     </div>
