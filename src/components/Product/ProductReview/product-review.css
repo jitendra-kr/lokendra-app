@@ -1,0 +1,31 @@
+.reviewer-name-time h4 {
+    display: inline;
+}
+.review-time {
+    display: inline;
+    color: darkgray;
+}
+.verified-icon {
+     font-size: 16px;
+     color: #1F6A27 !important;
+     position: relative;
+     top: -3px
+}
+
+
+
+.review-comment {
+    margin-top: 30px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.abc:after {
+    content: "";
+    display: table;
+    clear: both;
+}

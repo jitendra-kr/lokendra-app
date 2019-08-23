@@ -100,23 +100,22 @@ const ProductDetail = ({ appName }) => {
         <div className="col-lg-2" />
         <div className="col-lg-8">
           <div className="row">
-            {/* <div className="col-lg-3">
+            <div className="col-lg-3">
               <img
                 className="image"
                 src="/images/zookeeper.PNG"
                 alt="jp"
                 style={{ width: "100%", height: "70%" }}
               />
-            </div> */}
-            {/* <div className="col-lg-9">
+            </div>
+            <div className="col-lg-9">
               <Link to={`/home`}>{data.brand}</Link>
-              <h3 style={{ margin: "-50px 0 -25px 0" }}>{data.title}</h3>
-              <Rate disabled defaultValue={2} />{" "}
+              <h3>{data.title}</h3>
+              <Rate disabled defaultValue={2} />
               <span>
-                {" "}
-                <Link to={`/home`}> 562 Reviews </Link>{" "}
+                <Link to={`/product-reviews/abc`}> 562 Reviews </Link>
               </span>
-              <div style={{ margin: "-65px 0 -60px 0" }}>
+              <div className="m-top-30">
                 <Dropdown overlay={menu} placement="bottomCenter">
                   <Button>{data.size}</Button>
                 </Dropdown>
@@ -125,26 +124,36 @@ const ProductDetail = ({ appName }) => {
                   <Button>{data.flavour}</Button>
                 </Dropdown>
               </div>
-              <span
-                style={{
-                  color: "#8C0000",
-                  fontWeight: "bold",
-                  fontSize: "20px"
-                }}
-              >
-                ₹ {data.price}
-              </span>
-            </div> */}
+              <div className="m-top-30">
+                <span
+                  style={{
+                    color: "#8C0000",
+                    fontWeight: "bold",
+                    fontSize: "30px"
+                  }}
+                >
+                  ₹ {data.price}
+                </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Button type="primary" size="small">
+                  Buy Now
+                </Button>
+              </div>
+            </div>
           </div>
           <div>
             <Tabs onChange={callback} type="card">
               <TabPane tab="Product Info" key="1">
-                <Table columns={columns} dataSource={dataOne} pagination={false} showHeader={false}/>
+                <Table
+                  columns={columns}
+                  dataSource={dataOne}
+                  pagination={false}
+                  showHeader={false}
+                />
               </TabPane>
               <TabPane tab="Reviews" key="2">
                 Content of Tab Pane 2
               </TabPane>
-
             </Tabs>
           </div>
         </div>

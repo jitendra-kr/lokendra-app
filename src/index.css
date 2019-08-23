@@ -21,3 +21,19 @@ body {
 p, span {
   color: #000000;
 }
+
+.ant-layout-content {
+  line-height: 22px !important
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-top-55 {
+  margin-top: 55px;
+}
+
+.light-color {
+  color: darkgray;
+}
