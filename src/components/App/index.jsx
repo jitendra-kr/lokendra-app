@@ -3,21 +3,30 @@ import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
 import MainFooter from "../Footer";
 import { Home } from "../../components";
-import { Route, Switch } from 'react-router-dom';
-import { ProductDetail } from "../../components";
-import { ProductReview } from "../../components";
-import { BuyNow } from "../../components";
+import { Route, Switch } from "react-router-dom";
+import {
+  BuyNow,
+  Login,
+  ProductReview,
+  ProductDetail,
+  Register
+} from "../../components";
+import { Layout } from "antd";
 
 const App = props => {
   return (
     <div>
       <MainHeader />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/home/:id" component={ProductDetail} />
-        <Route path="/product-reviews/:id" component={ProductReview} />
-        <Route path="/checkout" component={BuyNow}/>
-      </Switch>
+      <Layout >
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/home/:id" component={ProductDetail} />
+          <Route path="/product-reviews/:id" component={ProductReview} />
+          <Route path="/checkout" component={BuyNow} />
+        </Switch>
+      </Layout>
       <MainFooter />
     </div>
   );

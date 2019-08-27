@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.css';
  * Components
  */
 import App from './components/App';
-// import ProductDetail from "./components/ProductDetail";
 
 /**
  * CSS

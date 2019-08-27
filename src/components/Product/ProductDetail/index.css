@@ -1,0 +1,3 @@
+tr:hover:not(.ant-table-expanded-row) > td {
+    background: #ffffff !important;
+  }

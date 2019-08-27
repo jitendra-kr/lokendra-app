@@ -1,4 +1,5 @@
 import React from 'react';
+import "./index.css";
 import { Layout } from 'antd';
 const { Footer } = Layout;
 
@@ -6,13 +7,8 @@ const { Footer } = Layout;
 
 
 const MainFooter = ({ appName }) => {
-
     return (
-        <Footer className = "site-footer" style={{
-          textAlign: 'center',
-          position: "relative",
-          bottom: "0",
-          color: "#ffffff"}}>
+        <Footer >
         Jitendra © 2019. All Rights Reserved
           </Footer>
   )
