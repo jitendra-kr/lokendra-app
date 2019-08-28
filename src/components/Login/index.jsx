@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 import { Link } from "react-router-dom";
 import { Form, Icon, Input, Layout, Button } from "antd";
 const { Content } = Layout;
@@ -18,9 +19,8 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
 
     return (
-
-      <Content style={{ padding: "50px 50px", }}>
-        <div className="row content-height" >
+      <Content style={{ padding: "50px 50px"}}>
+        <div className="row content-height"  >
           <div className="col-lg-2" />
           <div className="col-lg-8">
           <h2 className="text-center m-bottom-30">Login</h2>
