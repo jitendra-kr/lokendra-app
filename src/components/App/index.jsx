@@ -23,9 +23,9 @@ const App = props => {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
 
-          <Route path="/home/:id" component={ProductDetail} />
+          <Route path="/product/:id" component={ProductDetail} />
           <Route path="/product-reviews/:id" component={ProductReview} />
-          <Route path="/checkout" component={BuyNow} />
+          <Route path="/checkout/:size/:flavour" component={BuyNow} />
         </Switch>
       </Layout>
       <MainFooter />

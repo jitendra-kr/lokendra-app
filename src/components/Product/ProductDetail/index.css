@@ -2,10 +2,18 @@ tr:hover:not(.ant-table-expanded-row) > td {
     background: #ffffff !important;
   }
 
-  .size > li {
+  .size > ul > li {
     color: #000000 !important;
   }
 
   .size > ul {
     background-color:#E5E5E5 !important;
+  }
+
+  .ant-menu-item-selected {
+    color: #ffffff !important;
+  }
+
+  .size .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: #F38630 !important
   }

@@ -78,7 +78,7 @@ class ProductList extends React.Component {
   }
 
   detailPageUrl(item) {
-    return `/home/${item.title.replace(/ /g, "-").toLowerCase()}`;
+    return `/product/${item.title.replace(/ /g, "-").toLowerCase()}`;
   }
 
   render() {

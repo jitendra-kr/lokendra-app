@@ -1,19 +1,35 @@
 import React from "react";
 import "./index.css";
-import { Layout, Rate, Menu, Button, Tabs, Table, Dropdown } from "antd";
+import { Layout, Rate, Menu, Button, Tabs, Table, Select } from "antd";
 import { Link } from "react-router-dom";
 import { ProductReview } from "../../../components";
 const { Content } = Layout;
 const { TabPane } = Tabs;
+const { Option } = Select;
 
 export default class BuyNow extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      data: 'Jordan Belfort'
+    }
+    // this.setState({ flavour: this.data.flavour.value });
+    // this.setState({ size: this.data.size.value });
+  }
   data = {
     price: 5400,
     title: "Hello Jitendra Hello Hello Hello Hello Hello Hello Hello ",
     stars: 4,
     numberOfReviews: 530,
-    size: ["2lbs", "5lbs", "10lbs"],
-    flavour: ["Double Rich Chocolate", "Chocolate Malt", "Coffee", "Cookie and Cream"],
+    availableSize: [{key : "2lbs", value: "2l"}, {key: "5lbs", value: "5l"}, {key: "10lbs", value: "10l"}],
+    size: {key: "5lbs", value: "5l"},
+    flavours: [
+      { key: "Double Rich Chocolate", value: "dbr" },
+      { key: "Chocolate Malt", value: "cm" },
+      { key: "Coffee", value: "c" },
+      { key: "Cookie and Cream", value: "cnc" }
+    ],
+    flavour: { key: "Double Rich Chocolate", value: "dbr" },
     brand: "Sopra Steria",
     servingSize: "36 g",
     ProteinPerServing: "25 g",
@@ -66,45 +82,19 @@ export default class BuyNow extends React.Component {
     });
   };
 
-  menu = (
-    <Menu>
-      <Menu.Item>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://www.alipay.com/"
-        >
-          1st menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://www.taobao.com/"
-        >
-          2nd menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://www.tmall.com/"
-        >
-          3rd menu item
-        </a>
-      </Menu.Item>
-    </Menu>
-  );
+  selectFlavour = (value) => {
+    this.setState({ flavour: value });
+  }
 
-  callback = key => {
-    console.log(key);
-  };
+  selectSize = (value) => {
+    this.setState({ size: value.key });
+    console.log(value);
+  }
 
   buyNow = () => {
-    this.props.history.push("/checkout");
+    this.props.history.push(`/checkout/${this.state.size}/${this.state.flavour}`);
   };
+
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
@@ -128,29 +118,34 @@ export default class BuyNow extends React.Component {
                   <Link to={`/product-reviews/abc`}> 562 Reviews </Link>
                 </span>
                 <div className="m-top-30 size">
-                    <Menu
-                      theme="dark"
-                      mode="horizontal"
-                      defaultSelectedKeys={["2"]}
-                      style={{ float: "left" }}
+                  <Menu
+                    theme="dark"
+                    mode="horizontal"
+                    defaultSelectedKeys={[this.data.size.value]}
+                    style={{ float: "left" }}
                   >
-                    {
-                      this.data.size.map((o, i) => {
-                        return (
-                          <Menu.Item key={i}>{o}</Menu.Item>
-                        )
-                      })
-                      }
-
-                    </Menu>
+                    {this.data.availableSize.map((o, i) => {
+                      return <Menu.Item key={o.value} onClick={this.selectSize}>{o.key}</Menu.Item>;
+                    })}
+                  </Menu>
                 </div>
-                <br/>
+                <br />
                 <div className="m-top-30">
-                <Dropdown overlay={this.menu} placement="bottomCenter">
-                    <Button>{this.data.flavour[0]}</Button>
-                  </Dropdown>
+                  <Select
+                    defaultValue="dbr"
+                    style={{ width: "70%" }}
+                    onChange={this.selectFlavour}
+                  >
+                    {this.data.flavours.map((o, i) => {
+                      return (
+                        <Option value={o.value} key={i}>
+                          {o.key}
+                        </Option>
+                      );
+                    })}
+                  </Select>
                 </div>
-                <br/>
+                <br />
                 <div className="m-top-30">
                   <div
                     style={{
@@ -161,7 +156,6 @@ export default class BuyNow extends React.Component {
                   >
                     ₹ {this.data.price}
                   </div>
-                  {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
                   <div className="m-top-30">
                     <Button
                       type="primary"
@@ -176,7 +170,7 @@ export default class BuyNow extends React.Component {
               </div>
             </div>
             <div className="m-top-50">
-              <Tabs onChange={this.callback} type="card">
+              <Tabs type="card">
                 <TabPane tab="Product Info" key="1">
                   <Table
                     columns={this.productTableColumn()}
