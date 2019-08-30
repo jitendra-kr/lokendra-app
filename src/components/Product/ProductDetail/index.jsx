@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
-import { Layout, Rate, Menu, Dropdown, Button, Tabs, Table } from "antd";
+import { Layout, Rate, Menu, Button, Tabs, Table, Dropdown } from "antd";
 import { Link } from "react-router-dom";
-import { ProductReview } from "../../../components"
+import { ProductReview } from "../../../components";
 const { Content } = Layout;
 const { TabPane } = Tabs;
 
@@ -12,8 +12,8 @@ export default class BuyNow extends React.Component {
     title: "Hello Jitendra Hello Hello Hello Hello Hello Hello Hello ",
     stars: 4,
     numberOfReviews: 530,
-    size: ["5lbs"],
-    flavour: ["Double Rich Chocolate"],
+    size: ["2lbs", "5lbs", "10lbs"],
+    flavour: ["Double Rich Chocolate", "Chocolate Malt", "Coffee", "Cookie and Cream"],
     brand: "Sopra Steria",
     servingSize: "36 g",
     ProteinPerServing: "25 g",
@@ -28,8 +28,6 @@ export default class BuyNow extends React.Component {
     manufacturer: "Dymatize Enterprises LLC - Dallas"
   };
 
-
-
   productTableColumn = () => {
     return [
       {
@@ -42,16 +40,29 @@ export default class BuyNow extends React.Component {
         dataIndex: "value",
         className: "hide"
       }
-    ]
-  }
+    ];
+  };
 
   productTableDetail = () => {
-    let tableKeys = ["size", "flavour", "brand", "servingSize", "ProteinPerServing", "manufacturedIn", "form", "weight", "vegetarianNonVegetarian", "packaging", "goal", "manufacturer"];
-    return tableKeys.map((o) => {
+    let tableKeys = [
+      "size",
+      "flavour",
+      "brand",
+      "servingSize",
+      "ProteinPerServing",
+      "manufacturedIn",
+      "form",
+      "weight",
+      "vegetarianNonVegetarian",
+      "packaging",
+      "goal",
+      "manufacturer"
+    ];
+    return tableKeys.map(o => {
       return {
-          key: o,
-          value: this.data[o]
-        }
+        key: o,
+        value: this.data[o]
+      };
     });
   };
 
@@ -87,13 +98,13 @@ export default class BuyNow extends React.Component {
     </Menu>
   );
 
-  callback = (key) => {
+  callback = key => {
     console.log(key);
-  }
+  };
 
   buyNow = () => {
-    this.props.history.push('/checkout')
-  }
+    this.props.history.push("/checkout");
+  };
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
@@ -116,15 +127,30 @@ export default class BuyNow extends React.Component {
                 <span>
                   <Link to={`/product-reviews/abc`}> 562 Reviews </Link>
                 </span>
+                <div className="m-top-30 size">
+                    <Menu
+                      theme="dark"
+                      mode="horizontal"
+                      defaultSelectedKeys={["2"]}
+                      style={{ float: "left" }}
+                  >
+                    {
+                      this.data.size.map((o, i) => {
+                        return (
+                          <Menu.Item key={i}>{o}</Menu.Item>
+                        )
+                      })
+                      }
+
+                    </Menu>
+                </div>
+                <br/>
                 <div className="m-top-30">
-                  <Dropdown overlay={this.menu} placement="bottomCenter">
-                    <Button>{this.data.size}</Button>
-                  </Dropdown>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <Dropdown overlay={this.menu} placement="bottomCenter">
-                    <Button>{this.data.flavour}</Button>
+                <Dropdown overlay={this.menu} placement="bottomCenter">
+                    <Button>{this.data.flavour[0]}</Button>
                   </Dropdown>
                 </div>
+                <br/>
                 <div className="m-top-30">
                   <div
                     style={{
@@ -137,12 +163,15 @@ export default class BuyNow extends React.Component {
                   </div>
                   {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
                   <div className="m-top-30">
-                  <Button type="primary" size="small" className="buy-now-button" onClick={this.buyNow} >
-                    Buy Now
-                  </Button>
+                    <Button
+                      type="primary"
+                      size="small"
+                      className="buy-now-button"
+                      onClick={this.buyNow}
+                    >
+                      Buy Now
+                    </Button>
                   </div>
-
-
                 </div>
               </div>
             </div>
@@ -155,7 +184,6 @@ export default class BuyNow extends React.Component {
                     pagination={false}
                     showHeader={false}
                   />
-
                 </TabPane>
                 <TabPane tab="Reviews" key="2">
                   <ProductReview />

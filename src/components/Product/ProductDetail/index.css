@@ -1,3 +1,11 @@
 tr:hover:not(.ant-table-expanded-row) > td {
     background: #ffffff !important;
   }
+
+  .size > li {
+    color: #000000 !important;
+  }
+
+  .size > ul {
+    background-color:#E5E5E5 !important;
+  }
