@@ -6,6 +6,7 @@ import { Layout, Rate, Icon, Button } from "antd";
 const { Content } = Layout;
 
 
+
 const dataOne = {
   title:
     "Computer software, or simply software, is a collection of data or compute",
@@ -40,74 +41,79 @@ const data = [
     reviewComment: `Only the Reviewer's table records are displayed in the 'Distribution List' tab after Informal Review is done. Records from all other tables gets removedOnly the Reviewer's table records are displayed in the 'Distribution List' tab after Informal Review is done. Records from all other tables gets removedOnly the Reviewer's table records are displayed in the 'Distribution List' tab after Informal Review is done. Records from all other tables gets removedOnly the Reviewer's table records are displayed in the 'Distribution List' tab after Informal Review is done. Records from all other tables gets removed`
   }
 ];
-const ProductReview = ({ appName }) => {
-  return (
-    <Content style={{ padding: "50px 50px" }}>
-      <div className="row">
-        <div className="col-lg-2" />
-        <div className="col-lg-8">
-          <div className="row">
-            <div className="col-lg-3">
-              <div>
-                <h2>4.5/5</h2>
-                <Rate
-                  disabled
-                  defaultValue={4}
-                  style={{ display: "block", marginBottom: "20px" }}
-                />
-                <span className="light-color"> 522 Reviews</span>
-              </div>
-            </div>
-            <div className="col-lg-5">
-                <RatingPercentage />
-            </div>
-            <div className="col-lg-4">
-              <div>
-                <div className="blog-title">
-                  <Link
-                    to={`/home/${dataOne.title
-                      .replace(/ /g, "-")
-                      .toLowerCase()}`}
-                    style={{ display: "block", marginBottom: "20px" }}
-                  >
-                    {dataOne.title}
-                  </Link>
-                  <Button type="primary" size="small">
-                    Buy Now
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          {data.map(function(o, i) {
-            return (
-              <div className="m-top-55">
-                <div className="reviewer-name-time" key={i}>
-                  <h4>{o.name} </h4>
-                  <p className="review-time"> {o.date}</p>
-                </div>
-                <div>
-                  <Rate disabled defaultValue={o.rating} />
-                  <span style={{ marginLeft: "20px" }}>
-                    <Icon
-                      type="check-circle"
-                      className="verified-icon"
-                      theme="filled"
-                    />
-                    <span style={{ fontWeight: "600" }}> Verified Buyer </span>
-                  </span>
-                </div>
-                <p className="review-comment">{o.reviewComment}</p>
-                <hr />
-              </div>
-            );
-          })}
-        </div>
-        <div className="col-lg-2" />
-      </div>
-    </Content>
-  );
-};
 
-export default ProductReview;
+export default class ProductReview extends React.Component {
+  buyNow = () => {
+    this.props.history.push('/checkout')
+  }
+  render() {
+    return (
+      <Content style={{ padding: "50px 50px" }}>
+        <div className="row">
+          <div className="col-lg-2" />
+          <div className="col-lg-8">
+            <div className="row">
+              <div className="col-lg-3">
+                <div>
+                  <h2>4.5/5</h2>
+                  <Rate
+                    disabled
+                    defaultValue={4}
+                    style={{ display: "block", marginBottom: "20px" }}
+                  />
+                  <span className="light-color"> 522 Reviews</span>
+                </div>
+              </div>
+              <div className="col-lg-5">
+                  <RatingPercentage />
+              </div>
+              <div className="col-lg-4">
+                <div>
+                  <div className="blog-title">
+                    <Link
+                      to={`/home/${dataOne.title
+                        .replace(/ /g, "-")
+                        .toLowerCase()}`}
+                      style={{ display: "block", marginBottom: "20px" }}
+                    >
+                      {dataOne.title}
+                    </Link>
+                    <Button type="primary" size="small" onClick={this.buyNow}>
+                      Buy Now
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            {data.map(function(o, i) {
+              return (
+                <div className="m-top-55" key={i}>
+                  <div className="reviewer-name-time" key={i}>
+                    <h4>{o.name} </h4>
+                    <p className="review-time"> {o.date}</p>
+                  </div>
+                  <div>
+                    <Rate disabled defaultValue={o.rating} />
+                    <span style={{ marginLeft: "20px" }}>
+                      <Icon
+                        type="check-circle"
+                        className="verified-icon"
+                        theme="filled"
+                      />
+                      <span style={{ fontWeight: "600" }}> Verified Buyer </span>
+                    </span>
+                  </div>
+                  <p className="review-comment">{o.reviewComment}</p>
+                  <hr />
+                </div>
+              );
+            })}
+          </div>
+          <div className="col-lg-2" />
+        </div>
+      </Content>
+    );
+  }
+}
+

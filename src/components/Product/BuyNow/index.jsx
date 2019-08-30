@@ -23,6 +23,18 @@ class BuyNow extends React.Component {
       }
     });
   };
+  data = {
+    email: "jitendra@gmail.com",
+    mobileNumber: "7042752172",
+    alternateMobileNumber: "9719721140",
+    firstName: "Jitendra",
+    lastName: "Kumar Rajput",
+    country: "India",
+    pinCode: "246745",
+    address: "Village & Post - Bagwara tel-Dhampur",
+    state: "Uttar Pradesh",
+    cityTowm: "Moradabad"
+  };
   state = {
     value: 1
   };
@@ -55,6 +67,8 @@ class BuyNow extends React.Component {
       value: e.target.value
     });
   };
+
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const radioStyle = {
@@ -72,6 +86,7 @@ class BuyNow extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Item>
                     {getFieldDecorator("email", {
+                      initialValue: "",
                       rules: [
                         {
                           type: "email",
@@ -99,7 +114,7 @@ class BuyNow extends React.Component {
                     {getFieldDecorator("mobileNumber", {
                       rules: [
                         {
-                          type: "number",
+                          type: "string",
                           message: "The input is not valid mobile number!"
                         },
                         {
@@ -124,7 +139,7 @@ class BuyNow extends React.Component {
                     {getFieldDecorator("alternateMobileNumber", {
                       rules: [
                         {
-                          type: "number",
+                          type: "string",
                           message: "The input is not valid mobile number!"
                         }
                       ]
@@ -208,10 +223,10 @@ class BuyNow extends React.Component {
                     )}
                   </Form.Item>
                   <Form.Item>
-                    {getFieldDecorator("Pin Code", {
+                    {getFieldDecorator("pinCode", {
                       rules: [
                         {
-                          type: "email",
+                          type: "string",
                           message: "The input is not valid pin code!"
                         },
                         {
@@ -236,7 +251,7 @@ class BuyNow extends React.Component {
                     {getFieldDecorator("address", {
                       rules: [
                         {
-                          type: "email",
+                          type: "string",
                           message: "The input is not valid address!"
                         },
                         {
@@ -259,7 +274,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
 
                   <Form.Item>
-                    {getFieldDecorator("State", {
+                    {getFieldDecorator("state", {
                       rules: [
                         {
                           required: true,
@@ -280,10 +295,10 @@ class BuyNow extends React.Component {
                     )}
                   </Form.Item>
                   <Form.Item>
-                    {getFieldDecorator("City/Town", {
+                    {getFieldDecorator("cityTowm", {
                       rules: [
                         {
-                          type: "email",
+                          type: "string",
                           message: "The input is not valid city/town!"
                         },
                         {
@@ -303,37 +318,6 @@ class BuyNow extends React.Component {
                         placeholder="City/Town"
                       />
                     )}
-                  </Form.Item>
-                  <Form.Item>
-                    {getFieldDecorator("password", {
-                      rules: [
-                        {
-                          required: true,
-                          message: "Please input your Password!"
-                        }
-                      ]
-                    })(
-                      <Input
-                        prefix={
-                          <Icon
-                            type="lock"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
-                        type="password"
-                        placeholder="Password"
-                      />
-                    )}
-                  </Form.Item>
-                  <Form.Item>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="login-form-button"
-                    >
-                     Register
-                    </Button>
-
                   </Form.Item>
                 </Form>
               </div>
@@ -355,6 +339,13 @@ class BuyNow extends React.Component {
                       Cash on Delivery
                     </Radio>
                   </Radio.Group>
+                  <Button
+                    htmlType="submit"
+                    className="login-form-button m-top-30 place-order-button"
+                    onClick={this.handleSubmit}
+                  >
+                    <span>Place Order</span>
+                  </Button>
                 </Card>
               </div>
             </div>

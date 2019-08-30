@@ -11,3 +11,11 @@
   tr:hover:not(.ant-table-expanded-row) > td {
     background: #ffffff !important;
   }
+
+  .place-order-button {
+    background-color: #CC3D00 !important;
+
+  }
+  .place-order-button > span {
+    color: #ffffff !important
+  }

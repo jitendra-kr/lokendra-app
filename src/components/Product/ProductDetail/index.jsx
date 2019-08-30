@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import { Layout, Rate, Menu, Dropdown, Button, Tabs, Table } from "antd";
 import { Link } from "react-router-dom";
+import { ProductReview } from "../../../components"
 const { Content } = Layout;
 const { TabPane } = Tabs;
 
@@ -27,38 +28,32 @@ export default class BuyNow extends React.Component {
     manufacturer: "Dymatize Enterprises LLC - Dallas"
   };
 
-  columns = [
-    {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-      className: "hide"
-    },
-    {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-      className: "hide"
-    }
-  ];
 
-  dataOne = [
-    {
-      key: "1",
-      name: "John Brown",
-      age: 32
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32
-    }
-  ];
+
+  productTableColumn = () => {
+    return [
+      {
+        title: "Name",
+        dataIndex: "key",
+        className: "hide"
+      },
+      {
+        title: "Value",
+        dataIndex: "value",
+        className: "hide"
+      }
+    ]
+  }
+
+  productTableDetail = () => {
+    let tableKeys = ["size", "flavour", "brand", "servingSize", "ProteinPerServing", "manufacturedIn", "form", "weight", "vegetarianNonVegetarian", "packaging", "goal", "manufacturer"];
+    return tableKeys.map((o) => {
+      return {
+          key: o,
+          value: this.data[o]
+        }
+    });
+  };
 
   menu = (
     <Menu>
@@ -102,7 +97,7 @@ export default class BuyNow extends React.Component {
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
-        <div className="row content-height">
+        <div className="row">
           <div className="col-lg-2" />
           <div className="col-lg-8">
             <div className="row">
@@ -151,18 +146,19 @@ export default class BuyNow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="m-top-30">
+            <div className="m-top-50">
               <Tabs onChange={this.callback} type="card">
                 <TabPane tab="Product Info" key="1">
                   <Table
-                    columns={this.columns}
-                    dataSource={this.dataOne}
+                    columns={this.productTableColumn()}
+                    dataSource={this.productTableDetail()}
                     pagination={false}
                     showHeader={false}
                   />
+
                 </TabPane>
                 <TabPane tab="Reviews" key="2">
-                  Content of Tab Pane 2
+                  <ProductReview />
                 </TabPane>
               </Tabs>
             </div>
@@ -172,5 +168,4 @@ export default class BuyNow extends React.Component {
       </Content>
     );
   }
-
-};
+}

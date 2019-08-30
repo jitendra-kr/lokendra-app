@@ -4,32 +4,32 @@ import { Progress } from "antd";
 const percentageData = [
   {
     star: "5",
-    percentage: "50"
+    percentage: 50
   },
   {
     star: "4",
-    percentage: "30"
+    percentage: 30
   },
   {
     star: "3",
-    percentage: "10"
+    percentage: 10
   },
   {
     star: "2",
-    percentage: "10"
+    percentage: 10
   },
   {
     star: "1",
-    percentage: "0"
+    percentage: 0
   }
 ];
 
 const RatingPercentage = ({ appName }) => {
   return (
     <div >
-      {percentageData.map(function(o) {
+      {percentageData.map(function(o, i) {
         return (
-          <div>
+          <div key={i}>
             <span style={{fontSize: "13px"}}>{o.star} Star </span>
             <Progress
               style={{ width: "85%", marginLeft: "10px" }}

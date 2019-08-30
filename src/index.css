@@ -23,7 +23,7 @@ p, span {
 }
 
 .ant-layout-content {
-  line-height: 22px !important
+  line-height: 30px !important
 }
 
 .m-top-30 {
@@ -38,9 +38,6 @@ p, span {
   margin-top: 55px;
 }
 
-.light-color {
-  color: darkgray;
-}
 
 .buy-now-button {
   width: 10%;
@@ -50,4 +47,16 @@ p, span {
 .content-height {
   height: calc(100vh - 232px);
 }
+
+.ant-layout {
+  background-color: #ffffff !important;
+}
+
+ .cursor-pointer {
+  cursor: pointer;
+ }
+
+ .m-top-50 {
+  margin-top: 50px;
+ }
 

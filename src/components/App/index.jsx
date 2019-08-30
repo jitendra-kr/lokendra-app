@@ -9,7 +9,7 @@ import {
   Login,
   ProductReview,
   ProductDetail,
-  Register
+  Register,
 } from "../../components";
 import { Layout } from "antd";
 
@@ -22,6 +22,7 @@ const App = props => {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+
           <Route path="/home/:id" component={ProductDetail} />
           <Route path="/product-reviews/:id" component={ProductReview} />
           <Route path="/checkout" component={BuyNow} />

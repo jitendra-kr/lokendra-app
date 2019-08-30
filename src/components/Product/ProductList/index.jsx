@@ -1,10 +1,9 @@
 import React from "react";
 import "./product-list.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-
-const ProductList = ({ appName }) => {
-  const data = [
+class ProductList extends React.Component {
+  data = [
     {
       title: "Optimum Nutrition ON Gold Standard 100 Whey Protein Powder",
       img: "images/bitcoin-coin.jpg",
@@ -66,7 +65,7 @@ const ProductList = ({ appName }) => {
     }
   ];
 
-  const calculateTitle = title => {
+  calculateTitle = title => {
     const limit = 63;
     if (title.length > limit) {
       return title.substring(0, limit) + "...";
@@ -74,29 +73,39 @@ const ProductList = ({ appName }) => {
     return title;
   };
 
-  return (
-    <div className="row">
-      {data.map(function(item, i) {
-        return (
-          <div className="col-lg-3" key={i}>
-            <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}>
-              <span>
-                <img
-                  className="image"
-                  src="images/zookeeper.PNG"
-                  alt="jp"
-                  style={{ width: "100%", height: "70%" }}
-                />
-              </span>
-              <div className="blog-title">
-                <Link to={`/home/${item.title.replace(/ /g,"-").toLowerCase()}`}>{calculateTitle(item.title)}</Link>
+  handleClick = (item) => {
+    this.props.history.push(this.detailPageUrl(item))
+  }
+
+  detailPageUrl(item) {
+    return `/home/${item.title.replace(/ /g, "-").toLowerCase()}`;
+  }
+
+  render() {
+    return (
+      <div className="row">
+        {this.data.map( (item, i) => {
+          return (
+            <div className="col-lg-3 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
+              <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
+                <span>
+                  <img
+                    className="image"
+                    src="images/zookeeper.PNG"
+                    alt="jp"
+                    style={{ width: "100%", height: "70%" }}
+                  />
+                </span>
+                <div className="blog-title">
+                  <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+          );
+        })}
+      </div>
+    );
+  }
+}
 
-export default ProductList;
+export default withRouter(ProductList);
