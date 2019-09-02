@@ -13,8 +13,6 @@ export default class BuyNow extends React.Component {
     this.state = {
       data: 'Jordan Belfort'
     }
-    // this.setState({ flavour: this.data.flavour.value });
-    // this.setState({ size: this.data.size.value });
   }
   data = {
     price: 5400,
@@ -88,11 +86,17 @@ export default class BuyNow extends React.Component {
 
   selectSize = (value) => {
     this.setState({ size: value.key });
-    console.log(value);
   }
 
   buyNow = () => {
-    this.props.history.push(`/checkout/${this.state.size}/${this.state.flavour}`);
+    let size = this.state.size ? this.state.size : this.data.size.value;
+    let flavour = this.state.flavour ? this.state.flavour : this.data.flavour.value;
+    if (size && flavour) {
+      this.props.history.push(`/checkout/${size}/${flavour}`);
+    } else {
+      console.log("Please size and flavour");
+    }
+
   };
 
   render() {
