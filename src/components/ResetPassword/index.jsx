@@ -1,10 +1,9 @@
 import React from "react";
-import "./index.css";
 import { Link } from "react-router-dom";
 import { Form, Icon, Input, Layout, Button } from "antd";
 const { Content } = Layout;
 
-class Login extends React.Component {
+class ResetPassword extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -23,36 +22,37 @@ class Login extends React.Component {
         <div className="row content-height"  >
           <div className="col-lg-2" />
           <div className="col-lg-8">
-          <h2 className="text-center m-bottom-30">Login</h2>
+          <h2 className="text-center m-bottom-30">Reset Password</h2>
             <Form onSubmit={this.handleSubmit} style={{width: "50%", margin: "0 auto"}}>
               <Form.Item>
-                {getFieldDecorator("email", {
+                {getFieldDecorator("otp", {
                   rules: [
                     {
                       type: "string",
-                      message: "The input is not valid E-mail or Phone!"
+                      message: "The input is not valid OTP!"
                     },
                     {
                       required: true,
-                      message: "Please input your E-mail!"
+                      message: "Please input your OTP!"
                     }
                   ]
                 })(
                   <Input
                     prefix={
-                      <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
                     }
-                    placeholder="Email/Phone"
+                    type="string"
+                    placeholder="OTP"
                   />
                 )}
               </Form.Item>
 
               <Form.Item>
-                {getFieldDecorator("password", {
+                {getFieldDecorator("newPassword", {
                   rules: [
                     {
                       required: true,
-                      message: "Please input your Password!"
+                      message: "Please input your new password!"
                     }
                   ]
                 })(
@@ -61,7 +61,25 @@ class Login extends React.Component {
                       <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
                     }
                     type="password"
-                    placeholder="Password"
+                    placeholder="new Password"
+                  />
+                )}
+              </Form.Item>
+              <Form.Item>
+                {getFieldDecorator("confirmPassword", {
+                  rules: [
+                    {
+                      required: true,
+                      message: "Please input your new password again!"
+                    }
+                  ]
+                })(
+                  <Input
+                    prefix={
+                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    }
+                    type="password"
+                    placeholder="Confirm Password"
                   />
                 )}
               </Form.Item>
@@ -71,10 +89,9 @@ class Login extends React.Component {
                   htmlType="submit"
                   className="login-form-button"
                 >
-                  Login
+                  Change Password
                 </Button>
-                <p>New to Jimmypoint? <Link to={`/register`}>Register</Link> </p>
-                <Link to={`/reset-password`}>Forgot Password</Link>
+                <p>Login? <Link to={`/login`}>Login</Link> </p>
               </Form.Item>
             </Form>
           </div>
@@ -85,5 +102,5 @@ class Login extends React.Component {
   }
 }
 
-Login = Form.create({ name: "normal_login" })(Login);
-export default Login;
+ResetPassword = Form.create({ name: "normal_login" })(ResetPassword);
+export default ResetPassword;

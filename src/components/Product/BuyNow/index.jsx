@@ -32,7 +32,7 @@ class BuyNow extends React.Component {
     country: "India",
     pinCode: "246745",
     address: "Village & Post - Bagwara tel-Dhampur",
-    state: "Uttar Pradesh",
+    state: "up",
     cityTowm: "Moradabad"
   };
   state = {
@@ -86,7 +86,7 @@ class BuyNow extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Item>
                     {getFieldDecorator("email", {
-                      initialValue: "",
+                      initialValue: this.data.email,
                       rules: [
                         {
                           type: "email",
@@ -112,6 +112,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("mobileNumber", {
+                      initialValue: this.data.mobileNumber,
                       rules: [
                         {
                           type: "string",
@@ -137,6 +138,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("alternateMobileNumber", {
+                      initialValue: this.data.alternateMobileNumber,
                       rules: [
                         {
                           type: "string",
@@ -158,6 +160,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("firstName", {
+                      initialValue: this.data.firstName,
                       rules: [
                         {
                           type: "string",
@@ -183,6 +186,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("lastName", {
+                      initialValue: this.data.lastName,
                       rules: [
                         {
                           type: "string",
@@ -204,6 +208,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("country", {
+                      initialValue: this.data.country,
                       rules: [
                         {
                           type: "string",
@@ -218,12 +223,14 @@ class BuyNow extends React.Component {
                             style={{ color: "rgba(0,0,0,.25)" }}
                           />
                         }
+                        disabled = {true}
                         placeholder="Country"
                       />
                     )}
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("pinCode", {
+                      initialValue: this.data.pinCode,
                       rules: [
                         {
                           type: "string",
@@ -249,6 +256,7 @@ class BuyNow extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("address", {
+                       initialValue: this.data.address,
                       rules: [
                         {
                           type: "string",
@@ -275,6 +283,7 @@ class BuyNow extends React.Component {
 
                   <Form.Item>
                     {getFieldDecorator("state", {
+                      initialValue: this.data.state,
                       rules: [
                         {
                           required: true,
@@ -287,15 +296,18 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Select
+
                         placeholder="Select State"
                         onChange={this.handleSelectChange}
                       >
-                        <Option value="male">Uttar Predesh</Option>
+                        <Option value="up">Uttar Predesh</Option>
+                        <Option value="uK">UK</Option>
                       </Select>
                     )}
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator("cityTowm", {
+                      initialValue: this.data.cityTowm,
                       rules: [
                         {
                           type: "string",
@@ -344,7 +356,7 @@ class BuyNow extends React.Component {
                     className="login-form-button m-top-30 place-order-button"
                     onClick={this.handleSubmit}
                   >
-                    <span>Place Order</span>
+                    <span>hello node</span>
                   </Button>
                 </Card>
               </div>
