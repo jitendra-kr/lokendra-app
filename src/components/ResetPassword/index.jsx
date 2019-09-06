@@ -14,9 +14,7 @@ class ResetPassword extends React.Component {
   };
 
   render() {
-
     const { getFieldDecorator } = this.props.form;
-
     return (
       <Content style={{ padding: "50px 50px"}}>
         <div className="row content-height"  >
