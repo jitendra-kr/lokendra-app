@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./product-review.css";
+import { get } from "lodash";
+import "./index.css";
 import { RatingPercentage } from "../../../components";
 import { Layout, Rate, Icon, Button } from "antd";
 const { Content } = Layout;
@@ -43,6 +44,14 @@ const data = [
 ];
 
 export default class ProductReview extends React.Component {
+
+  onReviewPage = true;
+  constructor(props) {
+    super(props);
+    this.onReviewPage = get(this.props.match, 'path') === '/product-reviews/:id';
+    console.log(this.onReviewPage);
+  }
+
   buyNow = () => {
     this.props.history.push('/checkout')
   }
@@ -50,8 +59,8 @@ export default class ProductReview extends React.Component {
     return (
       <Content style={{ padding: "50px 50px" }}>
         <div className="row">
-          <div className="col-lg-2" />
-          <div className="col-lg-8">
+          { this.onReviewPage ? <div className="col-lg-2" /> : null}
+          <div className={this.onReviewPage ? "col-lg-8" : "col-lg-12"}>
             <div className="row">
               <div className="col-lg-3">
                 <div>
@@ -64,12 +73,12 @@ export default class ProductReview extends React.Component {
                   <span className="light-color"> 522 Reviews</span>
                 </div>
               </div>
-              <div className="col-lg-5">
+              <div className={this.onReviewPage ? "col-lg-5": "col-lg-9"}>
                   <RatingPercentage />
               </div>
-              <div className="col-lg-4">
+              {this.onReviewPage ? <div className="col-lg-4">
                 <div>
-                  <div className="blog-title">
+                  <div className="title-on-review-page">
                     <Link
                       to={`/home/${dataOne.title
                         .replace(/ /g, "-")
@@ -78,12 +87,12 @@ export default class ProductReview extends React.Component {
                     >
                       {dataOne.title}
                     </Link>
-                    <Button type="primary" size="small" onClick={this.buyNow}>
+                    <Button type="primary" size="small" className="buy-now-button" onClick={this.buyNow}>
                       Buy Now
                     </Button>
                   </div>
                 </div>
-              </div>
+              </div> : null}
             </div>
             <hr />
             {data.map(function(o, i) {
@@ -110,7 +119,7 @@ export default class ProductReview extends React.Component {
               );
             })}
           </div>
-          <div className="col-lg-2" />
+          {this.onReviewPage ? <div className="col-lg-2" /> : null}
         </div>
       </Content>
     );
