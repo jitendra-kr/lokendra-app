@@ -86,7 +86,7 @@ class ProductList extends React.Component {
       <div className="row">
         {this.data.map( (item, i) => {
           return (
-            <div className="col-lg-3 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
+            <div className="col-lg-3 col-md-12 col-xs-12 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
               <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
                 <span>
                   <img
