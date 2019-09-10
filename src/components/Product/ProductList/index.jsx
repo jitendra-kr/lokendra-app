@@ -1,6 +1,7 @@
 import React from "react";
-import "./product-list.css";
+import "./index.css";
 import { Link, withRouter } from "react-router-dom";
+// import { Avatar } from "antd";
 
 class ProductList extends React.Component {
   data = [
@@ -86,14 +87,14 @@ class ProductList extends React.Component {
       <div className="row">
         {this.data.map( (item, i) => {
           return (
-            <div className="col-lg-3 col-md-12 col-xs-12 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
+            <div className="col-lg-3 col-md-3 col-sm-3 col-xs-6 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
               <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
                 <span>
                   <img
                     className="image"
                     src="images/zookeeper.PNG"
                     alt="jp"
-                    style={{ width: "100%", height: "70%" }}
+                    style={{ width: "100%", height: "100%" }}
                   />
                 </span>
                 <div className="blog-title">
