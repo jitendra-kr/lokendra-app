@@ -74,7 +74,7 @@ class Login extends React.Component {
                   Login
                 </Button>
                 <p>New to Jimmypoint? <Link to={`/register`}>Register</Link> </p>
-                <Link to={`/reset-password`}>Forgot Password</Link>
+                <Link to={`/reset-password`}>Forgot Password?</Link>
               </Form.Item>
             </Form>
           </div>

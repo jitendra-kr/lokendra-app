@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { Layout, Rate, Menu, Button, Tabs, Table, Select } from "antd";
+import { Layout, Rate, Menu, Button, Tabs, Table, Select, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import { ProductReview } from "../../../components";
 const { Content } = Layout;
@@ -107,12 +107,7 @@ export default class BuyNow extends React.Component {
           <div className="col-lg-8">
             <div className="row">
               <div className="col-lg-3">
-                <img
-                  className="image"
-                  src="/images/zookeeper.PNG"
-                  alt="jp"
-                  style={{ width: "100%", height: "100%" }}
-                />
+                <Avatar shape="square" size={250} src="/images/zookeeper.PNG" />
               </div>
               <div className="col-lg-9">
                 <Link to={`/home`}>{this.data.brand}</Link>
