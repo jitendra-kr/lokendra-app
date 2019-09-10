@@ -86,7 +86,7 @@ class ProductList extends React.Component {
       <div className="row">
         {this.data.map( (item, i) => {
           return (
-            <div className="col-lg-3 col-md-12 col-xs-12 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
+            <div className="col-lg-3 col-md-3 col-sm-3 col-xs-6 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
               <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
                 <span>
                   <img
@@ -96,7 +96,7 @@ class ProductList extends React.Component {
                     style={{ width: "100%", height: "70%" }}
                   />
                 </span>
-                <div className="blog-title">
+                <div className="">
                   <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
                 </div>
               </div>
