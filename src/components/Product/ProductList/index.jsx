@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-// import { Avatar, Card } from "antd";
-// const { Meta } = Card;
+import { Avatar, Card } from "antd";
+const { Meta } = Card;
 
 class ProductList extends React.Component {
   data = [
@@ -75,9 +75,9 @@ class ProductList extends React.Component {
     return title;
   };
 
-  handleClick = (item) => {
-    this.props.history.push(this.detailPageUrl(item))
-  }
+  handleClick = item => {
+    this.props.history.push(this.detailPageUrl(item));
+  };
 
   detailPageUrl(item) {
     return `/product/${item.title.replace(/ /g, "-").toLowerCase()}`;
@@ -86,32 +86,52 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-lg-2"></div>
-        <div className="col-lg-8">
-        <div className="row">
-        {this.data.map( (item, i) => {
-          return (
-            <div
-              className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 cursor-pointer"
-              key={i}
-              onClick={() => {
-                this.handleClick(item);
-              }}
-            >
-              <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
-                <span>
+        <div className="col-lg-2">
+                   {/* <Card
+                hoverable
+                style={{  marginTop: "50px" }}
+                cover={
                   <img
-                    className="image"
+                    alt="example"
                     src="images/zookeeper.PNG"
-                    alt="jp"
-                    style={{ width: "100%", height: "100%" }}
                   />
-                </span>
-                <div className="">
-                  <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
-                </div>
-              </div>
-              {/* <Card
+                }
+              >
+                <Meta
+                  title="images/zookeeper.PNG"
+                  description="www.instagram.com"
+                />
+              </Card> */}
+        </div>
+        <div className="col-lg-8">
+          <div className="row">
+            {this.data.map((item, i) => {
+              return (
+                <div
+                  className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 cursor-pointer"
+                  key={i}
+                  onClick={() => {
+                    this.handleClick(item);
+                  }}
+                >
+                  <div
+                    style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}
+                  >
+                    <span>
+                      <img
+                        className="image"
+                        src="images/zookeeper.PNG"
+                        alt="jp"
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </span>
+                    <div className="">
+                      <Link to={this.detailPageUrl(item)}>
+                        {this.calculateTitle(item.title)}
+                      </Link>
+                    </div>
+                  </div>
+                  {/* <Card
                 hoverable
                 style={{  marginTop: "50px" }}
                 cover={
@@ -126,14 +146,29 @@ class ProductList extends React.Component {
                   description="www.instagram.com"
                 />
               </Card> */}
-            </div>
-          );
-        })}
-      </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="col-lg-2"></div>
+        <div className="col-lg-2">
+        {/* <Card
+                hoverable
+                style={{  marginTop: "50px" }}
+                cover={
+                  <img
+                    alt="example"
+                    src="images/zookeeper.PNG"
+                  />
+                }
+              >
+                <Meta
+                  title="images/zookeeper.PNG"
+                  description="www.instagram.com"
+                />
+              </Card> */}
+        </div>
       </div>
-
     );
   }
 }

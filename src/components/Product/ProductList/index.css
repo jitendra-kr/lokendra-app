@@ -13,3 +13,7 @@
     font-size: 23px;
 } */
 
+.ant-layout {
+    display: inline !important;
+}
+
