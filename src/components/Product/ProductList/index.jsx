@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import { Avatar, Card } from "antd";
-const { Meta } = Card;
+// import { Avatar, Card } from "antd";
+// const { Meta } = Card;
 
 class ProductList extends React.Component {
   data = [
@@ -98,7 +98,7 @@ class ProductList extends React.Component {
                 this.handleClick(item);
               }}
             >
-              {/* <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
+              <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
                 <span>
                   <img
                     className="image"
@@ -110,22 +110,22 @@ class ProductList extends React.Component {
                 <div className="">
                   <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
                 </div>
-              </div> */}
-              <Card
+              </div>
+              {/* <Card
                 hoverable
                 style={{  marginTop: "50px" }}
                 cover={
                   <img
                     alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                    src="images/zookeeper.PNG"
                   />
                 }
               >
                 <Meta
-                  title="Europe Street beat"
+                  title={item.title}
                   description="www.instagram.com"
                 />
-              </Card>
+              </Card> */}
             </div>
           );
         })}
