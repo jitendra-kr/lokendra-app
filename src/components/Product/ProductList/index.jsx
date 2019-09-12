@@ -1,7 +1,8 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-// import { Avatar } from "antd";
+import { Avatar, Card } from "antd";
+const { Meta } = Card;
 
 class ProductList extends React.Component {
   data = [
@@ -85,10 +86,19 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="row">
+        <div className="col-lg-2"></div>
+        <div className="col-lg-8">
+        <div className="row">
         {this.data.map( (item, i) => {
           return (
-            <div className="col-lg-3 col-md-3 col-sm-3 col-xs-6 cursor-pointer" key={i} onClick={ () => { this.handleClick(item) }}>
-              <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
+            <div
+              className="col-lg-3 cursor-pointer"
+              key={i}
+              onClick={() => {
+                this.handleClick(item);
+              }}
+            >
+              {/* <div style={{ backgroundColor: "#ECECEC", marginTop: "25px" }} >
                 <span>
                   <img
                     className="image"
@@ -100,11 +110,30 @@ class ProductList extends React.Component {
                 <div className="">
                   <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
                 </div>
-              </div>
+              </div> */}
+              <Card
+                hoverable
+                style={{  marginTop: "50px" }}
+                cover={
+                  <img
+                    alt="example"
+                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                  />
+                }
+              >
+                <Meta
+                  title="Europe Street beat"
+                  description="www.instagram.com"
+                />
+              </Card>
             </div>
           );
         })}
       </div>
+        </div>
+        <div className="col-lg-2"></div>
+      </div>
+
     );
   }
 }
