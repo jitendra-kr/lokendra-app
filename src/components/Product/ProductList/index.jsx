@@ -92,7 +92,7 @@ class ProductList extends React.Component {
         {this.data.map( (item, i) => {
           return (
             <div
-              className="col-lg-3 cursor-pointer"
+              className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 cursor-pointer"
               key={i}
               onClick={() => {
                 this.handleClick(item);
