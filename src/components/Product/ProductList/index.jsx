@@ -97,7 +97,7 @@ class ProductList extends React.Component {
                     style={{ width: "100%", height: "100%" }}
                   />
                 </span>
-                <div className="blog-title">
+                <div className="">
                   <Link to={this.detailPageUrl(item)}>{this.calculateTitle(item.title)}</Link>
                 </div>
               </div>
