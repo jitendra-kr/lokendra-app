@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
+import { Rate } from "antd";
 
 class ProductList extends React.Component {
   data = [
@@ -11,13 +12,13 @@ class ProductList extends React.Component {
     },
     {
       title:
-        "The Indian Army is the land-based branch and the largest component of Indian Armed",
+        "Optimum Nutrition (ON) Gold Standard 100 Whey Protein Powder",
       img: "images/army.jpg",
       stars: 5
     },
     {
       title:
-        "Uber Technologies, Inc. is an American multinational transportation network company.",
+        "Isopure Zero Carb 100 Whey Protein Isolate Powder",
       img: "images/uber.jpeg",
       stars: 3
     },
@@ -85,21 +86,6 @@ class ProductList extends React.Component {
     return (
       <div className="row">
         <div className="col-lg-2">
-                   {/* <Card
-                hoverable
-                style={{  marginTop: "50px" }}
-                cover={
-                  <img
-                    alt="example"
-                    src="images/zookeeper.PNG"
-                  />
-                }
-              >
-                <Meta
-                  title="images/zookeeper.PNG"
-                  description="www.instagram.com"
-                />
-              </Card> */}
         </div>
         <div className="col-lg-8">
           <div className="row">
@@ -111,16 +97,17 @@ class ProductList extends React.Component {
                   onClick={() => {
                     this.handleClick(item);
                   }}
+                  style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}
                 >
-                  <div
+                  {/* <span
                     style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}
-                  >
+                  > */}
                     <span>
                       <img
                         className="image"
-                        src="images/zookeeper.PNG"
+                        src={item.img}
                         alt="jp"
-                        style={{ width: "100%", height: "100%" }}
+                        style={{ width: "100%",  height: "180px" }}
                       />
                     </span>
                     <div className="home-page-title">
@@ -128,43 +115,17 @@ class ProductList extends React.Component {
                         {this.calculateTitle(item.title)}
                       </Link>
                     </div>
-                  </div>
-                  {/* <Card
-                hoverable
-                style={{  marginTop: "50px" }}
-                cover={
-                  <img
-                    alt="example"
-                    src="images/zookeeper.PNG"
-                  />
-                }
-              >
-                <Meta
-                  title={item.title}
-                  description="www.instagram.com"
-                />
-              </Card> */}
+                    <div >
+                    <span className="price">₹ 5600</span>
+                    </div>
+                    
+                  {/* </span> */}
                 </div>
               );
             })}
           </div>
         </div>
         <div className="col-lg-2">
-        {/* <Card
-                hoverable
-                style={{  marginTop: "50px" }}
-                cover={
-                  <img
-                    alt="example"
-                    src="images/zookeeper.PNG"
-                  />
-                }
-              >
-                <Meta
-                  title="images/zookeeper.PNG"
-                  description="www.instagram.com"
-                />
-              </Card> */}
         </div>
       </div>
     );
