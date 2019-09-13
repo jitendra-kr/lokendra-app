@@ -1,8 +1,6 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import { Avatar, Card } from "antd";
-const { Meta } = Card;
 
 class ProductList extends React.Component {
   data = [
@@ -108,7 +106,7 @@ class ProductList extends React.Component {
             {this.data.map((item, i) => {
               return (
                 <div
-                  className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 cursor-pointer"
+                  className="col-lg-4 cursor-pointer"
                   key={i}
                   onClick={() => {
                     this.handleClick(item);
@@ -125,7 +123,7 @@ class ProductList extends React.Component {
                         style={{ width: "100%", height: "100%" }}
                       />
                     </span>
-                    <div className="">
+                    <div className="home-page-title">
                       <Link to={this.detailPageUrl(item)}>
                         {this.calculateTitle(item.title)}
                       </Link>

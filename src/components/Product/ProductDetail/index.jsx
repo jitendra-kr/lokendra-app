@@ -106,10 +106,10 @@ export default class BuyNow extends React.Component {
           <div className="col-lg-2" />
           <div className="col-lg-8">
             <div className="row">
-              <div className="col-lg-3">
-                <Avatar shape="square" size={250} src="/images/zookeeper.PNG" />
+              <div className="col-lg-4">
+                <Avatar shape="square" style={{width: "100%", height: "70%"}} src="/images/zookeeper.PNG" />
               </div>
-              <div className="col-lg-9">
+              <div className="col-lg-8">
                 <Link to={`/home`}>{this.data.brand}</Link>
                 <h3>{this.data.title}</h3>
                 <Rate disabled defaultValue={2} />
