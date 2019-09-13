@@ -24,7 +24,7 @@ class Register extends React.Component {
             <h2 className="text-center m-bottom-30">Create Account</h2>
             <Form
               onSubmit={this.handleSubmit}
-              style={{ width: "50%", margin: "0 auto" }}
+              style={{ width: "80%", margin: "0 auto" }}
             >
               <Form.Item>
                 {getFieldDecorator("email", {

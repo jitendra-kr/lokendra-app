@@ -21,7 +21,7 @@ class ResetPassword extends React.Component {
           <div className="col-lg-2" />
           <div className="col-lg-8">
           <h2 className="text-center m-bottom-30">Reset Password</h2>
-            <Form onSubmit={this.handleSubmit} style={{width: "50%", margin: "0 auto"}}>
+            <Form onSubmit={this.handleSubmit} style={{width: "70%", margin: "0 auto"}}>
               <Form.Item>
                 {getFieldDecorator("otp", {
                   rules: [
