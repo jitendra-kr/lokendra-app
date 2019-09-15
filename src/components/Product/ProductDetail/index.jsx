@@ -10,9 +10,11 @@ const { Option } = Select;
 export default class BuyNow extends React.Component {
   constructor(props){
     super(props);
+    console.log(    localStorage.getItem('productId'))
     this.state = {
       data: 'Jordan Belfort'
     }
+    console.log(props.location);
   }
   data = {
     price: 5400,
