@@ -1,68 +1,36 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import { Rate } from "antd";
+
 
 class ProductList extends React.Component {
   data = [
     {
-      title: "Optimum Nutrition ON Gold Standard 100 Whey Protein Powder",
-      img: "images/bitcoin-coin.jpg",
-      stars: 3
+      title: "Optimum Nutrition (ON) 100% Whey Protein Powder",
+      img: "images/on_whey.jpg",
+      stars: 3,
+      price: 5300
     },
     {
       title:
-        "Optimum Nutrition (ON) Gold Standard 100 Whey Protein Powder",
-      img: "images/army.jpg",
-      stars: 5
+        "Bsn Syntha-6 Protein Powder - 5.0 lbs (48 Servings)",
+      img: "images/bsn-syntha-6-protien.jpg",
+      stars: 5,
+      price: 4500
     },
     {
       title:
-        "Isopure Zero Carb 100 Whey Protein Isolate Powder",
-      img: "images/uber.jpeg",
-      stars: 3
+        "Ultimate Nutrition ISO Sensation 93",
+      img: "images/Ultimate-Nutrition-ISO-Sensation-93.jpg",
+      stars: 3,
+      price: 4500
     },
     {
       title:
-        "Creating blog content that is valuable, helpful, and/or entertaining is an effective way to grow.",
-      img: "images/blog.jpg",
-      stars: 3
-    },
-    {
-      title:
-        "10,000 American Cryptocurrency Owners Will Receive Warning Letters From the IRS",
-      img: "images/mark_zukerberg.jpg",
-      stars: 1
-    },
-    {
-      title:
-        "Mark Elliot Zuckerberg is an American technology entrepreneur and philanthropist.",
-      img: "images/two.jpeg",
-      stars: 3
-    },
-    {
-      title:
-        "Computer software, or simply software, is a collection of data or compute",
-      img: "images/software.jpg",
-      stars: 3
-    },
-    {
-      title:
-        "Baba Ramdev is an Indian yoga guru known for his work in ayurveda",
-      img: "images/Ramdev.jpg",
-      stars: 9
-    },
-    {
-      title:
-        "Modi is an politician serving as the 14th and current Prime Minister of India since 2014.",
-      img: "images/modi.jpg",
-      stars: 3
-    },
-    {
-      title:
-        "The No. 1 gold price site for fast loading live gold price charts in ounces.",
-      img: "images/gold.jpg",
-      stars: 5
+        "MuscleTech NitroTech Performance Series Naturally Flavored",
+      img: "images/MuscleTech-NitroTech-Performance-Series-Naturally-Flavored.webp",
+      stars: 3,
+      price: 4400
     }
   ];
 
@@ -79,7 +47,7 @@ class ProductList extends React.Component {
   };
 
   detailPageUrl(item) {
-    return `/product/${item.title.replace(/ /g, "-").toLowerCase()}`;
+    return `/product/${item.title.replace(/[^A-Z0-9]/ig, "-").toLowerCase()}`;
   }
 
   render() {
@@ -97,17 +65,16 @@ class ProductList extends React.Component {
                   onClick={() => {
                     this.handleClick(item);
                   }}
-                  style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}
+                  style={{ marginTop: "25px" }}
                 >
-                  {/* <span
-                    style={{ backgroundColor: "#ECECEC", marginTop: "25px" }}
-                  > */}
+
+                  <div className="listing border ">
                     <span>
                       <img
                         className="image"
                         src={item.img}
                         alt="jp"
-                        style={{ width: "100%",  height: "180px" }}
+                        style={{ width: "100%", height: "250px" }}
                       />
                     </span>
                     <div className="home-page-title">
@@ -115,11 +82,11 @@ class ProductList extends React.Component {
                         {this.calculateTitle(item.title)}
                       </Link>
                     </div>
-                    <div >
-                    <span className="price">₹ 5600</span>
+                    <div className="">
+                      <span className="price price-color">
+                        <span className="price-color" style={{textDecoration: "line-through"}}> ₹ {(item.price+300).toLocaleString()}</span> ₹ {item.price.toLocaleString()}</span>
                     </div>
-                    
-                  {/* </span> */}
+                  </div>
                 </div>
               );
             })}

@@ -147,11 +147,11 @@ export default class BuyNow extends React.Component {
                 <br />
                 <div className="m-top-30">
                   <div
-                    style={{
-                      color: "#8C0000",
+                    style={{                     
                       fontWeight: "bold",
                       fontSize: "30px"
                     }}
+                    className="price-color"
                   >
                     ₹ {this.data.price}
                   </div>
