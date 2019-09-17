@@ -9,48 +9,26 @@ const { TabPane } = Tabs;
 const { Option } = Select;
 
 export default class BuyNow extends React.Component {
+
+  paramsId;
   constructor(props){
     super(props);
+    this.paramsId = this.props.match.params.id;
     this.state = {
-      data: {}
+      data: {
+        size: {}
+      }
     }
   }
-  data = {
-    price: 5400,
-    title: "Hello Jitendra Hello Hello Hello Hello Hello Hello Hello ",
-    stars: 4,
-    numberOfReviews: 530,
-    availableSize: [{key : "2lbs", value: "2l"}, {key: "5lbs", value: "5l"}, {key: "10lbs", value: "10l"}],
-    size: {key: "5lbs", value: "5l"},
-    flavours: [
-      { key: "Double Rich Chocolate", value: "dbr" },
-      { key: "Chocolate Malt", value: "cm" },
-      { key: "Coffee", value: "c" },
-      { key: "Cookie and Cream", value: "cnc" }
-    ],
-    flavour: { key: "Double Rich Chocolate", value: "dbr" },
-    brand: "Sopra Steria",
-    servingSize: "36 g",
-    ProteinPerServing: "25 g",
-    manufacturedIn: "USA",
-    form: "Powder",
-    weight: "2.3 kg",
-    vegetarianNonVegetarian: "Vegetarian",
-    packaging: "Jar",
-    goal: "Muscle Building,Muscle Recovery",
-    img: "images/zookeeper.PNG",
-    discount: "30",
-    manufacturer: "Dymatize Enterprises LLC - Dallas"
-  };
 
   componentWillMount() {
+
     fetch('../data/product.json').then(response => {
       return response.json();
     }).then(data => {
       this.setState({
-        data: _.filter(data, { id: localStorage.getItem('productId') })[0]
+        data: _.filter(data, { slug: this.paramsId })[0]
       });
-      console.log(this.state);
     }).catch(err => {
       console.log("Error Reading data " + err);
     });
@@ -89,7 +67,7 @@ export default class BuyNow extends React.Component {
     return tableKeys.map(o => {
       return {
         key: o,
-        value: this.data[o]
+        value: this.state.data[o]
       };
     });
   };
@@ -103,14 +81,19 @@ export default class BuyNow extends React.Component {
   }
 
   buyNow = () => {
-    let size = this.state.size ? this.state.size : this.data.size.value;
-    let flavour = this.state.flavour ? this.state.flavour : this.data.flavour.value;
+    let size = this.state.size ? this.state.size : this.state.data.size.value;
+    let flavour = this.state.flavour ? this.state.flavour : this.state.data.flavour.value;
     if (size && flavour) {
       this.props.history.push(`/checkout/${size}/${flavour}`);
     } else {
       console.log("Please size and flavour");
     }
   };
+  defaultSelectedSize() {
+    return this.state.data.size.value;
+
+
+  }
 
   render() {
     return (
@@ -120,25 +103,25 @@ export default class BuyNow extends React.Component {
           <div className="col-lg-8">
             <div className="row">
               <div className="col-lg-4">
-                <Avatar shape="square" style={{width: "100%", height: "70%"}} src="/images/zookeeper.PNG" />
+                <Avatar shape="square" style={{width: "100%", height: "90%"}} src= {"/" + this.state.data.img} />
               </div>
               <div className="col-lg-8">
                 <Link to={`/home`}>{this.state.data.brand}</Link>
                 <h3>{this.state.data.title}</h3>
                 <Rate disabled defaultValue={2} />
                 <span>
-                  <Link to={`/product-reviews/abc`}> 562 Reviews </Link>
+                  <Link to={`/product-reviews/${this.paramsId}`}> {this.state.data.numberOfReviews} Reviews </Link>
                 </span>
                 <div className="m-top-30 size">
                   <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={[this.data.size.value]}
+                    selectedKeys={[this.defaultSelectedSize()]}
                     style={{ float: "left" }}
                   >
-                    {this.data.availableSize.map((o, i) => {
+                    {this.state.data.availableSize ? this.state.data.availableSize.map((o, i) => {
                       return <Menu.Item key={o.value} onClick={this.selectSize}>{o.key}</Menu.Item>;
-                    })}
+                    }) : null}
                   </Menu>
                 </div>
                 <br />
@@ -148,13 +131,13 @@ export default class BuyNow extends React.Component {
                     style={{ width: "70%" }}
                     onChange={this.selectFlavour}
                   >
-                    {this.data.flavours.map((o, i) => {
+                    {this.state.data.flavours ? this.state.data.flavours.map((o, i) => {
                       return (
                         <Option value={o.value} key={i}>
                           {o.key}
                         </Option>
                       );
-                    })}
+                    }) : null}
                   </Select>
                 </div>
                 <br />

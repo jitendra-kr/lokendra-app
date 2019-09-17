@@ -49,7 +49,6 @@ export default class ProductReview extends React.Component {
   constructor(props) {
     super(props);
     this.onReviewPage = get(this.props.match, 'path') === '/product-reviews/:id';
-    console.log(this.onReviewPage);
   }
 
   buyNow = () => {

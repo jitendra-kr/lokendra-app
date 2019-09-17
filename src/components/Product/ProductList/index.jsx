@@ -15,7 +15,6 @@ class ProductList extends React.Component {
     fetch('./data/product.json').then(response => {
       return response.json();
     }).then(data => {
-      console.log(data);
       this.setState({
         data: data
       })
@@ -38,9 +37,8 @@ class ProductList extends React.Component {
   };
 
   detailPageUrl(item) {
-    console.log('ss')
     localStorage.setItem('productId', item.id);
-    return `/product/${item.title.replace(/[^A-Z0-9]/ig, "-").toLowerCase()}`;
+    return `/product/${item.slug}`;
   }
 
   render() {

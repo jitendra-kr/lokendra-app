@@ -1,6 +1,7 @@
 [
     {
         "title": "Optimum Nutrition (ON) 100% Whey Protein Powder",
+        "slug": "Optimum-Nutrition-ON-100-Whey-Protein-Powder",
         "img": "images/on_whey.jpg",
         "stars": 3,
         "price": 5300,
@@ -9,7 +10,7 @@
         "manufacturer": "Dymatize Enterprises LLC - Dallas",
         "goal": "Muscle Building,Muscle Recovery",
         "packaging": "Jar",
-        "numberOfReviews": 530,
+        "numberOfReviews": 103,
         "availableSize": [{"key" : "2lbs", "value": "2l"}, {"key": "5lbs", "value": "5l"}, {"key": "10lbs", "value": "10l"}],
         "size": {"key": "5lbs", "value": "5l"},
         "flavours": [
@@ -29,6 +30,7 @@
     },
     {
         "title": "Bsn Syntha-6 Protein Powder - 5.0 lbs (48 Servings)",
+        "slug": "Bsn-Syntha-6-Protein-Powder-5.0-lbs-48-Servings",
         "img": "images/bsn-syntha-6-protien.jpg",
         "stars": 5,
         "price": 4500,
@@ -37,7 +39,7 @@
         "manufacturer": "Dymatize Enterprises LLC - Dallas",
         "goal": "Muscle Building,Muscle Recovery",
         "packaging": "Jar",
-        "numberOfReviews": 530,
+        "numberOfReviews": 96,
         "availableSize": [{"key" : "2lbs", "value": "2l"}, {"key": "5lbs", "value": "5l"}, {"key": "10lbs", "value": "10l"}],
         "size": {"key": "5lbs", "value": "5l"},
         "flavours": [
@@ -57,6 +59,7 @@
     },
     {
         "title": "Ultimate Nutrition ISO Sensation 93",
+        "slug": "Ultimate-Nutrition-ISO-Sensation-93",
         "img": "images/Ultimate-Nutrition-ISO-Sensation-93.jpg",
         "stars": 3,
         "price": 4500,
@@ -65,7 +68,7 @@
         "manufacturer": "Dymatize Enterprises LLC - Dallas",
         "goal": "Muscle Building,Muscle Recovery",
         "packaging": "Jar",
-        "numberOfReviews": 530,
+        "numberOfReviews": 200,
         "availableSize": [{"key" : "2lbs", "value": "2l"}, {"key": "5lbs", "value": "5l"}, {"key": "10lbs", "value": "10l"}],
         "size": {"key": "5lbs", "value": "5l"},
         "flavours": [
@@ -85,6 +88,7 @@
     },
     {
         "title": "MuscleTech NitroTech Performance Series Naturally Flavored",
+        "slug": "MuscleTech-NitroTech-Performance-Series-Naturally-Flavored",
         "img": "images/MuscleTech-NitroTech-Performance-Series-Naturally-Flavored.webp",
         "stars": 3,
         "price": 4400,
@@ -93,7 +97,7 @@
         "manufacturer": "Dymatize Enterprises LLC - Dallas",
         "goal": "Muscle Building,Muscle Recovery",
         "packaging": "Jar",
-        "numberOfReviews": 530,
+        "numberOfReviews": 20,
         "availableSize": [{"key" : "2lbs", "value": "2l"}, {"key": "5lbs", "value": "5l"}, {"key": "10lbs", "value": "10l"}],
         "size": {"key": "5lbs", "value": "5l"},
         "flavours": [
