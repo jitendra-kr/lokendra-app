@@ -15,6 +15,7 @@ class ProductList extends React.Component {
     fetch('./data/product.json').then(response => {
       return response.json();
     }).then(data => {
+      console.log(data);
       this.setState({
         data: data
       })
@@ -65,7 +66,7 @@ class ProductList extends React.Component {
                         className="image"
                         src={item.img}
                         alt="jp"
-                        style={{ width: "100%", height: "250px" }}
+                        style={{ width: "75%", height: "250px" }}
                       />
                     </span>
                     <div className="home-page-title">

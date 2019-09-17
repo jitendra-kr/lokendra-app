@@ -1,4 +1,5 @@
 import React from "react";
+import * as _ from "lodash";
 import "./index.css";
 import { Layout, Rate, Menu, Button, Tabs, Table, Select, Avatar } from "antd";
 import { Link } from "react-router-dom";
@@ -10,11 +11,9 @@ const { Option } = Select;
 export default class BuyNow extends React.Component {
   constructor(props){
     super(props);
-    console.log(    localStorage.getItem('productId'))
     this.state = {
-      data: 'Jordan Belfort'
+      data: {}
     }
-    console.log(props.location);
   }
   data = {
     price: 5400,
@@ -43,6 +42,19 @@ export default class BuyNow extends React.Component {
     discount: "30",
     manufacturer: "Dymatize Enterprises LLC - Dallas"
   };
+
+  componentWillMount() {
+    fetch('../data/product.json').then(response => {
+      return response.json();
+    }).then(data => {
+      this.setState({
+        data: _.filter(data, { id: localStorage.getItem('productId') })[0]
+      });
+      console.log(this.state);
+    }).catch(err => {
+      console.log("Error Reading data " + err);
+    });
+  }
 
   productTableColumn = () => {
     return [
@@ -98,7 +110,6 @@ export default class BuyNow extends React.Component {
     } else {
       console.log("Please size and flavour");
     }
-
   };
 
   render() {
@@ -112,8 +123,8 @@ export default class BuyNow extends React.Component {
                 <Avatar shape="square" style={{width: "100%", height: "70%"}} src="/images/zookeeper.PNG" />
               </div>
               <div className="col-lg-8">
-                <Link to={`/home`}>{this.data.brand}</Link>
-                <h3>{this.data.title}</h3>
+                <Link to={`/home`}>{this.state.data.brand}</Link>
+                <h3>{this.state.data.title}</h3>
                 <Rate disabled defaultValue={2} />
                 <span>
                   <Link to={`/product-reviews/abc`}> 562 Reviews </Link>
@@ -149,13 +160,13 @@ export default class BuyNow extends React.Component {
                 <br />
                 <div className="m-top-30">
                   <div
-                    style={{                     
+                    style={{
                       fontWeight: "bold",
                       fontSize: "30px"
                     }}
                     className="price-color"
                   >
-                    ₹ {this.data.price}
+                    ₹ {this.state.data.price}
                   </div>
                   <div className="m-top-30">
                     <Button
