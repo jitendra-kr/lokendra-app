@@ -1,15 +1,45 @@
 import React from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
-import { Form, Icon, Input, Layout, Button } from "antd";
+import { Form, Icon, Input, Layout, Button, Alert } from "antd";
 const { Content } = Layout;
 
 class Login extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: {
+        message: ""
+      },
+      hasError: false
+    }
+    console.log(this.state.hasError);
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        fetch("https://jimmypoint-server.herokuapp.com/api/login", {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(values)
+        }).then(response => {
+          return response.json();
+        }).then((data) => {
+          if (data.statusCode === 200) {
+            console.log("logged In")
+          } else {
+            this.setState({
+              error: data,
+              hasError: true
+            });
+            console.log(this.state.hasError);
+          }
+        }).catch(err => {
+          console.log("Unable to login " + err);
+        })
       }
     });
   };
@@ -17,13 +47,20 @@ class Login extends React.Component {
   render() {
 
     const { getFieldDecorator } = this.props.form;
-
     return (
-      <Content style={{ padding: "50px 50px"}}>
+      <Content style={{ padding: "50px 50px" }}>
+
         <div className="row content-height"  >
           <div className="col-lg-2" />
           <div className="col-lg-8">
-          <h2 className="text-center m-bottom-30">Login</h2>
+              {this.state.hasError ? <Alert
+            message="Error"
+            description="This is an error message about copywriting."
+            type="error"
+            showIcon
+          /> : null}
+            <h2 className="text-center m-bottom-30">Login</h2>
+
             <Form onSubmit={this.handleSubmit} style={{width: "70%", margin: "0 auto"}}>
               <Form.Item>
                 {getFieldDecorator("email", {
