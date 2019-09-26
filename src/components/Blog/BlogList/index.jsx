@@ -1,28 +1,33 @@
 import React from "react";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
+import { Layout } from "antd";
 
+const { Content } = Layout;
 class BlogList extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       data: []
-    }
+    };
   }
 
   componentWillMount() {
-    fetch('./data/product.json').then(response => {
-      return response.json();
-    }).then(data => {
-      this.setState({
-        data: data
+    fetch("https://jimmypoint-server.herokuapp.com/api/blog-management/blogs")
+      .then(response => {
+        return response.json();
       })
-    }).catch(err => {
-      console.log("Error Reading data " + err);
-    });
+      .then(data => {
+        this.setState({
+          data: data.result
+        });
+        console.log(data);
+      })
+      .catch(err => {
+        console.log("Error Reading data " + err);
+      });
   }
-
 
   calculateTitle = title => {
     const limit = 63;
@@ -37,54 +42,52 @@ class BlogList extends React.Component {
   };
 
   detailPageUrl(item) {
-    localStorage.setItem('productId', item.id);
-    return `/product/${item.slug}`;
+    return `/blog/${item.slug}`;
   }
 
   render() {
     return (
-      <div className="row">
-        <div className="col-lg-2">
-        </div>
-        <div className="col-lg-8">
-          <div className="row">
-            {this.state.data.map((item, i) => {
-              return (
-                <div
-                  className="col-lg-4 cursor-pointer"
-                  key={i}
-                  onClick={() => {
-                    this.handleClick(item);
-                  }}
-                  style={{ marginTop: "25px" }}
-                >
-                  <div className="listing border ">
-                    <span>
-                      <img
-                        className="image"
-                        src={item.img}
-                        alt="jp"
-                        style={{ width: "75%", height: "250px" }}
-                      />
-                    </span>
-                    <div className="home-page-title">
-                      <Link to={{ pathname: this.detailPageUrl(item) }}>
-                        {this.calculateTitle(item.title)}
-                      </Link>
-                    </div>
-                    <div className="">
-                      <span className="price price-color">
-                        <span className="price-color" style={{ textDecoration: "line-through" }}> ₹ {(item.price + 300).toLocaleString()}</span> ₹ {item.price.toLocaleString()}</span>
+      <Content style={{ padding: "50px 50px" }}>
+        <div className="row">
+          <div className="col-lg-2"></div>
+          <div className="col-lg-8">
+            <div className="row">
+              {this.state.data.map((item, i) => {
+                return (
+                  <div
+                    className="col-lg-4 cursor-pointer"
+                    key={i}
+                    onClick={() => {
+                      this.handleClick(item);
+                    }}
+                    style={{ marginTop: "25px" }}
+                  >
+                    <div className="listing border ">
+                      <span>
+                        <img
+                          className="image"
+                          src={item.image}
+                          alt="jp"
+                          style={{ width: "75%", height: "250px" }}
+                        />
+                      </span>
+                      <div
+                        className="home-page-title"
+                        style={{ textAlign: "center" }}
+                      >
+                        <Link to={{ pathname: this.detailPageUrl(item) }}>
+                          {this.calculateTitle(item.slug)}
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
+          <div className="col-lg-2"></div>
         </div>
-        <div className="col-lg-2">
-        </div>
-      </div>
+      </Content>
     );
   }
 }
