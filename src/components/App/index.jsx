@@ -4,7 +4,7 @@ import MainHeader from "../Header";
 import MainFooter from "../Footer";
 import { Route, Switch } from "react-router-dom";
 import {
-  // Home,
+  Home,
   BuyNow,
   Login,
   ProductReview,
@@ -24,6 +24,7 @@ const App = props => {
       <Layout >
         <Switch>
           <Route exact path="/" component={BlogList} />
+          <Route path="/shop" component={Home} />
           <Route path="/blog/:slug" component={ReadBlog} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
