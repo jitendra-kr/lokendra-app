@@ -1,4 +1,5 @@
 import React from "react";
+import get from "axios";
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -8,7 +9,6 @@ export default class ReadBlog extends React.Component {
   constructor(props) {
     super(props);
     this.paramsId = this.props.match.params.slug;
-    console.log(this.paramsId);
     this.state = {
       data: {
         size: {}
@@ -17,17 +17,13 @@ export default class ReadBlog extends React.Component {
   }
 
   componentWillMount() {
-    fetch(
+    get(
       `https://jimmypoint-server.herokuapp.com/api/blog-management/blog-detail/${this.paramsId}`
     )
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
         this.setState({
-          data: data.result
+          data: response.data.result
         });
-        console.log(this.state.data.title);
       })
       .catch(err => {
         console.log("Error Reading data " + err);
