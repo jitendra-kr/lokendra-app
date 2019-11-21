@@ -1,4 +1,5 @@
 import React from "react";
+import get from "axios";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
 import { Layout } from "antd";
@@ -14,15 +15,11 @@ class BlogList extends React.Component {
   }
 
   componentWillMount() {
-    fetch("https://jimmypoint-server.herokuapp.com/api/blog-management/blogs")
+    get("https://jimmypoint-server.herokuapp.com/api/blog-management/blogs")
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
         this.setState({
-          data: data.result
+          data: response.data.result
         });
-        console.log(data);
       })
       .catch(err => {
         console.log("Error Reading data " + err);
