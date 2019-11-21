@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
 import MainFooter from "../Footer";
@@ -16,6 +17,16 @@ import {
   ReadBlog
 } from "../../components";
 import { Layout } from "antd";
+
+axios.interceptors.request.use(async (config) => {
+  console.log("request");
+  return config;
+});
+
+axios.interceptors.response.use(async (config) => {
+  console.log("response");
+  return config;
+});
 
 const App = props => {
   return (
