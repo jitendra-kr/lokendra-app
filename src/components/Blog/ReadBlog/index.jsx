@@ -30,6 +30,14 @@ export default class ReadBlog extends React.Component {
       });
   }
 
+  date(date) {
+    if (date) {
+      const newDate = new Date(date);
+      const month = newDate.toLocaleString('default', { month: 'long' });
+      return `${month}, ${newDate.getDate()} ${newDate.getFullYear()}`
+    }
+  }
+
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
@@ -38,7 +46,7 @@ export default class ReadBlog extends React.Component {
           <div className="col-lg-8">
             <h1>{this.state.data.title}</h1>
             <p>
-              <span style={{ color: "lightsalmon" }}>20 Sep 2019</span>
+              <span style={{ color: "lightsalmon" }}>{this.date(this.state.data.created_at)}</span>
             </p>
             <div
               dangerouslySetInnerHTML={{ __html: this.state.data.content }}
