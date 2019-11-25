@@ -46,7 +46,7 @@ export default class ReadBlog extends React.Component {
           <div className="col-lg-8">
             <h1>{this.state.data.title}</h1>
             <p>
-              <span style={{ color: "lightsalmon" }}>{this.date(this.state.data.created_at)}</span>
+              <span style={{ color: "chocolate" }}>{this.date(this.state.data.created_at)}</span>
             </p>
             <div
               dangerouslySetInnerHTML={{ __html: this.state.data.content }}
