@@ -3,13 +3,10 @@ import "./index.css";
 import { Layout } from 'antd';
 const { Footer } = Layout;
 
-
-
-
 const MainFooter = ({ appName }) => {
     return (
         <Footer >
-        Jitendra © 2019. All Rights Reserved
+        Jimmypoint © 2019. All Rights Reserved
           </Footer>
   )
 };
