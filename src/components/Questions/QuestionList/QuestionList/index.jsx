@@ -69,10 +69,10 @@ class BlogList extends React.Component {
                         </Link>
                       </div>
                       <div style={{ marginLeft: "35px" }}>
-                        <p className ="question-by">
-                          <span >By </span> {upperFirst(item.where_asked)}
-                          <span > To </span> {upperFirst(item.author)}
-                          <span > On </span> January 8, 2018
+                        <p style = {{fontFamily: "monospace", fontStyle: "italic"}}>
+                          <span className ="question-by">By </span> {upperFirst(item.where_asked)}
+                          <span className ="question-by"> To </span> {upperFirst(item.author)}
+                          <span className ="question-by"> On </span> January 8, 2018
                         </p>
                       </div>
                     </div>
