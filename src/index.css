@@ -63,3 +63,6 @@ p, span {
   color: #8C0000;
 }
 
+.display-inline-block {
+  display: inline-block;
+}
