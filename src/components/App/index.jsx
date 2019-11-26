@@ -16,7 +16,8 @@ import {
   ChangePassword,
   ResetPassword,
   BlogList,
-  ReadBlog
+  ReadBlog,
+  QuestionList
 } from "../../components";
 import { Layout } from "antd";
 import "./index.css";
@@ -30,7 +31,7 @@ class App extends React.Component {
     let isLoading = 0;
     super(props);
     this.state = {
-      loader: true
+      loader: false
     };
     axios.interceptors.request.use(async config => {
       isLoading++;
@@ -69,6 +70,7 @@ class App extends React.Component {
             <Route exact path="/" component={BlogList} />
             <Route path="/shop" component={Home} />
             <Route path="/blog/:slug" component={ReadBlog} />
+            <Route path="/questions" component={QuestionList} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/change-password" component={ChangePassword} />
