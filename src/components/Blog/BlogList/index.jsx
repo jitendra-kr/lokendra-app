@@ -73,7 +73,7 @@ class BlogList extends React.Component {
                         style={{ textAlign: "center" }}
                       >
                         <Link to={{ pathname: this.detailPageUrl(item) }}>
-                          {this.calculateTitle(item.slug)}
+                          {this.calculateTitle(item.title)}
                         </Link>
                       </div>
                     </div>
