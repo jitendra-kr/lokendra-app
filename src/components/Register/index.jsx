@@ -48,31 +48,6 @@ class Register extends React.Component {
                 )}
               </Form.Item>
 
-              <Form.Item>
-                {getFieldDecorator("mobileNumber", {
-                  rules: [
-                    {
-                      type: "number",
-                      message: "The input is not valid Mobile Number!"
-                    },
-                    {
-                      required: true,
-                      message: "Please input your Mobile Number!"
-                    }
-                  ]
-                })(
-                  <Input
-                    prefix={
-                      <Icon
-                        type="phone"
-                        theme="filled"
-                        style={{ color: "rgba(0,0,0,.25)" }}
-                      />
-                    }
-                    placeholder="Mobile Number"
-                  />
-                )}
-              </Form.Item>
 
               <Form.Item>
                 {getFieldDecorator("password", {
