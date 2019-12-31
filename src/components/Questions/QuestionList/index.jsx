@@ -44,8 +44,12 @@ class QuestionList extends React.Component {
     }
   }
 
+  handleClick = item => {
+    this.props.history.push(this.detailPageUrl(item));
+  };
+
   detailPageUrl(item) {
-    return `/blog/${item.slug}`;
+    return `/question/${item.slug}`;
   }
 
   render() {
