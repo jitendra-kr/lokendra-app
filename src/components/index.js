@@ -23,5 +23,6 @@ export { default as BlogList } from './Blog/BlogList';
 export { default as ReadBlog } from './Blog/ReadBlog';
 
 export { default as QuestionList } from './Questions/QuestionList';
+export { default as Answer } from './Questions/Answer';
 
 export { default as Advertisement } from './Advertisement';
