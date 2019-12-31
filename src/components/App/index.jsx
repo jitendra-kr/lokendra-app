@@ -17,7 +17,8 @@ import {
   ResetPassword,
   BlogList,
   ReadBlog,
-  QuestionList
+  QuestionList,
+  Answer
 } from "../../components";
 import { Layout } from "antd";
 import "./index.css";
@@ -71,6 +72,7 @@ class App extends React.Component {
             <Route path="/shop" component={Home} />
             <Route path="/blog/:slug" component={ReadBlog} />
             <Route path="/questions" component={QuestionList} />
+            <Route path="/question/:slug" component={Answer} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/change-password" component={ChangePassword} />
