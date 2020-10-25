@@ -18,9 +18,14 @@ const MainHeader = ({ appName }) => {
         defaultSelectedKeys={["2"]}
         style={{ lineHeight: "64px", float: "right" }}
       >
-        <Menu.Item key="2">
+        <Menu.Item key="3">
           <Link to={`/`} style={{ color: "#ffffff" }}>
             Home
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Link to={`/`} style={{ color: "#ffffff" }}>
+            Blogs
           </Link>
         </Menu.Item>
         <Menu.Item key="1">

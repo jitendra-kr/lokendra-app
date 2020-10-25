@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import { Form, Icon, Input, Layout, Button, Alert } from "antd";
+import Config from '../../config/env'
 const { Content } = Layout;
 
 class Login extends React.Component {
@@ -12,9 +13,9 @@ class Login extends React.Component {
       error: {
         message: ""
       },
-      hasError: false
+      hasError: false,
+      config: Config.getData().default
     }
-    console.log(this.state.hasError);
   }
 
   handleSubmit = e => {

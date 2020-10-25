@@ -4,6 +4,7 @@ import { upperFirst } from "lodash";
 import { Link, withRouter } from "react-router-dom";
 import "./index.css";
 import get from "axios";
+import Config from '../../../config/env'
 const { Content } = Layout;
 
 class QuestionList extends React.Component {
@@ -11,12 +12,13 @@ class QuestionList extends React.Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
+      config: Config.getData().default
     };
   }
 
   componentWillMount() {
-    get("https://jimmypoint-server.herokuapp.com/api/question/question-list")
+    get(`${this.state.config.baseUrl}question/question-list`)
       .then(response => {
         this.setState({
           data: response.data.result
