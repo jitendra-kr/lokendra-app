@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Icon, Input, Layout, Button } from "antd";
+import { Form, Input, Layout, Button } from "antd";
 const { Content } = Layout;
 
 class Register extends React.Component {
@@ -40,9 +40,9 @@ class Register extends React.Component {
                   ]
                 })(
                   <Input
-                    prefix={
-                      <Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
+                    // prefix={
+                    //   <Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />
+                    // }
                     placeholder="Email"
                   />
                 )}
@@ -59,9 +59,9 @@ class Register extends React.Component {
                   ]
                 })(
                   <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
+                    // prefix={
+                    //   <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    // }
                     type="password"
                     placeholder="Password"
                   />
@@ -88,5 +88,5 @@ class Register extends React.Component {
   }
 }
 
-Register = Form.create({ name: "normal_login" })(Register);
+// Register = Form.create({ name: "normal_login" })(Register);
 export default Register;

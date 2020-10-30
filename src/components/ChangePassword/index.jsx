@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Icon, Input, Layout, Button } from "antd";
+import { Form, Input, Layout, Button } from "antd";
 const { Content } = Layout;
 
 class ChangePassword extends React.Component {
@@ -37,9 +37,9 @@ class ChangePassword extends React.Component {
                   ]
                 })(
                   <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
+                    // prefix={
+                    //   <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    // }
                     type="password"
                     placeholder="Current Password"
                   />
@@ -56,9 +56,9 @@ class ChangePassword extends React.Component {
                   ]
                 })(
                   <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
+                    // prefix={
+                    //   <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    // }
                     type="password"
                     placeholder="new Password"
                   />
@@ -74,9 +74,9 @@ class ChangePassword extends React.Component {
                   ]
                 })(
                   <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
+                    // prefix={
+                    //   <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    // }
                     type="password"
                     placeholder="Confirm Password"
                   />
@@ -100,5 +100,5 @@ class ChangePassword extends React.Component {
   }
 }
 
-ChangePassword = Form.create({ name: "normal_login" })(ChangePassword);
+// ChangePassword = Form.create({ name: "normal_login" })(ChangePassword);
 export default ChangePassword;

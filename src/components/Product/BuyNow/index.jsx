@@ -2,7 +2,6 @@ import React from "react";
 import "./index.css";
 import {
   Form,
-  Icon,
   Input,
   Layout,
   Select,
@@ -99,13 +98,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="mail"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="mail"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Email"
                       />
                     )}
@@ -125,13 +124,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="phone"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="phone"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Phone Number"
                       />
                     )}
@@ -147,13 +146,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="phone"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="phone"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Altername Phone Number"
                       />
                     )}
@@ -173,13 +172,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="smile"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="smile"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="First Name"
                       />
                     )}
@@ -195,13 +194,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="smile"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="smile"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Last Name"
                       />
                     )}
@@ -217,12 +216,12 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="global"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="global"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         disabled = {true}
                         placeholder="Country"
                       />
@@ -243,13 +242,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="contacts"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="contacts"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Pin Code"
                       />
                     )}
@@ -269,13 +268,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="home"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="home"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="Address"
                       />
                     )}
@@ -320,13 +319,13 @@ class BuyNow extends React.Component {
                       ]
                     })(
                       <Input
-                        prefix={
-                          <Icon
-                            type="shop"
-                            theme="filled"
-                            style={{ color: "rgba(0,0,0,.25)" }}
-                          />
-                        }
+                        // prefix={
+                        //   <Icon
+                        //     type="shop"
+                        //     theme="filled"
+                        //     style={{ color: "rgba(0,0,0,.25)" }}
+                        //   />
+                        // }
                         placeholder="City/Town"
                       />
                     )}
@@ -369,5 +368,5 @@ class BuyNow extends React.Component {
   }
 }
 
-BuyNow = Form.create({ name: "normal_login" })(BuyNow);
+// BuyNow = Form.create({ name: "normal_login" })(BuyNow);
 export default BuyNow;

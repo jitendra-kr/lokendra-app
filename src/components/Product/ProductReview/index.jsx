@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { get } from "lodash";
 import "./index.css";
 import { RatingPercentage } from "../../../components";
-import { Layout, Rate, Icon, Button } from "antd";
+import { Layout, Rate, Button } from "antd";
 const { Content } = Layout;
 
 
@@ -104,11 +104,11 @@ export default class ProductReview extends React.Component {
                   <div>
                     <Rate disabled defaultValue={o.rating} />
                     <span style={{ marginLeft: "20px" }}>
-                      <Icon
+                      {/* <Icon
                         type="check-circle"
                         className="verified-icon"
                         theme="filled"
-                      />
+                      /> */}
                       <span style={{ fontWeight: "600" }}> Verified Buyer </span>
                     </span>
                   </div>

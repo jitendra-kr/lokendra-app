@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
@@ -20,43 +20,39 @@ import {
   QuestionList,
   Answer
 } from "../../components";
+import { UserContext } from '../../contexts/UserContext'
 import { Layout } from "antd";
 import "./index.css";
 
+function App(props) {
 
+  const userDetail = JSON.parse(localStorage.getItem('user'))
+  const [user, setUser] = useState(userDetail);
 
+  let isLoading = 0;
+  const [loader, setLoader] = useState(false);
+  axios.interceptors.request.use(async config => {
+    console.log(config);
+    isLoading++;
+    setLoader(true);
+    return config;
+  });
 
-class App extends React.Component {
+  axios.interceptors.response.use(async config => {
+    console.log(2);
+    console.log(isLoading);
+    isLoading--;
+    if (isLoading === 0) {
+      setLoader(false);
+    }
+    return config;
+  }, (err) => {
+    setLoader(false);
+  });
 
-  constructor(props) {
-    let isLoading = 0;
-    super(props);
-    this.state = {
-      loader: false
-    };
-    axios.interceptors.request.use(async config => {
-      isLoading++;
-      this.setState({
-        loader: true
-      });
-      return config;
-    });
-
-    axios.interceptors.response.use(async config => {
-      isLoading--;
-      if (isLoading === 0) {
-        this.setState({
-          loader: false
-        });
-      }
-      return config;
-    });
-
-  }
-
-  render() {
-    return (
-      <div>
+  return (
+    <div>
+      <UserContext.Provider value={[user, setUser]}>
         <MainHeader />
         <Layout>
           <Loader
@@ -65,7 +61,7 @@ class App extends React.Component {
             color="#00BFFF"
             height={100}
             width={100}
-            visible={this.state.loader}
+            visible={loader}
           />
           <Switch>
             <Route exact path="/" component={BlogList} />
@@ -83,9 +79,9 @@ class App extends React.Component {
           </Switch>
         </Layout>
         <MainFooter />
-      </div>
-    );
-  }
+      </UserContext.Provider>
+    </div>
+  );
 }
 
 export default withRouter(App);
