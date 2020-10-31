@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { get } from "lodash";
 import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
 import MainFooter from "../Footer";

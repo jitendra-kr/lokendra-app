@@ -26,7 +26,7 @@ function MainHeader(props) {
     <Menu>
       <Menu.Item>
         <Link to={`/`} >
-          Blogs
+          Account
               </Link>
       </Menu.Item>
       <Menu.Item onClick={logout}>

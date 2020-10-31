@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MessageOutlined, LockOutlined } from '@ant-design/icons';
-import { Form, Input, Layout, Button, message } from "antd";
+import { Form, Input, Layout, Button } from "antd";
 import Config from '../../config/env'
 import {
   messageLoading,
@@ -43,7 +43,7 @@ class ResetPassword extends React.Component {
         messageSuccess({ content: response.message, key })
         this.props.history.push('/login');
       } else if (response && response.statusCode === 400) {
-        message.error({ content: response.message, key, duration: 2 });
+        messageError({ content: response.message, key, duration: 2 });
       }
     }).catch((err) => {
       this.setState({ isButtonDisabled: false });
