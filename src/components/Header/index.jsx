@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "../../index.css";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Dropdown } from "antd";
+import { Layout, Menu, Dropdown  } from "antd";
 import { UserOutlined } from '@ant-design/icons';
 
 import { UserContext } from "../../contexts/UserContext";
@@ -25,8 +25,8 @@ function MainHeader(props) {
   const menu = (
     <Menu>
       <Menu.Item>
-      <Link to={`/`} >
-              Blogs
+        <Link to={`/`} >
+          Blogs
               </Link>
       </Menu.Item>
       <Menu.Item onClick={logout}>
@@ -65,14 +65,11 @@ function MainHeader(props) {
             Login/Register
             </Link>
         </Menu.Item>
-        <Menu.Item key="0" className={user ? '' : 'display-none'}>
-
-          <Dropdown overlay={menu}>
-            <span className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{ color: "#ffffff" }} >
-
-              {user ? <UserOutlined /> : 'Hover me'}
-
-            </span>
+        <Menu.Item key="0" className={user ? '' : 'display-none'} >
+          <Dropdown overlay={menu} placement="bottomCenter">
+            <div className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{ color: "#ffffff" }} >
+               {user ? <UserOutlined /> : null}
+            </div>
           </Dropdown>
         </Menu.Item>
       </Menu>

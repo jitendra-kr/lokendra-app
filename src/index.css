@@ -7,8 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.site-footer {
-  background-color: #04152A !important;
+.header-footer-bg {
+  background-color: #001529 !important;
+}
+
+.header-footer-bc {
+  border-color: #001529 !important;
 }
 
 .ant-layout-content {
