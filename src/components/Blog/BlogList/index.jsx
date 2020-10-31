@@ -14,11 +14,11 @@ class BlogList extends React.Component {
       data: [],
       config: Config.getData().default
     };
+
   }
 
   componentWillMount() {
     httpGet({url: `${this.state.config.baseUrl}blog-management/blogs`}).then((response) => {
-      console.log(response)
       this.setState({
         data: response.result
       });

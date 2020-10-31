@@ -5,7 +5,6 @@ export const httpGet = (request = {}) => {
     return new Promise((resolve, reject) => {
         get(request.url)
             .then((response = {}) => {
-                console.log(response)
                 resolve(response.data);
             })
             .catch(err => {

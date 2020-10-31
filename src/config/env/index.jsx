@@ -5,11 +5,12 @@ const Config = {
 
     getData() {
 
-        if(process.env.NODE_ENV) {
-            return devConfig
-        } else {
+        if(process.env.NODE_ENV === 'production') {
             return prodConfig
+        } else  {
+            return devConfig
         }
+
     }
 
 }

@@ -43,7 +43,6 @@ function App(props) {
   axios.interceptors.request.use(config => {
 
     isLoading++;
-    console.log(isLoading, config.url)
     setLoader(true);
 
     return config;
