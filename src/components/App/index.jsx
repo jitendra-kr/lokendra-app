@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
 import MainFooter from "../Footer";
 import { Route, Switch } from "react-router-dom";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import {
   Home,
   BuyNow,
