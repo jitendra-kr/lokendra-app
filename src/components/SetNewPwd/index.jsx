@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Input, Layout, Button } from "antd";
-import { post } from "axios";
+import { MessageOutlined, LockOutlined } from '@ant-design/icons';
+import { Form, Input, Layout, Button, message } from "antd";
 import Config from '../../config/env'
+import {
+  messageLoading,
+  // messageDestroy,
+  messageSuccess,
+  messageError
+} from "../../utils/antd"
+import { httpPost } from "../../utils/http";
 const { Content } = Layout;
 
 class ResetPassword extends React.Component {
@@ -14,36 +21,62 @@ class ResetPassword extends React.Component {
       data: [],
       config: Config.getData().default,
       otpSent: false,
-      email: ''
+      email: '',
+      isButtonDisabled: false
     };
 
   }
 
   changePwd = values => {
-        values.email = this.state.email;
-        console.log("Received values of form: ", values);
-        post(`${this.state.config.baseUrl}set-new-password`, values)
-          .then(response => {
-            console.log(response)
-            if(response) {
-              this.props.history.push('/login');
-            }
-          })
+
+    const key = 'changePwd';
+    messageLoading({ key });
+    this.setState({ isButtonDisabled: true });
+
+    values.email = this.state.email || 'jitendrarajput588@gmail.com';
+    httpPost({
+      url: `${this.state.config.baseUrl}set-new-password`,
+      body: values
+    }).then(response => {
+      this.setState({ isButtonDisabled: false });
+      if (response && response.statusCode === 200) {
+        messageSuccess({ content: response.message, key })
+        this.props.history.push('/login');
+      } else if (response && response.statusCode === 400) {
+        message.error({ content: response.message, key, duration: 2 });
+      }
+    }).catch((err) => {
+      this.setState({ isButtonDisabled: false });
+      if (err.status === 400) {
+        messageError({ content: err.data.message, key, duration: 2 });
+      } else {
+        messageError({ content: "something went wrong", key, duration: 2 });
+      }
+
+    })
 
 
   };
 
-   sendOtp = values => {
+  sendOtp = values => {
 
-      post(`${this.state.config.baseUrl}change-pwd-otp`, values)
-        .then(response => {
-          this.setState({ otpSent: true });
-          this.setState({ email: values.email });
+    const key = "sendOtp";
+    messageLoading({ key });
 
-        })
-        .catch(err => {
-          console.log("Error Reading data " + err);
-        });
+    httpPost({
+      url: `${this.state.config.baseUrl}change-pwd-otp`,
+      body: values
+    }).then(response => {
+
+      messageSuccess({ content: response.message, key });
+      this.setState({ otpSent: true });
+      this.setState({ email: values.email });
+
+    }).catch(err => {
+
+      console.log("Error Reading data " + err);
+
+    });
 
   }
 
@@ -56,7 +89,7 @@ class ResetPassword extends React.Component {
 
             <h2 className="text-center m-bottom-30">Set New Password</h2>
             {
-              this.state.otpSent ?
+              !this.state.otpSent ?
                 <div>
                   <p style={{ textAlign: 'center', fontSize: 'large' }} >Enter the email address associated with your account</p>
                   <Form
@@ -66,7 +99,13 @@ class ResetPassword extends React.Component {
                     style={{ width: "70%", margin: "0 auto" }}>
                     <Form.Item
                       name="email"
-                      rules={[{ required: true, message: "The input is not valid E-mail!" }]}
+                      rules={[
+                        {
+                          type: 'email',
+                          message: 'The input is not valid E-mail!',
+                        },
+                        { required: true, message: "The input is not valid E-mail!" }
+                      ]}
                     >
                       <Input />
 
@@ -93,28 +132,46 @@ class ResetPassword extends React.Component {
 
                   <Form
                     name="basic"
-                    initialValues={{ remember: true }}
+
                     onFinish={this.changePwd}
                     style={{ width: "70%", margin: "0 auto" }}>
                     <Form.Item
                       name="otp"
                       rules={[{ required: true, message: "Please input your OTP!" }]}
                     >
-                      <Input />
+                      <Input
+                        prefix={<MessageOutlined className="site-form-item-icon" />}
+                        placeholder="OTP" />
 
                     </Form.Item>
                     <Form.Item
                       name="newPassword"
-                      rules={[{ required: true, message: "Please input your new password!" }]}
-                    >
-                      <Input />
+                      rules={[{ required: true, message: "Please input your new password!" }]} hasFeedback>
+
+                      <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        placeholder="New Password" />
 
                     </Form.Item>
                     <Form.Item
                       name="confirmPassword"
-                      rules={[{ required: true, message: "Please input your new password!" }]}
+                      rules={[
+                        { required: true, message: "Please input your new password!" },
+                        ({ getFieldValue }) => ({
+                          validator(rule, value) {
+
+                            if (!value || getFieldValue('newPassword') === value) {
+                              return Promise.resolve();
+                            }
+                            return Promise.reject('The two passwords that you entered do not match!');
+                          },
+                        })]}
+                      dependencies={['newPassword']}
+                      hasFeedback
                     >
-                      <Input />
+                      <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        placeholder="Confirm Password" />
 
                     </Form.Item>
 
@@ -123,10 +180,10 @@ class ResetPassword extends React.Component {
                         type="primary"
                         htmlType="submit"
                         className="login-form-button"
-                      >
+                        disabled={this.state.isButtonDisabled} >
                         Submit
                 </Button>
-                      <p>Login? <Link to={`/login`}>Login</Link> </p>
+                      <p className="m-top-15">Login? <Link to={`/login`}>Login</Link> </p>
                     </Form.Item>
                   </Form>
                 </div>

@@ -4,7 +4,8 @@ import "./index.css";
 import { Form, Input, Layout, Button, message } from "antd";
 import Config from '../../config/env'
 import { UserContext } from "../../contexts/UserContext";
-
+import { httpPost } from "../../utils/http";
+import { messageError } from "../../utils/antd";
 const { Content } = Layout;
 
 
@@ -13,43 +14,48 @@ const { Content } = Layout;
 function Login(props) {
 
   const history = useHistory();
-  const [user, setUser] = useContext(UserContext);
+  const setUser = useContext(UserContext)[1];
   const [isButtonDisabled, setButtonDisabled] = useState(false);
-
   const state = {
     config: Config.getData().default
   }
 
   const onFinish = values => {
 
-    const key = 'updatable';
+    const key = 'onFinish';
     message.loading({ content: 'Loading...', key });
     setButtonDisabled(true);
-    fetch(`${state.config.baseUrl}login`, {
-      // fetch(`${state.config.baseUrl}login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values)
-    }).then(response => {
+
+    httpPost({
+      url: `${state.config.baseUrl}login`,
+      body: values
+    }).then((response) => {
+
       setButtonDisabled(false);
-      return response.json();
-    }).then((data) => {
-      if (data.statusCode === 200) {
-        localStorage.setItem('user', JSON.stringify(data.result));
-        localStorage.setItem('auth', data.auth);
-        setUser(() => data.result);
-        history.push("/");
+      setUserData(response);
+      history.push("/");
+
+    }).catch((err) => {
+      setButtonDisabled(false);
+      if (err.status === 400) {
+        messageError({ content: err.data.message, key, duration: 2 });
       } else {
-        message.error({ content: 'Please enter valid Email ID/Password!', key, duration: 2 });
+        messageError({ content: "something went wrong", key, duration: 2 });
       }
-    }).catch(err => {
-      message.error('something went wrong please try again');
-    })
+
+    });
+
   };
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
+
+  const setUserData = (response) => {
+    localStorage.setItem('user', JSON.stringify(response.result));
+    localStorage.setItem('auth', response.auth);
+    setUser(() => response.result);
+  }
 
   return (
     <Content style={{ padding: "50px 50px" }}>
@@ -70,7 +76,13 @@ function Login(props) {
           >
             <Form.Item
               name="email"
-              rules={[{ required: true, message: 'Please input your email!' }]}
+              rules={[
+                {
+                  type: 'email',
+                  message: 'The input is not valid E-mail!',
+                },
+                { required: true, message: 'Please input your email!' }
+              ]}
             >
               <Input />
             </Form.Item>

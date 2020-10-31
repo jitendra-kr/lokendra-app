@@ -1,7 +1,8 @@
 import React from "react";
-import get from "axios";
+import { httpGet } from "../../../utils/http";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
+import Config from '../../../config/env'
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -10,20 +11,20 @@ class BlogList extends React.Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
+      config: Config.getData().default
     };
   }
 
   componentWillMount() {
-    get("https://jimmypoint-server.herokuapp.com/api/blog-management/blogs")
-      .then(response => {
-        this.setState({
-          data: response.data.result
-        });
-      })
-      .catch(err => {
-        console.log("Error Reading data " + err);
+    httpGet({url: `${this.state.config.baseUrl}blog-management/blogs`}).then((response) => {
+      console.log(response)
+      this.setState({
+        data: response.result
       });
+    }).catch((err) => {
+      console.log( err);
+    });
   }
 
   calculateTitle = title => {

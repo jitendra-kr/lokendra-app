@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { get } from "lodash";
 import { withRouter } from "react-router-dom";
 import MainHeader from "../Header";
 import MainFooter from "../Footer";
 import { Route, Switch } from "react-router-dom";
-import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import {
   Home,
@@ -20,49 +20,59 @@ import {
   QuestionList,
   Answer
 } from "../../components";
+import { messageDestroy } from "../../utils/antd"
 import { UserContext } from '../../contexts/UserContext'
-import { Layout } from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
+import { Layout, Spin  } from "antd";
 import "./index.css";
 
 function App(props) {
+  const userData = localStorage.getItem('user');
+  let userDetail;
 
-  const userDetail = JSON.parse(localStorage.getItem('user'))
+  try {
+    userDetail = userData ? JSON.parse(userData) : null;
+  } catch (e) {
+
+  }
   const [user, setUser] = useState(userDetail);
+  const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
 
   let isLoading = 0;
   const [loader, setLoader] = useState(false);
-  axios.interceptors.request.use(async config => {
-    console.log(config);
+
+  axios.interceptors.request.use(config => {
+
     isLoading++;
+    console.log(isLoading, config.url)
     setLoader(true);
+
     return config;
   });
 
-  axios.interceptors.response.use(async config => {
-    console.log(2);
-    console.log(isLoading);
+  axios.interceptors.response.use(config => {
+
     isLoading--;
     if (isLoading === 0) {
       setLoader(false);
     }
+    messageDestroy();
     return config;
   }, (err) => {
+
+    messageDestroy();
     setLoader(false);
+    return Promise.reject(err);
+
   });
+
 
   return (
     <div>
+      <Spin indicator={antIcon} className="center-loader" spinning={loader}/>
       <UserContext.Provider value={[user, setUser]}>
         <MainHeader />
         <Layout>
-          <Loader
-            className="center-loader"
-            type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            visible={loader}
-          />
           <Switch>
             <Route exact path="/" component={BlogList} />
             <Route path="/shop" component={Home} />
