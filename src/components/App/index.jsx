@@ -42,10 +42,13 @@ function App(props) {
 
   axios.interceptors.request.use(config => {
 
-    isLoading++;
-    setLoader(true);
+    if (config.method === 'get') {
+      isLoading++;
+      setLoader(true);
+    }
 
     return config;
+
   });
 
   axios.interceptors.response.use(config => {

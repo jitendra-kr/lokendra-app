@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MessageOutlined, LockOutlined } from '@ant-design/icons';
+import { MessageOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Form, Input, Layout, Button } from "antd";
 import Config from '../../config/env'
 import {
@@ -112,7 +112,8 @@ class ResetPassword extends React.Component {
                         { required: true, message: "The input is not valid E-mail!" }
                       ]}
                     >
-                      <Input />
+                      <Input prefix={<MailOutlined  className="site-form-item-icon" />}
+                        placeholder="Email"/>
 
                     </Form.Item>
 
@@ -153,7 +154,7 @@ class ResetPassword extends React.Component {
                       name="newPassword"
                       rules={[{ required: true, message: "Please input your new password!" }]} hasFeedback>
 
-                      <Input
+                      <Input.Password
                         prefix={<LockOutlined className="site-form-item-icon" />}
                         placeholder="New Password" />
 
@@ -174,7 +175,7 @@ class ResetPassword extends React.Component {
                       dependencies={['newPassword']}
                       hasFeedback
                     >
-                      <Input
+                      <Input.Password
                         prefix={<LockOutlined className="site-form-item-icon" />}
                         placeholder="Confirm Password" />
 

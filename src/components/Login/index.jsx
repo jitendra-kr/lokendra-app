@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import { MailOutlined , LockOutlined } from '@ant-design/icons';
 import "./index.css";
 import { Form, Input, Layout, Button, message } from "antd";
 import Config from '../../config/env'
@@ -84,14 +85,18 @@ function Login(props) {
                 { required: true, message: 'Please input your email!' }
               ]}
             >
-              <Input />
+              <Input prefix={<MailOutlined  className="site-form-item-icon" />}
+                        placeholder="Email" />
             </Form.Item>
 
             <Form.Item
               name="password"
               rules={[{ required: true, message: 'Please input your password!' }]}
             >
-              <Input.Password />
+              <Input.Password
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              placeholder="Password"
+              />
             </Form.Item>
 
             <Form.Item >
