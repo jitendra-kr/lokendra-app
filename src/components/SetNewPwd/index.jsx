@@ -74,7 +74,12 @@ class ResetPassword extends React.Component {
 
     }).catch(err => {
 
-      console.log("Error Reading data " + err);
+      if (err.status === 400) {
+        messageError({ content: err.data.message, key, duration: 2 });
+      } else {
+        messageError({ content: "something went wrong", key, duration: 2 });
+      }
+
 
     });
 
