@@ -17,7 +17,7 @@ class QuestionList extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     get(`${this.state.config.baseUrl}question/question-list`)
       .then(response => {
         this.setState({

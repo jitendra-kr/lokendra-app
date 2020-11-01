@@ -21,7 +21,7 @@ export default class BuyNow extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
 
     fetch('../data/product.json').then(response => {
       return response.json();

@@ -16,7 +16,7 @@ class Answer extends React.Component {
       }
     };
   }
-  componentWillMount() {
+  componentDidMount() {
     get(`https://jimmypoint-server.herokuapp.com/api/question/answer/${this.slug}`)
       .then(response => {
         console.log(response.data.result);

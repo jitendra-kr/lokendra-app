@@ -17,7 +17,7 @@ class BlogList extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     httpGet({url: `${this.state.config.baseUrl}blog-management/blogs`}).then((response) => {
       this.setState({
         data: response.result

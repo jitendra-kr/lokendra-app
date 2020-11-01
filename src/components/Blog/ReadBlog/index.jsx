@@ -16,7 +16,7 @@ export default class ReadBlog extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     get(
       `https://jimmypoint-server.herokuapp.com/api/blog-management/blog-detail/${this.paramsId}`
     )

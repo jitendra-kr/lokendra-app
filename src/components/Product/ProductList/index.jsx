@@ -11,7 +11,7 @@ class ProductList extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('./data/product.json').then(response => {
       return response.json();
     }).then(data => {
