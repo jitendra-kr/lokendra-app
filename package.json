@@ -21,6 +21,7 @@
     "node": "12.16.1"
   },
   "scripts": {
+    "heroku-prebuild": "npm cache clean --force && rm -rf node_modules package-lock.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
