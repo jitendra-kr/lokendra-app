@@ -81,3 +81,7 @@ p, span {
   display: none !important;
 }
 
+.width-auto {
+  width: auto;
+}
+

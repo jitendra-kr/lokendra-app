@@ -5,7 +5,6 @@ import { Form, Input, Layout, Button } from "antd";
 import Config from '../../config/env'
 import {
   messageLoading,
-  // messageDestroy,
   messageSuccess,
   messageError
 } from "../../utils/antd"
@@ -22,8 +21,11 @@ class ResetPassword extends React.Component {
       config: Config.getData().default,
       otpSent: false,
       email: '',
-      isButtonDisabled: false
+      isButtonDisabled: false,
+      isLoggedIn: localStorage.getItem('auth') ? true : false
     };
+
+    console.log(this.state.isLoggedIn)
 
   }
 
@@ -33,7 +35,7 @@ class ResetPassword extends React.Component {
     messageLoading({ key });
     this.setState({ isButtonDisabled: true });
 
-    values.email = this.state.email || 'jitendrarajput588@gmail.com';
+    values.email = this.state.email;
     httpPost({
       url: `${this.state.config.baseUrl}set-new-password`,
       body: values
@@ -53,7 +55,7 @@ class ResetPassword extends React.Component {
         messageError({ content: "something went wrong", key, duration: 2 });
       }
 
-    })
+    });
 
 
   };
@@ -117,15 +119,23 @@ class ResetPassword extends React.Component {
 
                     </Form.Item>
 
-                    <Form.Item>
-                      <Button
+                    <Form.Item className="text-center">
+                      {this.state.isLoggedIn ? <Button
+
+                        htmlType="submit"
+                        style={{width: "auto", marginRight: "20px"}}
+                      >
+                        <Link to={`/user`}>Cancel</Link>
+
+
+                    </Button> : ''}
+                    <Button
                         type="primary"
                         htmlType="submit"
-                        className="login-form-button"
                       >
                         Submit
-                </Button>
-                      <p className="m-top-15">Login? <Link to={`/login`}>Login</Link> </p>
+                    </Button>
+
                     </Form.Item>
                   </Form>
 

@@ -4,6 +4,7 @@ import "./index.css";
 import { Layout } from "antd";
 const { Footer } = Layout;
 
+
 const MainFooter = ({ appName }) => {
   return (
     <Footer>
@@ -26,7 +27,7 @@ const MainFooter = ({ appName }) => {
             </div>
         </div>
       </div>
-      <div className="m-top-30">Jimmypoint © 2019. All Rights Reserved</div>
+      <div className="m-top-30">Jimmypoint © {new Date().getFullYear()}. All Rights Reserved</div>
     </Footer>
   );
 };

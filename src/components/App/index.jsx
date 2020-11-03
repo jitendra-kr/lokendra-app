@@ -9,10 +9,10 @@ import {
   Home,
   BuyNow,
   Login,
+  Register,
+  UserProfile,
   ProductReview,
   ProductDetail,
-  Register,
-  ChangePassword,
   ResetPassword,
   BlogList,
   ReadBlog,
@@ -41,6 +41,8 @@ function App(props) {
   const [loader, setLoader] = useState(false);
 
   axios.interceptors.request.use(config => {
+
+    config.headers.Authorization =  `Bearer ${localStorage.getItem('auth')}`;
 
     if (config.method === 'get') {
       isLoading++;
@@ -75,14 +77,14 @@ function App(props) {
         <MainHeader />
         <Layout>
           <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/user" component={UserProfile} />
             <Route exact path="/" component={BlogList} />
             <Route path="/shop" component={Home} />
             <Route path="/blog/:slug" component={ReadBlog} />
             <Route path="/questions" component={QuestionList} />
             <Route path="/question/:slug" component={Answer} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/change-password" component={ChangePassword} />
             <Route path="/reset-password" component={ResetPassword} />
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/product-reviews/:id" component={ProductReview} />

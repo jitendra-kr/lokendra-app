@@ -2,7 +2,7 @@ import React from "react";
 import { httpGet } from "../../../utils/http";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import Config from '../../../config/env'
+import Config from '../../../config/env';
 import { Layout } from "antd";
 
 const { Content } = Layout;
