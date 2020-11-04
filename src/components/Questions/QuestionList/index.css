@@ -5,3 +5,7 @@
     font-family: monospace;
     font-style: italic;
 }
+
+.ant-tabs-nav {
+    left: 18px !important;
+}
