@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, Button } from "antd";
 import { upperFirst } from "lodash";
 import { Link, withRouter } from "react-router-dom";
 import "./index.css";
@@ -61,6 +61,9 @@ class QuestionList extends React.Component {
           <div className="col-lg-3"></div>
           <div className="col-lg-6">
             <div className="row">
+            <Button type="primary" style={{position: "absolute", right: "15px"}}>
+            <Link to={`/ask-question`}>New Questions</Link>
+            </Button>
               {this.state.data.map((item, i) => {
                 return (
                   <div
@@ -69,7 +72,7 @@ class QuestionList extends React.Component {
                     onClick={() => {
                       this.handleClick(item);
                     }}
-                    style={{ marginTop: "25px" }}
+                    style={{ marginTop: "40px" }}
                   >
                     <div className="listing border">
                       <div

@@ -17,13 +17,15 @@ import {
   BlogList,
   ReadBlog,
   QuestionList,
-  Answer
+  Answer,
+  NewQuestion
 } from "../../components";
 import { messageDestroy } from "../../utils/antd"
 import { UserContext } from '../../contexts/UserContext'
 import { LoadingOutlined } from '@ant-design/icons';
-import { Layout, Spin  } from "antd";
+import { Layout, Spin } from "antd";
 import "./index.css";
+const { Content } = Layout;
 
 function App(props) {
   const userData = localStorage.getItem('user');
@@ -42,7 +44,7 @@ function App(props) {
 
   axios.interceptors.request.use(config => {
 
-    config.headers.Authorization =  `Bearer ${localStorage.getItem('auth')}`;
+    config.headers.Authorization = `Bearer ${localStorage.getItem('auth')}`;
 
     if (config.method === 'get') {
       isLoading++;
@@ -71,13 +73,15 @@ function App(props) {
 
 
   return (
-    <div>
-      <Spin indicator={antIcon} className="center-loader" spinning={loader}/>
+
+    <Layout>
+      <Spin indicator={antIcon} className="center-loader" spinning={loader} />
       <UserContext.Provider value={[user, setUser]}>
+
         <MainHeader />
-        <Layout>
-          <Switch>
-            <Route path="/login" component={Login} />
+        <Content style={{ padding: "50px 50px" }}>
+        <Switch>
+        <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/user" component={UserProfile} />
             <Route exact path="/" component={BlogList} />
@@ -85,15 +89,17 @@ function App(props) {
             <Route path="/blog/:slug" component={ReadBlog} />
             <Route path="/questions" component={QuestionList} />
             <Route path="/question/:slug" component={Answer} />
+            <Route path="/ask-question" component={NewQuestion} />
             <Route path="/reset-password" component={ResetPassword} />
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/product-reviews/:id" component={ProductReview} />
             <Route path="/checkout/:size/:flavour" component={BuyNow} />
-          </Switch>
-        </Layout>
+        </Switch>
+        </Content>
         <MainFooter />
       </UserContext.Provider>
-    </div>
+    </Layout>
+
   );
 }
 

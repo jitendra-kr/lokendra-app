@@ -37,6 +37,10 @@ p, span {
   margin-bottom: 30px;
 }
 
+.m-bottom-20 {
+  margin-bottom: 20px;
+}
+
 .m-top-55 {
   margin-top: 55px;
 }
@@ -83,5 +87,9 @@ p, span {
 
 .width-auto {
   width: auto;
+}
+
+.ck-editor__editable_inline {
+  min-height: 400px !important;
 }
 
