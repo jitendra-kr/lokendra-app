@@ -70,6 +70,7 @@ class QuestionList extends React.Component {
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
             <div className="row">
+
               <Tabs
               defaultActiveKey="all"
               onTabClick = { this.onTabClick.bind(this)}
