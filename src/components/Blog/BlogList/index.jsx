@@ -2,7 +2,6 @@ import React from "react";
 import { httpGet } from "../../../utils/http";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import Config from '../../../config/env';
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -11,14 +10,13 @@ class BlogList extends React.Component {
     super(props);
 
     this.state = {
-      data: [],
-      config: Config.getData().default
+      data: []
     };
 
   }
 
   componentDidMount() {
-    httpGet({url: `${this.state.config.baseUrl}blog-management/blogs`}).then((response) => {
+    httpGet({url: `blog-management/blogs`}).then((response) => {
       this.setState({
         data: response.result
       });

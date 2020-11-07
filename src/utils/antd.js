@@ -30,6 +30,19 @@ export const messageError = (data = {}) => {
     message.error(data);
 }
 
+export const messageInfo = (data = {}) => {
+
+    if(data.content) {
+        data = {
+            content: data.content,
+            duration: data.duration,
+            key: data.key
+        };
+        message.info(data);
+    }
+}
+
+
 export const messageDestroy = () => {
     message.destroy();
 }

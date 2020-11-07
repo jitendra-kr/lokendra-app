@@ -3,11 +3,12 @@ import { Layout, Button, Tabs } from "antd";
 import { upperFirst } from "lodash";
 import { Link, withRouter } from "react-router-dom";
 import "./index.css";
-import get from "axios";
-import Config from '../../../config/env'
+import { httpGet } from "../../../utils/http";
+import {
+  messageInfo
+} from "../../../utils/antd"
 const { Content } = Layout;
 const { TabPane } = Tabs;
-// const { Search } = Input;
 
 class QuestionList extends React.Component {
   constructor(props) {
@@ -15,17 +16,16 @@ class QuestionList extends React.Component {
 
     this.state = {
       data: [],
-      size: "small",
-      config: Config.getData().default
+      size: "small"
     };
   }
 
   componentDidMount(type) {
 
-    get(`${this.state.config.baseUrl}question/question-list?by=${type}`)
+    httpGet({url: `question/question-list?by=${type}`})
       .then(response => {
         this.setState({
-          data: response.data.result
+          data: response.result
         });
       })
       .catch(err => {
@@ -56,11 +56,21 @@ class QuestionList extends React.Component {
   };
 
   detailPageUrl(item) {
-    return `/question/${item.slug}`;
+    return `/questions/${item._id}/${item.slug}`;
   }
 
   onTabClick(key) {
-    this.componentDidMount(key)
+    if (localStorage.getItem('auth')) {
+      if (key === 'askQues') {
+        return this.props.history.push('/questions/ask');
+      }
+      this.componentDidMount(key)
+    } else {
+      messageInfo({ content: `You need to login to ${key === 'askQues' ? 'ask question' : 'see your questions'}`, duration: 3 })
+      setTimeout(() => {
+        this.props.history.push('/login');
+      }, 2000);
+    }
   }
 
   render() {
@@ -72,16 +82,15 @@ class QuestionList extends React.Component {
             <div className="row">
 
               <Tabs
-              defaultActiveKey="all"
-              onTabClick = { this.onTabClick.bind(this)}
-              tabBarExtraContent={
-              <Button type="primary" style={{ right: "32px" }}>
-                <Link to={`/ask-question`}>New Questions</Link>
+                defaultActiveKey="all"
+                onTabClick={this.onTabClick.bind(this)}
+                tabBarExtraContent={
+                  <Button type="primary" style={{ right: "32px" }} onClick={this.onTabClick.bind(this, 'askQues')}>
+                    New Questions
               </Button>}
-              style = {{ width: "100%"}}>
+                style={{ width: "100%" }}>
 
-                <TabPane tab="All" key="all" style = {{ left: "19px"}} >
-                {/* <Search size="large" style={{ width: "97%", margin: '0px 0px 0px 14px' }} placeholder="input search text" onSearch={this.onSearch} enterButton /> */}
+                <TabPane tab="All" key="all" style={{ left: "19px" }} >
                   {this.state.data.map((item, i) => {
                     return (
                       <div
@@ -117,7 +126,7 @@ class QuestionList extends React.Component {
                   })}
                 </TabPane>
                 <TabPane tab="My Questions" key="me">
-                {this.state.data.map((item, i) => {
+                  {this.state.data.map((item, i) => {
                     return (
                       <div
                         className="col-lg-12 cursor-pointer"

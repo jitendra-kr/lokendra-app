@@ -61,7 +61,7 @@ function MainHeader(props) {
             </Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to={`/questions`} style={{ color: "#ffffff" }}>
+          <Link to={`/questions/list`} style={{ color: "#ffffff" }}>
             Questions
             </Link>
         </Menu.Item>

@@ -17,7 +17,7 @@ body {
 
 .ant-layout-content {
   /* background: rgba(16, 142, 233, 1); */
-  color: #fff;
+  /* color: #fff; */
   min-height: 100vh !important;
   line-height: 30px !important;
 }

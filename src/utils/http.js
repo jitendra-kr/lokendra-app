@@ -1,9 +1,16 @@
+import axios from 'axios';
+import Config from '../config/env';
 
-import { get, post, put} from "axios";
+const instance = axios.create({
+        baseURL: Config.getData().default.baseUrl,
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('auth')}`
+        }
+});
 
 export const httpGet = (request = {}) => {
     return new Promise((resolve, reject) => {
-        get(request.url)
+        instance.get(request.url)
             .then((response = {}) => {
                 resolve(response.data);
             })
@@ -15,7 +22,7 @@ export const httpGet = (request = {}) => {
 
 export const httpPost = (request = {}) => {
     return new Promise((resolve, reject) => {
-        post(request.url, request.body)
+        instance.post(request.url, request.body)
             .then((response = {}) => {
                 resolve(response.data);
             })
@@ -27,7 +34,7 @@ export const httpPost = (request = {}) => {
 
 export const httpPut = (request = {}) => {
     return new Promise((resolve, reject) => {
-        put(request.url, request.body)
+        instance.put(request.url, request.body)
             .then((response = {}) => {
                 resolve(response.data);
             })

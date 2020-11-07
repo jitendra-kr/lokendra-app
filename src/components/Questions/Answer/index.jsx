@@ -1,31 +1,42 @@
 import React from "react";
-import get from "axios";
 import { upperFirst } from "lodash";
 import { withRouter } from "react-router-dom";
-import { Layout } from "antd";
+import "./index.css";
+import { httpGet, httpPost } from "../../../utils/http";
+import Editor from "../../Editor";
+import { Layout, Button, Empty } from "antd";
+import { EditOutlined  } from '@ant-design/icons';
+import { messageError, messageSuccess } from "../../../utils/antd";
 
 const { Content } = Layout;
+const scrollToRefObject = (ref) => window.scrollTo(
+  {
+  top: ref ? ref.current.offsetTop:  0,
+  behavior: 'smooth'}
+  )
 class Answer extends React.Component {
-  slug;
+  answerId;
+  myRef;
+
   constructor(props) {
     super(props);
-    this.slug = this.props.match.params.slug;
+    this.myRef = React.createRef();
     this.state = {
+      _id: this.props.match.params._id,
+      answer: "",
       data: {
-        answer: [1]
-      }
+        answer: [],
+      },
     };
   }
   componentDidMount() {
-    get(`https://jimmypoint-server.herokuapp.com/api/question/answer/${this.slug}`)
-      .then(response => {
-        console.log(response.data.result);
+    httpGet({ url: `question/answer/${this.state._id}` })
+      .then((response) => {
         this.setState({
-          data: response.data.result
+          data: response.result,
         });
-        console.log(this.state.data.answer)
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("Error Reading data " + err);
       });
   }
@@ -33,48 +44,166 @@ class Answer extends React.Component {
   date(date) {
     if (date) {
       const newDate = new Date(date);
-      const month = newDate.toLocaleString('default', { month: 'long' });
-      return `${month} ${newDate.getDate()}, ${newDate.getFullYear()}`
+      const month = newDate.toLocaleString("default", { month: "long" });
+      return `${month} ${newDate.getDate()}, ${newDate.getFullYear()}`;
     }
+  }
+
+  getEditorData(data, _id) {
+    const answer = [];
+    if (!this.answerId) {
+      this.answerId = _id;
+    }
+
+    this.state.data.answer.forEach((ansObj) => {
+      if (ansObj._id === this.answerId) {
+        ansObj.answer = data;
+      }
+      answer.push(ansObj);
+    });
+    this.setState({
+      data: {
+        ...this.state.data,
+        answer: answer,
+      },
+    });
+
+    this.setState({
+      answer: data,
+    });
+  }
+
+  saveAnswer() {
+    if (!this.state.answer) {
+      return messageError({ content: "Your answer is missing" });
+    }
+    httpPost({
+      url: `question/save-answers/${this.state._id}`,
+      body: { answer: this.state.answer },
+    })
+      .then((response) => {
+        this.setState({
+          answer: ''
+        })
+        this.componentDidMount();
+        scrollToRefObject()
+        messageSuccess({ content: "Your answer is saved successfully" });
+      })
+      .catch((err) => {
+        console.log(err)
+        messageError({ content: "something went wrong" });
+      });
+  }
+
+  editAnswer(item) {
+    this.getEditorData(item.answer, item._id);
+    scrollToRefObject(this.myRef)
   }
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content style={{ padding: "50px 50px" }} >
         <div className="row">
-          <div className="col-lg-3"></div>
-          <div className="col-lg-6">
+          <div className="col-lg-2"></div>
+          <div className="col-lg-8">
             <div className="row">
-              {this.state.data.answer.length ? this.state.data.answer.map((item, i) => {
-                return (
-                  <div
-                    className="col-lg-12"
-                    key={i}
-                    style={{ marginTop: "25px", display: item.ans_by ? 'block' : 'none' }}
-                  >
-                    <div className="listing border ">
-                      <div
-                        className="home-page-title"
-                        style={{ marginLeft: "30px" }}
-                      >
-                      </div>
-                      <div style={{ marginLeft: "35px" }}>
-                        <p dangerouslySetInnerHTML={{ __html: item.ans }}></p>
-                        <p style = {{fontFamily: "monospace", fontStyle: "italic"}}>
-                          <span className ="question-by" style={{ display: item.ans_by ? 'block' : 'none' }} >Answered By </span> {upperFirst(item.ans_by)}
-                          <span className ="question-by" style={{ display: item.ans_by ? 'block' : 'none' }}> On </span> {this.date(item.added)}
-                        </p>
+              <div style={{ width: "100%" }}>
+                <h2>{this.state.data.title}</h2>
+
+              </div>
+              <div style={{ marginRight: "20px" }}>
+                <span>
+                  <span className="ask-view">Asked:</span>
+                  <span>
+                    {this.date(this.state.data.created_at)}
+                  </span>
+                </span>
+              </div>
+              <div>
+                <span>
+                  <span className="ask-view"> Viewed: </span>
+                  <span>{this.state.data.visits} times </span>{" "}
+                </span>
+              </div>
+
+              {this.state.data.answer.length ? (
+                this.state.data.answer.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        marginTop: "25px",
+                        width: "100%"
+                      }}
+                    >
+                      <div className="listing border ">
+                        <EditOutlined
+                          style={{
+                            color: "red",
+                            float: "right",
+                            padding: "10px",
+                          }}
+                          onClick={() => {
+                            this.editAnswer(item);
+                          }}
+                        />
+
+                        <div style={{ margin: "13px 0 0px 35px" }}>
+                          <p
+                            dangerouslySetInnerHTML={{ __html: item.answer }}
+                          ></p>
+                          <p
+                            style={{
+                              fontFamily: "monospace",
+                              fontStyle: "italic",
+                            }}
+                          >
+                            <span className="question-by">Answered By</span>{" "}
+                            {upperFirst(item.ans_by?.firstName)}
+                            <span
+                              className="question-by"
+                              style={{ marginLeft: "20px" }}
+                            >
+                              On
+                            </span>{" "}
+                            {this.date(item.added)}{" "}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              }) :
-                <div className = "center-loader" style = {{marginTop: '20%'}}>
-                  <p style ={{fontSize: '30px'}} >Not Answered Yet</p>
-                </div>}
+                  );
+                })
+              ) : (
+                <Empty
+                  image="../../images/data-not-found.png"
+                  imageStyle={{
+                    height: 70,
+                  }}
+                  style={{ width: "100%", marginTop: "30px" }}
+                  description={<span>Not Answered Yet</span>}
+                ></Empty>
+              )}
+              <div ref={this.myRef} style={{ marginTop: "70px", width: "100%" }}>
+                <h5>Your Answer</h5>
+                <Editor
+                  data={this.state.answer}
+                  sendData={this.getEditorData.bind(this)}
+                />{" "}
+              </div>
+              <div style={{ marginTop: "30px" }}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  onClick={this.saveAnswer.bind(this)}
+                  className="login-form-button"
+                  disabled={this.isButtonDisabled}
+                >
+                  Submit
+                </Button>
+              </div>
             </div>
           </div>
-          <div className="col-lg-3"></div>
+          <div className="col-lg-2"></div>
         </div>
       </Content>
     );
