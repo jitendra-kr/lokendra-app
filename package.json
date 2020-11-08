@@ -28,7 +28,7 @@
   "scripts": {
     "heroku-prebuild": "npm cache clean --force && rm -rf node_modules package-lock.json",
     "heroku-postbuild": "npm run build",
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
