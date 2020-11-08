@@ -85,7 +85,7 @@ function Login(props) {
                 { required: true, message: 'Please input your email!' }
               ]}
             >
-              <Input prefix={<MailOutlined  className="site-form-item-icon" />}
+              <Input allowClear prefix={<MailOutlined  className="site-form-item-icon" />}
                         placeholder="Email" />
             </Form.Item>
 
@@ -94,6 +94,7 @@ function Login(props) {
               rules={[{ required: true, message: 'Please input your password!' }]}
             >
               <Input.Password
+              allowClear
               prefix={<LockOutlined className="site-form-item-icon" />}
               placeholder="Password"
               />

@@ -44,7 +44,6 @@ function App(props) {
 
   axios.interceptors.request.use(config => {
 
-    console.log(isLoading)
     config.baseURL = Config.getData().default.baseUrl;
     if (config.method === 'get') {
       isLoading++;

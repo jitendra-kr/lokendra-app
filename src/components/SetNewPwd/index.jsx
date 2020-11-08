@@ -114,7 +114,7 @@ class ResetPassword extends React.Component {
                         { required: true, message: "The input is not valid E-mail!" }
                       ]}
                     >
-                      <Input prefix={<MailOutlined  className="site-form-item-icon" />}
+                      <Input allowClear prefix={<MailOutlined  className="site-form-item-icon" />}
                         placeholder="Email"/>
 
                     </Form.Item>
@@ -148,29 +148,34 @@ class ResetPassword extends React.Component {
 
                   <Form
                     name="basic"
-
+                    layout="vertical"
                     onFinish={this.changePwd}
                     style={{ width: "70%", margin: "0 auto" }}>
                     <Form.Item
                       name="otp"
+                      label = "OTP"
                       rules={[{ required: true, message: "Please input your OTP!" }]}
-                    >
+                      >
                       <Input
+                        allowClear
                         prefix={<MessageOutlined className="site-form-item-icon" />}
                         placeholder="OTP" />
 
                     </Form.Item>
                     <Form.Item
                       name="newPassword"
+                      label = "New Password"
                       rules={[{ required: true, message: "Please input your new password!" }]} hasFeedback>
 
                       <Input.Password
+                      allowClear
                         prefix={<LockOutlined className="site-form-item-icon" />}
                         placeholder="New Password" />
 
                     </Form.Item>
                     <Form.Item
                       name="confirmPassword"
+                      label = "Confirm Password"
                       rules={[
                         { required: true, message: "Please input your new password!" },
                         ({ getFieldValue }) => ({
@@ -186,6 +191,7 @@ class ResetPassword extends React.Component {
                       hasFeedback
                     >
                       <Input.Password
+                      allowClear
                         prefix={<LockOutlined className="site-form-item-icon" />}
                         placeholder="Confirm Password" />
 
