@@ -20,6 +20,7 @@ import {
   NewQuestion
 } from "../../components";
 import { messageDestroy } from "../../utils/antd"
+import Config from '../../config/env';
 import { UserContext } from '../../contexts/UserContext'
 import { LoadingOutlined } from '@ant-design/icons';
 import { Layout, Spin } from "antd";
@@ -43,8 +44,8 @@ function App(props) {
 
   axios.interceptors.request.use(config => {
 
-    // config.headers.Authorization = `Bearer ${localStorage.getItem('auth')}`;
-
+    console.log(isLoading)
+    config.baseURL = Config.getData().default.baseUrl;
     if (config.method === 'get') {
       isLoading++;
       setLoader(true);
@@ -74,7 +75,7 @@ function App(props) {
   return (
 
     <Layout>
-      <Spin indicator={antIcon} className="center-loader" spinning={loader} />
+      <Spin indicator={antIcon} className="center-loader" spinning={ loader } />
       <UserContext.Provider value={[user, setUser]}>
 
         <MainHeader />

@@ -4,22 +4,27 @@ import { withRouter } from "react-router-dom";
 import "./index.css";
 import { httpGet, httpPost } from "../../../utils/http";
 import Editor from "../../Editor";
-import { Layout, Button, Empty } from "antd";
-import { EditOutlined  } from '@ant-design/icons';
+import { Layout, Button } from "antd";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { messageError, messageSuccess } from "../../../utils/antd";
+import { getUser } from "../../../utils/index";
+import DataNoFound from "../../DataNoFound";
 
 const { Content } = Layout;
-const scrollToRefObject = (ref) => window.scrollTo(
-  {
-  top: ref ? ref.current.offsetTop:  0,
-  behavior: 'smooth'}
-  )
+const scrollToRefObject = (ref) =>
+  window.scrollTo({
+    top: ref ? ref.current.offsetTop : 0,
+    behavior: "smooth",
+  });
 class Answer extends React.Component {
+  user;
   answerId;
   myRef;
 
   constructor(props) {
     super(props);
+    this.user = getUser()
+
     this.myRef = React.createRef();
     this.state = {
       _id: this.props.match.params._id,
@@ -51,7 +56,7 @@ class Answer extends React.Component {
 
   getEditorData(data, _id) {
     const answer = [];
-    if (!this.answerId) {
+    if (!this.answerId || _id) {
       this.answerId = _id;
     }
 
@@ -78,45 +83,47 @@ class Answer extends React.Component {
       return messageError({ content: "Your answer is missing" });
     }
     httpPost({
-      url: `question/save-answers/${this.state._id}`,
-      body: { answer: this.state.answer },
+      url: `question/save-answers/${this.state._id}?answerId=${this.answerId ? this.answerId : ''}`,
+      body: { answer: this.state.answer},
     })
       .then((response) => {
         this.setState({
-          answer: ''
-        })
+          answer: "",
+        });
         this.componentDidMount();
-        scrollToRefObject()
+        scrollToRefObject();
         messageSuccess({ content: "Your answer is saved successfully" });
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
         messageError({ content: "something went wrong" });
       });
   }
 
   editAnswer(item) {
+    console.log(item._id)
     this.getEditorData(item.answer, item._id);
-    scrollToRefObject(this.myRef)
+    scrollToRefObject(this.myRef);
+  }
+
+  deleteAnswer() {
+    alert("This feature is under development")
   }
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }} >
+      <Content style={{ padding: "50px 50px" }}>
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
             <div className="row">
               <div style={{ width: "100%" }}>
                 <h2>{this.state.data.title}</h2>
-
               </div>
               <div style={{ marginRight: "20px" }}>
                 <span>
                   <span className="ask-view">Asked:</span>
-                  <span>
-                    {this.date(this.state.data.created_at)}
-                  </span>
+                  <span>{this.date(this.state.data.created_at)}</span>
                 </span>
               </div>
               <div>
@@ -133,20 +140,37 @@ class Answer extends React.Component {
                       key={i}
                       style={{
                         marginTop: "25px",
-                        width: "100%"
+                        width: "100%",
                       }}
                     >
                       <div className="listing border ">
-                        <EditOutlined
-                          style={{
-                            color: "red",
-                            float: "right",
-                            padding: "10px",
-                          }}
-                          onClick={() => {
-                            this.editAnswer(item);
-                          }}
-                        />
+                        {this.user._id === item.ans_by._id ? (
+                          <>
+                            <DeleteOutlined
+                              style={{
+                                color: "red",
+                                float: "right",
+                                padding: "10px",
+                              }}
+                              onClick={() => {
+                                this.deleteAnswer(item);
+                              }}
+                            />
+                            <EditOutlined
+                              style={{
+                                color: "red",
+                                float: "right",
+                                padding: "10px",
+                              }}
+                              onClick={() => {
+
+                                this.editAnswer(item);
+                              }}
+                            />
+                          </>
+                        ) : (
+                          ""
+                        )}
 
                         <div style={{ margin: "13px 0 0px 35px" }}>
                           <p
@@ -159,7 +183,8 @@ class Answer extends React.Component {
                             }}
                           >
                             <span className="question-by">Answered By</span>{" "}
-                            {upperFirst(item.ans_by?.firstName)}
+                            {upperFirst(item.ans_by?.firstName) +
+                              item.ans_by._id}
                             <span
                               className="question-by"
                               style={{ marginLeft: "20px" }}
@@ -174,16 +199,15 @@ class Answer extends React.Component {
                   );
                 })
               ) : (
-                <Empty
-                  image="../../images/data-not-found.png"
-                  imageStyle={{
-                    height: 70,
-                  }}
-                  style={{ width: "100%", marginTop: "30px" }}
-                  description={<span>Not Answered Yet</span>}
-                ></Empty>
+                <div style={{ width: "100%", marginTop: "40px" }}>
+                <DataNoFound data={{text: "Not Answered Yet"}}  />
+                </div>
+
               )}
-              <div ref={this.myRef} style={{ marginTop: "70px", width: "100%" }}>
+              <div
+                ref={this.myRef}
+                style={{ marginTop: "70px", width: "100%" }}
+              >
                 <h5>Your Answer</h5>
                 <Editor
                   data={this.state.answer}

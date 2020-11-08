@@ -7,8 +7,11 @@ import { httpGet } from "../../../utils/http";
 import {
   messageInfo
 } from "../../../utils/antd"
+import DataNoFound from "../../DataNoFound";
 const { Content } = Layout;
 const { TabPane } = Tabs;
+
+
 
 class QuestionList extends React.Component {
   constructor(props) {
@@ -16,24 +19,67 @@ class QuestionList extends React.Component {
 
     this.state = {
       data: [],
-      size: "small"
+      dataLoaded: false
     };
   }
 
   componentDidMount(type) {
-
+    this.setState({
+      dataLoaded: false
+    });
     httpGet({url: `question/question-list?by=${type}`})
-      .then(response => {
-        this.setState({
-          data: response.result
-        });
-      })
-      .catch(err => {
-        console.log("Error Reading data " + err);
+    .then(response => {
+      this.setState({
+        data: response.result,
+        dataLoaded: true
       });
+    })
+    .catch(err => {
+      console.log("Error Reading data " + err);
+    });
 
   }
 
+  tabPane (tab, key) {
+    return <TabPane tab={tab} key={key} style={{ left: "19px" }} >
+    {this.state.data.length ?  this.state.data.map((item, i) => {
+      return (
+        <div
+          className="col-lg-12 cursor-pointer"
+          key={i}
+          onClick={() => {
+            this.handleClick(item);
+          }}
+          style={{ marginTop: "30px" }}
+        >
+          <div className="listing border">
+            <div
+              className="home-page-title"
+              style={{ marginLeft: "25px" }}
+            >
+              <Link to={{ pathname: this.detailPageUrl(item) }}>
+                {this.calculateTitle(item.title)}
+              </Link>
+            </div>
+            <div style={{ marginLeft: "35px" }}>
+              <p>
+                <span className="question-by">By - </span>
+                {upperFirst(item.where_asked)}
+                <span className="question-by"> To -  </span>
+                {upperFirst(item.author)}
+                <span className="question-by"> On -  </span>
+            8 January 2019
+            </p>
+            </div>
+          </div>
+        </div>
+      );
+    }):
+    this.state.dataLoaded ? <div style={{ width: "100%", marginTop: "70px" }}>
+      <DataNoFound data={{text: tab === 'All' ? "No data found" : "You have not posted any question"}}  />
+    </div> : ''}
+  </TabPane>
+  }
   calculateTitle = title => {
     const limit = 63;
     if (title.length > limit) {
@@ -80,7 +126,6 @@ class QuestionList extends React.Component {
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
             <div className="row">
-
               <Tabs
                 defaultActiveKey="all"
                 onTabClick={this.onTabClick.bind(this)}
@@ -89,77 +134,8 @@ class QuestionList extends React.Component {
                     New Questions
               </Button>}
                 style={{ width: "100%" }}>
-
-                <TabPane tab="All" key="all" style={{ left: "19px" }} >
-                  {this.state.data.map((item, i) => {
-                    return (
-                      <div
-                        className="col-lg-12 cursor-pointer"
-                        key={i}
-                        onClick={() => {
-                          this.handleClick(item);
-                        }}
-                        style={{ marginTop: "30px" }}
-                      >
-                        <div className="listing border">
-                          <div
-                            className="home-page-title"
-                            style={{ marginLeft: "25px" }}
-                          >
-                            <Link to={{ pathname: this.detailPageUrl(item) }}>
-                              {this.calculateTitle(item.title)}
-                            </Link>
-                          </div>
-                          <div style={{ marginLeft: "35px" }}>
-                            <p>
-                              <span className="question-by">By - </span>
-                              {upperFirst(item.where_asked)}
-                              <span className="question-by"> To -  </span>
-                              {upperFirst(item.author)}
-                              <span className="question-by"> On -  </span>
-                          8 January 2019
-                          </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </TabPane>
-                <TabPane tab="My Questions" key="me">
-                  {this.state.data.map((item, i) => {
-                    return (
-                      <div
-                        className="col-lg-12 cursor-pointer"
-                        key={i}
-                        onClick={() => {
-                          this.handleClick(item);
-                        }}
-                        style={{ marginTop: "30px" }}
-                      >
-                        <div className="listing border">
-                          <div
-                            className="home-page-title"
-                            style={{ marginLeft: "25px" }}
-                          >
-                            <Link to={{ pathname: this.detailPageUrl(item) }}>
-                              {this.calculateTitle(item.title)}
-                            </Link>
-                          </div>
-                          <div style={{ marginLeft: "35px" }}>
-                            <p>
-                              <span className="question-by">By - </span>
-                              {upperFirst(item.where_asked)}
-                              <span className="question-by"> To -  </span>
-                              {upperFirst(item.author)}
-                              <span className="question-by"> On -  </span>
-                          8 January 2019
-                          </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </TabPane>
+                {this.tabPane('All', 'all')}
+                {this.tabPane('My Questions', 'me')}
               </Tabs>
 
             </div>
