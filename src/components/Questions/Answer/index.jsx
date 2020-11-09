@@ -2,20 +2,24 @@ import React from "react";
 import { upperFirst } from "lodash";
 import { withRouter } from "react-router-dom";
 import "./index.css";
-import { httpGet, httpPost } from "../../../utils/http";
+import { httpGet, httpPost, httpDelete } from "../../../utils/http";
 import Editor from "../../Editor";
-import { Layout, Button } from "antd";
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Layout, Button, Modal } from "antd";
+import { EditOutlined, DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import { messageError, messageSuccess } from "../../../utils/antd";
+
 import { getUser } from "../../../utils/index";
 import DataNoFound from "../../DataNoFound";
 
+const { confirm } = Modal;
 const { Content } = Layout;
+
 const scrollToRefObject = (ref) =>
   window.scrollTo({
     top: ref ? ref.current.offsetTop : 0,
     behavior: "smooth",
   });
+
 class Answer extends React.Component {
   user;
   answerId;
@@ -101,13 +105,30 @@ class Answer extends React.Component {
   }
 
   editAnswer(item) {
-    console.log(item._id)
     this.getEditorData(item.answer, item._id);
     scrollToRefObject(this.myRef);
   }
 
-  deleteAnswer() {
-    alert("This feature is under development")
+  deleteAnswer(answerId, questionId) {
+    const that = this;
+    confirm({
+      title: 'Are you sure delete this answer?',
+      icon: <ExclamationCircleOutlined />,
+      okText: 'Yes',
+      okType: 'danger',
+      cancelText: 'No',
+      onOk() {
+        httpDelete({url: `question/delete/${questionId}/${answerId}`})
+        .then((response) => {
+          that.componentDidMount();
+          messageSuccess({ content: "Deleted successfully" });
+        })
+        .catch((err) => {
+          console.log(err);
+          messageError({ content: "something went wrong" });
+        });
+      }
+    });
   }
 
   render() {
@@ -153,7 +174,7 @@ class Answer extends React.Component {
                                 padding: "10px",
                               }}
                               onClick={() => {
-                                this.deleteAnswer(item);
+                                this.deleteAnswer(item._id, this.state.data._id);
                               }}
                             />
                             <EditOutlined
@@ -183,8 +204,7 @@ class Answer extends React.Component {
                             }}
                           >
                             <span className="question-by">Answered By</span>{" "}
-                            {upperFirst(item.ans_by?.firstName) +
-                              item.ans_by._id}
+                            {upperFirst(item.ans_by?.firstName) }
                             <span
                               className="question-by"
                               style={{ marginLeft: "20px" }}

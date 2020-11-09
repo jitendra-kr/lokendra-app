@@ -26,4 +26,7 @@ export { default as QuestionList } from './Questions/QuestionList';
 export { default as Answer } from './Questions/Answer';
 export { default as NewQuestion } from './Questions/NewQuestion';
 
+export { default as Donate } from './Donate';
+
+
 export { default as Advertisement } from './Advertisement';

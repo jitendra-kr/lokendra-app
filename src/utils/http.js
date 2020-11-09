@@ -43,3 +43,15 @@ export const httpPut = (request = {}) => {
             });
     })
 }
+
+export const httpDelete = (request = {}) => {
+    return new Promise((resolve, reject) => {
+        axios.delete(request.url, headersConfig())
+            .then((response = {}) => {
+                resolve(response.data);
+            })
+            .catch(err => {
+                reject(err.response)
+            });
+    })
+}

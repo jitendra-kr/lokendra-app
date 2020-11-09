@@ -21,8 +21,8 @@ const MainFooter = ({ appName }) => {
           </Link>
             </div>
           <div className="col-lg-4 display-inline-block">
-          <Link to={`/`} style={{ color: "#ffffff" }}>
-          Account
+          <Link to={`/donate`} style={{ color: "#ffffff" }}>
+          Donate
           </Link>
             </div>
         </div>

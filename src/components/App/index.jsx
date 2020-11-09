@@ -17,7 +17,8 @@ import {
   ReadBlog,
   QuestionList,
   Answer,
-  NewQuestion
+  NewQuestion,
+  Donate
 } from "../../components";
 import { messageDestroy } from "../../utils/antd"
 import Config from '../../config/env';
@@ -57,7 +58,7 @@ function App(props) {
   axios.interceptors.response.use(config => {
 
     isLoading--;
-    if (isLoading === 0) {
+    if (isLoading <= 0 ) {
       setLoader(false);
     }
     messageDestroy();
@@ -93,6 +94,8 @@ function App(props) {
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/product-reviews/:id" component={ProductReview} />
             <Route path="/checkout/:size/:flavour" component={BuyNow} />
+            <Route path="/donate" component={Donate} />
+
             <Route component={Register} />
         </Switch>
         </Content>
