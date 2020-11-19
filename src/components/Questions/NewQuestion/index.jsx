@@ -105,9 +105,6 @@ class NewQuestion extends React.Component {
             <Form.Item
               name="body"
               label="Body"
-              rules={[
-                { required: true, message: 'Please input body!' }
-              ]}
             >
                 <CKEditor
                     editor={ ClassicEditor }

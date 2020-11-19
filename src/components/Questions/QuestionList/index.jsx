@@ -1,15 +1,15 @@
 import React from "react";
-import { Layout, Button, Tabs } from "antd";
+import { Layout, Button, Tabs, Modal } from "antd";
 import { upperFirst } from "lodash";
 import { Link, withRouter } from "react-router-dom";
+import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import "./index.css";
-import { httpGet } from "../../../utils/http";
-import {
-  messageInfo
-} from "../../../utils/antd"
+import { httpGet, httpDelete } from "../../../utils/http";
+import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 const { Content } = Layout;
 const { TabPane } = Tabs;
+const { confirm } = Modal;
 
 
 
@@ -40,18 +40,38 @@ class QuestionList extends React.Component {
 
   }
 
+  deleteAnswer(questionId) {
+    console.log(questionId);
+    const that = this;
+    confirm({
+      title: 'Are you sure delete this answer?',
+      icon: <ExclamationCircleOutlined />,
+      okText: 'Yes',
+      okType: 'danger',
+      cancelText: 'No',
+      onOk() {
+        httpDelete({url: `question/delete/${questionId}`})
+        .then((response) => {
+          that.componentDidMount();
+          messageSuccess({ content: "Deleted successfully" });
+        })
+        .catch((err) => {
+          console.log(err);
+          messageError({ content: "something went wrong" });
+        });
+      }
+    });
+    console.log("hello");
+  }
+
   tabPane (tab, key) {
     return <TabPane tab={tab} key={key} style={{ left: "19px" }} >
     {this.state.data.length ?  this.state.data.map((item, i) => {
       return (
         <div
-          className="col-lg-12 cursor-pointer"
+          className="col-lg-12"
           key={i}
-          onClick={() => {
-            this.handleClick(item);
-          }}
-          style={{ marginTop: "30px" }}
-        >
+          style={{ marginTop: "30px" }} >
           <div className="listing border">
             <div
               className="home-page-title"
@@ -60,6 +80,16 @@ class QuestionList extends React.Component {
               <Link to={{ pathname: this.detailPageUrl(item) }}>
                 {this.calculateTitle(item.title)}
               </Link>
+              <DeleteOutlined
+                              style={{
+                                color: "red",
+                                float: "right",
+                                padding: "10px",
+                              }}
+                              onClick={() => {
+                                this.deleteAnswer(item._id);
+                              }}
+                            />
             </div>
             <div style={{ marginLeft: "35px" }}>
               <p>
