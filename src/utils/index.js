@@ -1,1 +1,2 @@
-export { default as getUser } from './user';
+export { getUser } from './user';
+export { isLoggedIn } from './user';
