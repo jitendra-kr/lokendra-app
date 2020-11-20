@@ -83,7 +83,7 @@ class QuestionList extends React.Component {
                     <Link to={{ pathname: this.detailPageUrl(item) }}>
                       {this.calculateTitle(item.title)}
                     </Link>
-                    {this.isLoggedIn && this.user._id === item.author_id._id ? <>
+                    {this.isLoggedIn && this.user._id === item.author._id ? <>
                     <DeleteOutlined
                       style={{
                         color: "red",
@@ -101,7 +101,7 @@ class QuestionList extends React.Component {
                       <span className="question-by">By - </span>
                       {upperFirst(item.where_asked)}
                       <span className="question-by"> To - </span>
-                      {upperFirst(item?.author_id?.firstName)}
+                      {upperFirst(item?.author?.firstName)}
                       <span className="question-by"> On - </span>8 January 2019
                     </p>
                   </div>
