@@ -33,8 +33,6 @@ class NewQuestion extends React.Component {
           this.setState({
             data: response.result
           });
-
-          console.log(this.state.data.title)
         })
         .catch((err) => {
           console.log("Error Reading data " + err);
@@ -62,7 +60,9 @@ class NewQuestion extends React.Component {
         if (response && response.statusCode === 200) {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
-          this.props.history.push(`/questions/${this.state._id}/${this.state.data.slug}`);
+          if(this.state._id) {
+            this.props.history.push(`/questions/${this.state._id}/${this.state.data.slug}`);
+          }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
         }

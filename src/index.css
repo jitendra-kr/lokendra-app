@@ -93,3 +93,7 @@ p, span {
   min-height: 400px !important;
 }
 
+.anticon-edit svg {
+  color: #096dd9 !important;
+}
+
