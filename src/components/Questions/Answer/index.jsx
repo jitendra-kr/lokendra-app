@@ -1,11 +1,15 @@
 import React from "react";
 import { upperFirst } from "lodash";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./index.css";
 import { httpGet, httpPost, httpDelete } from "../../../utils/http";
 import Editor from "../../Editor";
 import { Layout, Button, Modal } from "antd";
-import { EditOutlined, DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
+import {
+  EditOutlined,
+  DeleteOutlined,
+  ExclamationCircleOutlined,
+} from "@ant-design/icons";
 import { messageError, messageSuccess } from "../../../utils/antd";
 
 import { getUser } from "../../../utils/index";
@@ -27,7 +31,7 @@ class Answer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.user = getUser()
+    this.user = getUser();
 
     this.myRef = React.createRef();
     this.state = {
@@ -64,7 +68,7 @@ class Answer extends React.Component {
       this.answerId = _id;
     }
 
-    this.state.data.answer.forEach((ansObj) => {
+    this.state.data.answer && this.state.data.answer.forEach((ansObj) => {
       if (ansObj._id === this.answerId) {
         ansObj.answer = data;
       }
@@ -87,8 +91,10 @@ class Answer extends React.Component {
       return messageError({ content: "Your answer is missing" });
     }
     httpPost({
-      url: `question/save-answers/${this.state._id}?answerId=${this.answerId ? this.answerId : ''}`,
-      body: { answer: this.state.answer},
+      url: `question/save-answers/${this.state._id}?answerId=${
+        this.answerId ? this.answerId : ""
+      }`,
+      body: { answer: this.state.answer },
     })
       .then((response) => {
         this.setState({
@@ -109,25 +115,47 @@ class Answer extends React.Component {
     scrollToRefObject(this.myRef);
   }
 
+  deleteQuestion(questionId) {
+    const that = this;
+    confirm({
+      title: "Are you sure delete this answer?",
+      icon: <ExclamationCircleOutlined />,
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk() {
+        httpDelete({ url: `question/delete/${questionId}` })
+          .then((response) => {
+            that.props.history.push('/questions/list');
+            messageSuccess({ content: "Deleted successfully" });
+          })
+          .catch((err) => {
+            console.log(err);
+            messageError({ content: "something went wrong" });
+          });
+      },
+    });
+  }
+
   deleteAnswer(answerId, questionId) {
     const that = this;
     confirm({
-      title: 'Are you sure delete this answer?',
+      title: "Are you sure delete this answer?",
       icon: <ExclamationCircleOutlined />,
-      okText: 'Yes',
-      okType: 'danger',
-      cancelText: 'No',
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
       onOk() {
-        httpDelete({url: `question/delete/${questionId}/${answerId}`})
-        .then((response) => {
-          that.componentDidMount();
-          messageSuccess({ content: "Deleted successfully" });
-        })
-        .catch((err) => {
-          console.log(err);
-          messageError({ content: "something went wrong" });
-        });
-      }
+        httpDelete({ url: `question/delete/${questionId}/${answerId}` })
+          .then((response) => {
+            that.componentDidMount();
+            messageSuccess({ content: "Deleted successfully" });
+          })
+          .catch((err) => {
+            console.log(err);
+            messageError({ content: "something went wrong" });
+          });
+      },
     });
   }
 
@@ -140,6 +168,31 @@ class Answer extends React.Component {
             <div className="row">
               <div style={{ width: "100%" }}>
                 <h2>{this.state.data.title}</h2>
+                <p
+                            dangerouslySetInnerHTML={{ __html: this.state.data.body }}
+                      ></p>
+                <div>
+                  <DeleteOutlined
+                    style={{
+                      color: "red",
+                      float: "right",
+                      padding: "10px",
+                    }}
+                    onClick={() => {
+                      this.deleteQuestion(this.state.data._id);
+                    }}
+                  />
+                  <Link to={`/post/edit/${this.state.data._id}`}>
+
+                  <EditOutlined
+
+                    style={{
+                      float: "right",
+                      padding: "10px",
+                    }}
+                  />
+                        </Link>
+                </div>
               </div>
               <div style={{ marginRight: "20px" }}>
                 <span>
@@ -154,7 +207,7 @@ class Answer extends React.Component {
                 </span>
               </div>
 
-              {this.state.data.answer.length ? (
+              {this.state.data.answer?.length ? (
                 this.state.data.answer.map((item, i) => {
                   return (
                     <div
@@ -174,17 +227,19 @@ class Answer extends React.Component {
                                 padding: "10px",
                               }}
                               onClick={() => {
-                                this.deleteAnswer(item._id, this.state.data._id);
+                                this.deleteAnswer(
+                                  item._id,
+                                  this.state.data._id
+                                );
                               }}
                             />
                             <EditOutlined
+
                               style={{
-                                color: "red",
                                 float: "right",
                                 padding: "10px",
                               }}
                               onClick={() => {
-
                                 this.editAnswer(item);
                               }}
                             />
@@ -204,7 +259,7 @@ class Answer extends React.Component {
                             }}
                           >
                             <span className="question-by">Answered By</span>{" "}
-                            {upperFirst(item.ans_by?.firstName) }
+                            {upperFirst(item.ans_by?.firstName)}
                             <span
                               className="question-by"
                               style={{ marginLeft: "20px" }}
@@ -220,9 +275,8 @@ class Answer extends React.Component {
                 })
               ) : (
                 <div style={{ width: "100%", marginTop: "40px" }}>
-                <DataNoFound data={{text: "Not Answered Yet"}}  />
+                  <DataNoFound data={{ text: "Not Answered Yet" }} />
                 </div>
-
               )}
               <div
                 ref={this.myRef}

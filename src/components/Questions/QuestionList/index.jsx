@@ -45,7 +45,6 @@ class QuestionList extends React.Component {
   }
 
   delete(questionId) {
-    console.log(questionId);
     const that = this;
     confirm({
       title: "Are you sure delete this answer?",
@@ -65,7 +64,6 @@ class QuestionList extends React.Component {
           });
       },
     });
-    console.log("hello");
   }
 
   tabPane(tab, key) {

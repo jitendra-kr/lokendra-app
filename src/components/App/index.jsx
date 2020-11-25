@@ -90,6 +90,7 @@ function App(props) {
             <Route path="/questions/list" component={QuestionList} />
             <Route path="/questions/:_id/:slug" component={Answer} />
             <Route path="/questions/ask/" component={NewQuestion} />
+            <Route path="/post/edit/:_id" component={NewQuestion} />
             <Route path="/reset-password" component={ResetPassword} />
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/product-reviews/:id" component={ProductReview} />
