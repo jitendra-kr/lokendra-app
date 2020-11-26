@@ -101,7 +101,7 @@ class QuestionList extends React.Component {
                       {upperFirst(item.where_asked)}
                       <span className="question-by"> To - </span>
                       {upperFirst(item?.author?.firstName)}
-                      <span className="question-by"> On - </span>8 January 2019
+                      <span className="question-by"> On - </span>{this.date(item.created_at)}
                     </p>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ class QuestionList extends React.Component {
     if (date) {
       const newDate = new Date(date);
       const month = newDate.toLocaleString("default", { month: "long" });
-      return `${month}, ${newDate.getDate()} ${newDate.getFullYear()}`;
+      return `${newDate.getDate()} ${month} ${newDate.getFullYear()}`;
     }
   }
 
