@@ -13,18 +13,22 @@ const { TabPane } = Tabs;
 const { confirm } = Modal;
 
 class QuestionList extends React.Component {
-
   isLoggedIn;
   user;
+  skip;
+  limit;
 
   constructor(props) {
     super(props);
 
     this.isLoggedIn = isLoggedIn();
-    this.user = getUser()
+    this.skip = 0;
+    this.limit = 50;
+    this.user = getUser();
     this.state = {
       data: [],
       dataLoaded: false,
+      loadMore: true
     };
   }
 
@@ -32,17 +36,30 @@ class QuestionList extends React.Component {
     this.setState({
       dataLoaded: false,
     });
-    httpGet({ url: `question/question-list?by=${type}` })
+    this.fetchQuestion(type)
+
+  }
+
+  fetchQuestion (type) {
+
+    httpGet({
+      url: `question/question-list?by=${type}&skip=${this.skip}&limit=${this.limit}`,
+    })
       .then((response) => {
         this.setState({
-          data: response.result,
+          data: [...this.state.data, ...response.result],
           dataLoaded: true,
+          loadMore: response.result.length ? 1 : 0
         });
-        console.log(this.state.data[0]._id)
+        this.skip += 50;
       })
       .catch((err) => {
         console.log("Error Reading data " + err);
       });
+  }
+
+  loadMore() {
+    this.fetchQuestion()
   }
 
   delete(questionId) {
@@ -82,18 +99,22 @@ class QuestionList extends React.Component {
                     <Link to={{ pathname: this.detailPageUrl(item) }}>
                       {this.calculateTitle(item.title)}
                     </Link>
-                    {this.isLoggedIn && this.user?._id === item.author?._id ? <>
-                    <DeleteOutlined
-                      style={{
-                        color: "red",
-                        float: "right",
-                        padding: "10px",
-                      }}
-                      onClick={() => {
-                        this.delete(item._id);
-                      }}
-                      />
-                    </> : ''}
+                    {this.isLoggedIn && this.user?._id === item.author?._id ? (
+                      <>
+                        <DeleteOutlined
+                          style={{
+                            color: "red",
+                            float: "right",
+                            padding: "10px",
+                          }}
+                          onClick={() => {
+                            this.delete(item._id);
+                          }}
+                        />
+                      </>
+                    ) : (
+                      ""
+                    )}
                   </div>
                   <div style={{ marginLeft: "35px" }}>
                     <p>
@@ -101,7 +122,8 @@ class QuestionList extends React.Component {
                       {upperFirst(item.where_asked)}
                       <span className="question-by"> To - </span>
                       {upperFirst(item?.author?.firstName)}
-                      <span className="question-by"> On - </span>{this.date(item.created_at)}
+                      <span className="question-by"> On - </span>
+                      {this.date(item.created_at)}
                     </p>
                   </div>
                 </div>
@@ -193,6 +215,9 @@ class QuestionList extends React.Component {
                 {this.tabPane("My Questions", "me")}
               </Tabs>
             </div>
+            { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
+              <Button onClick={() => {this.loadMore()}}>load more</Button>
+            </div> : ""}
           </div>
           <div className="col-lg-2"></div>
         </div>
