@@ -171,7 +171,7 @@ class Answer extends React.Component {
                 <p
                             dangerouslySetInnerHTML={{ __html: this.state.data.body }}
                       ></p>
-                <div>
+                {this.user._id === this.state.data.author ? <div>
                   <DeleteOutlined
                     style={{
                       color: "red",
@@ -192,7 +192,7 @@ class Answer extends React.Component {
                     }}
                   />
                         </Link>
-                </div>
+                </div> : ''}
               </div>
               <div style={{ marginRight: "20px" }}>
                 <span>
