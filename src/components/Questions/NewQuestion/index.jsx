@@ -93,8 +93,7 @@ class NewQuestion extends React.Component {
               <>
                 <h2 className="text-center m-bottom-20">Ask a public question</h2>
                 <p className="text-center m-bottom-30">
-                  Be specific and imagine you’re asking a question to another
-                  person
+                  Be specific and imagine you’re posting question on public platform
                 </p>
               </>
             ) : (

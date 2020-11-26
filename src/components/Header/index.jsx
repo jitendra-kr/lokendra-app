@@ -1,27 +1,39 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "../../index.css";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Dropdown, Grid  } from "antd";
-import { UserOutlined } from '@ant-design/icons';
+import { Layout, Menu, Dropdown, Grid } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 import { UserContext } from "../../contexts/UserContext";
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
+function MainHeader() {
 
+  let selectedTab = '3';
+  let history = useHistory();
 
-
-
-function MainHeader(props) {
-
+  const location = useLocation();
+  const [user, setUser] = useContext(UserContext);
   const { md } = useBreakpoint();
 
-  let history = useHistory();
-  const [user, setUser] = useContext(UserContext);
+  const keysMapper = {
+    '/': '3',
+    'user': '0',
+    'login': '1',
+    'questions': '2'
+  }
+
+  for(let o in keysMapper) {
+    if(location.pathname.includes(o)) {
+      selectedTab = keysMapper[o];
+    }
+  }
+
 
   const logout = () => {
-    localStorage.clear()
+    localStorage.clear();
     setUser(() => null);
     history.push("/");
   };
@@ -29,16 +41,11 @@ function MainHeader(props) {
   const menu = (
     <Menu>
       <Menu.Item>
-        <Link to={`/user`} >
-          Account
-              </Link>
+        <Link to={`/user`}>Account</Link>
       </Menu.Item>
-      <Menu.Item onClick={logout}>
-        Logout
-      </Menu.Item>
+      <Menu.Item onClick={logout}>Logout</Menu.Item>
     </Menu>
   );
-
 
   return (
     <Header>
@@ -47,32 +54,35 @@ function MainHeader(props) {
         style={{ color: "#ffffff", fontSize: "x-large", fontStyle: "italic" }}
       >
         JP
-        </Link>
+      </Link>
       <Menu
         theme="dark"
-         mode={md ? "horizontal" : "inline"}
-        defaultSelectedKeys={["3"]}
+        mode={md ? "horizontal" : "inline"}
+        defaultSelectedKeys={[selectedTab]}
         style={{ lineHeight: "64px", float: "right" }}
       >
-
         <Menu.Item key="3">
           <Link to={`/`} style={{ color: "#ffffff" }}>
             Blogs
-            </Link>
+          </Link>
         </Menu.Item>
         <Menu.Item key="2">
           <Link to={`/questions/list`} style={{ color: "#ffffff" }}>
             Questions
-            </Link>
+          </Link>
         </Menu.Item>
-        <Menu.Item key="1" className={!user ? '' : 'display-none'}>
+        <Menu.Item key="1" className={!user ? "" : "display-none"}>
           <Link to={`/login`} style={{ color: "#ffffff" }}>
             Login/Register
-            </Link>
+          </Link>
         </Menu.Item>
-        <Menu.Item key="0" className={user ? '' : 'display-none'} >
+        <Menu.Item key="0" className={user ? "" : "display-none"}>
           <Dropdown overlay={menu} placement="bottomCenter">
-            <div className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{ color: "#ffffff" }} >
+            <div
+              className="ant-dropdown-link"
+              onClick={(e) => e.preventDefault()}
+              style={{ color: "#ffffff" }}
+            >
               {user ? <UserOutlined /> : null}
             </div>
           </Dropdown>
@@ -80,8 +90,6 @@ function MainHeader(props) {
       </Menu>
     </Header>
   );
-
 }
-
 
 export default MainHeader;
