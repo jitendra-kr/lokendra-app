@@ -38,6 +38,7 @@ class QuestionList extends React.Component {
           data: response.result,
           dataLoaded: true,
         });
+        console.log(this.state.data[0]._id)
       })
       .catch((err) => {
         console.log("Error Reading data " + err);
@@ -81,7 +82,7 @@ class QuestionList extends React.Component {
                     <Link to={{ pathname: this.detailPageUrl(item) }}>
                       {this.calculateTitle(item.title)}
                     </Link>
-                    {this.isLoggedIn && this.user._id === item.author._id ? <>
+                    {this.isLoggedIn && this.user?._id === item.author?._id ? <>
                     <DeleteOutlined
                       style={{
                         color: "red",

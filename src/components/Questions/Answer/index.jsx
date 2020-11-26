@@ -218,7 +218,7 @@ class Answer extends React.Component {
                       }}
                     >
                       <div className="listing border ">
-                        {this.user._id === item.ans_by._id ? (
+                        {this.user._id === item.ans_by?._id ? (
                           <>
                             <DeleteOutlined
                               style={{
