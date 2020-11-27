@@ -1,5 +1,5 @@
 import React from "react";
-import get from "axios";
+import { httpGet } from "../../../utils/http";
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -17,9 +17,7 @@ export default class ReadBlog extends React.Component {
   }
 
   componentDidMount() {
-    get(
-      `https://jimmypoint-server.herokuapp.com/api/blog-management/blog-detail/${this.paramsId}`
-    )
+    httpGet({url: `blog-management/blog-detail/${this.paramsId}`})
       .then(response => {
         this.setState({
           data: response.data.result
