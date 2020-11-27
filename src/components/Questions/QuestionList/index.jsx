@@ -49,7 +49,7 @@ class QuestionList extends React.Component {
         this.setState({
           data: [...this.state.data, ...response.result],
           dataLoaded: true,
-          loadMore: response.result.length ? 1 : 0
+          loadMore: response.result.length && this.limit === response.result.length   ? 1 : 0
         });
         this.skip += 50;
       })
@@ -216,7 +216,7 @@ class QuestionList extends React.Component {
               </Tabs>
             </div>
             { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <Button onClick={() => {this.loadMore()}}>load more</Button>
+              <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>load more</Button>
             </div> : ""}
           </div>
           <div className="col-lg-2"></div>
