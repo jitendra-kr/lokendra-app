@@ -191,11 +191,11 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content >
         <div className="row">
-          <div className="col-lg-2 col-sm-4 col-md-4">
+          <div className="col-lg-3 col-sm-4 col-md-4">
           </div>
-          <div className="col-lg-8 col-sm-4 col-md-4">
+          <div className="col-lg-6 col-sm-4 col-md-4">
             <div className="row">
               <Tabs
                 defaultActiveKey="all"
@@ -211,7 +211,7 @@ class QuestionList extends React.Component {
               <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
             </div> : ""}
           </div>
-          <div className="col-lg-2 col-sm-4 col-md-4"></div>
+          <div className="col-lg-3 col-sm-4 col-md-4"></div>
         </div>
       </Content>
     );
