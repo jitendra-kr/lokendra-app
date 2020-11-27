@@ -33,9 +33,7 @@ class QuestionList extends React.Component {
   }
 
   componentDidMount(type) {
-
-    this.fetchQuestion(type)
-
+    this.fetchQuestion(type);
   }
 
   fetchQuestion (type) {
@@ -172,6 +170,7 @@ class QuestionList extends React.Component {
   }
 
   onTabClick(key) {
+
     if (localStorage.getItem("auth")) {
       if (key === "askQues") {
         return this.props.history.push("/questions/ask");
@@ -194,32 +193,25 @@ class QuestionList extends React.Component {
     return (
       <Content style={{ padding: "50px 50px" }}>
         <div className="row">
-          <div className="col-lg-2"></div>
-          <div className="col-lg-8">
+          <div className="col-lg-2 col-sm-4 col-md-4">
+          </div>
+          <div className="col-lg-8 col-sm-4 col-md-4">
             <div className="row">
               <Tabs
                 defaultActiveKey="all"
                 onTabClick={this.onTabClick.bind(this)}
-                tabBarExtraContent={
-                  <Button
-                    type="primary"
-                    style={{ right: "32px" }}
-                    onClick={this.onTabClick.bind(this, "askQues")}
-                  >
-                    New Questions
-                  </Button>
-                }
                 style={{ width: "100%" }}
               >
                 {this.tabPane("All", "all")}
                 {this.tabPane("My Questions", "me")}
+                {this.tabPane("New Questions", "askQues")}
               </Tabs>
             </div>
             { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
               <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
             </div> : ""}
           </div>
-          <div className="col-lg-2"></div>
+          <div className="col-lg-2 col-sm-4 col-md-4"></div>
         </div>
       </Content>
     );
