@@ -225,7 +225,7 @@ class QuestionList extends React.Component {
               </Tabs>
             </div>
             { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <Button onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
+              <Button type="primary" loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>load more</Button>
             </div> : ""}
           </div>
           <div className="col-lg-3 col-sm-4 col-md-4"></div>
