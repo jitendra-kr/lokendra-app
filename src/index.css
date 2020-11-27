@@ -97,3 +97,8 @@ p, span {
   color: #096dd9 !important;
 }
 
+.ant-tabs-tab-btn {
+  font-weight: 600 !important;
+}
+
+

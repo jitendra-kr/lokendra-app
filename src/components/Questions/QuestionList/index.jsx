@@ -28,7 +28,8 @@ class QuestionList extends React.Component {
     this.state = {
       data: [],
       dataLoaded: false,
-      loadMore: false
+      loadMore: false,
+      totalRecords: 0
     };
   }
 
@@ -47,7 +48,8 @@ class QuestionList extends React.Component {
         this.setState({
           data: [...this.state.data, ...response.result],
           dataLoaded: true,
-          loadMore: response.result.length && this.limit === response.result.length   ? 1 : 0
+          loadMore: response.result.length && this.limit === response.result.length   ? 1 : 0,
+          totalRecords: response.totalRecords ? response.totalRecords : this.state.totalRecords
         });
         this.skip += 50;
       })
@@ -82,13 +84,22 @@ class QuestionList extends React.Component {
     });
   }
 
+  totalRecords () {
+    return  (
+      <>
+      {this.state.totalRecords ?
+      <p style= {{marginLeft: '20px', fontWeight: '400'}} >Showig {this.state.data.length} of {this.state.totalRecords}</p> : ''}
+      </>
+      )
+  }
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
+        {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {
             return (
-              <div className="col-lg-12" key={i} style={{ marginTop: "30px" }}>
+              <div className="col-lg-12" key={i} style={{ marginTop: "20px",marginBottom: '20px' }}>
                 <div className="listing border">
                   <div
                     className="home-page-title"
@@ -142,6 +153,7 @@ class QuestionList extends React.Component {
         ) : (
           ""
         )}
+        {this.totalRecords()}
       </TabPane>
     );
   }
@@ -170,6 +182,11 @@ class QuestionList extends React.Component {
   }
 
   onTabClick(key) {
+    this.skip = 0;
+    this.setState({
+      data: [],
+      totalRecords: 0
+    });
 
     if (localStorage.getItem("auth")) {
       if (key === "askQues") {
@@ -208,7 +225,7 @@ class QuestionList extends React.Component {
               </Tabs>
             </div>
             { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
+              <Button onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
             </div> : ""}
           </div>
           <div className="col-lg-3 col-sm-4 col-md-4"></div>
