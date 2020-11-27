@@ -28,20 +28,20 @@ class QuestionList extends React.Component {
     this.state = {
       data: [],
       dataLoaded: false,
-      loadMore: true
+      loadMore: false
     };
   }
 
   componentDidMount(type) {
-    this.setState({
-      dataLoaded: false,
-    });
+
     this.fetchQuestion(type)
 
   }
 
   fetchQuestion (type) {
-
+    this.setState({
+      dataLoaded: false,
+    });
     httpGet({
       url: `question/question-list?by=${type}&skip=${this.skip}&limit=${this.limit}`,
     })
@@ -216,7 +216,7 @@ class QuestionList extends React.Component {
               </Tabs>
             </div>
             { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>load more</Button>
+              <Button loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>{`load${!this.state.dataLoaded ? 'ing': ''} more`} {this.state.test}</Button>
             </div> : ""}
           </div>
           <div className="col-lg-2"></div>
