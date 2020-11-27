@@ -20,7 +20,7 @@ export default class ReadBlog extends React.Component {
     httpGet({url: `blog-management/blog-detail/${this.paramsId}`})
       .then(response => {
         this.setState({
-          data: response.data.result
+          data: response.result
         });
       })
       .catch(err => {
