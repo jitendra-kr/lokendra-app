@@ -20,7 +20,7 @@ export default class ReadBlog extends React.Component {
     super(props);
     this.paramsId = this.props.match.params.slug;
     this.user = getUser();
-    console.log(this.user)
+
     this.state = {
       data: {
         size: {},

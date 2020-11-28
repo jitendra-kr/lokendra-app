@@ -3,11 +3,16 @@ import { httpGet } from "../../../utils/http";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
 import { Layout, Button } from "antd";
+import { getUser } from "../../../utils/index";
 
 const { Content } = Layout;
 class BlogList extends React.Component {
+
+  user;
   constructor(props) {
     super(props);
+
+    this.user = getUser();
 
     this.state = {
       data: [],
@@ -49,7 +54,7 @@ class BlogList extends React.Component {
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
-            <div>
+            <div className ={` ${this.user && this.user?.role === 'admin' ? 'visible' : 'invisible '}`}>
               <Link to="/blogs/new-blog">
                 <Button type="primary" htmlType="submit">
                   New Blog
