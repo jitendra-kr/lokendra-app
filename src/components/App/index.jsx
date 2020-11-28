@@ -18,7 +18,8 @@ import {
   QuestionList,
   Answer,
   NewQuestion,
-  Donate
+  Donate,
+  NewBlog
 } from "../../components";
 import { messageDestroy } from "../../utils/antd"
 import Config from '../../config/env';
@@ -85,6 +86,9 @@ function App(props) {
             <Route path="/register" component={Register} />
             <Route path="/user" component={UserProfile} />
             <Route exact path="/" component={BlogList} />
+            <Route path="/blogs/new-blog" component={NewBlog} />
+            <Route path="/blogs/edit/:_id" component={NewBlog} />
+            <Route path="/blogs" component={BlogList} />
             <Route path="/shop" component={Home} />
             <Route path="/blog/:slug" component={ReadBlog} />
             <Route path="/questions/list" component={QuestionList} />

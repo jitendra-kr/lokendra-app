@@ -68,12 +68,13 @@ class Answer extends React.Component {
       this.answerId = _id;
     }
 
-    this.state.data.answer && this.state.data.answer.forEach((ansObj) => {
-      if (ansObj._id === this.answerId) {
-        ansObj.answer = data;
-      }
-      answer.push(ansObj);
-    });
+    this.state.data.answer &&
+      this.state.data.answer.forEach((ansObj) => {
+        if (ansObj._id === this.answerId) {
+          ansObj.answer = data;
+        }
+        answer.push(ansObj);
+      });
     this.setState({
       data: {
         ...this.state.data,
@@ -126,7 +127,7 @@ class Answer extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
-            that.props.history.push('/questions/list');
+            that.props.history.push("/questions/list");
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
@@ -169,34 +170,36 @@ class Answer extends React.Component {
               <div style={{ width: "100%" }}>
                 <h2>{this.state.data.title}</h2>
                 <p
-                            dangerouslySetInnerHTML={{ __html: this.state.data.body }}
-                      ></p>
-                {this.user._id === this.state.data.author ? <div>
-                  <DeleteOutlined
-                    style={{
-                      color: "red",
-                      float: "right",
-                      padding: "10px",
-                    }}
-                    onClick={() => {
-                      this.deleteQuestion(this.state.data._id);
-                    }}
-                  />
-                  <Link to={`/post/edit/${this.state.data._id}`}>
-
-                  <EditOutlined
-
-                    style={{
-                      float: "right",
-                      padding: "10px",
-                    }}
-                  />
-                        </Link>
-                </div> : ''}
+                  dangerouslySetInnerHTML={{ __html: this.state.data.body }}
+                ></p>
+                {this.user._id === this.state.data.author ? (
+                  <div>
+                    <DeleteOutlined
+                      style={{
+                        color: "red",
+                        float: "right",
+                        padding: "10px",
+                      }}
+                      onClick={() => {
+                        this.deleteQuestion(this.state.data._id);
+                      }}
+                    />
+                    <Link to={`/post/edit/${this.state.data._id}`}>
+                      <EditOutlined
+                        style={{
+                          float: "right",
+                          padding: "10px",
+                        }}
+                      />
+                    </Link>
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
               <div style={{ marginRight: "20px" }}>
                 <span>
-                  <span className="ask-view">Asked:</span>
+                  <span className="ask-view">Posted On:</span>
                   <span>{this.date(this.state.data.created_at)}</span>
                 </span>
               </div>
@@ -234,7 +237,6 @@ class Answer extends React.Component {
                               }}
                             />
                             <EditOutlined
-
                               style={{
                                 float: "right",
                                 padding: "10px",

@@ -2,7 +2,7 @@ import React from "react";
 import { httpGet } from "../../../utils/http";
 import "./index.css";
 import { Link, withRouter } from "react-router-dom";
-import { Layout } from "antd";
+import { Layout, Button } from "antd";
 
 const { Content } = Layout;
 class BlogList extends React.Component {
@@ -10,22 +10,23 @@ class BlogList extends React.Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
     };
-
   }
 
   componentDidMount() {
-    httpGet({url: `blog-management/blogs`}).then((response) => {
-      this.setState({
-        data: response.result
+    httpGet({ url: `blog-management/blogs` })
+      .then((response) => {
+        this.setState({
+          data: response.result,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }).catch((err) => {
-      console.log( err);
-    });
   }
 
-  calculateTitle = title => {
+  calculateTitle = (title) => {
     const limit = 63;
     if (title.length > limit) {
       return title.substring(0, limit) + "...";
@@ -33,7 +34,7 @@ class BlogList extends React.Component {
     return title;
   };
 
-  handleClick = item => {
+  handleClick = (item) => {
     this.props.history.push(this.detailPageUrl(item));
   };
 
@@ -43,10 +44,17 @@ class BlogList extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content>
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
+            <div>
+              <Link to="/blogs/new-blog">
+                <Button type="primary" htmlType="submit">
+                  New Blog
+                </Button>
+              </Link>
+            </div>
             <div className="row">
               {this.state.data.map((item, i) => {
                 return (

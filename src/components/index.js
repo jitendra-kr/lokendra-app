@@ -21,6 +21,8 @@ export { default as BuyNow } from './Product/BuyNow';
 
 export { default as BlogList } from './Blog/BlogList';
 export { default as ReadBlog } from './Blog/ReadBlog';
+export { default as NewBlog } from './Blog/NewBlog';
+
 
 export { default as QuestionList } from './Questions/QuestionList';
 export { default as Answer } from './Questions/Answer';
