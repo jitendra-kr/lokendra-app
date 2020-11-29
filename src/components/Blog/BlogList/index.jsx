@@ -78,7 +78,7 @@ class BlogList extends React.Component {
                           className="image-blog-list"
                           src={item.image}
                           alt="jp"
-                          style={{ width: "75%", height: "250px" }}
+                          style={{ width: "70%", height: "150px" }}
                         />
                       </span>
                       <div
