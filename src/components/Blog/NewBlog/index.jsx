@@ -76,7 +76,6 @@ class NewBlog extends React.Component {
     messageLoading({ key });
     this.setState({ isButtonDisabled: true });
     values.content = this.content;
-    // values.slug = this.state._id;
     this.postNew(values, key);
   };
 
@@ -120,6 +119,12 @@ class NewBlog extends React.Component {
     console.log("Content was updated:", content);
   };
 
+  onFinishFailed({ values, errorFields, outOfDate }) {
+    messageError({ content: errorFields[0].errors[0], duration: 2 });
+
+
+  }
+
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
@@ -134,9 +139,11 @@ class NewBlog extends React.Component {
                 meta_description: this.state.data.meta_description,
                 meta_keywords: this.state.data.meta_keywords,
               tags: this.state.data.tags,
-              content: this.state.data.content
+              content: this.state.data.content,
+              image: this.state.data.image
              }}
               onFinish={this.onFinish}
+              onFinishFailed = {this.onFinishFailed}
               style={{ width: "70%", margin: "0 auto" }}
             >
               <Form.Item
@@ -173,6 +180,22 @@ class NewBlog extends React.Component {
                   autoSize={{ minRows: 2, maxRows: 5 }}
                 />
               </Form.Item>
+              <Form.Item
+                name="image"
+                label="Image"
+                rules={[
+                  { required: true, message: "Please input Image URL!" },
+                  {
+                    type: "url",
+                    message: "Please input image a valid url."
+                }
+                ]}
+              >
+                <Input
+                  placeholder="e.g. http://www.zyx.com/images/image.jpeg"
+
+                />
+              </Form.Item>
               {/* <Form.Item
                 name="category"
                 label="Category"
@@ -194,7 +217,7 @@ class NewBlog extends React.Component {
                 <Select
                   mode="tags"
                   style={{ width: "100%" }}
-                  placeholder="Tags Mode"
+                  placeholder="Technology Fitness "
                 >
                   {<Option key={"1"}>1</Option>}
                 </Select>
