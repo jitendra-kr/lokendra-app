@@ -22,9 +22,7 @@ export default class ReadBlog extends React.Component {
     this.user = getUser();
 
     this.state = {
-      data: {
-        size: {},
-      },
+      data: {},
     };
   }
 
@@ -34,7 +32,7 @@ export default class ReadBlog extends React.Component {
         this.setState({
           data: response.result,
         });
-        console.log(this.state.data.author._id , this.user, this.user?._id === this.state.data.author._id)
+
       })
       .catch((err) => {
         console.log("Error Reading data " + err);
@@ -90,11 +88,10 @@ export default class ReadBlog extends React.Component {
                 </span>
               </div>
               <div className="col-lg-5">
-                <span>
+                <span >
                   <span className="ask-view"> Viewed: </span>
                   <span className="post-view-data">
-                    {" "}
-                    {this.state.data.visits} times{" "}
+                    {this.state.data.visits} times
                   </span>
                 </span>
               </div>

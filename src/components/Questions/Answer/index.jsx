@@ -172,7 +172,7 @@ class Answer extends React.Component {
                 <p
                   dangerouslySetInnerHTML={{ __html: this.state.data.body }}
                 ></p>
-                {this.user._id === this.state.data.author ? (
+                {this.user && this.user._id === this.state.data.author ? (
                   <div>
                     <DeleteOutlined
                       style={{
@@ -221,7 +221,7 @@ class Answer extends React.Component {
                       }}
                     >
                       <div className="listing border ">
-                        {this.user._id === item.ans_by?._id ? (
+                        {this.user && this.user._id === item.ans_by?._id ? (
                           <>
                             <DeleteOutlined
                               style={{
