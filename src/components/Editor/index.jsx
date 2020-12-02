@@ -1,22 +1,31 @@
 import React from "react";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 class Editor extends React.Component {
+
+    CKEditor;
+    ClassicEditor;
+    state = {isServer: true};
+
+    componentDidMount() {
+        this.CKEditor = require("@ckeditor/ckeditor5-react");
+        this.ClassicEditor = require("@ckeditor/ckeditor5-build-classic");
+        this.setState({ isServer: false });
+
+    }
 
      onChange = (event, editor) => {
         this.props.sendData(editor.getData());
     }
 
     render()  {
-        return <CKEditor
+        return this.CKEditor ? <this.CKEditor.CKEditor
             id = "editor"
-            editor={ClassicEditor}
+            editor={this.ClassicEditor}
             data= {this.props.data}
 
             onChange={this.onChange}
-        />
+        /> : <div>Editor loading</div>
     };
 };
 

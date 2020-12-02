@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { withRouter } from 'next/router'
 import { Form, Input, Layout, Button } from "antd";
 import { MailOutlined, LockOutlined, UserOutlined  } from '@ant-design/icons';
 import Config from '../../config/env'
@@ -13,8 +14,11 @@ const { Content } = Layout;
 
 class Register extends React.Component {
 
+  // router;
   constructor(props) {
     super(props);
+
+    // this.router = useRouter();
     this.state = {
       isButtonDisabled: false,
       config: Config.getData().default,
@@ -31,7 +35,7 @@ class Register extends React.Component {
       this.setState({ isButtonDisabled: false });
       if (response && response.statusCode === 200) {
         messageSuccess({ content: response.message, key })
-        this.props.history.push('/login');
+        this.props.router.push('/login');
       } else if (response && response.statusCode === 400) {
         messageError({ content: response.message, key, duration: 2 });
       }
@@ -132,7 +136,7 @@ class Register extends React.Component {
                   Submit
               </Button>
                 <p className="m-top-15">
-                  Already have an account? <Link to={`/login`}>Sign in</Link>{" "}
+                  Already have an account? <Link href={`/login`}>Sign in</Link>{" "}
                 </p>
               </Form.Item>
             </Form>
@@ -145,4 +149,4 @@ class Register extends React.Component {
 }
 
 // Register = Form.create({ name: "normal_login" })(Register);
-export default Register;
+export default withRouter(Register);

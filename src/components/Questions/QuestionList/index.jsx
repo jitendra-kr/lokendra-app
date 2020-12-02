@@ -1,9 +1,10 @@
 import React from "react";
 import { Layout, Button, Tabs, Modal } from "antd";
 import { upperFirst } from "lodash";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from 'next/router'
+import Link from "next/link";
 import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
-import "./index.css";
+import "./QuestionList.module.css";
 import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
@@ -105,7 +106,7 @@ class QuestionList extends React.Component {
                     className="home-page-title"
                     style={{ marginLeft: "25px" }}
                   >
-                    <Link to={{ pathname: this.detailPageUrl(item) }}>
+                    <Link href={{ pathname: this.detailPageUrl(item) }}>
                       {this.calculateTitle(item.title)}
                     </Link>
                     {this.isLoggedIn && this.user?._id === item.author?._id ? (
@@ -174,7 +175,7 @@ class QuestionList extends React.Component {
   }
 
   handleClick = (item) => {
-    this.props.history.push(this.detailPageUrl(item));
+    this.props.router.push(this.detailPageUrl(item));
   };
 
   detailPageUrl(item) {
@@ -190,7 +191,7 @@ class QuestionList extends React.Component {
 
     if (localStorage.getItem("auth")) {
       if (key === "askQues") {
-        return this.props.history.push("/questions/ask");
+        return this.props.router.push("/questions/ask");
       }
       this.componentDidMount(key);
     } else {
@@ -201,7 +202,7 @@ class QuestionList extends React.Component {
         duration: 3,
       });
       setTimeout(() => {
-        this.props.history.push("/login");
+        this.props.router.push("/login");
       }, 2000);
     }
   }

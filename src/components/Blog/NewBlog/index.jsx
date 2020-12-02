@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, Input, Button, Select, Tag } from "antd";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { withRouter } from 'next/router'
 import { getUser } from "../../../utils/index";
+import Editor from "../../Editor";
 
 import Config from "../../../config/env";
 import {
@@ -30,12 +30,12 @@ class NewBlog extends React.Component {
     super(props);
     this.user = getUser();
 
-    if (!this.user && this.user?.role !== 'admin') {
-      this.props.history.push(`/`);
-    }
+    // if (!this.user && this.user?.role !== 'admin') {
+    //   this.props.router.push(`/`);
+    // }
 
     this.state = {
-      _id: this.props.match.params._id,
+      _id: this.props.router.query.slug,
       isButtonDisabled: false,
       config: Config.getData().default,
       data: {},
@@ -96,9 +96,9 @@ class NewBlog extends React.Component {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
           if (this.state._id) {
-            this.props.history.push(
-              `/blog/${this.state._id}`
-            );
+            // this.props.history.push(
+            //   `/blog/${this.state._id}`
+            // );
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
@@ -125,6 +125,12 @@ class NewBlog extends React.Component {
 
   }
 
+  getEditorData(data) {
+    this.content = data;
+    this.state.data.content = data;
+
+  }
+
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
@@ -132,7 +138,7 @@ class NewBlog extends React.Component {
           <div className="col-lg-2" />
           <div className="col-lg-8">
             <Form
-              name="basic"
+
               layout="vertical"
               ref={this.formRef}
               initialValues={{ title: this.state.data.title,
@@ -222,13 +228,19 @@ class NewBlog extends React.Component {
                   {<Option key={"1"}>1</Option>}
                 </Select>
               </Form.Item>
-              <Form.Item name="content" label="Body" rules={[{ required: true, message: "Please input Body!" }]}>
-                <CKEditor
+              <Form.Item name="content" label="Body"
+              // rules={[{ required: true, message: "Please input Body!" }]}
+              >
+                {/* <CKEditor
                   editor={ClassicEditor}
                   data={this.state.data.content}
                   onChange={(event, editor) => {
                     this.content = editor.getData();
                   }}
+                /> */}
+                 <Editor
+                  data={this.state.data.content}
+                  sendData={this.getEditorData.bind(this)}
                 />
               </Form.Item>
               <Form.Item>
@@ -252,4 +264,4 @@ class NewBlog extends React.Component {
   }
 }
 
-export default NewBlog;
+export default withRouter(NewBlog);

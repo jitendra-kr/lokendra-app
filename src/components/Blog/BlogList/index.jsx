@@ -1,9 +1,10 @@
 import React from "react";
+import { withRouter } from 'next/router'
 import { httpGet } from "../../../utils/http";
-import "./index.css";
-import { Link, withRouter } from "react-router-dom";
+import "./BlogList.module.css";
+import Link from "next/link";
 import { Layout, Button } from "antd";
-import { getUser } from "../../../utils/index";
+import { getUser, isAuthorisedToPostBlog } from "../../../utils/index";
 
 const { Content } = Layout;
 class BlogList extends React.Component {
@@ -11,7 +12,6 @@ class BlogList extends React.Component {
   user;
   constructor(props) {
     super(props);
-
     this.user = getUser();
 
     this.state = {
@@ -21,7 +21,7 @@ class BlogList extends React.Component {
   }
 
   componentDidMount() {
-    httpGet({ url: `blog-management/blogs` })
+    httpGet({ url: `/blog-management/blogs` })
       .then((response) => {
         this.setState({
           data: response.result,
@@ -41,7 +41,7 @@ class BlogList extends React.Component {
   };
 
   handleClick = (item) => {
-    this.props.history.push(this.detailPageUrl(item));
+    this.props.router.push(this.detailPageUrl(item));
   };
 
   detailPageUrl(item) {
@@ -49,56 +49,62 @@ class BlogList extends React.Component {
   }
 
   render() {
-    return (
-      <Content>
-        <div className="row">
-          <div className="col-lg-2"></div>
-          <div className="col-lg-8">
-            <div className ={` ${this.user && this.user?.role === 'admin' ? 'visible' : 'invisible '}`}>
-              <Link to="/blogs/new-blog">
-                <Button type="primary" htmlType="submit">
-                  New Blog
-                </Button>
-              </Link>
-            </div>
-            <div className="row">
-              {this.state.data.map((item, i) => {
-                return (
-                  <div
-                    className="col-lg-4 cursor-pointer"
-                    key={i}
-                    onClick={() => {
-                      this.handleClick(item);
-                    }}
-                    style={{ marginTop: "25px" }}
-                  >
-                    <div className="listing border ">
-                      <span>
-                        <img
-                          className="image-blog-list"
-                          src={item.image}
-                          alt="jp"
-                          style={{ width: "70%", height: "150px" }}
-                        />
-                      </span>
-                      <div
-                        className="home-page-title"
-                        style={{ textAlign: "center" }}
-                      >
-                        <Link to={{ pathname: this.detailPageUrl(item) }}>
-                          {this.calculateTitle(item.title)}
-                        </Link>
+    if(this.state.data.length) {
+      return (
+        <Content>
+          <div className="row">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
+              <div className ={` ${isAuthorisedToPostBlog() ? 'visible' : 'invisible '}`}>
+                <Link href="/blog/new-blog">
+                  <Button type="primary" htmlType="submit">
+                    New Blog
+                  </Button>
+                </Link>
+
+              </div>
+              <div className="row">
+                {this.state.data.map((item, i) => {
+                  return (
+                    <div
+                      className="col-lg-4 cursor-pointer"
+                      key={i}
+                      onClick={() => {
+                        this.handleClick(item);
+                      }}
+                      style={{ marginTop: "25px" }}
+                    >
+                      <div className="listing border ">
+                        <span>
+                          <img
+                            className="image-blog-list"
+                            src={item.image}
+                            alt="jp"
+                            style={{ width: "70%", height: "150px" }}
+                          />
+                        </span>
+                        <div
+                          className="home-page-title"
+                          style={{ textAlign: "center" }}
+                        >
+                          <Link href={this.detailPageUrl(item)}>
+                            {this.calculateTitle(item.title)}
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
+            <div className="col-lg-2"></div>
           </div>
-          <div className="col-lg-2"></div>
-        </div>
-      </Content>
-    );
+        </Content>
+      );
+    } else {
+      return '';
+    }
+
   }
 }
 

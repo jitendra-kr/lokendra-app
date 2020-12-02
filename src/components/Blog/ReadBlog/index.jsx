@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { withRouter } from 'next/router'
 import { httpGet, httpPut } from "../../../utils/http";
 import { Layout, Modal } from "antd";
+import { isEmpty } from 'lodash';
 import {
   EditOutlined,
   DeleteOutlined,
@@ -13,12 +15,12 @@ import { getUser } from "../../../utils/index";
 const { Content } = Layout;
 const { confirm } = Modal;
 
-export default class ReadBlog extends React.Component {
-  paramsId;
+class ReadBlog extends React.Component {
+  slug;
   user;
   constructor(props) {
     super(props);
-    this.paramsId = this.props.match.params.slug;
+    this.slug = this.props.router.query.slug;
     this.user = getUser();
 
     this.state = {
@@ -27,7 +29,7 @@ export default class ReadBlog extends React.Component {
   }
 
   componentDidMount() {
-    httpGet({ url: `blog-management/blog-detail/${this.paramsId}` })
+    httpGet({ url: `/blog-management/blog-detail/${this.slug}` })
       .then((response) => {
         this.setState({
           data: response.result,
@@ -58,7 +60,7 @@ export default class ReadBlog extends React.Component {
       onOk() {
         httpPut({ url: `blog-management/delete-blog/${questionId}` })
           .then((response) => {
-            that.props.history.push("/");
+            that.props.router.push("/");
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
@@ -70,6 +72,9 @@ export default class ReadBlog extends React.Component {
   }
 
   render() {
+    if( isEmpty(this.state.data)) {
+      return '';
+    }
     return (
       <Content style={{ padding: "50px 50px" }}>
         <div className="row">
@@ -107,7 +112,7 @@ export default class ReadBlog extends React.Component {
                     this.deleteBlog(this.state.data._id);
                   }}
                 />
-                <Link to={`/blogs/edit/${this.paramsId}`}>
+                <Link href={`/blog/edit/${this.slug}`}>
                   <EditOutlined
                     style={{
                       float: "right",
@@ -128,3 +133,5 @@ export default class ReadBlog extends React.Component {
     );
   }
 }
+
+export default withRouter(ReadBlog)

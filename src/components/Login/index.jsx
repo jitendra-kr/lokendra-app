@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useRouter } from 'next/router'
+import Link from "next/link";
 import { MailOutlined , LockOutlined } from '@ant-design/icons';
-import "./index.css";
+
 import { Form, Input, Layout, Button, message } from "antd";
 import Config from '../../config/env'
 import { UserContext } from "../../contexts/UserContext";
@@ -14,9 +15,10 @@ const { Content } = Layout;
 
 function Login(props) {
 
-  const history = useHistory();
+  const router = useRouter();
   const setUser = useContext(UserContext)[1];
   const [isButtonDisabled, setButtonDisabled] = useState(false);
+
   const state = {
     config: Config.getData().default
   }
@@ -34,7 +36,7 @@ function Login(props) {
 
       setButtonDisabled(false);
       setUserData(response);
-      history.push("/");
+      router.push("/");
 
     }).catch((err) => {
       setButtonDisabled(false);
@@ -104,8 +106,8 @@ function Login(props) {
               <Button type="primary" htmlType="submit" className="login-form-button" disabled={isButtonDisabled} >
                 Submit
               </Button>
-              <p className="m-top-15">New to Jimmypoint? <Link to={`/register`}>Register</Link> </p>
-              <Link to={`/reset-password`}>Forgot Password?</Link>
+              <p className="m-top-15">New to Jimmypoint? <Link href={`/register`}>Register</Link> </p>
+              <Link href={`/reset-password`}>Forgot Password?</Link>
             </Form.Item>
           </Form>
         </div>

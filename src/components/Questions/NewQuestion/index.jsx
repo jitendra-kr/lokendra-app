@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Select } from "antd";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { withRouter } from 'next/router'
+import Editor from "../../Editor";
 
 import Config from "../../../config/env";
 import {
@@ -19,7 +19,7 @@ class NewQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      _id: this.props.match.params._id,
+      _id: this.props.router.query._id,
       isButtonDisabled: false,
       config: Config.getData().default,
       data: {}
@@ -82,6 +82,12 @@ class NewQuestion extends React.Component {
     console.log("Content was updated:", content);
   };
 
+  getEditorData(data) {
+    this.body = data;
+    this.state.data.body = data;
+
+  }
+
   render() {
 
     if (this.state.data.title || !this.state._id) {
@@ -131,12 +137,17 @@ class NewQuestion extends React.Component {
                 ></Select>
               </Form.Item>
               <Form.Item name="body" label="Body">
-                <CKEditor
+                {/* <CKEditor
                   editor={ClassicEditor}
                   data={this.state.data.body}
                   onChange={(event, editor) => {
                     this.body = editor.getData();
                   }}
+                /> */}
+
+<Editor
+                  data={this.state.data.content}
+                  sendData={this.getEditorData.bind(this)}
                 />
               </Form.Item>
               <Form.Item>
@@ -161,4 +172,4 @@ class NewQuestion extends React.Component {
   }
 }
 
-export default NewQuestion;
+export default withRouter(NewQuestion);

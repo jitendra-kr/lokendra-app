@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { withRouter } from 'next/router'
 import { MessageOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Form, Input, Layout, Button } from "antd";
 import Config from '../../config/env'
@@ -43,7 +44,7 @@ class ResetPassword extends React.Component {
       this.setState({ isButtonDisabled: false });
       if (response && response.statusCode === 200) {
         messageSuccess({ content: response.message, key })
-        this.props.history.push('/login');
+        this.props.router.push('/login');
       } else if (response && response.statusCode === 400) {
         messageError({ content: response.message, key, duration: 2 });
       }
@@ -125,7 +126,7 @@ class ResetPassword extends React.Component {
                         htmlType="submit"
                         style={{width: "auto", marginRight: "20px"}}
                       >
-                        <Link to={`/user`}>Cancel</Link>
+                        <Link href={`/user`}>Cancel</Link>
 
 
                     </Button> : ''}
@@ -205,7 +206,7 @@ class ResetPassword extends React.Component {
                         disabled={this.state.isButtonDisabled} >
                         Submit
                 </Button>
-                      <p className="m-top-15">Login? <Link to={`/login`}>Login</Link> </p>
+                      <p className="m-top-15">Login? <Link href={`/login`}>Login</Link> </p>
                     </Form.Item>
                   </Form>
                 </div>
@@ -219,4 +220,4 @@ class ResetPassword extends React.Component {
   }
 }
 
-export default ResetPassword;
+export default withRouter(ResetPassword);

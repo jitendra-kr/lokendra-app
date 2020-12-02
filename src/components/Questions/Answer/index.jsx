@@ -127,7 +127,7 @@ class Answer extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
-            that.props.history.push("/questions/list");
+            that.props.history.push("/questions");
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
@@ -184,7 +184,7 @@ class Answer extends React.Component {
                         this.deleteQuestion(this.state.data._id);
                       }}
                     />
-                    <Link to={`/post/edit/${this.state.data._id}`}>
+                    <Link to={`/questions/edit/${this.state.data._id}`}>
                       <EditOutlined
                         style={{
                           float: "right",

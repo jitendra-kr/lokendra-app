@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import "../../index.css";
-import { Link } from "react-router-dom";
+import { useRouter } from "next/router";
+
+
+import Link from "next/link";
 import { Layout, Menu, Dropdown, Grid } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
@@ -10,38 +11,38 @@ const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 function MainHeader() {
+  let selectedTab = "3";
+  const router = useRouter();
+  let [user, setUser] = useContext(UserContext);
 
-  let selectedTab = '3';
-  let history = useHistory();
-
-  const location = useLocation();
-  const [user, setUser] = useContext(UserContext);
   const { md } = useBreakpoint();
 
   const keysMapper = {
-    '/': '3',
-    'user': '0',
-    'login': '1',
-    'questions': '2'
-  }
+    "/": "3",
+    user: "0",
+    login: "1",
+    questions: "2",
+  };
 
-  for(let o in keysMapper) {
-    if(location.pathname.includes(o)) {
+  for (let o in keysMapper) {
+    if (router.pathname.includes(o)) {
       selectedTab = keysMapper[o];
     }
   }
 
-
   const logout = () => {
     localStorage.clear();
     setUser(() => null);
-    history.push("/");
+    router.push("/");
   };
 
   const menu = (
     <Menu>
       <Menu.Item>
-        <Link to={`/user`}>Account</Link>
+        <Link href="/user">Account</Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
       </Menu.Item>
       <Menu.Item onClick={logout}>Logout</Menu.Item>
     </Menu>
@@ -50,7 +51,7 @@ function MainHeader() {
   return (
     <Header>
       <Link
-        to={`/`}
+        href="/"
         style={{ color: "#ffffff", fontSize: "x-large", fontStyle: "italic" }}
       >
         JP
@@ -62,31 +63,60 @@ function MainHeader() {
         style={{ lineHeight: "64px", float: "right" }}
       >
         <Menu.Item key="3">
-          <Link to={`/`} style={{ color: "#ffffff" }}>
+          <Link href="/" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to={`/questions/list`} style={{ color: "#ffffff" }}>
+          <Link href="/questions" style={{ color: "#ffffff" }}>
             Questions
           </Link>
         </Menu.Item>
-        <Menu.Item key="1" className={!user ? "" : "display-none"}>
-          <Link to={`/login`} style={{ color: "#ffffff" }}>
-            Login/Register
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="0" className={user ? "" : "display-none"}>
-          <Dropdown overlay={menu} placement="bottomCenter">
-            <div
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-              style={{ color: "#ffffff" }}
-            >
-              {user ? <UserOutlined /> : null}
-            </div>
-          </Dropdown>
-        </Menu.Item>
+        {/* {!user ? (
+          <>
+            <Menu.Item key="1" className={!user ? "" : "display-none"}>
+              <Link href="/login" style={{ color: "#ffffff" }}>
+                Login/Register
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="0" className={user ? "" : "display-none"}>
+              <Dropdown overlay={menu} placement="bottomCenter">
+                <div
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                  style={{ color: "#ffffff" }}
+                >
+                  {user ? <UserOutlined /> : null}
+                </div>
+              </Dropdown>
+            </Menu.Item>
+          </>
+        ) : (
+          <>
+            <Menu.Item key="1">
+              <Link href="/login" style={{ color: "#ffffff" }}>
+                Login/Register
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="0">
+              <Dropdown overlay={menu} placement="bottomCenter">
+                <div
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                  style={{ color: "#ffffff" }}
+                >
+                  {user ? <UserOutlined /> : null}
+                </div>
+              </Dropdown>
+            </Menu.Item>
+          </>
+        )} */}
+                    <Menu.Item key="1">
+              <Link href="/login" style={{ color: "#ffffff" }}>
+                Login/Register
+              </Link>
+            </Menu.Item>
+
       </Menu>
     </Header>
   );
