@@ -9,6 +9,7 @@ import {
   messageSuccess,
   messageError
 } from "../../utils/antd"
+import { isLoggedIn } from "../../utils";
 import { httpPost } from "../../utils/http";
 const { Content } = Layout;
 
@@ -23,7 +24,7 @@ class ResetPassword extends React.Component {
       otpSent: false,
       email: '',
       isButtonDisabled: false,
-      isLoggedIn: localStorage.getItem('auth') ? true : false
+      isLoggedIn: isLoggedIn()
     };
 
     console.log(this.state.isLoggedIn)
