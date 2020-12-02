@@ -11,9 +11,16 @@ const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 function MainHeader() {
+
   let selectedTab = "3";
   const router = useRouter();
   let [user, setUser] = useContext(UserContext);
+
+  if(!user) {
+    user = "na";
+  }
+
+  console.log(user)
 
   const { md } = useBreakpoint();
 
@@ -40,9 +47,6 @@ function MainHeader() {
     <Menu>
       <Menu.Item>
         <Link href="/user">Account</Link>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
       </Menu.Item>
       <Menu.Item onClick={logout}>Logout</Menu.Item>
     </Menu>
@@ -72,51 +76,24 @@ function MainHeader() {
             Questions
           </Link>
         </Menu.Item>
-        {/* {!user ? (
-          <>
-            <Menu.Item key="1" className={!user ? "" : "display-none"}>
-              <Link href="/login" style={{ color: "#ffffff" }}>
-                Login/Register
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="0" className={user ? "" : "display-none"}>
-              <Dropdown overlay={menu} placement="bottomCenter">
-                <div
-                  className="ant-dropdown-link"
-                  onClick={(e) => e.preventDefault()}
-                  style={{ color: "#ffffff" }}
-                >
-                  {user ? <UserOutlined /> : null}
-                </div>
-              </Dropdown>
-            </Menu.Item>
-          </>
-        ) : (
-          <>
-            <Menu.Item key="1">
-              <Link href="/login" style={{ color: "#ffffff" }}>
-                Login/Register
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="0">
-              <Dropdown overlay={menu} placement="bottomCenter">
-                <div
-                  className="ant-dropdown-link"
-                  onClick={(e) => e.preventDefault()}
-                  style={{ color: "#ffffff" }}
-                >
-                  {user ? <UserOutlined /> : null}
-                </div>
-              </Dropdown>
-            </Menu.Item>
-          </>
-        )} */}
-                    <Menu.Item key="1">
-              <Link href="/login" style={{ color: "#ffffff" }}>
-                Login/Register
-              </Link>
-            </Menu.Item>
 
+        <Menu.Item key="1" className={user === 'na' ? "" : "display-none"}>
+          <Link href="/login" style={{ color: "#ffffff" }}>
+            Login/Register
+          </Link>
+        </Menu.Item>
+
+        <Menu.Item key="0" className={user === 'na'  ? "display-none" : ""}>
+          <Dropdown overlay={menu} placement="bottomCenter">
+            <div
+              className="ant-dropdown-link"
+              onClick={(e) => e.preventDefault()}
+              style={{ color: "#ffffff" }}
+            >
+              {user ? <UserOutlined /> : null}
+            </div>
+          </Dropdown>
+        </Menu.Item>
       </Menu>
     </Header>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { upperFirst } from "lodash";
-import { Link, withRouter } from "react-router-dom";
-import "./index.css";
+import Link from "next/link";
+import { withRouter } from 'next/router'
+// import "./index.css";
 import { httpGet, httpPost, httpDelete } from "../../../utils/http";
 import Editor from "../../Editor";
 import { Layout, Button, Modal } from "antd";
@@ -35,7 +36,7 @@ class Answer extends React.Component {
 
     this.myRef = React.createRef();
     this.state = {
-      _id: this.props.match.params._id,
+      _id: this.props.router.query._id,
       answer: "",
       data: {
         answer: [],
@@ -184,7 +185,7 @@ class Answer extends React.Component {
                         this.deleteQuestion(this.state.data._id);
                       }}
                     />
-                    <Link to={`/questions/edit/${this.state.data._id}`}>
+                    <Link href={`/questions/edit/${this.state.data._id}`}>
                       <EditOutlined
                         style={{
                           float: "right",
