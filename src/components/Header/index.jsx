@@ -20,7 +20,6 @@ function MainHeader() {
     user = "na";
   }
 
-  console.log(user)
 
   const { md } = useBreakpoint();
 

@@ -27,8 +27,6 @@ class ResetPassword extends React.Component {
       isLoggedIn: isLoggedIn()
     };
 
-    console.log(this.state.isLoggedIn)
-
   }
 
   changePwd = values => {
