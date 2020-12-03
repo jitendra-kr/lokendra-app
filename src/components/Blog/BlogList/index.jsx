@@ -1,10 +1,11 @@
 import React from "react";
 import { withRouter } from 'next/router'
 import { httpGet } from "../../../utils/http";
-import "./BlogList.module.css";
+import '../../../../styles/BlogList.module.css';
 import Link from "next/link";
 import { Layout, Button } from "antd";
 import { getUser, isAuthorisedToPostBlog } from "../../../utils/index";
+
 
 const { Content } = Layout;
 class BlogList extends React.Component {
@@ -74,7 +75,8 @@ class BlogList extends React.Component {
                       }}
                       style={{ marginTop: "25px" }}
                     >
-                      <div className="listing border ">
+                      <div className="listing border">
+
                         <span>
                           <img
                             className="image-blog-list"

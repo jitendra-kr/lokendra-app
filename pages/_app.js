@@ -1,4 +1,5 @@
 import '../src/index.css'
+import '../styles/BlogList.module.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'antd/dist/antd.css';
 import React, { useState } from 'react';
