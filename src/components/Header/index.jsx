@@ -1,25 +1,23 @@
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
 
-
 import Link from "next/link";
 import { Layout, Menu, Dropdown, Grid } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
+import Head from "next/head";
 import { UserContext } from "../../contexts/UserContext";
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 function MainHeader() {
-
   let selectedTab = "3";
   const router = useRouter();
   let [user, setUser] = useContext(UserContext);
 
-  if(!user) {
+  if (!user) {
     user = "na";
   }
-
 
   const { md } = useBreakpoint();
 
@@ -75,24 +73,25 @@ function MainHeader() {
             Questions
           </Link>
         </Menu.Item>
-
-        <Menu.Item key="1" className={user === 'na' ? "" : "display-none"}>
-          <Link href="/login" style={{ color: "#ffffff" }}>
-            Login/Register
-          </Link>
-        </Menu.Item>
-
-        <Menu.Item key="0" className={user === 'na'  ? "display-none" : ""}>
-          <Dropdown overlay={menu} placement="bottomCenter">
-            <div
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-              style={{ color: "#ffffff" }}
-            >
-              {user ? <UserOutlined /> : null}
-            </div>
-          </Dropdown>
-        </Menu.Item>
+        {user === "na" ?
+          <Menu.Item key="1">
+            <Link href="/login" style={{ color: "#ffffff" }}>
+              Login/Register
+            </Link>
+          </Menu.Item>
+        :
+          <Menu.Item key="0">
+            <Dropdown overlay={menu} placement="bottomCenter">
+              <div
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+                style={{ color: "#ffffff" }}
+              >
+                {user ? <UserOutlined /> : null}
+              </div>
+            </Dropdown>
+          </Menu.Item>
+        }
       </Menu>
     </Header>
   );
