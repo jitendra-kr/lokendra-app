@@ -210,7 +210,7 @@ class QuestionList extends React.Component {
   render() {
     return (
       <Content >
-        <div className="row">
+        <div className="row" style={{ marginTop: "40px" }}>
           <div className="col-lg-3 col-sm-4 col-md-4">
           </div>
           <div className="col-lg-6 col-sm-4 col-md-4">
