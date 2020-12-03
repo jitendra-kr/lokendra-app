@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from 'next/router'
 import { httpGet } from "../../../utils/http";
-import '../../../../styles/BlogList.module.css';
 import Link from "next/link";
 import { Layout, Button } from "antd";
 import { getUser, isAuthorisedToPostBlog } from "../../../utils/index";
@@ -53,7 +52,7 @@ class BlogList extends React.Component {
     if(this.state.data.length) {
       return (
         <Content>
-          <div className="row">
+          <div className="row"  style={{ marginTop: "40px" }}>
             <div className="col-lg-2"></div>
             <div className="col-lg-8">
               <div className ={` ${isAuthorisedToPostBlog() ? 'visible' : 'invisible '}`}>
