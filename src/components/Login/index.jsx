@@ -1,27 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 import Link from "next/link";
 import { MailOutlined , LockOutlined } from '@ant-design/icons';
 
 import { Form, Input, Layout, Button, message } from "antd";
-import Config from '../../config/env'
 import { UserContext } from "../../contexts/UserContext";
 import { httpPost } from "../../utils/http";
+import { isLoggedIn } from "../../utils";
 import { messageError } from "../../utils/antd";
 const { Content } = Layout;
-
-
 
 
 function Login(props) {
 
   const router = useRouter();
+
+  useEffect(() => {
+    if(isLoggedIn()) {
+      router.push("/");
+    }
+  }, [])
+
   const setUser = useContext(UserContext)[1];
   const [isButtonDisabled, setButtonDisabled] = useState(false);
-
-  const state = {
-    config: Config.getData().default
-  }
 
   const onFinish = values => {
 
@@ -30,7 +31,7 @@ function Login(props) {
     setButtonDisabled(true);
 
     httpPost({
-      url: `${state.config.baseUrl}login`,
+      url: `login`,
       body: values
     }).then((response) => {
 

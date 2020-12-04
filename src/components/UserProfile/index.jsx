@@ -1,20 +1,19 @@
 import React from "react";
 import { Layout, Descriptions, Button, Radio, Input } from 'antd';
+import { withRouter } from 'next/router'
 import { httpGet, httpPut } from "../../utils/http";
-import { Link } from "react-router-dom";
-import Config from '../../config/env'
+import Link from "next/link";
 import {
     messageLoading,
     messageSuccess,
     messageError
   } from "../../utils/antd"
-import "./index.css";
+// import "./index.css";
 const { Content } = Layout;
 
 class UserProfile extends React.Component {
 
     state = {
-        config: Config.getData().default,
         isButtonDisabled: false,
         size: 'default',
         tgbtn: true,
@@ -27,13 +26,13 @@ class UserProfile extends React.Component {
         super(props);
         this.state.userData = JSON.parse(localStorage.getItem('user'));
         if (!this.state.userData?._id) {
-            this.props.history.push("/");
+            this.props.router.push("/");
         }
     }
 
 
     componentDidMount() {
-        httpGet({url: `${this.state.config.baseUrl}user/${this.state.userData._id}`}).then((response) => {
+        httpGet({url: `user/${this.state.userData._id}`}).then((response) => {
             this.setState({
                 userData: response.result
             });
@@ -70,7 +69,7 @@ class UserProfile extends React.Component {
             return messageError({ content: 'Email can not be empty', key, duration: 2 });
         }
         httpPut({
-            url: `${this.state.config.baseUrl}${this.state.userData._id}/update-user`,
+            url: `${this.state.userData._id}/update-user`,
             body: data
           }).then(response => {
             this.setState({ isButtonDisabled: false });
@@ -157,7 +156,7 @@ class UserProfile extends React.Component {
 
                             <Descriptions.Item label="Password">
                             ********
-                            <Link style={{float: "right"}} to={`/reset-password`}>Change Password</Link>
+                            <Link style={{float: "right"}} href={`/reset-password`}>Change Password</Link>
 
                             </Descriptions.Item>
 
@@ -177,4 +176,4 @@ class UserProfile extends React.Component {
     }
 }
 
-export default UserProfile;
+export default withRouter(UserProfile);

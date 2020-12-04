@@ -14,16 +14,14 @@ const { Content } = Layout;
 
 class Register extends React.Component {
 
-  // router;
   constructor(props) {
     super(props);
-
-    // this.router = useRouter();
     this.state = {
       isButtonDisabled: false,
       config: Config.getData().default,
     }
   }
+
   onFinish = values => {
     const key = 'onFinish';
     messageLoading({ key });
@@ -148,5 +146,4 @@ class Register extends React.Component {
   }
 }
 
-// Register = Form.create({ name: "normal_login" })(Register);
 export default withRouter(Register);
