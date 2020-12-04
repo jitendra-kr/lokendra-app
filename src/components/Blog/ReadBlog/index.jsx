@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import { messageError, messageSuccess } from "../../../utils/antd";
 import { getUser } from "../../../utils/index";
+import AppHead from "../../Head/head";
 
 const { Content } = Layout;
 const { confirm } = Modal;
@@ -77,6 +78,8 @@ class ReadBlog extends React.Component {
     }
     return (
       <Content style={{ padding: "50px 50px" }}>
+
+        <AppHead data = {this.state.data}/>
         <div className="row">
           <div className="col-lg-2" />
           <div className="col-lg-8">

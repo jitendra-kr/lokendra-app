@@ -1,14 +1,16 @@
 import React from "react";
-import { withRouter } from 'next/router'
-import { httpGet } from "../../../utils/http";
 import Link from "next/link";
+
+import { withRouter } from "next/router";
+import { httpGet } from "../../../utils/http";
+import AppHead from "../../Head/head";
 import { Layout, Button } from "antd";
+
 import { getUser, isAuthorisedToPostBlog } from "../../../utils/index";
 
-
 const { Content } = Layout;
-class BlogList extends React.Component {
 
+class BlogList extends React.Component {
   user;
   constructor(props) {
     super(props);
@@ -17,7 +19,6 @@ class BlogList extends React.Component {
     this.state = {
       data: [],
     };
-
   }
 
   componentDidMount() {
@@ -49,19 +50,23 @@ class BlogList extends React.Component {
   }
 
   render() {
-    if(this.state.data.length) {
+    if (this.state.data.length) {
       return (
-        <Content>
-          <div className="row"  style={{ marginTop: "40px" }}>
+        <Content style={{ padding: "50px 50px" }}>
+          <AppHead data={{}}/>
+          <div className="row" style={{ marginTop: "40px" }}>
             <div className="col-lg-2"></div>
             <div className="col-lg-8">
-              <div className ={` ${isAuthorisedToPostBlog() ? 'visible' : 'invisible '}`}>
+              <div
+                className={` ${
+                  isAuthorisedToPostBlog() ? "visible" : "invisible "
+                }`}
+              >
                 <Link href="/blog/new-blog">
                   <Button type="primary" htmlType="submit">
                     New Blog
                   </Button>
                 </Link>
-
               </div>
               <div className="row">
                 {this.state.data.map((item, i) => {
@@ -75,7 +80,6 @@ class BlogList extends React.Component {
                       style={{ marginTop: "25px" }}
                     >
                       <div className="listing border">
-
                         <span>
                           <img
                             className="image-blog-list"
@@ -103,9 +107,8 @@ class BlogList extends React.Component {
         </Content>
       );
     } else {
-      return '';
+      return "";
     }
-
   }
 }
 

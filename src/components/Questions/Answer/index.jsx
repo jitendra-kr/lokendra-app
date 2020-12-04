@@ -6,6 +6,7 @@ import { withRouter } from 'next/router'
 import { httpGet, httpPost, httpDelete } from "../../../utils/http";
 import Editor from "../../Editor";
 import { Layout, Button, Modal } from "antd";
+import AppHead from "../../Head/head";
 import {
   EditOutlined,
   DeleteOutlined,
@@ -164,6 +165,8 @@ class Answer extends React.Component {
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
+
+        <AppHead data={this.state.data} />
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">

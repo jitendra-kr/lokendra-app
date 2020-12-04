@@ -9,6 +9,7 @@ import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser } from "../../../utils/index";
+import AppHead from "../../Head/head";
 const { Content } = Layout;
 const { TabPane } = Tabs;
 const { confirm } = Modal;
@@ -210,6 +211,7 @@ class QuestionList extends React.Component {
   render() {
     return (
       <Content >
+        <AppHead data={{}}/>
         <div className="row" style={{ marginTop: "40px" }}>
           <div className="col-lg-3 col-sm-4 col-md-4">
           </div>

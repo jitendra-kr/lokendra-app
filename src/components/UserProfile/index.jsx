@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, Descriptions, Button, Radio, Input } from 'antd';
 import { withRouter } from 'next/router'
 import { httpGet, httpPut } from "../../utils/http";
+import { getUser } from "../../utils";
 import Link from "next/link";
 import {
     messageLoading,
@@ -24,7 +25,7 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state.userData = JSON.parse(localStorage.getItem('user'));
+        this.state.userData = getUser();
         if (!this.state.userData?._id) {
             this.props.router.push("/");
         }

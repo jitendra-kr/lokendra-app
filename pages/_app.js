@@ -12,7 +12,7 @@ import { messageDestroy } from "../src/utils"
 import Config from '../src/config/env';
 import { Layout, Spin } from "antd";
 
-import { MainHeader } from "../src/components"
+import { MainHeader, MainFooter } from "../src/components"
 
 const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
 
@@ -71,6 +71,7 @@ export default function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
 
         </UserContext.Provider>
+        <MainFooter />
       </Layout>
 
       )
