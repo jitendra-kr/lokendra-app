@@ -1,32 +1,34 @@
 import React from "react";
 import Link from "next/link";
 import { Layout } from "antd";
+import styles from "../../../styles/MainFooter.module.css";
 const { Footer } = Layout;
 
-
-const MainFooter = ({ appName }) => {
+const MainFooter = () => {
   return (
-    <Footer>
+    <Footer className={styles.footer}>
       <div className="row">
         <div className="col-lg-12">
           <div className="col-lg-4 display-inline-block">
-          <Link href="/" style={{ color: "#ffffff" }}>
-          Blogs
-          </Link>
-            </div>
+            <Link href="/">
+              <span style={{ color: "#ffffff" }}>Blogs</span>
+            </Link>
+          </div>
           <div className="col-lg-4 display-inline-block">
-          <Link href="/questions" style={{ color: "#ffffff" }}>
-          Questions
-          </Link>
-            </div>
+            <Link href="/questions" style={{ color: "#ffffff" }}>
+              <span style={{ color: "#ffffff" }}>Questions</span>
+            </Link>
+          </div>
           <div className="col-lg-4 display-inline-block">
-          <Link href="/donate" style={{ color: "#ffffff" }}>
-          Donate
-          </Link>
-            </div>
+            <Link href="/donate" style={{ color: "#ffffff" }}>
+              <span style={{ color: "#ffffff" }}>Donate</span>
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="m-top-30">Jimmypoint © {new Date().getFullYear()}. All Rights Reserved</div>
+      <div className="m-top-30">
+        Jimmypoint © {new Date().getFullYear()}. All Rights Reserved
+      </div>
     </Footer>
   );
 };

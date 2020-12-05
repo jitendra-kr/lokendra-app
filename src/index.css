@@ -143,6 +143,58 @@ p {
   z-index: 1;
 }
 
+/* start user page detail css */
+
+.ant-descriptions {
+  border-style: groove;
+}
+
+.ant-descriptions-item-label {
+  width: 20%;
+  font-weight: bolder !important;
+  line-height: 3 !important;
+}
+
+.ant-descriptions-view {
+  padding: 40px;
+}
+
+/* End user page detail css */
+
+/* extra small */
+@media only screen and (min-width: 480px) {
+  input {
+    width: 100% !important;
+  }
+}
+/* For iPhone */
+@media only screen and (min-device-width: 480px) {
+  input {
+    width: 100% !important;
+  }
+}
+/* For tablets */
+
+@media only screen and (min-device-width: 768px) {
+  input {
+    width: 80% !important;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  input {
+    width: 60% !important;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  input {
+    width: 60% !important;
+  }
+}
+
 
 
 
