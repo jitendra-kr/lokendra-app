@@ -11,17 +11,17 @@ const MainFooter = () => {
         <div className="col-lg-12">
           <div className="col-lg-4 display-inline-block">
             <Link href="/">
-              <span style={{ color: "#ffffff" }}>Blogs</span>
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>Blogs</span>
             </Link>
           </div>
           <div className="col-lg-4 display-inline-block">
-            <Link href="/questions" style={{ color: "#ffffff" }}>
-              <span style={{ color: "#ffffff" }}>Questions</span>
+            <Link href="/questions">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>Questions</span>
             </Link>
           </div>
           <div className="col-lg-4 display-inline-block">
-            <Link href="/donate" style={{ color: "#ffffff" }}>
-              <span style={{ color: "#ffffff" }}>Donate</span>
+            <Link href="/donate">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>Donate</span>
             </Link>
           </div>
         </div>

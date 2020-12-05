@@ -54,7 +54,7 @@ function MainHeader() {
     <Header>
       <Link href="/">
         <span
-          style={{ color: "#ffffff", fontSize: "x-large", fontStyle: "italic" }}
+          style={{ color: "#ffffff", fontSize: "x-large", fontStyle: "italic", cursor: 'pointer' }}
         >
           JP
         </span>

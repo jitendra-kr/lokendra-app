@@ -25,7 +25,7 @@ class BlogList extends React.Component {
     httpGet({ url: `/blog-management/blogs` })
       .then((response) => {
         this.setState({
-          data: response.result,
+          data: [],
         });
       })
       .catch((err) => {
@@ -52,9 +52,9 @@ class BlogList extends React.Component {
   render() {
     if (this.state.data.length) {
       return (
-        <Content style={{ padding: "50px 50px" }}>
+        <Content style={{ padding: "50px 50px" }}  >
           <AppHead data={{}}/>
-          <div className="row" style={{ marginTop: "40px" }}>
+          <div className="row" style={{ marginTop: "40px" }} className="content-height">
             <div className="col-lg-2"></div>
             <div className="col-lg-8">
               <div
