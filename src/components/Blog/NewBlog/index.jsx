@@ -262,7 +262,7 @@ class NewBlog extends React.Component {
 
         </Content>);
     } else {
-      return <div />;
+      return <div className = "ant-layout-content" ></div>;
     }
   }
 }
