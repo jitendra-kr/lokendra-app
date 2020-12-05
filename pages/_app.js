@@ -1,6 +1,7 @@
-import '../src/index.css'
+import '../styles/global.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'antd/dist/antd.css';
+
 import React, { useState } from 'react';
 import Router from 'next/router';
 
