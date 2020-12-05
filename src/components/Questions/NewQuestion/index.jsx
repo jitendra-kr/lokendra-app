@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Select } from "antd";
+import { Form, Input, Button, Select, Layout } from "antd";
 import { withRouter } from 'next/router'
 import Editor from "../../Editor";
 
@@ -11,6 +11,7 @@ import {
 } from "../../../utils/antd";
 import { httpGet, httpPost } from "../../../utils/http";
 const { TextArea } = Input;
+const { Content } = Layout;
 
 class NewQuestion extends React.Component {
   formRef = React.createRef();
@@ -92,6 +93,7 @@ class NewQuestion extends React.Component {
 
     if (this.state.data.title || !this.state._id) {
       return (
+        <Content style={{ padding: "50px 50px" }}>
         <div className="row">
           <div className="col-lg-2" />
           <div className="col-lg-8">
@@ -164,6 +166,7 @@ class NewQuestion extends React.Component {
           </div>
           <div className="col-lg-2" />
         </div>
+        </Content>
       );
     } else {
       return <div />

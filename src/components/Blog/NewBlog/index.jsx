@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Select, Tag } from "antd";
+import { Form, Input, Button, Select, Tag, Layout } from "antd";
 import { withRouter } from 'next/router'
 import { getUser } from "../../../utils/index";
 import Editor from "../../Editor";
@@ -13,6 +13,7 @@ import {
 import { httpGet, httpPost, httpPut } from "../../../utils/http";
 const { TextArea } = Input;
 const { Option } = Select;
+const { Content } = Layout;
 
 class NewBlog extends React.Component {
   options = [
@@ -134,7 +135,8 @@ class NewBlog extends React.Component {
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
-        <div className="row">
+        <Content style={{ padding: "50px 50px" }}>
+        <div className="row" style={{ marginTop: "40px" }}>
           <div className="col-lg-2" />
           <div className="col-lg-8">
             <Form
@@ -257,7 +259,8 @@ class NewBlog extends React.Component {
           </div>
           <div className="col-lg-2" />
         </div>
-      );
+
+        </Content>);
     } else {
       return <div />;
     }
