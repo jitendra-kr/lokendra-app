@@ -160,6 +160,20 @@ p {
 /* End user page detail css */
 
 
+.ask-view {
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 2px;
+  font-family: inherit;
+}
+
+.post-view-data {
+  font-size: 12px;
+  margin-right: 2px;
+  font-family: inherit;
+}
+
+
 
 
 
