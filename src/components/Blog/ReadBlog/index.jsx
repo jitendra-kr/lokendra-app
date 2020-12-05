@@ -74,7 +74,9 @@ class ReadBlog extends React.Component {
 
   render() {
     if( isEmpty(this.state.data)) {
-      return '';
+      return (
+        <div className = "ant-layout-content" ></div>
+      );
     }
     return (
       <Content style={{ padding: "50px 50px" }}>
