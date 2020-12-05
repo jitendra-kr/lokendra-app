@@ -3,7 +3,7 @@ import Link from "next/link";
 import { withRouter } from 'next/router'
 import { httpGet, httpPut } from "../../../utils/http";
 import { Layout, Modal } from "antd";
-import { isEmpty } from 'lodash';
+import { isEmpty, last } from 'lodash';
 import {
   EditOutlined,
   DeleteOutlined,
@@ -21,15 +21,17 @@ class ReadBlog extends React.Component {
   user;
   constructor(props) {
     super(props);
-    this.slug = this.props.router.query.slug;
     this.user = getUser();
-
     this.state = {
       data: {},
     };
   }
 
   componentDidMount() {
+
+    this.slug = last(window.location.pathname.split('/'));
+
+
     httpGet({ url: `/blog-management/blog-detail/${this.slug}` })
       .then((response) => {
         this.setState({
