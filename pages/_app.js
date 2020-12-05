@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 
 import axios from "axios";
+import { sample } from "lodash";
 import { LoadingOutlined } from '@ant-design/icons';
 import { UserContext } from '../src/contexts/UserContext'
 import { getUser } from '../src/utils'
@@ -16,11 +17,12 @@ import { Layout, Spin } from "antd";
 import { MainHeader, MainFooter } from "../src/components"
 
 const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
+const baseUrls = Config.getData().default.baseUrl
 
 export default function MyApp({ Component, pageProps }) {
 
   axios.interceptors.request.use(config => {
-    config.baseURL = Config.getData().default.baseUrl;
+    config.baseURL = sample(baseUrls);
     if (config.method === 'get') {
       isLoading++;
       setLoader(true);
