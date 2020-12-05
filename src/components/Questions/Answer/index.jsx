@@ -1,5 +1,5 @@
 import React from "react";
-import { upperFirst } from "lodash";
+import { upperFirst, nth } from "lodash";
 import Link from "next/link";
 import { withRouter } from 'next/router'
 // import "./index.css";
@@ -37,7 +37,7 @@ class Answer extends React.Component {
 
     this.myRef = React.createRef();
     this.state = {
-      _id: this.props.router.query._id,
+      _id: '',
       answer: "",
       data: {
         answer: [],
@@ -45,6 +45,9 @@ class Answer extends React.Component {
     };
   }
   componentDidMount() {
+    this.setState({
+      _id: nth(window.location.pathname.split('/'), -2)
+    })
     httpGet({ url: `question/answer/${this.state._id}` })
       .then((response) => {
         this.setState({
