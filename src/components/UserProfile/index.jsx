@@ -27,7 +27,7 @@ class UserProfile extends React.Component {
         super(props);
         this.state.userData = getUser();
         if (!this.state.userData?._id) {
-            this.props.router.push("/");
+            // this.props.router.push("/");
         }
     }
 
