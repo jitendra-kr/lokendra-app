@@ -20,7 +20,6 @@ function MainHeader() {
     user = "na";
   }
 
-  console.log(user)
 
 
   const { md } = useBreakpoint();
@@ -46,7 +45,6 @@ function MainHeader() {
   };
 
   const onDrawerClose = () => {
-    console.log("onDrawerClose hited");
     setvisible(false);
   };
 
