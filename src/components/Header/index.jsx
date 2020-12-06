@@ -20,6 +20,9 @@ function MainHeader() {
     user = "na";
   }
 
+  console.log(user)
+
+
   const { md } = useBreakpoint();
 
   const keysMapper = {
@@ -140,7 +143,7 @@ function MainHeader() {
             onClick={showDrawer}
           />
           <Drawer
-            title={`Hello ${user ? user.firstName : ""}`}
+            title={`Hello ${user === "na" ? '' : user.firstName}`}
             placement={"left"}
             closable={false}
             onClose={onDrawerClose}
