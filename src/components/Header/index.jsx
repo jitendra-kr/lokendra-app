@@ -20,7 +20,6 @@ function MainHeader() {
     user = "na";
   }
 
-
   const { md } = useBreakpoint();
 
   const keysMapper = {
@@ -39,19 +38,25 @@ function MainHeader() {
   const logout = () => {
     localStorage.clear();
     setUser(() => null);
+    setvisible(false);
     router.push("/");
   };
 
   const onDrawerClose = () => {
+    console.log("onDrawerClose hited");
     setvisible(false);
   };
 
   const showDrawer = () => {
     setvisible(true);
-  }
+  };
 
   const userMenu = (
-    <Menu>
+    <Menu
+      onClick={() => {
+        setvisible(false);
+      }}
+    >
       <Menu.Item>
         <Link href="/user">Account</Link>
       </Menu.Item>
@@ -59,44 +64,53 @@ function MainHeader() {
     </Menu>
   );
 
-  const mainMenu  = (
-    <Menu
-      theme="dark"
-      mode={md ? "horizontal" : "inline"}
-      defaultSelectedKeys={[selectedTab]}
-      style={{ lineHeight: "64px", float: "right" }}
-    >
-      <Menu.Item key="3">
-        <Link href="/" style={{ color: "#ffffff" }}>
-          Blogs
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link href="/questions" style={{ color: "#ffffff" }}>
-          Questions
-        </Link>
-      </Menu.Item>
-      {user === "na" ? (
-        <Menu.Item key="1">
-          <Link href="/login" style={{ color: "#ffffff" }}>
-            Login/Register
+  const mainMenu = () => {
+    return (
+      <Menu
+        theme="dark"
+        mode={md ? "horizontal" : "inline"}
+        defaultSelectedKeys={[selectedTab]}
+        style={{ lineHeight: "64px", float: "right" }}
+
+      >
+        <Menu.Item key="3"        onClick={() => {
+          setvisible(false);
+        }}>
+          <Link href="/" style={{ color: "#ffffff" }}>
+            Blogs
           </Link>
         </Menu.Item>
-      ) : (
-        <Menu.Item key="0">
-          <Dropdown overlay={userMenu} placement="bottomCenter">
-            <div
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-              style={{ color: "#ffffff" }}
-            >
-              {user ? <UserOutlined /> : null}
-            </div>
-          </Dropdown>
+        <Menu.Item key="2"        onClick={() => {
+          setvisible(false);
+        }}>
+          <Link href="/questions" style={{ color: "#ffffff" }}>
+            Questions
+          </Link>
         </Menu.Item>
-      )}
-    </Menu>
-  );
+        {user === "na" ? (
+          <Menu.Item key="1"        onClick={() => {
+            setvisible(false);
+          }}>
+            <Link href="/login" style={{ color: "#ffffff" }}>
+              Login/Register
+            </Link>
+          </Menu.Item>
+        ) : (
+          <Menu.Item key="0">
+            <Dropdown overlay={userMenu} placement="bottomCenter">
+              <div
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+                style={{ color: "#ffffff" }}
+              >
+                {user ? <UserOutlined /> : null}
+              </div>
+            </Dropdown>
+          </Menu.Item>
+        )}
+      </Menu>
+    );
+  };
 
   return md !== undefined ? (
     <Header>
@@ -112,7 +126,9 @@ function MainHeader() {
           JP
         </span>
       </Link>
-      {md ? {mainMenu} : (
+      {md ? (
+        mainMenu()
+      ) : (
         <>
           <MenuFoldOutlined
             style={{
@@ -124,14 +140,14 @@ function MainHeader() {
             onClick={showDrawer}
           />
           <Drawer
-            title={`Hello ${user ? user.firstName : ''}`}
+            title={`Hello ${user ? user.firstName : ""}`}
             placement={"left"}
             closable={false}
             onClose={onDrawerClose}
             visible={visible}
             key={"left"}
           >
-            {mainMenu}
+            {mainMenu()}
           </Drawer>
         </>
       )}
