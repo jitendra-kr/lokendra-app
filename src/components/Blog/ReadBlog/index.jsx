@@ -40,7 +40,6 @@ class ReadBlog extends React.Component {
 
       })
       .catch((err) => {
-        console.log("Error Reading data " + err);
       });
   }
 
@@ -67,7 +66,6 @@ class ReadBlog extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
-            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },

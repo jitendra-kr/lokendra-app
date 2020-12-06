@@ -18,7 +18,7 @@ class BuyNow extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+
       }
     });
   };
@@ -61,7 +61,6 @@ class BuyNow extends React.Component {
     }
   ];
   changePaymentMode = e => {
-    console.log("radio checked", e.target.value);
     this.setState({
       value: e.target.value
     });

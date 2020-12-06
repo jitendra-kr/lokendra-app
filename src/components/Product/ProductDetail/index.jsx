@@ -30,7 +30,6 @@ export default class BuyNow extends React.Component {
         data: _.filter(data, { slug: this.paramsId })[0]
       });
     }).catch(err => {
-      console.log("Error Reading data " + err);
     });
   }
 
@@ -86,7 +85,6 @@ export default class BuyNow extends React.Component {
     if (size && flavour) {
       this.props.history.push(`/checkout/${size}/${flavour}`);
     } else {
-      console.log("Please size and flavour");
     }
   };
   defaultSelectedSize() {

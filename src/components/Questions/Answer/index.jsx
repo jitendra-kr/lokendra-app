@@ -1,21 +1,17 @@
 import React from "react";
 import { upperFirst, nth } from "lodash";
-import Link from "next/link";
-import { withRouter } from 'next/router'
-// import "./index.css";
-import { httpGet, httpPost, httpDelete } from "../../../utils/http";
-import Editor from "../../Editor";
 import { Layout, Button, Modal } from "antd";
-import AppHead from "../../Head/head";
-import {
-  EditOutlined,
-  DeleteOutlined,
-  ExclamationCircleOutlined,
-} from "@ant-design/icons";
-import { messageError, messageSuccess } from "../../../utils/antd";
+import Link from "next/link";
+import { withRouter } from 'next/router';
+import { isEmpty } from 'lodash';
 
-import { getUser } from "../../../utils/index";
+import Editor from "../../Editor";
+import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
+import { getUser } from "../../../utils/index";
+import { httpGet, httpPost, httpDelete } from "../../../utils/http";
+import { messageError, messageSuccess } from "../../../utils/antd";
+import {  EditOutlined,  DeleteOutlined,  ExclamationCircleOutlined} from "@ant-design/icons";
 
 const { confirm } = Modal;
 const { Content } = Layout;
@@ -33,30 +29,34 @@ class Answer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.user = getUser();
 
+    this.user = getUser();
     this.myRef = React.createRef();
     this.state = {
       _id: '',
       answer: "",
+      loaded: false,
       data: {
         answer: [],
       },
     };
   }
+
   componentDidMount() {
-    this.setState({
-      _id: nth(window.location.pathname.split('/'), -2)
-    })
-    httpGet({ url: `question/answer/${this.state._id}` })
-      .then((response) => {
-        this.setState({
-          data: response.result,
-        });
-      })
-      .catch((err) => {
-        console.log("Error Reading data " + err);
+
+    let _id = nth(window.location.pathname.split('/'), -2);
+
+    httpGet({ url: `question/answer/${_id}` })
+    .then((response) => {
+      this.setState({
+        data: response.result,
+        loaded: true,
+        _id: _id
       });
+    })
+    .catch((err) => {
+
+    });
   }
 
   date(date) {
@@ -111,7 +111,6 @@ class Answer extends React.Component {
         messageSuccess({ content: "Your answer is saved successfully" });
       })
       .catch((err) => {
-        console.log(err);
         messageError({ content: "something went wrong" });
       });
   }
@@ -136,7 +135,6 @@ class Answer extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
-            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },
@@ -158,7 +156,6 @@ class Answer extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
-            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },
@@ -166,6 +163,9 @@ class Answer extends React.Component {
   }
 
   render() {
+    if (!this.state.loaded) {
+      return <div className = "ant-layout-content" ></div>;
+    }
     return (
       <Content style={{ padding: "50px 50px" }}>
 

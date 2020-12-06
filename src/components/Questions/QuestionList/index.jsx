@@ -56,7 +56,6 @@ class QuestionList extends React.Component {
         this.skip += 50;
       })
       .catch((err) => {
-        console.log("Error Reading data " + err);
       });
   }
 
@@ -79,7 +78,6 @@ class QuestionList extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
-            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },

@@ -52,7 +52,7 @@ function Login(props) {
   };
 
   const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
+
   };
 
   const setUserData = (response) => {

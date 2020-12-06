@@ -36,7 +36,6 @@ class NewQuestion extends React.Component {
           });
         })
         .catch((err) => {
-          console.log("Error Reading data " + err);
         });
     }
   }
@@ -69,7 +68,6 @@ class NewQuestion extends React.Component {
         }
       })
       .catch((err = {}) => {
-        console.log(err);
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
           messageError({ content: err.data.message, key, duration: 2 });
@@ -80,7 +78,6 @@ class NewQuestion extends React.Component {
   }
 
   handleEditorChange = (content, editor) => {
-    console.log("Content was updated:", content);
   };
 
   getEditorData(data) {

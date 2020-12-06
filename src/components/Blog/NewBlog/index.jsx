@@ -52,7 +52,7 @@ class NewBlog extends React.Component {
           });
         })
         .catch((err) => {
-          console.log("Error Reading data " + err);
+
         });
     }
   }
@@ -82,7 +82,6 @@ class NewBlog extends React.Component {
 
   postNew(values, key) {
     values.slug = this.state.data.slug;
-    console.log(values)
     let http = {
       a:  httpPost,
       b: httpPut
@@ -106,7 +105,7 @@ class NewBlog extends React.Component {
         }
       })
       .catch((err = {}) => {
-        console.log(err);
+
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
           messageError({ content: err.data.message, key, duration: 2 });
@@ -117,7 +116,6 @@ class NewBlog extends React.Component {
   }
 
   handleEditorChange = (content, editor) => {
-    console.log("Content was updated:", content);
   };
 
   onFinishFailed({ values, errorFields, outOfDate }) {

@@ -19,7 +19,6 @@ class ProductList extends React.Component {
         data: data
       })
     }).catch(err => {
-      console.log("Error Reading data " + err);
     });
   }
 
