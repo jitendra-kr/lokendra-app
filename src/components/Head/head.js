@@ -1,18 +1,19 @@
 import Head from 'next/head'
+import { get } from "lodash";
 import React, { useEffect, useState } from "react";
 
 export default function AppHead(props) {
 
-    const [author, setAuthor] = useState('Jimmypoint');
+    const [author, setAuthor] = useState('Jimmypoint, jitendra');
 
     const [url, seturl] = useState('http://www.jimmypoint.com');
     useEffect(() => {
         let name = author;
-        if(props.data.author.firstName) {
-            name = props.data.author.firstName;
+        if(get(props, 'data.author.firstName')) {
+            name = get(props, 'data.author.firstName');
         }
-        if (props.data.author.firstName && props.data.author.lastName) {
-            name += ' ' + props.data.author.lastName;
+        if (get(props, 'data.author.firstName') && get(props, 'data.author.lastName')) {
+            name += ' ' + get(props, 'data.author.lastName');
         }
         seturl(window.location.href);
         setAuthor(name)
