@@ -18,8 +18,6 @@ function MainHeader() {
   const router = useRouter();
   const { md } = useBreakpoint();
 
-  console.log(md);
-
   if (!user || isEmpty(user)) {
     user = "na";
   }
@@ -69,37 +67,29 @@ function MainHeader() {
     return (
       <Menu
         theme="dark"
-        mode={"horizontal"}
+        mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
-        style={{ lineHeight: "64px", float: "right" }}
+        style={{ float: "right" }}
+
       >
-        <Menu.Item
-          key="3"
-          onClick={() => {
-            setvisible(false);
-          }}
-        >
+        <Menu.Item key="3" onClick={() => {
+          setvisible(false);
+        }}>
           <Link href="/" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
         </Menu.Item>
-        <Menu.Item
-          key="2"
-          onClick={() => {
-            setvisible(false);
-          }}
-        >
+        <Menu.Item key="2" onClick={() => {
+          setvisible(false);
+        }}>
           <Link href="/questions" style={{ color: "#ffffff" }}>
             Questions
           </Link>
         </Menu.Item>
         {user === "na" ? (
-          <Menu.Item
-            key="1"
-            onClick={() => {
-              setvisible(false);
-            }}
-          >
+          <Menu.Item key="1" onClick={() => {
+            setvisible(false);
+          }}>
             <Link href="/login" style={{ color: "#ffffff" }}>
               Login/Register
             </Link>
@@ -110,9 +100,8 @@ function MainHeader() {
               <div
                 className="ant-dropdown-link"
                 onClick={(e) => e.preventDefault()}
-                style={{ color: "#ffffff" }}
-              >
-                {user ? <UserOutlined /> : null}
+                style={{ color: "#ffffff" }}>
+                <UserOutlined />
               </div>
             </Dropdown>
           </Menu.Item>
@@ -149,7 +138,7 @@ function MainHeader() {
             onClick={showDrawer}
           />
           <Drawer
-            title={`Hello ${user === "na" ? "" : user.firstName}`}
+            title={`Hello ${user === "na" ? '' : user.firstName}`}
             placement={"left"}
             closable={false}
             onClose={onDrawerClose}

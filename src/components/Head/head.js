@@ -7,6 +7,8 @@ export default function AppHead(props) {
     const [author, setAuthor] = useState('Jimmypoint, jitendra');
 
     const [url, seturl] = useState('http://www.jimmypoint.com');
+
+
     useEffect(() => {
         let name = author;
         if(get(props, 'data.author.firstName')) {
@@ -17,7 +19,12 @@ export default function AppHead(props) {
         }
         seturl(window.location.href);
         setAuthor(name)
-      }, []);
+    }, []);
+
+    const description = () => {
+        const defaultDescription = "Jimmy Point is the largest, most trusted open platform where you can learn and share knowledge.";
+        return get(props, 'data.meta_description', defaultDescription);
+    }
 
 
     return <Head>
@@ -36,7 +43,7 @@ export default function AppHead(props) {
             content="Jimmy Point"/>
         <meta
             property="og:image"
-            itemprop="image primaryImageOfPage"
+            itemProp="image primaryImageOfPage"
             content="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint.png" />
         <meta
             property="og:type"
@@ -55,14 +62,14 @@ export default function AppHead(props) {
             content={props.data.meta_keywords || "Jimmypoint"} />
         <meta
             name="description"
-            content={props.data.meta_description || "Jimmypoint"} />
+            content={description()} />
 
         <meta
             property="twitter:title"
             content={props.data.meta_keywords || "Jimmypoint"} />
         <meta
             property="twitter:description"
-            content={props.data.meta_description || "Jimmypoint"}/>
+            content={description()}/>
 
         <meta
             property="al:web:url"
