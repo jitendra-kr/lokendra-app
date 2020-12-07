@@ -3,7 +3,6 @@ import { Form, Input, Button, Select, Layout } from "antd";
 import { withRouter } from 'next/router'
 import Editor from "../../Editor";
 
-import Config from "../../../config/env";
 import {
   messageLoading,
   messageSuccess,
@@ -22,7 +21,6 @@ class NewQuestion extends React.Component {
     this.state = {
       _id: this.props.router.query._id,
       isButtonDisabled: false,
-      config: Config.getData().default,
       data: {}
     };
   }

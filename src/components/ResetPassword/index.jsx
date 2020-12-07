@@ -3,7 +3,7 @@ import Link from "next/link";
 import { withRouter } from 'next/router'
 import { MessageOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Form, Input, Layout, Button } from "antd";
-import Config from '../../config/env'
+
 import {
   messageLoading,
   messageSuccess,
@@ -20,7 +20,6 @@ class ResetPassword extends React.Component {
 
     this.state = {
       data: [],
-      config: Config.getData().default,
       otpSent: false,
       email: '',
       isButtonDisabled: false,
@@ -37,7 +36,7 @@ class ResetPassword extends React.Component {
 
     values.email = this.state.email;
     httpPost({
-      url: `${this.state.config.baseUrl}set-new-password`,
+      url: `set-new-password`,
       body: values
     }).then(response => {
       this.setState({ isButtonDisabled: false });
@@ -66,7 +65,7 @@ class ResetPassword extends React.Component {
     messageLoading({ key });
 
     httpPost({
-      url: `${this.state.config.baseUrl}change-pwd-otp`,
+      url: `change-pwd-otp`,
       body: values
     }).then(response => {
 

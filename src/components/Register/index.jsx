@@ -3,7 +3,7 @@ import Link from "next/link";
 import { withRouter } from 'next/router'
 import { Form, Input, Layout, Button } from "antd";
 import { MailOutlined, LockOutlined, UserOutlined  } from '@ant-design/icons';
-import Config from '../../config/env'
+
 import {
   messageLoading,
   messageSuccess,
@@ -17,8 +17,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isButtonDisabled: false,
-      config: Config.getData().default,
+      isButtonDisabled: false
     }
   }
 
@@ -27,7 +26,7 @@ class Register extends React.Component {
     messageLoading({ key });
     this.setState({ isButtonDisabled: true });
     httpPost({
-      url: `${this.state.config.baseUrl}register`,
+      url: `register`,
       body: values
     }).then(response => {
       this.setState({ isButtonDisabled: false });

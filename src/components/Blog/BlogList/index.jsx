@@ -18,6 +18,7 @@ class BlogList extends React.Component {
 
     this.state = {
       data: [],
+      loaded: false
     };
   }
 
@@ -26,6 +27,7 @@ class BlogList extends React.Component {
       .then((response) => {
         this.setState({
           data: response.result,
+          loaded: true
         });
       })
       .catch((err) => {
@@ -51,7 +53,7 @@ class BlogList extends React.Component {
 
   render() {
 
-      return (
+      return this.state.loaded ?  (
         <Content style={{ padding: "50px 50px" }}  >
           <AppHead data={{}}/>
           <div className="row" style={{ marginTop: "20px" }}>
@@ -105,7 +107,7 @@ class BlogList extends React.Component {
             <div className="col-lg-2"></div>
           </div>
         </Content>
-      );
+      ) : (<div className = "ant-layout-content" ></div>);
 
   }
 }

@@ -4,7 +4,6 @@ import { withRouter } from 'next/router'
 import { getUser } from "../../../utils/index";
 import Editor from "../../Editor";
 
-import Config from "../../../config/env";
 import {
   messageLoading,
   messageSuccess,
@@ -38,7 +37,6 @@ class NewBlog extends React.Component {
     this.state = {
       _id: this.props.router.query.slug,
       isButtonDisabled: false,
-      config: Config.getData().default,
       data: {},
     };
   }
