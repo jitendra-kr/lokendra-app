@@ -1,4 +1,4 @@
-import { BlogList } from "../src/components"
+import { BlogList } from "../../src/components"
 
 function BlogListPage() {
     return <BlogList />
