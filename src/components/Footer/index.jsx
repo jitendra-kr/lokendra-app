@@ -9,17 +9,23 @@ const MainFooter = () => {
     <Footer className={styles.footer}>
       <div className="row">
         <div className="col-lg-12">
-          <div className="col-lg-4 display-inline-block">
+          <div className="col-lg-3 display-inline-block">
+            <Link href="/about-me">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>About Me</span>
+            </Link>
+          </div>
+
+          <div className="col-lg-3 display-inline-block">
             <Link href="/">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>Blogs</span>
             </Link>
           </div>
-          <div className="col-lg-4 display-inline-block">
+          <div className="col-lg-3 display-inline-block">
             <Link href="/questions">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>Questions</span>
             </Link>
           </div>
-          <div className="col-lg-4 display-inline-block">
+          <div className="col-lg-3 display-inline-block">
             <Link href="/donate">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>Donate</span>
             </Link>
