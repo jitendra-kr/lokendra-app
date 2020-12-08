@@ -1,7 +1,10 @@
-import { Image } from 'antd';
+import { Image, Layout } from 'antd';
+
+const { Content } = Layout;
 
 function DonatePage() {
-    return (<div className="row" style={{ padding: "50px 50px" }}>
+    return (<Content style={{ padding: "50px 50px" }}  >
+        <div className="row" >
         <div className="col-lg-2" />
         <div className="col-lg-8">
             <h1 style={{ textAlign: 'center' }}>Help us do more</h1>
@@ -39,7 +42,8 @@ function DonatePage() {
             </div>
         </div>
         <div className="col-lg-2" />
-    </div> )
+    </div>
+    </Content>)
 }
 
 export default DonatePage
