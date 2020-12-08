@@ -1,5 +1,6 @@
 import { Image, Layout } from 'antd';
 import Link from "next/link";
+import {AppHead} from "../src/components";
 
 const { Content } = Layout;
 
@@ -8,6 +9,7 @@ import styles from "../styles/aboutUs.module.css";
 function aboutUs() {
     return (
         <Content style={{ padding: "50px 50px" }}  >
+            <AppHead data={{}}/>
             <div className="row" >
                 <div className="col-lg-2" />
                 <div className="col-lg-8">

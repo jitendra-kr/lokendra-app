@@ -1,6 +1,7 @@
 export { default as MainHeader } from './Header';
-export { default as MainFooter } from './Footer';
+export { default as AppHead } from './Head/head';
 
+export { default as MainFooter } from './Footer';
 
 export { default as Login } from './Login';
 export { default as Register } from './Register';
