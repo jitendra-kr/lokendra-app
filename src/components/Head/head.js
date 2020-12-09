@@ -55,59 +55,62 @@ export default function AppHead(props) {
         <meta
             property="og:type"
             content="website"
-            key="viewport"
+            key="og:type"
              />
+        <meta
+            name="robots"
+            content="index, follow" />
         <meta
             property="og:site_name"
             content="Jimmy Point"
-            key="viewport"/>
+            key="og:site_name"/>
         <meta
             property="og:image"
             itemProp="image primaryImageOfPage"
             content="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint.png"
-            key="viewport" />
+            key="og:image" />
         <meta
             property="og:type"
             content="article"
-            key="viewport"/>
+            key="og:type"/>
 
         <meta
             property="og:url"
             content={url }
-            key="viewport"/>
+            key="og:url"/>
 
         <meta
             property="og:title"
             content={props.data.meta_keywords || "Jimmypoint"}
-            key="viewport" />
+            key="og:title" />
 
         <meta
             name="title"
             content={props.data.meta_keywords || "Jimmypoint"}
-            key="viewport" />
+            key="title" />
         <meta
             name="description"
             content={description()}
-            key="viewport"/>
+            key="description"/>
 
         <meta
             property="twitter:title"
             content={props.data.meta_keywords || "Jimmypoint"}
-            key="viewport" />
+            key="twitter:title" />
         <meta
             property="twitter:description"
             content={description()}
-            key="viewport"/>
+            key="twitter:description"/>
 
         <meta
             property="al:web:url"
             content={props.data.url || "Jimmypoint"}
-            key="viewport" />
+            key="al:web:url" />
 
         <meta
             name="author"
             content={author}
-            key="viewport"/>
+            key="author"/>
 
 
     </Head>;
