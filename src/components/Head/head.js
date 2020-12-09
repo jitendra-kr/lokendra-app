@@ -42,6 +42,10 @@ export default function AppHead(props) {
         return get(props, 'data.meta_description', defaultDescription);
     }
 
+    const metaKeywords = () => {
+        return get(props, 'data.meta_keywords', title);
+    }
+
 
     return <Head>
         <title>{title}</title>
@@ -81,12 +85,12 @@ export default function AppHead(props) {
 
         <meta
             property="og:title"
-            content={props.data.meta_keywords || "Jimmypoint"}
+            content={metaKeywords()}
             key="og:title" />
 
         <meta
             name="title"
-            content={props.data.meta_keywords || "Jimmypoint"}
+            content={metaKeywords()}
             key="title" />
         <meta
             name="description"
@@ -95,7 +99,7 @@ export default function AppHead(props) {
 
         <meta
             property="twitter:title"
-            content={props.data.meta_keywords || "Jimmypoint"}
+            content={metaKeywords()}
             key="twitter:title" />
         <meta
             property="twitter:description"
