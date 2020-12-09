@@ -8,7 +8,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { httpPost } from "../../utils/http";
 import { isLoggedIn } from "../../utils";
 import { messageError } from "../../utils/antd";
-import AppHead from "../../components";
+import {AppHead} from "../../components";
 const { Content } = Layout;
 
 
