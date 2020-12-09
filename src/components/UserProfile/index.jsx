@@ -181,7 +181,7 @@ class UserProfile extends React.Component {
 
               <Descriptions.Item>
                 {!this.state.tgbtn ? (
-                  <>
+                  <React.Fragment>
                     <Button
                       onClick={() => this.toggleButton("cancel")}
                       className="edit-icon"
@@ -196,7 +196,7 @@ class UserProfile extends React.Component {
                     >
                       Save
                     </Button>
-                  </>
+                  </React.Fragment>
                 ) : null}
               </Descriptions.Item>
             </Descriptions>

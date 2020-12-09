@@ -63,7 +63,7 @@ function Login(props) {
 
   return (
     <Content style={{ padding: "50px 50px" }}>
-
+      <AppHead data={{}}/>
       <div className="row content-height"  >
         <div className="col-lg-2" />
         <div className="col-lg-8">

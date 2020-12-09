@@ -86,10 +86,10 @@ class QuestionList extends React.Component {
 
   totalRecords () {
     return  (
-      <>
+      <React.Fragment>
       {this.state.totalRecords ?
       <p style= {{marginLeft: '20px', fontWeight: '400'}} >Showig {this.state.data.length} of {this.state.totalRecords}</p> : ''}
-      </>
+      </React.Fragment>
       )
   }
   tabPane(tab, key) {
@@ -109,7 +109,7 @@ class QuestionList extends React.Component {
                       {this.calculateTitle(item.title)}
                     </Link>
                     {this.isLoggedIn && this.user?._id === item.author?._id ? (
-                      <>
+                      <React.Fragment>
                         <DeleteOutlined
                           style={{
                             color: "red",
@@ -120,7 +120,7 @@ class QuestionList extends React.Component {
                             this.delete(item._id);
                           }}
                         />
-                      </>
+                      </React.Fragment>
                     ) : (
                       ""
                     )}

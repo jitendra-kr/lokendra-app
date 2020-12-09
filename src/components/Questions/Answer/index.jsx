@@ -229,7 +229,7 @@ class Answer extends React.Component {
                     >
                       <div className="listing border ">
                         {this.user && this.user._id === item.ans_by?._id ? (
-                          <>
+                          <React.Fragment>
                             <DeleteOutlined
                               style={{
                                 color: "red",
@@ -252,7 +252,7 @@ class Answer extends React.Component {
                                 this.editAnswer(item);
                               }}
                             />
-                          </>
+                          </React.Fragment>
                         ) : (
                           ""
                         )}

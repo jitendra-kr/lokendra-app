@@ -127,7 +127,7 @@ function MainHeader() {
       {md ? (
         mainMenu()
       ) : (
-        <>
+        <React.Fragment>
           <MenuFoldOutlined
             style={{
               color: "#ffffff",
@@ -147,7 +147,7 @@ function MainHeader() {
           >
             {mainMenu()}
           </Drawer>
-        </>
+        </React.Fragment>
       )}
     </Header>
   ) : (
