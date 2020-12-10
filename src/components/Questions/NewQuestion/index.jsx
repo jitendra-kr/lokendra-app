@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Select, Layout } from "antd";
+import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
-import Editor from "../../Editor";
 
 import {
   messageLoading,
@@ -9,6 +9,8 @@ import {
   messageError,
 } from "../../../utils/antd";
 import { httpGet, httpPost } from "../../../utils/http";
+
+const Editor = dynamic(() => import('../../Editor'));
 const { TextArea } = Input;
 const { Content } = Layout;
 

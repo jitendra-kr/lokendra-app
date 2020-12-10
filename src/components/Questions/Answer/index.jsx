@@ -3,9 +3,9 @@ import { upperFirst, nth } from "lodash";
 import { Layout, Button, Modal } from "antd";
 import Link from "next/link";
 import { withRouter } from 'next/router';
+import dynamic from 'next/dynamic'
 import { isEmpty } from 'lodash';
 
-import Editor from "../../Editor";
 import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
 import { getUser } from "../../../utils/index";
@@ -13,6 +13,7 @@ import { httpGet, httpPost, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess } from "../../../utils/antd";
 import {  EditOutlined,  DeleteOutlined,  ExclamationCircleOutlined} from "@ant-design/icons";
 
+const Editor = dynamic(() => import('../../Editor'));
 const { confirm } = Modal;
 const { Content } = Layout;
 

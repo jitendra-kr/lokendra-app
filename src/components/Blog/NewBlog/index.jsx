@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, Input, Button, Select, Tag, Layout } from "antd";
+import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import { getUser } from "../../../utils/index";
-import Editor from "../../Editor";
 
 import {
   messageLoading,
@@ -10,6 +10,8 @@ import {
   messageError,
 } from "../../../utils/antd";
 import { httpGet, httpPost, httpPut } from "../../../utils/http";
+
+const Editor = dynamic(() => import('../../Editor'))
 const { TextArea } = Input;
 const { Option } = Select;
 const { Content } = Layout;
@@ -93,17 +95,18 @@ class NewBlog extends React.Component {
         this.setState({ isButtonDisabled: false });
         if (response && response.statusCode === 200) {
           messageSuccess({ content: response.message, key, duration: 4 });
-          this.formRef.current.resetFields();
-          if (this.state._id) {
-            this.props.history.push(
-              `/blog/${this.state._id}`
-            );
+          if (!this.state._id) {
+            this.formRef.current.resetFields();
+            // this.props.router.push(
+            //   `/blog/${this.state._id}`
+            // );
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
         }
       })
       .catch((err = {}) => {
+        console.log(err)
 
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
