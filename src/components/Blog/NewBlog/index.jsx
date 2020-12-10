@@ -30,9 +30,7 @@ class NewBlog extends React.Component {
     super(props);
     this.user = getUser();
 
-    if (!this.user && this.user?.role !== 'admin') {
-      this.props.router.push(`/`);
-    }
+
 
     this.state = {
       _id: this.props.router.query.slug,
@@ -42,6 +40,9 @@ class NewBlog extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.user && this.user?.role !== 'admin') {
+       return this.props.router.push(`/`);
+    }
     if (this.state._id) {
       httpGet({ url: `blog-management/blog-detail/${this.state._id}` })
         .then((response) => {
