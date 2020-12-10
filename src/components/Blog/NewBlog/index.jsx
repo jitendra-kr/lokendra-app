@@ -30,9 +30,9 @@ class NewBlog extends React.Component {
     super(props);
     this.user = getUser();
 
-    // if (!this.user && this.user?.role !== 'admin') {
-    //   this.props.router.push(`/`);
-    // }
+    if (!this.user && this.user?.role !== 'admin') {
+      this.props.router.push(`/`);
+    }
 
     this.state = {
       _id: this.props.router.query.slug,
@@ -94,9 +94,9 @@ class NewBlog extends React.Component {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
           if (this.state._id) {
-            // this.props.history.push(
-            //   `/blog/${this.state._id}`
-            // );
+            this.props.history.push(
+              `/blog/${this.state._id}`
+            );
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
