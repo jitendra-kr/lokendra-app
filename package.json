@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/compatible": "^1.0.8",
-    "@ckeditor/ckeditor5-build-classic": "^23.1.0",
+    "@ckeditor/ckeditor5-custom-build": "git+https://github.com/jitendra-kr/ckeditor5-custom-build.git",
     "@ckeditor/ckeditor5-react": "^3.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
