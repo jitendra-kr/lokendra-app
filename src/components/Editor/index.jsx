@@ -7,7 +7,7 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.CKEditor = require("@ckeditor/ckeditor5-react");
-        this.Editor = require('@ckeditor/ckeditor5-custom-build/build/ckeditor');
+        this.Editor = require('ckeditor5-custom-build/build/ckeditor');
         this.setState({ isServer: false });
 
     }
