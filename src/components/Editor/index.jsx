@@ -14,9 +14,9 @@ class Editor extends React.Component {
 
     editorConfiguration = {
         toolbar: [
-            'heading',
-            '|',
-            // 'bold',
+            // 'heading',
+            // '|',
+            'bold',
             // 'italic',
             // 'link',
             // 'bulletedList',
