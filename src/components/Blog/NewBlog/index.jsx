@@ -11,7 +11,7 @@ import {
 } from "../../../utils/antd";
 import { httpGet, httpPost, httpPut } from "../../../utils/http";
 
-const Editor = dynamic(() => import('../../Editor'))
+const Editor = dynamic(() => import('../../Editor'), { ssr: false })
 const { TextArea } = Input;
 const { Option } = Select;
 const { Content } = Layout;
