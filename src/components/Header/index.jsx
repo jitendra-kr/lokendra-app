@@ -91,7 +91,7 @@ function MainHeader() {
             Questions
           </Link>
         </Menu.Item>
-        {user === "na" ? (
+        {/* {user === "na" ? (
           <Menu.Item
             key="1"
             onClick={() => {
@@ -114,7 +114,7 @@ function MainHeader() {
               </div>
             </Dropdown>
           </Menu.Item>
-        )}
+        )} */}
       </Menu>
     );
   };
