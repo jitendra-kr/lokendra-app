@@ -70,26 +70,34 @@ function MainHeader() {
         mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
         style={{ float: "right" }}
-
       >
-        <Menu.Item key="3" onClick={() => {
-          setvisible(false);
-        }}>
+        <Menu.Item
+          key="3"
+          onClick={() => {
+            setvisible(false);
+          }}
+        >
           <Link href="/" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
         </Menu.Item>
-        <Menu.Item key="2" onClick={() => {
-          setvisible(false);
-        }}>
+        <Menu.Item
+          key="2"
+          onClick={() => {
+            setvisible(false);
+          }}
+        >
           <Link href="/questions" style={{ color: "#ffffff" }}>
             Questions
           </Link>
         </Menu.Item>
         {user === "na" ? (
-          <Menu.Item key="1" onClick={() => {
-            setvisible(false);
-          }}>
+          <Menu.Item
+            key="1"
+            onClick={() => {
+              setvisible(false);
+            }}
+          >
             <Link href="/login" style={{ color: "#ffffff" }}>
               Login/Register
             </Link>
@@ -100,7 +108,8 @@ function MainHeader() {
               <div
                 className="ant-dropdown-link"
                 onClick={(e) => e.preventDefault()}
-                style={{ color: "#ffffff" }}>
+                style={{ color: "#ffffff" }}
+              >
                 <UserOutlined />
               </div>
             </Dropdown>
@@ -124,7 +133,8 @@ function MainHeader() {
           JP
         </span>
       </Link>
-      {md ? (
+      {mainMenu()}
+      {/* {md ? (
         mainMenu()
       ) : (
         <React.Fragment>
@@ -138,7 +148,7 @@ function MainHeader() {
             onClick={showDrawer}
           />
           <Drawer
-            title={`Hello ${user === "na" ? '' : user.firstName}`}
+            title={`Hello ${user === "na" ? "" : user.firstName}`}
             placement={"left"}
             closable={false}
             onClose={onDrawerClose}
@@ -148,7 +158,7 @@ function MainHeader() {
             {mainMenu()}
           </Drawer>
         </React.Fragment>
-      )}
+      )} */}
     </Header>
   ) : (
     ""

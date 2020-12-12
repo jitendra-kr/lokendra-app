@@ -172,6 +172,13 @@ p {
   font-family: inherit;
 }
 
+.till-img-load {
+  height: 200px;
+  background-color: #B5B9C4; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #B5B9C4, #CFD7E6, #FFFFFF);
+}
+
+
 
 
 
