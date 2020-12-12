@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout, Descriptions, Button, Radio, Input } from "antd";
 import { withRouter } from "next/router";
+import { isEmpty } from "lodash";
 import { httpGet, httpPut } from "../../utils/http";
 import { getUser } from "../../utils";
 import Link from "next/link";
@@ -99,8 +100,11 @@ class UserProfile extends React.Component {
   };
 
   render() {
+    if (isEmpty(this.state.userData)) {
+      return <div className = "ant-layout-content" ></div>;
+    }
     return (
-      <Content style={{ padding: "50px 50px" }}>
+       <Content style={{ padding: "50px 50px" }}>
         <div className="row content-height">
           <div className="col-lg-2" />
           <div className="col-lg-8" style={{ textAlign: "center" }}>
