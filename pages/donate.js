@@ -37,7 +37,6 @@ function DonatePage() {
                 <div style={{ textAlign: 'center' }}>
 
                     <Image
-                        width="100%"
                         src="images/paytmqr.jpeg"
                     />
                 </div>

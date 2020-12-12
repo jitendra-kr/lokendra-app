@@ -148,9 +148,8 @@ p {
 }
 
 .ant-descriptions-item-label {
-  width: 20%;
   font-weight: bolder !important;
-  line-height: 3 !important;
+  line-height: 2 !important;
 }
 
 .ant-descriptions-view {

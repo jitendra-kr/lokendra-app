@@ -116,9 +116,11 @@ class UserProfile extends React.Component {
                 </Button>
               }
             >
-              <Descriptions.Item label="First Name" className="test">
+              <Descriptions.Item label="First Name" >
                 {this.state.tgbtn ? (
-                  this.state.userData?.firstName
+                  <span className={styles['user-profile-value']}>
+                  {this.state.userData?.firstName}
+                </span>
                 ) : (
                   <Input
                     allowClear={true}
@@ -131,7 +133,10 @@ class UserProfile extends React.Component {
               </Descriptions.Item>
               <Descriptions.Item label="Last Name">
                 {this.state.tgbtn ? (
-                  this.state.userData?.lastName
+                  <span className={styles['user-profile-value']}>
+
+                  {this.state.userData?.lastName}
+                  </span>
                 ) : (
                   <Input
                     allowClear={true}
@@ -144,11 +149,15 @@ class UserProfile extends React.Component {
               </Descriptions.Item>
               <Descriptions.Item label="Email">
                 {this.state.tgbtn ? (
-                  this.state.userData?.email
+                  <span className={styles['user-profile-value']}>
+
+                 { this.state.userData?.email}
+                  </span>
                 ) : (
                   <Input
                     allowClear={true}
                     className={styles.input}
+                    style = {{marginLeft: '30px'}}
                     name="email"
                     onChange={this.handleInputChange}
                     defaultValue={this.state.userData.email}
@@ -156,20 +165,23 @@ class UserProfile extends React.Component {
                 )}
               </Descriptions.Item>
               <Descriptions.Item label="Gender">
+                <span className={styles['user-profile-value']}>
+
                 <Radio.Group
                   name="gender"
                   onChange={this.handleInputChange}
                   value={this.state.userData?.gender}
                   disabled={this.state.tgbtn}
-                >
+                  >
                   <Radio value={"m"}>Male</Radio>
                   <Radio value={"f"}>Female</Radio>
                   <Radio value={"o"}>Other</Radio>
                 </Radio.Group>
+                  </span>
               </Descriptions.Item>
 
               <Descriptions.Item label="Password">
-                <div>
+                <div className={styles['user-profile-value']}>
                   <span style = {{marginRight: '30px'}} >********</span>
                   <span>
                     <Link style={{ float: "right" }} href={`/reset-password`}>
