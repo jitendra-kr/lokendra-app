@@ -11,7 +11,7 @@ const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 function MainHeader() {
-  let selectedTab = "3";
+  let selectedTab = "";
   let [user, setUser] = useContext(UserContext);
   const [visible, setvisible] = useState(false);
 
@@ -29,11 +29,11 @@ function MainHeader() {
     questions: "2",
   };
 
-  for (let o in keysMapper) {
-    if (router.pathname.includes(o)) {
-      selectedTab = keysMapper[o];
-    }
-  }
+  // for (let o in keysMapper) {
+  //   if (router.pathname.includes(o)) {
+  //     selectedTab = keysMapper[o];
+  //   }
+  // }
 
   const logout = () => {
     localStorage.clear();
