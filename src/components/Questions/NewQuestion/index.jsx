@@ -92,8 +92,8 @@ class NewQuestion extends React.Component {
       return (
         <Content style={{ padding: "50px 50px" }}>
         <div className="row">
-          <div className="col-lg-2" />
-          <div className="col-lg-8">
+          {/* <div className="col-lg-2" /> */}
+          <div className="col-lg-9">
             {!this.state._id ? (
               <React.Fragment>
                 <h2 className="text-center m-bottom-20">Ask a public question</h2>
@@ -111,7 +111,7 @@ class NewQuestion extends React.Component {
               ref={this.formRef}
               initialValues={{ title: this.state.data.title, where_asked: this.state.data.where_asked }}
               onFinish={this.onFinish}
-              style={{ width: "70%", margin: "0 auto" }}
+              style={{  margin: "0 auto" }}
             >
               <Form.Item
                 name="title"
@@ -161,7 +161,7 @@ class NewQuestion extends React.Component {
               </Form.Item>
             </Form>
           </div>
-          <div className="col-lg-2" />
+          <div className="col-lg-3" />
         </div>
         </Content>
       );

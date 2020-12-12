@@ -57,8 +57,7 @@ class BlogList extends React.Component {
         <Content style={{ padding: "50px 50px" }}  >
           <AppHead data={{}}/>
           <div className="row" style={{ marginTop: "20px" }}>
-            <div className="col-lg-2"></div>
-            <div className="col-lg-8">
+            <div className="col-lg-9">
               <div
                 className={` ${
                   isAuthorisedToPostBlog() ? "visible" : "invisible "
@@ -104,7 +103,7 @@ class BlogList extends React.Component {
                 })}
               </div>
             </div>
-            <div className="col-lg-2"></div>
+            <div className="col-lg-4"></div>
           </div>
         </Content>
       ) : (<div className = "ant-layout-content" ></div>);

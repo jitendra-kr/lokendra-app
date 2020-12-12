@@ -79,12 +79,12 @@ class ReadBlog extends React.Component {
       );
     }
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content style={{ padding: "50px 50px", marginTop: '80px' }}>
 
         <AppHead data = {this.state.data}/>
         <div className="row">
-          <div className="col-lg-2" />
-          <div className="col-lg-8">
+          {/* <div className="col-lg-2" /> */}
+          <div className="col-lg-9">
             <div style={{ width: "100%" }}>
               <h1>{this.state.data.title}</h1>
             </div>
@@ -132,7 +132,7 @@ class ReadBlog extends React.Component {
               dangerouslySetInnerHTML={{ __html: this.state.data.content }}
             ></div>
           </div>
-          <div className="col-lg-2" />
+          <div className="col-lg-3" />
         </div>
       </Content>
     );

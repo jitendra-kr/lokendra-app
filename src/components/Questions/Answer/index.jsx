@@ -172,8 +172,8 @@ class Answer extends React.Component {
 
         <AppHead data={this.state.data} />
         <div className="row">
-          <div className="col-lg-2"></div>
-          <div className="col-lg-8">
+          {/* <div className="col-lg-2"></div> */}
+          <div className="col-lg-9">
             <div className="row">
               <div style={{ width: "100%" }}>
                 <h2>{this.state.data.title}</h2>
@@ -311,7 +311,7 @@ class Answer extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-lg-2"></div>
+          <div className="col-lg-3"></div>
         </div>
       </Content>
     );

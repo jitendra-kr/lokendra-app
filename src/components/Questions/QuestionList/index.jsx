@@ -211,9 +211,9 @@ class QuestionList extends React.Component {
       <Content style={{ padding: "50px 50px" }}>
         <AppHead data={{title: "Questions - Jimmy Point"}}/>
         <div className="row" style={{ marginTop: "40px" }}>
-          <div className="col-lg-3 col-sm-4 col-md-4">
-          </div>
-          <div className="col-lg-6 col-sm-4 col-md-4">
+          {/* <div className="col-lg-3 col-sm-4 col-md-4">
+          </div> */}
+          <div className="col-lg-9 col-sm-8 col-md-8">
             <div className="row">
               <Tabs
                 defaultActiveKey="all"
@@ -225,7 +225,7 @@ class QuestionList extends React.Component {
                 {this.tabPane("New Questions", "askQues")}
               </Tabs>
             </div>
-            { this.state.loadMore ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
+            { this.state.loadMore && this.state.data.length ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
               <Button type="primary" loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>load more</Button>
             </div> : ""}
           </div>

@@ -137,8 +137,8 @@ class NewBlog extends React.Component {
       return (
         <Content style={{ padding: "50px 50px" }}>
         <div className="row" style={{ marginTop: "40px" }}>
-          <div className="col-lg-2" />
-          <div className="col-lg-8">
+          {/* <div className="col-lg-2" /> */}
+          <div className="col-lg-9">
             <Form
 
               layout="vertical"
@@ -152,7 +152,7 @@ class NewBlog extends React.Component {
              }}
               onFinish={this.onFinish}
               onFinishFailed = {this.onFinishFailed}
-              style={{ width: "70%", margin: "0 auto" }}
+              style={{  margin: "0 auto" }}
             >
               <Form.Item
                 name="title"
@@ -257,7 +257,7 @@ class NewBlog extends React.Component {
               </Form.Item>
             </Form>
           </div>
-          <div className="col-lg-2" />
+          <div className="col-lg-3" />
         </div>
 
         </Content>);
