@@ -178,6 +178,10 @@ p {
   background-image: linear-gradient(to right, #B5B9C4, #CFD7E6, #FFFFFF);
 }
 
+pre {
+  background-color:#D4D4D4 !important;
+}
+
 
 
 
