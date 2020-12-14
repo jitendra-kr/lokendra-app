@@ -182,6 +182,10 @@ pre {
   background-color:#D4D4D4 !important;
 }
 
+.image img {
+  width: 100%;
+}
+
 
 
 
