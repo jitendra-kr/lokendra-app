@@ -3,16 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@ant-design/compatible": "^1.0.8",
-    "@ckeditor/ckeditor5-custom-build": "git+https://github.com/jitendra-kr/ckeditor5-custom-build.git",
-    "@ckeditor/ckeditor5-react": "^3.0.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "antd": "^4.7.3",
-    "axios": "^0.21.0",
-    "bootstrap": "^4.3.1",
-    "ckeditor5-custom-build": "git+https://github.com/jitendra-kr/testckeditor.git",
+
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "next": "^10.0.3",
