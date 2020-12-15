@@ -90,7 +90,7 @@ class QuestionList extends React.Component {
     this.skip = 0;
     this.search = e.target.value;
     this.fetchQuestion();
-  }, 100)
+  }, 1000)
 
 
   fetchQuestionBySearch() {
