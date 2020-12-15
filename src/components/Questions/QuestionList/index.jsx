@@ -248,7 +248,7 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 15px 59px 56px" }}>
+      <Content style={{ padding: "50px 50px 59px 56px" }}>
         <AppHead data={{title: "Questions - Jimmy Point"}}/>
         <div className="row" style={{ marginTop: "40px" }}>
 

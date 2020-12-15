@@ -54,7 +54,7 @@ class BlogList extends React.Component {
   render() {
 
       return this.state.loaded ?  (
-        <Content style={{ padding: "50px 15px 59px 56px" }}  >
+        <Content style={{ padding: "50px 47px 59px 56px" }}  >
           <AppHead data={{}}/>
           <div className="row" style={{ marginTop: "15px" }}>
             <div className="col-lg-9">

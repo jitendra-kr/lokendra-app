@@ -168,7 +168,7 @@ class Answer extends React.Component {
       return <div className = "ant-layout-content" ></div>;
     }
     return (
-      <Content style={{ padding: "100px 15px 59px 56px" }}>
+      <Content style={{ padding: "100px 50px 59px 56px" }}>
 
         <AppHead data={this.state.data} />
         <div className="row">
