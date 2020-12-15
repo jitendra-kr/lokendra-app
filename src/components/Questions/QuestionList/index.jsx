@@ -90,7 +90,7 @@ class QuestionList extends React.Component {
     this.skip = 0;
     this.search = e.target.value;
     this.fetchQuestion();
-  }, 0)
+  }, 100)
 
 
   fetchQuestionBySearch() {
@@ -133,7 +133,7 @@ class QuestionList extends React.Component {
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
-        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading={false} enterButton />
+        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded}  enterButton />
         {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {

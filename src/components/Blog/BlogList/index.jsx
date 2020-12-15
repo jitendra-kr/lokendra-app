@@ -60,7 +60,7 @@ class BlogList extends React.Component {
             <div className="col-lg-9">
               <div className="row">
                 <div className="col-lg-6">
-                  <h1>Trending</h1>
+                  <h1  style ={{fontFamily: "serif"}} >Trending</h1>
                 </div>
                 <div
                 className={`col-lg-6  ${

@@ -117,11 +117,11 @@ function MainHeader() {
           style={{
             color: "#ffffff",
             fontSize: "x-large",
-            fontStyle: "italic",
+            fontFamily: "math",
             cursor: "pointer",
           }}
         >
-          JP
+          Jimmy Point
         </span>
       </Link>
       {md ? (
