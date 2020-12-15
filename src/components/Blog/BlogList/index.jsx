@@ -54,21 +54,27 @@ class BlogList extends React.Component {
   render() {
 
       return this.state.loaded ?  (
-        <Content style={{ padding: "50px 50px" }}  >
+        <Content style={{ padding: "50px 15px 59px 56px" }}  >
           <AppHead data={{}}/>
-          <div className="row" style={{ marginTop: "20px" }}>
+          <div className="row" style={{ marginTop: "15px" }}>
             <div className="col-lg-9">
-              <div
-                className={` ${
+              <div className="row">
+                <div className="col-lg-6">
+                  <h1>Trending</h1>
+                </div>
+                <div
+                className={`col-lg-6  ${
                   isAuthorisedToPostBlog() ? "visible" : "invisible "
                 }`}
               >
                 <Link href="/blog/new-blog">
-                  <Button type="primary" htmlType="submit">
+                  <Button type="primary" htmlType="submit" style={{float: "right"}}>
                     New Blog
                   </Button>
                 </Link>
               </div>
+              </div>
+
               <div className="row">
                 {this.state.data.map((item, i) => {
                   return (

@@ -1,24 +1,27 @@
 import React from "react";
-import { Layout, Button, Tabs, Modal } from "antd";
-import { upperFirst } from "lodash";
+import { Layout, Button, Tabs, Modal, Input } from "antd";
+import { upperFirst, debounce } from "lodash";
 import { withRouter } from 'next/router'
 import Link from "next/link";
 import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
-import "./QuestionList.module.css";
 import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser } from "../../../utils/index";
 import AppHead from "../../Head/head";
+import styles from "../../../../styles/QuestionList.module.css";
 const { Content } = Layout;
 const { TabPane } = Tabs;
 const { confirm } = Modal;
+const { Search } = Input;
 
 class QuestionList extends React.Component {
   isLoggedIn;
   user;
   skip;
   limit;
+  search;
+  postedBy;
 
   constructor(props) {
     super(props);
@@ -35,18 +38,17 @@ class QuestionList extends React.Component {
     };
   }
 
-  componentDidMount(type) {
-    this.fetchQuestion(type);
+  componentDidMount() {
+    this.fetchQuestion();
   }
 
-  fetchQuestion (type) {
+  fetchQuestion () {
     this.setState({
       dataLoaded: false,
     });
     httpGet({
-      url: `question/question-list?by=${type}&skip=${this.skip}&limit=${this.limit}`,
-    })
-      .then((response) => {
+      url: this.generateUrl(),
+    }).then((response) => {
         this.setState({
           data: [...this.state.data, ...response.result],
           dataLoaded: true,
@@ -57,6 +59,42 @@ class QuestionList extends React.Component {
       })
       .catch((err) => {
       });
+  }
+
+  generateUrl() {
+    let url = "question/question-list?";
+    if(this.postedBy) {
+      url += `by=${this.postedBy}&`;
+    }
+
+    if(this.skip) {
+      url += `skip=${this.skip}&`;
+    }
+
+    if(this.limit) {
+      url += `limit=${this.limit}&`;
+    }
+
+    if(this.search) {
+      url += `search=${this.search}`;
+    }
+
+    return url;
+  }
+
+  searchQuestion = debounce ((e) => {
+    this.setState({
+      data: [],
+      totalRecords: 0
+    })
+    this.skip = 0;
+    this.search = e.target.value;
+    this.fetchQuestion();
+  }, 0)
+
+
+  fetchQuestionBySearch() {
+
   }
 
   loadMore() {
@@ -95,6 +133,7 @@ class QuestionList extends React.Component {
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
+        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading={false} enterButton />
         {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {
@@ -182,6 +221,7 @@ class QuestionList extends React.Component {
   }
 
   onTabClick(key) {
+    this.postedBy = key;
     this.skip = 0;
     this.setState({
       data: [],
@@ -192,7 +232,7 @@ class QuestionList extends React.Component {
       if (key === "askQues") {
         return this.props.router.push("/questions/ask");
       }
-      this.componentDidMount(key);
+      this.componentDidMount();
     } else {
       messageInfo({
         content: `You need to login to ${
@@ -208,11 +248,10 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content style={{ padding: "50px 15px 59px 56px" }}>
         <AppHead data={{title: "Questions - Jimmy Point"}}/>
         <div className="row" style={{ marginTop: "40px" }}>
-          {/* <div className="col-lg-3 col-sm-4 col-md-4">
-          </div> */}
+
           <div className="col-lg-9 col-sm-8 col-md-8">
             <div className="row">
               <Tabs
@@ -220,6 +259,7 @@ class QuestionList extends React.Component {
                 onTabClick={this.onTabClick.bind(this)}
                 style={{ width: "100%" }}
               >
+
                 {this.tabPane("All", "all")}
                 {this.tabPane("My Questions", "me")}
                 {this.tabPane("New Questions", "askQues")}

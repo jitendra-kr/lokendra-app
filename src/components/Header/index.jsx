@@ -75,7 +75,7 @@ function MainHeader() {
         <Menu.Item key="3" onClick={() => {
           setvisible(false);
         }}>
-          <Link href="/" style={{ color: "#ffffff" }}>
+          <Link href="/blog" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
         </Menu.Item>

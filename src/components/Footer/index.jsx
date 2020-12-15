@@ -16,7 +16,7 @@ const MainFooter = () => {
           </div>
 
           <div className="col-lg-3 display-inline-block">
-            <Link href="/">
+            <Link href="/blog">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>Blogs</span>
             </Link>
           </div>

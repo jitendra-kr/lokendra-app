@@ -79,7 +79,7 @@ class ReadBlog extends React.Component {
       );
     }
     return (
-      <Content style={{ padding: "50px 50px", marginTop: '80px' }}>
+      <Content style={{ padding: "100px 15px 59px 56px" }}>
 
         <AppHead data = {this.state.data}/>
         <div className="row">
