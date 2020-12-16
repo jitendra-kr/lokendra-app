@@ -183,7 +183,9 @@ pre {
 }
 
 .image img {
-  width: 100%;
+    display: block;
+    margin: auto;
+    height: 430px;
 }
 
 
