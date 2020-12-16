@@ -133,7 +133,7 @@ class QuestionList extends React.Component {
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
-        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded}  enterButton />
+        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded && this.search}  enterButton />
         {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {

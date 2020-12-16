@@ -91,7 +91,7 @@ class ReadBlog extends React.Component {
             <div className="row">
               <div className="col-lg-3">
                 <span>
-                  <span className="ask-view">Posted On:</span>
+                  <span className="ask-view">Published on:</span>
                   <span className="post-view-data">
                     {this.date(this.state.data.created_at)}
                   </span>
