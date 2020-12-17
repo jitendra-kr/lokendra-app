@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Button, Tabs, Modal, Input } from "antd";
-import { upperFirst, debounce } from "lodash";
+import { upperFirst, debounce, reject } from "lodash";
 import { withRouter } from 'next/router'
 import Link from "next/link";
 import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
@@ -112,7 +112,9 @@ class QuestionList extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
-            that.componentDidMount();
+            that.setState({
+              data: reject(that.state.data, {_id: questionId})
+            })
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
