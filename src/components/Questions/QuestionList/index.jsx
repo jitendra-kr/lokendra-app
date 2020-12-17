@@ -113,7 +113,8 @@ class QuestionList extends React.Component {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
             that.setState({
-              data: reject(that.state.data, {_id: questionId})
+              data: reject(that.state.data, {_id: questionId}),
+              totalRecords: totalRecords - 1
             })
             messageSuccess({ content: "Deleted successfully" });
           })
