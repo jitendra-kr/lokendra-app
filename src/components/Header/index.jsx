@@ -121,7 +121,7 @@ function MainHeader() {
             cursor: "pointer",
           }}
         >
-          Jimmy Point
+          Jimmypoint
         </span>
       </Link>
       {md ? (

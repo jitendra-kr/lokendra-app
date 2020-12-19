@@ -4,12 +4,11 @@ import React, { useEffect, useState } from "react";
 
 export default function AppHead(props) {
 
-    const [author, setAuthor] = useState('Jimmy Point, Jitendra');
+    const [author, setAuthor] = useState('Jimmypoint, Jitendra');
 
     const [url, seturl] = useState('http://www.jimmypoint.com');
 
-    const [title, setTitle] = useState('Jimmy Point');
-
+    const [title, setTitle] = useState('Jimmypoint');
 
     useEffect(() => {
         let name = author;
@@ -24,11 +23,11 @@ export default function AppHead(props) {
         setAuthor(name);
 
         if(/login|register/.test(url)) {
-            setTitle('Jimmy Point - Log In or Sign Up')
+            setTitle('Jimmypoint - Log In or Sign Up')
         }
 
         if(/reset-password/.test(url)) {
-            setTitle('Reset Your Password | Jimmy Point')
+            setTitle('Reset Your Password | Jimmypoint')
         }
 
         if(props.data.title || props.data.meta_keywords) {
@@ -38,7 +37,7 @@ export default function AppHead(props) {
     }, []);
 
     const description = () => {
-        const defaultDescription = "Jimmy Point is the largest, most trusted open platform where you can learn and share knowledge.";
+        const defaultDescription = "Jimmypoint is the largest, most trusted open platform where you can learn and share knowledge.";
         return get(props, 'data.meta_description', defaultDescription);
     }
 
@@ -66,13 +65,12 @@ export default function AppHead(props) {
             content="index, follow" />
         <meta
             property="og:site_name"
-            content="Jimmy Point"
+            content="Jimmypoint"
             key="og:site_name"/>
-        <meta
+        {props.data.image ? <meta
             property="og:image"
-            itemProp="image primaryImageOfPage"
-            content="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint.png"
-            key="og:image" />
+            content={props.data.image}
+            key="og:image" /> : ''}
         <meta
             property="og:type"
             content="article"

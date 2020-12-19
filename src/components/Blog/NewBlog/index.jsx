@@ -106,8 +106,6 @@ class NewBlog extends React.Component {
         }
       })
       .catch((err = {}) => {
-        console.log(err)
-
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
           messageError({ content: err.data.message, key, duration: 2 });
