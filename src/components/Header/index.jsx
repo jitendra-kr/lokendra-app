@@ -30,11 +30,6 @@ function MainHeader() {
     "/questions": "2",
   };
 
-  // for (let o in keysMapper) {
-  //   if (router.pathname.includes(o)) {
-  //     selectedTab = keysMapper[o];
-  //   }
-  // }
 
   selectedTab = keysMapper[router.pathname]
 
