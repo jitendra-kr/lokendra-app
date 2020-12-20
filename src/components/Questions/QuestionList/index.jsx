@@ -28,7 +28,7 @@ class QuestionList extends React.Component {
 
     this.isLoggedIn = isLoggedIn();
     this.skip = 0;
-    this.limit = 50;
+    this.limit = 30;
     this.user = getUser();
     this.state = {
       data: [],
@@ -114,7 +114,7 @@ class QuestionList extends React.Component {
           .then((response) => {
             that.setState({
               data: reject(that.state.data, {_id: questionId}),
-              totalRecords: totalRecords - 1
+              totalRecords: that.state.totalRecords - 1
             })
             messageSuccess({ content: "Deleted successfully" });
           })
