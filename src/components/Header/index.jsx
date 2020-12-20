@@ -31,29 +31,33 @@ function MainHeader() {
   };
 
 
-  selectedTab = keysMapper[router.pathname]
+  selectedTab = keysMapper[router.pathname];
+  console.log(selectedTab)
 
+  const updateSetvisible = (value) => {
+    if(visible !== value) {
+      setvisible(value);
+    }
+  }
 
   const logout = () => {
     localStorage.clear();
     setUser(() => null);
-    setvisible(false);
+    updateSetvisible(false);
     router.push("/");
   };
 
   const onDrawerClose = () => {
-    setvisible(false);
+    updateSetvisible(false);
   };
 
   const showDrawer = () => {
-    setvisible(true);
+    updateSetvisible(true);
   };
 
   const userMenu = (
     <Menu
-      onClick={() => {
-        setvisible(false);
-      }}
+      onClick={onDrawerClose}
     >
       <Menu.Item>
         <Link href="/user">Account</Link>
@@ -71,24 +75,18 @@ function MainHeader() {
         style={{ float: "right" }}
 
       >
-        <Menu.Item key="3" onClick={() => {
-          setvisible(false);
-        }}>
+        <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
         </Menu.Item>
-        <Menu.Item key="2" onClick={() => {
-          setvisible(false);
-        }}>
+        <Menu.Item key="2" onClick={onDrawerClose}>
           <Link href="/questions" style={{ color: "#ffffff" }}>
             Questions
           </Link>
         </Menu.Item>
         {user === "na" ? (
-          <Menu.Item key="1" onClick={() => {
-            setvisible(false);
-          }}>
+          <Menu.Item key="1" onClick={onDrawerClose}>
             <Link href="/login" style={{ color: "#ffffff" }}>
               Login/Register
             </Link>
