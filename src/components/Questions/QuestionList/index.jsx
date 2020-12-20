@@ -28,7 +28,7 @@ class QuestionList extends React.Component {
 
     this.isLoggedIn = isLoggedIn();
     this.skip = 0;
-    this.limit = 30;
+    this.limit = 10;
     this.user = getUser();
     this.state = {
       data: [],
