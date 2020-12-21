@@ -11,17 +11,6 @@ const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 function MainHeader() {
-  let selectedTab = "";
-  let [user, setUser] = useContext(UserContext);
-  const [visible, setvisible] = useState(false);
-
-  const router = useRouter();
-  const { md } = useBreakpoint();
-
-  if (!user || isEmpty(user)) {
-    user = "na";
-  }
-
   const keysMapper = {
     "/": "",
     "/blog": "3",
@@ -30,35 +19,41 @@ function MainHeader() {
     "/questions": "2",
   };
 
+  let [user, setUser] = useContext(UserContext);
+  const [isDrawervisible, setDrawerVisibility] = useState(false);
+  const router = useRouter();
+  const selectedTab = keysMapper[router.pathname];
 
-  selectedTab = keysMapper[router.pathname];
-  console.log(selectedTab)
+  const { md } = useBreakpoint();
 
-  const updateSetvisible = (value) => {
-    if(visible !== value) {
-      setvisible(value);
-    }
+  if (!user || isEmpty(user)) {
+    user = "na";
   }
+
 
   const logout = () => {
     localStorage.clear();
-    setUser(() => null);
-    updateSetvisible(false);
+    setUser(null);
+    setDrawerVisibility(false);
     router.push("/");
   };
 
   const onDrawerClose = () => {
-    updateSetvisible(false);
+    setDrawerVisibility(false);
   };
 
   const showDrawer = () => {
-    updateSetvisible(true);
+    setDrawerVisibility(true);
+  };
+
+  const resetTabsSelection = () => {
+    document
+    .getElementsByClassName("ant-menu-item-selected")[0]
+    .classList.remove("ant-menu-item-selected");
   };
 
   const userMenu = (
-    <Menu
-      onClick={onDrawerClose}
-    >
+    <Menu onClick={onDrawerClose}>
       <Menu.Item>
         <Link href="/user">Account</Link>
       </Menu.Item>
@@ -73,7 +68,6 @@ function MainHeader() {
         mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
         style={{ float: "right" }}
-
       >
         <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
@@ -97,7 +91,8 @@ function MainHeader() {
               <div
                 className="ant-dropdown-link"
                 onClick={(e) => e.preventDefault()}
-                style={{ color: "#ffffff" }}>
+                style={{ color: "#ffffff" }}
+              >
                 <UserOutlined />
               </div>
             </Dropdown>
@@ -111,6 +106,7 @@ function MainHeader() {
     <Header>
       <Link href="/">
         <span
+          onClick={resetTabsSelection}
           style={{
             color: "#ffffff",
             fontSize: "x-large",
@@ -135,11 +131,11 @@ function MainHeader() {
             onClick={showDrawer}
           />
           <Drawer
-            title={`Hello ${user === "na" ? '' : user.firstName}`}
+            title={`Hello ${user === "na" ? "" : user.firstName}`}
             placement={"left"}
             closable={false}
             onClose={onDrawerClose}
-            visible={visible}
+            visible={isDrawervisible}
             key={"left"}
           >
             {mainMenu()}

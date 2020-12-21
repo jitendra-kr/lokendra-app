@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'antd/dist/antd.css';
 
 import React, { useState } from 'react';
-import Router from 'next/router';
 
 import axios from "axios";
 import { sample } from "lodash";
@@ -21,61 +20,55 @@ const baseUrls = Config.getData().default.baseUrl
 
 export default function MyApp({ Component, pageProps }) {
 
+
+  let isLoading = 0;
+  const [loader, setLoader] = useState(false);
+  const [user, setUser] = useState(getUser());
+
+  const startStopLoader = (value) => {
+      setLoader(value);
+  }
+
   axios.interceptors.request.use(config => {
     config.baseURL = sample(baseUrls);
     if (config.method === 'get') {
-      isLoading++;
-      setLoader(true);
+      if (!loader) {
+        startStopLoader(true);
+        isLoading++;
+      }
     }
     return config;
   });
 
   axios.interceptors.response.use(config => {
-
-    isLoading--;
-    if (isLoading <= 0 ) {
-      setLoader(false);
+    if (loader || isLoading) {
+      startStopLoader(false);
+      isLoading--;
     }
     messageDestroy();
     return config;
   }, (err) => {
 
     messageDestroy();
-    setLoader(false);
+    if (loader) {
+      startStopLoader(false);
+    }
     return Promise.reject(err);
 
   });
 
-  let isLoading = 0;
-  const [loader, setLoader] = useState(false);
+  return (
 
-  Router.onRouteChangeStart = () => {
-    setLoader(true);
-  };
-
-  Router.onRouteChangeComplete = () => {
-    setLoader(false);
-  };
-
-  Router.onRouteChangeError = () => {
-    setLoader(false);
-  };
-
-
-  const [user, setUser] = useState(getUser());
-
-    return (
-
-      <Layout>
-        <Spin indicator={antIcon} className="center-loader" spinning={ loader } />
-        <UserContext.Provider value={[user, setUser]}>
+    <Layout>
+      <Spin indicator={antIcon} className="center-loader" spinning={loader} />
+      <UserContext.Provider value={[user, setUser]}>
 
         <MainHeader />
         <Component {...pageProps} />
 
-        </UserContext.Provider>
-        <MainFooter />
-      </Layout>
+      </UserContext.Provider>
+      <MainFooter />
+    </Layout>
 
-      )
-  }
+  )
+}
