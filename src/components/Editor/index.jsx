@@ -38,7 +38,8 @@ class Editor extends React.Component {
             'fontSize',
             'highlight',
             'horizontalLine',
-            'imageInsert'
+            'imageInsert',
+            'mediaEmbed'
       ],
         codeBlock: {
             languages: [
