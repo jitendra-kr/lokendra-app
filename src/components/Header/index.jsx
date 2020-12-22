@@ -47,9 +47,10 @@ function MainHeader() {
   };
 
   const resetTabsSelection = () => {
-    document
-    .getElementsByClassName("ant-menu-item-selected")[0]
-    .classList.remove("ant-menu-item-selected");
+    const eml = document.getElementsByClassName("ant-menu-item-selected")
+    if(eml && eml.length) {
+      eml[0].classList.remove("ant-menu-item-selected");
+    }
   };
 
   const userMenu = (
