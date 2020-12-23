@@ -16,7 +16,7 @@ function aboutUs() {
                     <h1 style={{ textAlign: 'center' }}>About me</h1>
                     <p>
                         For new readers, I’m <strong> Jitendra Kumar </strong>  Founder of <Link href="/">Jimmy Point. </Link>
-                I’m <strong> Software Engineer, professional blogger and Youtuber </strong>. Getting back to my educational background,  I completed <strong> MCA </strong> (2019)
+                I’m <strong> Software Engineer, Professional Blogger and Investor and Trader </strong>. Getting back to my educational background,  I completed <strong> MCA </strong> (2019)
                 </p>
 
                     <div style={{ marginTop: '50px' }}>
