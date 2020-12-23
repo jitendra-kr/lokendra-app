@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { withRouter } from 'next/router'
-import { httpGet, httpPut } from "../../../utils/http";
+import { httpPut } from "../../../utils/http";
 import { Layout, Modal } from "antd";
-import { isEmpty, last } from 'lodash';
 import {
   EditOutlined,
   DeleteOutlined,
@@ -21,27 +20,14 @@ class ReadBlog extends React.Component {
   user;
   constructor(props) {
     super(props);
+
+
     this.user = getUser();
     this.state = {
-      data: {},
+      data: this.props.blogData.result,
     };
   }
 
-  componentDidMount() {
-
-    this.slug = last(window.location.pathname.split('/'));
-
-
-    httpGet({ url: `/blog-management/blog-detail/${this.slug}` })
-      .then((response) => {
-        this.setState({
-          data: response.result,
-        });
-
-      })
-      .catch((err) => {
-      });
-  }
 
   date(date) {
     if (date) {
@@ -73,11 +59,6 @@ class ReadBlog extends React.Component {
   }
 
   render() {
-    if( isEmpty(this.state.data)) {
-      return (
-        <div className = "ant-layout-content" ></div>
-      );
-    }
     return (
       <Content style={{ padding: "100px 50px 59px 56px" }}>
 
