@@ -1,14 +1,14 @@
 import { ReadBlog } from "../../src/components"
-// import { httpGet } from "../../src/utils/http";
+import { sample } from "lodash";
+import Config from '../../src/config/env';
+const baseUrls = Config.getData().default.baseUrl;
 
 function readlog({posts}) {
     return <ReadBlog blogData={posts} />
 }
 
 export async function getStaticPaths() {
-
-    const url = `https://jimmypoint-server-1.herokuapp.com/api/blog-management/blogs?staticPaths=true`;
-
+    const url = `${sample(baseUrls)}blog-management/blogs?staticPaths=true`;
     let response = await fetch(url);
     response = await response.json()
     const paths = response.result.map((data) => ({
@@ -22,9 +22,7 @@ export async function getStaticPaths() {
   }
 
   export async function getStaticProps({ params }) {
-
-    const url = `https://jimmypoint-server-1.herokuapp.com/api/blog-management/blog-detail/${params.slug}`;
-
+    const url = `${sample(baseUrls)}blog-management/blog-detail/${params.slug}`;
     let response = await fetch(url);
     response = await response.json()
 

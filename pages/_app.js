@@ -16,7 +16,7 @@ import { Layout, Spin } from "antd";
 import { MainHeader, MainFooter } from "../src/components"
 
 const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
-const baseUrls = Config.getData().default.baseUrl
+const baseUrls = Config.getData().default.baseUrl;
 
 export default function MyApp({ Component, pageProps }) {
 
