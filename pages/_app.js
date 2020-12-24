@@ -57,6 +57,20 @@ export default function MyApp({ Component, pageProps }) {
 
   });
 
+  Router.events.on('routeChangeStart', () => {
+    if (!loader) {
+      startStopLoader(true);
+    }
+  });
+  Router.events.on('routeChangeComplete', () => {
+    if (loader) {
+      startStopLoader(false);
+    }
+  });
+  Router.events.on('routeChangeError', () => {
+    startStopLoader(false);
+  });
+
   return (
 
     <Layout>
