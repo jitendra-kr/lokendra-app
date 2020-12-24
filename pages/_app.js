@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'antd/dist/antd.css';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'
+import Router from 'next/router';
 
 import axios from "axios";
 import { sample } from "lodash";
@@ -21,7 +21,7 @@ const baseUrls = Config.getData().default.baseUrl;
 
 export default function MyApp({ Component, pageProps }) {
 
-  const router = useRouter();
+
   let isLoading = 0;
   const [loader, setLoader] = useState(false);
   const [user, setUser] = useState(getUser());
@@ -58,19 +58,20 @@ export default function MyApp({ Component, pageProps }) {
 
   });
 
-  router.events.on('routeChangeStart', () => {
+  Router.onRouteChangeStart = () => {
     if (!loader) {
       startStopLoader(true);
     }
-  });
-  router.events.on('routeChangeComplete', () => {
+  };
+
+  Router.onRouteChangeComplete = () => {
     if (loader) {
       startStopLoader(false);
     }
-  });
-  router.events.on('routeChangeError', () => {
+  };
+  Router.onRouteChangeError = () => {
     startStopLoader(false);
-  });
+  };
 
   return (
 
