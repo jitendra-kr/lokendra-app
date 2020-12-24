@@ -10,6 +10,10 @@ export default function AppHead(props) {
 
     const [title, setTitle] = useState('Jimmypoint');
 
+    const defaultImage = "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png"
+
+    const image = get(props, 'data.image', defaultImage);
+
     useEffect(() => {
         let name = author;
         if(get(props, 'data.author.firstName')) {
@@ -67,10 +71,10 @@ export default function AppHead(props) {
             property="og:site_name"
             content="Jimmypoint"
             key="og:site_name"/>
-        {props.data.image ? <meta
+        <meta
             property="og:image"
-            content={props.data.image}
-            key="og:image" /> : ''}
+            content={image}
+            key="og:image" />
         <meta
             property="og:type"
             content="article"

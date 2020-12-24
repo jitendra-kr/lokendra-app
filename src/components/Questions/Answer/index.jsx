@@ -2,14 +2,12 @@ import React from "react";
 import { upperFirst, nth } from "lodash";
 import { Layout, Button, Modal } from "antd";
 import Link from "next/link";
-import { withRouter } from 'next/router';
 import dynamic from 'next/dynamic'
-import { isEmpty } from 'lodash';
 
 import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
 import { getUser } from "../../../utils/index";
-import { httpGet, httpPost, httpDelete } from "../../../utils/http";
+import { httpPost, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess } from "../../../utils/antd";
 import {  EditOutlined,  DeleteOutlined,  ExclamationCircleOutlined} from "@ant-design/icons";
 
@@ -31,34 +29,18 @@ class Answer extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.user = getUser();
     this.myRef = React.createRef();
     this.state = {
       _id: '',
       answer: "",
       loaded: false,
-      data: {
-        answer: [],
-      },
+      data: props.answer,
     };
+    console.log(this.state.data)
   }
 
-  componentDidMount() {
-
-    let _id = nth(window.location.pathname.split('/'), -2);
-
-    httpGet({ url: `question/answer/${_id}` })
-    .then((response) => {
-      this.setState({
-        data: response.result,
-        loaded: true,
-        _id: _id
-      });
-    })
-    .catch((err) => {
-
-    });
-  }
 
   date(date) {
     if (date) {
@@ -164,9 +146,6 @@ class Answer extends React.Component {
   }
 
   render() {
-    if (!this.state.loaded) {
-      return <div className = "ant-layout-content" ></div>;
-    }
     return (
       <Content style={{ padding: "100px 50px 59px 56px" }}>
 
@@ -318,4 +297,4 @@ class Answer extends React.Component {
   }
 }
 
-export default withRouter(Answer);
+export default Answer;
