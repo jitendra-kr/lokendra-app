@@ -68,7 +68,7 @@ function MainHeader() {
         theme="dark"
         mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
-        style={{ float: "right", width: "20%" }}
+        style={{ float: "right" }}
       >
         <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
