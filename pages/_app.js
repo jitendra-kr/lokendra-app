@@ -58,17 +58,17 @@ export default function MyApp({ Component, pageProps }) {
 
   });
 
-  Router.events.on('routeChangeStart', () => {
+  router.events.on('routeChangeStart', () => {
     if (!loader) {
       startStopLoader(true);
     }
   });
-  Router.events.on('routeChangeComplete', () => {
+  router.events.on('routeChangeComplete', () => {
     if (loader) {
       startStopLoader(false);
     }
   });
-  Router.events.on('routeChangeError', () => {
+  router.events.on('routeChangeError', () => {
     startStopLoader(false);
   });
 
