@@ -17,22 +17,8 @@ class BlogList extends React.Component {
     this.user = getUser();
 
     this.state = {
-      data: [],
-      loaded: false
+      data: this.props.data
     };
-  }
-
-  componentDidMount() {
-    httpGet({ url: `/blog-management/blogs` })
-      .then((response) => {
-        this.setState({
-          data: response.result,
-          loaded: true
-        });
-      })
-      .catch((err) => {
-
-      });
   }
 
   calculateTitle = (title) => {
@@ -53,7 +39,7 @@ class BlogList extends React.Component {
 
   render() {
 
-      return this.state.loaded ?  (
+      return (
         <Content style={{ padding: "50px 47px 59px 56px" }}  >
           <AppHead data={{}}/>
           <div className="row" style={{ marginTop: "15px" }}>
@@ -113,7 +99,7 @@ class BlogList extends React.Component {
             <div className="col-lg-4"></div>
           </div>
         </Content>
-      ) : (<div className = "ant-layout-content" ></div>);
+      )
 
   }
 }
