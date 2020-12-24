@@ -61,7 +61,7 @@ class NewQuestion extends React.Component {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
           if(this.state._id) {
-            this.props.history.push(`/questions/${this.state._id}/${this.state.data.slug}`);
+            this.props.router.push(`/questions/${this.state._id}/${this.state.data.slug}`);
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });

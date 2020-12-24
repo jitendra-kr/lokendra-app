@@ -10,8 +10,6 @@ function AnswerPage({answer}) {
 
 export async function getServerSideProps(context) {
 
-    console.log(context.query)
-
     const url = `${sample(baseUrls)}question/answer/${context.params._id}`;
     let response = await fetch(url);
     response = await response.json();
