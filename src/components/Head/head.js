@@ -41,7 +41,7 @@ export default function AppHead(props) {
     }, []);
 
     const description = () => {
-        const defaultDescription = "Jimmypoint is the largest, most trusted open platform where you can learn and share knowledge.";
+        const defaultDescription = "Jimmypoint is the largest, most trusted open platform where you can learn and share your knowledge.";
         return get(props, 'data.meta_description', defaultDescription);
     }
 
