@@ -38,7 +38,6 @@ class Answer extends React.Component {
       loaded: false,
       data: props.answer,
     };
-    console.log(this.state.data)
   }
 
 

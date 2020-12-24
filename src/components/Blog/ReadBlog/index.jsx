@@ -16,7 +16,6 @@ const { Content } = Layout;
 const { confirm } = Modal;
 
 class ReadBlog extends React.Component {
-  slug;
   user;
   constructor(props) {
     super(props);
@@ -103,7 +102,7 @@ class ReadBlog extends React.Component {
                     this.deleteBlog(this.state.data._id);
                   }}
                 />
-                <Link href={`/blog/edit/${this.slug}`}>
+                <Link href={`/blog/edit/${this.state.data.slug}`}>
                   <EditOutlined
                     style={{
                       float: "right",
