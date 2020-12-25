@@ -226,6 +226,7 @@ class QuestionList extends React.Component {
   onTabClick(key) {
     this.postedBy = key;
     this.skip = 0;
+    this.search = '';
     this.setState({
       data: [],
       totalRecords: 0
