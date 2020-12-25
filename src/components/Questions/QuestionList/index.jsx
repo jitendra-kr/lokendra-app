@@ -136,7 +136,8 @@ class QuestionList extends React.Component {
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
-        <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded && this.search}  enterButton />
+
+
         {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {
@@ -226,7 +227,7 @@ class QuestionList extends React.Component {
   onTabClick(key) {
     this.postedBy = key;
     this.skip = 0;
-    this.search = '';
+
     this.setState({
       data: [],
       totalRecords: 0
@@ -254,10 +255,11 @@ class QuestionList extends React.Component {
     return (
       <Content style={{ padding: "50px 50px 59px 56px" }}>
         <AppHead data={{title: "Questions - Jimmypoint"}}/>
-        <div className="row" style={{ marginTop: "40px" }}>
+        <div className="row" >
 
           <div className="col-lg-9 col-sm-8 col-md-8">
             <div className="row">
+              <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded && this.search}  enterButton />
               <Tabs
                 defaultActiveKey="all"
                 onTabClick={this.onTabClick.bind(this)}
