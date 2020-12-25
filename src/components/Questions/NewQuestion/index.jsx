@@ -1,8 +1,9 @@
 import React from "react";
 import { Form, Input, Button, Select, Layout } from "antd";
 import dynamic from "next/dynamic";
+import { debounce } from "lodash";
 import { withRouter } from "next/router";
-
+import Link from "next/link";
 import {
   messageLoading,
   messageSuccess,
@@ -24,6 +25,7 @@ class NewQuestion extends React.Component {
       _id: this.props.router.query._id,
       isButtonDisabled: false,
       data: {},
+      similar: [],
     };
   }
 
@@ -84,12 +86,24 @@ class NewQuestion extends React.Component {
     this.state.data.body = data;
   }
 
+  similarQuestion = debounce((e) => {
+    if (e.target.value) {
+      httpGet({ url: `question/similar-question?keywords=${e.target.value}` })
+        .then((response) => {
+          this.setState({
+            similar: response.result,
+          });
+        })
+        .catch((err) => {
+        });
+    }
+  }, 1000);
+
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
         <Content style={{ padding: "50px 50px" }}>
           <div className="row">
-            {/* <div className="col-lg-2" /> */}
             <div className="col-lg-9">
               {!this.state._id ? (
                 <React.Fragment>
@@ -122,10 +136,26 @@ class NewQuestion extends React.Component {
                   rules={[{ required: true, message: "Please input title!" }]}
                 >
                   <TextArea
+                    onChange={this.similarQuestion}
                     placeholder="e.g. Convert Comma Separated String into an Array"
                     autoSize={{ minRows: 2, maxRows: 5 }}
+                    maxLength = "200"
                   />
                 </Form.Item>
+                {this.state.similar.length ? <Form.Item>
+                  <h5>Similar Questions</h5>
+                  <ul>
+                    {this.state.similar.map((item, i) => {
+                      return (
+                        <li>
+                          <Link href={`/questions/${item._id}/${item.slug}`} key={i}>
+                            <a>{item.title}</a>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </Form.Item> : ''}
                 <Form.Item
                   name="where_asked"
                   label="Asked By"
@@ -171,7 +201,7 @@ class NewQuestion extends React.Component {
         </Content>
       );
     } else {
-      return (<div className = "ant-layout-content" ></div>);
+      return <div className="ant-layout-content"></div>;
     }
   }
 }

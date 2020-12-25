@@ -55,7 +55,7 @@ class QuestionList extends React.Component {
           loadMore: response.result.length && this.limit === response.result.length   ? 1 : 0,
           totalRecords: response.totalRecords ? response.totalRecords : this.state.totalRecords
         });
-        this.skip += 50;
+        this.skip += 10;
       })
       .catch((err) => {
       });
