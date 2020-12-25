@@ -2,24 +2,28 @@ import React from "react";
 import Link from "next/link";
 
 import { withRouter } from "next/router";
-import { httpGet } from "../../../utils/http";
 import AppHead from "../../Head/head";
 import { Layout, Button } from "antd";
 
-import { getUser, isAuthorisedToPostBlog } from "../../../utils/index";
+import { isAuthorisedToPostBlog } from "../../../utils/index";
 
 const { Content } = Layout;
 
 class BlogList extends React.Component {
-  user;
+
+  authorisedToPostBlog;
+
   constructor(props) {
     super(props);
-    this.user = getUser();
-
     this.state = {
       data: this.props.data
     };
   }
+
+  componentDidMount() {
+    this.authorisedToPostBlog = isAuthorisedToPostBlog()
+  }
+
 
   calculateTitle = (title) => {
     const limit = 63;
@@ -44,13 +48,13 @@ class BlogList extends React.Component {
           <AppHead data={{}}/>
           <div className="row" style={{ marginTop: "15px" }}>
             <div className="col-lg-9">
-              <div className="row">
+              {this.authorisedToPostBlog !== undefined ? <div className="row">
                 <div className="col-lg-6">
                   <h1  style ={{fontFamily: "serif"}} >Trending</h1>
                 </div>
                 <div
                 className={`col-lg-6  ${
-                  isAuthorisedToPostBlog() ? "visible" : "invisible "
+                  this.authorisedToPostBlog ? "visible" : "invisible "
                 }`}
               >
                 <Link href="/blog/new-blog">
@@ -59,7 +63,7 @@ class BlogList extends React.Component {
                   </Button>
                 </Link>
               </div>
-              </div>
+              </div> : ''}
 
               <div className="row">
                 {this.state.data.map((item, i) => {

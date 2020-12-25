@@ -15,7 +15,8 @@ function BlogListPage({blog}) {
     return {
       props: {
         blog: response.result
-      }
+      },
+      revalidate: 21600
     }
   }
 

@@ -3,8 +3,12 @@ import { isEmpty } from "lodash";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
-import { Layout, Menu, Dropdown, Grid, Drawer } from "antd";
-import { UserOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Dropdown, Grid, Drawer, Row, Col } from "antd";
+import {
+  UserOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+} from "@ant-design/icons";
 
 import { UserContext } from "../../contexts/UserContext";
 const { Header } = Layout;
@@ -30,7 +34,6 @@ function MainHeader() {
     user = "na";
   }
 
-
   const logout = () => {
     localStorage.clear();
     setUser(null);
@@ -47,8 +50,8 @@ function MainHeader() {
   };
 
   const resetTabsSelection = () => {
-    const eml = document.getElementsByClassName("ant-menu-item-selected")
-    if(eml && eml.length) {
+    const eml = document.getElementsByClassName("ant-menu-item-selected");
+    if (eml && eml.length) {
       eml[0].classList.remove("ant-menu-item-selected");
     }
   };
@@ -68,7 +71,7 @@ function MainHeader() {
         theme="dark"
         mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
-        style={{ float: "right" }}
+        style={{ textAlign: "center" }}
       >
         <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
@@ -104,49 +107,71 @@ function MainHeader() {
   };
 
   return md !== undefined ? (
-    <Header>
-      <Link href="/">
-        <span
-          onClick={resetTabsSelection}
-          style={{
-            color: "#ffffff",
-            fontSize: "x-large",
-            fontFamily: "math",
-            cursor: "pointer",
-          }}
-        >
-          Jimmypoint
-        </span>
-      </Link>
-      {md ? (
-        mainMenu()
-      ) : (
-        <React.Fragment>
-          <MenuFoldOutlined
-            style={{
-              color: "#ffffff",
-              float: "right",
-              marginTop: "20px",
-              fontSize: "30px",
-            }}
-            onClick={showDrawer}
-          />
-          <Drawer
-            title={`Hello ${user === "na" ? "" : user.firstName}`}
-            placement={"left"}
-            closable={false}
-            onClose={onDrawerClose}
-            visible={isDrawervisible}
-            key={"left"}
-          >
-            {mainMenu()}
-          </Drawer>
-        </React.Fragment>
-      )}
-    </Header>
-  ) : (
-    ""
-  );
+    <Layout>
+      <Header className="header">
+        <Row>
+          <Col span={8}>
+            <Link href="/">
+              <span
+                onClick={resetTabsSelection}
+                style={{
+                  color: "#ffffff",
+                  fontSize: "x-large",
+                  fontFamily: "math",
+                  cursor: "pointer",
+                }}
+              >
+                Jimmypoint
+              </span>
+            </Link>
+          </Col>
+          <Col span={8}>col-8</Col>
+          <Col span={8}>
+            <div>
+              {md ? (
+                mainMenu()
+              ) : (
+                <React.Fragment>
+                  {isDrawervisible ? (
+                    <MenuFoldOutlined
+                      style={{
+                        color: "#ffffff",
+                        float: "right",
+                        marginTop: "20px",
+                        fontSize: "30px",
+                      }}
+                      onClick={showDrawer}
+                    />
+                  ) : (
+                    <MenuUnfoldOutlined
+                      style={{
+                        color: "#ffffff",
+                        float: "right",
+                        marginTop: "20px",
+                        fontSize: "30px",
+                      }}
+                      onClick={showDrawer}
+                    />
+                  )}
+
+                  <Drawer
+                    title={`Hello ${user === "na" ? "" : user.firstName}`}
+                    placement={"left"}
+                    closable={false}
+                    onClose={onDrawerClose}
+                    visible={isDrawervisible}
+                    key={"left"}
+                  >
+                    {mainMenu()}
+                  </Drawer>
+                </React.Fragment>
+              )}
+            </div>
+          </Col>
+        </Row>
+      </Header>
+    </Layout>
+  ) : '';
 }
 
 export default MainHeader;
