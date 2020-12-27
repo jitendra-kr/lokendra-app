@@ -47,4 +47,11 @@ function DonatePage() {
     </Content>)
 }
 
+export async function getStaticProps() {
+
+    return {
+        props: {}
+    }
+}
+
 export default DonatePage
