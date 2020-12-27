@@ -1,13 +1,13 @@
 import React from "react";
 import { Layout, Button, Tabs, Modal, Input } from "antd";
 import { upperFirst, debounce, reject } from "lodash";
-import { withRouter } from 'next/router'
+import { withRouter } from "next/router";
 import Link from "next/link";
 import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
-import { isLoggedIn, getUser } from "../../../utils/index";
+import { isLoggedIn, getUser, getLimitedText } from "../../../utils/index";
 import AppHead from "../../Head/head";
 import styles from "../../../../styles/QuestionList.module.css";
 const { Content } = Layout;
@@ -34,7 +34,7 @@ class QuestionList extends React.Component {
       data: [],
       dataLoaded: false,
       loadMore: false,
-      totalRecords: 0
+      totalRecords: 0,
     };
   }
 
@@ -42,63 +42,74 @@ class QuestionList extends React.Component {
     this.fetchQuestion();
   }
 
-  fetchQuestion () {
+  fetchQuestion() {
     this.setState({
       dataLoaded: false,
     });
     httpGet({
       url: this.generateUrl(),
-    }).then((response) => {
+    })
+      .then((response) => {
         this.setState({
           data: [...this.state.data, ...response.result],
           dataLoaded: true,
-          loadMore: response.result.length && this.limit === response.result.length   ? 1 : 0,
-          totalRecords: response.totalRecords ? response.totalRecords : this.state.totalRecords
+          loadMore:
+            response.result.length && this.limit === response.result.length
+              ? 1
+              : 0,
+          totalRecords: response.totalRecords
+            ? response.totalRecords
+            : this.state.totalRecords,
         });
         this.skip += 10;
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }
 
   generateUrl() {
     let url = "question/question-list?";
-    if(this.postedBy) {
+    if (this.postedBy) {
       url += `by=${this.postedBy}&`;
     }
 
-    if(this.skip) {
+    if (this.skip) {
       url += `skip=${this.skip}&`;
     }
 
-    if(this.limit) {
+    if (this.limit) {
       url += `limit=${this.limit}&`;
     }
 
-    if(this.search) {
+    if (this.search) {
       url += `search=${this.search}`;
     }
 
     return url;
   }
 
-  searchQuestion = debounce ((e) => {
+  searchQuestion = debounce((e) => {
     this.setState({
       data: [],
-      totalRecords: 0
-    })
+      totalRecords: 0,
+    });
     this.skip = 0;
     this.search = e.target.value;
     this.fetchQuestion();
-  }, 1000)
+  }, 1000);
 
+  wasAskedToMe(item) {
+    // messageInfo({
+    //   content: `You need to login to ${
+    //     key === "askQues" ? "ask question" : "see your questions"
+    //   }`,
+    //   duration: 3,
+    // });
 
-  fetchQuestionBySearch() {
-
+    this.props.router.push(`/questions/update/${item._id}`);
   }
 
   loadMore() {
-    this.fetchQuestion()
+    this.fetchQuestion();
   }
 
   delete(questionId) {
@@ -113,9 +124,9 @@ class QuestionList extends React.Component {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
             that.setState({
-              data: reject(that.state.data, {_id: questionId}),
-              totalRecords: that.state.totalRecords - 1
-            })
+              data: reject(that.state.data, { _id: questionId }),
+              totalRecords: that.state.totalRecords - 1,
+            });
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
@@ -125,24 +136,32 @@ class QuestionList extends React.Component {
     });
   }
 
-  totalRecords () {
-    return  (
+  totalRecords() {
+    return (
       <React.Fragment>
-      {this.state.totalRecords ?
-      <p style= {{marginLeft: '20px', fontWeight: '400'}} >Showig {this.state.data.length} of {this.state.totalRecords}</p> : ''}
+        {this.state.totalRecords ? (
+          <p style={{ marginLeft: "20px", fontWeight: "400" }}>
+            Showig {this.state.data.length} of {this.state.totalRecords}
+          </p>
+        ) : (
+          ""
+        )}
       </React.Fragment>
-      )
+    );
   }
+
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
-
-
         {this.totalRecords()}
         {this.state.data.length ? (
           this.state.data.map((item, i) => {
             return (
-              <div className="col-lg-12" key={i} style={{ marginTop: "20px",marginBottom: '20px' }}>
+              <div
+                className="col-lg-12"
+                key={i}
+                style={{ marginTop: "20px", marginBottom: "20px" }}
+              >
                 <div className="listing border">
                   <div
                     className="home-page-title"
@@ -171,12 +190,42 @@ class QuestionList extends React.Component {
                   <div style={{ marginLeft: "35px" }}>
                     <p>
                       <span className="question-by">By - </span>
-                      {upperFirst(item.where_asked)}
+                      {upperFirst(
+                        getLimitedText(item.where_asked.join(","), 15)
+                      )}
+                      <Link
+                        href={`/questions/asked-by/${item._id}/${item.slug}`}
+                      >
+                        <a className={styles.more}>
+                          {item.where_asked.join(",").length > 15
+                            ? `and ${item.where_asked.length} more`
+                            : ""}
+                        </a>
+                      </Link>
                       <span className="question-by"> To - </span>
                       {upperFirst(item?.author?.firstName)}
+
+                      <Link
+                        href={`/questions/asked-to/${item._id}/${item.slug}`}
+                      >
+                        <a className={styles.more}>
+                          {item.was_asked_to_me && item.was_asked_to_me.length
+                            ? ` and ${item.was_asked_to_me.length} more`
+                            : ""}
+                        </a>
+                      </Link>
+
                       <span className="question-by"> On - </span>
                       {this.date(item.created_at)}
                     </p>
+                  </div>
+                  <div style={{ marginLeft: "35px", marginBottom: "15px" }}>
+                    <Button
+                      type="primary"
+                      onClick={this.wasAskedToMe.bind(this, item)}
+                    >
+                      Also Asked to me
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -230,7 +279,7 @@ class QuestionList extends React.Component {
 
     this.setState({
       data: [],
-      totalRecords: 0
+      totalRecords: 0,
     });
 
     if (localStorage.getItem("auth")) {
@@ -254,26 +303,44 @@ class QuestionList extends React.Component {
   render() {
     return (
       <Content style={{ padding: "50px 50px 59px 56px" }}>
-        <AppHead data={{title: "Questions - Jimmypoint"}}/>
-        <div className="row" >
-
+        <AppHead data={{ title: "Questions" }} />
+        <div className="row">
           <div className="col-lg-9 col-sm-8 col-md-8">
             <div className="row">
-              <Search placeholder="search" onChange = {this.searchQuestion}  allowClear={true} className={styles.search}  size="large" loading = {!this.state.dataLoaded && this.search}  enterButton />
+              <Search
+                placeholder="search"
+                onChange={this.searchQuestion}
+                allowClear={true}
+                className={styles.search}
+                size="large"
+                loading={!this.state.dataLoaded && this.search}
+                enterButton
+              />
               <Tabs
                 defaultActiveKey="all"
                 onTabClick={this.onTabClick.bind(this)}
                 style={{ width: "100%" }}
               >
-
                 {this.tabPane("All", "all")}
                 {this.tabPane("My Questions", "me")}
                 {this.tabPane("New Questions", "askQues")}
               </Tabs>
             </div>
-            { this.state.loadMore && this.state.data.length ?  <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <Button type="primary" loading = {!this.state.dataLoaded} onClick={() => {this.loadMore()}}>load more</Button>
-            </div> : ""}
+            {this.state.loadMore && this.state.data.length ? (
+              <div style={{ textAlign: "center", marginTop: "35px" }}>
+                <Button
+                  type="primary"
+                  loading={!this.state.dataLoaded}
+                  onClick={() => {
+                    this.loadMore();
+                  }}
+                >
+                  load more
+                </Button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className="col-lg-3 col-sm-4 col-md-4"></div>
         </div>

@@ -35,7 +35,7 @@ export default function AppHead(props) {
         }
 
         if(props.data.title || props.data.meta_keywords) {
-            setTitle(props.data.meta_keywords || props.data.title)
+            setTitle( `${props.data.meta_keywords || props.data.title} - Jimmypoint`)
         }
 
     }, []);
