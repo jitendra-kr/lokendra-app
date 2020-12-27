@@ -98,14 +98,13 @@ class QuestionList extends React.Component {
   }, 1000);
 
   wasAskedToMe(item) {
-    // messageInfo({
-    //   content: `You need to login to ${
-    //     key === "askQues" ? "ask question" : "see your questions"
-    //   }`,
-    //   duration: 3,
-    // });
-
-    this.props.router.push(`/questions/update/${item._id}`);
+    if (this.isLoggedIn && this.user) {
+      return this.props.router.push(`/questions/update/${item._id}`);
+    }
+    messageInfo({
+      content: `You need to login to perform this action`,
+      duration: 3,
+    });
   }
 
   loadMore() {
@@ -191,18 +190,20 @@ class QuestionList extends React.Component {
                     <p>
                       <span className="question-by">By - </span>
                       {upperFirst(
-                        getLimitedText(item.where_asked.join(","), 15)
+                        getLimitedText(item.where_asked.join(","), 20)
                       )}
                       <Link
                         href={`/questions/asked-by/${item._id}/${item.slug}`}
                       >
                         <a className={styles.more}>
-                          {item.where_asked.join(",").length > 15
+                          {item.where_asked.join(",").length > 20
                             ? `and ${item.where_asked.length} more`
                             : ""}
                         </a>
                       </Link>
-                      <span className="question-by"> To - </span>
+                    </p>
+                    <p>
+                    <span className="question-by"> To - </span>
                       {upperFirst(item?.author?.firstName)}
 
                       <Link
@@ -214,17 +215,21 @@ class QuestionList extends React.Component {
                             : ""}
                         </a>
                       </Link>
-
-                      <span className="question-by"> On - </span>
+                    </p>
+                    <p>
+                    <span className="question-by"> On - </span>
                       {this.date(item.created_at)}
                     </p>
                   </div>
                   <div style={{ marginLeft: "35px", marginBottom: "15px" }}>
                     <Button
-                      type="primary"
+                      type="link"
                       onClick={this.wasAskedToMe.bind(this, item)}
                     >
-                      Also Asked to me
+                      <a>
+
+                      Did this question asked to you ?
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -276,16 +281,14 @@ class QuestionList extends React.Component {
   onTabClick(key) {
     this.postedBy = key;
     this.skip = 0;
-
-    this.setState({
-      data: [],
-      totalRecords: 0,
-    });
-
     if (localStorage.getItem("auth")) {
       if (key === "askQues") {
         return this.props.router.push("/questions/ask");
       }
+      this.setState({
+        data: [],
+        totalRecords: 0,
+      });
       this.componentDidMount();
     } else {
       messageInfo({
