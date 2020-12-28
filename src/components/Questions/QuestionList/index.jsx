@@ -27,20 +27,17 @@ class QuestionList extends React.Component {
     super(props);
 
     this.isLoggedIn = isLoggedIn();
-    this.skip = 0;
+    this.skip = this.props.limit;
     this.limit = 10;
     this.user = getUser();
     this.state = {
-      data: [],
-      dataLoaded: false,
-      loadMore: false,
-      totalRecords: 0,
+      data: this.props.questionData,
+      dataLoaded: true,
+      loadMore: this.props.loadMore,
+      totalRecords: this.props.totalRecords,
     };
   }
 
-  componentDidMount() {
-    this.fetchQuestion();
-  }
 
   fetchQuestion() {
     this.setState({
@@ -61,7 +58,7 @@ class QuestionList extends React.Component {
             ? response.totalRecords
             : this.state.totalRecords,
         });
-        this.skip += 10;
+        this.skip += this.limit;
       })
       .catch((err) => {});
   }
@@ -289,7 +286,7 @@ class QuestionList extends React.Component {
         data: [],
         totalRecords: 0,
       });
-      this.componentDidMount();
+      this.fetchQuestion()
     } else {
       messageInfo({
         content: `You need to login to ${

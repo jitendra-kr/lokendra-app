@@ -1,7 +1,14 @@
 import { NewQuestion } from "../../src/components"
 
-function NewQuestionPage() {
+function AskNewQuestionPage() {
     return <NewQuestion />
   }
 
-  export default NewQuestionPage
+  export async function getStaticProps() {
+
+    return {
+        props: {}
+    }
+}
+
+  export default AskNewQuestionPage;

@@ -20,4 +20,4 @@ function BlogListPage({blog}) {
     }
   }
 
-  export default BlogListPage
+  export default BlogListPage;
