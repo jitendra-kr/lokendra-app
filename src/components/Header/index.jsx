@@ -56,53 +56,60 @@ function MainHeader() {
     }
   };
 
-  const userMenu = (
-    <Menu onClick={onDrawerClose}>
-      <Menu.Item>
+  const userMenuItem = (
+    <React.Fragment>
+      <Menu.Item key="0">
         <Link href="/user">Account</Link>
       </Menu.Item>
       <Menu.Item onClick={logout}>Logout</Menu.Item>
+    </React.Fragment>
+
+  );
+
+  const userMenu = (
+    <Menu >
+      {userMenuItem}
     </Menu>
   );
 
   const mainMenu = () => {
     return (
-      <Menu
-        theme="dark"
-        mode={md ? "horizontal" : "inline"}
-        defaultSelectedKeys={[selectedTab]}
-        style={{ textAlign: "center" }}
-      >
-        <Menu.Item key="3" onClick={onDrawerClose}>
-          <Link href="/blog" style={{ color: "#ffffff" }}>
-            Blogs
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="2" onClick={onDrawerClose}>
-          <Link href="/questions" style={{ color: "#ffffff" }}>
-            Questions
-          </Link>
-        </Menu.Item>
-        {user === "na" ? (
-          <Menu.Item key="1" onClick={onDrawerClose}>
-            <Link href="/login" style={{ color: "#ffffff" }}>
-              Login/Register
+        <Menu
+          theme="dark"
+          mode={md ? "horizontal" : "inline"}
+          defaultSelectedKeys={[selectedTab]}
+          style={{ textAlign: "center" }}
+        >
+          <Menu.Item key="3" onClick={onDrawerClose}>
+            <Link href="/blog" style={{ color: "#ffffff" }}>
+              Blogs
             </Link>
           </Menu.Item>
-        ) : (
-          <Menu.Item key="0">
-            <Dropdown overlay={userMenu} placement="bottomCenter">
-              <div
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
-                style={{ color: "#ffffff" }}
-              >
-                <UserOutlined />
-              </div>
-            </Dropdown>
+          <Menu.Item key="2" onClick={onDrawerClose}>
+            <Link href="/questions" style={{ color: "#ffffff" }}>
+              Questions
+            </Link>
           </Menu.Item>
-        )}
-      </Menu>
+          {user === "na" ? (
+            <Menu.Item key="1" onClick={onDrawerClose}>
+              <Link href="/login" style={{ color: "#ffffff" }}>
+                Login/Register
+              </Link>
+            </Menu.Item>
+          ) : md ?  (
+            <Menu.Item key="0">
+              <Dropdown overlay={userMenu} placement="bottomCenter">
+                <div
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                  style={{ color: "#ffffff" }}
+                >
+                  <UserOutlined />
+                </div>
+              </Dropdown>
+            </Menu.Item>
+          ) : userMenuItem}
+        </Menu>
     );
   };
 
