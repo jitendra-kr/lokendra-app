@@ -11,6 +11,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { UserContext } from '../src/contexts/UserContext'
 import { getUser } from '../src/utils'
 import { messageDestroy } from "../src/utils"
+import * as gtag from '../lib/gtag'
 import Config from '../src/config/env';
 import { Layout, Spin } from "antd";
 
@@ -65,6 +66,7 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   Router.onRouteChangeComplete = () => {
+    gtag.pageview(url)
     if (loader) {
       startStopLoader(false);
     }
