@@ -6,6 +6,7 @@ import AppHead from "../../Head/head";
 import { Layout, Button } from "antd";
 
 import { isAuthorisedToPostBlog } from "../../../utils/index";
+import { AdComponent } from "../../index";
 
 const { Content } = Layout;
 
@@ -100,7 +101,9 @@ class BlogList extends React.Component {
                 })}
               </div>
             </div>
-            <div className="col-lg-4"></div>
+            <div className="col-lg-4">
+              <AdComponent />
+            </div>
           </div>
         </Content>
       )
