@@ -4,17 +4,18 @@ import { withRouter } from 'next/router'
 import { Form, Input, Layout, Button } from "antd";
 import { MailOutlined, LockOutlined, UserOutlined  } from '@ant-design/icons';
 
+import { httpPost } from "../../utils/http";
 import {
   messageLoading,
   messageSuccess,
-  messageError
-} from "../../utils/antd"
-import { httpPost } from "../../utils/http";
+  messageError,
+  inputFieldsLimit } from "../../utils";
 const { Content } = Layout;
 
 class Register extends React.Component {
 
   constructor(props) {
+
     super(props);
     this.state = {
       isButtonDisabled: false
@@ -69,6 +70,7 @@ class Register extends React.Component {
               >
                 <Input
                   prefix={<UserOutlined  className="site-form-item-icon" />}
+                  maxLength={inputFieldsLimit.firstName}
                   placeholder="First Name" />
               </Form.Item>
               <Form.Item
@@ -79,6 +81,7 @@ class Register extends React.Component {
               >
                 <Input
                   prefix={<UserOutlined  className="site-form-item-icon" />}
+                  maxLength={inputFieldsLimit.lastName}
                   placeholder="Lirst Name" />
               </Form.Item>
 

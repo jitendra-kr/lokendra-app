@@ -3,9 +3,14 @@ import { Layout, Descriptions, Button, Radio, Input } from "antd";
 import { withRouter } from "next/router";
 import { isEmpty } from "lodash";
 import { httpGet, httpPut } from "../../utils/http";
-import { getUser } from "../../utils";
+import {
+  getUser,
+  inputFieldsLimit,
+  messageLoading,
+  messageSuccess,
+  messageError } from "../../utils";
 import Link from "next/link";
-import { messageLoading, messageSuccess, messageError } from "../../utils/antd";
+import {  } from "../../utils/antd";
 import styles from "../../../styles/UserProfile.module.css";
 const { Content } = Layout;
 
@@ -128,6 +133,7 @@ class UserProfile extends React.Component {
                     name="firstName"
                     className={styles.input}
                     onChange={this.handleInputChange}
+                    maxLength={inputFieldsLimit.firstName}
                     defaultValue={this.state.userData.firstName}
                   />
                 )}
@@ -144,6 +150,7 @@ class UserProfile extends React.Component {
                     name="lastName"
                     className={styles.input}
                     onChange={this.handleInputChange}
+                    maxLength={inputFieldsLimit.lastName}
                     defaultValue={this.state.userData.lastName}
                   />
                 )}
