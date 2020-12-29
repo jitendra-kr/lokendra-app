@@ -61,6 +61,9 @@ function MainHeader() {
       <Menu.Item key="0">
         <Link href="/user">Account</Link>
       </Menu.Item>
+      <Menu.Item key="01">
+        <Link href="/user">New Blog</Link>
+      </Menu.Item>
       <Menu.Item onClick={logout}>Logout</Menu.Item>
     </React.Fragment>
 
