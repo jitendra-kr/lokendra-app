@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { withRouter } from "next/router";
-import { Layout, Button } from "antd";
+import { Layout } from "antd";
 
 import AppHead from "../../Head/head";
-import { isAuthorisedToPostBlog } from "../../../utils/index";
+// import { isAuthorisedToPostBlog } from "../../../utils/index";
 
 const { Content } = Layout;
 
@@ -13,15 +13,11 @@ class BlogList extends React.Component {
     super(props);
     this.state = {
       data: this.props.data,
-      authorisedToPostBlog: false,
+
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      authorisedToPostBlog: isAuthorisedToPostBlog(),
-    });
-  }
+
 
   calculateTitle = (title) => {
     const limit = 63;
@@ -44,30 +40,7 @@ class BlogList extends React.Component {
       <Content>
         <AppHead data={{}} />
         <div className="row">
-          {this.state.authorisedToPostBlog ? (
-            <div className="row" style={{width: "100%"}}>
-              <div className="col-lg-6">
-                <h1 style={{ fontFamily: "serif" }}>Trending</h1>
-              </div>
-              <div
-                className={`col-lg-6  ${
-                  this.state.authorisedToPostBlog ? "visible" : "invisible "
-                }`}
-              >
-                <Link href="/blog/new-blog">
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    style={{ float: "right" }}
-                  >
-                    New Blog
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
+            <h1 style={{ fontFamily: "serif" }}>Trending</h1>
 
           <div className="row">
             {this.state.data.map((item, i) => {
