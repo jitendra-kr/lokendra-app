@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { isEmpty } from "lodash";
 import { useRouter } from "next/router";
 
@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 
 import { UserContext } from "../../contexts/UserContext";
+import { isAuthorisedToPostBlog } from "../../utils";
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
@@ -25,6 +26,9 @@ function MainHeader() {
 
   let [user, setUser] = useContext(UserContext);
   const [isDrawervisible, setDrawerVisibility] = useState(false);
+  const [authorisedToPostBlog, setIsAuthorisedToPostBlog] = useState(
+    isAuthorisedToPostBlog()
+  );
   const router = useRouter();
   const selectedTab = keysMapper[router.pathname];
 
@@ -33,6 +37,10 @@ function MainHeader() {
   if (!user || isEmpty(user)) {
     user = "na";
   }
+
+  useEffect(() => {
+    setIsAuthorisedToPostBlog(isAuthorisedToPostBlog());
+  }, [user]);
 
   const logout = () => {
     localStorage.clear();
@@ -61,58 +69,59 @@ function MainHeader() {
       <Menu.Item key="0">
         <Link href="/user">Account</Link>
       </Menu.Item>
-      <Menu.Item key="01">
-        <Link href="/user">New Blog</Link>
-      </Menu.Item>
+      {authorisedToPostBlog ? (
+        <Menu.Item key="01">
+          <Link href="/user">Post Blog</Link>
+        </Menu.Item>
+      ) : (
+        ""
+      )}
       <Menu.Item onClick={logout}>Logout</Menu.Item>
     </React.Fragment>
-
   );
 
-  const userMenu = (
-    <Menu >
-      {userMenuItem}
-    </Menu>
-  );
+  const userMenu = <Menu>{userMenuItem}</Menu>;
 
   const mainMenu = () => {
     return (
-        <Menu
-          theme="dark"
-          mode={md ? "horizontal" : "inline"}
-          defaultSelectedKeys={[selectedTab]}
-          style={{ textAlign: "center" }}
-        >
-          <Menu.Item key="3" onClick={onDrawerClose}>
-            <Link href="/blog" style={{ color: "#ffffff" }}>
-              Blogs
+      <Menu
+        theme="dark"
+        mode={md ? "horizontal" : "inline"}
+        defaultSelectedKeys={[selectedTab]}
+        style={{ textAlign: "center" }}
+      >
+        <Menu.Item key="3" onClick={onDrawerClose}>
+          <Link href="/blog" style={{ color: "#ffffff" }}>
+            Blogs
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="2" onClick={onDrawerClose}>
+          <Link href="/questions" style={{ color: "#ffffff" }}>
+            Questions
+          </Link>
+        </Menu.Item>
+        {user === "na" ? (
+          <Menu.Item key="1" onClick={onDrawerClose}>
+            <Link href="/login" style={{ color: "#ffffff" }}>
+              Login/Register
             </Link>
           </Menu.Item>
-          <Menu.Item key="2" onClick={onDrawerClose}>
-            <Link href="/questions" style={{ color: "#ffffff" }}>
-              Questions
-            </Link>
+        ) : md ? (
+          <Menu.Item key="0">
+            <Dropdown overlay={userMenu} placement="bottomCenter">
+              <div
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+                style={{ color: "#ffffff" }}
+              >
+                <UserOutlined />
+              </div>
+            </Dropdown>
           </Menu.Item>
-          {user === "na" ? (
-            <Menu.Item key="1" onClick={onDrawerClose}>
-              <Link href="/login" style={{ color: "#ffffff" }}>
-                Login/Register
-              </Link>
-            </Menu.Item>
-          ) : md ?  (
-            <Menu.Item key="0">
-              <Dropdown overlay={userMenu} placement="bottomCenter">
-                <div
-                  className="ant-dropdown-link"
-                  onClick={(e) => e.preventDefault()}
-                  style={{ color: "#ffffff" }}
-                >
-                  <UserOutlined />
-                </div>
-              </Dropdown>
-            </Menu.Item>
-          ) : userMenuItem}
-        </Menu>
+        ) : (
+          userMenuItem
+        )}
+      </Menu>
     );
   };
 
@@ -181,7 +190,9 @@ function MainHeader() {
         </Row>
       </Header>
     </Layout>
-  ) : '';
+  ) : (
+    ""
+  );
 }
 
 export default MainHeader;
