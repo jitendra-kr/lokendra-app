@@ -45,7 +45,7 @@ class BlogList extends React.Component {
         <AppHead data={{}} />
         <div className="row">
           {this.state.authorisedToPostBlog ? (
-            <div className="row">
+            <div className="row" style={{width: "100%"}}>
               <div className="col-lg-6">
                 <h1 style={{ fontFamily: "serif" }}>Trending</h1>
               </div>
