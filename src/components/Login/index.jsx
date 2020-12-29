@@ -63,10 +63,10 @@ function Login(props) {
   }
 
   return (
-    <Content style={{ padding: "50px 50px" }}>
+    <Content>
       <AppHead data={{}}/>
       <div className="row content-height"  >
-        <div className="col-lg-2" />
+        <div className="col-lg-4" />
         <div className="col-lg-8">
 
           <h2 className="text-center m-bottom-30">Login</h2>
@@ -114,7 +114,6 @@ function Login(props) {
           </Form>
         </div>
       </div>
-      <div className="col-lg-2" />
     </Content>
   );
 }

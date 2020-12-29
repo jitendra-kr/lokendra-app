@@ -133,12 +133,9 @@ class NewBlog extends React.Component {
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
-        <Content style={{ padding: "50px 50px" }}>
-        <div className="row" style={{ marginTop: "40px" }}>
-          {/* <div className="col-lg-2" /> */}
-          <div className="col-lg-9">
+        <Content >
+        <div className="row" >
             <Form
-
               layout="vertical"
               ref={this.formRef}
               initialValues={{ title: this.state.data.title,
@@ -255,9 +252,6 @@ class NewBlog extends React.Component {
               </Form.Item>
             </Form>
           </div>
-          <div className="col-lg-3" />
-        </div>
-
         </Content>);
     } else {
       return <div className = "ant-layout-content" ></div>;

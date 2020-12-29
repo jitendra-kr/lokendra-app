@@ -302,10 +302,9 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px 59px 56px" }}>
+      <Content >
         <AppHead data={{ title: "Questions" }} />
-        <div className="row">
-          <div className="col-lg-9 col-sm-8 col-md-8">
+          <div className="col-lg-12 col-sm-12 col-md-12">
             <div className="row">
               <Search
                 placeholder="search"
@@ -342,8 +341,6 @@ class QuestionList extends React.Component {
               ""
             )}
           </div>
-          <div className="col-lg-3 col-sm-4 col-md-4"></div>
-        </div>
       </Content>
     );
   }

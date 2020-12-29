@@ -104,10 +104,7 @@ class UserProfile extends React.Component {
       return <div className = "ant-layout-content" ></div>;
     }
     return (
-       <Content style={{ padding: "50px 50px" }}>
-        <div className="row content-height">
-          <div className="col-lg-2" />
-          <div className="col-lg-8" style={{ textAlign: "center" }}>
+       <Content className=" content-height"  style={{ textAlign: "center" }}>
             <Descriptions
               column={1}
               extra={
@@ -216,9 +213,8 @@ class UserProfile extends React.Component {
                 ) : null}
               </Descriptions.Item>
             </Descriptions>
-          </div>
-          <div className="col-lg-2" />
-        </div>
+
+
       </Content>
     );
   }

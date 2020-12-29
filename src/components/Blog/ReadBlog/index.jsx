@@ -12,6 +12,7 @@ import { messageError, messageSuccess } from "../../../utils/antd";
 import { getUser } from "../../../utils/index";
 import AppHead from "../../Head/head";
 
+
 const { Content } = Layout;
 const { confirm } = Modal;
 
@@ -65,11 +66,7 @@ class ReadBlog extends React.Component {
   render() {
     return (
       <Content style={{ padding: "100px 50px 59px 56px" }}>
-
         <AppHead data = {this.state.data}/>
-        <div className="row">
-          {/* <div className="col-lg-2" /> */}
-          <div className="col-lg-9">
             <div style={{ width: "100%" }}>
               <h1>{this.state.data.title}</h1>
             </div>
@@ -115,10 +112,8 @@ class ReadBlog extends React.Component {
             <div
               style={{ marginTop: "40px" }}
               dangerouslySetInnerHTML={{ __html: this.state.data.content }}
-            ></div>
-          </div>
-          <div className="col-lg-3" />
-        </div>
+            >
+            </div>
       </Content>
     );
   }

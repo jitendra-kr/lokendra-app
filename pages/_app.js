@@ -15,7 +15,7 @@ import * as gtag from '../lib/gtag'
 import Config from '../src/config/env';
 import { Layout, Spin } from "antd";
 
-import { MainHeader, MainFooter } from "../src/components"
+import { MainHeader, MainFooter, AdComponent } from "../src/components"
 
 const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
 const baseUrls = Config.getData().default.baseUrl;
@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }) {
   const [user, setUser] = useState(getUser());
 
   const startStopLoader = (value) => {
-      setLoader(value);
+    setLoader(value);
   }
 
   axios.interceptors.request.use(config => {
@@ -65,7 +65,7 @@ export default function MyApp({ Component, pageProps }) {
     }
   };
 
-  Router.onRouteChangeComplete = () => {
+  Router.onRouteChangeComplete = (url) => {
     gtag.pageview(url)
     if (loader) {
       startStopLoader(false);
@@ -82,11 +82,16 @@ export default function MyApp({ Component, pageProps }) {
       <UserContext.Provider value={[user, setUser]}>
 
         <MainHeader />
-        <Component {...pageProps} />
-
+        <div className="row">
+          <div className="col-lg-9" style={{ padding: "50px 25px 59px 56px" }}>
+            <Component {...pageProps} />
+          </div>
+          <div className="col-lg-3">
+            <AdComponent />
+          </div>
+        </div>
       </UserContext.Provider>
       <MainFooter />
     </Layout>
-
   )
 }

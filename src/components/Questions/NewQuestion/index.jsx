@@ -10,6 +10,7 @@ import {
   messageError,
 } from "../../../utils/antd";
 import { httpGet, httpPost } from "../../../utils/http";
+import { AdComponent } from "../../index";
 
 const Editor = dynamic(() => import("../../Editor"));
 const { TextArea } = Input;
@@ -102,9 +103,7 @@ class NewQuestion extends React.Component {
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
-        <Content style={{ padding: "50px 50px" }}>
-          <div className="row">
-            <div className="col-lg-9">
+        <Content >
               {!this.state._id ? (
                 <React.Fragment>
                   <h2 className="text-center m-bottom-20">
@@ -195,9 +194,6 @@ class NewQuestion extends React.Component {
                   </Button>
                 </Form.Item>
               </Form>
-            </div>
-            <div className="col-lg-3" />
-          </div>
         </Content>
       );
     } else {

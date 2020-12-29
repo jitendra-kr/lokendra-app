@@ -90,7 +90,7 @@ class ResetPassword extends React.Component {
     return (
       <Content style={{ padding: "50px 50px" }}>
         <div className="row content-height"  >
-          <div className="col-lg-2" />
+          <div className="col-lg-4" />
           <div className="col-lg-8">
 
             <h2 className="text-center m-bottom-30">Set New Password</h2>
@@ -212,7 +212,6 @@ class ResetPassword extends React.Component {
 
           </div>
         </div>
-        <div className="col-lg-2" />
       </Content>
     );
   }
