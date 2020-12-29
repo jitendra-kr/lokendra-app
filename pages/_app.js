@@ -83,7 +83,7 @@ export default function MyApp({ Component, pageProps }) {
 
         <MainHeader />
         <div className="row">
-          <div className="col-lg-9" style={{ padding: "50px 25px 59px 56px" }}>
+          <div className="col-lg-9" style={{ padding: "50px 45px 59px 56px" }}>
             <Component {...pageProps} />
           </div>
           <div className="col-lg-3">
