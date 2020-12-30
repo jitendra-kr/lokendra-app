@@ -3,6 +3,7 @@ import Link from "next/link";
 import { withRouter } from 'next/router'
 import { MessageOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Form, Input, Layout, Button } from "antd";
+import AppHead from "../Head/head";
 
 import {
   messageLoading,
@@ -89,6 +90,7 @@ class ResetPassword extends React.Component {
   render() {
     return (
       <Content style={{ padding: "50px 50px" }}>
+        <AppHead data={{ title: "Forgot Password" }} />
         <div className="row content-height"  >
           <div className="col-lg-4" />
           <div className="col-lg-8">
