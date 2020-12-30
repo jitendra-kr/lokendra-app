@@ -13,6 +13,7 @@ import {
 import { isLoggedIn } from "../../utils";
 import { httpPost } from "../../utils/http";
 const { Content } = Layout;
+import styles from "../../../styles/ResetPassword.module.css";
 
 class ResetPassword extends React.Component {
 
@@ -151,7 +152,7 @@ class ResetPassword extends React.Component {
                     name="basic"
                     layout="vertical"
                     onFinish={this.changePwd}
-                    style={{ width: "70%", margin: "0 auto" }}>
+                    className={styles['resetpwd-form']}>
                     <Form.Item
                       name="otp"
                       label = "OTP"

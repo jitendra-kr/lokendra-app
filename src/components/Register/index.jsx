@@ -10,6 +10,7 @@ import {
   messageSuccess,
   messageError,
   inputFieldsLimit } from "../../utils";
+import styles from "../../../styles/Register.module.css";
 const { Content } = Layout;
 
 class Register extends React.Component {
@@ -60,7 +61,7 @@ class Register extends React.Component {
               name="basic"
               initialValues={{ remember: true }}
               onFinish={this.onFinish}
-              style={{ width: "70%", margin: "0 auto" }}
+              className={styles['register-form']}
             >
               <Form.Item
                 name="firstName"

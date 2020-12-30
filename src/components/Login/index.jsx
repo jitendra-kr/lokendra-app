@@ -9,6 +9,7 @@ import { httpPost } from "../../utils/http";
 import { isLoggedIn } from "../../utils";
 import { messageError } from "../../utils/antd";
 import {AppHead} from "../../components";
+import styles from "../../../styles/Login.module.css";
 const { Content } = Layout;
 
 
@@ -72,12 +73,11 @@ function Login(props) {
           <h2 className="text-center m-bottom-30">Login</h2>
 
           <Form
-            // {...layout}
             name="basic"
             initialValues={{ remember: true }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
-            style={{ width: "70%", margin: "0 auto" }}
+            className={styles['login-form']}
           >
             <Form.Item
               name="email"
