@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { isEmpty } from "lodash";
+import { isEmpty, get } from "lodash";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
@@ -40,10 +40,16 @@ function MainHeader() {
 
   useEffect(() => {
     setIsAuthorisedToPostBlog(isAuthorisedToPostBlog());
+    window.addEventListener('storage', event =>{
+      if(get(event, 'key') === 'auth' && !get(event, 'newValue')) {
+        window.location.reload();
+      }
+    });
   }, [user]);
 
   const logout = () => {
-    localStorage.clear();
+    localStorage.removeItem('user')
+    localStorage.removeItem('auth')
     setUser(null);
     setDrawerVisibility(false);
     router.push("/");
