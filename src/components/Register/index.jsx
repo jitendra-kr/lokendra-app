@@ -51,7 +51,7 @@ class Register extends React.Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px 50px" }}>
+      <Content >
         <div className="row content-height">
           <div className="col-lg-4" />
           <div className="col-lg-8">
