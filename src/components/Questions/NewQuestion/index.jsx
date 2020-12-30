@@ -10,7 +10,7 @@ import {
   messageError,
 } from "../../../utils/antd";
 import { httpGet, httpPost } from "../../../utils/http";
-import { AdComponent } from "../../index";
+import AppHead from "../../Head/head";
 
 const Editor = dynamic(() => import("../../Editor"));
 const { TextArea } = Input;
@@ -104,6 +104,7 @@ class NewQuestion extends React.Component {
     if (this.state.data.title || !this.state._id) {
       return (
         <Content >
+          <AppHead data={{ title: "Ask Question" }} />
               {!this.state._id ? (
                 <React.Fragment>
                   <h2 className="text-center m-bottom-20">
