@@ -194,7 +194,7 @@ class QuestionList extends React.Component {
                       >
                         <a className={styles.more}>
                           {item.where_asked.join(",").length > 20
-                            ? `and ${item.where_asked.length} more`
+                            ? `and ${item.where_asked.length - 1 } more`
                             : ""}
                         </a>
                       </Link>

@@ -12,7 +12,17 @@ const inputFieldsLimit = {
 }
 
 
+const dateFormat = (date) => {
+  if (date) {
+    const newDate = new Date(date);
+    const month = newDate.toLocaleString("default", { month: "long" });
+    return `${month} ${newDate.getDate()}, ${newDate.getFullYear()}`;
+  }
+}
+
+
 module.exports = {
     getLimitedText,
-    inputFieldsLimit
+    inputFieldsLimit,
+    dateFormat
 }
