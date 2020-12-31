@@ -157,10 +157,17 @@ class UserProfile extends React.Component {
               </Descriptions.Item>
               <Descriptions.Item label="Email">
                 {this.state.tgbtn ? (
-                  <span className={styles['user-profile-value']}>
+                   <div className={styles['user-profile-value']}>
 
-                 { this.state.userData?.email}
+                  <span  style = {{marginRight: '20px'}}>
+
+                 { this.state.userData?.email }
+
                   </span>
+                  <Link style={{ float: "right" }} href={`/reset-password`}>
+                  verify email
+                </Link>
+                   </div>
                 ) : (
                   <Input
                     allowClear={true}
@@ -190,7 +197,7 @@ class UserProfile extends React.Component {
 
               <Descriptions.Item label="Password">
                 <div className={styles['user-profile-value']}>
-                  <span style = {{marginRight: '30px'}} >********</span>
+                  <span style = {{marginRight: '20px'}} >********</span>
                   <span>
                     <Link style={{ float: "right" }} href={`/reset-password`}>
                       Change Password

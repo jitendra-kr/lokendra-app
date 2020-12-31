@@ -1,4 +1,5 @@
 import { Layout, Button } from 'antd';
+import Link from "next/link";
 
 
 const { Content } = Layout;
@@ -13,7 +14,9 @@ function Page404() {
                     type="primary"
                     htmlType="submit"
                 >
+                    <Link href={`/`}>
                     Go to home page
+                </Link>
                 </Button>
             </div>
         </Content>)
