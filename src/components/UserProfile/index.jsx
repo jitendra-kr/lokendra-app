@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Descriptions, Button, Radio, Input } from "antd";
 import { withRouter } from "next/router";
 import { isEmpty } from "lodash";
-import { httpGet, httpPut } from "../../utils/http";
+import { httpGet, httpPut, httpPost } from "../../utils/http";
 import {
   getUser,
   inputFieldsLimit,
@@ -104,6 +104,10 @@ class UserProfile extends React.Component {
     });
   };
 
+  verifyEmail = () => {
+    alert("under development")
+  }
+
   render() {
     if (isEmpty(this.state.userData)) {
       return <div className = "ant-layout-content" ></div>;
@@ -164,9 +168,10 @@ class UserProfile extends React.Component {
                  { this.state.userData?.email }
 
                   </span>
-                  {this.state.userData?.verified ? '' : <Link style={{ float: "right" }} href={`/reset-password`}>
+                  {this.state.userData?.verified ? '' :
+                  <a style={{ float: "right", color: '#40A9FF' }} onClick = {this.verifyEmail}>
                   verify email
-                </Link>}
+                </a>}
                    </div>
                 ) : (
                   <Input
