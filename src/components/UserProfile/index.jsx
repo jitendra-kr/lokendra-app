@@ -164,9 +164,9 @@ class UserProfile extends React.Component {
                  { this.state.userData?.email }
 
                   </span>
-                  <Link style={{ float: "right" }} href={`/reset-password`}>
+                  {this.state.userData?.verified ? '' : <Link style={{ float: "right" }} href={`/reset-password`}>
                   verify email
-                </Link>
+                </Link>}
                    </div>
                 ) : (
                   <Input
