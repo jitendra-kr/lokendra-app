@@ -1,3 +1,5 @@
+import { isEmpty } from "lodash";
+
 function getUser() {
 
     if (typeof window !== "undefined") {
@@ -13,7 +15,7 @@ function getUser() {
 function isLoggedIn() {
     if (typeof window !== "undefined") {
 
-        return localStorage.getItem('auth') ? true : false;
+        return localStorage.getItem('auth') &&  !isEmpty(getUser) ? true : false;
     }
 }
 

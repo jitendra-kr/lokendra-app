@@ -17,6 +17,7 @@ async function generateSiteMap() {
     '!pages/_*.js',
     '!pages/blog/new-blog.js',
     '!pages/donate.js',
+    '!pages/404.js',
     '!pages/user.js',
     '!pages/**/edit/*.js',
     '!pages/**/update/*.js',
