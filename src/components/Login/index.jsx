@@ -62,6 +62,8 @@ function Login(props) {
       <div className="row content-height">
         <div className="col-lg-4" />
         <div className="col-lg-8">
+          <div className={styles["login-form"]}>
+
 
           <h2 className="text-center m-bottom-30">Login</h2>
 
@@ -70,7 +72,7 @@ function Login(props) {
             initialValues={{ remember: true }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
-            className={styles["login-form"]}
+
           >
             <Form.Item
               name="email"
@@ -117,6 +119,7 @@ function Login(props) {
               <Link href={`/reset-password`}>Forgot Password?</Link>
             </Form.Item>
           </Form>
+        </div>
         </div>
       </div>
     </Content>

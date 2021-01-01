@@ -55,13 +55,14 @@ class Register extends React.Component {
         <div className="row content-height">
           <div className="col-lg-4" />
           <div className="col-lg-8">
+            <div className={styles['register-form']}>
+
             <h2 className="text-center m-bottom-30">Create Account</h2>
             <Form
-              // {...layout}
               name="basic"
               initialValues={{ remember: true }}
               onFinish={this.onFinish}
-              className={styles['register-form']}
+
             >
               <Form.Item
                 name="firstName"
@@ -141,6 +142,7 @@ class Register extends React.Component {
                 </p>
               </Form.Item>
             </Form>
+          </div>
           </div>
         </div>
       </Content>
