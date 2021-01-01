@@ -23,7 +23,7 @@ export const messageSuccess = (data = {}) => {
 
 export const messageError = (data = {}) => {
     data = {
-        content: get(data, 'content', 'Failed'),
+        content: get(data, 'content', 'something went wrong'),
         duration: get(data, 'duration'),
         key: data.key
     };

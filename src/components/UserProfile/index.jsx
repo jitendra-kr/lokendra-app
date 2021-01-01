@@ -105,7 +105,18 @@ class UserProfile extends React.Component {
   };
 
   verifyEmail = () => {
-    alert("under development")
+    const key = "verifyEmail";
+    messageLoading({ key });
+    httpPost({
+      url: '/user/send-email-verification-email'
+    })
+    .then((response) => {
+      messageSuccess({ content: response.message, key });
+      console.log(response)
+    })
+    .catch((err) => {
+      messageError({ duration: 2 });
+    });
   }
 
   render() {
@@ -168,7 +179,7 @@ class UserProfile extends React.Component {
                  { this.state.userData?.email }
 
                   </span>
-                  {this.state.userData?.verified ? '' :
+                  {this.state.userData?.verified ? <p>verified</p> :
                   <a style={{ float: "right", color: '#40A9FF' }} onClick = {this.verifyEmail}>
                   verify email
                 </a>}
