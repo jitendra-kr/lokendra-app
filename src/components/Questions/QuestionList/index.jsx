@@ -95,13 +95,14 @@ class QuestionList extends React.Component {
   }, 1000);
 
   wasAskedToMe(item) {
-    if (this.isLoggedIn && this.user) {
-      return this.props.router.push(`/questions/update/${item._id}`);
+    if (isLoggedIn()) {
+      this.props.router.push(`/questions/update/${item._id}`);
+    } else {
+      messageInfo({
+        content: `You need to login to perform this action`,
+        duration: 3,
+      });
     }
-    messageInfo({
-      content: `You need to login to perform this action`,
-      duration: 3,
-    });
   }
 
   loadMore() {

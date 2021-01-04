@@ -14,8 +14,7 @@ function getUser() {
 
 function isLoggedIn() {
     if (typeof window !== "undefined") {
-
-        return localStorage.getItem('auth') &&  !isEmpty(getUser) ? true : false;
+        return localStorage.getItem('auth') &&  !isEmpty(getUser()) ? true : false;
     }
 }
 
