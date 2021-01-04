@@ -84,7 +84,7 @@ class Register extends React.Component {
                 <Input
                   prefix={<UserOutlined  className="site-form-item-icon" />}
                   maxLength={inputFieldsLimit.lastName}
-                  placeholder="Lirst Name" />
+                  placeholder="Last Name" />
               </Form.Item>
 
               <Form.Item
