@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
 import { getUser } from "../../../utils/index";
-import { httpPost, httpDelete } from "../../../utils/http";
+import { httpPost, httpDelete, httpGet } from "../../../utils/http";
 import { messageError, messageSuccess } from "../../../utils/antd";
 import {
   EditOutlined,
@@ -44,7 +44,7 @@ class Answer extends React.Component {
   }
 
   fetchLatestData() {
-    httpGet({ url: `bquestion/answer/${props._id}` })
+    httpGet({ url: `question/answer/${this.props._id}` })
     .then((response) => {
       this.setState({
         data: response.result,
@@ -103,12 +103,12 @@ class Answer extends React.Component {
         this.setState({
           answer: "",
         });
-        // this.componentDidMount();
         this.fetchLatestData();
         scrollToRefObject();
         messageSuccess({ content: "Your answer is saved successfully" });
       })
       .catch((err) => {
+        console.log(err)
         messageError({ content: "something went wrong" });
       });
   }
@@ -150,11 +150,11 @@ class Answer extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}/${answerId}` })
           .then((response) => {
-            // that.componentDidMount();
             this.fetchLatestData();
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
+            console.log(err)
             messageError({ content: "something went wrong" });
           });
       },
