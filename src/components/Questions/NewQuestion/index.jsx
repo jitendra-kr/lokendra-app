@@ -87,8 +87,6 @@ class NewQuestion extends React.Component {
       });
   }
 
-  handleEditorChange = (content, editor) => {};
-
   getEditorData(data) {
     this.body = data;
     this.state.data.body = data;
@@ -187,7 +185,7 @@ class NewQuestion extends React.Component {
                 /> */}
 
                   <Editor
-                    data={this.state.data.content}
+                    data={this.state.data.body}
                     sendData={this.getEditorData.bind(this)}
                   />
                 </Form.Item>
