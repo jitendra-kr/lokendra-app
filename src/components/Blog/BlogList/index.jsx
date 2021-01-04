@@ -2,9 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { withRouter } from "next/router";
 import { Layout } from "antd";
-
 import AppHead from "../../Head/head";
-// import { isAuthorisedToPostBlog } from "../../../utils/index";
+
 
 const { Content } = Layout;
 
@@ -58,8 +57,7 @@ class BlogList extends React.Component {
                       <img
                         className="image-blog-list"
                         src={item.image}
-                        alt="jp"
-                        alt=""
+                        alt={item.title}
                         style={{ width: "80%", height: "150px" }}
                       />
                     </span>
