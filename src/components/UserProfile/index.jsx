@@ -73,6 +73,20 @@ class UserProfile extends React.Component {
         duration: 2,
       });
     }
+    if (!data["firstName"]) {
+      return messageError({
+        content: "First name can not be empty",
+        key,
+        duration: 2,
+      });
+    }
+    if (!data["lastName"]) {
+      return messageError({
+        content: "Last name can not be empty",
+        key,
+        duration: 2,
+      });
+    }
     httpPut({
       url: `${this.state.userData._id}/update-user`,
       body: data,
