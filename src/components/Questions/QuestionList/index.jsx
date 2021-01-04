@@ -323,7 +323,7 @@ class QuestionList extends React.Component {
               >
                 {this.tabPane("All", "all")}
                 {this.tabPane("My Questions", "me")}
-                {this.tabPane("New Questions", "askQues")}
+                {this.tabPane("Post New Question", "askQues")}
               </Tabs>
             </div>
             {this.state.loadMore && this.state.data.length ? (
