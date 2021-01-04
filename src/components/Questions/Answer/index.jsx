@@ -33,12 +33,14 @@ class Answer extends React.Component {
 
     this.user = getUser();
     this.myRef = React.createRef();
-    this.state = {
+
+   this.state = {
       _id: '',
       answer: "",
       loaded: false,
       data: props.answer,
     };
+
   }
 
 
@@ -80,7 +82,7 @@ class Answer extends React.Component {
       return messageError({ content: "Your answer is missing" });
     }
     httpPost({
-      url: `question/save-answers/${this.state._id}?answerId=${
+      url: `question/save-answers/${this.state.data._id}?answerId=${
         this.answerId ? this.answerId : ""
       }`,
       body: { answer: this.state.answer },
@@ -89,11 +91,12 @@ class Answer extends React.Component {
         this.setState({
           answer: "",
         });
-        this.componentDidMount();
+        // this.componentDidMount();
         scrollToRefObject();
         messageSuccess({ content: "Your answer is saved successfully" });
       })
       .catch((err) => {
+
         messageError({ content: "something went wrong" });
       });
   }
@@ -135,7 +138,7 @@ class Answer extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}/${answerId}` })
           .then((response) => {
-            that.componentDidMount();
+            // that.componentDidMount();
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
