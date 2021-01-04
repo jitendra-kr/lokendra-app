@@ -8,7 +8,9 @@ import {
   messageLoading,
   messageSuccess,
   messageError,
-} from "../../../utils/antd";
+  messageInfo,
+  isLoggedIn
+} from "../../../utils";
 import { httpGet, httpPost } from "../../../utils/http";
 import AppHead from "../../Head/head";
 
@@ -43,12 +45,16 @@ class NewQuestion extends React.Component {
   }
 
   onFinish = (values) => {
-    const key = "onFinish";
-    messageLoading({ key });
-    this.setState({ isButtonDisabled: true });
-    values.body = this.body;
-    values._id = this.state._id;
-    this.postNew(values, key);
+    if(isLoggedIn()) {
+      const key = "onFinish";
+      messageLoading({ key });
+      this.setState({ isButtonDisabled: true });
+      values.body = this.body;
+      values._id = this.state._id;
+      this.postNew(values, key);
+    }
+
+    messageInfo({content: 'You need to login to post question'});
   };
 
   postNew(values, key) {
