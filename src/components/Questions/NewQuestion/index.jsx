@@ -52,9 +52,10 @@ class NewQuestion extends React.Component {
       values.body = this.body;
       values._id = this.state._id;
       this.postNew(values, key);
+    } else {
+      messageInfo({content: 'You need to login to post question'});
     }
 
-    messageInfo({content: 'You need to login to post question'});
   };
 
   postNew(values, key) {
