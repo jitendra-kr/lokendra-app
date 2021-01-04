@@ -3,7 +3,7 @@ import { Layout, Button, Tabs, Modal, Input } from "antd";
 import { upperFirst, debounce, reject } from "lodash";
 import { withRouter } from "next/router";
 import Link from "next/link";
-import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
+import { DeleteOutlined, ExclamationCircleOutlined, EditOutlined } from "@ant-design/icons";
 import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
@@ -167,7 +167,7 @@ class QuestionList extends React.Component {
                     <Link href={{ pathname: this.detailPageUrl(item) }}>
                       {this.calculateTitle(item.title)}
                     </Link>
-                    {this.isLoggedIn && this.user?._id === item.author?._id ? (
+                    {isLoggedIn() && this.user?._id === item.author?._id ? (
                       <React.Fragment>
                         <DeleteOutlined
                           style={{
@@ -179,6 +179,16 @@ class QuestionList extends React.Component {
                             this.delete(item._id);
                           }}
                         />
+                        <Link
+                          href={`/questions/edit/${item._id}`}
+                        >
+                          <EditOutlined
+                              style={{
+                                float: "right",
+                                padding: "10px",
+                              }}
+                          />
+                        </Link>
                       </React.Fragment>
                     ) : (
                       ""
@@ -195,13 +205,13 @@ class QuestionList extends React.Component {
                       >
                         <a className={styles.more}>
                           {item.where_asked.join(",").length > 20
-                            ? `and ${item.where_asked.length - 1 } more`
+                            ? `and ${item.where_asked.length - 1} more`
                             : ""}
                         </a>
                       </Link>
                     </p>
                     <p>
-                    <span className="question-by"> To - </span>
+                      <span className="question-by"> To - </span>
                       {upperFirst(item?.author?.firstName)}
 
                       <Link
@@ -215,7 +225,7 @@ class QuestionList extends React.Component {
                       </Link>
                     </p>
                     <p>
-                    <span className="question-by"> On - </span>
+                      <span className="question-by"> On - </span>
                       {this.date(item.created_at)}
                     </p>
                   </div>
@@ -224,10 +234,7 @@ class QuestionList extends React.Component {
                       type="link"
                       onClick={this.wasAskedToMe.bind(this, item)}
                     >
-                      <a>
-
-                      Did this question asked to you ?
-                      </a>
+                      <a>Did this question asked to you ?</a>
                     </Button>
                   </div>
                 </div>
@@ -253,7 +260,7 @@ class QuestionList extends React.Component {
     );
   }
   calculateTitle = (title) => {
-    const limit = 63;
+    const limit = 100;
     if (title.length > limit) {
       return upperFirst(title.substring(0, limit)) + "...";
     }
@@ -287,7 +294,7 @@ class QuestionList extends React.Component {
         data: [],
         totalRecords: 0,
       });
-      this.fetchQuestion()
+      this.fetchQuestion();
     } else {
       messageInfo({
         content: `You need to login to ${
@@ -303,45 +310,45 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content >
+      <Content>
         <AppHead data={{ title: "Questions" }} />
-          <div className="col-lg-12 col-sm-12 col-md-12">
-            <div className="row">
-              <Search
-                placeholder="search"
-                onChange={this.searchQuestion}
-                allowClear={true}
-                className={styles.search}
-                size="large"
-                loading={!this.state.dataLoaded && this.search}
-                enterButton
-              />
-              <Tabs
-                defaultActiveKey="all"
-                onTabClick={this.onTabClick.bind(this)}
-                style={{ width: "100%" }}
-              >
-                {this.tabPane("All", "all")}
-                {this.tabPane("My Questions", "me")}
-                {this.tabPane("Post New Question", "askQues")}
-              </Tabs>
-            </div>
-            {this.state.loadMore && this.state.data.length ? (
-              <div style={{ textAlign: "center", marginTop: "35px" }}>
-                <Button
-                  type="primary"
-                  loading={!this.state.dataLoaded}
-                  onClick={() => {
-                    this.loadMore();
-                  }}
-                >
-                  load more
-                </Button>
-              </div>
-            ) : (
-              ""
-            )}
+        <div className="col-lg-12 col-sm-12 col-md-12">
+          <div className="row">
+            <Search
+              placeholder="search"
+              onChange={this.searchQuestion}
+              allowClear={true}
+              className={styles.search}
+              size="large"
+              loading={!this.state.dataLoaded && this.search}
+              enterButton
+            />
+            <Tabs
+              defaultActiveKey="all"
+              onTabClick={this.onTabClick.bind(this)}
+              style={{ width: "100%" }}
+            >
+              {this.tabPane("All", "all")}
+              {this.tabPane("My Questions", "me")}
+              {this.tabPane("Post New Question", "askQues")}
+            </Tabs>
           </div>
+          {this.state.loadMore && this.state.data.length ? (
+            <div style={{ textAlign: "center", marginTop: "35px" }}>
+              <Button
+                type="primary"
+                loading={!this.state.dataLoaded}
+                onClick={() => {
+                  this.loadMore();
+                }}
+              >
+                load more
+              </Button>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </Content>
     );
   }
