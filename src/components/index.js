@@ -11,6 +11,7 @@ export { default as UserProfile } from './UserProfile';
 export { default as ResetPassword } from './ResetPassword';
 
 export { default as BlogList } from './Blog/BlogList';
+export { default as CategoryList } from './BlogsCategory/CategoryList';
 export { default as ReadBlog } from './Blog/ReadBlog';
 export { default as NewBlog } from './Blog/NewBlog';
 

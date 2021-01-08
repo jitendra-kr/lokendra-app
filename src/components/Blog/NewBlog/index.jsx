@@ -17,12 +17,6 @@ const { Option } = Select;
 const { Content } = Layout;
 
 class NewBlog extends React.Component {
-  options = [
-    { value: "gold" },
-    { value: "lime" },
-    { value: "green" },
-    { value: "cyan" },
-  ];
   formRef = React.createRef();
   content;
   user;
@@ -38,6 +32,7 @@ class NewBlog extends React.Component {
       _id: this.props.router.query.slug,
       isButtonDisabled: false,
       data: {},
+      category: []
     };
   }
 
@@ -45,6 +40,15 @@ class NewBlog extends React.Component {
     if (!this.user && this.user?.role !== 'admin') {
        return this.props.router.push(`/`);
     }
+    httpGet({ url: `blog-management/category-list` })
+    .then((response) => {
+      this.setState({
+        category: response.result,
+      });
+    })
+    .catch((err) => {
+
+    });
     if (this.state._id) {
       httpGet({ url: `blog-management/blog-detail/${this.state._id}` })
         .then((response) => {
@@ -55,6 +59,7 @@ class NewBlog extends React.Component {
         .catch((err) => {
 
         });
+
     }
   }
 
@@ -78,6 +83,7 @@ class NewBlog extends React.Component {
     messageLoading({ key });
     this.setState({ isButtonDisabled: true });
     values.content = this.content;
+
     this.postNew(values, key);
   };
 
@@ -199,19 +205,24 @@ class NewBlog extends React.Component {
 
                 />
               </Form.Item>
-              {/* <Form.Item
+              <Form.Item
                 name="category"
                 label="Category"
-                rules={[{ required: true, message: "Please input category!" }]}
+                // rules={[{ required: true, message: "Please input category!" }]}
               >
                 <Select
                   mode="multiple"
                   showArrow
-                  tagRender={this.categoryTagRender}
                   style={{ width: "100%" }}
-                  options={this.options}
-                />
-              </Form.Item> */}
+                >
+
+    {
+      this.state.category.map((o) => {
+        return  <Option value={o._id}>{o.title}</Option>
+      })
+    }
+    </Select>
+              </Form.Item>
               <Form.Item
                 name="tags"
                 label="Tags"

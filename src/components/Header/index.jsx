@@ -77,7 +77,7 @@ function MainHeader() {
       </Menu.Item>
       {authorisedToPostBlog ? (
         <Menu.Item key="01">
-          <Link href="/user">Post Blog</Link>
+          <Link href="/blog/new-blog">Post Blog</Link>
         </Menu.Item>
       ) : (
         ""
