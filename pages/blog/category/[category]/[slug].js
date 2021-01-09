@@ -4,8 +4,7 @@ import { sample } from "lodash";
 const baseUrls = Config.getData().default.baseUrl;
 
 function BlogsByCategoryPage({data}) {
-  // return <BlogList data = {data}/>
-  return <h1>under development</h1>
+  return '<BlogList data = {data}/>'
   }
 
   export async function getStaticPaths() {

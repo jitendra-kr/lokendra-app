@@ -10,6 +10,9 @@ const { Content } = Layout;
 class BlogList extends React.Component {
   constructor(props) {
     super(props);
+
+    console.log(this.props.data)
+
     this.state = {
       data: this.props.data
     };
