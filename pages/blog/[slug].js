@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
     let response = await fetch(url);
 
     response = await response.json()
-    console.log(url,  response.statusCode, Object.keys(get(response, 'result')))
+    console.log(url,  response.statusCode, Object.keys(get(response, 'result._id')))
 
     return {
         props: {
