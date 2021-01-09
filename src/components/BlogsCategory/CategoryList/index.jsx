@@ -41,7 +41,7 @@ class CategoryList extends React.Component {
       <Content>
         <AppHead data={{}} />
         <div className="row">
-            {/* <h1 style={{ fontFamily: "serif" }}>Blog By Category</h1> */}
+            <h1 style={{ fontFamily: "serif" }}>Categories</h1>
 
           <div className="row" style={{width: '100%'}}>
             {this.state.data.map((item, i) => {
