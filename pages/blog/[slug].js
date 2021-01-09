@@ -5,9 +5,9 @@ const baseUrls = Config.getData().default.baseUrl;
 
 function readlog({ posts }) {
 
-    // console.log('readlog', posts)
+    console.log('readlog', posts)
 
-    return <ReadBlog blogData={posts} />
+    return <ReadBlog data={posts} />
 }
 
 export async function getStaticPaths() {
