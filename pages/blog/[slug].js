@@ -22,8 +22,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+
     const url = `${sample(baseUrls)}blog-management/blog-detail/${params.slug}`;
+
+    console.log(url)
+
     let response = await fetch(url);
+
+    console.log(response)
+
     response = await response.json()
 
     return {
