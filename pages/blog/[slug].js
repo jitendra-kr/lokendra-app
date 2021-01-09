@@ -7,7 +7,7 @@ function readlog({ posts, url }) {
 
     // console.log('readlog', posts)
 
-    return <ReadBlog data={posts} url={url}/>
+    return posts ? <ReadBlog data={posts} url={url}/> : ''
 }
 
 export async function getStaticPaths() {
@@ -36,7 +36,15 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            posts: get(response, 'result', {}),
+            posts: get(response, 'result', {
+                title: '',
+                created_at: '',
+                visits: '',
+                author: '',
+                _id: '',
+                slug: '',
+                content: ''
+            }),
             url: url
         },
         revalidate: 60
