@@ -83,7 +83,6 @@ class NewBlog extends React.Component {
     messageLoading({ key });
     this.setState({ isButtonDisabled: true });
     values.content = this.content;
-
     this.postNew(values, key);
   };
 
@@ -149,7 +148,8 @@ class NewBlog extends React.Component {
                 meta_keywords: this.state.data.meta_keywords,
               tags: this.state.data.tags,
               content: this.state.data.content,
-              image: this.state.data.image
+              image: this.state.data.image,
+              category: this.state.data.category.map((o) => o._id)
              }}
               onFinish={this.onFinish}
               onFinishFailed = {this.onFinishFailed}
@@ -218,7 +218,7 @@ class NewBlog extends React.Component {
 
     {
       this.state.category.map((o) => {
-        return  <Option value={o._id}>{o.title}</Option>
+        return  <Option value={o._id} key={o._id}>{o.title}</Option>
       })
     }
     </Select>
