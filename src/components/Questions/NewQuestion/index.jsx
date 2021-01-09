@@ -172,7 +172,7 @@ class NewQuestion extends React.Component {
                     mode="tags"
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
-                    placeholder="e.g. Tata Consultancy Services "
+                    placeholder="e.g. Tata Consultancy Services or Personal"
                   ></Select>
                 </Form.Item>
                 <Form.Item name="body" label="Body">
