@@ -1,11 +1,11 @@
 import { ReadBlog } from "../../src/components"
-import { sample } from "lodash";
+import { sample, get } from "lodash";
 import Config from '../../src/config/env';
 const baseUrls = Config.getData().default.baseUrl;
 
 function readlog({ posts }) {
 
-    console.log('readlog', posts)
+    // console.log('readlog', posts)
 
     return <ReadBlog blogData={posts} />
 }
@@ -28,11 +28,11 @@ export async function getStaticProps({ params }) {
 
     const url = `${sample(baseUrls)}blog-management/blog-detail/${params.slug}`;
 
-    console.log(url)
 
     let response = await fetch(url);
 
     response = await response.json()
+    console.log(url,  Object.keys(get(response, 'result')))
 
     return {
         props: {
