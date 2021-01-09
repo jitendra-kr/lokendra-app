@@ -17,10 +17,13 @@ import AppHead from "../../Head/head";
 const Editor = dynamic(() => import("../../Editor"));
 const { TextArea } = Input;
 const { Content } = Layout;
+const { Option } = Select;
 
 class NewQuestion extends React.Component {
   formRef = React.createRef();
   body;
+  askedBy = []
+  askedByData;
 
   constructor(props) {
     super(props);
@@ -30,7 +33,44 @@ class NewQuestion extends React.Component {
       data: {},
       similar: [],
     };
+
+    this.askedByData = [
+      'Tata Consultancy Services',
+      'HCL Technologies',
+      'Paytm',
+      'Send In blue',
+      'Appzlogic',
+      'Square Yards',
+      'Iris software',
+      'To the new',
+      'Successive sofware',
+      'Telus international',
+      'Kloudrac Software Pvt',
+      'In2it technologies',
+      'Gopaisa',
+      'Denave india pvt ltd',
+      'Path infotech',
+      'Proctur',
+      'Enuke software',
+      'Hitachi MGRM Net',
+      'Appinventive',
+      'Synapse india',
+      'Magic software',
+      'Iwebservices',
+      'Fluper ltd',
+      'Synapse india',
+      'ThinkApps Solutions',
+      'Indosoft Technologies',
+      'Personal'
+    ]
+
+
+      for (let i = 0; i < this.askedByData.length; i++) {
+        this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
+      }
   }
+
+
 
   componentDidMount() {
     if (this.state._id) {
@@ -173,7 +213,9 @@ class NewQuestion extends React.Component {
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
                     placeholder="e.g. Tata Consultancy Services or Personal"
-                  ></Select>
+                  >
+                    {this.askedBy}
+                  </Select>
                 </Form.Item>
                 <Form.Item name="body" label="Body">
                   {/* <CKEditor
