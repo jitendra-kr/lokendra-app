@@ -1,10 +1,10 @@
-import { CategoryList } from "../../../../src/components"
+import { BlogList } from "../../../../src/components"
 import Config from '../../../../src/config/env';
 import { sample } from "lodash";
 const baseUrls = Config.getData().default.baseUrl;
 
-function CategoryListPage({data}) {
-  return <CategoryList data = {data}/>
+function BlogsByCategoryPage({data}) {
+  return <BlogList data = {data}/>
   }
 
   export async function getStaticPaths() {
@@ -22,7 +22,6 @@ function CategoryListPage({data}) {
 }
 
   export async function getStaticProps({ params }) {
-
     const url = `${sample(baseUrls)}blog-management/categorized-blog/${params.category}`;
     let response = await fetch(url);
     response = await response.json();
@@ -30,8 +29,8 @@ function CategoryListPage({data}) {
       props: {
         data: response.result
       },
-      revalidate: 21600
+      revalidate: 60
     }
   }
 
-  export default CategoryListPage;
+  export default BlogsByCategoryPage;

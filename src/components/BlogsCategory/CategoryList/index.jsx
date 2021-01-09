@@ -9,7 +9,9 @@ const { Content } = Layout;
 
 class CategoryList extends React.Component {
   constructor(props) {
+
     super(props);
+
     this.state = {
       data: this.props.data,
 

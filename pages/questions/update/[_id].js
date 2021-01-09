@@ -27,9 +27,6 @@ class UpdateQuestion extends React.Component {
     if (this.state._id) {
       httpGet({ url: `question/answer/${this.state._id}` })
         .then((response) => {
-
-          console.log(response.result)
-
           this.setState({
             data: response.result,
           });
