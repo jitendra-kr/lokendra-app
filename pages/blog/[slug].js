@@ -5,7 +5,7 @@ const baseUrls = Config.getData().default.baseUrl;
 
 function readlog({ posts }) {
 
-    console.log('readlog', posts)
+    // console.log('readlog', posts)
 
     return <ReadBlog data={posts} />
 }
@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
     let response = await fetch(url);
 
     response = await response.json()
-    console.log(url,  response.statusCode, Object.keys(get(response, 'result._id')))
+    console.log(url,  response.statusCode, Object.keys(get(response, 'result.title')))
 
     return {
         props: {
