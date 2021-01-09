@@ -61,6 +61,13 @@ class NewQuestion extends React.Component {
       'Synapse india',
       'ThinkApps Solutions',
       'Indosoft Technologies',
+      'YapApp India pvt. ltd.',
+      'Prolitus Technologies',
+      'Smart data enterprises',
+      'British council',
+      'Sapient Corporation',
+      'Agami Technologies',
+      'CodeBlock Technologies',
       'Personal'
     ]
 
