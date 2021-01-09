@@ -127,7 +127,6 @@ class UserProfile extends React.Component {
     })
       .then((response) => {
         messageSuccess({ content: response.message, key });
-        console.log(response);
       })
       .catch((err) => {
         messageError({ duration: 2 });
