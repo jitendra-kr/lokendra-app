@@ -3,11 +3,11 @@ import { sample, get } from "lodash";
 import Config from '../../src/config/env';
 const baseUrls = Config.getData().default.baseUrl;
 
-function readlog({ posts }) {
+function readlog({ posts, url }) {
 
     // console.log('readlog', posts)
 
-    return <ReadBlog data={posts} />
+    return <ReadBlog data={posts} url={url}/>
 }
 
 export async function getStaticPaths() {
@@ -36,7 +36,8 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            posts: get(response, 'result', {})
+            posts: get(response, 'result', {}),
+            url: url
         },
         revalidate: 60
     }
