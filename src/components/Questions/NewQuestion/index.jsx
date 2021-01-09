@@ -58,7 +58,6 @@ class NewQuestion extends React.Component {
       'Magic software',
       'Iwebservices',
       'Fluper ltd',
-      'Synapse india',
       'ThinkApps Solutions',
       'Indosoft Technologies',
       'YapApp India pvt. ltd.',
