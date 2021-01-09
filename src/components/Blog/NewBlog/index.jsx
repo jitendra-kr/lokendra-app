@@ -149,7 +149,7 @@ class NewBlog extends React.Component {
               tags: this.state.data.tags,
               content: this.state.data.content,
               image: this.state.data.image,
-              category: this.state.data.category.map((o) => o._id)
+              category: this.state.data.category ? this.state.data.category.map((o) => o._id) : []
              }}
               onFinish={this.onFinish}
               onFinishFailed = {this.onFinishFailed}
