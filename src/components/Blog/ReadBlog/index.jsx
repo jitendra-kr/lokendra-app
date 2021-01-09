@@ -25,7 +25,7 @@ class ReadBlog extends React.Component {
 
     this.user = getUser();
     this.state = {
-      data: this.props.data.result,
+      data: this.props.data,
     };
   }
 
