@@ -4,6 +4,9 @@ import Config from '../../src/config/env';
 const baseUrls = Config.getData().default.baseUrl;
 
 function readlog({ posts }) {
+
+    console.log('readlog', posts)
+
     return <ReadBlog blogData={posts} />
 }
 
@@ -28,8 +31,6 @@ export async function getStaticProps({ params }) {
     console.log(url)
 
     let response = await fetch(url);
-
-    console.log(response)
 
     response = await response.json()
 

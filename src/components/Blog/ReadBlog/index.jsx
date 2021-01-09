@@ -21,7 +21,7 @@ class ReadBlog extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.blogData)
+    // console.log(this.props.blogData)
 
     this.user = getUser();
     this.state = {
