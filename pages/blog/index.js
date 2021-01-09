@@ -16,7 +16,7 @@ function CategoryListPage({data}) {
       props: {
         data: response.result
       },
-      revalidate: 21600
+      revalidate: 60
     }
   }
 
