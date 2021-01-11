@@ -3,8 +3,8 @@ import Config from '../../../src/config/env';
 import { sample } from "lodash";
 const baseUrls = Config.getData().default.baseUrl;
 
-function AnswerPage({answer}) {
-    return <Answer answer={answer} />
+function AnswerPage({answer, _id}) {
+    return <Answer answer={answer} _id={_id}/>
 }
 
 
@@ -15,7 +15,8 @@ export async function getServerSideProps(context) {
     response = await response.json();
     return {
       props: {
-        answer: response.result
+        answer: response.result,
+        _id: context.params._id
       }
     }
   }
