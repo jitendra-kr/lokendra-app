@@ -30,7 +30,7 @@ export async function getStaticProps() {
           : 0
       }
     },
-    revalidate: 10
+    revalidate: 2
   }
 }
 
