@@ -1,37 +1,43 @@
-import { QuestionList } from "../../src/components"
-import Config from '../../src/config/env';
+import { QuestionList } from "../../src/components";
+import Config from "../../src/config/env";
 import { sample } from "lodash";
+import useSWR from "swr";
 const baseUrls = Config.getData().default.baseUrl;
 
 const limit = 10;
+function url() {
+  return `${sample(
+    baseUrls
+  )}question/question-list?skip=${0}&limit=${limit}`;
+  
+}
 
-function QuestionListPage({data}) {
-  return <QuestionList
-  questionData={data.questionData}
-  limit={limit}
-  totalRecords={data.totalRecords}
-  loadMore={data.loadMore}/>
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+function QuestionListPage({ initialData }) {
+  let { data, error } = useSWR(url(), fetcher, { initialData });
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+
+  return (
+    <QuestionList
+      questionData={data.result}
+      limit={limit}
+      totalRecords={data.totalRecords}
+      loadMore={data.result.length && limit === data.result.length ? 1 : 0}
+    />
+  );
 }
 
 export async function getStaticProps() {
-
-
-  const url = `${sample(baseUrls)}question/question-list?skip=${0}&limit=${limit}`;
-  let response = await fetch(url);
-  response = await response.json();
+  let response = await fetcher(url());
   return {
     props: {
-      data: {
-        questionData: response.result,
-        totalRecords: response.totalRecords,
-        loadMore:
-        response.result.length && limit === response.result.length
-          ? 1
-          : 0
-      }
+      initialData: response,
     },
-    revalidate: 2
-  }
+    revalidate: 2,
+  };
 }
 
 export default QuestionListPage;
