@@ -3,7 +3,12 @@ import { Layout, Button, Tabs, Modal, Input } from "antd";
 import { upperFirst, debounce, reject } from "lodash";
 import { withRouter } from "next/router";
 import Link from "next/link";
-import { DeleteOutlined, ExclamationCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {
+  DeleteOutlined,
+  ExclamationCircleOutlined,
+  EditOutlined,
+  LikeOutlined,
+} from "@ant-design/icons";
 import { httpGet, httpDelete } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
@@ -37,7 +42,6 @@ class QuestionList extends React.Component {
       totalRecords: this.props.totalRecords,
     };
   }
-
 
   fetchQuestion() {
     this.setState({
@@ -154,21 +158,70 @@ class QuestionList extends React.Component {
         {this.state.data.length ? (
           this.state.data.map((item, i) => {
             return (
-              <div
-                className="col-lg-12"
-                key={i}
-                style={{ marginTop: "20px", marginBottom: "20px" }}
-              >
-                <div className="listing border">
-                  <div
-                    className="home-page-title"
-                    style={{ marginLeft: "25px" }}
-                  >
-                    <Link href={{ pathname: this.detailPageUrl(item) }}>
-                      {this.calculateTitle(item.title)}
-                    </Link>
+              <div key={i} style={{ margin: "20px 16px 20px 16px" }}>
+                <div  className="row listing border">
+                  <div className="col-lg-10">
+                    <div
+                      className="home-page-title"
+                      style={{ marginLeft: "25px" }}
+                    >
+                      <Link href={{ pathname: this.detailPageUrl(item) }}>
+                        {item.title}
+                      </Link>
+                    </div>
+                    <div style={{ marginLeft: "35px" }}>
+                      <p>
+                        <span className="question-by">By - </span>
+                        {upperFirst(
+                          getLimitedText(item.where_asked.join(","), 20)
+                        )}
+                        <Link
+                          href={`/questions/asked-by/${item._id}/${item.slug}`}
+                        >
+                          <a className={styles.more}>
+                            {item.where_asked.join(",").length > 20
+                              ? `and ${item.where_asked.length - 1} more`
+                              : ""}
+                          </a>
+                        </Link>
+                      </p>
+                      <p>
+                        <span className="question-by"> To - </span>
+                        {upperFirst(item?.author?.firstName)}
+
+                        <Link
+                          href={`/questions/asked-to/${item._id}/${item.slug}`}
+                        >
+                          <a className={styles.more}>
+                            {item.was_asked_to_me && item.was_asked_to_me.length
+                              ? ` and ${item.was_asked_to_me.length} more`
+                              : ""}
+                          </a>
+                        </Link>
+                      </p>
+                      <p>
+                        <span className="question-by"> On - </span>
+                        {this.date(item.created_at)}
+                      </p>
+                    </div>
+                    <div style={{ marginLeft: "35px", marginBottom: "15px" }}>
+                      <Button
+                        type="link"
+                        onClick={this.wasAskedToMe.bind(this, item)}
+                      >
+                        <a>Did this question asked to you ?</a>
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="col-lg-2">
                     {isLoggedIn() && this.user?._id === item.author?._id ? (
                       <React.Fragment>
+                        {/* <LikeOutlined 
+                          style={{
+                            color: "red",
+                            float: "right",
+                            padding: "10px",
+                          }}/> */}
                         <DeleteOutlined
                           style={{
                             color: "red",
@@ -179,63 +232,18 @@ class QuestionList extends React.Component {
                             this.delete(item._id);
                           }}
                         />
-                        <Link
-                          href={`/questions/edit/${item._id}`}
-                        >
+                        <Link href={`/questions/edit/${item._id}`}>
                           <EditOutlined
-                              style={{
-                                float: "right",
-                                padding: "10px",
-                              }}
+                            style={{
+                              float: "right",
+                              padding: "10px",
+                            }}
                           />
                         </Link>
                       </React.Fragment>
                     ) : (
                       ""
                     )}
-                  </div>
-                  <div style={{ marginLeft: "35px" }}>
-                    <p>
-                      <span className="question-by">By - </span>
-                      {upperFirst(
-                        getLimitedText(item.where_asked.join(","), 20)
-                      )}
-                      <Link
-                        href={`/questions/asked-by/${item._id}/${item.slug}`}
-                      >
-                        <a className={styles.more}>
-                          {item.where_asked.join(",").length > 20
-                            ? `and ${item.where_asked.length - 1} more`
-                            : ""}
-                        </a>
-                      </Link>
-                    </p>
-                    <p>
-                      <span className="question-by"> To - </span>
-                      {upperFirst(item?.author?.firstName)}
-
-                      <Link
-                        href={`/questions/asked-to/${item._id}/${item.slug}`}
-                      >
-                        <a className={styles.more}>
-                          {item.was_asked_to_me && item.was_asked_to_me.length
-                            ? ` and ${item.was_asked_to_me.length} more`
-                            : ""}
-                        </a>
-                      </Link>
-                    </p>
-                    <p>
-                      <span className="question-by"> On - </span>
-                      {this.date(item.created_at)}
-                    </p>
-                  </div>
-                  <div style={{ marginLeft: "35px", marginBottom: "15px" }}>
-                    <Button
-                      type="link"
-                      onClick={this.wasAskedToMe.bind(this, item)}
-                    >
-                      <a>Did this question asked to you ?</a>
-                    </Button>
                   </div>
                 </div>
               </div>
