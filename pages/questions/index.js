@@ -15,7 +15,7 @@ function url() {
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function QuestionListPage({ initialData }) {
-  let { data, error } = useSWR(url(), fetcher, { initialData });
+  let { data, error } = useSWR(url(), fetcher, { initialData, revalidateOnFocus: false });
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
