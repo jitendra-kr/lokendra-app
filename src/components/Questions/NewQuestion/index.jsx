@@ -218,6 +218,7 @@ class NewQuestion extends React.Component {
                     mode="tags"
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
+                    maxTagTextLength={20}
                     placeholder="e.g. Tata Consultancy Services or Personal"
                   >
                     {this.askedBy}

@@ -13,6 +13,8 @@ const { Content } = Layout;
 class UpdateQuestion extends React.Component {
   formRef = React.createRef();
   body;
+  askedBy = [];
+  askedByData;
 
   constructor(props) {
     super(props);
@@ -33,6 +35,48 @@ class UpdateQuestion extends React.Component {
         })
         .catch((err) => { });
     }
+
+    this.askedByData = [
+      'Tata Consultancy Services',
+      'HCL Technologies',
+      'Paytm',
+      'Send In blue',
+      'Appzlogic',
+      'Square Yards',
+      'Iris software',
+      'To the new',
+      'Successive sofware',
+      'Telus international',
+      'Kloudrac Software Pvt',
+      'In2it technologies',
+      'Gopaisa',
+      'Denave india pvt ltd',
+      'Path infotech',
+      'Proctur',
+      'Enuke software',
+      'Hitachi MGRM Net',
+      'Appinventive',
+      'Synapse india',
+      'Magic software',
+      'Iwebservices',
+      'Fluper ltd',
+      'ThinkApps Solutions',
+      'Indosoft Technologies',
+      'YapApp India pvt. ltd.',
+      'Prolitus Technologies',
+      'Smart data enterprises',
+      'British council',
+      'Sapient Corporation',
+      'Agami Technologies',
+      'CodeBlock Technologies',
+      'Personal'
+    ]
+
+
+      for (let i = 0; i < this.askedByData.length; i++) {
+        this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
+      }
+
   }
 
   onFinish = (values) => {
@@ -96,14 +140,24 @@ class UpdateQuestion extends React.Component {
                     { required: true, message: "Please input Asked By!" },
                   ]}
                 >
-                  <Select
+                  {/* <Select
                     mode="tags"
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
                     placeholder="e.g. Tata Consultancy Services "
                     autoFocus={true}
                     maxTagTextLength={20}
-                  ></Select>
+                  ></Select> */}
+                                    <Select
+                    mode="tags"
+                    style={{ width: "100%" }}
+                    tokenSeparators={[","]}
+                    autoFocus={true}
+                    maxTagTextLength={20}
+                    placeholder="e.g. Tata Consultancy Services or Personal"
+                  >
+                    {this.askedBy}
+                  </Select>
                 </Form.Item>
 
                 <Form.Item>
