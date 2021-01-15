@@ -9,7 +9,7 @@ import {
   EditOutlined,
   LikeOutlined,
 } from "@ant-design/icons";
-import { httpGet, httpDelete } from "../../../utils/http";
+import { httpGet, httpDelete, httpPut } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser, getLimitedText } from "../../../utils/index";
@@ -43,10 +43,20 @@ class QuestionList extends React.Component {
     };
   }
 
-  fetchQuestion() {
-    this.setState({
-      dataLoaded: false,
-    });
+  componentDidMount() {
+    if(localStorage.getItem('auth')) {
+      this.fetchQuestion({reset: true});
+    }
+  }
+
+  fetchQuestion(options) {
+    const state = {
+      dataLoaded: false
+    }
+    if(options.reset) {
+      state.data = []
+    }
+    this.setState(state);
     httpGet({
       url: this.generateUrl(),
     })
@@ -111,6 +121,28 @@ class QuestionList extends React.Component {
 
   loadMore() {
     this.fetchQuestion();
+  }
+
+  like(_id, liked) {
+    this.setState({
+      data: this.state.data.map((o) => {
+        if(o._id === _id) {
+          o.liked = liked ? 0 : 1;
+        }
+        return o;
+      })
+    })
+    httpPut({
+      url:  `question/like/${_id}/${liked}`
+    })
+    .then((response) => {
+
+      console.log(response)
+
+    })
+    .catch((err) => {
+      console.log(err)
+    });
   }
 
   delete(questionId) {
@@ -216,12 +248,17 @@ class QuestionList extends React.Component {
                   <div className="col-lg-2">
                     {isLoggedIn() && this.user?._id === item.author?._id ? (
                       <React.Fragment>
-                        {/* <LikeOutlined 
+                        <LikeOutlined 
                           style={{
-                            color: "red",
                             float: "right",
                             padding: "10px",
-                          }}/> */}
+                          }}
+                          className={item.liked ? styles.liked : ''}
+
+                          onClick={() => {
+                            this.like(item._id, item.liked ? 1 : 0);
+                          }}/>
+                          <i class="fas fa-thumbs-up"></i>
                         <DeleteOutlined
                           style={{
                             color: "red",

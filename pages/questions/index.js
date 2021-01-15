@@ -15,17 +15,17 @@ function url() {
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function QuestionListPage({ initialData }) {
-  let { data, error } = useSWR(url(), fetcher, { initialData, revalidateOnFocus: false });
+  // let { data, error } = useSWR(url(), fetcher, { initialData, revalidateOnFocus: false,  });
 
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  // if (error) return <div>failed to load</div>;
+  // if (!data) return <div>loading...</div>;
 
   return (
     <QuestionList
-      questionData={data.result}
+      questionData={initialData.result}
       limit={limit}
-      totalRecords={data.totalRecords}
-      loadMore={data.result.length && limit === data.result.length ? 1 : 0}
+      totalRecords={initialData.totalRecords}
+      loadMore={initialData.result.length && limit === initialData.result.length ? 1 : 0}
     />
   );
 }
