@@ -53,16 +53,14 @@ class QuestionList extends React.Component {
     const state = {
       dataLoaded: false
     }
-    if(options.reset) {
-      state.data = []
-    }
+
     this.setState(state);
     httpGet({
       url: this.generateUrl(),
     })
       .then((response) => {
         this.setState({
-          data: [...this.state.data, ...response.result],
+          data: options.reset ? response.result : [...this.state.data, ...response.result],
           dataLoaded: true,
           loadMore:
             response.result.length && this.limit === response.result.length
