@@ -132,6 +132,7 @@ class QuestionList extends React.Component {
       data: this.state.data.map((o) => {
         if (o._id === _id) {
           o.liked = liked ? 0 : 1;
+          o.totalLikes = !liked ? o.totalLikes + 1 : o.totalLikes -1 ;
         }
         return o;
       }),
@@ -140,10 +141,10 @@ class QuestionList extends React.Component {
       url: `question/like/${_id}/${liked}`,
     })
       .then((response) => {
-        console.log(response);
+
       })
       .catch((err) => {
-        console.log(err);
+
       });
   }
 
@@ -194,7 +195,7 @@ class QuestionList extends React.Component {
             return (
               <div key={i} style={{ margin: "20px 16px 20px 16px" }}>
                 <div className="row listing border">
-                  <div className="col-lg-11">
+                  <div className="col-lg-10">
                     <div
                       className="home-page-title"
                       style={{ marginLeft: "25px" }}
@@ -247,10 +248,14 @@ class QuestionList extends React.Component {
                       </Button>
                     </div>
                   </div>
-                  <div className="col-lg-1">
+                  <div className="col-lg-2">
                     {isLoggedIn() ? (
                       <React.Fragment>
                         <span className={styles["action-icon"]}>
+                        {item.totalLikes ? <span className ={item.totalLikes > 9 ?  styles['m-left-25'] :  styles['m-left-32']} >
+                          {item.totalLikes}
+                          </span> : ''}
+                          <span  >                          
                           <FontAwesomeIcon
                             icon={faThumbsUp}
                             className={item.liked ? styles.liked : ""}
@@ -263,6 +268,8 @@ class QuestionList extends React.Component {
                               this.like(item._id, item.liked ? 1 : 0);
                             }}
                           />
+                          </span>
+          
                         </span>
 
                         {this.user?._id === item.author?._id ? (
@@ -274,6 +281,7 @@ class QuestionList extends React.Component {
                               className={styles["action-icon"]}
                               style={{
                                 color: "red",
+                                marginTop: "22px"
                               }}
                               onClick={() => {
                                 this.delete(item._id);
