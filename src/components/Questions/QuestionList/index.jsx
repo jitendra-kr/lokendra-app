@@ -46,6 +46,7 @@ class QuestionList extends React.Component {
 
   componentDidMount() {
     if (localStorage.getItem("auth")) {
+      this.skip = 0;
       this.fetchQuestion({ reset: true });
     }
   }
