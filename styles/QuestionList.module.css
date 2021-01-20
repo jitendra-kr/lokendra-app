@@ -8,5 +8,37 @@
 }
 
 .liked {
-    color: green;
+    color:#32CD32;
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .action-icon {
+        width: 0%;
+        padding: 30px !important;
+    }
+  }
+  /* For tablets */
+  
+  @media only screen and (max-width: 768px) {
+    .action-icon {
+        width: 0%;
+        padding: 30px !important;
+    }
+  }
+  
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width: 992px) {
+    .action-icon {
+        width: 100%;
+        margin-top: 30px;
+    }
+  }
+  
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    .action-icon {
+        width: 100%;
+        margin-top: 30px;
+    }
+  }

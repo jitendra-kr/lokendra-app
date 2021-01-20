@@ -7,8 +7,9 @@ import {
   DeleteOutlined,
   ExclamationCircleOutlined,
   EditOutlined,
-  LikeOutlined,
 } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { httpGet, httpDelete, httpPut } from "../../../utils/http";
 import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
@@ -44,15 +45,15 @@ class QuestionList extends React.Component {
   }
 
   componentDidMount() {
-    if(localStorage.getItem('auth')) {
-      this.fetchQuestion({reset: true});
+    if (localStorage.getItem("auth")) {
+      this.fetchQuestion({ reset: true });
     }
   }
 
   fetchQuestion(options) {
     const state = {
-      dataLoaded: false
-    }
+      dataLoaded: false,
+    };
 
     this.setState(state);
     httpGet({
@@ -60,7 +61,9 @@ class QuestionList extends React.Component {
     })
       .then((response) => {
         this.setState({
-          data: options.reset ? response.result : [...this.state.data, ...response.result],
+          data: options.reset
+            ? response.result
+            : [...this.state.data, ...response.result],
           dataLoaded: true,
           loadMore:
             response.result.length && this.limit === response.result.length
@@ -124,23 +127,21 @@ class QuestionList extends React.Component {
   like(_id, liked) {
     this.setState({
       data: this.state.data.map((o) => {
-        if(o._id === _id) {
+        if (o._id === _id) {
           o.liked = liked ? 0 : 1;
         }
         return o;
-      })
-    })
-    httpPut({
-      url:  `question/like/${_id}/${liked}`
-    })
-    .then((response) => {
-
-      console.log(response)
-
-    })
-    .catch((err) => {
-      console.log(err)
+      }),
     });
+    httpPut({
+      url: `question/like/${_id}/${liked}`,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   delete(questionId) {
@@ -189,8 +190,8 @@ class QuestionList extends React.Component {
           this.state.data.map((item, i) => {
             return (
               <div key={i} style={{ margin: "20px 16px 20px 16px" }}>
-                <div  className="row listing border">
-                  <div className="col-lg-10">
+                <div className="row listing border">
+                  <div className="col-lg-11">
                     <div
                       className="home-page-title"
                       style={{ marginLeft: "25px" }}
@@ -243,38 +244,42 @@ class QuestionList extends React.Component {
                       </Button>
                     </div>
                   </div>
-                  <div className="col-lg-2">
-                    {isLoggedIn() && this.user?._id === item.author?._id ? (
+                  <div className="col-lg-1">
+                    {isLoggedIn() ? (
                       <React.Fragment>
-                        <LikeOutlined 
-                          style={{
-                            float: "right",
-                            padding: "10px",
-                          }}
-                          className={item.liked ? styles.liked : ''}
-
-                          onClick={() => {
-                            this.like(item._id, item.liked ? 1 : 0);
-                          }}/>
-                          <i class="fas fa-thumbs-up"></i>
-                        <DeleteOutlined
-                          style={{
-                            color: "red",
-                            float: "right",
-                            padding: "10px",
-                          }}
-                          onClick={() => {
-                            this.delete(item._id);
-                          }}
-                        />
-                        <Link href={`/questions/edit/${item._id}`}>
-                          <EditOutlined
+                        <span className={styles["action-icon"]}>
+                          <FontAwesomeIcon
+                            icon={faThumbsUp}
+                            className={item.liked ? styles.liked : ""}
                             style={{
-                              float: "right",
-                              padding: "10px",
+                              marginTop: "15px",
+                              marginLeft: "17px",
+                              cursor: "pointer",
+                            }}
+                            onClick={() => {
+                              this.like(item._id, item.liked ? 1 : 0);
                             }}
                           />
-                        </Link>
+                        </span>
+
+                        {this.user?._id === item.author?._id ? (
+                          <React.Fragment>
+                            <Link href={`/questions/edit/${item._id}`}>
+                              <EditOutlined className={styles["action-icon"]} />
+                            </Link>
+                            <DeleteOutlined
+                              className={styles["action-icon"]}
+                              style={{
+                                color: "red",
+                              }}
+                              onClick={() => {
+                                this.delete(item._id);
+                              }}
+                            />
+                          </React.Fragment>
+                        ) : (
+                          ""
+                        )}
                       </React.Fragment>
                     ) : (
                       ""
