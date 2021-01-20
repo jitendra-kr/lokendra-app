@@ -252,9 +252,9 @@ class QuestionList extends React.Component {
                     {isLoggedIn() ? (
                       <React.Fragment>
                         <span className={styles["action-icon"]}>
-                        {item.totalLikes ? <span className ={item.totalLikes > 9 ?  styles['m-left-25'] :  styles['m-left-32']} >
+                        <span className ={item.totalLikes > 9 ?  styles['m-left-25'] :  styles['m-left-32']} >
                           {item.totalLikes}
-                          </span> : ''}
+                          </span>
                           <span  >                          
                           <FontAwesomeIcon
                             icon={faThumbsUp}
