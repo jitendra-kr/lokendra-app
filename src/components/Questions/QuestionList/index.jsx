@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Button, Tabs, Modal, Input } from "antd";
-import { upperFirst, debounce, reject } from "lodash";
+import { upperFirst, debounce, reject, get } from "lodash";
 import { withRouter } from "next/router";
 import Link from "next/link";
 import {
@@ -61,7 +61,7 @@ class QuestionList extends React.Component {
     })
       .then((response) => {
         this.setState({
-          data: options.reset
+          data: get(options, 'reset')
             ? response.result
             : [...this.state.data, ...response.result],
           dataLoaded: true,
@@ -75,7 +75,9 @@ class QuestionList extends React.Component {
         });
         this.skip += this.limit;
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err)
+      });
   }
 
   generateUrl() {
