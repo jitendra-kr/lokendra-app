@@ -40,7 +40,7 @@ function aboutUs() {
                             {/* <a href="https://www.youtube.com/channel/UCsHL8zvBpc0AZs891BdPwdA" target="_blank">
                                 <img className={styles.img} src="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/youtube-jimmypoint.png" />
                             </a> */}
-                            <a href="/" target="_blank" >
+                            <a href="https://www.instagram.com/jimmypoint" target="_blank" >
                                 <img className={styles.img} src="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/instagram-jimmypoint.png" />
                             </a>
                         </div>
