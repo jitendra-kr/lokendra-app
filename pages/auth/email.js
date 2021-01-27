@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Layout } from "antd";
 import { httpPut } from "../../src/utils/http";
-import { getUser, fetchUpdatedUserFromServer } from "../../../utils/index";
+import { getUser, fetchUpdatedUserFromServer } from "../../src/utils/index";
 import { Login } from "../../src/components"
 import Page404 from "../404";
 const { Content } = Layout;
