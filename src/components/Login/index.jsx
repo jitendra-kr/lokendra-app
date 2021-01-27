@@ -60,8 +60,8 @@ function Login(props) {
     <Content>
       <AppHead data={{ title: "Log In" }} />
       <div className="row content-height">
-        <div className="col-lg-4" />
-        <div className="col-lg-8">
+        <div className="col-lg-2" />
+        <div className="col-lg-10">
           <div className={styles["login-form"]}>
 
 
