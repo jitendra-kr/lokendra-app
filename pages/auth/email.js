@@ -22,6 +22,8 @@ function emailVerifyPage() {
                 await httpPut({ url: "user/verify/email" });
                 const id = getUser().id;
                 const response = await fetchUpdatedUserFromServer(id);
+                localStorage.removeItem('user')
+                localStorage.removeItem('auth')
                 localStorage.setItem("user", JSON.stringify(response.result));
                 setVerified(true);
             } catch (e) {
