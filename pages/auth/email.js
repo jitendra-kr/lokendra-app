@@ -37,8 +37,9 @@ function emailVerifyPage() {
             <Alert
                 style={{ textAlign: 'center', width: "50%", margin: 'auto'}}
                  closable message="Email verified successfully" type="success" />
-
-            <Login style={{ marginTop: "30px" }} />
+            <div style={{ marginTop: "30px" }} >
+            <Login />
+            </div>
 
         </Content>
     ) : isPage404 ? <Page404 /> : <Content></Content>
