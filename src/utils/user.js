@@ -1,4 +1,11 @@
 import { isEmpty } from "lodash";
+import { httpGet } from "./http"
+
+function fetchUpdatedUserFromServer(id) {
+  return httpGet({
+    url: `user/${id}`,
+  })
+}    
 
 function getUser() {
 
@@ -27,6 +34,7 @@ function isAuthorisedToPostBlog () {
 module.exports = {
     getUser: getUser,
     isLoggedIn: isLoggedIn,
-    isAuthorisedToPostBlog: isAuthorisedToPostBlog
+    isAuthorisedToPostBlog: isAuthorisedToPostBlog,
+    fetchUpdatedUserFromServer: fetchUpdatedUserFromServer
 }
 

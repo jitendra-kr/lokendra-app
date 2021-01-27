@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Layout } from "antd";
 import { httpPut } from "../../src/utils/http";
+import { getUser, fetchUpdatedUserFromServer } from "../../../utils/index";
 import { Login } from "../../src/components"
 import Page404 from "../404";
 const { Content } = Layout;
@@ -19,6 +20,9 @@ function emailVerifyPage() {
             localStorage.setItem("auth", auth);
             try {
                 await httpPut({ url: "user/verify/email" });
+                const id = getUser().id;
+                const response = await fetchUpdatedUserFromServer(id);
+                localStorage.setItem("user", JSON.stringify(response.result));
                 setVerified(true);
             } catch (e) {
                 setPage404(true)

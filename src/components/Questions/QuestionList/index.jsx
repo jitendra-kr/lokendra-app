@@ -11,11 +11,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { httpGet, httpDelete, httpPut, httpPost } from "../../../utils/http";
-import { 
-  messageError, 
-  messageSuccess, 
+import {
+  messageError,
+  messageSuccess,
   messageInfo,
-  messageLoading } from "../../../utils/antd";
+  messageLoading,
+} from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser, getLimitedText } from "../../../utils/index";
 import AppHead from "../../Head/head";
@@ -66,7 +67,7 @@ class QuestionList extends React.Component {
     })
       .then((response) => {
         this.setState({
-          data: get(options, 'reset')
+          data: get(options, "reset")
             ? response.result
             : [...this.state.data, ...response.result],
           dataLoaded: true,
@@ -81,7 +82,7 @@ class QuestionList extends React.Component {
         this.skip += this.limit;
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       });
   }
 
@@ -136,7 +137,7 @@ class QuestionList extends React.Component {
       data: this.state.data.map((o) => {
         if (o._id === _id) {
           o.liked = liked ? 0 : 1;
-          o.totalLikes = !liked ? o.totalLikes + 1 : o.totalLikes -1 ;
+          o.totalLikes = !liked ? o.totalLikes + 1 : o.totalLikes - 1;
         }
         return o;
       }),
@@ -144,12 +145,8 @@ class QuestionList extends React.Component {
     httpPut({
       url: `question/like/${_id}/${liked}`,
     })
-      .then((response) => {
-
-      })
-      .catch((err) => {
-
-      });
+      .then((response) => {})
+      .catch((err) => {});
   }
 
   delete(questionId) {
@@ -256,24 +253,29 @@ class QuestionList extends React.Component {
                     {isLoggedIn() ? (
                       <React.Fragment>
                         <span className={styles["action-icon"]}>
-                        <span className ={item.totalLikes > 9 ?  styles['m-left-25'] :  styles['m-left-32']} >
-                          {item.totalLikes}
+                          <span
+                            className={
+                              item.totalLikes > 9
+                                ? styles["m-left-25"]
+                                : styles["m-left-32"]
+                            }
+                          >
+                            {item.totalLikes}
                           </span>
-                          <span  >                          
-                          <FontAwesomeIcon
-                            icon={faThumbsUp}
-                            className={item.liked ? styles.liked : ""}
-                            style={{
-                              marginTop: "15px",
-                              marginLeft: "17px",
-                              cursor: "pointer",
-                            }}
-                            onClick={() => {
-                              this.like(item._id, item.liked ? 1 : 0);
-                            }}
-                          />
+                          <span>
+                            <FontAwesomeIcon
+                              icon={faThumbsUp}
+                              className={item.liked ? styles.liked : ""}
+                              style={{
+                                marginTop: "15px",
+                                marginLeft: "17px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                this.like(item._id, item.liked ? 1 : 0);
+                              }}
+                            />
                           </span>
-          
                         </span>
 
                         {this.user?._id === item.author?._id ? (
@@ -285,7 +287,7 @@ class QuestionList extends React.Component {
                               className={styles["action-icon"]}
                               style={{
                                 color: "red",
-                                marginTop: "22px"
+                                marginTop: "22px",
                               }}
                               onClick={() => {
                                 this.delete(item._id);
@@ -350,31 +352,35 @@ class QuestionList extends React.Component {
     this.postedBy = key;
     this.skip = 0;
 
-    const user = getUser()
-    if(!user.verified) {
-      const that = this;
-      confirm({
-        title: `You have not verified your email`,
-        okText: "Yes",
-        content: `Would you like to verify your email ${user.email}`,
-        cancelText: "No",
-        onOk() {
-          const key = "verifyEmail";
-          messageLoading({ key });
-          httpPost({
-            url: "/user/send-email-verification-email",
-          })
-            .then((response) => {
-              messageSuccess({ content: `${response.message} to your email ${user.email}`, key });
-            })
-            .catch((err) => {
-              messageError({ duration: 2 });
-            });
-        },
-      });
-    } else if (localStorage.getItem("auth")) {
+    const user = getUser();
+    if (localStorage.getItem("auth")) {
       if (key === "askQues") {
-        return this.props.router.push("/questions/ask");
+        if (!user.verified) {
+          confirm({
+            title: `You have not verified your email`,
+            okText: "Yes",
+            content: `Would you like to verify your email ${user.email}`,
+            cancelText: "No",
+            onOk() {
+              const key = "verifyEmail";
+              messageLoading({ key });
+              httpPost({
+                url: "/user/send-email-verification-email",
+              })
+                .then((response) => {
+                  messageSuccess({
+                    content: `${response.message} to your email ${user.email}`,
+                    key,
+                  });
+                })
+                .catch((err) => {
+                  messageError({ duration: 2 });
+                });
+            },
+          });
+        } else {
+          return this.props.router.push("/questions/ask");
+        }
       }
       this.setState({
         data: [],
