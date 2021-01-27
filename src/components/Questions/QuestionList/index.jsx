@@ -10,8 +10,12 @@ import {
 } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { httpGet, httpDelete, httpPut } from "../../../utils/http";
-import { messageError, messageSuccess, messageInfo } from "../../../utils/antd";
+import { httpGet, httpDelete, httpPut, httpPost } from "../../../utils/http";
+import { 
+  messageError, 
+  messageSuccess, 
+  messageInfo,
+  messageLoading } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser, getLimitedText } from "../../../utils/index";
 import AppHead from "../../Head/head";
@@ -345,7 +349,30 @@ class QuestionList extends React.Component {
   onTabClick(key) {
     this.postedBy = key;
     this.skip = 0;
-    if (localStorage.getItem("auth")) {
+
+    const user = getUser()
+    if(!user.verified) {
+      const that = this;
+      confirm({
+        title: `You have not verified your email`,
+        okText: "Yes",
+        content: `Would you like to verify your email ${user.email}`,
+        cancelText: "No",
+        onOk() {
+          const key = "verifyEmail";
+          messageLoading({ key });
+          httpPost({
+            url: "/user/send-email-verification-email",
+          })
+            .then((response) => {
+              messageSuccess({ content: `${response.message} to your email ${user.email}`, key });
+            })
+            .catch((err) => {
+              messageError({ duration: 2 });
+            });
+        },
+      });
+    } else if (localStorage.getItem("auth")) {
       if (key === "askQues") {
         return this.props.router.push("/questions/ask");
       }
