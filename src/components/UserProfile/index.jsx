@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, Descriptions, Button, Radio, Input } from "antd";
 import { withRouter } from "next/router";
 import { isEmpty } from "lodash";
+import AppHead from "../Head/head";
 import { httpGet, httpPut, httpPost } from "../../utils/http";
 import {
   getUser,
@@ -139,6 +140,7 @@ class UserProfile extends React.Component {
     }
     return (
       <Content className=" content-height" style={{ textAlign: "center" }}>
+        <AppHead data={{title: this.state.userData?.firstName}} />
         <Descriptions
           column={1}
           extra={
