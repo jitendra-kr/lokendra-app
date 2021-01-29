@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Select, Layout } from "antd";
 import dynamic from "next/dynamic";
-import { debounce } from "lodash";
+import { debounce, last } from "lodash";
 import { withRouter } from "next/router";
 import Link from "next/link";
 import {
@@ -139,7 +139,9 @@ class NewQuestion extends React.Component {
   }
 
   similarQuestion = debounce((e) => {
-    if (e.target.value) {
+    const needToErase = ['and', 'or', 'its', 'how', 'on', 'any', 'to', 'use', 'what', 'is', 'how', 'to', '', ' ', '   '];
+    const valueArray = e.target.value.split(' ');
+    if (e.target.value && needToErase.indexOf(last(valueArray)) === -1) {
       httpGet({ url: `question/similar-question?keywords=${e.target.value}` })
         .then((response) => {
           this.setState({
