@@ -3,10 +3,10 @@ import { upperFirst, nth } from "lodash";
 import { Layout, Button, Modal } from "antd";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
+import { withRouter } from "next/router";
 import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
-import { getUser } from "../../../utils/index";
+import { isLoggedIn, getUser } from "../../../utils/index";
 import { httpPost, httpDelete, httpGet } from "../../../utils/http";
 import { messageError, messageSuccess } from "../../../utils/antd";
 import {
@@ -45,16 +45,13 @@ class Answer extends React.Component {
 
   fetchLatestData() {
     httpGet({ url: `question/answer/${this.props._id}` })
-    .then((response) => {
-      this.setState({
-        data: response.result,
-      });
-    })
-    .catch((err) => {
-
-    });
+      .then((response) => {
+        this.setState({
+          data: response.result,
+        });
+      })
+      .catch((err) => {});
   }
-
 
   date(date) {
     if (date) {
@@ -108,7 +105,7 @@ class Answer extends React.Component {
         messageSuccess({ content: "Your answer is saved successfully" });
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
         messageError({ content: "something went wrong" });
       });
   }
@@ -154,11 +151,22 @@ class Answer extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
-            console.log(err)
+            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },
     });
+  }
+
+  wasAskedToMe(_id) {
+    if (isLoggedIn()) {
+      this.props.router.push(`/questions/update/${_id}`);
+    } else {
+      messageInfo({
+        content: `You need to login to perform this action`,
+        duration: 3,
+      });
+    }
   }
 
   render() {
@@ -168,31 +176,45 @@ class Answer extends React.Component {
         <div className="row">
           <div style={{ width: "100%" }}>
             <h2>{this.state.data.title}</h2>
-            <div  dangerouslySetInnerHTML={{ __html: this.state.data.body }}></div >
-            {this.user && this.user._id === this.state.data.author ? (
-              <div>
-                <DeleteOutlined
-                  style={{
-                    color: "red",
-                    float: "right",
-                    padding: "10px",
-                  }}
-                  onClick={() => {
-                    this.deleteQuestion(this.state.data._id);
-                  }}
-                />
-                <Link href={`/questions/edit/${this.state.data._id}`}>
-                  <EditOutlined
+            <div
+              dangerouslySetInnerHTML={{ __html: this.state.data.body }}
+            ></div>
+
+            <div>
+              {this.user && this.user._id === this.state.data.author ? (
+                <React.Fragment>
+                  <DeleteOutlined
                     style={{
+                      color: "red",
                       float: "right",
                       padding: "10px",
                     }}
+                    onClick={() => {
+                      this.deleteQuestion(this.state.data._id);
+                    }}
                   />
-                </Link>
-              </div>
-            ) : (
-              ""
-            )}
+                  <Link href={`/questions/edit/${this.state.data._id}`}>
+                    <EditOutlined
+                      style={{
+                        float: "right",
+                        padding: "10px",
+                      }}
+                    />
+                  </Link>
+                </React.Fragment>
+              ) : (
+                ""
+              )}
+              {<Button
+                style={{
+                  float: "right",
+                }}
+                type="primary"
+                onClick={this.wasAskedToMe.bind(this, this.state.data._id)}
+              >
+                <a>Did this question asked to you ?</a>
+              </Button>}
+            </div>
           </div>
           <div style={{ marginRight: "20px" }}>
             <span>
@@ -245,7 +267,9 @@ class Answer extends React.Component {
                     )}
 
                     <div style={{ margin: "13px 0 0px 35px" }}>
-                      <div dangerouslySetInnerHTML={{ __html: item.answer }}></div>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: item.answer }}
+                      ></div>
                       <p
                         style={{
                           fontFamily: "monospace",
@@ -296,4 +320,4 @@ class Answer extends React.Component {
   }
 }
 
-export default Answer;
+export default withRouter(Answer);
