@@ -1,5 +1,5 @@
 import React from "react";
-import { upperFirst, nth } from "lodash";
+import { upperFirst } from "lodash";
 import { Layout, Button, Modal } from "antd";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -212,7 +212,7 @@ class Answer extends React.Component {
                 type="primary"
                 onClick={this.wasAskedToMe.bind(this, this.state.data._id)}
               >
-                <a>Did this question asked to you ?</a>
+                <a>Did this question asked to you {this.user && this.user._id === this.state.data.author ? 'again' : ''}?</a>
               </Button>}
             </div>
           </div>
