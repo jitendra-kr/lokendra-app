@@ -3,7 +3,7 @@ import Link from "next/link";
 import { withRouter } from 'next/router'
 import { Form, Input, Layout, Button } from "antd";
 import { MailOutlined, LockOutlined, UserOutlined  } from '@ant-design/icons';
-
+import { AppHead } from "../../components";
 import { httpPost } from "../../utils/http";
 import {
   messageLoading,
@@ -52,6 +52,7 @@ class Register extends React.Component {
   render() {
     return (
       <Content >
+        <AppHead data={{ title: "Register" }} />
         <div className="row content-height">
           <div className="col-lg-4" />
           <div className="col-lg-8">
