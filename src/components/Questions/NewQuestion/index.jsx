@@ -26,7 +26,10 @@ class NewQuestion extends React.Component {
   tagsData = [
     'Javascript',
     'Node.Js',
-    'React.Js'
+    'React.Js',
+    'MySQL',
+    'MongoDB',
+    'Health & Fitness',
   ];
   tags = [];
   askedByData;
