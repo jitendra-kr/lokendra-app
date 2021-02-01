@@ -180,6 +180,7 @@ class NewQuestion extends React.Component {
                 initialValues={{
                   title: this.state.data.title,
                   where_asked: this.state.data.where_asked,
+                  tags: this.state.data.tags
                 }}
                 onFinish={this.onFinish}
                 style={{ margin: "0 auto" }}
@@ -223,6 +224,23 @@ class NewQuestion extends React.Component {
                     tokenSeparators={[","]}
                     maxTagTextLength={20}
                     placeholder="e.g. Tata Consultancy Services or Personal"
+                  >
+                    {this.askedBy}
+                  </Select>
+                </Form.Item>
+                <Form.Item
+                  name="tags"
+                  label="Tags"
+                  rules={[
+                    { required: true, message: "Please input Tags!" },
+                  ]}
+                >
+                  <Select
+                    mode="tags"
+                    style={{ width: "100%" }}
+                    tokenSeparators={[","]}
+                    maxTagTextLength={20}
+                    placeholder="Enter tags"
                   >
                     {this.askedBy}
                   </Select>
