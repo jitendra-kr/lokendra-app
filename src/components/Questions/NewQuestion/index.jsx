@@ -23,6 +23,11 @@ class NewQuestion extends React.Component {
   formRef = React.createRef();
   body;
   askedBy = []
+  tags = [
+    'Javascript', 
+    'Node.Js',
+    'React.Js',
+    'Health & Fitness']
   askedByData;
 
   constructor(props) {
@@ -225,7 +230,7 @@ class NewQuestion extends React.Component {
                     maxTagTextLength={20}
                     placeholder="e.g. Tata Consultancy Services or Personal"
                   >
-                    {this.askedBy}
+                    {this.tags}
                   </Select>
                 </Form.Item>
                 <Form.Item
