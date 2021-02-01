@@ -22,12 +22,13 @@ const { Option } = Select;
 class NewQuestion extends React.Component {
   formRef = React.createRef();
   body;
-  askedBy = []
-  tags = [
-    'Javascript', 
+  askedBy = [];
+  tagsData = [
+    'Javascript',
     'Node.Js',
-    'React.Js',
-    'Health & Fitness']
+    'React.Js'
+  ];
+  tags = [];
   askedByData;
 
   constructor(props) {
@@ -74,12 +75,19 @@ class NewQuestion extends React.Component {
       'CodeBlock Technologies',
       'Personal',
       'Ernst & Young'
-    ]
+    ];
 
+    this.tags = [
 
-      for (let i = 0; i < this.askedByData.length; i++) {
-        this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
-      }
+    ];
+
+    for (let i = 0; i < this.askedByData.length; i++) {
+      this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
+    }
+
+    for (let i = 0; i < this.tagsData.length; i++) {
+      this.tags.push(<Option key={this.tagsData[i]}>{this.tagsData[i]}</Option>);
+    }
   }
 
 
@@ -185,7 +193,7 @@ class NewQuestion extends React.Component {
                 initialValues={{
                   title: this.state.data.title,
                   where_asked: this.state.data.where_asked,
-                  tags: this.state.data.tags
+                  tags: this.state.data.tags,
                 }}
                 onFinish={this.onFinish}
                 style={{ margin: "0 auto" }}
@@ -230,7 +238,7 @@ class NewQuestion extends React.Component {
                     maxTagTextLength={20}
                     placeholder="e.g. Tata Consultancy Services or Personal"
                   >
-                    {this.tags}
+                    {this.askedBy}
                   </Select>
                 </Form.Item>
                 <Form.Item
@@ -247,18 +255,10 @@ class NewQuestion extends React.Component {
                     maxTagTextLength={20}
                     placeholder="Enter tags"
                   >
-                    {this.askedBy}
+                     {this.tags}
                   </Select>
                 </Form.Item>
                 <Form.Item name="body" label="Body">
-                  {/* <CKEditor
-                  editor={ClassicEditor}
-                  data={this.state.data.body}
-                  onChange={(event, editor) => {
-                    this.body = editor.getData();
-                  }}
-                /> */}
-
                   <Editor
                     data={this.state.data.body}
                     sendData={this.getEditorData.bind(this)}
