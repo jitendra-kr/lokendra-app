@@ -139,8 +139,9 @@ class NewBlog extends React.Component {
     if (this.state.data.title || !this.state._id) {
       return (
         <Content >
-        <div className="row" >
+        <div className="row width-100-per"  >
             <Form
+            className = "width-100-per"
               layout="vertical"
               ref={this.formRef}
               initialValues={{ title: this.state.data.title,
