@@ -209,12 +209,13 @@ class NewBlog extends React.Component {
               <Form.Item
                 name="category"
                 label="Category"
-                // rules={[{ required: true, message: "Please input category!" }]}
+                rules={[{ required: true, message: "Please input category!" }]}
               >
                 <Select
                   mode="multiple"
                   showArrow
                   style={{ width: "100%" }}
+                  placeholder="Please input category"
                 >
 
     {
@@ -232,7 +233,7 @@ class NewBlog extends React.Component {
                 <Select
                   mode="tags"
                   style={{ width: "100%" }}
-                  placeholder="Technology Fitness "
+                  placeholder="Please input Tags"
                 >
                   {<Option key={"1"}>1</Option>}
                 </Select>
