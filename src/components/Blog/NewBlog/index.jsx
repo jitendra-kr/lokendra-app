@@ -146,7 +146,7 @@ class NewBlog extends React.Component {
               ref={this.formRef}
               initialValues={{ title: this.state.data.title,
                 meta_description: this.state.data.meta_description,
-                new_slug: this.state.data.meta_keywords,
+                new_slug: this.state.data.slug,
               tags: this.state.data.tags,
               content: this.state.data.content,
               image: this.state.data.image,
