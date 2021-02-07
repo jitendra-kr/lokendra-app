@@ -167,10 +167,10 @@ class NewBlog extends React.Component {
                 />
               </Form.Item>
               <Form.Item
-                name="meta_keywords"
+                name="new_slug"
                 label="SEO Title"
                 rules={[
-                  { required: true, message: "Please input SEO Keyworlds!" },
+                  { required: true, message: "Please input SEO Title!" },
                 ]}
               >
                 <TextArea
