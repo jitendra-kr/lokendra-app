@@ -68,8 +68,8 @@ class ReadBlog extends React.Component {
     return (
       <Content style={{ padding: "100px 50px 59px 56px" }}>
         <AppHead data = {this.state.data}/>
-            <div style={{ width: "100%" }}>
-              <h1>{this.state.data.title}</h1>
+            <div className="width-100-per">
+              <h1 className="font-weight-bold" >{this.state.data.title}</h1>
             </div>
             <div className="row">
               <div className="col-lg-3">

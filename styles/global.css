@@ -166,6 +166,10 @@ p {
   font-family: inherit;
 }
 
+.font-weight-bold {
+  font-weight: bold;
+}
+
 .post-view-data {
   font-size: 12px;
   margin-right: 2px;
