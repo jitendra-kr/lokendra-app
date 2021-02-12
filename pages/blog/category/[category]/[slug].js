@@ -29,7 +29,7 @@ function BlogsByCategoryPage({data}) {
       props: {
         data: response.result
       },
-      revalidate: 60
+      revalidate: 10
     }
   }
 
