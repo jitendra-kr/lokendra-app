@@ -197,28 +197,28 @@ class QuestionList extends React.Component {
               <div key={i} style={{ margin: "20px 16px 20px 16px" }}>
                 <div className="row listing border">
                   <div  className="col-lg-1">
-                    <div style={{margin: "50px 0 0 10px"}}>
-                    <div>
+                    <div style={{margin: "50px 0 7px 20px"}}>
+                    <div className={styles['question-visits-ans']}>
                       <div className="text-align" >{item.visits}</div>
                       <div className="text-align">{item.visits > 1 ? 'Views' : 'View'}</div>
                        
                     </div>                    
                     <div className="m-top-10" >
                       <div className="text-align" >{item.answer}</div>
-                      <div className="text-align">{item.answer > 1 ? 'Answers' : 'Answer'}</div>
+                      <div className="text-align ">{item.answer > 1 ? 'Answers' : 'Answer'}</div>
                     </div>
                     </div>
                   </div>
                   <div className="col-lg-9">
                     <div
                       className="home-page-title"
-                      style={{ marginLeft: "25px" }}
+                      style={{ marginLeft: "15px" }}
                     >
                       <Link href={{ pathname: this.detailPageUrl(item) }}>
                         {item.title}
                       </Link>
                     </div>
-                    <div style={{ marginLeft: "35px" }}>
+                    <div style={{ marginLeft: "25px" }}>
                       <p>
                         <span className="question-by">By - </span>
                         {upperFirst(
@@ -253,7 +253,7 @@ class QuestionList extends React.Component {
                         {this.date(item.created_at)}
                       </p>
                     </div>
-                    <div style={{ marginLeft: "35px", marginBottom: "15px" }}>
+                    <div style={{  marginBottom: "15px" }}>
                       <Button
                         type="link"
                         onClick={this.wasAskedToMe.bind(this, item)}
