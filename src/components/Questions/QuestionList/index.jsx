@@ -197,7 +197,7 @@ class QuestionList extends React.Component {
               <div key={i} style={{ margin: "20px 16px 20px 16px" }}>
                 <div className="row listing border">
                   <div  className="col-lg-1">
-                    <div style={{margin: "50px 0 7px 20px"}}>
+                    <div style={{margin: "50px 0 7px 9px"}}>
                     <div className={styles['question-visits-ans']}>
                       <div className="text-align" >{item.visits}</div>
                       <div className="text-align">{item.visits > 1 ? 'Views' : 'View'}</div>
@@ -208,7 +208,9 @@ class QuestionList extends React.Component {
                       <div className="text-align ">{item.answer > 1 ? 'Answers' : 'Answer'}</div>
                     </div>
                     </div>
+                    <hr className={styles['margin-left-10']} ></hr>
                   </div>
+                  
                   <div className="col-lg-9">
                     <div
                       className="home-page-title"
