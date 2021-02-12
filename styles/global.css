@@ -50,6 +50,14 @@ span {
   margin-top: 15px;
 }
 
+.m-top-10 {
+  margin-top: 10px;
+}
+
+.text-align {
+  text-align: center
+}
+
 .buy-now-button {
   height: 40px !important;
   background-color: #cc3d00 !important;
