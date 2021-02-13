@@ -16,7 +16,7 @@ export async function getStaticProps() {
     props: {
       blog: response.result
     },
-    revalidate: 21600
+    revalidate: 10
   }
 }
 export default HomePage

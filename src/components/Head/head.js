@@ -95,9 +95,13 @@ export default function AppHead(props) {
             content={metaKeywords()}
             key="title" />
         <meta
+            name="og:description"
+            content={description()}
+            key="og:description"/>
+        <meta
             name="description"
             content={description()}
-            key="description"/>
+            key="description"/>            
 
         <meta
             property="twitter:title"
