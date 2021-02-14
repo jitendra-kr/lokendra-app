@@ -3,8 +3,8 @@ import Config from '../../../src/config/env';
 import { sample } from "lodash";
 const baseUrls = Config.getData().default.baseUrl;
 
-function NewQuestionPage() {
-    return <NewQuestion />
+function NewQuestionPage({companiesData}) {
+    return <NewQuestion companiesData={companiesData}/>
 }
 
 export async function getStaticProps() {
