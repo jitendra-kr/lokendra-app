@@ -44,8 +44,8 @@ class NewQuestion extends React.Component {
     };
 
     this.askedBy = [];
-    for (let i = 0; i < this.props.companiesData.length; i++) {
-      this.askedBy.push(<Option key={this.props.companiesData[i]._id}>{this.props.companiesData[i].name}</Option>);
+      for (let i = 0; i < this.props.companiesData.length; i++) {
+        this.askedBy.push(<Option key={this.props.companiesData[i]._id}>{this.props.companiesData[i].name}</Option>);
     } 
 
     this.tags = [];
