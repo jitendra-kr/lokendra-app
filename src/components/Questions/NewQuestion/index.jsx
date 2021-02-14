@@ -123,13 +123,14 @@ class NewQuestion extends React.Component {
               `/questions/${this.state._id}/${this.state.data.slug}`
             );
           } else {
-            componentDidMount(true)
+            this.componentDidMount(true)
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
         }
       })
       .catch((err = {}) => {
+        console.log(err)
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
           messageError({ content: err.data.message, key, duration: 2 });
