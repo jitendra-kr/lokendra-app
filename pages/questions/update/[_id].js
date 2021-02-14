@@ -21,11 +21,24 @@ class UpdateQuestion extends React.Component {
     this.state = {
       _id: this.props.router.query._id,
       isButtonDisabled: false,
-      data: {}
+      data: {},
+      askedBy: []
     };
   }
 
   componentDidMount() {
+    httpGet({ url: `/companies/data` })
+    .then((response) => {  
+      this.askedBy = []    
+      for (let i = 0; i < response.result.length; i++) {
+        this.askedBy.push(<Option key={response.result[i]._id}>{response.result[i].name}</Option>);
+      } 
+      this.setState({
+        askedBy: this.askedBy
+      });      
+    })
+    .catch((err) => {});
+
     if (this.state._id) {
       httpGet({ url: `question/answer/${this.state._id}` })
         .then((response) => {
@@ -35,49 +48,6 @@ class UpdateQuestion extends React.Component {
         })
         .catch((err) => { });
     }
-
-    this.askedByData = [
-      'Tata Consultancy Services',
-      'HCL Technologies',
-      'Paytm',
-      'Send In blue',
-      'Appzlogic',
-      'Square Yards',
-      'Iris software',
-      'To the new',
-      'Successive sofware',
-      'Telus international',
-      'Kloudrac Software Pvt',
-      'In2it technologies',
-      'Gopaisa',
-      'Denave india pvt ltd',
-      'Path infotech',
-      'Proctur',
-      'Enuke software',
-      'Hitachi MGRM Net',
-      'Appinventive',
-      'Synapse india',
-      'Magic software',
-      'Iwebservices',
-      'Fluper ltd',
-      'ThinkApps Solutions',
-      'Indosoft Technologies',
-      'YapApp India pvt. ltd.',
-      'Prolitus Technologies',
-      'Smart data enterprises',
-      'British council',
-      'Sapient Corporation',
-      'Agami Technologies',
-      'CodeBlock Technologies',
-      'Personal',
-      'Ernst & Young'
-    ]
-
-
-      for (let i = 0; i < this.askedByData.length; i++) {
-        this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
-      }
-
   }
 
   onFinish = (values) => {
@@ -141,23 +111,19 @@ class UpdateQuestion extends React.Component {
                     { required: true, message: "Please input Asked By!" },
                   ]}
                 >
-                  {/* <Select
+
+                  <Select
                     mode="tags"
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
-                    placeholder="e.g. Tata Consultancy Services "
-                    autoFocus={true}
-                    maxTagTextLength={20}
-                  ></Select> */}
-                                    <Select
-                    mode="tags"
-                    style={{ width: "100%" }}
-                    tokenSeparators={[","]}
-                    autoFocus={true}
-                    maxTagTextLength={20}
+                    maxTagTextLength={25}
                     placeholder="e.g. Tata Consultancy Services or Personal"
+                    filterOption = {(inputValue, option) => {
+                      return option['children'].match(new RegExp(inputValue, 'gi'))
+
+                    }} 
                   >
-                    {this.askedBy}
+                    {this.state.askedBy}
                   </Select>
                 </Form.Item>
 
