@@ -44,9 +44,11 @@ class NewQuestion extends React.Component {
     };
 
     this.askedBy = [];
+    if(this.props.companiesData.length) {
       for (let i = 0; i < this.props.companiesData.length; i++) {
         this.askedBy.push(<Option key={this.props.companiesData[i]._id}>{this.props.companiesData[i].name}</Option>);
-    } 
+      } 
+    }
 
     this.tags = [];
     for (let i = 0; i < this.tagsData.length; i++) {
