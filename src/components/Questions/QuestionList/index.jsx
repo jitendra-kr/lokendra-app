@@ -187,6 +187,7 @@ class QuestionList extends React.Component {
     );
   }
 
+
   tabPane(tab, key) {
     return (
       <TabPane tab={tab} key={key} style={{ left: "19px" }}>
@@ -224,14 +225,14 @@ class QuestionList extends React.Component {
                       <p>
                         <span className="question-by">By - </span>
                         {upperFirst(
-                          getLimitedText(item.where_asked.join(","), 20)
+                          get(item.where_asked[0], 'name', item.where_asked[0])
                         )}
                         <Link
                           href={`/questions/asked-by/${item._id}/${item.slug}`}
                         >
                           <a className={styles.more}>
-                            {item.where_asked.join(",").length > 20
-                              ? `and ${item.where_asked.length - 1} more`
+                            {item.where_asked.length > 1
+                              ? ` and ${item.where_asked.length - 1} more`
                               : ""}
                           </a>
                         </Link>

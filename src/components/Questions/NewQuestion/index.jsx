@@ -32,7 +32,6 @@ class NewQuestion extends React.Component {
     'Health & Fitness',
   ];
   tags = [];
-  askedByData;
 
   constructor(props) {
     super(props);
@@ -41,53 +40,9 @@ class NewQuestion extends React.Component {
       isButtonDisabled: false,
       data: {},
       similar: [],
+      askedBy: []
     };
-
-    this.askedByData = [
-      'Tata Consultancy Services',
-      'HCL Technologies',
-      'Paytm',
-      'Send In blue',
-      'Appzlogic',
-      'Square Yards',
-      'Iris software',
-      'To the new',
-      'Successive sofware',
-      'Telus international',
-      'Kloudrac Software Pvt',
-      'In2it technologies',
-      'Gopaisa',
-      'Denave india pvt ltd',
-      'Path infotech',
-      'Proctur',
-      'Enuke software',
-      'Hitachi MGRM Net',
-      'Appinventive',
-      'Synapse india',
-      'Magic software',
-      'Iwebservices',
-      'Fluper ltd',
-      'ThinkApps Solutions',
-      'Indosoft Technologies',
-      'YapApp India pvt. ltd.',
-      'Prolitus Technologies',
-      'Smart data enterprises',
-      'British council',
-      'Sapient Corporation',
-      'Agami Technologies',
-      'CodeBlock Technologies',
-      'Personal',
-      'Ernst & Young'
-    ];
-
-    this.tags = [
-
-    ];
-
-    for (let i = 0; i < this.askedByData.length; i++) {
-      this.askedBy.push(<Option key={this.askedByData[i]}>{this.askedByData[i]}</Option>);
-    }
-
+    this.tags = [ ];
     for (let i = 0; i < this.tagsData.length; i++) {
       this.tags.push(<Option key={this.tagsData[i]}>{this.tagsData[i]}</Option>);
     }
@@ -96,6 +51,18 @@ class NewQuestion extends React.Component {
 
 
   componentDidMount() {
+
+    httpGet({ url: `/companies/data` })
+    .then((response) => {      
+      for (let i = 0; i < response.result.length; i++) {
+        this.askedBy.push(<Option key={response.result[i]._id}>{response.result[i].name}</Option>);
+      } 
+      this.setState({
+        askedBy: this.askedBy
+      });      
+    })
+    .catch((err) => {});
+
     if (this.state._id) {
       httpGet({ url: `question/answer/${this.state._id}` })
         .then((response) => {
@@ -132,9 +99,9 @@ class NewQuestion extends React.Component {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
           if (this.state._id) {
-            this.props.router.push(
-              `/questions/${this.state._id}/${this.state.data.slug}`
-            );
+            // this.props.router.push(
+            //   `/questions/${this.state._id}/${this.state.data.slug}`
+            // );
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
@@ -241,7 +208,7 @@ class NewQuestion extends React.Component {
                     maxTagTextLength={20}
                     placeholder="e.g. Tata Consultancy Services or Personal"
                   >
-                    {this.askedBy}
+                    {this.state.askedBy}
                   </Select>
                 </Form.Item>
                 <Form.Item

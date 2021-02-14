@@ -31,7 +31,7 @@ function AskedByPage({ result }) {
       <ul>
         {data.map((value, i) => {
           return <li key={i}>
-            {value}
+            {value.name}
           </li>
         })}
       </ul>
@@ -51,4 +51,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default AskedByPage
+export default AskedByPage;
