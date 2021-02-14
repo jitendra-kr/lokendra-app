@@ -1,11 +1,14 @@
 import { NewQuestion } from "../../../src/components"
-import Config from '../../../src/config/env';
-import { sample } from "lodash";
-const baseUrls = Config.getData().default.baseUrl;
 
 function NewQuestionPage() {
   
     return <NewQuestion fetchCompaniesData = {true}/>
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  };
 }
 
   export default NewQuestionPage;

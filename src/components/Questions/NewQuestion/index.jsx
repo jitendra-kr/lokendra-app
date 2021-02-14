@@ -43,6 +43,7 @@ class NewQuestion extends React.Component {
       askedBy: []
     };
 
+
     this.askedBy = [];
     if(this.props.companiesData && this.props.companiesData.length) {
       for (let i = 0; i < this.props.companiesData.length; i++) {
@@ -59,7 +60,6 @@ class NewQuestion extends React.Component {
 
 
   componentDidMount(reloadCompany) {
-
     this.setState({
       askedBy: this.askedBy
     });
@@ -81,6 +81,9 @@ class NewQuestion extends React.Component {
     this.setState({
       askedBy: this.askedBy
     });
+
+    console.log(this.state._id);
+    console.log(this.props.router.query._id);
 
 
     if (this.state._id) {
@@ -130,7 +133,6 @@ class NewQuestion extends React.Component {
         }
       })
       .catch((err = {}) => {
-        console.log(err)
         this.setState({ isButtonDisabled: false });
         if (err.status === 400) {
           messageError({ content: err.data.message, key, duration: 2 });
