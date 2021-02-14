@@ -64,7 +64,7 @@ class NewQuestion extends React.Component {
       askedBy: this.askedBy
     });
 
-    if(reloadCompany) {
+    if(reloadCompany || this.props.fetchCompaniesData) {
       httpGet({ url: `/companies/data` })
       .then((response) => {  
         this.askedBy = []    

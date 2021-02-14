@@ -5,7 +5,7 @@ const baseUrls = Config.getData().default.baseUrl;
 
 function NewQuestionPage() {
   
-    return <NewQuestion />
+    return <NewQuestion fetchCompaniesData = {true}/>
 }
 
   export default NewQuestionPage;
