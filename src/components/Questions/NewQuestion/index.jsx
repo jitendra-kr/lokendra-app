@@ -42,26 +42,44 @@ class NewQuestion extends React.Component {
       similar: [],
       askedBy: []
     };
-    this.tags = [ ];
+
+    this.askedBy = [];
+    for (let i = 0; i < this.props.companiesData.length; i++) {
+      this.askedBy.push(<Option key={this.props.companiesData[i]._id}>{this.props.companiesData[i].name}</Option>);
+    } 
+
+    this.tags = [];
     for (let i = 0; i < this.tagsData.length; i++) {
       this.tags.push(<Option key={this.tagsData[i]}>{this.tagsData[i]}</Option>);
     }
+
   }
 
 
+  componentDidMount(reloadCompany) {
 
-  componentDidMount() {
+    this.setState({
+      askedBy: this.askedBy
+    });
 
-    httpGet({ url: `/companies/data` })
-    .then((response) => {      
-      for (let i = 0; i < response.result.length; i++) {
-        this.askedBy.push(<Option key={response.result[i]._id}>{response.result[i].name}</Option>);
-      } 
-      this.setState({
-        askedBy: this.askedBy
-      });      
-    })
-    .catch((err) => {});
+    if(reloadCompany) {
+      httpGet({ url: `/companies/data` })
+      .then((response) => {  
+        this.askedBy = []    
+        for (let i = 0; i < response.result.length; i++) {
+          this.askedBy.push(<Option key={response.result[i]._id}>{response.result[i].name}</Option>);
+        } 
+        this.setState({
+          askedBy: this.askedBy
+        });      
+      })
+      .catch((err) => {});
+    }
+
+    this.setState({
+      askedBy: this.askedBy
+    });
+
 
     if (this.state._id) {
       httpGet({ url: `question/answer/${this.state._id}` })
@@ -99,9 +117,11 @@ class NewQuestion extends React.Component {
           messageSuccess({ content: response.message, key, duration: 4 });
           this.formRef.current.resetFields();
           if (this.state._id) {
-            // this.props.router.push(
-            //   `/questions/${this.state._id}/${this.state.data.slug}`
-            // );
+            this.props.router.push(
+              `/questions/${this.state._id}/${this.state.data.slug}`
+            );
+          } else {
+            componentDidMount(true)
           }
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
@@ -205,8 +225,12 @@ class NewQuestion extends React.Component {
                     mode="tags"
                     style={{ width: "100%" }}
                     tokenSeparators={[","]}
-                    maxTagTextLength={20}
+                    maxTagTextLength={25}
                     placeholder="e.g. Tata Consultancy Services or Personal"
+                    filterOption = {(inputValue, option) => {
+                      return option['children'].match(new RegExp(inputValue, 'gi'))
+
+                    }} 
                   >
                     {this.state.askedBy}
                   </Select>
