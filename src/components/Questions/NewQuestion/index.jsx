@@ -29,6 +29,9 @@ class NewQuestion extends React.Component {
     'React.Js',
     'MySQL',
     'MongoDB',
+    'Redis',
+    'Angular',
+    'RxJs',
     'Health & Fitness',
   ];
   tags = [];
