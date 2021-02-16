@@ -76,9 +76,18 @@ export default function AppHead(props) {
             content={image}
             key="og:image" />
         <meta
+            property="og:image:secure_url"
+            content={image}
+            key="og:image:secure_url" /> 
+        <meta property="og:image:width" content="720" />
+        <meta property="og:image:height" content="404" /> 
+        <meta
             property="og:type"
             content="article"
             key="og:type"/>
+        <meta property="article:author" 
+            content="https://www.facebook.com/jimmypoint2019"
+            key="article:author"/ >
 
         <meta
             property="og:url"
