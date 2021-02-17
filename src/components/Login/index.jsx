@@ -58,7 +58,7 @@ function Login(props) {
 
   return (
     <Content>
-      <AppHead data = {this.props.data} />
+      <AppHead data = {props.data} />
       <div className="row content-height">
         <div className="col-lg-2" />
         <div className="col-lg-10">

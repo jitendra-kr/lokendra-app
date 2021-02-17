@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { get } from "lodash";
-import React, { useEffect, useState } from "react";
 
 export default function AppHead(props) {
 
@@ -14,34 +13,10 @@ export default function AppHead(props) {
 
     const author = name || 'Jimmypoint';
 
-    const title = props.data.title || 'Jimmypoint';
+    const title = get(props, 'data.title', 'Jimmypoint');
 
-    const defaultImage = "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png"
-
-    const image = get(props, 'data.image', defaultImage);
-
-    useEffect(() => {
-
-        // if(/login|register/.test(props.data.url)) {
-        //     setTitle('Jimmypoint - Log In or Sign Up')
-        // }
-
-        // if(/reset-password/.test(props.data.url)) {
-        //     setTitle('Reset Your Password | Jimmypoint')
-        // }
-        
-
-    }, []);
-
-    const description = () => {
-        const defaultDescription = "Jimmypoint is the largest, most trusted open platform where you can learn and share your knowledge.";
-        return get(props, 'data.meta_description', defaultDescription);
-    }
-
-    const metaKeywords = () => {
-        return title;
-    }
-
+    const image = get(props, 'data.image', "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png");
+    const description = get(props, 'data.meta_description', 'Jimmypoint is the largest, most trusted open platform where you can learn and share your knowledge.');
 
     return <Head>
         <title>{title}</title>
@@ -93,7 +68,7 @@ export default function AppHead(props) {
 
         <meta
             property="og:title"
-            content={metaKeywords()}
+            content={title}
             key="og:title" />
 
         <meta 
@@ -103,24 +78,24 @@ export default function AppHead(props) {
 
         <meta
             name="title"
-            content={metaKeywords()}
+            content={title}
             key="title" />
         <meta
             property="og:description"
-            content={description()}
+            content={description}
             key="og:description"/>
         <meta
             name="description"
-            content={description()}
+            content={description}
             key="description"/>            
 
         <meta
             property="twitter:title"
-            content={metaKeywords()}
+            content={title}
             key="twitter:title" />
         <meta
             property="twitter:description"
-            content={description()}
+            content={description}
             key="twitter:description"/>
 
         <meta
