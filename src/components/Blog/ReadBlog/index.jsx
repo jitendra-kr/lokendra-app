@@ -9,7 +9,7 @@ import {
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
 import { messageError, messageSuccess } from "../../../utils/antd";
-import { getUser, getDefaultHeadValues } from "../../../utils/index";
+import { getUser } from "../../../utils/index";
 import AppHead from "../../Head/head";
 
 
@@ -18,7 +18,6 @@ const { confirm } = Modal;
 
 class ReadBlog extends React.Component {
   user;
-  head;
   constructor(props) {
     super(props);
 
@@ -29,7 +28,6 @@ class ReadBlog extends React.Component {
   }
 
   componentDidMount() {
-    this.head = getDefaultHeadValues()
     httpPut({ url: `blog-management/update-views/${this.state.data._id}` })
     .then((response) => {
     })
@@ -69,7 +67,7 @@ class ReadBlog extends React.Component {
   render() {
     return (
       <Content style={{ padding: "100px 50px 59px 56px" }}>
-        <AppHead data = {{...this.state.data, ...this.head}}/>
+        <AppHead data = {this.state.data}/>
             <div className="width-100-per">
               <h1 className="font-weight-bold" >{this.state.data.title}</h1>
             </div>

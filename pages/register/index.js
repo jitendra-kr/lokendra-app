@@ -1,7 +1,7 @@
 import { Register } from "../../src/components"
 
 function RegisterPage() {
-    return <Register />
+    return <Register data = {{title: 'Jimmypoint - Log In or Sign Up'}}/>
 }
 
 export async function getStaticProps() {

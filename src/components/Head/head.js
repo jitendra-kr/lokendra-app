@@ -4,38 +4,32 @@ import React, { useEffect, useState } from "react";
 
 export default function AppHead(props) {
 
-    const [author, setAuthor] = useState('Jimmypoint');
+    let name;
+    if(get(props, 'data.author.firstName')) {
+        name = get(props, 'data.author.firstName');
+    }
+    if (get(props, 'data.author.firstName') && get(props, 'data.author.lastName')) {
+        name += ' ' + get(props, 'data.author.lastName');
+    }
 
-    const [title, setTitle] = useState('Jimmypoint');
+    const author = name || 'Jimmypoint';
+
+    const title = props.data.title || 'Jimmypoint';
 
     const defaultImage = "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png"
 
     const image = get(props, 'data.image', defaultImage);
 
     useEffect(() => {
-        let name = author;
-        if(get(props, 'data.author.firstName')) {
-            name = get(props, 'data.author.firstName');
-        }
-        if (get(props, 'data.author.firstName') && get(props, 'data.author.lastName')) {
-            name += ' ' + get(props, 'data.author.lastName');
-        }
 
+        // if(/login|register/.test(props.data.url)) {
+        //     setTitle('Jimmypoint - Log In or Sign Up')
+        // }
 
+        // if(/reset-password/.test(props.data.url)) {
+        //     setTitle('Reset Your Password | Jimmypoint')
+        // }
         
-        setAuthor(name);
-
-        if(/login|register/.test(props.data.url)) {
-            setTitle('Jimmypoint - Log In or Sign Up')
-        }
-
-        if(/reset-password/.test(props.data.url)) {
-            setTitle('Reset Your Password | Jimmypoint')
-        }
-
-        if(props.data.title) {
-            setTitle( `${props.data.title} - Jimmypoint`)
-        }
 
     }, []);
 

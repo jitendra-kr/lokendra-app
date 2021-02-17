@@ -1,7 +1,7 @@
 import { Login } from "../../src/components"
 
 function LoginPage() {
-    return <Login />
+    return <Login data = {{title: 'Jimmypoint - Log In or Sign Up'}}/>
 }
 
 export async function getStaticProps() {

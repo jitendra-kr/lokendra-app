@@ -28,11 +28,17 @@ export async function getStaticProps({ params }) {
 
     let response = await fetch(url);
 
-    response = await response.json()
+    response = await response.json();
+
+    const result = get(response, 'result');
+    const others = {
+        url: `https://www.jimmypoint.com/blog/${params.slug}`,
+        title: result.title
+    }
 
     return {
         props: {
-            posts: get(response, 'result')
+            posts: {...result, ...others}
         },
         revalidate: 10
     }

@@ -1,7 +1,7 @@
 import { ResetPassword } from "../../src/components";
 
 function ResetPasswordPage() {
-    return <ResetPassword />
+    return <ResetPassword data = {{title: 'Reset Your Password | Jimmypoint'}} />
 }
 
 export async function getStaticProps() {

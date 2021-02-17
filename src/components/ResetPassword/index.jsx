@@ -91,7 +91,7 @@ class ResetPassword extends React.Component {
   render() {
     return (
       <Content >
-        <AppHead data={{ title: "Forgot Password" }} />
+        <AppHead data = {this.props.data} />
         <div className="row content-height"  >
           <div className="col-lg-4" />
           <div className="col-lg-8">
