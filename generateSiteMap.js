@@ -19,6 +19,8 @@ async function generateSiteMap() {
     '!pages/donate.js',
     '!pages/404.js',
     '!pages/user.js',
+    '!pages/**/asked-by/**/*.js',
+    '!pages/**/asked-to/**/*.js',
     '!pages/**/edit/*.js',
     '!pages/**/update/*.js',
   ]);
