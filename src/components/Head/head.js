@@ -46,7 +46,7 @@ export default function AppHead(props) {
     }
 
     const metaKeywords = () => {
-        return get(props, 'data.meta_keywords', title);
+        return get(props, title);
     }
 
 
