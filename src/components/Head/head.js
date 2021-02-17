@@ -79,8 +79,12 @@ export default function AppHead(props) {
             property="og:image:secure_url"
             content={image}
             key="og:image:secure_url" /> 
-        <meta property="og:image:width" content="720" />
-        <meta property="og:image:height" content="404" /> 
+        <meta 
+            property="og:image:width" 
+            content="720" />
+        <meta
+            property="og:image:height" 
+            content="404" /> 
         <meta
             property="og:type"
             content="article"
@@ -109,7 +113,7 @@ export default function AppHead(props) {
             content={metaKeywords()}
             key="title" />
         <meta
-            name="og:description"
+            property="og:description"
             content={description()}
             key="og:description"/>
         <meta
