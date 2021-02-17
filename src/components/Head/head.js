@@ -6,7 +6,7 @@ export default function AppHead(props) {
 
     const [author, setAuthor] = useState('Jimmypoint, Jitendra');
 
-    const [url, seturl] = useState('http://www.jimmypoint.com');
+    const url = window.location.href;
 
     const [title, setTitle] = useState('Jimmypoint');
 
@@ -23,7 +23,6 @@ export default function AppHead(props) {
             name += ' ' + get(props, 'data.author.lastName');
         }
 
-        seturl(window.location.href);
         setAuthor(name);
 
         if(/login|register/.test(url)) {
