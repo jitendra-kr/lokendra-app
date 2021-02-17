@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react";
 
 export default function AppHead(props) {
 
-    const [author, setAuthor] = useState('Jimmypoint, Jitendra');
-
-    const url = window.location.href;
+    const [author, setAuthor] = useState('Jimmypoint');
 
     const [title, setTitle] = useState('Jimmypoint');
 
@@ -23,13 +21,15 @@ export default function AppHead(props) {
             name += ' ' + get(props, 'data.author.lastName');
         }
 
+
+        
         setAuthor(name);
 
-        if(/login|register/.test(url)) {
+        if(/login|register/.test(props.data.url)) {
             setTitle('Jimmypoint - Log In or Sign Up')
         }
 
-        if(/reset-password/.test(url)) {
+        if(/reset-password/.test(props.data.url)) {
             setTitle('Reset Your Password | Jimmypoint')
         }
 
@@ -94,7 +94,7 @@ export default function AppHead(props) {
 
         <meta
             property="og:url"
-            content={`${url}/` }
+            content={`${props.data.url}/` }
             key="og:url"/>
 
         <meta
@@ -131,7 +131,7 @@ export default function AppHead(props) {
 
         <meta
             property="al:web:url"
-            content={props.data.url || "Jimmypoint"}
+            content={props.data.url}
             key="al:web:url" />
 
         <meta

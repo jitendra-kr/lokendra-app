@@ -20,9 +20,16 @@ const dateFormat = (date) => {
   }
 }
 
+const getDefaultHeadValues = () => {
+  return {
+    url: window.location.href
+  }
+}
+
 
 module.exports = {
     getLimitedText,
     inputFieldsLimit,
-    dateFormat
+    dateFormat,
+    getDefaultHeadValues
 }
