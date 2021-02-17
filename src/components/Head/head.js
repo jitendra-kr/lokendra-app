@@ -95,7 +95,7 @@ export default function AppHead(props) {
 
         <meta
             property="og:url"
-            content={url }
+            content={`${url}/` }
             key="og:url"/>
 
         <meta
