@@ -99,6 +99,11 @@ export default function AppHead(props) {
             content={metaKeywords()}
             key="og:title" />
 
+        <meta 
+            property="fb:app_id" 
+            content="184066903055457"
+            key="fb:app_id"/>            
+
         <meta
             name="title"
             content={metaKeywords()}
