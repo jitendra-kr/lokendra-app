@@ -150,7 +150,7 @@ function MainHeader() {
               </span>
             </Link>
           </Col>
-          <Col span={8}>col-8</Col>
+          <Col span={8}></Col>
           <Col span={8}>
             <div>
               {md ? (
