@@ -13,8 +13,10 @@ import {
 } from "../../../utils";
 import { httpGet, httpPost } from "../../../utils/http";
 import AppHead from "../../Head/head";
-
-const Editor = dynamic(() => import("../../Editor"));
+const Editor = dynamic(
+  () => import('../../Editor'),
+  { loading: () => <p>Editor loading</p> }
+)
 const { TextArea } = Input;
 const { Content } = Layout;
 const { Option } = Select;
