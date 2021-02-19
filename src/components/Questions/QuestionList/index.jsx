@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Button, Tabs, Modal, Input } from "antd";
+import { Layout, Button, Tabs, Modal, Input, Select } from "antd";
 import { upperFirst, debounce, reject, get } from "lodash";
 import { withRouter } from "next/router";
 import Link from "next/link";
@@ -25,6 +25,7 @@ const { Content } = Layout;
 const { TabPane } = Tabs;
 const { confirm } = Modal;
 const { Search } = Input;
+const { Option } = Select;
 
 class QuestionList extends React.Component {
   isLoggedIn;
@@ -33,6 +34,7 @@ class QuestionList extends React.Component {
   limit;
   search;
   postedBy;
+  onSearchByChangeValue = "title";
 
   constructor(props) {
     super(props);
@@ -101,8 +103,11 @@ class QuestionList extends React.Component {
     }
 
     if (this.search) {
-      url += `search=${this.search}`;
+      url += `search=${this.search}&`;
     }
+
+    url += `onSearchBy=${this.onSearchByChangeValue}`;
+    
 
     return url;
   }
@@ -341,13 +346,6 @@ class QuestionList extends React.Component {
       </TabPane>
     );
   }
-  calculateTitle = (title) => {
-    const limit = 100;
-    if (title.length > limit) {
-      return upperFirst(title.substring(0, limit)) + "...";
-    }
-    return upperFirst(title);
-  };
 
   date(date) {
     if (date) {
@@ -417,6 +415,20 @@ class QuestionList extends React.Component {
     }
   }
 
+  onSearchByChange(value) {
+    this.onSearchByChangeValue = value;
+  }
+
+  selectAfter = (
+    <Select defaultValue={this.onSearchByChangeValue} className="select-after" style={{width: "90px"}} onSelect = {this.onSearchByChange.bind(this)}>
+      <Option value="title">Title</Option>
+      <Option value="answer">Answer</Option>
+      <Option value="name">Name</Option>
+      <Option value="email">Email</Option>
+      <Option value="company">Company</Option>
+    </Select>
+  );
+
   render() {
     return (
       <Content>
@@ -424,6 +436,7 @@ class QuestionList extends React.Component {
         <div className="col-lg-12 col-sm-12 col-md-12">
           <div className="row">
             <Search
+              addonBefore={this.selectAfter} 
               placeholder="search"
               onChange={this.searchQuestion}
               allowClear={true}
