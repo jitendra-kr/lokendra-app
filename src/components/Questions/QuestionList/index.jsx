@@ -417,6 +417,9 @@ class QuestionList extends React.Component {
 
   onSearchByChange(value) {
     this.onSearchByChangeValue = value;
+    if(this.search) {
+      this.searchQuestion({target: {value: this.search}});
+    }
   }
 
   selectAfter = (
