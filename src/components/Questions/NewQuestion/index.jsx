@@ -21,7 +21,6 @@ const { Option } = Select;
 
 class NewQuestion extends React.Component {
   formRef = React.createRef();
-  body;
   askedBy = [];
   tagsData = [
     'Javascript',
@@ -32,6 +31,7 @@ class NewQuestion extends React.Component {
     'Redis',
     'Angular',
     'RxJs',
+    'Algorithm',
     'Health & Fitness',
   ];
   tags = [];
@@ -85,10 +85,6 @@ class NewQuestion extends React.Component {
       askedBy: this.askedBy
     });
 
-    console.log(this.state._id);
-    console.log(this.props.router.query._id);
-
-
     if (this.state._id) {
       httpGet({ url: `question/answer/${this.state._id}` })
         .then((response) => {
@@ -105,7 +101,7 @@ class NewQuestion extends React.Component {
       const key = "onFinish";
       messageLoading({ key });
       this.setState({ isButtonDisabled: true });
-      values.body = this.body;
+      values.body = this.state.data.body;
       values._id = this.state._id;
       this.postNew(values, key);
     } else {
@@ -131,6 +127,11 @@ class NewQuestion extends React.Component {
           } else {
             this.componentDidMount(true)
           }
+          this.setState({
+            data: {}
+          });
+          
+          
         } else if (response && response.statusCode === 400) {
           messageError({ content: response.message, key, duration: 2 });
         }
@@ -146,8 +147,9 @@ class NewQuestion extends React.Component {
   }
 
   getEditorData(data) {
-    this.body = data;
-    this.state.data.body = data;
+    this.setState({data: {
+      ...this.state.data, body: data
+    }});
   }
 
   similarQuestion = debounce((e) => {
