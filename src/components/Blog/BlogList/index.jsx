@@ -40,7 +40,7 @@ class BlogList extends React.Component {
         <div className="row">
             <h1 style={{ fontFamily: "serif" }}>Trending</h1>
 
-          <div className="row" style={{width: '100%'}}>
+          <div className="row">
             {this.state.data.map((item, i) => {
               return (
                 <div
