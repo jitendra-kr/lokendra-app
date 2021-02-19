@@ -436,7 +436,7 @@ class QuestionList extends React.Component {
     return (
       <Content>
         <AppHead data={{ title: "Questions" }} />
-        <div className="col-lg-12 col-sm-12 col-md-12">
+        
           <div className="row">
             <Search
               addonBefore={this.selectAfter} 
@@ -473,7 +473,7 @@ class QuestionList extends React.Component {
           ) : (
             ""
           )}
-        </div>
+        
       </Content>
     );
   }
