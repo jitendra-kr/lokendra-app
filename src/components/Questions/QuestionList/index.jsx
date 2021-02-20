@@ -183,7 +183,7 @@ class QuestionList extends React.Component {
       <React.Fragment>
         {this.state.totalRecords ? (
           <p style={{ marginLeft: "20px", fontWeight: "400" }}>
-            Showig {this.state.data.length} of {this.state.totalRecords}
+            Showing {this.state.data.length} of {this.state.totalRecords}
           </p>
         ) : (
           ""
