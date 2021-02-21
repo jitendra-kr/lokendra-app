@@ -1,9 +1,0 @@
-User-agent:  *
-Disallow: /blog/new-blog
-Disallow: /user
-Disallow: /404
-Disallow: /questions/asked-to/**
-Disallow: /questions/asked-to/**
-Disallow: /questions/asked-by/**
-Disallow: /questions/edit/*
-Disallow: /questions/update/*
