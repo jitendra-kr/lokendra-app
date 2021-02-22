@@ -21,13 +21,13 @@ class ReadBlog extends React.Component {
   constructor(props) {
     super(props);
 
-    this.user = getUser();
     this.state = {
       data: this.props.data,
     };
   }
-
+  
   componentDidMount() {
+    this.user = getUser();
     httpPut({ url: `blog-management/update-views/${this.state.data._id}` })
     .then((response) => {
     })
