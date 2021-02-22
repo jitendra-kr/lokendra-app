@@ -17,17 +17,19 @@ const { Content } = Layout;
 const { confirm } = Modal;
 
 class ReadBlog extends React.Component {
-  user;
   constructor(props) {
     super(props);
 
     this.state = {
       data: this.props.data,
+      user: {}
     };
   }
   
   componentDidMount() {
-    this.user = getUser();
+    this.setState({
+      user: getUser()
+    })
     httpPut({ url: `blog-management/update-views/${this.state.data._id}` })
     .then((response) => {
     })
@@ -89,7 +91,7 @@ class ReadBlog extends React.Component {
                 </span>
               </div>
 
-              <div className={` ${this.user?.role === 'admin' && this.user?._id === this.state.data.author?._id ? 'visible' : 'invisible '} col-lg-4`}>
+              <div className={` ${this.state.user?.role === 'admin' && this.state.user?._id === this.state.data.author?._id ? 'visible' : 'invisible '} col-lg-4`}>
                 <DeleteOutlined
                   style={{
                     color: "red",
