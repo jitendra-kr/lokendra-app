@@ -33,6 +33,8 @@ class NewQuestion extends React.Component {
     'Go Lang',
     'Python',
     'Algorithm',
+    'Programming',
+    'Software development',
     'Health & Fitness',
   ];
   tags = [];
