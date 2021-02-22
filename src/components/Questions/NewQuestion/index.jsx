@@ -30,6 +30,8 @@ class NewQuestion extends React.Component {
     'Redis',
     'Angular',
     'RxJs',
+    'Go Lang',
+    'Python',
     'Algorithm',
     'Health & Fitness',
   ];
