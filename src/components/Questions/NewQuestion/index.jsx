@@ -35,6 +35,11 @@ class NewQuestion extends React.Component {
     'Algorithm',
     'Programming',
     'Software development',
+    'JWT',
+    'CSS',
+    'Authencation',
+    'API',
+    'HTML',
     'Health & Fitness',
   ];
   tags = [];
