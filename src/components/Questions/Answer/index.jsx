@@ -100,7 +100,7 @@ class Answer extends React.Component {
         this.setState({
           answer: "",
         });
-        this.fetchLatestData();
+        that.fetchLatestData();
         scrollToRefObject();
         messageSuccess({ content: "Your answer is saved successfully" });
       })
@@ -130,6 +130,7 @@ class Answer extends React.Component {
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
+            console.log(err);
             messageError({ content: "something went wrong" });
           });
       },
