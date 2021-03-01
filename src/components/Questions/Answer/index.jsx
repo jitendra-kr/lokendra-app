@@ -8,7 +8,7 @@ import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser } from "../../../utils/index";
 import { httpPost, httpDelete, httpGet } from "../../../utils/http";
-import { messageError, messageSuccess, messageLoading } from "../../../utils/antd";
+import { messageError, messageSuccess, messageLoading, messageInfo  } from "../../../utils/antd";
 import {
   EditOutlined,
   DeleteOutlined,
