@@ -8,7 +8,7 @@ import AppHead from "../../Head/head";
 import DataNoFound from "../../DataNoFound";
 import { isLoggedIn, getUser } from "../../../utils/index";
 import { httpPost, httpDelete, httpGet } from "../../../utils/http";
-import { messageError, messageSuccess } from "../../../utils/antd";
+import { messageError, messageSuccess, messageLoading } from "../../../utils/antd";
 import {
   EditOutlined,
   DeleteOutlined,
@@ -90,6 +90,9 @@ class Answer extends React.Component {
     if (!this.state.answer) {
       return messageError({ content: "Your answer is missing" });
     }
+
+    const key = "saveAnswer";
+    messageLoading({ content: "Loading...", key });
     httpPost({
       url: `question/save-answers/${this.state.data._id}?answerId=${
         this.answerId ? this.answerId : ""
@@ -102,11 +105,11 @@ class Answer extends React.Component {
         });
         this.fetchLatestData();
         scrollToRefObject();
-        messageSuccess({ content: "Your answer is saved successfully" });
+        messageSuccess({ content: "Your answer is saved successfully", key });
       })
       .catch((err) => {
         console.log(err);
-        messageError({ content: "something went wrong" });
+        messageError({ content: "something went wrong", key });
       });
   }
 
@@ -116,6 +119,8 @@ class Answer extends React.Component {
   }
 
   deleteQuestion(questionId) {
+    const key = "deleteQuestion";
+    messageLoading({ content: "Loading...", key });
     const that = this;
     confirm({
       title: "Are you sure delete this answer?",
@@ -127,11 +132,11 @@ class Answer extends React.Component {
         httpDelete({ url: `question/delete/${questionId}` })
           .then((response) => {
             that.props.history.push("/questions");
-            messageSuccess({ content: "Deleted successfully" });
+            messageSuccess({ content: "Deleted successfully", key });
           })
           .catch((err) => {
             console.log(err);
-            messageError({ content: "something went wrong" });
+            messageError({ content: "something went wrong", key });
           });
       },
     });
