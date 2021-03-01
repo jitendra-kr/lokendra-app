@@ -91,6 +91,10 @@ class Answer extends React.Component {
       return messageError({ content: "Your answer is missing" });
     }
 
+    if(!isLoggedIn()) {
+      return messageInfo({content: 'You need to login to post your answer'});
+    }
+
     const key = "saveAnswer";
     messageLoading({ content: "Loading...", key });
     httpPost({
