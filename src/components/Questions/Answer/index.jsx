@@ -100,7 +100,7 @@ class Answer extends React.Component {
         this.setState({
           answer: "",
         });
-        that.fetchLatestData();
+        this.fetchLatestData();
         scrollToRefObject();
         messageSuccess({ content: "Your answer is saved successfully" });
       })
@@ -148,7 +148,7 @@ class Answer extends React.Component {
       onOk() {
         httpDelete({ url: `question/delete/${questionId}/${answerId}` })
           .then((response) => {
-            this.fetchLatestData();
+            that.fetchLatestData();
             messageSuccess({ content: "Deleted successfully" });
           })
           .catch((err) => {
