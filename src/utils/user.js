@@ -5,7 +5,7 @@ function fetchUpdatedUserFromServer(id) {
   return httpGet({
     url: `user/${id}`,
   })
-}    
+}
 
 function getUser() {
 
@@ -30,11 +30,17 @@ function isAuthorisedToPostBlog () {
      return user && user.role === 'admin'
 }
 
+function isAuthorisedToPwdManager () {
+    let user = getUser();
+     return user && user.pmAccess === true;
+}
+
 // export getUser;
 module.exports = {
     getUser: getUser,
     isLoggedIn: isLoggedIn,
     isAuthorisedToPostBlog: isAuthorisedToPostBlog,
-    fetchUpdatedUserFromServer: fetchUpdatedUserFromServer
+    fetchUpdatedUserFromServer: fetchUpdatedUserFromServer,
+    isAuthorisedToPwdManager
 }
 

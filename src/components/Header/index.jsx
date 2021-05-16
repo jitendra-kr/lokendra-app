@@ -11,7 +11,7 @@ import {
 } from "@ant-design/icons";
 
 import { UserContext } from "../../contexts/UserContext";
-import { isAuthorisedToPostBlog } from "../../utils";
+import { isAuthorisedToPostBlog, isAuthorisedToPwdManager } from "../../utils";
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
@@ -29,6 +29,9 @@ function MainHeader() {
   const [authorisedToPostBlog, setIsAuthorisedToPostBlog] = useState(
     isAuthorisedToPostBlog()
   );
+  const [authorisedToPwdManager, setIsAuthorisedToPwdManager] = useState(
+    isAuthorisedToPwdManager()
+  );
   const router = useRouter();
   const selectedTab = keysMapper[router.pathname];
 
@@ -40,6 +43,7 @@ function MainHeader() {
 
   useEffect(() => {
     setIsAuthorisedToPostBlog(isAuthorisedToPostBlog());
+    setIsAuthorisedToPwdManager(isAuthorisedToPostBlog());
     window.addEventListener('storage', event =>{
       if(get(event, 'key') === 'auth' && !get(event, 'newValue')) {
         window.location.reload();
@@ -78,6 +82,13 @@ function MainHeader() {
       {authorisedToPostBlog ? (
         <Menu.Item key="01">
           <Link href="/blog/new-blog">Post Blog</Link>
+        </Menu.Item>
+      ) : (
+        ""
+      )}
+      {authorisedToPwdManager ? (
+        <Menu.Item key="00">
+          <Link href="/password-manager">Password Manager</Link>
         </Menu.Item>
       ) : (
         ""
