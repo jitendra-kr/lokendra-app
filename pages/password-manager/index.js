@@ -280,7 +280,7 @@ function RegisterPage() {
   };
 
   return (
-    data && data.length ?
+    data ?
     <Content>
       <div className="col-lg-12">
         <h2 className="text-center m-bottom-30">Password Manager</h2>
