@@ -6,6 +6,7 @@ import * as CryptoJS from "crypto-js";
 import { httpGet, httpPost, httpDelete } from "../../src/utils/http";
 import { messageError, messageSuccess } from "../../src/utils/antd";
 import { dateFormat } from "../../src/utils";
+import { AppHead } from "../../src/components";
 import {
   EyeFilled,
   EditFilled,
@@ -124,20 +125,6 @@ function RegisterPage() {
       width: 100,
       render: (text, record) => (
         <Space size="small">
-          {/* {eye ? <EyeFilled
-            onClick = {showRowData.bind(this, record, true)}
-            style={{
-              padding: "6px",
-              color: 'green'
-            }}
-          /> :
-          <EyeInvisibleFilled
-                      onClick = {showRowData.bind(this, record, false)}
-                      style={{
-                        padding: "6px",
-                        color: 'green'
-                      }}/>
-                      } */}
           <EyeFilled
             onClick = {showRowData.bind(this, record)}
             style={{
@@ -280,12 +267,12 @@ function RegisterPage() {
   };
 
   return (
-    data ?
     <Content>
+      <AppHead data={{ title: "Password Manager" }} />
       <div className="col-lg-12">
         <h2 className="text-center m-bottom-30">Password Manager</h2>
         <div>
-          <Table
+          { data ? <Table
             pagination={false}
             columns={columns}
             scroll={{ x: 1300 }}
@@ -296,7 +283,7 @@ function RegisterPage() {
                 Save New
               </Button>
             )}
-          />
+          /> : '' }
         </div>
         <Modal
           title="Save Password"
@@ -400,7 +387,7 @@ function RegisterPage() {
           </Form>
         </Modal>
       </div>
-    </Content> : <Content></Content>
+    </Content>
   );
 }
 
