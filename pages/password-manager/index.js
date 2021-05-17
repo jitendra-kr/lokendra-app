@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Table, Modal, Button, Form, Input, Space, Tooltip } from "antd";
-import { get } from "lodash";
+import { get, size } from "lodash";
 import { useRouter } from "next/router";
 import * as CryptoJS from "crypto-js";
 import { httpGet, httpPost, httpDelete } from "../../src/utils/http";
@@ -157,7 +157,7 @@ function RegisterPage() {
   }
 
   const showModal = (data) => {
-    if (data.user) {
+    if (size(data)) {
       setDataToEdit(data);
     }
     setIsModalVisible(true);
