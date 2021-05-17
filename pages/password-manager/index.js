@@ -242,13 +242,10 @@ function RegisterPage() {
   }, []);
 
   const onFinish = (values) => {
-    if (dataToEdit._id) {
-      values._id = dataToEdit._id;
-    }
     const key = "onFinish";
     httpPost({
       url: `pd/save`,
-      body: { value: ecd(values) },
+      body: { value: ecd(values), _id: get(dataToEdit, '_id') },
     })
       .then((response) => {
         fetchData();
