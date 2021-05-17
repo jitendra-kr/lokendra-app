@@ -158,6 +158,9 @@ function RegisterPage() {
 
   const showModal = (data) => {
     if (size(data)) {
+      const selectedItem = freshData.filter(o => o._id === data._id);
+      data.pwd = get(selectedItem[0], 'password');
+      data.userNm = get(selectedItem[0], 'userNm');
       setDataToEdit(data);
     }
     setIsModalVisible(true);
