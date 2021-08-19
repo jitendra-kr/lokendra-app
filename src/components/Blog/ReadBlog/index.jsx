@@ -74,7 +74,7 @@ class ReadBlog extends React.Component {
               <h1 className="font-weight-bold" >{this.state.data.title}</h1>
             </div>
             <div className="row">
-              <div className="col-lg-3">
+              <div className="col-lg-4">
                 <span>
                   <span className="ask-view">Published on:</span>
                   <span className="post-view-data">
@@ -82,13 +82,13 @@ class ReadBlog extends React.Component {
                   </span>
                 </span>
               </div>
-              <div className="col-lg-5">
-                <span >
+              <div className="col-lg-4">
+                {this.state.user?.role === 'admin' ? <span >
                   <span className="ask-view"> Viewed: </span>
                   <span className="post-view-data">
                     {this.state.data.visits} times
                   </span>
-                </span>
+                </span> : ''}
               </div>
 
               <div className={` ${this.state.user?.role === 'admin' && this.state.user?._id === this.state.data.author?._id ? 'visible' : 'invisible '} col-lg-4`}>
