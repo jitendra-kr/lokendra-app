@@ -186,7 +186,7 @@ class Answer extends React.Component {
         <div className="row">
           <div style={{ width: "100%" }}>
             <h2>{this.state.data.title}</h2>
-            <div
+            <div className="padding-20"
               dangerouslySetInnerHTML={{ __html: this.state.data.body }}
             ></div>
 
