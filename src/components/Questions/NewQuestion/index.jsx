@@ -27,6 +27,7 @@ class NewQuestion extends React.Component {
     'React.Js',
     'MySQL',
     'MongoDB',
+    'Database',
     'Redis',
     'Angular',
     'RxJs',
