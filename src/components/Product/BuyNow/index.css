@@ -1,0 +1,21 @@
+.login-form {
+    max-width: 300px;
+  }
+  .login-form-forgot {
+    float: right;
+  }
+  .login-form-button {
+    width: 100%;
+  }
+
+  tr:hover:not(.ant-table-expanded-row) > td {
+    background: #ffffff !important;
+  }
+
+  .place-order-button {
+    background-color: #CC3D00 !important;
+
+  }
+  .place-order-button > span {
+    color: #ffffff !important
+  }
