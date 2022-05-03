@@ -25,7 +25,6 @@ function StringToAscii() {
   }
   const onChange = ({ target: { value } }) => {
     setInput(value);
-    updateCopytext()
   };
 
   const copyToClipboard = () => {
