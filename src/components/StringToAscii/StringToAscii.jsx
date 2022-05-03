@@ -1,6 +1,7 @@
-import { Input, Layout, Button, Divider } from "antd";
+import { Input, Layout, Button, Form } from "antd";
 import { withRouter } from "next/router";
 import React, { useState } from "react";
+import AppHead from "../Head/head";
 const { Content } = Layout;
 
 import styles from "../../../styles/StringToAscii.module.css";
@@ -21,25 +22,39 @@ function StringToAscii() {
   return (
     <>
       <Content
-        style={{
+
+      >
+        <AppHead data={{ title: "String to ascii" }} />
+        <div style={{
           display: "flex",
           "justify-content": "center",
-        }}
-      >
-        <div className={styles["input-width"]}>
-          <Input style={{height: "50px"}} onChange={onChange}></Input>
-          {byte.length > 0 && <h3 style={{textAlign: "center", marginTop: "30px"}} >[{byte.toString()}]</h3>}
+        }}>
+
+          <Form className={styles["input-width"]}>
+            <div >
+              <Input className={styles["input"]} onChange={onChange}></Input>
+            </div>
+            <div className={styles['button-div']} >
+
+              <Button
+                onClick={onClick}
+                type="primary"
+                htmlType="submit"
+                style={{
+                  height: "50px",
+                  marginTop: "30px",
+                  textAlign: "center"
+                }}
+              >
+                Convert
+              </Button>
+            </div>
+            <div>
+
+              {byte.length > 0 && <h3 style={{ textAlign: "center", marginTop: "30px", "word-wrap": "break-word" }} >[{byte.toString()}]</h3>}
+            </div>
+          </Form>
         </div>
-        <Button
-            onClick={onClick}
-            type="primary"
-            style={{              
-              height: "50px",
-              marginLeft: "10px"
-            }}
-          >
-            Convert
-          </Button>
       </Content>
     </>
   );

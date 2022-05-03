@@ -1,4 +1,12 @@
 .input-width {
     width: 50%;
-    height: 300px
+    height: 300px;    
+}
+.input {
+    height: 50px
+}
+
+.button-div {
+    justify-content: center;
+    display: flex;
 }
