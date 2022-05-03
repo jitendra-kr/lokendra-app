@@ -31,9 +31,9 @@ const MainFooter = () => {
             </Link>
           </div>
         </div>
-        <div className="col-lg-12">
+        <div className="col-lg-12" style={{marginTop: "20px"}} >
           <div className="col-lg-3 display-inline-block">
-            <Link href="/string-to-ascii">
+            <Link href="/tools/string-to-ascii">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>String to ascii</span>
             </Link>
           </div>
