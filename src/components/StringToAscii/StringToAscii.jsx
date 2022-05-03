@@ -16,9 +16,16 @@ function StringToAscii() {
   const [byte, setByte] = useState([]);
   const { url } = useGetUrl();
 
-
+  const updateCopytext = () => {
+    if(copyToText === copiedToClip) {
+      setTimeout(() => {
+        setCopyTotext(copyToClip)
+      }, 3000);
+    }
+  }
   const onChange = ({ target: { value } }) => {
     setInput(value);
+    updateCopytext()
   };
 
   const copyToClipboard = () => {
@@ -43,11 +50,7 @@ function StringToAscii() {
   };
 
   useEffect(() => {
-    if(copyToText === copiedToClip) {
-      setTimeout(() => {
-        setCopyTotext(copyToClip)
-      }, 3000);
-    }
+    updateCopytext()
   }, [copyToText]);
 
   return (
