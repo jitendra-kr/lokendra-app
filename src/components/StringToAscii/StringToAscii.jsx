@@ -21,9 +21,7 @@ function StringToAscii() {
   };
   return (
     <>
-      <Content
-
-      >
+      <Content style={{ padding: "50px 50px" }}>
         <AppHead data={{ title: "String to ascii" }} />
         <div style={{
           display: "flex",
@@ -32,7 +30,7 @@ function StringToAscii() {
 
           <Form className={styles["input-width"]}>
             <div >
-              <Input className={styles["input"]} onChange={onChange}></Input>
+              <Input className={styles["input"]} onChange={onChange} placeholder="Please enter" ></Input>
             </div>
             <div className={styles['button-div']} >
 
