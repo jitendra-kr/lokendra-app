@@ -31,6 +31,22 @@ const MainFooter = () => {
             </Link>
           </div>
         </div>
+        <div className="col-lg-12">
+          <div className="col-lg-3 display-inline-block">
+            <Link href="/string-to-ascii">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>String to ascii</span>
+            </Link>
+          </div>
+          <div className="col-lg-3 display-inline-block">
+
+          </div>
+          <div className="col-lg-3 display-inline-block">
+
+          </div>
+          <div className="col-lg-3 display-inline-block">
+
+          </div>
+        </div>
       </div>
       <div className="m-top-30">
         Jimmypoint © {new Date().getFullYear()}. All Rights Reserved
