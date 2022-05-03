@@ -1,4 +1,4 @@
-import { Input, Layout, Button, Form } from "antd";
+import { Input, Layout, Button, Form, notification } from "antd";
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import AppHead from "../Head/head";
@@ -6,6 +6,7 @@ const { Content } = Layout;
 
 import styles from "../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../hooks";
+import { messageSuccess } from "../../utils"
 
 function StringToAscii() {
   const copyToClip = "Copy to clipboard";
@@ -31,6 +32,7 @@ function StringToAscii() {
     try {
       navigator.clipboard.writeText(byte.join(" ")).then(() => {
         setCopyTotext(copiedToClip)
+        messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
       })
     } catch (e) {
       alert("failed to copy")
