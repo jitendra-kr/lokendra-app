@@ -95,7 +95,7 @@ function StringToAscii() {
                   textAlign: "center"
                 }}
               >
-                Convert
+                Convert to ASCII
               </Button>
             </div>
             <div>
