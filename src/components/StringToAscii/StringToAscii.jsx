@@ -41,6 +41,15 @@ function StringToAscii() {
     setCopyTotext(copyToClip)
 
   };
+
+  useEffect(() => {
+    if(copyToText === copiedToClip) {
+      setTimeout(() => {
+        setCopyTotext(copyToClip)
+      }, 3000);
+    }
+  }, [copyToText]);
+
   return (
     <>
       <Content style={{ padding: "50px 50px" }}>
