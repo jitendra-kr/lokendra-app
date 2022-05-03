@@ -18,9 +18,10 @@ function StringToAscii() {
   };
 
   const copyToClipboard = () => {
-    // document.execCommand()
-    navigator.clipboard.writeText("ll").then(() => {
-      alert("kkkk")
+    navigator.clipboard.writeText(byte.join(" ")).then(() => {
+      alert("Copied")
+    }).catch(() => {
+      alert("failed to copy")
     })
   }
 
