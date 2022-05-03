@@ -8,6 +8,10 @@ import styles from "../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../hooks";
 
 function StringToAscii() {
+  const copyToClip = "Copy to clipboard";
+  const copiedToClip = "Copied to clipboard";
+
+  const [copyToText, setCopyTotext] = useState(copyToClip)
   const [input, setInput] = useState("");
   const [byte, setByte] = useState([]);
   const { url } = useGetUrl();
@@ -18,11 +22,15 @@ function StringToAscii() {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(byte.join(" ")).then(() => {
-      alert("Copied")
-    }).catch(() => {
+    try {
+      navigator.clipboard.writeText(byte.join(" ")).then(() => {
+        setCopyTotext(copiedToClip)
+      })
+    } catch (e) {
       alert("failed to copy")
-    })
+
+    }
+
   }
 
   const onClick = () => {
@@ -30,6 +38,8 @@ function StringToAscii() {
     const byteArray = utf8Encode.encode(input);
     console.log(byteArray);
     setByte(byteArray);
+    setCopyTotext(copyToClip)
+
   };
   return (
     <>
@@ -77,7 +87,7 @@ function StringToAscii() {
               </Button>
             </div>
             <div>
-            {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>Copy to clipboard</p>}
+            {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>{copyToText}</p>}
             {byte.length > 0 && <div className={styles["ascii-div"]} >
             <h3 className={styles.asciiCode} >[{byte.join(" ")}]</h3>
                 </div>}
