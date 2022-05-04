@@ -1,8 +1,12 @@
 import { Input, Layout, Button, Form, notification } from "antd";
 import { withRouter } from "next/router";
+import {
+  PaperClipOutlined,
+} from "@ant-design/icons";
 import React, { useState, useEffect } from "react";
 import AppHead from "../Head/head";
 const { Content } = Layout;
+const { TextArea } = Input
 
 import styles from "../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../hooks";
@@ -18,7 +22,7 @@ function StringToAscii() {
   const { url } = useGetUrl();
 
   const updateCopytext = () => {
-    if(copyToText === copiedToClip) {
+    if (copyToText === copiedToClip) {
       setTimeout(() => {
         setCopyTotext(copyToClip)
       }, 3000);
@@ -69,43 +73,47 @@ function StringToAscii() {
         }}>
           <div className="row" style={{ width: "100%", justifyContent: "center" }} >
 
-            <h1 style={{textAlign: "center", marginBottom: "30px"}}>
+            <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
               String to ASCII converter
             </h1>
- 
+
             <Form className={styles["input-width"]}>
-            <div >
-              <Form.Item
-                name="title"
-                label=""
-                rules={[{ required: true, message: "Please enter text !" }]}
-              >
-                <Input className={styles["input"]} onChange={onChange} placeholder="Please enter" ></Input>
-              </Form.Item>
+              <div >
+                <Form.Item
+                  name="title"
+                  label=""
+                  rules={[{ required: true, message: "Please enter text !" }]}
+                >
+                  <TextArea className={styles.input} onChange={onChange} placeholder="Please enter" rows={4} />
+                </Form.Item>
 
-            </div>
-            <div className={styles['button-div']} >
+              </div>
+              <div>
+                {/* <Input type={"file"} className={styles.fileInput} /> */}
+              {/* <PaperClipOutlined className={styles.paperClipOutlined} /> */}
+              </div>
+              <div className={styles['button-div']} >
 
-              <Button
-                onClick={onClick}
-                type="primary"
-                htmlType="submit"
-                style={{
-                  height: "50px",
-                  marginTop: "10px",
-                  textAlign: "center"
-                }}
-              >
-                Convert to ASCII
-              </Button>
-            </div>
-            <div>
-            {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>{copyToText}</p>}
-            {byte.length > 0 && <div className={styles["ascii-div"]} >
-            <h3 className={styles.asciiCode} >[{byte.join(" ")}]</h3>
+                <Button
+                  onClick={onClick}
+                  type="primary"
+                  htmlType="submit"
+                  style={{
+                    height: "50px",
+                    marginTop: "10px",
+                    textAlign: "center"
+                  }}
+                >
+                  Convert to ASCII
+                </Button>
+              </div>
+              <div>
+                {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>{copyToText}</p>}
+                {byte.length > 0 && <div className={styles["ascii-div"]} >
+                  <h3 className={styles.asciiCode} >[{byte.join(" ")}]</h3>
                 </div>}
-            </div>
-          </Form>
+              </div>
+            </Form>
           </div>
 
         </div>
