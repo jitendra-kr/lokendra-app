@@ -1,16 +1,14 @@
 import { Input, Layout, Button, Form, notification } from "antd";
 import { withRouter } from "next/router";
-import {
-  PaperClipOutlined,
-} from "@ant-design/icons";
 import React, { useState, useEffect } from "react";
 import AppHead from "../Head/head";
-const { Content } = Layout;
-const { TextArea } = Input
-
 import styles from "../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../hooks";
 import { messageSuccess } from "../../utils"
+const { Content } = Layout;
+const { TextArea } = Input
+
+
 
 function StringToAscii() {
   const copyToClip = "Copy to clipboard";

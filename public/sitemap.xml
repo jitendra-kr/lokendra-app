@@ -7,992 +7,1042 @@
           
   <url>
       <loc>https://www.jimmypoint.com/about-me</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/login</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/what-is-javascript-complete-javascript-introduction</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/create-simple-nodejs-web-server-without-any-framework</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/what-is-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/callback-function</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/what-is-expressjs-server-setup-with-express</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/roti-vs-bread-which-is-better-for-you</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/what-is-deno-deno-comparison-with-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/hindi-vs-english-new-year</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/What-should-be-our-national-language-How-right-is-it-to-depend-on-the-national-language</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/why-celebrate-holi-festival-and-history-of-holi</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/what-is-virtual-dom-and-how-it-is-works</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/aaj-ki-holi-ki-hakikat</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/blog/brown-sugar-vs-white-sugar-a-complete-research</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/auth/email</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/what-is-javascript-complete-javascript-introduction</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/create-simple-nodejs-web-server-without-any-framework</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/what-is-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/callback-function</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/what-is-expressjs-server-setup-with-express</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/roti-vs-bread-which-is-better-for-you</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/what-is-deno-deno-comparison-with-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/hindi-vs-english-new-year</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/What-should-be-our-national-language-How-right-is-it-to-depend-on-the-national-language</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/why-celebrate-holi-festival-and-history-of-holi</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/what-is-virtual-dom-and-how-it-is-works</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/aaj-ki-holi-ki-hakikat</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/brown-sugar-vs-white-sugar-a-complete-research</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/blog/how-to-judge-a-girl-character</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/login</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/ask</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/register</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/reset-password</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/5a8a5946b9806a6c73785b45/what-are-the-disadvantages-of-oops</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a952fe14c02c7185d320bd1/what-is-lazy-loading-in-angular-and-how-it-works</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8c60c816b90f2faf1505/which-function-we-can-use-to-both-get-and-insert-value-using-index-in-a-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5aa64a2e0fccbc403603d9f7/how-many-types-of-module-in-node</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae0a894c816b90f2faf14e7/what-is-the-use-of-pipes</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599f0ac816b90f2faf1515/how-global-object-is-different-in-nodejs-from-global-in-browser</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae93f04c816b90f2faf14e9/how-to-manage-child-thread</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32a65c816b90f2faf14ec/what-is-ssl-and-ssr</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a01dc816b90f2faf1519/io-standard-inputoutput-use-of-process-object-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5aba6c8fc816b90f2faf14d3/how-do-you-check-if-an-object-is-an-array-or-not</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb450c1cefb00171fd1aa/child-process-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c3991c816b90f2faf14fc/what-is-flex-property-in-css3</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb49cc1cefb00171fd1ad/explain-method-in-mongo</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a082c816b90f2faf151b/what-is-processstdoutclearline-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07f1759c90200175f1e05/expressjs-vs-hapijs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07f7c59c90200175f1e07/inheriance-in-node</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae93edbc816b90f2faf14e8/what-is-child-process-in-node</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8b12c816b90f2faf14fd/new-apis-introduced-in-html5</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a8ffab44c02c7185d320bc8/what-is-the-retained-earining-account</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07f4559c90200175f1e06/what-will-be-output-3greater-5-less7</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8b7fc816b90f2faf14ff/best-way-to-transfer-data-to-sibling-components</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8ba1c816b90f2faf1500/what-is-lazyloading</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c641ac816b90f2faf152d/what-are-globals-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a0b7c816b90f2faf151c/what-is-processstdoutcursorto0-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae06c3bc816b90f2faf14e0/explain-about-_id-it-can-be-same-in-same-collection-or-multiple-collection-or-multiple-database-or-multiple-syatems</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb3c5c1cefb00171fd1a7/what-is-event-driven-programming</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8ca8c816b90f2faf1506/diff-between-filtermap-and-foreach-function</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb3dec1cefb00171fd1a8/objectcreate-vs-objectassign</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae93fa8c816b90f2faf14ea/how-to-handle-exceptions-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8da8c816b90f2faf150b/difference-between-subject-and-observable-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae06cf3c816b90f2faf14e3/what-is-index-and-how-many-types-of-index-in-mongodb</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c094dc816b90f2faf1529/explain-the-role-of-repl-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b628e2d389e410d12dbc3de/what-is-rxjs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8c59c816b90f2faf1504/what-is-joinstriggers</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c06cbc816b90f2faf1526/why-is-nodejs-single-threaded</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbf8b8cc1cefb00171fd1a2/what-is-closures</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb5a3c1cefb00171fd1b2/what-is-stream</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5aa64a150fccbc403603d9f6/what-is-module-in-node</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a952f274c02c7185d320bd0/how-angular-cli-works-internally-and-how-it-transpile-typescript-to-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b628df6389e410d12dbc3dc/how-to-use-limit-in-redis-query-to-fetch-data</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b89025e13228b16f52de1fa/multiple-inheritance-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b628dca389e410d12dbc3db/difference-between-session-and-token-based-authencation</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb4adc1cefb00171fd1ae/stateless-component-in-react</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb544c1cefb00171fd1b0/what-is-rest-parameters-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc0800359c90200175f1e0c/reactjs-and-its-core-principles</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc0801a59c90200175f1e0d/data-scrapping</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b42e6cbc816b90f2faf14fa/lookups-in-database</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b89030c13228b16f52de1fe/difference-between-promises-and-async-and-await</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59adedc816b90f2faf1522/difference-between-parameter-and-argument</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5acdf80bc816b90f2faf14de/difference-between-normal-function-and-arrow-function</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5aa10e281c25c12ad400e111/what-is-promise-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8ccdc816b90f2faf1507/what-is-authgaurd-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07fca59c90200175f1e0a/error-first-parameter</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae0a860c816b90f2faf14e6/what-about-observable</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a8e91c3fc3fec738b448e73/what-is-the-new-keyword-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32c2cc816b90f2faf14f2/what-is-environment-variable</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8f2ac816b90f2faf1510/what-is-interceptors</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8b5ac816b90f2faf14fe/what-is-dependency-injection-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32afbc816b90f2faf14ed/output-of-consolelogabc-settimeoutgreaterconsolelogefgconsolelogxyz</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32c60c816b90f2faf14f3/coremodulae-of-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8fbac816b90f2faf1511/streem-and-buffur-in-node</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c6461c816b90f2faf152f/what-is-buffer-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc0802f59c90200175f1e0e/explain-microservices</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a90452c4c02c7185d320bce/what-is-object-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a05ac816b90f2faf151a/write-a-nodejs-code-example-for-io-operation-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae0a80cc816b90f2faf14e5/how-many-types-of-directives-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8d37c816b90f2faf1509/databinding-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599fb6c816b90f2faf1518/what-is-require-keywork-in-nodejs-and-why-it-is-used</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b8902be13228b16f52de1fb/async-and-await-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b6c217c8a0af41b57e32e85/how-for-loop-works-with-var-and-let</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fb77da8bd94cb0017c951b5/put-vs-patch</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8ee0c816b90f2faf150e/how-to-find-first-repeated-value-in-sorted-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b628e19389e410d12dbc3dd/remove-4-5-element-from-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8c3bc816b90f2faf1503/what-is-indexing-aggregation-projection-lookups</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8d0ac816b90f2faf1508/what-is-input-and-output-decorator-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8c1ac816b90f2faf1502/what-is-event-loop-and-async-await</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb487c1cefb00171fd1ac/how-will-you-check-how-much-document-are-scanned-during-search-operation-mongodb</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb587c1cefb00171fd1b1/eventemitter-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07edd59c90200175f1e04/export-vs-moduleexport-vs-export-default</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fc07fe059c90200175f1e0b/atomicity</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8efac816b90f2faf150f/hostlistener-in-angular</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a15ac816b90f2faf151f/what-is-path-module-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32b67c816b90f2faf14ef/what-is-eventloop</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5acd9336c816b90f2faf14dc/difference-between-let-var-and-const</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32bdec816b90f2faf14f1/what-is-callbackhell-how-can-avoid-this</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599e71c816b90f2faf1512/what-is-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599f85c816b90f2faf1517/how-can-we-reference-to-current-directory-that-we-are-using-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599ea3c816b90f2faf1513/what-is-npm-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fb798a5bd94cb0017c951ba/eventemitter-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fb797e8bd94cb0017c951b9/hoisting-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae06c8dc816b90f2faf14e1/npm-vs-yarn-vs-npx</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32e5ac816b90f2faf14f5/what-is-loadbalance</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c5d38c816b90f2faf152b/what-are-streams-in-nodejs-explain-the-different-types-of-streams-present-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b62aaf7389e410d12dbc3e0/what-is-typedarray</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c6442c816b90f2faf152e/what-are-process-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb475c1cefb00171fd1ab/insert-vs-save-mongo</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb523c1cefb00171fd1af/array-destructuring</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a19ac816b90f2faf1520/how-to-plug-filename-from-a-full-path-using-path-module-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32b2cc816b90f2faf14ee/what-is-arrow-function</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a135c816b90f2faf151e/write-a-program-to-show-percentage-waiting-in-every-half-second-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b59a0f2c816b90f2faf151d/what-is-global-timing-function-in-nodejs-how-will-they-help-async-processing</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8df4c816b90f2faf150c/what-is-preventdefault-and-stopprppogation-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b8902d013228b16f52de1fc/joins-in-mysql</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb3a1c1cefb00171fd1a6/non-blocking-io-model</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/tools/string-to-ascii</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fb7682fbd94cb0017c951b3/what-is-middleware-in-express</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/5a9531684c02c7185d320bd2/deep-clone-object-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5a9fe7721c25c12ad400e110/how-to-setup-password-authentication-for-aws-ec2-instances</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae94055c816b90f2faf14eb/how-to-fully-utilize-system-core-in-node-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ae06cc8c816b90f2faf14e2/what-is-jwt-and-explain-its-advantage-and-disadvantage</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b5c5d4fc816b90f2faf152c/explain-chaining-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fbfb415c1cefb00171fd1a9/how-to-parse-very-large-data-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5acd93a4c816b90f2faf14dd/if-i-delete-an-element-from-array-what-will-be-array-length</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b4c8d73c816b90f2faf150a/how-to-communicate-between-two-components</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b599f44c816b90f2faf1516/what-is-backtick-character-in-javascrpt</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b89032013228b16f52de1ff/javascript-array-methods</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5af32cb6c816b90f2faf14f4/js-is-synchronous-or-asynchrinous</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5b8902ef13228b16f52de1fd/what-is-indexing-in-mysql</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fb77da8bd94cb0017c951b5/put-vs-patch</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fb78158bd94cb0017c951b6/moduleexports-vs-exports-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fb797e8bd94cb0017c951b9/hoisting-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fb798a5bd94cb0017c951ba/eventemitter-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a8a5946b9806a6c73785b45/what-are-the-disadvantages-of-oops</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a8e91c3fc3fec738b448e73/what-is-the-new-keyword-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5a9043b74c02c7185d320bcd/what-is-this-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a90452c4c02c7185d320bce/what-is-object-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5a8e9705fc3fec738b448e76/how-can-we-empty-array-in-js</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a952f274c02c7185d320bd0/how-angular-cli-works-internally-and-how-it-transpile-typescript-to-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a9531684c02c7185d320bd2/deep-clone-object-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a952fe14c02c7185d320bd1/what-is-lazy-loading-in-angular-and-how-it-works</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a9fe7721c25c12ad400e110/how-to-setup-password-authentication-for-aws-ec2-instances</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5aa64a150fccbc403603d9f6/what-is-module-in-node</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae06c8dc816b90f2faf14e1/npm-vs-yarn-vs-npx</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae0a860c816b90f2faf14e6/what-about-observable</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae94055c816b90f2faf14eb/how-to-fully-utilize-system-core-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b42e6cbc816b90f2faf14fa/lookups-in-database</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8ba1c816b90f2faf1500/what-is-lazyloading</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5aa64a2e0fccbc403603d9f7/how-many-types-of-module-in-node</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8c60c816b90f2faf1505/which-function-we-can-use-to-both-get-and-insert-value-using-index-in-a-array</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5acd93a4c816b90f2faf14dd/if-i-delete-an-element-from-array-what-will-be-array-length</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8d73c816b90f2faf150a/how-to-communicate-between-two-components</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae06cc8c816b90f2faf14e2/what-is-jwt-and-explain-its-advantage-and-disadvantage</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8efac816b90f2faf150f/hostlistener-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae0a894c816b90f2faf14e7/what-is-the-use-of-pipes</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599f0ac816b90f2faf1515/how-global-object-is-different-in-nodejs-from-global-in-browser</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32a65c816b90f2faf14ec/what-is-ssl-and-ssr</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a05ac816b90f2faf151a/write-a-nodejs-code-example-for-io-operation-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32c2cc816b90f2faf14f2/what-is-environment-variable</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5aba6c8fc816b90f2faf14d3/how-do-you-check-if-an-object-is-an-array-or-not</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c3991c816b90f2faf14fc/what-is-flex-property-in-css3</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a15ac816b90f2faf151f/what-is-path-module-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae06c3bc816b90f2faf14e0/explain-about-_id-it-can-be-same-in-same-collection-or-multiple-collection-or-multiple-database-or-multiple-syatems</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c5d4fc816b90f2faf152c/explain-chaining-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5b4c8be6c816b90f2faf1501/difference-between-http-and-httpclient</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae0a80cc816b90f2faf14e5/how-many-types-of-directives-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b628df6389e410d12dbc3dc/how-to-use-limit-in-redis-query-to-fetch-data</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8ca8c816b90f2faf1506/diff-between-filtermap-and-foreach-function</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae93fa8c816b90f2faf14ea/how-to-handle-exceptions-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8da8c816b90f2faf150b/difference-between-subject-and-observable-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b6c217c8a0af41b57e32e85/how-for-loop-works-with-var-and-let</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32b67c816b90f2faf14ef/what-is-eventloop</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b89030c13228b16f52de1fe/difference-between-promises-and-async-and-await</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8f2ac816b90f2faf1510/what-is-interceptors</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32e5ac816b90f2faf14f5/what-is-loadbalance</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599f44c816b90f2faf1516/what-is-backtick-character-in-javascrpt</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8b7fc816b90f2faf14ff/best-way-to-transfer-data-to-sibling-components</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5acd9336c816b90f2faf14dc/difference-between-let-var-and-const</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a082c816b90f2faf151b/what-is-processstdoutclearline-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8c59c816b90f2faf1504/what-is-joinstriggers</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59adedc816b90f2faf1522/difference-between-parameter-and-argument</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a19ac816b90f2faf1520/how-to-plug-filename-from-a-full-path-using-path-module-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8d37c816b90f2faf1509/databinding-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c641ac816b90f2faf152d/what-are-globals-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5ae06be9c816b90f2faf14df/what-is-env</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8ee0c816b90f2faf150e/how-to-find-first-repeated-value-in-sorted-array</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b628e19389e410d12dbc3dd/remove-4-5-element-from-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5ae0a7cbc816b90f2faf14e4/what-is-pipe-and-how-it-work</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5b599ed1c816b90f2faf1514/why-nodejs-is-so-fast-as-compare-to-apache</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae93f04c816b90f2faf14e9/how-to-manage-child-thread</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b89025e13228b16f52de1fa/multiple-inheritance-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a01dc816b90f2faf1519/io-standard-inputoutput-use-of-process-object-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32b2cc816b90f2faf14ee/what-is-arrow-function</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b89032013228b16f52de1ff/javascript-array-methods</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a135c816b90f2faf151e/write-a-program-to-show-percentage-waiting-in-every-half-second-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5acdf80bc816b90f2faf14de/difference-between-normal-function-and-arrow-function</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32cb6c816b90f2faf14f4/js-is-synchronous-or-asynchrinous</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32bdec816b90f2faf14f1/what-is-callbackhell-how-can-avoid-this</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c5d38c816b90f2faf152b/what-are-streams-in-nodejs-explain-the-different-types-of-streams-present-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae06cf3c816b90f2faf14e3/what-is-index-and-how-many-types-of-index-in-mongodb</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8b5ac816b90f2faf14fe/what-is-dependency-injection-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b628dca389e410d12dbc3db/difference-between-session-and-token-based-authencation</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ae93edbc816b90f2faf14e8/what-is-child-process-in-node</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8c3bc816b90f2faf1503/what-is-indexing-aggregation-projection-lookups</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b62aaf7389e410d12dbc3e0/what-is-typedarray</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8d0ac816b90f2faf1508/what-is-input-and-output-decorator-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32afbc816b90f2faf14ed/output-of-consolelogabc-settimeoutgreaterconsolelogefgconsolelogxyz</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5af32c60c816b90f2faf14f3/coremodulae-of-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b8902ef13228b16f52de1fd/what-is-indexing-in-mysql</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8b12c816b90f2faf14fd/new-apis-introduced-in-html5</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5aa10e281c25c12ad400e111/what-is-promise-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599e71c816b90f2faf1512/what-is-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8c1ac816b90f2faf1502/what-is-async-await</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599fb6c816b90f2faf1518/what-is-require-keywork-in-nodejs-and-why-it-is-used</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8ccdc816b90f2faf1507/what-is-authgaurd-in-angular</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a0f2c816b90f2faf151d/what-is-global-timing-function-in-nodejs-how-will-they-help-async-processing</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8df4c816b90f2faf150c/what-is-preventdefault-and-stopprppogation-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c094dc816b90f2faf1529/explain-the-role-of-repl-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b4c8fbac816b90f2faf1511/streem-and-buffur-in-node</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c6461c816b90f2faf152f/what-is-buffer-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599f85c816b90f2faf1517/how-can-we-reference-to-current-directory-that-we-are-using-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5b628e50389e410d12dbc3df/difference-between-promise-and-observable</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b59a0b7c816b90f2faf151c/what-is-processstdoutcursorto0-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b8902d013228b16f52de1fc/joins-in-mysql</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c06cbc816b90f2faf1526/why-is-nodejs-single-threaded</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b5c6442c816b90f2faf152e/what-are-process-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b628e2d389e410d12dbc3de/what-is-rxjs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b599ea3c816b90f2faf1513/what-is-npm-in-node-js</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5b8902be13228b16f52de1fb/async-and-await-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5a8ffab44c02c7185d320bc8/what-is-the-retained-earining-account</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbf8b8cc1cefb00171fd1a2/what-is-closures</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fbfb38fc1cefb00171fd1a5/how-to-handle-concurrency-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb3a1c1cefb00171fd1a6/non-blocking-io-model</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb3c5c1cefb00171fd1a7/what-is-event-driven-programming</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb3dec1cefb00171fd1a8/objectcreate-vs-objectassign</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb415c1cefb00171fd1a9/how-to-parse-very-large-data-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb450c1cefb00171fd1aa/child-process-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb475c1cefb00171fd1ab/insert-vs-save-mongo</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb487c1cefb00171fd1ac/how-will-you-check-how-much-document-are-scanned-during-search-operation-mongodb</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb49cc1cefb00171fd1ad/explain-method-in-mongo</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb4adc1cefb00171fd1ae/stateless-component-in-react</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb523c1cefb00171fd1af/array-destructuring</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb544c1cefb00171fd1b0/what-is-rest-parameters-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fbfb5a3c1cefb00171fd1b2/what-is-stream</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fc07edd59c90200175f1e04/export-vs-moduleexport-vs-export-default</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fc07f1759c90200175f1e05/expressjs-vs-hapijs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fc07f4559c90200175f1e06/what-will-be-output-3greater-5-less7</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5fc07f7c59c90200175f1e07/inheriance-in-node</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fc07f9659c90200175f1e08/why-node-is-fast</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/5ff8374dce056f001780efba/give-a-real-world-example-of-abstraction-and-encapsulation</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fc07fca59c90200175f1e0a/error-first-parameter</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/5ff82594ce056f001780efb8/what-is-the-internal-functionality-of-hashmap</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fc07fe059c90200175f1e0b/atomicity</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/6014f54e798d980017c997ae/what-is-storage-engine-in-mysql</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fc0800359c90200175f1e0c/reactjs-and-its-core-principles</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/6014f62ad6ce2300172901ff/what-is-difference-subject-and-behaviour-subject</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fc0801a59c90200175f1e0d/data-scrapping</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/6014f6b0798d980017c997b3/what-is-ng-zone</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f563d6ce2300172901fd/scalability-and-security-of-backend-api</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f5b3798d980017c997b1/what-is-page-caching</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ff8295c4862fe00172383c1/find-the-frequency-of-a-number-in-a-sorted-list</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f4f8d6ce2300172901fc/what-is-call-bind-and-apply</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f51d798d980017c997ad/what-is-trigger-in-mysql</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f8b4798d980017c997b5/for-each-vs-map</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/60002e7f32100d0017e53846/give-a-real-world-example-where-we-should-not-use-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6013f1d7518f700017783032/what-is-native-prototyping-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f58b798d980017c997b0/how-to-handle-user-role-in-front-end</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f655d6ce230017290200/what-is-hook-life-cycle</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f699d6ce230017290202/what-is-angular-life-cycle</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014fb14798d980017c997bd/callback-hell</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/60267518cc36d000178ea84a/what-is-perfect-forward-secrecy</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f578798d980017c997af/what-is-ssl-security</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5fd1c6d472bf170017aa3f5c/difference-between-authentication-and-authorization</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014fa88798d980017c997bb/what-is-cluster-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f706d6ce230017290204/what-is-iify</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/602675512af3e000176a238f/difference-between-processnexttick-and-setimmediate</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f5e9d6ce2300172901fe/what-is-redux</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f5cd798d980017c997b2/what-is-session-and-cookies</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014fa57798d980017c997ba/difference-between-local-storage-and-session-storage</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/602674c4cc36d000178ea849/what-is-allowdiskuse-in-mongodb</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fc0802f59c90200175f1e0e/explain-microservices</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fc0804559c90200175f1e0f/node-is-single-thread-why-it-not-slow</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.jimmypoint.com/questions/5feb061881737d00171c23fb/how-to-convert-string-in-arraylist</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f683d6ce230017290201/difference-between-template-and-reactive-form</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/602675762af3e000176a2390/what-is-jrd</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f877798d980017c997b4/for-in-vs-for-of</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/5ff836ef4862fe00172383c4/sort-array-of-0s-and-1s-in-a-single-loop</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/602674f82af3e000176a238e/what-is-server-handshake</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f6c4d6ce230017290203/how-to-deploy-front-end-and-backend</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
-  </url>
-
-  <url>
-      <loc>https://www.jimmypoint.com/questions/6014f8e4d6ce230017290205/explain-advantages-of-closure</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <loc>https://www.jimmypoint.com/questions/5fd1c6d472bf170017aa3f5c/difference-between-authentication-and-authorization</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/5fdf0b203cbef40017a344d7/blocking-vs-non-blocking-io</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5feb061881737d00171c23fb/how-to-convert-string-in-arraylist</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ff82594ce056f001780efb8/what-is-the-internal-functionality-of-hashmap</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ff8295c4862fe00172383c1/find-the-frequency-of-a-number-in-a-sorted-list</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ff836ef4862fe00172383c4/sort-array-of-0s-and-1s-in-a-single-loop</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/5ff8374dce056f001780efba/give-a-real-world-example-of-abstraction-and-encapsulation</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/60002e7f32100d0017e53846/give-a-real-world-example-where-we-should-not-use-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6013f1d7518f700017783032/what-is-native-prototyping-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f4f8d6ce2300172901fc/what-is-call-bind-and-apply</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f51d798d980017c997ad/what-is-trigger-in-mysql</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f54e798d980017c997ae/what-is-storage-engine-in-mysql</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f563d6ce2300172901fd/scalability-and-security-of-backend-api</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f578798d980017c997af/what-is-ssl-security</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f58b798d980017c997b0/how-to-handle-user-role-in-front-end</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f5b3798d980017c997b1/what-is-page-caching</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f5cd798d980017c997b2/what-is-session-and-cookies</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f5e9d6ce2300172901fe/what-is-redux</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f62ad6ce2300172901ff/what-is-difference-subject-and-behaviour-subject</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f655d6ce230017290200/what-is-hook-life-cycle</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f683d6ce230017290201/difference-between-template-and-reactive-form</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f699d6ce230017290202/what-is-angular-life-cycle</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f6b0798d980017c997b3/what-is-ng-zone</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f6c4d6ce230017290203/how-to-deploy-front-end-and-backend</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f706d6ce230017290204/what-is-iify</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f877798d980017c997b4/for-in-vs-for-of</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f8b4798d980017c997b5/for-each-vs-map</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014f8e4d6ce230017290205/explain-advantages-of-closure</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014fa57798d980017c997ba/difference-between-local-storage-and-session-storage</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014fa88798d980017c997bb/what-is-cluster-in-nodejs</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/6014faadd6ce23001729020a/fork-vs-spown-in-nodejs</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/6014fad1798d980017c997bc/promise-vs-observable</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6014fb14798d980017c997bd/callback-hell</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/602674c4cc36d000178ea849/what-is-allowdiskuse-in-mongodb</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/602674f82af3e000176a238e/what-is-server-handshake</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/60267518cc36d000178ea84a/what-is-perfect-forward-secrecy</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/602675512af3e000176a238f/difference-between-processnexttick-and-setimmediate</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/602675762af3e000176a2390/what-is-jrd</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/60267598cc36d000178ea84b/is-javascript-fullyinterpreted-or-not</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/602675c6cc36d000178ea84c/how-to-verify-data-is-object-or-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/602e4257ed19f60017d60d9a/find-second-largest-number-in-the-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/602e4284ed19f60017d60d9c/find-largest-number-in-the-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/602e43b61b703f0017161e72/difference-between-settimeout-and-setimmediate</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/6045e805561b050017f7417b/what-is-the-difference-between-the-classical-and-the-prototypical-inheritance</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/60938fc65c5dc90017f3a60e/what-is-dynamic-array</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/6094e70144aaff001766f9fe/given-a-string-find-the-length-of-the-longest-substring-in-it-with-no-more-than-m-different-characters-let-s-moonot-let-k-3</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/questions/609a20a4bf41b80017f065c6/handle-asynchronous-calls-in-javascript</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/60a2460f9f8fb00017bf9078/error-first-callback</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/610e218b6d18200017d20699/what-is-first-class-function</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/612cc7ef28d19f001797005d/lexical-scope-in-javascript</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6134dbad36065b0017d44f46/nse-bse-api-free</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6140808eebf34f0017d97768/increment-value-each-time-when-you-run-function-without-using-global-variable</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/614862dfcc3e200017b531a5/merge-two-sorted-array</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/614863106f696c00179ccc75/quick-sort-vs-merge-sort</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/6177e7a9f131d10018c68059/mysql-vs-mongodb</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.jimmypoint.com/questions/625d899c65b8cb0018ecbb6b/fatal-error-ineffective-mark-compacts-near-heap-limit-allocation-failed-javascript-heap-out-of-memory</loc>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.jimmypoint.com/blog/category/[category]/[slug]</loc>
-      <lastmod>2021-05-17T09:46:04.699Z</lastmod>
+      <lastmod>2022-05-04T06:36:38.932Z</lastmod>
   </url>
 
 </urlset>

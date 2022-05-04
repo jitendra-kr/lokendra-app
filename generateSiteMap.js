@@ -1,6 +1,6 @@
-const fs = require('fs')
-const globby = require('globby')
-const axios = require('axios')
+import {globby} from 'globby';
+import * as fs from "fs";
+import Axios  from "axios";
 
 
 const getDate = new Date().toISOString();
@@ -10,8 +10,8 @@ const questionUrl = `https://jimmypoint-server.herokuapp.com/api/question/get-al
 
 
 async function generateSiteMap() {
-  const blogUrlsData = (await axios.get(blogUrl)).data.result;
-  const questionUrlsData = (await axios.get(questionUrl)).data.result;
+  const blogUrlsData = (await Axios.get(blogUrl)).data.result;
+  const questionUrlsData = (await Axios.get(questionUrl)).data.result;
   const pagesList = await globby([
     'pages/**/*.js',
     '!pages/_*.js',
