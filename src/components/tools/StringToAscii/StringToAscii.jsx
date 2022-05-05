@@ -76,7 +76,7 @@ function StringToAscii() {
                 label=""
                 rules={[{ required: true, message: "Please enter text !" }]}
               >
-                <TextArea className={styles.input} onChange={onChange} placeholder="Please enter text" rows={4} />
+                <TextArea className={styles.input} onChange={onChange} placeholder="Please enter text  to convert" rows={4} />
               </Form.Item>
 
             </div>

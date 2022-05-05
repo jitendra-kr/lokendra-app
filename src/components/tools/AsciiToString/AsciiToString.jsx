@@ -41,7 +41,7 @@ function AsciiToString() {
 
     }
   }
-  
+
   function asciiToSentence(str) {
     let sentence = "";
     var num = 0;
@@ -83,7 +83,7 @@ function AsciiToString() {
               <Form.Item
                 name="title"
                 label=""
-                rules={[{ required: true, message: "Please enter text !" }]}
+                rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]}
               >
                 <TextArea className={styles.input} onChange={onChange} placeholder="Please enter ASCII " rows={4} />
               </Form.Item>
