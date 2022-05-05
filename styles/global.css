@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.contentPadding {
+  padding: 50px 50px;
+}
+
 .header-footer-bg {
   background-color: #001529 !important;
 }
@@ -56,6 +60,9 @@ span {
   margin-top: 10px;
 }
 
+.text-align-center {
+  text-align: center
+}
 .text-align {
   text-align: center
 }

@@ -22,5 +22,6 @@ export { default as NewQuestion } from './Questions/NewQuestion';
 
 export { default as AdComponent } from './AdComponent'
 
-export {default as StringToAscii } from "./StringToAscii/StringToAscii";
+export {default as StringToAscii } from "./tools/StringToAscii/StringToAscii";
+export { default as AsciiToString } from "./tools/AsciiToString/AsciiToString"
 

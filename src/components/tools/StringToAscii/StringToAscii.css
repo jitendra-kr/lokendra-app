@@ -1,5 +1,5 @@
-.form {
-    width: 70%;   
+.input-width {
+    width: 50%;   
 }
 .input {
     height: 50px
@@ -28,7 +28,7 @@
     font-family: monospace;
 }
 .CopyToClipboardTxt {
-    margin-top: 15px;
+    margin-top: 40px;
     text-align: right;
     color: #0645AD;
     cursor: pointer;
@@ -43,25 +43,5 @@
 .fileInput {
     width: 50%;
     border-color: white;
-}
-
-.buttonRightLink {
-    margin-bottom: 25px;
-    margin-top: 25px;
-    justify-content: center;
-    display: flex;
-}
-.bodyTitle {
-    text-align: center;
-}
-.bodyContent {
-    color: lightslategray;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.mainDiv {
-    display: flex;
-    justify-content: center;
-    width: 100%
+    /* float:right */
 }
