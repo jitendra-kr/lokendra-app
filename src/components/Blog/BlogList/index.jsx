@@ -15,8 +15,6 @@ class BlogList extends React.Component {
     };
   }
 
-
-
   calculateTitle = (title) => {
     const limit = 63;
     if (title.length > limit) {
@@ -38,7 +36,7 @@ class BlogList extends React.Component {
       <Content>
         <AppHead data={{}} />
         <div className="row">
-            <h1 style={{ fontFamily: "serif" }}>Trending</h1>
+          <h1 style={{ fontFamily: "serif" }}>Trending</h1>
 
           <div className="row">
             {this.state.data.map((item, i) => {
@@ -57,7 +55,7 @@ class BlogList extends React.Component {
                         className="image-blog-list"
                         src={item.image}
                         alt={item.title}
-                        style={{ width: "80%", height: "150px" }}
+                        style={{ width: "80%", height: "250px" }}
                       />
                     </span>
                     <div
