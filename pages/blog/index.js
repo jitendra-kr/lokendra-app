@@ -1,23 +1,22 @@
-import { CategoryList } from "../../src/components"
+import { BlogList } from "../../src/components"
 import Config from '../../src/config/env';
 import { sample } from "lodash";
 const baseUrls = Config.getData().default.baseUrl;
 
-function CategoryListPage({data}) {
-  return <CategoryList data = {data}/>
+function HomePage({ blog }) {
+  return <BlogList data={blog} />
+}
+
+export async function getStaticProps() {
+
+  const url = `${sample(baseUrls)}blog-management/blogs`;
+  let response = await fetch(url);
+  response = await response.json();
+  return {
+    props: {
+      blog: response.result
+    },
+    revalidate: 10
   }
-
-  export async function getStaticProps() {
-
-    const url = `${sample(baseUrls)}blog-management/category-list`;
-    let response = await fetch(url);
-    response = await response.json();
-    return {
-      props: {
-        data: response.result
-      },
-      revalidate: 10
-    }
-  }
-
-  export default CategoryListPage;
+}
+export default HomePage
