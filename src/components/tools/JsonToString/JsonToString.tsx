@@ -11,17 +11,10 @@ import { InputToConvertByTools } from "../InputToConvertByTools";
 const { Content } = Layout;
 const { TextArea } = Input
 
-type onChangeProp = {
-  target: {
-    value: string
-  }
-}
-
 function JsonToString() {
+
   const copyToClip = "Copy to clipboard";
   const copiedToClip = "Copied to clipboard";
-
-  const [isInputValid, setIsInputValid] = useState<boolean>(false)
   const [copyToText, setCopyTotext] = useState(copyToClip)
   const [byte, setByte] = useState<string>("");
   const { url } = useGetUrl();
@@ -36,20 +29,16 @@ function JsonToString() {
 
   function isJsonString(str: string) {
     try {
-      JSON.parse(str);
+      JSON.parse(str);  
     } catch (e) {
+      setByte("")
       return false;
     }
+    setByte(JSON.stringify(str));    
     return true;
   }
 
-  const onChange = (value: string) => {
-    if (isInputValid) {
-      setByte(JSON.stringify(value));
-    } else {
-      setByte("")
-    }
-  };
+  const onChange = (value: string) => {  };
 
   const copyToClipboard = () => {
     try {
@@ -85,11 +74,9 @@ function JsonToString() {
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter JSON!" }, {
               validator: async (_: any, value: any) => {
-                if (!isJsonString(value)) {
-                  setIsInputValid(false)
+                if (!isJsonString(value)) {                  
                   return Promise.reject('Please enter valid JSON!');
                 } else {
-                  setIsInputValid(true)
                   return Promise.resolve()
                 }
               }
