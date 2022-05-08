@@ -27,7 +27,7 @@ export const InputToConvertByTools = ({ onChangeCb, placeholder, rules }: InputT
         label=""
         rules={rules}
       >
-        <TextArea className={`${styles.input}`} onChange={onChange} placeholder={placeholder ? placeholder : "Please enter"} rows={16} />
+        <TextArea className={`${styles.input}`} onChange={onChange} placeholder={placeholder ? placeholder : "Please enter"} rows={18} />
       </Form.Item>
     </div>
     <div>

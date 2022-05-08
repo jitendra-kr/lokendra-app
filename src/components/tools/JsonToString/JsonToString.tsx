@@ -68,7 +68,7 @@ function JsonToString() {
 
   return (
     <>
-      <Content className="contentPadding">
+      <Content>
         <AppHead data={{
           title: "convert string to ascii | text to ASCII converter - online string tools",
           meta_description: "Useful, Simple and free online tool that converts string or plain text to ASCII codes in easy steps. Just type your text and it will convert to ASCII",
