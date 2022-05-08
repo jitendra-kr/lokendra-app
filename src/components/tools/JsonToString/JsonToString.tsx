@@ -6,8 +6,8 @@ import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
-import { ConvertedOutputByTools } from "../../ConvertedOutputByTools";
-import { InputToConvertByTools } from "../../InputToConvertByTools";
+import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
+import { InputToConvertByTools } from "../InputToConvertByTools";
 const { Content } = Layout;
 const { TextArea } = Input
 
