@@ -31,7 +31,7 @@ function JsonToString() {
     try {
       JSON.parse(str);  
     } catch (e) {
-      setByte("")
+      setByte("Invalid JSON")
       return false;
     }
     setByte(JSON.stringify(str));    
