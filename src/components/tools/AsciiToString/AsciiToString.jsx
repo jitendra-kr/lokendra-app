@@ -80,7 +80,7 @@ function AsciiToString() {
           </p>
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder={'Please enter ASCII'} />
-            <div style={{lineHeight: 0}}>
+            <div>
               Want to convert Text to ASCII? use
               <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>
             </div>
