@@ -79,15 +79,15 @@ function AsciiToString() {
             Just load your ASCII code, System will automatically convert it to text
           </p>
           <div className="col-lg-6" >
-              <InputToConvertByTools  rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder = {'Please enter ASCII'} />
-              <div className={styles.buttonRightLink}>
-                Want to convert Text to ASCII? use
-                <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>
-              </div>
+            <InputToConvertByTools rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder={'Please enter ASCII'} />
+            <div style={{lineHeight: 0}}>
+              Want to convert Text to ASCII? use
+              <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>
+            </div>
 
           </div>
           <div className="col-lg-6" >
-          <ConvertedOutputByTools content = {byte} copyToClipboardCb = {copyToClipboard} copyToText = {copyToText}/>
+            <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
           </div>
         </div>
       </Content>

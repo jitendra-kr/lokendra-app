@@ -20,19 +20,13 @@ export const InputToConvertByTools = ({ onChangeCb, placeholder, rules }: InputT
   const onChange = ({ target: { value } }: onChangeProp) => {
     onChangeCb(value)
   };
-  return <Form className={styles.form}>
-    <div >
-      <Form.Item
-        name="title"
-        label=""
-        rules={rules}
-      >
-        <TextArea className={`${styles.input}`} onChange={onChange} placeholder={placeholder ? placeholder : "Please enter"} rows={18} />
-      </Form.Item>
-    </div>
-    <div>
-    </div>
-
-
+  return <Form >
+    <Form.Item
+      name="title"
+      label=""
+      rules={rules}
+    >
+      <TextArea className={`${styles.input}`} onChange={onChange} placeholder={placeholder ? placeholder : "Please enter"} rows={18} />
+    </Form.Item>
   </Form>
 }

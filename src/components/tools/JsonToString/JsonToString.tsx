@@ -94,7 +94,7 @@ function JsonToString() {
                 }
               }
             }]} onChangeCb={onChange} placeholder={'Please enter JSON to convertt'} />
-            {/* <div className={styles.buttonRightLink}>
+            {/* <div >
               Want to parse JSON ? use
               <Link href="/tools/json-parser" >&nbsp; JSON parser </Link>
             </div> */}
