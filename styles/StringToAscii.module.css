@@ -3,11 +3,7 @@
     display: flex;
 }
 
-.CopyToClipboardTxt {
-    text-align: right;
-    color: #0645AD;
-    cursor: pointer;
-}
+
 
 .paperClipOutlined {
     float: right;
