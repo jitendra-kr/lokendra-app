@@ -6,6 +6,9 @@ import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
+import { ConvertedOutputByTools } from "../../ConvertedOutputByTools";
+import { InputToConvertByTools } from "../../InputToConvertByTools";
+
 const { Content } = Layout;
 const { TextArea } = Input
 
@@ -33,7 +36,7 @@ function StringToAscii() {
     setByte(byteArray);
   }
 
-  const onChange = ({ target: { value } }) => {
+  const onChange = (value) => {
     textToASCIIConvert(value)
   };
 
@@ -68,31 +71,17 @@ function StringToAscii() {
           <p className={styles.bodyContent}>
             Just load your text, System will automatically convert it to ASCII codes
           </p>
-
-          <Form className={styles.form}>
-            <div >
-              <Form.Item
-                name="title"
-                label=""
-                rules={[{ required: true, message: "Please enter text !" }]}
-              >
-                <TextArea className={styles.input} onChange={onChange} placeholder="Please enter text  to convert" rows={4} />
-              </Form.Item>
-
-            </div>
-            <div>
-            </div>
+          <div className="col-lg-6" >
+            <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder = {'Please enter text  to convert'} />
             <div className={styles.buttonRightLink}>
               Want to convert ASCII to text ? use
               <Link href="/tools/ascii-to-string" >&nbsp; ASCII to text converter </Link>
             </div>
-            <div>
-              {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>{copyToText}</p>}
-              {<div className={styles["ascii-div"]} >
-                <h3 className={styles.asciiCode} >{byte.join(" ")}</h3>
-              </div>}
-            </div>
-          </Form>
+          </div>
+          <div className="col-lg-6" >
+          <ConvertedOutputByTools content = {byte.join(" ")} copyToClipboardCb = {copyToClipboard} copyToText = {copyToText}/>
+          
+          </div>
         </div>
       </Content>
     </>

@@ -1,4 +1,4 @@
-import { Input, Layout, Button, Form } from "antd";
+import { Layout } from "antd";
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import Link from "next/link"
@@ -6,8 +6,9 @@ import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
+import { ConvertedOutputByTools } from "../../ConvertedOutputByTools";
+import { InputToConvertByTools } from "../../InputToConvertByTools";
 const { Content } = Layout;
-const { TextArea } = Input
 
 function AsciiToString() {
   const copyToClip = "Copy to clipboard";
@@ -24,7 +25,7 @@ function AsciiToString() {
       }, 3000);
     }
   }
-  const onChange = ({ target: { value } }) => {
+  const onChange = (value) => {
     const string = asciiToSentence(value);
     setByte(string);
     setCopyTotext(copyToClip)
@@ -71,38 +72,24 @@ function AsciiToString() {
         }} />
 
         <div className={`${styles.mainDiv} row`}>
-
           <h1 className={styles.bodyTitle}>
             ASCII to String converter
           </h1>
           <p className={styles.bodyContent}>
             Just load your ASCII code, System will automatically convert it to text
           </p>
-          <Form className={styles.form}>
-            <div >
-              <Form.Item
-                name="title"
-                label=""
-                rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]}
-              >
-                <TextArea className={styles.input} onChange={onChange} placeholder="Please enter ASCII " rows={4} />
-              </Form.Item>
-            </div>
-            <div>
-            </div>
-            <div className={styles.buttonRightLink}>
-              Want to convert Text to ASCII? use
-              <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>
-            </div>
-            <div>
-              {byte.length > 0 && <p onClick={copyToClipboard} className={styles.CopyToClipboardTxt}>{copyToText}</p>}
-              {<div className={styles["ascii-div"]} >
-                <h3 className={styles.asciiCode} >{byte}</h3>
-              </div>}
-            </div>
-          </Form>
-        </div>
+          <div className="col-lg-6" >
+              <InputToConvertByTools  rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder = {'Please enter ASCII'} />
+              <div className={styles.buttonRightLink}>
+                Want to convert Text to ASCII? use
+                <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>
+              </div>
 
+          </div>
+          <div className="col-lg-6" >
+          <ConvertedOutputByTools content = {byte} copyToClipboardCb = {copyToClipboard} copyToText = {copyToText}/>
+          </div>
+        </div>
       </Content>
     </>
   );

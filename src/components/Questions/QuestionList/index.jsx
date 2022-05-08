@@ -434,10 +434,10 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content>
-        <AppHead data={{ title: "Questions" }} />
+      <Content className="padding-right-30">
+        <AppHead data={{ title: "Questions - Jimmypoint" }} />
         
-          <div className="row">
+          <div className="row" >
             <Search
               addonBefore={this.selectAfter} 
               placeholder="search"
@@ -451,7 +451,7 @@ class QuestionList extends React.Component {
             <Tabs
               defaultActiveKey="all"
               onTabClick={this.onTabClick.bind(this)}
-              style={{ width: "100%" }}
+              style={{ width: "98%" }}
             >
               {this.tabPane("All", "all")}
               {this.tabPane("My Questions", "me")}
@@ -472,8 +472,7 @@ class QuestionList extends React.Component {
             </div>
           ) : (
             ""
-          )}
-        
+          )}        
       </Content>
     );
   }

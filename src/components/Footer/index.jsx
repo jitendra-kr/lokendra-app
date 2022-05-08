@@ -43,7 +43,9 @@ const MainFooter = () => {
             </Link>
           </div>
           <div className="col-lg-3 display-inline-block">
-
+          <Link href="/tools/json-to-string">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>JSON to String </span>
+            </Link>
           </div>
           <div className="col-lg-3 display-inline-block">
 

@@ -209,6 +209,10 @@ p {
   background-image: linear-gradient(to right, #b5b9c4, #cfd7e6, #ffffff);
 }
 
+.padding-right-30 {
+  padding-right: 30px
+}
+
 pre {
   background-color: #d4d4d4 !important;
 }
