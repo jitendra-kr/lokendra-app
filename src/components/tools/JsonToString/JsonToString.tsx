@@ -34,7 +34,7 @@ function JsonToString() {
       setByte("Invalid JSON")
       return false;
     }
-    setByte(JSON.stringify(str));    
+    setByte(JSON.stringify(str.replace(/\n/g, "")));    
     return true;
   }
 
@@ -59,8 +59,8 @@ function JsonToString() {
     <>
       <Content>
         <AppHead data={{
-          title: "convert string to ascii | text to ASCII converter - online string tools",
-          meta_description: "Useful, Simple and free online tool that converts string or plain text to ASCII codes in easy steps. Just type your text and it will convert to ASCII",
+          title: "convert JSON to string online",
+          meta_description: "Useful, Simple and free online tool that converts JSON to string in easy steps. Our tool can convert multiline content with full accuracy. Just type your JSON and it will convert to string",
           url
         }} />
 
