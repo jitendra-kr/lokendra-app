@@ -66,7 +66,7 @@ function JsonToString() {
 
         <div className={`${styles.mainDiv} row`}>
           <h1 className={styles.bodyTitle}>
-            JSON to JSON string converter
+            JSON to string converter
           </h1>
           <p className={styles.bodyContent}>
             Just load your JSON, System will automatically it to JSON string or text
