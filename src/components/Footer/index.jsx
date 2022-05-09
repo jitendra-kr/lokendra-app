@@ -31,24 +31,26 @@ const MainFooter = () => {
             </Link>
           </div>
         </div>
-        <div className="col-lg-12" style={{marginTop: "20px"}} >
+        <div className="col-lg-12" style={{ marginTop: "20px" }} >
           <div className="col-lg-3 display-inline-block">
             <Link href="/tools/string-to-ascii">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>String to ASCII</span>
             </Link>
           </div>
           <div className="col-lg-3 display-inline-block">
-          <Link href="/tools/ascii-to-string">
+            <Link href="/tools/ascii-to-string">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>ASCII to String </span>
             </Link>
           </div>
           <div className="col-lg-3 display-inline-block">
-          <Link href="/tools/json-to-string">
+            <Link href="/tools/json-to-string">
               <span style={{ color: "#ffffff", cursor: 'pointer' }}>JSON to String </span>
             </Link>
           </div>
           <div className="col-lg-3 display-inline-block">
-
+          <Link href="/tools/json-parser">
+              <span style={{ color: "#ffffff", cursor: 'pointer' }}>JSON parser</span>
+            </Link>
           </div>
         </div>
       </div>

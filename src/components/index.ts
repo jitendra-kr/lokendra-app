@@ -25,5 +25,6 @@ export { default as AdComponent } from './AdComponent'
 export {default as StringToAscii } from "./tools/StringToAscii/StringToAscii";
 export { default as AsciiToString } from "./tools/AsciiToString/AsciiToString"
 export { default as JsonToString } from "./tools/JsonToString/JsonToString"
+export { default as JsonParser} from "./tools/JsonParser/JsonParser"
 
 
