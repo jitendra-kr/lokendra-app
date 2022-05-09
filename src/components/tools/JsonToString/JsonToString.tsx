@@ -81,10 +81,10 @@ function JsonToString() {
                 }
               }
             }]} onChangeCb={onChange} placeholder={'Please enter JSON to convertt'} />
-            {/* <div >
+            <div >
               Want to parse JSON ? use
               <Link href="/tools/json-parser" >&nbsp; JSON parser </Link>
-            </div> */}
+            </div>
           </div>
           <div className="col-lg-6" >
             <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />

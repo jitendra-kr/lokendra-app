@@ -81,10 +81,10 @@ function JsonParser() {
                 }
               }
             }]} onChangeCb={onChange} placeholder={'Please enter'} />
-            {/* <div >
-              Want to parse JSON ? use
-              <Link href="/tools/json-parser" >&nbsp; JSON parser </Link>
-            </div> */}
+            <div >
+              Want to stringify JSON ? use
+              <Link href="/tools/json-to-string" >&nbsp; stringify JSON </Link>
+            </div>
           </div>
           <div className="col-lg-6" >
             <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
