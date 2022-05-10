@@ -8,6 +8,7 @@ import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
+import { ToolsList } from "../ToolsList";
 
 const { Content } = Layout;
 
@@ -76,6 +77,7 @@ function ToUppercase() {
           
           </div>
         </div>
+        <ToolsList />
       </Content>
     </>
   );

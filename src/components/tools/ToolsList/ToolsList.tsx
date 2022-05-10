@@ -2,55 +2,29 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
-import { Layout } from "antd";
 import AppHead from "../../Head/head";
 import styles from "./ToolsList.module.css";
+import { ITools, toolsListData } from "./toolsListingData"
+import { useGetUrlPath } from "../../../hooks";
 
-interface ITools {
-    title: string;
-    link: string
-}
-
-interface IToolsArray extends Array<ITools> { }
 
 export const ToolsList = () => {
+  const { isHome } = useGetUrlPath();
+
     const router = useRouter()
     const handleClick = (item: ITools) => {
         router.push(item.link);
     };
-    const data: IToolsArray = [{
-        title: "String to ASCII",
-        link: "/tools/string-to-ascii"
-    },
-    {
-        title: "ASCII to String",
-        link: "/tools/ascii-to-string"
-    },
-    {
-        title: "JSON to String",
-        link: "/tools/json-to-string"
-    },
-    {
-        title: "JSON parser",
-        link: "/tools/json-parser"
-    },
-    {
-        title: "Text to Uppercase",
-        link: "/tools/text-to-uppercase"
-    },
-    {
-        title: "Text to Lowercase",
-        link: "/tools/text-to-lowercase"
-    }
-    ]
+
+    const heading = isHome ? "Tools" : "Other tools"
 
     return (
         <>
             <AppHead data={{}} />
-            <div className={`${styles.main} row`}>
-                <h1 style={{ fontFamily: "serif" }}>Tools</h1>
+            <div className={`${isHome ? styles.home : styles.otherTools} row`}>
+                <h1 className={`${isHome? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
-                    {data.map((item, i) => {
+                    {toolsListData.map((item, i) => {
                         return (
                             <div
                                 className="col-lg-3 cursor-pointer"

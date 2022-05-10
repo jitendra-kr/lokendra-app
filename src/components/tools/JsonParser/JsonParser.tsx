@@ -8,6 +8,7 @@ import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
+import { ToolsList } from "../ToolsList/ToolsList";
 const { Content } = Layout;
 const { TextArea } = Input
 
@@ -90,6 +91,8 @@ function JsonParser() {
             <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
           </div>
         </div>
+        <ToolsList />
+
       </Content>
     </>
   );

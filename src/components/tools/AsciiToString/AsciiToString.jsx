@@ -9,6 +9,7 @@ import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 const { Content } = Layout;
+import { ToolsList } from "../ToolsList";
 
 function AsciiToString() {
   const copyToClip = "Copy to clipboard";
@@ -90,6 +91,8 @@ function AsciiToString() {
             <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
           </div>
         </div>
+        
+        <ToolsList />
       </Content>
     </>
   );

@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mainHeadingfontFamily {
+  font-family: serif;
+}
+
 .contentPadding {
   padding: 50px 50px;
 }
