@@ -36,7 +36,7 @@ class BlogList extends React.Component {
       <Content>
         <AppHead data={{}} />
         <div className="row">
-          <h1 style={{ fontFamily: "serif" }}>Trending</h1>
+          <h1 style={{ fontFamily: "serif" }}>Trending Blogs</h1>
 
           <div className="row">
             {this.state.data.map((item, i) => {

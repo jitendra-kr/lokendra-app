@@ -28,6 +28,7 @@ export { default as JsonToString } from "./tools/JsonToString/JsonToString"
 export { default as JsonParser} from "./tools/JsonParser/JsonParser"
 export { default as ToUppercase} from "./tools/ToUppercase/ToUppercase"
 export { default as ToLowercase} from "./tools/ToLowercase/ToLowercase"
+export * from "./tools"
 
 
 
