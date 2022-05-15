@@ -1,0 +1,22 @@
+.container {
+    border-radius: 2px;
+    border: 1px;
+    border-color:darkgray;
+    height: 100vh;
+    width: 100%;
+    border-style: solid;
+    background-color: aliceblue;
+    overflow: auto;
+}
+
+.CopyToClipboardTxt {
+    text-align: right;
+    color: #0645AD;
+    cursor: pointer;
+}
+
+.invalidJson {
+    padding: 10px;
+    font-size: large;
+    font-family: monospace;
+}

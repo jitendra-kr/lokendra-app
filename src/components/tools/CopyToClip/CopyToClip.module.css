@@ -1,0 +1,9 @@
+.container {
+    height: 29px;
+}
+
+.CopyToClipboardTxt {
+    text-align: right;
+    color: #0645AD;
+    cursor: pointer;
+}
