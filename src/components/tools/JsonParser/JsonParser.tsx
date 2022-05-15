@@ -1,16 +1,17 @@
 import { Input, Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
+// import JSONBig from 'json-bigint';
 import React, { useState, useEffect } from "react";
 import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
-import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList/ToolsList";
+import { JsonViewer } from "../JsonViewer";
+import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 const { Content } = Layout;
-const { TextArea } = Input
 
 function JsonParser() {
 
@@ -30,9 +31,12 @@ function JsonParser() {
 
   function isJsonString(str: string) {
     try {
-      JSON.parse(str)    
+      const data = JSON.parse(str) 
+      if (typeof data === "number") {
+        throw "Invalid JSO"
+      }
     } catch (e) {
-      setByte("Invalid JSON")
+      setByte(STRING_CONSTANTS.tools.invalidJson)
       return false;
     }
     setByte(JSON.parse(str));  
@@ -88,7 +92,7 @@ function JsonParser() {
             </div>
           </div>
           <div className="col-lg-6" >
-            <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
+            <JsonViewer content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
           </div>
         </div>
         <ToolsList />

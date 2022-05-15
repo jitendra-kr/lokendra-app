@@ -1,11 +1,10 @@
 .asciiDiv {
     border-radius: 10px;
     border: 1px;
-    min-height: 408px;
+    min-height: 100vh;
     width: 100%;
     border-color:darkgray;
     border-style: solid;
-
     background-color: aliceblue;
 }
 
@@ -16,8 +15,5 @@
     font-family: monospace;
 }
 
-.CopyToClipboardTxt {
-    text-align: right;
-    color: #0645AD;
-    cursor: pointer;
-}
+
+

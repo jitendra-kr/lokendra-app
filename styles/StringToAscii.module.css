@@ -2,9 +2,6 @@
     justify-content: center;
     display: flex;
 }
-
-
-
 .paperClipOutlined {
     float: right;
     cursor: pointer;
@@ -16,14 +13,12 @@
     border-color: white;
 }
 
-
 .bodyTitle {
     text-align: center;
 }
 .bodyContent {
     color: lightslategray;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .mainDiv {

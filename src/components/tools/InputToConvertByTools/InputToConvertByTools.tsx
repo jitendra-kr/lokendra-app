@@ -1,7 +1,5 @@
 
 import { Input, Layout, Form } from "antd";
-import Link from "next/link"
-
 import styles from "./InputToConvertByTools.module.css";
 
 const { TextArea } = Input
@@ -20,7 +18,7 @@ export const InputToConvertByTools = ({ onChangeCb, placeholder, rules }: InputT
   const onChange = ({ target: { value } }: onChangeProp) => {
     onChangeCb(value)
   };
-  return <Form >
+  return <Form className={styles.container} >
     <Form.Item
       name="title"
       label=""

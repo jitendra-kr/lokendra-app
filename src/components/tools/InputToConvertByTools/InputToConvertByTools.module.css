@@ -1,10 +1,13 @@
 .input {
-    height: 50px;
-    margin-top: 50px;
+    height: 100vh !important;
+    margin-top: 29px;
 }
 .buttonRightLink {
     margin-bottom: 25px;
     margin-top: 25px;
     justify-content: center;
     display: flex;
+}
+.container {
+    height: 100vh;
 }

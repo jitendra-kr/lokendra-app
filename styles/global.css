@@ -270,3 +270,14 @@ pre {
   }
 }
 
+/* 
+  Start JSON viewer styles
+*/
+.data-type-label {
+  color:red !important;
+}
+
+/* 
+  End JSON viewer styles
+*/
+
