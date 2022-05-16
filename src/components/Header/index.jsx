@@ -44,8 +44,8 @@ function MainHeader() {
   useEffect(() => {
     setIsAuthorisedToPostBlog(isAuthorisedToPostBlog());
     setIsAuthorisedToPwdManager(isAuthorisedToPostBlog());
-    window.addEventListener('storage', event =>{
-      if(get(event, 'key') === 'auth' && !get(event, 'newValue')) {
+    window.addEventListener('storage', event => {
+      if (get(event, 'key') === 'auth' && !get(event, 'newValue')) {
         window.location.reload();
       }
     });
@@ -107,6 +107,11 @@ function MainHeader() {
         defaultSelectedKeys={[selectedTab]}
         style={{ textAlign: "center" }}
       >
+        <Menu.Item key="4" onClick={onDrawerClose}>
+          <Link href="/tools" style={{ color: "#ffffff" }}>
+            Tools
+          </Link>
+        </Menu.Item>
         <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
             Blogs

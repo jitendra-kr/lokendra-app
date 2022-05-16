@@ -7,21 +7,20 @@ import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData"
 import { useGetUrlPath } from "../../../hooks";
 
-
 export const ToolsList = () => {
-  const { isHome } = useGetUrlPath();
+  const { isHome, pathname } = useGetUrlPath();
 
     const router = useRouter()
     const handleClick = (item: ITools) => {
         router.push(item.link);
     };
 
-    const heading = isHome ? "Tools" : "Other tools"
+    const heading = isHome || pathname === "/tools" ? "Tools" : "Other tools"
 
     return (
         <>
             <AppHead data={{}} />
-            <div className={`${isHome ? styles.home : styles.otherTools} row`}>
+            <div className={`${isHome || pathname ? styles.home : styles.otherTools} row`}>
                 <h1 className={`${isHome? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
                     {toolsListData.map((item, i) => {
