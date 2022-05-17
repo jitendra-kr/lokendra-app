@@ -20,7 +20,7 @@ export const ToolsList = () => {
     return (
         <>
             <AppHead data={{}} />
-            <div className={`${isHome || pathname ? styles.home : styles.otherTools} row`}>
+            <div className={`${isHome || pathname === "/tools" ? styles.home : styles.otherTools} row`}>
                 <h1 className={`${isHome? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
                     {toolsListData.map((item, i) => {

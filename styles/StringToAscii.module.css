@@ -13,16 +13,9 @@
     border-color: white;
 }
 
-.bodyTitle {
-    text-align: center;
-}
-.bodyContent {
-    color: lightslategray;
-    text-align: center;
-}
-
 .mainDiv {
     display: flex;
     justify-content: center;
-    width: 100%
+    width: 100%;
+    /* background-color: yellow; */
 }

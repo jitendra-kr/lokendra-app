@@ -9,6 +9,7 @@ import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
+import { ToolsBody } from "../ToolsBody";
 
 const { Content } = Layout;
 
@@ -60,12 +61,7 @@ function ToLowercase() {
         }} />
 
         <div className={`${styles.mainDiv} row`}>
-          <h1 className={styles.bodyTitle}>
-          Lowercase Text converter
-          </h1>
-          <p className={styles.bodyContent}>
-            Just load your text, System will automatically convert it to lower case text
-          </p>
+          <ToolsBody />
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder = {'Please enter text  to convert'} />
             <div>

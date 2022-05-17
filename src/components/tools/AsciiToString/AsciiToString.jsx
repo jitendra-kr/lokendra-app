@@ -8,6 +8,7 @@ import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
+import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
 import { ToolsList } from "../ToolsList";
 
@@ -73,12 +74,7 @@ function AsciiToString() {
         }} />
 
         <div className={`${styles.mainDiv} row`}>
-          <h1 className={styles.bodyTitle}>
-            ASCII to String converter
-          </h1>
-          <p className={styles.bodyContent}>
-            Just load your ASCII code, System will automatically convert it to text
-          </p>
+          <ToolsBody />
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder={'Please enter ASCII'} />
             <div>
@@ -91,7 +87,7 @@ function AsciiToString() {
             <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
           </div>
         </div>
-        
+
         <ToolsList />
       </Content>
     </>

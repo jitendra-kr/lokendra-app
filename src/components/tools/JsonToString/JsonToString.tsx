@@ -9,6 +9,7 @@ import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
+import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
 
 function JsonToString() {
@@ -65,12 +66,7 @@ function JsonToString() {
         }} />
 
         <div className={`${styles.mainDiv} row`}>
-          <h1 className={styles.bodyTitle}>
-            JSON to string converter
-          </h1>
-          <p className={styles.bodyContent}>
-            Just load your JSON, System will automatically it to JSON string or text
-          </p>
+          <ToolsBody />
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter JSON!" }, {
               validator: async (_: any, value: any) => {

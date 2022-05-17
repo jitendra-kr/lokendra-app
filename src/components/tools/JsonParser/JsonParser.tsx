@@ -11,6 +11,7 @@ import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { JsonViewer } from "../JsonViewer";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
+import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
 
 function JsonParser() {
@@ -70,12 +71,7 @@ function JsonParser() {
         }} />
 
         <div className={`${styles.mainDiv} row`}>
-          <h1 className={styles.bodyTitle}>
-          JSON Parser Online
-          </h1>
-          <p className={styles.bodyContent}>
-            Just load your JSON, System will automatically parse it
-          </p>
+          <ToolsBody/>
           <div className="col-lg-6" >
             <InputToConvertByTools rules={[{ required: true, message: "Please enter" }, {
               validator: async (_: any, value: any) => {
