@@ -434,7 +434,7 @@ class QuestionList extends React.Component {
 
   render() {
     return (
-      <Content className="padding-right-30">
+      <Content className="padding-right-30 content-padding-left">
         <AppHead data={{ title: "Questions - Jimmypoint" }} />
         
           <div className="row" >

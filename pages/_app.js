@@ -80,13 +80,12 @@ export default function MyApp({ Component, pageProps }) {
     <Layout>
       <Spin indicator={antIcon} className="center-loader" spinning={loader} />
       <UserContext.Provider value={[user, setUser]}>
-
         <MainHeader />
         <div className="row">
-          <div className="col-lg-9" style={{ padding: "50px 45px 59px 56px" }}>
+          <div className="col-lg-10" style={{ padding: "50px 0px 59px 30px" }}>
             <Component {...pageProps} />
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-2" >
             <AdComponent />
           </div>
         </div>

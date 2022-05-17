@@ -181,7 +181,7 @@ class Answer extends React.Component {
 
   render() {
     return (
-      <Content className="padding-right-30">
+      <Content className="padding-right-30 content-padding-left">
         <AppHead data={this.state.data} />
         <div className="row">
           <div style={{ width: "100%" }}>

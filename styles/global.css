@@ -217,6 +217,14 @@ p {
   padding-right: 30px
 }
 
+.padding-left-40 {
+  padding-left: 40px
+}
+
+.content-padding-left {
+  padding-left: 50px
+}
+
 pre {
   background-color: #d4d4d4 !important;
 }

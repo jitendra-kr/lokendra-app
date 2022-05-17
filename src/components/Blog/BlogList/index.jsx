@@ -35,7 +35,7 @@ class BlogList extends React.Component {
     return (
       <Content>
         <AppHead data={{}} />
-        <div className="row">
+        <div className="row content-padding-left">
           <h1 className="mainHeadingfontFamily">Trending Blogs</h1>
 
           <div className="row">

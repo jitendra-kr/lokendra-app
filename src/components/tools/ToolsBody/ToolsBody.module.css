@@ -1,8 +1,11 @@
 .bodyTitle {
     text-align: center;
+    font-size: 33px;
 }
 .bodyContent {
+    font-size: medium;
     color: lightslategray;
     text-align: center;
     line-height: 0%;
+    font-size: 17px;
 }

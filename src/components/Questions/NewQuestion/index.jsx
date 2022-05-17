@@ -179,7 +179,7 @@ class NewQuestion extends React.Component {
   render() {
     if (this.state.data.title || !this.state._id) {
       return (
-        <Content className="padding-right-30">
+        <Content className="padding-right-30 content-padding-left">
           <AppHead data={{ title: "Ask Question" }} />
               {!this.state._id ? (
                 <React.Fragment>
