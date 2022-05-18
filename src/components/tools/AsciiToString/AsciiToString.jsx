@@ -2,7 +2,7 @@ import { Layout } from "antd";
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import Link from "next/link"
-import AppHead from "../../Head/head";
+import { OfflineMetaTags } from "../../common";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
@@ -67,11 +67,7 @@ function AsciiToString() {
   return (
     <>
       <Content >
-        <AppHead data={{
-          title: "convert ascii to string | ASCII to text converter - online string tools",
-          meta_description: "Useful, Simple and free online tool that converts ASCII codes to string or plain text to in easy steps. Just type your text and it will convert to ASCII",
-          url
-        }} />
+        <OfflineMetaTags />
 
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />

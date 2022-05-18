@@ -2,7 +2,7 @@ import { Input, Layout, Button, Form, notification } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import AppHead from "../../Head/head";
+import { OfflineMetaTags } from "../../common";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
@@ -58,24 +58,19 @@ function StringToAscii() {
   return (
     <>
       <Content >
-        <AppHead data={{
-          title: "convert string to ascii | text to ASCII converter - online string tools",
-          meta_description: "Useful, Simple and free online tool that converts string or plain text to ASCII codes in easy steps. Just type your text and it will convert to ASCII",
-          url
-        }} />
-
+        <OfflineMetaTags />
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6" >
-            <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder = {'Please enter text  to convert'} />
+            <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder={'Please enter text  to convert'} />
             <div>
               Want to convert ASCII to text ? use
               <Link href="/tools/ascii-to-string" >&nbsp; ASCII to text converter </Link>
             </div>
           </div>
           <div className="col-lg-6" >
-          <ConvertedOutputByTools content = {byte.join(" ")} copyToClipboardCb = {copyToClipboard} copyToText = {copyToText}/>
-          
+            <ConvertedOutputByTools content={byte.join(" ")} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
+
           </div>
         </div>
         <ToolsList />

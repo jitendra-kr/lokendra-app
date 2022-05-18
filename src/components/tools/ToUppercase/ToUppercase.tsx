@@ -10,6 +10,7 @@ import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
+import { OfflineMetaTags } from "../../common";
 
 const { Content } = Layout;
 
@@ -53,11 +54,7 @@ function ToUppercase() {
   return (
     <>
       <Content >
-        <AppHead data={{
-          title: "Text to Uppercase converter - online string tools",
-          meta_description: "Useful, Simple and free online tool that converts text to uppercase in easy steps. Just type your text and it will convert to uppercase",
-          url
-        }} />
+      <OfflineMetaTags />
 
         <div className={`${styles.mainDiv} row`}>
         <ToolsBody />

@@ -2,7 +2,6 @@ import { Input, Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
@@ -10,6 +9,7 @@ import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
+import { OfflineMetaTags } from "../../common";
 const { Content } = Layout;
 
 function JsonToString() {
@@ -59,12 +59,7 @@ function JsonToString() {
   return (
     <>
       <Content>
-        <AppHead data={{
-          title: "convert JSON to string online",
-          meta_description: "Useful, Simple and free online tool that converts JSON to string in easy steps. Our tool can convert multiline content with full accuracy. Just type your JSON and it will convert to string",
-          url
-        }} />
-
+      <OfflineMetaTags />
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6" >

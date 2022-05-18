@@ -2,7 +2,6 @@ import { Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetUrl } from "../../../hooks";
 import { messageSuccess } from "../../../utils"
@@ -11,6 +10,7 @@ import { ToolsList } from "../ToolsList/ToolsList";
 import { JsonViewer } from "../JsonViewer";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { ToolsBody } from "../ToolsBody";
+import { OfflineMetaTags } from "../../common";
 const { Content } = Layout;
 
 function JsonParser() {
@@ -62,12 +62,7 @@ function JsonParser() {
 
   return (
     <Content>
-      <AppHead data={{
-      title: "JSON parser online",
-      meta_description: "Useful, Simple, free and secure online JSON Parser tool. Processing is being done locally without sending any data to the server. Our tool can convert multiline with full accuracy. Just type your JSON and tool will parse it",
-      url
-    }} />
-
+      <OfflineMetaTags />
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >

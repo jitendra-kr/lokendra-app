@@ -6,6 +6,7 @@ import AppHead from "../../Head/head";
 import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData"
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
+import { OfflineMetaTags } from "../../common";
 
 export const ToolsList = () => {
     const { isHome, pathname } = useGetUrlPath();
@@ -20,11 +21,7 @@ export const ToolsList = () => {
 
     return (
         <>
-            {pathname === "/tools" && <AppHead data={{
-                title: "Developer Tools",
-                meta_description: "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more",
-                url
-            }} />}
+            {pathname === "/tools" && <OfflineMetaTags />}
             <div className={`${isHome || pathname === "/tools" ? styles.home : styles.otherTools} row content-padding-left`}>
                 <h1 className={`${isHome ? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
