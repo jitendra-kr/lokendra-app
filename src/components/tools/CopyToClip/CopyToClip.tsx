@@ -7,7 +7,6 @@ export type CopyToClipProps = {
     copyToText: string
 }
 export const CopyToClip = ({ content, copyToClipboardCb, copyToText }: CopyToClipProps) => {
-    console.log(typeof content === "object" || content.length > 0)
     return <>
         <div className={styles.container}>
             {(typeof content === "object" || content.length > 0) && <p onClick={copyToClipboardCb} className={styles.CopyToClipboardTxt}>{copyToText}</p>}

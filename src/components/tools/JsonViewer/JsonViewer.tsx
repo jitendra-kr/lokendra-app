@@ -132,7 +132,10 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
         <CopyToClip content={content} copyToClipboardCb={copyToClipboardCb} copyToText={copyToText} />
         <div className={styles.container} >
             {
-                !content ? <></> : content === STRING_CONSTANTS.tools.invalidJson ? <span className={styles.invalidJson} >{content}</span> : <ReactJson src={content} iconStyle={"square"} name={false} />
+                !content ? <></> :
+                    content === STRING_CONSTANTS.tools.invalidJson ?
+                        <span className={styles.invalidJson} >{content}</span> :
+                        <ReactJson style={{padding: 20}} src={content} iconStyle={"square"} name={false} />
             }
         </div>
     </>

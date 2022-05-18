@@ -1,7 +1,6 @@
-import { Input, Layout } from "antd";
+import { Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
-// import JSONBig from 'json-bigint';
 import React, { useState, useEffect } from "react";
 import AppHead from "../../Head/head";
 import styles from "../../../../styles/StringToAscii.module.css";
@@ -32,7 +31,7 @@ function JsonParser() {
 
   function isJsonString(str: string) {
     try {
-      const data = JSON.parse(str) 
+      const data = JSON.parse(str)
       if (typeof data === "number") {
         throw "Invalid JSO"
       }
@@ -40,11 +39,11 @@ function JsonParser() {
       setByte(STRING_CONSTANTS.tools.invalidJson)
       return false;
     }
-    setByte(JSON.parse(str));  
+    setByte(JSON.parse(str));
     return true;
   }
 
-  const onChange = (value: string) => {  };
+  const onChange = (value: string) => { };
 
   const copyToClipboard = () => {
     try {
@@ -62,39 +61,37 @@ function JsonParser() {
   }, [copyToText]);
 
   return (
-    <>
-      <Content>
-        <AppHead data={{
-          title: "JSON parser online",
-          meta_description: "Useful, Simple, free and secure online JSON Parser. Processing is being done locally without sending any data to the server. Our tool can convert multiline content with full accuracy. Just type your JSON and it will convert to string",
-          url
-        }} />
+    <Content>
+      <AppHead data={{
+      title: "JSON parser online",
+      meta_description: "Useful, Simple, free and secure online JSON Parser tool. Processing is being done locally without sending any data to the server. Our tool can convert multiline with full accuracy. Just type your JSON and tool will parse it",
+      url
+    }} />
 
-        <div className={`${styles.mainDiv} row`}>
-          <ToolsBody/>
-          <div className="col-lg-6" >
-            <InputToConvertByTools rules={[{ required: true, message: "Please enter" }, {
-              validator: async (_: any, value: any) => {
-                if (!isJsonString(value)) {                  
-                  return Promise.reject('Please enter valid JSON!');
-                } else {
-                  return Promise.resolve()
-                }
+      <div className={`${styles.mainDiv} row`}>
+        <ToolsBody />
+        <div className="col-lg-6" >
+          <InputToConvertByTools rules={[{ required: true, message: "Please enter" }, {
+            validator: async (_: any, value: any) => {
+              if (!isJsonString(value)) {
+                return Promise.reject('Please enter valid JSON!');
+              } else {
+                return Promise.resolve()
               }
-            }]} onChangeCb={onChange} placeholder={'Please enter'} />
-            <div >
-              Want to stringify JSON ? use
-              <Link href="/tools/json-to-string" >&nbsp; stringify JSON </Link>
-            </div>
-          </div>
-          <div className="col-lg-6" >
-            <JsonViewer content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
+            }
+          }]} onChangeCb={onChange} placeholder={'Please enter'} />
+          <div >
+            Want to stringify JSON ? use
+            <Link href="/tools/json-to-string" >&nbsp; stringify JSON </Link>
           </div>
         </div>
-        <ToolsList />
+        <div className="col-lg-6" >
+          <JsonViewer content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
+        </div>
+      </div>
+      <ToolsList />
 
-      </Content>
-    </>
+    </Content>
   );
 }
 

@@ -5,10 +5,11 @@ import { useRouter } from 'next/router'
 import AppHead from "../../Head/head";
 import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData"
-import { useGetUrlPath } from "../../../hooks";
+import { useGetUrl, useGetUrlPath } from "../../../hooks";
 
 export const ToolsList = () => {
-  const { isHome, pathname } = useGetUrlPath();
+    const { isHome, pathname } = useGetUrlPath();
+    const { url } = useGetUrl();
 
     const router = useRouter()
     const handleClick = (item: ITools) => {
@@ -19,9 +20,13 @@ export const ToolsList = () => {
 
     return (
         <>
-            <AppHead data={{}} />
+            {pathname === "/tools" && <AppHead data={{
+                title: "Developer Tools",
+                meta_description: "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more",
+                url
+            }} />}
             <div className={`${isHome || pathname === "/tools" ? styles.home : styles.otherTools} row content-padding-left`}>
-                <h1 className={`${isHome? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
+                <h1 className={`${isHome ? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
                     {toolsListData.map((item, i) => {
                         return (
