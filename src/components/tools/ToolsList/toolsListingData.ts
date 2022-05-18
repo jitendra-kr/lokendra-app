@@ -7,7 +7,8 @@ export interface ITools {
     heading: string;
     metaTitle: string;
     metaDescription: string;
-    content: string
+    content: string;
+    list: boolean;
 }
 
 interface IToolsArray extends Array<ITools> { }
@@ -18,7 +19,8 @@ export const toolsListData: IToolsArray = [{
     heading: " String to ASCII converter",
     content: "Just load your text, System will automatically convert it to ASCII codes",
     metaTitle: seoData.stringToAscii.title,
-    metaDescription: seoData.stringToAscii.description
+    metaDescription: seoData.stringToAscii.description,
+    list: true
 },
 {
     title: "ASCII to String",
@@ -26,7 +28,8 @@ export const toolsListData: IToolsArray = [{
     heading: " ASCII to String converter",
     content: "Just load your ASCII code, System will automatically convert it to text",
     metaTitle: seoData.asciiToString.title,
-    metaDescription: seoData.asciiToString.description
+    metaDescription: seoData.asciiToString.description,
+    list: true
 },
 {
     title: "JSON to String",
@@ -34,7 +37,8 @@ export const toolsListData: IToolsArray = [{
     heading: "  JSON to string converter",
     content: "Just load your JSON, System will automatically it to JSON string or text",
     metaTitle: seoData.jsonToString.title,
-    metaDescription: seoData.jsonToString.description
+    metaDescription: seoData.jsonToString.description,
+    list: true
 },
 {
     title: "JSON parser",
@@ -42,8 +46,8 @@ export const toolsListData: IToolsArray = [{
     heading: "JSON Parser Online",
     content: "Just load your JSON, System will automatically parse it",
     metaTitle: seoData.jsonParser.title,
-    metaDescription: seoData.jsonParser.description
-
+    metaDescription: seoData.jsonParser.description,
+    list: true
 },
 {
     title: "Text to Uppercase",
@@ -51,7 +55,8 @@ export const toolsListData: IToolsArray = [{
     heading: "Uppercase Text converter",
     content: "Just load your text, System will automatically convert it to upper case text",
     metaTitle: seoData.toUppercase.title,
-    metaDescription: seoData.toUppercase.description
+    metaDescription: seoData.toUppercase.description,
+    list: true
 },
 {
     title: "Text to Lowercase",
@@ -59,7 +64,8 @@ export const toolsListData: IToolsArray = [{
     heading: "Lowercase Text converter",
     content: " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toLowercase.title,
-    metaDescription: seoData.toLowercase.description
+    metaDescription: seoData.toLowercase.description,
+    list: true
 },
 {
     title: "Tools",
@@ -67,6 +73,7 @@ export const toolsListData: IToolsArray = [{
     heading: "Tools",
     content: " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toolsList.title,
-    metaDescription: seoData.toolsList.description
+    metaDescription: seoData.toolsList.description,
+    list: false
 }
 ]

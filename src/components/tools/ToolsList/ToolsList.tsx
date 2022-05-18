@@ -10,22 +10,21 @@ import { OfflineMetaTags } from "../../common";
 
 export const ToolsList = () => {
     const { isHome, pathname } = useGetUrlPath();
-    const { url } = useGetUrl();
-
+    const data = toolsListData.filter((tool) => tool.list) 
+    
     const router = useRouter()
     const handleClick = (item: ITools) => {
         router.push(item.link);
     };
 
     const heading = isHome || pathname === "/tools" ? "Tools" : "Other tools"
-
     return (
         <>
             {pathname === "/tools" && <OfflineMetaTags />}
             <div className={`${isHome || pathname === "/tools" ? styles.home : styles.otherTools} row content-padding-left`}>
                 <h1 className={`${isHome ? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">
-                    {toolsListData.map((item, i) => {
+                    {data.map((item, i) => {
                         return (
                             <div
                                 className="col-lg-3 cursor-pointer"
