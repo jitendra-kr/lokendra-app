@@ -1,6 +1,9 @@
 .input {
     height: 100vh !important;
     margin-top: 29px;
+    font-size: 25px;
+    line-height: 2.5 !important;
+    padding-left: 20px !important;
 }
 .buttonRightLink {
     margin-bottom: 25px;
