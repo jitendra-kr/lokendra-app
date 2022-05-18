@@ -1,0 +1,30 @@
+{
+    "asciiToString": {
+        "title" : "convert ascii to string | ASCII to text converter - online string tools",
+        "description": "Useful, Simple and free online tool that converts ASCII codes to string or plain text to in easy steps. Just type your text and it will convert to ASCII"
+    },
+    "jsonParser": {
+        "title" : "JSON parser online",
+        "description": "Useful, Simple, free and secure online JSON Parser tool. Processing is being done locally without sending any data to the server. Our tool can convert multiline with full accuracy. Just type your JSON and tool will parse it"
+    },
+    "jsonToString": {
+        "title" : "convert JSON to string online",
+        "description": "Useful, Simple and free online tool that converts JSON to string in easy steps. Our tool can convert multiline content with full accuracy. Just type your JSON and it will convert to string"
+    },
+    "stringToAscii": {
+        "title" : "convert string to ascii | text to ASCII converter - online string tools",
+        "description": "Useful, Simple and free online tool that converts string or plain text to ASCII codes in easy steps. Just type your text and it will convert to ASCII"
+    },
+    "toLowercase": {
+        "title" : "Text to Lowercase converter - online string tools",
+        "description": "Useful, Simple and free online tool that converts text to lowercase in easy steps. Just type your text and it will convert to lowercase"
+    },
+    "toUppercase": {
+        "title" : "Text to Uppercase converter - online string tools",
+        "description": "Useful, Simple and free online tool that converts text to uppercase in easy steps. Just type your text and it will convert to uppercase"
+    },
+    "toolsList": {
+        "title" : "Developer Tools",
+        "description": "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more"
+    }
+}
