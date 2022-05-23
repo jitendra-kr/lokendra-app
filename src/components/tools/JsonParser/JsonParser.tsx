@@ -30,7 +30,14 @@ function JsonParser() {
   }
 
   function isJsonString(str: string) {
+    console.log(str);
     try {
+      str = str.replaceAll(": [Object]", `: "Object"`);
+      str =  str.replace(/: [Object]/g, '"Object"');
+      str = str.replace(/'/g, '"');
+
+    console.log(str);
+
       const data = JSON.parse(str)
       if (typeof data === "number") {
         throw "Invalid JSO"

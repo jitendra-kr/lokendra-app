@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic'
+import { JSONTree, StylingValue } from 'react-json-tree';
+
 const ReactJson = dynamic(import('react-json-view'), { ssr: false });
 import styles from "./JsonViewer.module.css";
 import { STRING_CONSTANTS } from '../../../constants';
@@ -127,6 +129,58 @@ type JsonViewerProps = {
 }
 
 export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewerProps) => {
+    const json = {
+        // array: [1, 2, 3],
+        // bool: true,
+        "detail": {
+            "foo": 'bar',
+        },
+        "branch_id": "2314010"
+        // immutable: Map({ key: 'value' }),
+    };
+    const theme = {
+        scheme: 'monokai',
+        author: 'wimer hazenberg (http://www.monokai.nl)',
+        base00: '#272822',
+        base01: '#383830',
+        base02: '#49483e',
+        base03: '#75715e',
+        base04: '#a59f85',
+        base05: '#f8f8f2',
+        base06: '#f5f4f1',
+        base07: '#f9f8f5',
+        base08: '#f92672',
+        base09: '#fd971f',
+        base0A: '#f4bf75',
+        base0B: '#a6e22e',
+        base0C: '#a1efe4',
+        base0D: '#66d9ef',
+        base0E: '#ae81ff',
+        base0F: '#cc6633',
+    };
+    const getLabelStyle: StylingValue = ({ style }, nodeType, expanded) => ({
+        style: {
+            ...style,
+            textTransform: expanded ? 'uppercase' : style!.textTransform,
+        },
+    });
+    const getBoolStyle: StylingValue = ({ style }, nodeType) => ({
+        style: {
+            ...style,
+            border: nodeType === 'Boolean' ? '1px solid #DD3333' : style!.border,
+            borderRadius: nodeType === 'Boolean' ? 3 : style!.borderRadius,
+        },
+    });
+    const getValueLabelStyle: StylingValue = ({ style }, nodeType, keyPath) => ({
+        style: {
+            ...style,
+            color:
+                !Number.isNaN((keyPath as unknown[])[0]) &&
+                    !(parseInt(keyPath as string, 10) % 2)
+                    ? '#33F'
+                    : style!.color,
+        },
+    });
 
     return <>
         <CopyToClip content={content} copyToClipboardCb={copyToClipboardCb} copyToText={copyToText} />
@@ -135,7 +189,31 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
                 !content ? <></> :
                     content === STRING_CONSTANTS.tools.invalidJson ?
                         <span className={styles.invalidJson} >{content}</span> :
-                        <ReactJson style={{padding: 20}} src={content} iconStyle={"square"} name={false} />
+                        <>
+                            <ReactJson style={{ padding: 20 }} src={content} iconStyle={"square"} name={false} />
+                            <JSONTree
+                                data={content}
+                                labelRenderer={([raw]) => <span className={styles.keyValues}>{raw}:</span>}
+                                valueRenderer={(raw) => (
+                                    <em>
+                                        <span className={styles.keyValues}>
+                                            {typeof raw}
+                                        </span>{' '}
+                                        <span className={`${styles.keyValues} ${styles.boolean}`}>
+                                            {raw}
+                                        </span>
+                                    </em>
+                                )}
+                                theme={{
+                                    extend: theme,
+                                    // nestedNodeLabel: getLabelStyle,
+                                    // value: getBoolStyle,
+                                    // valueLabel: getValueLabelStyle,
+                                }}
+                                shouldExpandNode={() => true}
+                                hideRoot={true}
+                            />
+                        </>
             }
         </div>
     </>
