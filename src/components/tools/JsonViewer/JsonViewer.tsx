@@ -129,15 +129,6 @@ type JsonViewerProps = {
 }
 
 export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewerProps) => {
-    const json = {
-        // array: [1, 2, 3],
-        // bool: true,
-        "detail": {
-            "foo": 'bar',
-        },
-        "branch_id": "2314010"
-        // immutable: Map({ key: 'value' }),
-    };
     const theme = {
         scheme: 'monokai',
         author: 'wimer hazenberg (http://www.monokai.nl)',
@@ -158,29 +149,33 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
         base0E: '#ae81ff',
         base0F: '#cc6633',
     };
-    const getLabelStyle: StylingValue = ({ style }, nodeType, expanded) => ({
-        style: {
-            ...style,
-            textTransform: expanded ? 'uppercase' : style!.textTransform,
-        },
-    });
-    const getBoolStyle: StylingValue = ({ style }, nodeType) => ({
-        style: {
-            ...style,
-            border: nodeType === 'Boolean' ? '1px solid #DD3333' : style!.border,
-            borderRadius: nodeType === 'Boolean' ? 3 : style!.borderRadius,
-        },
-    });
-    const getValueLabelStyle: StylingValue = ({ style }, nodeType, keyPath) => ({
-        style: {
-            ...style,
-            color:
-                !Number.isNaN((keyPath as unknown[])[0]) &&
-                    !(parseInt(keyPath as string, 10) % 2)
-                    ? '#33F'
-                    : style!.color,
-        },
-    });
+
+    const valueColor: any = {
+        boolean: "boolean",
+        number: "number",
+        string: "string"
+    }
+
+    const typeOf = (value: any) => {
+        if (value === "true" || value === "false") {
+            return "boolean"
+        }
+        return typeof value
+    }
+
+    const isNativeArrayOrObj = (value: string) => {
+        return value === `"${STRING_CONSTANTS.tools.internalArray}"` || value === `"${STRING_CONSTANTS.tools.internalObject}"`
+    }
+
+    const nativeArrayOrObj = (value: string) => {
+        if(value === `"${STRING_CONSTANTS.tools.internalArray}"`) {
+            return "Array"
+        } else if (value === `"${STRING_CONSTANTS.tools.internalObject}"`) {
+            return "Object"
+        } else {
+            return "Invalid value"
+        }
+    }
 
     return <>
         <CopyToClip content={content} copyToClipboardCb={copyToClipboardCb} copyToText={copyToText} />
@@ -190,29 +185,38 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
                     content === STRING_CONSTANTS.tools.invalidJson ?
                         <span className={styles.invalidJson} >{content}</span> :
                         <>
-                            <ReactJson style={{ padding: 20 }} src={content} iconStyle={"square"} name={false} />
+
+                            {/* &#123; */}
                             <JSONTree
                                 data={content}
-                                labelRenderer={([raw]) => <span className={styles.keyValues}>{raw}:</span>}
-                                valueRenderer={(raw) => (
+                                labelRenderer={([raw]) => <span className={styles.keyValues}>"{raw}":</span>}
+                                valueRenderer={(raw: any) => (
                                     <em>
-                                        <span className={styles.keyValues}>
-                                            {typeof raw}
+                                        <span className={`${styles.keyValues} ${styles.dataTypeLabel}`}>
+                                            {!isNativeArrayOrObj(raw) ?  typeOf(raw) : ""}
                                         </span>{' '}
-                                        <span className={`${styles.keyValues} ${styles.boolean}`}>
-                                            {raw}
+                                        <span className={`${styles.keyValues} ${styles[valueColor[typeOf(raw)]]}`}>
+                                            {!isNativeArrayOrObj(raw) ? raw : 
+                                            <>
+                                            <span className={styles.invalidValues} >
+                                               { nativeArrayOrObj(raw)}
+                                            </span>
+                                            <span className={styles.SyntaxError}> &#60;--------SyntaxError</span>
+                                            </>
+                                             }
                                         </span>
                                     </em>
                                 )}
                                 theme={{
                                     extend: theme,
-                                    // nestedNodeLabel: getLabelStyle,
-                                    // value: getBoolStyle,
-                                    // valueLabel: getValueLabelStyle,
                                 }}
                                 shouldExpandNode={() => true}
+
                                 hideRoot={true}
                             />
+                            {/* &#125; */}
+                            {/* <ReactJson style={{ padding: 20 }} src={content} iconStyle={"square"} name={false} /> */}
+
                         </>
             }
         </div>

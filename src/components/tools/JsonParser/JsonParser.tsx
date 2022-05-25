@@ -19,7 +19,6 @@ function JsonParser() {
   const copiedToClip = "Copied to clipboard";
   const [copyToText, setCopyTotext] = useState(copyToClip)
   const [byte, setByte] = useState<string>("");
-  const { url } = useGetUrl();
 
   const updateCopytext = () => {
     if (copyToText === copiedToClip) {
@@ -30,18 +29,19 @@ function JsonParser() {
   }
 
   function isJsonString(str: string) {
-    console.log(str);
+
     try {
-      str = str.replaceAll(": [Object]", `: "Object"`);
-      str =  str.replace(/: [Object]/g, '"Object"');
-      str = str.replace(/'/g, '"');
 
-    console.log(str);
+      str = str.replace(/\r?\n?\s/g, '');
+      str = str.replaceAll(/\b(Object)\b/g, `"${STRING_CONSTANTS.tools.internalObject}"`);
+      str = str.replaceAll(/\b(Array)\b/g, `"${STRING_CONSTANTS.tools.internalArray}"`);
+      console.log(str);
 
-      const data = JSON.parse(str)
+      const data = JSON.parse(str);
       if (typeof data === "number") {
-        throw "Invalid JSO"
+        throw "Invalid JSON"
       }
+      
     } catch (e) {
       setByte(STRING_CONSTANTS.tools.invalidJson)
       return false;
@@ -50,7 +50,7 @@ function JsonParser() {
     return true;
   }
 
-  const onChange = (value: string) => { };
+  const onChange = () => { };
 
   const copyToClipboard = () => {
     try {
