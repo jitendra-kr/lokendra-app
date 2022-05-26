@@ -4,12 +4,10 @@ import styles from "./ConvertedOutputByTools.module.css";
 
 export type ConvertedOutputByToolsProps = {
     content: string;
-    copyToClipboardCb:() => void;
-    copyToText: string
 }
-export const ConvertedOutputByTools = ({ content, copyToClipboardCb, copyToText }: ConvertedOutputByToolsProps) => {
+export const ConvertedOutputByTools = ({ content }: ConvertedOutputByToolsProps) => {
     return <>
-         <CopyToClip content = {content} copyToClipboardCb={copyToClipboardCb} copyToText = {copyToText}/>
+         <CopyToClip content = {content} />
         {<div className={styles.asciiDiv} >
             <h3 className={styles.asciiCode} >{content}</h3>
         </div>}

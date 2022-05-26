@@ -2,10 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
-import AppHead from "../../Head/head";
 import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData"
-import { useGetUrl, useGetUrlPath } from "../../../hooks";
+import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags } from "../../common";
 
 export const ToolsList = () => {

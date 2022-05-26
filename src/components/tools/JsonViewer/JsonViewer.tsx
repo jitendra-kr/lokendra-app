@@ -1,38 +1,17 @@
 import dynamic from 'next/dynamic'
-import { JSONTree, StylingValue } from 'react-json-tree';
-
-const ReactJson = dynamic(import('react-json-view'), { ssr: false });
+import { JSONTree } from 'react-json-tree';
+// const ReactJson = dynamic(import('react-json-view'), { ssr: false });
 import styles from "./JsonViewer.module.css";
 import { STRING_CONSTANTS } from '../../../constants';
 import { CopyToClip } from '../CopyToClip';
+import { JSONTreeTheme } from './editorTheme';
+import { isArray } from "lodash"
 
 type JsonViewerProps = {
     content: any;
-    copyToClipboardCb: () => void;
-    copyToText: string
 }
 
-export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewerProps) => {
-    const theme = {
-        scheme: 'monokai',
-        author: 'wimer hazenberg (http://www.monokai.nl)',
-        base00: '#272822',
-        base01: '#383830',
-        base02: '#49483e',
-        base03: '#75715e',
-        base04: '#a59f85',
-        base05: '#f8f8f2',
-        base06: '#f5f4f1',
-        base07: '#f9f8f5',
-        base08: '#f92672',
-        base09: '#fd971f',
-        base0A: '#f4bf75',
-        base0B: '#a6e22e',
-        base0C: '#a1efe4',
-        base0D: '#66d9ef',
-        base0E: '#ae81ff',
-        base0F: '#cc6633',
-    };
+export const JsonViewer = ({ content }: JsonViewerProps) => {    
 
     const valueColor: any = {
         boolean: "boolean",
@@ -62,15 +41,14 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
     }
 
     return <>
-        <CopyToClip content={content} copyToClipboardCb={copyToClipboardCb} copyToText={copyToText} />
+        <CopyToClip content={content} />
         <div className={styles.container} >
             {
                 !content ? <></> :
                     content === STRING_CONSTANTS.tools.invalidJson ?
                         <span className={styles.invalidJson} >{content}</span> :
                         <>
-
-                            {/* &#123; */}
+                            {isArray(content) ? "[" : "{"}                           
                             <JSONTree
                                 data={content}
                                 labelRenderer={([raw]) => <span className={styles.keyValues}>"{raw}":</span>}
@@ -92,13 +70,13 @@ export const JsonViewer = ({ content, copyToClipboardCb, copyToText }: JsonViewe
                                     </em>
                                 )}
                                 theme={{
-                                    extend: theme,
+                                    extend: JSONTreeTheme,
                                 }}
                                 shouldExpandNode={() => true}
 
                                 hideRoot={true}
                             />
-                            {/* &#125; */}
+                            {isArray(content) ? "]" : "}"}
                             {/* <ReactJson style={{ padding: 20 }} src={content} iconStyle={"square"} name={false} /> */}
 
                         </>

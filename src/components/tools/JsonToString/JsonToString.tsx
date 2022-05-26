@@ -1,10 +1,8 @@
-import { Input, Layout } from "antd";
+import { Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { useGetUrl } from "../../../hooks";
-import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
@@ -14,19 +12,7 @@ const { Content } = Layout;
 
 function JsonToString() {
 
-  const copyToClip = "Copy to clipboard";
-  const copiedToClip = "Copied to clipboard";
-  const [copyToText, setCopyTotext] = useState(copyToClip)
   const [byte, setByte] = useState<string>("");
-  const { url } = useGetUrl();
-
-  const updateCopytext = () => {
-    if (copyToText === copiedToClip) {
-      setTimeout(() => {
-        setCopyTotext(copyToClip)
-      }, 3000);
-    }
-  }
 
   function isJsonString(str: string) {
     try {
@@ -41,20 +27,6 @@ function JsonToString() {
 
   const onChange = (value: string) => {  };
 
-  const copyToClipboard = () => {
-    try {
-      navigator.clipboard.writeText(byte).then(() => {
-        setCopyTotext(copiedToClip)
-        messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
-      })
-    } catch (e) {
-      alert("failed to copy")
-    }
-  }
-
-  useEffect(() => {
-    updateCopytext()
-  }, [copyToText]);
 
   return (
     <>
@@ -78,7 +50,7 @@ function JsonToString() {
             </div>
           </div>
           <div className="col-lg-6" >
-            <ConvertedOutputByTools content={byte} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
+            <ConvertedOutputByTools content={byte} />
           </div>
         </div>
         <ToolsList />

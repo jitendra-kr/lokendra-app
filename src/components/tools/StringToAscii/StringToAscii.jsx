@@ -1,11 +1,9 @@
-import { Input, Layout, Button, Form, notification } from "antd";
+import { Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { OfflineMetaTags } from "../../common";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { useGetUrl } from "../../../hooks";
-import { messageSuccess } from "../../../utils"
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsBody } from "../ToolsBody";
@@ -15,20 +13,8 @@ const { Content } = Layout;
 
 
 function StringToAscii() {
-  const copyToClip = "Copy to clipboard";
-  const copiedToClip = "Copied to clipboard";
 
-  const [copyToText, setCopyTotext] = useState(copyToClip)
   const [byte, setByte] = useState([]);
-  const { url } = useGetUrl();
-
-  const updateCopytext = () => {
-    if (copyToText === copiedToClip) {
-      setTimeout(() => {
-        setCopyTotext(copyToClip)
-      }, 3000);
-    }
-  }
 
   const textToASCIIConvert = (text) => {
     const utf8Encode = new TextEncoder();
@@ -40,42 +26,24 @@ function StringToAscii() {
     textToASCIIConvert(value)
   };
 
-  const copyToClipboard = () => {
-    try {
-      navigator.clipboard.writeText(byte.join(" ")).then(() => {
-        setCopyTotext(copiedToClip)
-        messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
-      })
-    } catch (e) {
-      alert("failed to copy")
-    }
-  }
-
-  useEffect(() => {
-    updateCopytext()
-  }, [copyToText]);
-
   return (
-    <>
-      <Content >
-        <OfflineMetaTags />
-        <div className={`${styles.mainDiv} row`}>
-          <ToolsBody />
-          <div className="col-lg-6" >
-            <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder={'Please enter text  to convert'} />
-            <div>
-              Want to convert ASCII to text ? use
-              <Link href="/tools/ascii-to-string" >&nbsp; ASCII to text converter </Link>
-            </div>
-          </div>
-          <div className="col-lg-6" >
-            <ConvertedOutputByTools content={byte.join(" ")} copyToClipboardCb={copyToClipboard} copyToText={copyToText} />
-
-          </div>
+    <Content >
+    <OfflineMetaTags />
+    <div className={`${styles.mainDiv} row`}>
+      <ToolsBody />
+      <div className="col-lg-6" >
+        <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder={'Please enter text  to convert'} />
+        <div>
+          Want to convert ASCII to text ? use
+          <Link href="/tools/ascii-to-string" >&nbsp; ASCII to text converter </Link>
         </div>
-        <ToolsList />
-      </Content>
-    </>
+      </div>
+      <div className="col-lg-6" >
+        <ConvertedOutputByTools content={byte.join(" ")}  />
+      </div>
+    </div>
+    <ToolsList />
+  </Content>
   );
 }
 
