@@ -22,6 +22,7 @@ export const CopyToClip = ({ content, copyToClipboardCb }: CopyToClipProps) => {
 
     const handleClick = () => {
         try {
+            content = typeof content === "object" ? JSON.stringify(content, null, 4) : content;
             navigator.clipboard.writeText(content).then(() => {
               messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
             })
