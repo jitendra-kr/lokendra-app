@@ -14,6 +14,7 @@ async function generateSiteMap() {
   const questionUrlsData = (await Axios.get(questionUrl)).data.result;
   const pagesList = await globby([
     'pages/**/*.js',
+    'pages/**/*.tsx',
     '!pages/_*.js',
     '!pages/blog/new-blog.js',
     '!pages/donate.js',
@@ -32,6 +33,7 @@ async function generateSiteMap() {
   for (let path of pagesList) {
     path = path.replace('pages', '')
       .replace('.js', '')
+      .replace('.tsx', '')
       .replace('.md', '')
       .replace('/index', '')
 
