@@ -8,13 +8,13 @@ import { messageSuccess } from "./antd";
     return text;
 };
 
-const inputFieldsLimit = {
+export const inputFieldsLimit = {
   firstName: 15,
   lastName: 15
 }
 
 
-const dateFormat = (date: Date ) => {
+export const dateFormat = (date: Date ) => {
   if (date) {
     const newDate = new Date(date);
     const month = newDate.toLocaleString("default", { month: "long" });
@@ -22,7 +22,7 @@ const dateFormat = (date: Date ) => {
   }
 }
 
-const getDefaultHeadValues = () => {
+export const getDefaultHeadValues = () => {
   return {
     url: window.location.href
   }
@@ -32,7 +32,7 @@ export const minifyJSON = (data: object) => {
   return JSON.stringify(jsonObject, null, 0)
 }
 
-export const copyToClipboard = (content: any) => {
+export const copyToClipboard = (content: any): void => {
   try {
     navigator.clipboard.writeText(content).then(() => {
       messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
@@ -40,12 +40,4 @@ export const copyToClipboard = (content: any) => {
   } catch (e) {
     alert("failed to copy")
   }
-}
-
-
-module.exports = {
-    getLimitedText,
-    inputFieldsLimit,
-    dateFormat,
-    getDefaultHeadValues
 }

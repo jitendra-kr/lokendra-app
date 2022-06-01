@@ -1,14 +1,12 @@
 
 import { useState } from "react";
-import { copyToClipboard } from "../../../utils";
+import { copyToClipboard } from "../../../utils"
 import styles from "./CopyToClip.module.css";
 
 export type CopyToClipProps = {
     content: string;
-    copyToClipboardCb?: () => void;
-    copyToText?: string
 }
-export const CopyToClip = ({ content, copyToClipboardCb }: CopyToClipProps) => {
+export const CopyToClip = ({ content }: CopyToClipProps) => {
     const copyToClip = "Copy to clipboard";
     const copiedToClip = "Copied to clipboard";
 
@@ -26,7 +24,6 @@ export const CopyToClip = ({ content, copyToClipboardCb }: CopyToClipProps) => {
             copyToClipboard(content)
             setText(copiedToClip)
             timerToChangeText()
-            copyToClipboardCb
         } catch (error) {
             console.log(error)
         }
