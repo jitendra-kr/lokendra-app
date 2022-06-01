@@ -8,7 +8,6 @@ export function OfflineMetaTags() {
     const { pathname } = useGetUrlPath();
     const { url } = useGetUrl();
 
-    console.log(url)
     const result = toolsListData.filter((obj) => {
         return obj.link === pathname;
     });

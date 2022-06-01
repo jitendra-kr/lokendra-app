@@ -1,0 +1,6 @@
+.share {
+    cursor: pointer;
+    background-color: aqua;
+    display: flex;
+    justify-content: flex-end;
+}

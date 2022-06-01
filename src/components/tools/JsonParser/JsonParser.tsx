@@ -9,6 +9,7 @@ import { JsonViewer } from "../JsonViewer";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
+import { ShareData } from "../ShareData";
 const { Content } = Layout;
 
 function JsonParser() {
@@ -21,7 +22,6 @@ function JsonParser() {
       str = str.replace(/\r?\n?\s/g, '');
       str = str.replaceAll(/\b(Object)\b/g, `"${STRING_CONSTANTS.tools.internalObject}"`);
       str = str.replaceAll(/\b(Array)\b/g, `"${STRING_CONSTANTS.tools.internalArray}"`);
-      console.log(str);
 
       const data = JSON.parse(str);
       if (typeof data === "number") {
@@ -43,6 +43,7 @@ function JsonParser() {
       <OfflineMetaTags />
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
+        {/* <ShareData data={byte} /> */}
         <div className="col-lg-6" >
           <InputToConvertByTools rules={[{ required: true, message: "Please enter" }, {
             validator: async (_: any, value: any) => {

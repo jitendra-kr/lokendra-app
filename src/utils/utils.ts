@@ -1,3 +1,5 @@
+import { messageSuccess } from "./antd";
+
  const getLimitedText = (text, limit) => {
     limit = limit ? limit : 63;
     if (text.length > limit) {
@@ -23,6 +25,20 @@ const dateFormat = (date) => {
 const getDefaultHeadValues = () => {
   return {
     url: window.location.href
+  }
+}
+export const minifyJSON = (data: object) => {
+  var jsonObject = JSON.stringify(data);
+  return JSON.stringify(jsonObject, null, 0)
+}
+
+export const copyToClipboard = (content: any) => {
+  try {
+    navigator.clipboard.writeText(content).then(() => {
+      messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
+    })
+  } catch (e) {
+    alert("failed to copy")
   }
 }
 

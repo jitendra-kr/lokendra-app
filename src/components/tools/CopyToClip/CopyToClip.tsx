@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { messageSuccess } from "../../../utils";
+import { copyToClipboard } from "../../../utils";
 import styles from "./CopyToClip.module.css";
 
 export type CopyToClipProps = {
@@ -23,15 +23,14 @@ export const CopyToClip = ({ content, copyToClipboardCb }: CopyToClipProps) => {
     const handleClick = () => {
         try {
             content = typeof content === "object" ? JSON.stringify(content, null, 4) : content;
-            navigator.clipboard.writeText(content).then(() => {
-              messageSuccess({ content: "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
-            })
-          } catch (e) {
-            alert("failed to copy")
-          }
-        setText(copiedToClip)
-        timerToChangeText()
-        copyToClipboardCb
+            copyToClipboard(content)
+            setText(copiedToClip)
+            timerToChangeText()
+            copyToClipboardCb
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return <>
