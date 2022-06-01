@@ -1,6 +1,6 @@
 import { messageSuccess } from "./antd";
 
- const getLimitedText = (text, limit) => {
+ const getLimitedText = (text: string, limit: number) => {
     limit = limit ? limit : 63;
     if (text.length > limit) {
       return text.substring(0, limit) + " ... ";
@@ -14,7 +14,7 @@ const inputFieldsLimit = {
 }
 
 
-const dateFormat = (date) => {
+const dateFormat = (date: Date ) => {
   if (date) {
     const newDate = new Date(date);
     const month = newDate.toLocaleString("default", { month: "long" });

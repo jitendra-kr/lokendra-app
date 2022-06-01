@@ -18,7 +18,7 @@ import {
   messageLoading,
 } from "../../../utils/antd";
 import DataNoFound from "../../DataNoFound";
-import { isLoggedIn, getUser, getLimitedText } from "../../../utils/index";
+import { isLoggedIn, getUser } from "../../../utils/index";
 import AppHead from "../../Head/head";
 import styles from "../../../../styles/QuestionList.module.css";
 const { Content } = Layout;
