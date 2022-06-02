@@ -20,8 +20,9 @@ function AsciiToString() {
   function asciiToSentence(str: any) {
     let sentence = "";
     var num = 0;
+    let zero: any = '0';
     for (var i = 0; i < str.length; i++) {
-      num = num * 10 + (str[i] - '0');
+      num = num * 10 + (str[i] - zero);
       if (num >= 32 && num <= 122) {
         var ch = String.fromCharCode(num);
         sentence += ch;
