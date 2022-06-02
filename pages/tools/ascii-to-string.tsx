@@ -1,4 +1,4 @@
-import { AsciiToString } from "../../src/components";
+import {AsciiToString} from "../../src/components";
 
 function AsciiToStringPage() {
     return <AsciiToString />

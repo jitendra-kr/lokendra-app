@@ -1,25 +1,28 @@
 import { Layout } from "antd";
 import Link from "next/link"
 import { withRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
+import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 
 const { Content } = Layout;
 
 function ToUppercase() {
-
+  const { value } = useGetToolsInput()
   const [byte, setByte] = useState<string>("");
 
-  const onChange = (value: string) => {
+  useEffect(() => {
     if (value) {
       setByte(value.toUpperCase());
+    } else {
+      setByte("")
     }
-  };
+  }, [value]);
 
   return (
     <Content >
@@ -27,7 +30,7 @@ function ToUppercase() {
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >
-          <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={onChange} placeholder={'Please enter text  to convert'} />
+          <InputToConvertByTools rules={[{ required: true, message: "Please enter text !" }]} onChangeCb={() => {}} />
           <div>
             Want to convert to Lowercase ? use
             <Link href="/tools/text-to-lowercase" >&nbsp; Lowercase converter </Link>

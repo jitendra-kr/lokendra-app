@@ -4,7 +4,8 @@ import 'antd/dist/antd.css';
 
 import React, { useState } from 'react';
 import Router from 'next/router';
-
+import { Provider } from 'react-redux'
+import { store } from "../src/common/state"
 import axios from "axios";
 import { sample } from "lodash";
 import { LoadingOutlined } from '@ant-design/icons';
@@ -79,6 +80,7 @@ export default function MyApp({ Component, pageProps }) {
 
     <Layout>
       <Spin indicator={antIcon} className="center-loader" spinning={loader} />
+      <Provider store={store} >      
       <UserContext.Provider value={[user, setUser]}>
         <MainHeader />
         <div className="row">
@@ -90,6 +92,7 @@ export default function MyApp({ Component, pageProps }) {
           </div>
         </div>
       </UserContext.Provider>
+      </Provider>
       <MainFooter />
     </Layout>
   )

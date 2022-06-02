@@ -1,11 +1,10 @@
-import dynamic from 'next/dynamic'
 import { JSONTree } from 'react-json-tree';
-// const ReactJson = dynamic(import('react-json-view'), { ssr: false });
 import styles from "./JsonViewer.module.css";
 import { STRING_CONSTANTS } from '../../../constants';
-import { CopyToClip } from '../CopyToClip';
 import { JSONTreeTheme } from './editorTheme';
 import { isArray } from "lodash"
+import { ToolOutputActions } from '../ToolOutputActions';
+import { useGetToolsInput } from '../../../hooks/useGetToolsInput';
 
 type JsonViewerProps = {
     content: any;
@@ -41,7 +40,7 @@ export const JsonViewer = ({ content }: JsonViewerProps) => {
     }
 
     return <>
-        <CopyToClip content={content} />
+        <ToolOutputActions content={content} />
         <div className={styles.container} >
             {
                 !content ? <></> :

@@ -1,5 +1,8 @@
 .container {
-    height: 29px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .CopyToClipboardTxt {

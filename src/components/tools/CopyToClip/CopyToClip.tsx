@@ -1,7 +1,11 @@
 
+import { Button } from "antd";
 import { useState } from "react";
 import { copyToClipboard } from "../../../utils"
 import styles from "./CopyToClip.module.css";
+import {
+    CopyOutlined
+} from "@ant-design/icons";
 
 export type CopyToClipProps = {
     content: string;
@@ -32,7 +36,7 @@ export const CopyToClip = ({ content }: CopyToClipProps) => {
 
     return <>
         <div className={styles.container}>
-            {(typeof content === "object" || content.length > 0) && <p onClick={handleClick} className={styles.CopyToClipboardTxt}>{text}</p>}
+            {(typeof content === "object" || content.length > 0) && <Button type="primary" onClick={handleClick} shape="circle" icon={<CopyOutlined />} size={"small"} />}
         </div>
     </>
 }

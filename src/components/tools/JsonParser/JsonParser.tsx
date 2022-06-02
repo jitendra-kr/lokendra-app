@@ -36,14 +36,11 @@ function JsonParser() {
     return true;
   }
 
-  const onChange = () => { };
-
   return (
     <Content>
       <OfflineMetaTags />
-      <div className={`${styles.mainDiv} row`}>
+      <div className={`${styles.mainDiv} row`}>        
         <ToolsBody />
-        {/* <ShareData data={byte} /> */}
         <div className="col-lg-6" >
           <InputToConvertByTools rules={[{ required: true, message: "Please enter" }, {
             validator: async (_: any, value: any) => {
@@ -53,7 +50,7 @@ function JsonParser() {
                 return Promise.resolve()
               }
             }
-          }]} onChangeCb={onChange} placeholder={'Please enter'} />
+          }]} onChangeCb={isJsonString} />
           <div >
             Want to stringify JSON ? use
             <Link href="/tools/json-to-string" >&nbsp; stringify JSON </Link>

@@ -9,17 +9,15 @@ import { InputToConvertByTools } from "../InputToConvertByTools";
 import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
 import { ToolsList } from "../ToolsList";
+import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
+
 
 function AsciiToString() {
 
+  const { value } = useGetToolsInput()
   const [byte, setByte] = useState("");
 
-  const onChange = (value) => {
-    const string = asciiToSentence(value);
-    setByte(string);
-  };
-
-  function asciiToSentence(str) {
+  function asciiToSentence(str: any) {
     let sentence = "";
     var num = 0;
     for (var i = 0; i < str.length; i++) {
@@ -33,6 +31,15 @@ function AsciiToString() {
     return sentence;
   }
 
+  useEffect(() => {
+    if (value) {
+      const string = asciiToSentence(value);
+      setByte(string);
+    } else {
+      setByte("")
+    }
+  }, [value]);
+
 
   return (
     <>
@@ -42,7 +49,7 @@ function AsciiToString() {
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6" >
-            <InputToConvertByTools rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={onChange} placeholder={'Please enter ASCII'} />
+            <InputToConvertByTools rules={[{ required: true, message: "Please enter ASCII codes to convert!" }]} onChangeCb={() => {}} />
             <div>
               Want to convert Text to ASCII? use
               <Link href="/tools/string-to-ascii">&nbsp;Text to ASCII converter </Link>

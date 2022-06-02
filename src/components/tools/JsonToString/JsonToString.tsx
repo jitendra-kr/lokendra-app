@@ -43,7 +43,7 @@ function JsonToString() {
                   return Promise.resolve()
                 }
               }
-            }]} onChangeCb={onChange} placeholder={'Please enter JSON to convertt'} />
+            }]} onChangeCb={isJsonString} />
             <div >
               Want to parse JSON ? use
               <Link href="/tools/json-parser" >&nbsp; JSON parser </Link>
