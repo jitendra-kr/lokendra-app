@@ -1,15 +1,16 @@
 import { JSONTree } from 'react-json-tree';
 import styles from "./JsonViewer.module.css";
 import { JSONTreeTheme } from './editorTheme';
-import { isArray } from "lodash"
+import { get, isArray } from "lodash"
 import { ToolOutputActions } from '../ToolOutputActions';
 import { STRING_CONSTANTS } from '../../../../constants';
 
 type JsonViewerProps = {
     content: any;
+    error: any
 }
 
-export const JsonViewer = ({ content }: JsonViewerProps) => {    
+export const JsonViewer = ({ content, error }: JsonViewerProps) => {    
 
     const valueColor: any = {
         boolean: "boolean",
@@ -37,14 +38,16 @@ export const JsonViewer = ({ content }: JsonViewerProps) => {
             return "Invalid value"
         }
     }
-
     return <>
         <ToolOutputActions content={content} />
         <div className={styles.container} >
             {
                 !content ? <></> :
                     content === STRING_CONSTANTS.tools.invalidJson ?
-                        <span className={styles.invalidJson} >{content}</span> :
+                        
+                        <span className={styles.invalidJson} >{content} ----&gt; {get(error, "name") + " " + get(error, "message")}
+                        
+                        </span> :
                         <>
                             {isArray(content) ? "[" : "{"}                           
                             <JSONTree

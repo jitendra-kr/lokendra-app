@@ -15,6 +15,8 @@ const { Content } = Layout;
 
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
+  const [error, setError] = useState<unknown>();
+
   const { pathname } = useGetUrlPath();
 
   function isJsonString(str: string) {
@@ -32,7 +34,8 @@ function JsonParser() {
         throw "Invalid JSON"
       }
       
-    } catch (e) {
+    } catch (error: unknown) {
+      setError(error)
       setByte(`${STRING_CONSTANTS.tools.invalidJson}`)
       return false;
     }
@@ -61,7 +64,7 @@ function JsonParser() {
           </div>
         </div>
         <div className="col-lg-6" >
-          <JsonViewer content={byte} />
+          <JsonViewer content={byte} error = {error} />
         </div>
       </div>
       <ToolsList />
