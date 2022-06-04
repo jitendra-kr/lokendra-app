@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link"
 import { OfflineMetaTags } from "../../common";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
-import { InputToConvertByTools } from "../InputToConvertByTools";
+import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
+import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
 import { ToolsList } from "../ToolsList";

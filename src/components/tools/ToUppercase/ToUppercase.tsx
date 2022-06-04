@@ -3,8 +3,8 @@ import Link from "next/link"
 import { withRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
-import { InputToConvertByTools } from "../InputToConvertByTools";
+import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
+import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";

@@ -3,9 +3,9 @@ import Link from "next/link"
 import { withRouter } from "next/router";
 import React, { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { InputToConvertByTools } from "../InputToConvertByTools";
+import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolsList } from "../ToolsList/ToolsList";
-import { JsonViewer } from "../JsonViewer";
+import { JsonViewer } from "../helper/JsonViewer";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
