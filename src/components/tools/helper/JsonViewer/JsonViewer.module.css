@@ -1,0 +1,53 @@
+.container {
+    border-radius: 2px;
+    border: 1px;
+    border-color:darkgray;
+    height: 100vh;
+    width: 100%;
+    border-style: solid;
+    background-color: rgb(255, 255, 250);
+    overflow: auto;
+}
+
+.CopyToClipboardTxt {
+    text-align: right;
+    color: #0645AD;
+    cursor: pointer;
+}
+
+.invalidJson {
+    padding: 10px;
+    font-size: large;
+    font-family: monospace;
+}
+
+.keyValues {
+    font-family: monospace;
+    font-style: initial;
+}
+
+.invalidValues {
+    font-family: monospace;
+    color: aliceblue;
+    background-color:brown;
+    font-style: initial;
+}
+
+.SyntaxError {
+    color: darkred;
+}
+
+.boolean {
+    color: #0747A6;
+}
+.number {
+    color: #ad7fa8;
+}
+.string {
+    color: #4e9a06;
+}
+
+
+.dataTypeLabel {
+    color:red !important;
+  }
