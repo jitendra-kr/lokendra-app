@@ -13,6 +13,8 @@ export interface ITools {
 
 interface IToolsArray extends Array<ITools> { }
 
+export const jsonUnstringifyPath = "json-unstringify"
+
 export const toolsListData: IToolsArray = [{
     title: "String to ASCII",
     link: "/tools/string-to-ascii",
@@ -44,6 +46,15 @@ export const toolsListData: IToolsArray = [{
     title: "JSON parser",
     link: "/tools/json-parser",
     heading: "JSON Parser Online",
+    content: "Just load your JSON, System will automatically parse it",
+    metaTitle: seoData.jsonParser.title,
+    metaDescription: seoData.jsonParser.description,
+    list: true
+},
+{
+    title: "JSON Unstringify",
+    link: `/tools/${jsonUnstringifyPath}`,
+    heading: "JSON Unstringify Online",
     content: "Just load your JSON, System will automatically parse it",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,

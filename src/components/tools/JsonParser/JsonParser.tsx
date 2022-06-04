@@ -9,16 +9,20 @@ import { JsonViewer } from "../helper/JsonViewer";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
-import { ShareData } from "../ShareData";
+import { useGetUrlPath } from "../../../hooks";
+import { jsonUnstringifyPath } from "../ToolsList";
 const { Content } = Layout;
 
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
-
+  const { pathname } = useGetUrlPath();
 
   function isJsonString(str: string) {
 
     try {
+      if(pathname.includes(jsonUnstringifyPath)) {
+        str = JSON.parse(str)
+      }
       str = str.replace(/\r?\n?\s/g, '');
       str = str.replaceAll(/\b(Object)\b/g, `"${STRING_CONSTANTS.tools.internalObject}"`);
       str = str.replaceAll(/\b(Array)\b/g, `"${STRING_CONSTANTS.tools.internalArray}"`);
@@ -29,7 +33,7 @@ function JsonParser() {
       }
       
     } catch (e) {
-      setByte(STRING_CONSTANTS.tools.invalidJson)
+      setByte(`${STRING_CONSTANTS.tools.invalidJson}`)
       return false;
     }
     setByte(JSON.parse(str));
