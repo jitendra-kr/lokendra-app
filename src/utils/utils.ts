@@ -32,7 +32,7 @@ export const minifyJSON = (data: object) => {
   return JSON.stringify(jsonObject, null, 0)
 }
 
-export const copyToClipboard = (content: any, title: string): void => {
+export const copyToClipboard = (content: any, title?: string): void => {
   try {
     navigator.clipboard.writeText(content).then(() => {
       messageSuccess({ content: title ? title : "Copied to clipboard", key: "Copiedtoclipboard", duration: 4 });
