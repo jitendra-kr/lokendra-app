@@ -24,6 +24,7 @@ export function ShareData({ data }: ShareDataProps) {
 
     const handleShareUrlClick = () => {
         const title = "URL copied to clipboard"
+        console.log(origin);
         copyToClipboard(`${origin}?data=${data}`, title)
     };
 

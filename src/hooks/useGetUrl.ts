@@ -5,6 +5,7 @@ export const useGetUrl = () => {
     const [origin, setOrigin] = useState("")
     useEffect(() => {
         const href = window.location.href;
+        console.log( new URL(href))
         const {origin} = new URL(href);
         setOrigin(origin)
         setUrl(href);
