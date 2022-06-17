@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 export const useGetUrl = () => {
     const [url, setUrl] = useState("")
     const [origin, setOrigin] = useState("")
+    const [originWithPath, setOriginWithPath] = useState("")
     useEffect(() => {
         const href = window.location.href;
-        console.log( new URL(href))
-        const {origin} = new URL(href);
+        const {origin, pathname} = new URL(href);
+        setOriginWithPath(origin + pathname)
         setOrigin(origin)
         setUrl(href);
     }, [])
-
-    return {url, origin}
+    
+    return {url, origin, originWithPath}
 };
 
 export const useGetUrlPath = () => {

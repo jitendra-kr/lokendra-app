@@ -20,12 +20,11 @@ export function ShareData({ data }: ShareDataProps) {
         }
     }
 
-    const { origin } = useGetUrl()
+    const { originWithPath } = useGetUrl()
 
     const handleShareUrlClick = () => {
         const title = "URL copied to clipboard"
-        console.log(origin);
-        copyToClipboard(`${origin}?data=${data}`, title)
+        copyToClipboard(`${originWithPath}?data=${data}`, title)
     };
 
     return (
