@@ -23,8 +23,9 @@ function JsonParser() {
     
     try {
       if(pathname.includes(jsonUnstringifyPath)) {
-        str = str.trim();
-        str = str.substring(1, str.length-1);
+        str = JSON.parse(str)
+        // str = str.trim();
+        // str = str.substring(1, str.length-1);
       }
       str = str.replace(/\r?\n?\s/g, '');
       str = str.replaceAll(/\b(Object)\b/g, `"${STRING_CONSTANTS.tools.internalObject}"`);
