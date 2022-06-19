@@ -2,9 +2,11 @@ import styles from "./ShareData.module.css";
 import {
     ShareAltOutlined
 } from "@ant-design/icons";
-import { useGetUrl } from "../../../hooks";
+import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { Button } from "antd";
 import { copyToClipboard } from "../../../utils";
+import { jsonParser } from "../ToolsList";
+
 
 
 type ShareDataProps = {
@@ -12,13 +14,16 @@ type ShareDataProps = {
 }
 
 export function ShareData({ data }: ShareDataProps) {
-    if (data) {
+  const { pathname } = useGetUrlPath();
+  if (pathname.includes(jsonParser)) {
+        if (data) {
         try {
             data = JSON.stringify(JSON.parse(data))
         } catch (error) {
             console.log(error);
         }
     }
+  }
 
     const { originWithPath } = useGetUrl()
 
