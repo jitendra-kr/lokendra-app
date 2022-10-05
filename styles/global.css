@@ -8,8 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 
+  add global CSS to add padding for code block 
+*/
 pre {
-  padding-left: 30px;
+  padding-left: 30px !important;
 }
 
 .mainHeadingfontFamily {
