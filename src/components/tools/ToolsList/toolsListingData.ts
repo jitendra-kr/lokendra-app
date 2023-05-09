@@ -1,91 +1,106 @@
-
-import seoData from "../../../seo/tools/tools.json"
+import seoData from "../../../seo/tools/tools.json";
 
 export interface ITools {
-    title: string;
-    link: string;
-    heading: string;
-    metaTitle: string;
-    metaDescription: string;
-    content: string;
-    list: boolean;
+  title: string;
+  link: string;
+  heading: string;
+  metaTitle: string;
+  metaDescription: string;
+  content: string;
+  list: boolean;
 }
 
-interface IToolsArray extends Array<ITools> { }
+interface IToolsArray extends Array<ITools> {}
 
-export const jsonUnstringifyPath = "json-unstringify"
+export const jsonUnstringifyPath = "json-unstringify";
 export const jsonParser = "json-parser";
 
-export const toolsListData: IToolsArray = [{
+export const toolsListData: IToolsArray = [
+  {
+    title: "Salary Hike Percentage Calculator",
+    link: "/tools/salary-hike-percentage-calculator",
+    heading: " Salary Hike Percentage Calculator",
+    metaTitle: seoData.salaryHikePercentageCalculator.title,
+    metaDescription: seoData.salaryHikePercentageCalculator.description,
+    content: "Discover your updated salary and the percentage increase with our salary hike calculator.",
+    list: true,
+  },
+  {
     title: "String to ASCII",
     link: "/tools/string-to-ascii",
     heading: " String to ASCII converter",
-    content: "Just load your text, System will automatically convert it to ASCII codes",
+    content:
+      "Just load your text, System will automatically convert it to ASCII codes",
     metaTitle: seoData.stringToAscii.title,
     metaDescription: seoData.stringToAscii.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "ASCII to String",
     link: "/tools/ascii-to-string",
     heading: " ASCII to String converter",
-    content: "Just load your ASCII code, System will automatically convert it to text",
+    content:
+      "Just load your ASCII code, System will automatically convert it to text",
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "JSON to String",
     link: "/tools/json-to-string",
     heading: "  JSON to string converter",
-    content: "Just load your JSON, System will automatically it to JSON string or text",
+    content:
+      "Just load your JSON, System will automatically it to JSON string or text",
     metaTitle: seoData.jsonToString.title,
     metaDescription: seoData.jsonToString.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "JSON parser",
     link: `/tools/${jsonParser}`,
     heading: "JSON Parser Online",
     content: "Just load your JSON, System will automatically parse it",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "JSON Unstringify",
     link: `/tools/${jsonUnstringifyPath}`,
     heading: "JSON Unstringify Online",
     content: "Just load your JSON, System will automatically parse it",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "Text to Uppercase",
     link: "/tools/text-to-uppercase",
     heading: "Uppercase Text converter",
-    content: "Just load your text, System will automatically convert it to upper case text",
+    content:
+      "Just load your text, System will automatically convert it to upper case text",
     metaTitle: seoData.toUppercase.title,
     metaDescription: seoData.toUppercase.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "Text to Lowercase",
     link: "/tools/text-to-lowercase",
     heading: "Lowercase Text converter",
-    content: " Just load your text, System will automatically convert it to lower case text",
+    content:
+      " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toLowercase.title,
     metaDescription: seoData.toLowercase.description,
-    list: true
-},
-{
+    list: true,
+  },
+  {
     title: "Tools",
     link: "/tools",
     heading: "Tools",
-    content: " Just load your text, System will automatically convert it to lower case text",
+    content:
+      " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toolsList.title,
     metaDescription: seoData.toolsList.description,
-    list: false
-}
-]
+    list: false,
+  },
+];

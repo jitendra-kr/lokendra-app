@@ -1,6 +1,6 @@
 
 const config = {
-    baseUrl: ['https://jimmypoint-server-1.herokuapp.com/api/']
+    baseUrl: ['http://localhost:3005/api/']
 };
 
 export default config;

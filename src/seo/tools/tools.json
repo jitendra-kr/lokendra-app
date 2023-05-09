@@ -26,5 +26,10 @@
     "toolsList": {
         "title" : "Developer Tools",
         "description": "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more"
+    },
+    "salaryHikePercentageCalculator": {
+        "title" : "Salary Hike Percentage Calculator: Calculate Your Salary Increase Easily",
+        "description": "Calculate your salary hike percentage online with our powerful and user-friendly Salary Hike Percentage Calculator. Determine the percentage increase in your salary effortlessly and make informed financial decisions. Try our free calculator now!"
     }
+
 }

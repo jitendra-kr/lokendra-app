@@ -114,7 +114,7 @@ function Login(props) {
                 Submit
               </Button>
               <p className="m-top-15">
-                New to Jimmypoint? <Link href={`/register`}>Register</Link>{" "}
+                New to Fireboxtools? <Link href={`/register`}>Register</Link>{" "}
               </p>
               <Link href={`/reset-password`}>Forgot Password?</Link>
             </Form.Item>

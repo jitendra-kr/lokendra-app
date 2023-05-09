@@ -27,14 +27,14 @@ function QuestionListPage({ initialData }) {
   );
 }
 
-export async function getStaticProps() {
-  let response = await fetcher(url());
-  return {
-    props: {
-      initialData: response,
-    },
-    revalidate: 2,
-  };
-}
+// export async function getStaticProps() {
+//   let response = await fetcher(url());
+//   return {
+//     props: {
+//       initialData: [],
+//     },
+//     revalidate: 2,
+//   };
+// }
 
 export default QuestionListPage;

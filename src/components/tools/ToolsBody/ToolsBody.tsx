@@ -7,17 +7,20 @@ import styles from "./ToolsBody.module.css";
 export function ToolsBody() {
     const { pathname } = useGetUrlPath();
 
-    const result = toolsListData.filter((obj) => {
+    const result = toolsListData.find((obj) => {
         return obj.link === pathname;
     });
-
+    if (!result) {
+        return <></>
+    }
+    
     return (
         <span>
             <h1 className={styles.bodyTitle}>
-                {result[0]?.heading}
+                {result.heading}
             </h1>
             <p className={styles.bodyContent}>
-            {result[0]?.content}
+            {result.content}
             </p>
         </span>
     );

@@ -107,22 +107,22 @@ function MainHeader() {
         defaultSelectedKeys={[selectedTab]}
         style={{ textAlign: "center" }}
       >
-        <Menu.Item key="4" onClick={onDrawerClose}>
+        {/* <Menu.Item key="4" onClick={onDrawerClose}>
           <Link href="/tools" style={{ color: "#ffffff" }}>
             Tools
           </Link>
-        </Menu.Item>
-        <Menu.Item key="3" onClick={onDrawerClose}>
+        </Menu.Item> */}
+        {/* <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
             Blogs
           </Link>
-        </Menu.Item>
-        <Menu.Item key="2" onClick={onDrawerClose}>
+        </Menu.Item> */}
+        {/* <Menu.Item key="2" onClick={onDrawerClose}>
           <Link href="/questions" style={{ color: "#ffffff" }}>
             Questions
           </Link>
-        </Menu.Item>
-        {user === "na" ? (
+        </Menu.Item> */}
+        {/* {user === "na" ? (
           <Menu.Item key="1" onClick={onDrawerClose}>
             <Link href="/login" style={{ color: "#ffffff" }}>
               Login/Register
@@ -142,7 +142,7 @@ function MainHeader() {
           </Menu.Item>
         ) : (
           userMenuItem
-        )}
+        )} */}
       </Menu>
     );
   };
@@ -162,7 +162,7 @@ function MainHeader() {
                   cursor: "pointer",
                 }}
               >
-                Jimmypoint
+                Fireboxtools
               </span>
             </Link>
           </Col>

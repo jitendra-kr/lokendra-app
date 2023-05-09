@@ -33,7 +33,7 @@ const MainFooter = () => {
         </div>
       </div>
       <div className="m-top-30">
-        Jimmypoint © {new Date().getFullYear()}. All Rights Reserved
+      fireboxtools © {new Date().getFullYear()}. All Rights Reserved
       </div>
     </Footer>
   );

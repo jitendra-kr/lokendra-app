@@ -11,12 +11,12 @@ export default function AppHead(props) {
         name += ' ' + get(props, 'data.author.lastName');
     }
 
-    const author = name || 'Jimmypoint';
+    const author = name || 'Fireboxtools';
 
-    const title = get(props, 'data.title', 'Jimmypoint');
+    const title = get(props, 'data.title', 'Fireboxtools');
 
     const image = get(props, 'data.image', "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png");
-    const description = get(props, 'data.meta_description', 'Jimmypoint is the largest, most trusted open platform where you can learn and share your knowledge.');
+    const description = get(props, 'data.meta_description', 'Fireboxtools is the largest, most trusted open platform where you can learn and share your knowledge.');
 
     return <Head>
         <title>{title}</title>
@@ -37,7 +37,7 @@ export default function AppHead(props) {
             content="index, follow" />
         <meta
             property="og:site_name"
-            content="Jimmypoint"
+            content="Fireboxtools"
             key="og:site_name"/>
         <meta
             property="og:image"

@@ -6,7 +6,7 @@ const baseUrls = Config.getData().default.baseUrl;
 function HomePage({blog}) {
     return <>
     <ToolsList />
-    <BlogList data = {blog}/>
+    {/* <BlogList data = {blog}/> */}
     </>
 }
 
