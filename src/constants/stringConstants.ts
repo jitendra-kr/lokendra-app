@@ -8,5 +8,8 @@ export const STRING_CONSTANTS = {
         },
         invalidJson: "Invalid JSON",
         outputHeight: 29
+    },
+    global: {
+        appName: "FireBoxTools"
     }
 }
