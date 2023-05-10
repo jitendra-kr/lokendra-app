@@ -45,7 +45,7 @@ function AsciiToString() {
   return (
     <>
       <Content >
-        <OfflineMetaTags key={ToolKeys.ASCIItoString}/>
+        <OfflineMetaTags tagId={ToolKeys.ASCIItoString}/>
 
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />

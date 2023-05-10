@@ -50,7 +50,7 @@ function JsonParser() {
 
   return (
     <Content>
-      <OfflineMetaTags key={ToolKeys.JSONParser}/>
+      <OfflineMetaTags tagId={ToolKeys.JSONParser}/>
 
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />

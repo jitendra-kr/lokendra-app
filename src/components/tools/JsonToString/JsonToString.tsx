@@ -31,7 +31,7 @@ function JsonToString() {
   return (
     <>
       <Content>
-      <OfflineMetaTags key={ToolKeys.JSONtostring}/>
+      <OfflineMetaTags tagId={ToolKeys.JSONtostring}/>
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6" >

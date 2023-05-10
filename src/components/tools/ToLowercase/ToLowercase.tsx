@@ -29,7 +29,7 @@ function ToLowercase() {
 
   return (
     <Content >
-      <OfflineMetaTags key={ToolKeys.LowercaseTextconverter}/>
+      <OfflineMetaTags tagId={ToolKeys.LowercaseTextconverter}/>
 
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />

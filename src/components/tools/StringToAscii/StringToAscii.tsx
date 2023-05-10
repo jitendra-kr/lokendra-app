@@ -30,7 +30,7 @@ function StringToAscii() {
 
   return (
     <Content >
-      <OfflineMetaTags key={ToolKeys.StringtoASCII}/>
+      <OfflineMetaTags tagId={ToolKeys.StringtoASCII}/>
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >

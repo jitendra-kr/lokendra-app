@@ -13,7 +13,7 @@ const { Content } = Layout;
 function SalaryHikePercentageCalculator() {
   return (
     <Content>
-      <OfflineMetaTags key={ToolKeys.SalaryHike} />
+      <OfflineMetaTags tagId={ToolKeys.SalaryHike} />
       <div>
         <ToolsBody />
         <div

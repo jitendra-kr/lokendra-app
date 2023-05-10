@@ -26,7 +26,7 @@ function ToUppercase() {
 
   return (
     <Content >
-            <OfflineMetaTags key={ToolKeys.UppercaseTextconverter}/>
+            <OfflineMetaTags tagId={ToolKeys.UppercaseTextconverter}/>
 
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
