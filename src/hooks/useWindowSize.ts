@@ -9,8 +9,8 @@ type windowSizeType = {
 export const useWindowSize = () => {
 
     const [windowSize, setWindowSize] = useState<windowSizeType>({
-        width: undefined,
-        height: undefined,
+        width: 1920,
+        height: 1080,
     });
 
     useEffect(() => {
