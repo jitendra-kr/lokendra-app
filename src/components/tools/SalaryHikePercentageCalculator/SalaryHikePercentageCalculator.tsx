@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import { withRouter } from "next/router";
 import React from "react";
-import { ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
 
@@ -13,7 +13,7 @@ const { Content } = Layout;
 function SalaryHikePercentageCalculator() {
   return (
     <Content>
-      <OfflineMetaTags />
+      <OfflineMetaTags key={ToolKeys.SalaryHike} />
       <div>
         <ToolsBody />
         <div

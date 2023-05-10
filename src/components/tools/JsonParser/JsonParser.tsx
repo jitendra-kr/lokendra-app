@@ -10,7 +10,7 @@ import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
 import { useGetUrlPath } from "../../../hooks";
-import { jsonUnstringifyPath } from "../ToolsList";
+import { ToolKeys, jsonUnstringifyPath } from "../ToolsList";
 const { Content } = Layout;
 
 function JsonParser() {
@@ -50,7 +50,8 @@ function JsonParser() {
 
   return (
     <Content>
-      <OfflineMetaTags />
+      <OfflineMetaTags key={ToolKeys.JSONParser}/>
+
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import { ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
 import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
@@ -26,7 +26,8 @@ function ToUppercase() {
 
   return (
     <Content >
-      <OfflineMetaTags />
+            <OfflineMetaTags key={ToolKeys.UppercaseTextconverter}/>
+
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >

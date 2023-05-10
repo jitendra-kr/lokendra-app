@@ -7,7 +7,7 @@ import styles from "../../../../styles/StringToAscii.module.css";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolsBody } from "../ToolsBody";
-import { ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 
 const { Content } = Layout;
@@ -30,7 +30,7 @@ function StringToAscii() {
 
   return (
     <Content >
-      <OfflineMetaTags />
+      <OfflineMetaTags key={ToolKeys.StringtoASCII}/>
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6" >

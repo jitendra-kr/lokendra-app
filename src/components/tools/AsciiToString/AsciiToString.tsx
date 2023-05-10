@@ -8,7 +8,7 @@ import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
-import { ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 
 
@@ -45,7 +45,7 @@ function AsciiToString() {
   return (
     <>
       <Content >
-        <OfflineMetaTags />
+        <OfflineMetaTags key={ToolKeys.ASCIItoString}/>
 
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />

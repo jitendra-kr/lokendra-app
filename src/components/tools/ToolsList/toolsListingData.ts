@@ -1,5 +1,18 @@
 import seoData from "../../../seo/tools/tools.json";
 
+
+export enum ToolKeys {
+  SalaryHike = "SalaryHike",
+  StringtoASCII = "StringtoASCII",
+  ASCIItoString = "ASCIItoString",
+  JSONtostring = "JSONtostring",
+  JSONParser = "JSONParser",
+  JSONUnstringify = "JSONUnstringify",
+  UppercaseTextconverter = "UppercaseTextconverter",
+  LowercaseTextconverter = "LowercaseTextconverter",
+  Tools = "Tools"
+}
+
 export interface ITools {
   title: string;
   link: string;
@@ -8,14 +21,14 @@ export interface ITools {
   metaDescription: string;
   content: string;
   list: boolean;
+  key: ToolKeys
 }
 
-interface IToolsArray extends Array<ITools> {}
 
 export const jsonUnstringifyPath = "json-unstringify";
 export const jsonParser = "json-parser";
 
-export const toolsListData: IToolsArray = [
+export const toolsListData: Array<ITools> = [
   {
     title: "Salary Hike Percentage Calculator",
     link: "/tools/salary-hike-percentage-calculator",
@@ -24,6 +37,7 @@ export const toolsListData: IToolsArray = [
     metaDescription: seoData.salaryHikePercentageCalculator.description,
     content: "Discover your updated salary and the percentage increase with our salary hike calculator.",
     list: true,
+    key: ToolKeys.SalaryHike
   },
   {
     title: "String to ASCII",
@@ -34,6 +48,7 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.stringToAscii.title,
     metaDescription: seoData.stringToAscii.description,
     list: true,
+    key: ToolKeys.StringtoASCII
   },
   {
     title: "ASCII to String",
@@ -44,6 +59,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,
     list: true,
+    key: ToolKeys.ASCIItoString
+
   },
   {
     title: "JSON to String",
@@ -54,6 +71,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.jsonToString.title,
     metaDescription: seoData.jsonToString.description,
     list: true,
+    key: ToolKeys.JSONtostring
+
   },
   {
     title: "JSON parser",
@@ -63,6 +82,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
+    key: ToolKeys.JSONParser
+
   },
   {
     title: "JSON Unstringify",
@@ -72,6 +93,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
+    key: ToolKeys.JSONUnstringify
+
   },
   {
     title: "Text to Uppercase",
@@ -82,6 +105,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.toUppercase.title,
     metaDescription: seoData.toUppercase.description,
     list: true,
+    key: ToolKeys.UppercaseTextconverter
+
   },
   {
     title: "Text to Lowercase",
@@ -92,6 +117,8 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.toLowercase.title,
     metaDescription: seoData.toLowercase.description,
     list: true,
+    key: ToolKeys.LowercaseTextconverter
+
   },
   {
     title: "Tools",
@@ -102,5 +129,7 @@ export const toolsListData: IToolsArray = [
     metaTitle: seoData.toolsList.title,
     metaDescription: seoData.toolsList.description,
     list: false,
+    key: ToolKeys.Tools
+
   },
 ];

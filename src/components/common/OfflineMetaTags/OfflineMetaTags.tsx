@@ -1,15 +1,15 @@
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import AppHead from "../../Head/head";
-import { toolsListData } from "../../tools/ToolsList";
+import { ToolKeys, toolsListData } from "../../tools/ToolsList";
 
-
-export function OfflineMetaTags() {
-
-    const { pathname } = useGetUrlPath();
+type OfflineMetaTagsProps = {
+    key?: ToolKeys
+}
+export function OfflineMetaTags({key}: OfflineMetaTagsProps) {
     const { url } = useGetUrl();
 
     const result = toolsListData.filter((obj) => {
-        return obj.link === pathname;
+        return obj.key === key;
     });
 
     return (
