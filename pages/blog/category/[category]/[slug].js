@@ -7,30 +7,30 @@ function BlogsByCategoryPage({data}) {
   return data ? <BlogList data = {data}/> : '';
   }
 
-//   export async function getStaticPaths() {
-//     const url = `${sample(baseUrls)}blog-management/category-list`;
-//     let response = await fetch(url);
-//     response = await response.json()
-//     const paths = response.result.map((data) => ({
-//         params: { category: data._id, slug: data.slug },
-//     }))
+  export async function getStaticPaths() {
+    // const url = `${sample(baseUrls)}blog-management/category-list`;
+    // let response = await fetch(url);
+    // response = await response.json()
+    // const paths = response.result.map((data) => ({
+    //     params: { category: data._id, slug: data.slug },
+    // }))
 
-//     return {
-//         paths,
-//         fallback: true
-//     }
-// }
+    return {
+        paths: [],
+        fallback: true
+    }
+}
 
-  // export async function getStaticProps({ params }) {
-  //   const url = `${sample(baseUrls)}blog-management/categorized-blog/${params.category}`;
-  //   let response = await fetch(url);
-  //   response = await response.json();
-  //   return {
-  //     props: {
-  //       data: response.result
-  //     },
-  //     revalidate: 10
-  //   }
-  // }
+  export async function getStaticProps({ params }) {
+    // const url = `${sample(baseUrls)}blog-management/categorized-blog/${params.category}`;
+    // let response = await fetch(url);
+    // response = await response.json();
+    return {
+      props: {
+        data: []
+      },
+      revalidate: 10
+    }
+  }
 
   export default BlogsByCategoryPage;

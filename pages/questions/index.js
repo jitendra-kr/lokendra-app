@@ -13,28 +13,28 @@ function url() {
 }
 
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+// const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function QuestionListPage({ initialData }) {
 
 
   return (
     <QuestionList
-      questionData={initialData.result}
+      questionData={[]}
       limit={limit}
-      totalRecords={initialData.totalRecords}
-      loadMore={initialData.result.length && limit === initialData.result.length ? 1 : 0}
+      totalRecords={10}
+      loadMore={false}
     />
   );
 }
 
-// export async function getStaticProps() {
-//   let response = await fetcher(url());
-//   return {
-//     props: {
-//       initialData: [],
-//     },
-//     revalidate: 2,
-//   };
-// }
+export async function getStaticProps() {
+  // let response = await fetcher(url());
+  return {
+    props: {
+      initialData: [],
+    },
+    revalidate: 2,
+  };
+}
 
 export default QuestionListPage;

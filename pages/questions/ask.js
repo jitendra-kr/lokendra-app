@@ -8,17 +8,17 @@ function AskNewQuestionPage({companiesData}) {
   }
 
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
-//   const url = `${sample(baseUrls)}companies/data`;
-//   let response = await fetch(url);
-//   response = await response.json();
-//   return {
-//     props: {
-//       companiesData: response.result
-//     },
-//     revalidate: 10
-//   }
-// }
+  // const url = `${sample(baseUrls)}companies/data`;
+  // let response = await fetch(url);
+  // response = await response.json();
+  return {
+    props: {
+      companiesData: []
+    },
+    revalidate: 10
+  }
+}
 
   export default AskNewQuestionPage;

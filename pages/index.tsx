@@ -10,16 +10,16 @@ function HomePage({blog}) {
     </>
 }
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
 //   const url = `${sample(baseUrls)}blog-management/blogs`;
 //   let response: any = await fetch(url);
 //   response = await response.json();
-//   return {
-//     props: {
-//       blog: response.result
-//     },
-//     revalidate: 10
-//   }
-// }
+  return {
+    props: {
+      blog: []
+    },
+    revalidate: 10
+  }
+}
 export default HomePage
