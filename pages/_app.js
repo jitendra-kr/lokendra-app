@@ -83,7 +83,7 @@ export default function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <UserContext.Provider value={[user, setUser]}>
           <MainHeader />
-          <div className="row" style={{ height: size.height + "px" }}>
+          <div className="row" style={{ minHeight: size.height + "px" }}>
             <div
               className="col-lg-10"
               style={{ padding: "50px 0px 59px 30px" }}
