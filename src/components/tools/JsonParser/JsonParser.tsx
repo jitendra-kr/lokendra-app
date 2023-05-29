@@ -16,11 +16,12 @@ const { Content } = Layout;
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<unknown>();
+  const [input, setInput] = useState("");
 
   const { pathname } = useGetUrlPath();
 
   function isJsonString(str: string) {
-
+    setInput(str)
     try {
       if (pathname.includes(jsonUnstringifyPath)) {
         if (str.includes(`\": `)) {
@@ -70,7 +71,7 @@ function JsonParser() {
           </div>
         </div>
         <div className="col-lg-6" >
-          <JsonViewer content={byte} error={error} />
+          <JsonViewer content={byte} error={error} input={input} />
         </div>
       </div>
       <ToolsList />
