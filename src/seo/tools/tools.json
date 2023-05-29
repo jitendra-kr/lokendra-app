@@ -1,35 +1,35 @@
 {
     "asciiToString": {
-        "title" : "convert ascii to string | ASCII to text converter - online string tools",
-        "description": "Useful, Simple and free online tool that converts ASCII codes to string or plain text to in easy steps. Just type your text and it will convert to ASCII"
+        "title" : "Convert ASCII to string | Online ASCII to text converter",
+        "description": "Free online tool for converting ASCII codes to string or plain text. Easily convert your text to ASCII with simple steps"
     },
     "jsonParser": {
-        "title" : "JSON parser online",
-        "description": "Useful, Simple, free and secure online JSON Parser tool. Processing is being done locally without sending any data to the server. Our tool can convert multiline with full accuracy. Just type your JSON and tool will parse it"
+        "title" : "Fast and Accurate JSON Parser: Parse JSON Data Online",
+        "description": "Effortlessly parse and process JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration"
     },
     "jsonToString": {
-        "title" : "convert JSON to string online",
-        "description": "Useful, Simple and free online tool that converts JSON to string in easy steps. Our tool can convert multiline content with full accuracy. Just type your JSON and it will convert to string"
+        "title" : "JSON to String Converter | Easily Convert JSON to String",
+        "description": "Easily convert JSON to string with our efficient online tool. Stringify JSON data in seconds for seamless integration and manipulation. Try it now, it's free!"
     },
     "stringToAscii": {
-        "title" : "convert string to ascii | text to ASCII converter - online string tools",
-        "description": "Useful, Simple and free online tool that converts string or plain text to ASCII codes in easy steps. Just type your text and it will convert to ASCII"
+        "title" : "Convert string to ASCII | Online text to ASCII converter",
+        "description": "Effortlessly convert strings to ASCII codes with our online converter. Transform text to ASCII in seconds for various applications. Try it now, it's free!"
     },
     "toLowercase": {
-        "title" : "Text to Lowercase converter - online string tools",
-        "description": "Useful, Simple and free online tool that converts text to lowercase in easy steps. Just type your text and it will convert to lowercase"
+        "title" : "TextToLower - Online Tool to Convert Text to Lowercase",
+        "description": "Effortlessly convert text to lowercase with TextToLower, an intuitive online tool. Transform uppercase and mixed-case text to lowercase. Try it now for free!"
     },
     "toUppercase": {
-        "title" : "Text to Uppercase converter - online string tools",
-        "description": "Useful, Simple and free online tool that converts text to uppercase in easy steps. Just type your text and it will convert to uppercase"
+        "title" : "Online Text to Uppercase Converter",
+        "description": "Instantly convert your text to uppercase, a convenient online tool. Transform lowercase and mixed-case text to uppercase effortlessly. Try it now for free!"
     },
     "toolsList": {
         "title" : "Developer Tools",
         "description": "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more"
     },
     "salaryHikePercentageCalculator": {
-        "title" : "Salary Hike Percentage Calculator: Calculate Your Salary Increase Easily",
-        "description": "Calculate your salary hike percentage online with our powerful and user-friendly Salary Hike Percentage Calculator. Determine the percentage increase in your salary effortlessly and make informed financial decisions. Try our free calculator now!"
+        "title" : "Salary Hike Percentage Calculator | Calculate Salary hike",
+        "description": "Calculate salary hike percentage with our online tool. Determine percentage increase in salary with ease. Plan your finances effectively. Try it now!"
     }
 
 }
