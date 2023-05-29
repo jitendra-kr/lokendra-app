@@ -1,7 +1,6 @@
 import { BlogList, ToolsList } from "../src/components"
 import Config from '../src/config/env';
-import { sample } from "lodash";
-const baseUrls = Config.getData().default.baseUrl;
+import React from "react";
 
 function HomePage({blog}) {
     return <>

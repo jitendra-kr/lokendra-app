@@ -15,9 +15,11 @@ type onChangeProp = {
 }
 type InputToConvertByToolsProps = {
   onChangeCb: (value: string) => void;
-  rules: any
+  rules: any;
+  placeholder?: string;
+  row?: number
 }
-export const InputToConvertByTools = ({ onChangeCb, rules }: InputToConvertByToolsProps) => {
+export const InputToConvertByTools = ({ onChangeCb, rules, placeholder = "Please enter", row = 18 }: InputToConvertByToolsProps) => {
 
   const dispatch = useAppDispatch()
   const [form] = Form.useForm();
@@ -47,7 +49,7 @@ export const InputToConvertByTools = ({ onChangeCb, rules }: InputToConvertByToo
       label=""
       rules={rules}
     >
-      <TextArea allowClear={true} className={`${styles.input}`} onChange={onChange} placeholder="Please enter" rows={18} />
+      <TextArea allowClear={true} className={`${styles.input}`} onChange={onChange} placeholder={placeholder} rows={row} />
     </Form.Item>
   </Form>
 }

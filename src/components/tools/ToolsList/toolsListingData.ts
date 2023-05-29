@@ -10,6 +10,8 @@ export enum ToolKeys {
   JSONUnstringify = "JSONUnstringify",
   UppercaseTextconverter = "UppercaseTextconverter",
   LowercaseTextconverter = "LowercaseTextconverter",
+  characterCounter = "characterCounter",
+
   Tools = "Tools"
 }
 
@@ -118,6 +120,18 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.toLowercase.description,
     list: true,
     key: ToolKeys.LowercaseTextconverter
+
+  },
+  {
+    title: "Character Counter",
+    link: "/tools/character-counter",
+    heading: "Accurate and Efficient Character Counter Tool for Any Text",
+    content:
+      " Just load your text, System will automatically start counting",
+    metaTitle: seoData.characterCounter.title,
+    metaDescription: seoData.characterCounter.description,
+    list: true,
+    key: ToolKeys.characterCounter
 
   },
   {

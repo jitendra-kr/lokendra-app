@@ -296,3 +296,6 @@ pre {
   End JSON viewer styles
 */
 
+.textTransformCapitalize {
+  text-transform: capitalize;
+}

@@ -16,7 +16,7 @@ export default function AppHead(props) {
     const title = get(props, 'data.title', 'Fireboxtools');
 
     const image = get(props, 'data.image', "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Jimmypoint-m.png");
-    const description = get(props, 'data.meta_description', 'Fireboxtools is the largest, most trusted open platform where you can learn and share your knowledge.');
+    const description = get(props, 'data.meta_description', `Boost productivity, skills with our versatile platform, offering a collection of useful utilities. Unlock your potential and streamline your work effortlessly`);
 
     return <Head>
         <title>{title}</title>

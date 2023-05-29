@@ -19,7 +19,8 @@ export const ToolsList = () => {
     const heading = isHome || pathname === "/tools" ? "Tools" : "Other tools"
     return (
         <>
-            {pathname === "/tools" && <OfflineMetaTags />}
+                        {pathname === "/" && <OfflineMetaTags />}
+
             <div className={`${isHome || pathname === "/tools" ? styles.home : styles.otherTools} row content-padding-left`}>
                 <h1 className={`${isHome ? "" : "text-align-center"}   mainHeadingfontFamily`}>{heading}</h1>
                 <div className="row">

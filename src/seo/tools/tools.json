@@ -30,6 +30,10 @@
     "salaryHikePercentageCalculator": {
         "title" : "Salary Hike Percentage Calculator | Calculate Salary hike",
         "description": "Calculate salary hike percentage with our online tool. Determine percentage increase in salary with ease. Plan your finances effectively. Try it now!"
+    },
+    "characterCounter": {
+        "title": "Online Character Counter: Count, Characters, Bytes",
+        "description": "Easily count, characters and bytes with our convenient online Character Counter. Stay within limits, improve readability, and optimize your content effortlessly"
     }
 
 }
