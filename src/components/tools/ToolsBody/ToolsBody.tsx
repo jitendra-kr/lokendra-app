@@ -19,9 +19,9 @@ export function ToolsBody() {
             <h1 className={styles.bodyTitle}>
                 {result.heading}
             </h1>
-            <p className={styles.bodyContent}>
+            <h2 className={styles.bodyContent}>
             {result.content}
-            </p>
+            </h2>
         </span>
     );
 }
