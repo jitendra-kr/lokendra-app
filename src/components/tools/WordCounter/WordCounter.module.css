@@ -1,0 +1,11 @@
+.count {
+    word-wrap: break-word;      
+}
+
+.count-in-words {
+    font-family: "Arial", sans-serif;
+    color: #ff5500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }

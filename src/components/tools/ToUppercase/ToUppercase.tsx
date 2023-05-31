@@ -26,7 +26,6 @@ function ToUppercase() {
   return (
     <Content>
       <OfflineMetaTags tagId={ToolKeys.UppercaseTextconverter} />
-
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6">

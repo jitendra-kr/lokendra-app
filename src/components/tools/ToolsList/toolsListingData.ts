@@ -10,8 +10,7 @@ export enum ToolKeys {
   JSONUnstringify = "JSONUnstringify",
   UppercaseTextconverter = "UppercaseTextconverter",
   LowercaseTextconverter = "LowercaseTextconverter",
-  characterCounter = "characterCounter",
-
+  wordCounter="wordCounter",
   Tools = "Tools"
 }
 
@@ -113,7 +112,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "Text to Lowercase",
     link: "/tools/text-to-lowercase",
-    heading: "Lowercase Text converter",
+    heading: "Lowercase Text converter online",
     content:
       " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toLowercase.title,
@@ -123,15 +122,15 @@ export const toolsListData: Array<ITools> = [
 
   },
   {
-    title: "Character Counter",
-    link: "/tools/character-counter",
-    heading: "Accurate and Efficient Character Counter Tool for Any Text",
+    title: "Word Count",
+    link: "/tools/word-counter",
+    heading: "Word and Character Counter Tool",
     content:
-      " Just load your text, System will automatically start counting",
-    metaTitle: seoData.characterCounter.title,
-    metaDescription: seoData.characterCounter.description,
+      " Just load your text, System will automatically start counting ",
+    metaTitle: seoData.wordCounter.title,
+    metaDescription: seoData.wordCounter.description,
     list: true,
-    key: ToolKeys.characterCounter
+    key: ToolKeys.wordCounter
 
   },
   {
