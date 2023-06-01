@@ -1,9 +1,9 @@
+import { get, isArray } from "lodash";
 import { JSONTree } from "react-json-tree";
+import { STRING_CONSTANTS } from "../../../../constants";
+import { ToolOutputActions } from "../ToolOutputActions";
 import styles from "./JsonViewer.module.css";
 import { JSONTreeTheme } from "./editorTheme";
-import { get, isArray } from "lodash";
-import { ToolOutputActions } from "../ToolOutputActions";
-import { STRING_CONSTANTS } from "../../../../constants";
 
 type JsonViewerProps = {
   content: any;
@@ -21,9 +21,9 @@ function RenderJsonViewer({ content, error, input }: JsonViewerProps) {
   const typeOf = (value: any) => {
     if (value === "true" || value === "false") {
       return "boolean ";
-    } 
-    if( value === "null") {
-        return "object "
+    }
+    if (value === "null") {
+      return "object ";
     }
     return typeof value + " ";
   };
@@ -51,7 +51,7 @@ function RenderJsonViewer({ content, error, input }: JsonViewerProps) {
         valueRenderer={(raw: any) => (
           <em>
             <span className={`${styles.keyValues} ${styles.dataTypeLabel}`}>
-              {typeOf(raw) }
+              {typeOf(raw)}
             </span>
             <span
               className={`${styles.keyValues} ${

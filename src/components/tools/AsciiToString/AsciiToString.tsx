@@ -5,9 +5,10 @@ import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
+import { ToolDescription } from "../helper/ToolDescription";
 const { Content } = Layout;
 
 function AsciiToString() {
@@ -37,6 +38,9 @@ function AsciiToString() {
       setByte("");
     }
   };
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.ASCIItoString;
+  });
 
   return (
     <>
@@ -61,6 +65,7 @@ function AsciiToString() {
           </div>
         </div>
 
+        <ToolDescription content={result[0].toolDescription} />
         <ToolsList />
       </Content>
     </>

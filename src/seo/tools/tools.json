@@ -1,40 +1,42 @@
 {
-    "asciiToString": {
-        "title" : "Convert ASCII to string | Online ASCII to text converter",
-        "description": "Free online tool for converting ASCII codes to string or plain text. Easily convert your text to ASCII with simple steps"
-    },
-    "jsonParser": {
-        "title" : "Fast and Accurate JSON Parser: Parse JSON Data Online",
-        "description": "Effortlessly parse and process JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration"
-    },
-    "jsonToString": {
-        "title" : "JSON to String Converter | Easily Convert JSON to String",
-        "description": "Easily convert JSON to string with our efficient online tool. Stringify JSON data in seconds for seamless integration and manipulation. Try it now, it's free!"
-    },
-    "stringToAscii": {
-        "title" : "Convert string to ASCII | Online text to ASCII converter",
-        "description": "Effortlessly convert strings to ASCII codes with our online converter. Transform text to ASCII in seconds for various applications. Try it now, it's free!"
-    },
-    "toLowercase": {
-        "title" : "TextToLower - Online Tool to Convert Text to Lowercase",
-        "description": "Effortlessly convert text to lowercase with TextToLower, an intuitive online tool. Transform uppercase and mixed-case text to lowercase. Try it now for free!"
-    },
-    "toUppercase": {
-        "title" : "Online Text to Uppercase Converter",
-        "description": "Instantly convert your text to uppercase, a convenient online tool. Transform lowercase and mixed-case text to uppercase effortlessly. Try it now for free!"
-    },
-    "toolsList": {
-        "title" : "Developer Tools",
-        "description": "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more"
-    },
-    "salaryHikePercentageCalculator": {
-        "title" : "Salary Hike Percentage Calculator | Calculate Salary hike",
-        "description": "Calculate salary hike percentage with our online tool. Determine percentage increase in salary with ease. Plan your finances effectively. Try it now!"
-    },
-    "wordCounter": {
-        "title": "Online Word Counting Tool | Count Word & Character Instantly",
-        "description": "Count the exact number of words and characters in your text with our accurate online Word and Character Counter tool. Try it now for free!"
-        
-    }
-
+  "asciiToString": {
+    "title": "Convert ASCII to string | Online ASCII to text converter",
+    "description": "Free online tool for converting ASCII codes to string or plain text. Easily convert your text to ASCII with simple steps"
+  },
+  "jsonParser": {
+    "title": "Fast and Accurate JSON Parser: Parse JSON Data Online",
+    "description": "Effortlessly parse and process JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration"
+  },
+  "jsonToString": {
+    "title": "JSON to String Converter | Easily Convert JSON to String",
+    "description": "Easily convert JSON to string with our efficient online tool. Stringify JSON data in seconds for seamless integration and manipulation. Try it now, it's free!"
+  },
+  "stringToAscii": {
+    "title": "Convert string to ASCII | Online text to ASCII converter",
+    "description": "Effortlessly convert strings to ASCII codes with our online converter. Transform text to ASCII in seconds for various applications. Try it now, it's free!"
+  },
+  "toLowercase": {
+    "title": "TextToLower - Online Tool to Convert Text to Lowercase",
+    "description": "Effortlessly convert text to lowercase with TextToLower, an intuitive online tool. Transform uppercase and mixed-case text to lowercase. Try it now for free!"
+  },
+  "toUppercase": {
+    "title": "Online Text to Uppercase Converter",
+    "description": "Instantly convert your text to uppercase, a convenient online tool. Transform lowercase and mixed-case text to uppercase effortlessly. Try it now for free!"
+  },
+  "toolsList": {
+    "title": "Developer Tools",
+    "description": "Simplest collection of very usefull developer tools. Many tools for string, JSON, encoding, decoding, converting and much more"
+  },
+  "salaryHikePercentageCalculator": {
+    "title": "Salary Hike Percentage Calculator | Calculate Salary hike",
+    "description": "Calculate salary hike percentage with our online tool. Determine percentage increase in salary with ease. Plan your finances effectively. Try it now!"
+  },
+  "wordCounter": {
+    "title": "Online Word Counting Tool | Count Word & Character Instantly",
+    "description": "Count the exact number of words and characters in your text with our accurate online Word and Character Counter tool. Try it now for free!"
+  },
+  "ReplaceSpaces": {
+    "title": "Replace Spaces Online | Free and Easy Text Tool",
+    "description": "Effortlessly replace spaces in text with our online utility. Enhance readability and optimize your content. Try our free space replacer tool now for free!"
+  }
 }

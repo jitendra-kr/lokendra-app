@@ -40,7 +40,13 @@ export const toolsListData: Array<ITools> = [
       "Discover your updated salary and the percentage increase with our salary hike calculator.",
     list: true,
     key: ToolKeys.SalaryHike,
-    toolDescription: "",
+    toolDescription: `
+    Certainly! An online salary hike percentage calculator is a tool that allows you to calculate the percentage increase in your salary after a raise or promotion. This tool is especially useful for employees who are negotiating a salary increase or trying to estimate their future earnings.
+
+    To use the calculator, you simply enter your current salary, the amount of the raise, and any other relevant information, such as the frequency of pay periods. The calculator then calculates the percentage increase in your salary and displays the new salary amount.
+
+    Overall, an online salary hike percentage calculator can be a valuable tool for employees who want to better understand their earning potential and negotiate fair compensation for their work. Whether you're exploring a new job opportunity or negotiating a raise with your current employer, a salary calculator can help you make informed decisions about your career and financial future.
+`,
   },
   {
     title: "String to ASCII",
@@ -87,7 +93,9 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.jsonParser.description,
     list: true,
     key: ToolKeys.JSONParser,
-    toolDescription: "",
+    toolDescription: `This utility is available as a free online tool. It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected. 
+      
+      \n One of the most useful features of this tool is its ability to share your JSON output. You can easily copy and paste your formatted and validated JSON code into an email or chat message, or you can use the tool's Share feature to generate a unique URL that you can send to others.`,
   },
   {
     title: "JSON Unstringify",
@@ -139,8 +147,8 @@ export const toolsListData: Array<ITools> = [
     title: "Replace Spaces",
     link: "/tools/replace-spaces",
     heading: "Replace Spaces Online",
-    metaTitle: seoData.salaryHikePercentageCalculator.title,
-    metaDescription: seoData.salaryHikePercentageCalculator.description,
+    metaTitle: seoData.ReplaceSpaces.title,
+    metaDescription: seoData.ReplaceSpaces.description,
     content: `Just load your content or text, By default system will replace all spaces with underscores
       if you need to replace specific character please use below input fields accordingly`,
     list: true,

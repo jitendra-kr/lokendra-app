@@ -4,9 +4,10 @@ import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
+import { ToolDescription } from "../helper/ToolDescription";
 
 const { Content } = Layout;
 
@@ -22,6 +23,9 @@ function StringToAscii() {
   const onChangeCb = (value: string) => {
     textToASCIIConvert(value);
   };
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.StringtoASCII;
+  });
 
   return (
     <Content>
@@ -38,6 +42,8 @@ function StringToAscii() {
           <ConvertedOutputByTools content={byte.join(" ")} />
         </div>
       </div>
+      <ToolDescription content={result[0].toolDescription} />
+
       <ToolsList />
     </Content>
   );

@@ -1,16 +1,20 @@
 import { Layout } from "antd";
 import { withRouter } from "next/router";
-import React from "react";
-import { ToolKeys, ToolsList } from "../ToolsList";
-import { ToolsBody } from "../ToolsBody";
 import { OfflineMetaTags } from "../../common";
+import { ToolsBody } from "../ToolsBody";
+import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 
+import { ToolDescription } from "../helper/ToolDescription";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
 import { NewSalaryByPercentage } from "./NewSalaryByPercentage";
 
 const { Content } = Layout;
 
 function SalaryHikePercentageCalculator() {
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.SalaryHike;
+  });
+
   return (
     <Content>
       <OfflineMetaTags tagId={ToolKeys.SalaryHike} />
@@ -18,7 +22,11 @@ function SalaryHikePercentageCalculator() {
         <ToolsBody />
         <div
           className="row"
-          style={{ display: "flex", justifyContent: "space-evenly", marginTop: "50px" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            marginTop: "50px",
+          }}
         >
           <div className="col-lg-4">
             <HikeInPercentageBySalary />
@@ -28,6 +36,7 @@ function SalaryHikePercentageCalculator() {
           </div>
         </div>
       </div>
+      <ToolDescription content={result[0].toolDescription} />
       <ToolsList />
     </Content>
   );

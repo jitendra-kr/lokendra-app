@@ -6,10 +6,11 @@ import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, jsonUnstringifyPath } from "../ToolsList";
+import { ToolKeys, jsonUnstringifyPath, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { JsonViewer } from "../helper/JsonViewer";
+import { ToolDescription } from "../helper/ToolDescription";
 const { Content } = Layout;
 
 function JsonParser() {
@@ -52,6 +53,9 @@ function JsonParser() {
     setByte(JSON.parse(str));
     return true;
   }
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.JSONParser;
+  });
 
   return (
     <Content>
@@ -74,12 +78,15 @@ function JsonParser() {
               },
             ]}
             onChangeCb={isJsonString}
+            row={26}
           />
         </div>
         <div className="col-lg-6">
           <JsonViewer content={byte} error={error} input={input} />
         </div>
       </div>
+      <ToolDescription content={result[0].toolDescription} />
+
       <ToolsList />
     </Content>
   );

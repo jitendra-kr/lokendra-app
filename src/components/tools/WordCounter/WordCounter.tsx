@@ -3,12 +3,13 @@ import { withRouter } from "next/router";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import characterCounterStyles from "./WordCounter.module.css";
 
 import { useState } from "react";
 import { convertNumberToWords } from "../../../utils";
+import { ToolDescription } from "../helper/ToolDescription";
 import { ToolOutputActions } from "../helper/ToolOutputActions";
 
 function WordCounter() {
@@ -51,6 +52,10 @@ function WordCounter() {
     countCharacter(value);
     countSentence(value);
   };
+
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.wordCounter;
+  });
 
   return (
     <Content>
@@ -116,6 +121,7 @@ function WordCounter() {
           </div>
         </div>
       </div>
+      <ToolDescription content={result[0].toolDescription} />
       <ToolsList />
     </Content>
   );

@@ -22,7 +22,7 @@ export const InputToConvertByTools = ({
   onChangeCb,
   rules,
   placeholder = "Please enter",
-  row = 26,
+  row = 14,
 }: InputToConvertByToolsProps) => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();

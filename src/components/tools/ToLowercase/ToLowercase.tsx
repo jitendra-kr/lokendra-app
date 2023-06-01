@@ -4,9 +4,10 @@ import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList } from "../ToolsList";
+import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
+import { ToolDescription } from "../helper/ToolDescription";
 
 const { Content } = Layout;
 
@@ -20,6 +21,10 @@ function ToLowercase() {
       setByte("");
     }
   };
+
+  const result = toolsListData.filter((obj) => {
+    return obj.key === ToolKeys.LowercaseTextconverter;
+  });
 
   return (
     <Content>
@@ -37,6 +42,8 @@ function ToLowercase() {
           <ConvertedOutputByTools content={byte} />
         </div>
       </div>
+      <ToolDescription content={result[0].toolDescription} />
+
       <ToolsList />
     </Content>
   );

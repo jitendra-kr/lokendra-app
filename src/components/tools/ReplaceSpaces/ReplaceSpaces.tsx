@@ -56,7 +56,6 @@ function ReplaceSpaces() {
                 },
               ]}
               onChangeCb={(v) => setInput(v)}
-              row={20}
             />
           </div>
           <div className="col-lg-6">
