@@ -1,16 +1,15 @@
 import { Content } from "antd/lib/layout/layout";
 import { withRouter } from "next/router";
-import { OfflineMetaTags } from "../../common";
-import { ToolKeys, ToolsList } from "../ToolsList";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import characterCounterStyles from "./WordCounter.module.css";
 
-import Link from "next/link";
 import { useState } from "react";
-import { ToolOutputActions } from "../helper/ToolOutputActions";
 import { convertNumberToWords } from "../../../utils";
+import { ToolOutputActions } from "../helper/ToolOutputActions";
 
 function WordCounter() {
   const [characterCount, setCharacterCount] = useState(0);
@@ -75,10 +74,6 @@ function WordCounter() {
             onChangeCb={onChangeCb}
             placeholder="Type or Paste Text to Begin"
           />
-          <div>
-            Want to stringify JSON ? use
-            <Link href="/tools/json-to-string">&nbsp; stringify JSON </Link>
-          </div>
         </div>
         <div className="col-lg-3">
           <div>

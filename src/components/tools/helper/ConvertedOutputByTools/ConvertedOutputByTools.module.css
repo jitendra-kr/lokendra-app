@@ -1,19 +1,16 @@
-.asciiDiv {
-    border-radius: 10px;
-    border: 1px;
-    min-height: 100vh;
-    width: 100%;
-    border-color:darkgray;
-    border-style: solid;
-    background-color: aliceblue;
+.container {
+  border-radius: 10px;
+  border: 1px;
+  min-height: 78vh;
+  width: 100%;
+  border-color: darkgray;
+  border-style: solid;
+  background-color: aliceblue;
 }
 
-.asciiCode {
-    word-wrap: break-word;
-    padding: 10px;
-    font-size: large;
-    font-family: monospace;
+.content {
+  word-wrap: break-word;
+  padding: 10px;
+  font-size: large;
+  font-family: monospace;
 }
-
-
-

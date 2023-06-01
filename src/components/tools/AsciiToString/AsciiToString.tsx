@@ -1,15 +1,14 @@
 import { Layout } from "antd";
 import { withRouter } from "next/router";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { OfflineMetaTags } from "../../common";
+import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
+import { OfflineMetaTags } from "../../common";
+import { ToolsBody } from "../ToolsBody";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import { ToolsBody } from "../ToolsBody";
 const { Content } = Layout;
-import { ToolKeys, ToolsList } from "../ToolsList";
-import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 
 function AsciiToString() {
   const { value } = useGetToolsInput();
@@ -52,18 +51,10 @@ function AsciiToString() {
                   required: true,
                   message: "Please enter ASCII codes to convert!",
                 },
-                {validator: () => {
-
-                }}
+                { validator: () => {} },
               ]}
               onChangeCb={onChangeCb}
             />
-            <div>
-              Want to convert Text to ASCII? use
-              <Link href="/tools/string-to-ascii">
-                &nbsp;Text to ASCII converter
-              </Link>
-            </div>
           </div>
           <div className="col-lg-6">
             <ConvertedOutputByTools content={byte} />

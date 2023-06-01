@@ -1,6 +1,5 @@
 import seoData from "../../../seo/tools/tools.json";
 
-
 export enum ToolKeys {
   SalaryHike = "SalaryHike",
   StringtoASCII = "StringtoASCII",
@@ -10,8 +9,9 @@ export enum ToolKeys {
   JSONUnstringify = "JSONUnstringify",
   UppercaseTextconverter = "UppercaseTextconverter",
   LowercaseTextconverter = "LowercaseTextconverter",
-  wordCounter="wordCounter",
-  Tools = "Tools"
+  wordCounter = "wordCounter",
+  Tools = "Tools",
+  ReplaceSpaces = "ReplaceSpaces",
 }
 
 export interface ITools {
@@ -22,9 +22,9 @@ export interface ITools {
   metaDescription: string;
   content: string;
   list: boolean;
-  key: ToolKeys
+  key: ToolKeys;
+  toolDescription: string;
 }
-
 
 export const jsonUnstringifyPath = "json-unstringify";
 export const jsonParser = "json-parser";
@@ -36,9 +36,11 @@ export const toolsListData: Array<ITools> = [
     heading: " Salary Hike Percentage Calculator",
     metaTitle: seoData.salaryHikePercentageCalculator.title,
     metaDescription: seoData.salaryHikePercentageCalculator.description,
-    content: "Discover your updated salary and the percentage increase with our salary hike calculator.",
+    content:
+      "Discover your updated salary and the percentage increase with our salary hike calculator.",
     list: true,
-    key: ToolKeys.SalaryHike
+    key: ToolKeys.SalaryHike,
+    toolDescription: "",
   },
   {
     title: "String to ASCII",
@@ -49,7 +51,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.stringToAscii.title,
     metaDescription: seoData.stringToAscii.description,
     list: true,
-    key: ToolKeys.StringtoASCII
+    key: ToolKeys.StringtoASCII,
+    toolDescription: "",
   },
   {
     title: "ASCII to String",
@@ -60,8 +63,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,
     list: true,
-    key: ToolKeys.ASCIItoString
-
+    key: ToolKeys.ASCIItoString,
+    toolDescription: "",
   },
   {
     title: "JSON to String",
@@ -72,8 +75,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.jsonToString.title,
     metaDescription: seoData.jsonToString.description,
     list: true,
-    key: ToolKeys.JSONtostring
-
+    key: ToolKeys.JSONtostring,
+    toolDescription: "",
   },
   {
     title: "JSON parser",
@@ -83,8 +86,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
-    key: ToolKeys.JSONParser
-
+    key: ToolKeys.JSONParser,
+    toolDescription: "",
   },
   {
     title: "JSON Unstringify",
@@ -94,8 +97,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
-    key: ToolKeys.JSONUnstringify
-
+    key: ToolKeys.JSONUnstringify,
+    toolDescription: "",
   },
   {
     title: "Text to Uppercase",
@@ -106,8 +109,8 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.toUppercase.title,
     metaDescription: seoData.toUppercase.description,
     list: true,
-    key: ToolKeys.UppercaseTextconverter
-
+    key: ToolKeys.UppercaseTextconverter,
+    toolDescription: "",
   },
   {
     title: "Text to Lowercase",
@@ -118,20 +121,32 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.toLowercase.title,
     metaDescription: seoData.toLowercase.description,
     list: true,
-    key: ToolKeys.LowercaseTextconverter
-
+    key: ToolKeys.LowercaseTextconverter,
+    toolDescription: "",
   },
   {
     title: "Word Count",
     link: "/tools/word-counter",
     heading: "Word and Character Counter Tool",
-    content:
-      " Just load your text, System will automatically start counting ",
+    content: " Just load your text, System will automatically start counting ",
     metaTitle: seoData.wordCounter.title,
     metaDescription: seoData.wordCounter.description,
     list: true,
-    key: ToolKeys.wordCounter
-
+    key: ToolKeys.wordCounter,
+    toolDescription: "",
+  },
+  {
+    title: "Replace Spaces",
+    link: "/tools/replace-spaces",
+    heading: "Replace Spaces Online",
+    metaTitle: seoData.salaryHikePercentageCalculator.title,
+    metaDescription: seoData.salaryHikePercentageCalculator.description,
+    content: `Just load your content or text, By default system will replace all spaces with underscores
+      if you need to replace specific character please use below input fields accordingly`,
+    list: true,
+    key: ToolKeys.ReplaceSpaces,
+    toolDescription:
+      "Introducing our versatile text replacement tool, designed to simplify the process of modifying your content. With this user-friendly tool, you can effortlessly replace any text with a provided replacement of your choice. Whether you need to update specific keywords, or make extensive changes, our tool offers a seamless solution. Simply enter the text you wish to replace and provide the replacement, and our tool will swiftly perform the necessary modifications. Save time and effort while maintaining the integrity of your content with our powerful text replacement tool.",
   },
   {
     title: "Tools",
@@ -142,7 +157,7 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.toolsList.title,
     metaDescription: seoData.toolsList.description,
     list: false,
-    key: ToolKeys.Tools
-
+    key: ToolKeys.Tools,
+    toolDescription: "",
   },
 ];

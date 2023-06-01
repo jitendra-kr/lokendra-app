@@ -1,17 +1,15 @@
 .input {
-    height: 100vh !important;
-    margin-top: 29px;
-    font-size: 15px;
-    line-height: 2.5 !important;
-    padding-left: 20px !important;
+  margin-top: 29px;
+  font-size: 15px;
+  line-height: 2.5 !important;
+  padding-left: 20px !important;
 }
 .buttonRightLink {
-    margin-bottom: 25px;
-    margin-top: 25px;
-    justify-content: center;
-    display: flex;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  justify-content: center;
+  display: flex;
 }
 .container {
-    height: 100vh;
-    margin-top: 30px;
+  margin-top: 30px;
 }

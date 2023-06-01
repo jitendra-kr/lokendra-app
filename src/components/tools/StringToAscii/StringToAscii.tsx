@@ -1,13 +1,12 @@
 import { Layout } from "antd";
-import Link from "next/link";
 import { withRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { OfflineMetaTags } from "../../common";
+import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
-import { InputToConvertByTools } from "../helper/InputToConvertByTools";
+import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, ToolsList } from "../ToolsList";
+import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
+import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 
 const { Content } = Layout;
 
@@ -34,12 +33,6 @@ function StringToAscii() {
             rules={[{ required: true, message: "Please enter text !" }]}
             onChangeCb={onChangeCb}
           />
-          <div>
-            Want to convert ASCII to text ? use
-            <Link href="/tools/ascii-to-string">
-              &nbsp; ASCII to text converter
-            </Link>
-          </div>
         </div>
         <div className="col-lg-6">
           <ConvertedOutputByTools content={byte.join(" ")} />

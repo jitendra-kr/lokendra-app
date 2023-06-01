@@ -1,13 +1,12 @@
 import { Layout } from "antd";
-import Link from "next/link";
 import { withRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { OfflineMetaTags } from "../../common";
+import { ToolsBody } from "../ToolsBody";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import { ToolKeys, ToolsList } from "../ToolsList";
-import { ToolsBody } from "../ToolsBody";
-import { OfflineMetaTags } from "../../common";
 
 const { Content } = Layout;
 
@@ -33,12 +32,6 @@ function ToLowercase() {
             onChangeCb={onChangeCb}
             rules={[{ required: true, message: "Please enter text !" }]}
           />
-          <div>
-            Want to convert to Uppercase ? use
-            <Link href="/tools/text-to-uppercase">
-              &nbsp; Uppercase converter
-            </Link>
-          </div>
         </div>
         <div className="col-lg-6">
           <ConvertedOutputByTools content={byte} />
