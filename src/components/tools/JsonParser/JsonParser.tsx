@@ -6,7 +6,7 @@ import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, jsonUnstringifyPath, toolsListData } from "../ToolsList";
+import { ToolKeys, jsonStringifyPath, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { JsonViewer } from "../helper/JsonViewer";
@@ -23,7 +23,7 @@ function JsonParser() {
   function isJsonString(str: string) {
     setInput(str);
     try {
-      if (pathname.includes(jsonUnstringifyPath)) {
+      if (pathname.includes(jsonStringifyPath)) {
         if (str.includes(`\": `)) {
           str = JSON.parse(str);
         } else {
