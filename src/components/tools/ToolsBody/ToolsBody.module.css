@@ -1,10 +1,11 @@
 .bodyTitle {
-    text-align: center;
-    font-size: 33px;
+  text-align: center;
+  font-size: 33px;
 }
 .bodyContent {
-    font-size: medium;
-    color: lightslategray;
-    text-align: center;
-    font-size: 17px;
+  font-size: medium;
+  color: lightslategray;
+  text-align: center;
+  font-size: 17px;
+  white-space: pre-wrap;
 }
