@@ -100,7 +100,7 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.jsonParser.description,
     list: true,
     key: ToolKeys.JSONParser,
-    toolDescription: `Easily parse and process JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets, without the need to download a special program or tool.
+    toolDescription: `Easily parse and beautify JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets, without the need to download a special program or tool.
       \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected. One of the most useful features of this tool is its ability to share your JSON output. \nYou can easily copy and paste your formatted and validated JSON code into an email or chat message. 
       \nThe tool's Share option allows you to create a special URL that you may share with others.`,
   },
