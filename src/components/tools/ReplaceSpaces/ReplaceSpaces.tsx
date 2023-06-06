@@ -7,7 +7,7 @@ import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import { ToolDescription } from "../helper/ToolDescription";
+import { ToolDescription } from "../helper/ToolOverview";
 import ReplaceSpacesStyles from "./ReplaceSpaces.module.css";
 const { Content } = Layout;
 

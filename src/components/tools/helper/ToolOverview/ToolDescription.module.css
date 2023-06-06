@@ -13,6 +13,13 @@
   padding: 40px;
 }
 
+.container-how-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
 .content {
   width: 100vh;
   text-align: center;
@@ -20,4 +27,3 @@
   color: #666;
   white-space: pre-wrap;
 }
-

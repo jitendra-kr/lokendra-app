@@ -38,5 +38,13 @@
   "ReplaceSpaces": {
     "title": "Replace Spaces with Underscores - Fast & Easy Online Tool",
     "description": "Effortlessly replace spaces in text with our online utility. Enhance readability and optimize your content. Try our free space replacer tool now for free!"
+  },
+  "UrlDecode": {
+    "title": "URL Decode - Safe & Secure URL Decoder Online",
+    "description": "URL Decode is the perfect tool for quickly and securely decoding URL online. You can quickly decode any type of URL or Text with ease. Try it now!"
+  },
+  "URLEncode": {
+    "title": "URL Encode - Encode URL Easily and Quickly",
+    "description": "Easily and securely encode URLs with our free online URL encoder in real time. Allowing you to protect sensitive information and ensure your links are safe!"
   }
 }

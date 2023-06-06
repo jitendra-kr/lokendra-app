@@ -4,7 +4,7 @@ import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
 
-import { ToolDescription } from "../helper/ToolDescription";
+import { ToolDescription } from "../helper/ToolOverview";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
 import { NewSalaryByPercentage } from "./NewSalaryByPercentage";
 

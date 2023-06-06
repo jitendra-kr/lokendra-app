@@ -9,8 +9,8 @@ import characterCounterStyles from "./WordCounter.module.css";
 
 import { useState } from "react";
 import { convertNumberToWords } from "../../../utils";
-import { ToolDescription } from "../helper/ToolDescription";
 import { ToolOutputActions } from "../helper/ToolOutputActions";
+import { ToolDescription } from "../helper/ToolOverview";
 
 function WordCounter() {
   const [characterCount, setCharacterCount] = useState(0);

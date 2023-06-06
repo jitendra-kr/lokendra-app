@@ -13,4 +13,5 @@
   padding: 10px;
   font-size: large;
   font-family: monospace;
+  white-space: pre-wrap;
 }

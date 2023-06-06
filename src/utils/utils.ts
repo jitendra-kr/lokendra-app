@@ -47,31 +47,77 @@ export const copyToClipboard = (content: any, title?: string): void => {
 
 export function convertNumberToWords(number: number): string {
   const ones = [
-    '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
-    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
-    'seventeen', 'eighteen', 'nineteen'
+    "",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
   ];
   const tens = [
-    '', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+    "",
+    "",
+    "twenty",
+    "thirty",
+    "forty",
+    "fifty",
+    "sixty",
+    "seventy",
+    "eighty",
+    "ninety",
   ];
 
   if (number === 0) {
-    return 'zero';
+    return "zero";
   } else if (number < 20) {
     return ones[number];
   } else if (number < 100) {
-    return tens[Math.floor(number / 10)] + ' ' + ones[number % 10];
+    return tens[Math.floor(number / 10)] + " " + ones[number % 10];
   } else if (number < 1000) {
-    return ones[Math.floor(number / 100)] + ' hundred ' + convertNumberToWords(number % 100);
+    return (
+      ones[Math.floor(number / 100)] +
+      " hundred " +
+      convertNumberToWords(number % 100)
+    );
   } else if (number < 1000000) {
-    return convertNumberToWords(Math.floor(number / 1000)) + ' thousand ' + convertNumberToWords(number % 1000);
+    return (
+      convertNumberToWords(Math.floor(number / 1000)) +
+      " thousand " +
+      convertNumberToWords(number % 1000)
+    );
   } else if (number < 1000000000) {
-    return convertNumberToWords(Math.floor(number / 1000000)) + ' million ' + convertNumberToWords(number % 1000000);
+    return (
+      convertNumberToWords(Math.floor(number / 1000000)) +
+      " million " +
+      convertNumberToWords(number % 1000000)
+    );
   } else if (number < 1000000000000) {
-    return convertNumberToWords(Math.floor(number / 1000000000)) + ' billion ' + convertNumberToWords(number % 1000000000);
+    return (
+      convertNumberToWords(Math.floor(number / 1000000000)) +
+      " billion " +
+      convertNumberToWords(number % 1000000000)
+    );
   } else if (number < 1000000000000000) {
-    return convertNumberToWords(Math.floor(number / 1000000000000)) + ' trillion ' + convertNumberToWords(number % 1000000000000);
+    return (
+      convertNumberToWords(Math.floor(number / 1000000000000)) +
+      " trillion " +
+      convertNumberToWords(number % 1000000000000)
+    );
   } else {
-    return 'Number is too large to convert.';
+    return "Number is too large to convert.";
   }
 }

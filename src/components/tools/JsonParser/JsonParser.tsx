@@ -10,7 +10,7 @@ import { ToolKeys, jsonStringifyPath, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { JsonViewer } from "../helper/JsonViewer";
-import { ToolDescription } from "../helper/ToolDescription";
+import { ToolDescription } from "../helper/ToolOverview";
 const { Content } = Layout;
 
 function JsonParser() {
