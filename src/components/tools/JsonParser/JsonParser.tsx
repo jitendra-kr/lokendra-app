@@ -1,16 +1,22 @@
 import { Layout } from "antd";
+import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import InputToConvertByToolsStyles from "../../../components/tools/helper/InputToConvertByTools/InputToConvertByTools.module.css";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, jsonStringifyPath, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
-import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { JsonViewer } from "../helper/JsonViewer";
 import { ToolDescription } from "../helper/ToolOverview";
+
+const Editor = dynamic(() => import("../../common/Ide/Ide"), {
+  ssr: false,
+});
+
 const { Content } = Layout;
 
 function JsonParser() {
@@ -64,22 +70,9 @@ function JsonParser() {
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6">
-          <InputToConvertByTools
-            rules={[
-              { required: true, message: "Please enter" },
-              {
-                validator: async (_: any, value: any) => {
-                  if (!isJsonString(value)) {
-                    return Promise.reject("Please enter valid JSON!");
-                  } else {
-                    return Promise.resolve();
-                  }
-                },
-              },
-            ]}
-            onChangeCb={isJsonString}
-            row={26}
-          />
+          <div className={InputToConvertByToolsStyles.container}>
+            <Editor cb={isJsonString} />
+          </div>
         </div>
         <div className="col-lg-6">
           <JsonViewer content={byte} error={error} input={input} />

@@ -1,1 +1,1 @@
-export * from "./OfflineMetaTags/OfflineMetaTags"
+export * from "./OfflineMetaTags/OfflineMetaTags";
