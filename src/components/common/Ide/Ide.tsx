@@ -12,12 +12,15 @@ type IdeProps = {
 export default function Ide({ cb }: IdeProps) {
   return (
     <AceEditor
+      placeholder="Start typing"
       height="100vh"
       mode="java"
       theme="github"
       onChange={cb}
       name="UNIQUE_ID_OF_DIV"
       editorProps={{ $blockScrolling: true }}
+      fontSize={18}
+      style={{ border: "1px solid #ccc" }}
     />
   );
 }
