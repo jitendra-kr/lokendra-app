@@ -1,7 +1,7 @@
 import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-searchbox";
-import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-github";
 
 import AceEditor from "react-ace";
@@ -15,7 +15,7 @@ export default function Ide({ cb }: IdeProps) {
     <AceEditor
       placeholder="Start typing"
       height="100vh"
-      mode="java"
+      mode="json"
       theme="github"
       onChange={cb}
       name="UNIQUE_ID_OF_DIV"
