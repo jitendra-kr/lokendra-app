@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import { get } from "lodash";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
@@ -16,7 +17,7 @@ const { Content } = Layout;
 
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
-  const [error, setError] = useState<unknown>();
+  const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
   const [input, setInput] = useState<string>("");
 
@@ -35,28 +36,31 @@ function JsonParser() {
   };
 
   function isJsonString(str: string | undefined) {
-    if (editorError) {
-      setEditorError("");
-    }
-
-    let parsedJSON;
     if (!str) {
       resetStates();
       return;
     }
-    setInput(str);
-    try {
-      parsedJSON = JSON.parse(str);
-      if (typeof parsedJSON === "number") {
-        throw "Invalid JSON";
-      }
-    } catch (error: unknown) {
-      setError(error);
-      setByte(`${STRING_CONSTANTS.tools.invalidJson}`);
-      return false;
+
+    if (editorError) {
+      setEditorError("");
     }
-    setByte(str);
-    return true;
+    if (error) {
+      setError("");
+    }
+
+    try {
+      const parsedJSON = JSON.parse(str);
+      if (typeof parsedJSON === "number") {
+        throw STRING_CONSTANTS.tools.invalidJson;
+      }
+      setByte(JSON.stringify(parsedJSON, null, "\t"));
+    } catch (error: unknown) {
+      setError(
+        `${STRING_CONSTANTS.tools.invalidJson} ----> ${
+          get(error, "name") + " \n" + get(error, "message")
+        }  `,
+      );
+    }
   }
 
   const result = toolsListData.filter((obj) => {
@@ -75,12 +79,7 @@ function JsonParser() {
           </div>
         </div>
         <div className="col-lg-6">
-          <JsonViewer
-            content={byte}
-            error={error}
-            input={input}
-            editorError={editorError}
-          />
+          <JsonViewer content={byte} error={error} editorError={editorError} />
         </div>
       </div>
       <ToolDescription content={result[0].toolDescription} />
