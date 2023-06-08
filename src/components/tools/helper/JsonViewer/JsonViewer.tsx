@@ -1,9 +1,8 @@
-import { get, isArray } from "lodash";
-import { JSONTree } from "react-json-tree";
+import { get } from "lodash";
 import { STRING_CONSTANTS } from "../../../../constants";
+import Ide from "../../../common/Ide/Ide";
 import { ToolOutputActions } from "../ToolOutputActions";
 import styles from "./JsonViewer.module.css";
-import { JSONTreeTheme } from "./editorTheme";
 
 type JsonViewerProps = {
   content: any;
@@ -12,27 +11,14 @@ type JsonViewerProps = {
   editorError: string;
 };
 
-function RenderJsonViewer({
+export const JsonViewer = ({
   content,
   error,
   input,
   editorError,
-}: JsonViewerProps) {
-  const valueColor: any = {
-    boolean: "boolean",
-    number: "number",
-    string: "string",
-  };
-
-  const typeOf = (value: any) => {
-    if (value === "true" || value === "false") {
-      return "boolean ";
-    }
-    if (value === "null") {
-      return "object ";
-    }
-    return typeof value + " ";
-  };
+}: JsonViewerProps) => {
+  const prepareJSON =
+    content && JSON.stringify(JSON.parse(content), null, "\t");
 
   if (!input) {
     return <></>;
@@ -40,66 +26,20 @@ function RenderJsonViewer({
 
   if (content && content === STRING_CONSTANTS.tools.invalidJson) {
     return (
-      <>
+      <div className={styles.container}>
         <span className={styles.invalidJson}>
           {content} ----&gt;
           {get(error, "name") + " \n" + get(error, "message")}
         </span>
         <span className={styles.invalidJson}>{editorError}</span>
-      </>
+      </div>
     );
   }
 
   return (
     <>
-      {isArray(content) ? "[" : "{"}
-      <JSONTree
-        data={content}
-        labelRenderer={([raw]) => (
-          <span className={styles.keyValues}>"{raw}":</span>
-        )}
-        valueRenderer={(raw: any) => (
-          <em>
-            <span className={`${styles.keyValues} ${styles.dataTypeLabel}`}>
-              {typeOf(raw)}
-            </span>
-            <span
-              className={`${styles.keyValues} ${
-                styles[valueColor[typeOf(raw)]]
-              }`}
-            >
-              {raw}
-            </span>
-          </em>
-        )}
-        theme={{
-          extend: JSONTreeTheme,
-        }}
-        shouldExpandNode={() => true}
-        hideRoot={true}
-      />
-      {isArray(content) ? "]" : "}"}
-    </>
-  );
-}
-
-export const JsonViewer = ({
-  content,
-  error,
-  input,
-  editorError,
-}: JsonViewerProps) => {
-  return (
-    <>
-      <ToolOutputActions content={content} />
-      <div className={styles.container}>
-        <RenderJsonViewer
-          content={content}
-          error={error}
-          input={input}
-          editorError={editorError}
-        />
-      </div>
+      <ToolOutputActions content={prepareJSON} />
+      <Ide value={prepareJSON} minimapEnabled={false} />
     </>
   );
 };

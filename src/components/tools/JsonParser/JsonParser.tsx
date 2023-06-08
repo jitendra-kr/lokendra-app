@@ -1,20 +1,16 @@
 import { Layout } from "antd";
-import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import InputToConvertByToolsStyles from "../../../components/tools/helper/InputToConvertByTools/InputToConvertByTools.module.css";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { OfflineMetaTags } from "../../common";
+import Ide from "../../common/Ide/Ide";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { JsonViewer } from "../helper/JsonViewer";
 import { ToolDescription } from "../helper/ToolOverview";
-
-const Editor = dynamic(() => import("../../common/Ide/Ide"), {
-  ssr: false,
-});
 
 const { Content } = Layout;
 
@@ -59,7 +55,7 @@ function JsonParser() {
       setByte(`${STRING_CONSTANTS.tools.invalidJson}`);
       return false;
     }
-    setByte(parsedJSON);
+    setByte(str);
     return true;
   }
 
@@ -75,7 +71,7 @@ function JsonParser() {
         <ToolsBody />
         <div className="col-lg-6">
           <div className={InputToConvertByToolsStyles.container}>
-            <Editor cb={isJsonString} error={onError} />
+            <Ide cb={isJsonString} error={onError} />
           </div>
         </div>
         <div className="col-lg-6">
@@ -88,7 +84,6 @@ function JsonParser() {
         </div>
       </div>
       <ToolDescription content={result[0].toolDescription} />
-
       <ToolsList />
     </Content>
   );
