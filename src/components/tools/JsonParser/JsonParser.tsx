@@ -22,11 +22,37 @@ const { Content } = Layout;
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<unknown>();
-  const [input, setInput] = useState("");
+  const [editorError, setEditorError] = useState<string>("");
+  const [input, setInput] = useState<string>("");
 
   const { pathname } = useGetUrlPath();
+  const onError = (errormsg: string | undefined) => {
+    console.log("onError");
+    console.log(errormsg);
+    if (errormsg) {
+      setEditorError(errormsg);
+      return;
+    }
+    setEditorError("");
+  };
 
-  function isJsonString(str: string) {
+  const resetStates = () => {
+    setInput("");
+    setError("");
+    setByte("");
+  };
+
+  function isJsonString(str: string | undefined) {
+    console.log("change");
+    if (editorError) {
+      setEditorError("");
+    }
+
+    let parsedJSON;
+    if (!str) {
+      resetStates();
+      return;
+    }
     setInput(str);
     try {
       if (pathname.includes(jsonStringifyPath)) {
@@ -36,6 +62,10 @@ function JsonParser() {
           str = str.trim();
           str = str.substring(1, str.length - 1);
         }
+      }
+      if (!str) {
+        resetStates();
+        return;
       }
       str = str.replace(/\r?\n?\s/g, "");
       str = str.replaceAll(
@@ -47,8 +77,8 @@ function JsonParser() {
         `"${STRING_CONSTANTS.tools.internalArray}"`,
       );
 
-      const data = JSON.parse(str);
-      if (typeof data === "number") {
+      parsedJSON = JSON.parse(str);
+      if (typeof parsedJSON === "number") {
         throw "Invalid JSON";
       }
     } catch (error: unknown) {
@@ -56,9 +86,10 @@ function JsonParser() {
       setByte(`${STRING_CONSTANTS.tools.invalidJson}`);
       return false;
     }
-    setByte(JSON.parse(str));
+    setByte(parsedJSON);
     return true;
   }
+
   const result = toolsListData.filter((obj) => {
     return obj.key === ToolKeys.JSONParser;
   });
@@ -71,11 +102,16 @@ function JsonParser() {
         <ToolsBody />
         <div className="col-lg-6">
           <div className={InputToConvertByToolsStyles.container}>
-            <Editor cb={isJsonString} />
+            <Editor cb={isJsonString} error={onError} />
           </div>
         </div>
         <div className="col-lg-6">
-          <JsonViewer content={byte} error={error} input={input} />
+          <JsonViewer
+            content={byte}
+            error={error}
+            input={input}
+            editorError={editorError}
+          />
         </div>
       </div>
       <ToolDescription content={result[0].toolDescription} />

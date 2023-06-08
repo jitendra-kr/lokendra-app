@@ -1,27 +1,30 @@
-import "ace-builds/src-noconflict/ace";
-import "ace-builds/src-noconflict/ext-language_tools";
-import "ace-builds/src-noconflict/ext-searchbox";
-import "ace-builds/src-noconflict/mode-json";
-import "ace-builds/src-noconflict/theme-github";
-
-import AceEditor from "react-ace";
+import Editor from "@monaco-editor/react";
+import { editor } from "monaco-editor";
+import styles from "./Ide.module.css";
 
 type IdeProps = {
-  cb: (value: string) => void;
+  cb: (value: string | undefined) => void;
+  error: (value: string | undefined) => void;
 };
 
-export default function Ide({ cb }: IdeProps) {
+export default function Ide({ cb, error }: IdeProps) {
+  function handleEditorValidation(markers: editor.IMarker[]) {
+    let errorMsg = "";
+    markers.forEach((marker) => {
+      errorMsg += ` \n${marker.message}`;
+    });
+    error(errorMsg);
+  }
+
   return (
-    <AceEditor
-      placeholder="Start typing"
-      height="100vh"
-      mode="json"
-      theme="github"
-      onChange={cb}
-      name="UNIQUE_ID_OF_DIV"
-      editorProps={{ $blockScrolling: true }}
-      fontSize={15}
-      style={{ border: "1px solid #ccc" }}
-    />
+    <>
+      <Editor
+        height="100vh"
+        defaultLanguage="json"
+        onValidate={handleEditorValidation}
+        onChange={cb}
+        className={styles.editor}
+      />
+    </>
   );
 }

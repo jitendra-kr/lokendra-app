@@ -9,9 +9,15 @@ type JsonViewerProps = {
   content: any;
   input: string;
   error: any;
+  editorError: string;
 };
 
-function RenderJsonViewer({ content, error, input }: JsonViewerProps) {
+function RenderJsonViewer({
+  content,
+  error,
+  input,
+  editorError,
+}: JsonViewerProps) {
   const valueColor: any = {
     boolean: "boolean",
     number: "number",
@@ -34,9 +40,13 @@ function RenderJsonViewer({ content, error, input }: JsonViewerProps) {
 
   if (content && content === STRING_CONSTANTS.tools.invalidJson) {
     return (
-      <span className={styles.invalidJson}>
-        {content} ----&gt; {get(error, "name") + " " + get(error, "message")}
-      </span>
+      <>
+        <span className={styles.invalidJson}>
+          {content} ----&gt;
+          {get(error, "name") + " \n" + get(error, "message")}
+        </span>
+        <span className={styles.invalidJson}>{editorError}</span>
+      </>
     );
   }
 
@@ -73,12 +83,22 @@ function RenderJsonViewer({ content, error, input }: JsonViewerProps) {
   );
 }
 
-export const JsonViewer = ({ content, error, input }: JsonViewerProps) => {
+export const JsonViewer = ({
+  content,
+  error,
+  input,
+  editorError,
+}: JsonViewerProps) => {
   return (
     <>
       <ToolOutputActions content={content} />
       <div className={styles.container}>
-        <RenderJsonViewer content={content} error={error} input={input} />
+        <RenderJsonViewer
+          content={content}
+          error={error}
+          input={input}
+          editorError={editorError}
+        />
       </div>
     </>
   );

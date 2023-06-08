@@ -1,54 +1,54 @@
 .container {
-    border-radius: 2px;
-    border: 1px;
-    border-color:darkgray;
-    height: 100vh;
-    width: 100%;
-    border-style: solid;
-    background-color: rgb(255, 255, 250);
-    overflow: auto;
+  border-radius: 2px;
+  border: 1px;
+  border-color: darkgray;
+  height: 100vh;
+  width: 100%;
+  border-style: solid;
+  background-color: rgb(255, 255, 250);
+  overflow: auto;
 }
 
 .CopyToClipboardTxt {
-    text-align: right;
-    color: #0645AD;
-    cursor: pointer;
+  text-align: right;
+  color: #0645ad;
+  cursor: pointer;
 }
 
 .invalidJson {
-    padding: 10px;
-    font-size: large;
-    font-family: monospace;
-    color: crimson;
+  padding: 10px;
+  font-size: medium;
+  font-family: monospace;
+  color: crimson;
+  white-space: pre-wrap;
 }
 
 .keyValues {
-    font-family: monospace;
-    font-style: initial;
+  font-family: monospace;
+  font-style: initial;
 }
 
 .invalidValues {
-    font-family: monospace;
-    color: aliceblue;
-    background-color:brown;
-    font-style: initial;
+  font-family: monospace;
+  color: aliceblue;
+  background-color: brown;
+  font-style: initial;
 }
 
 .SyntaxError {
-    color: darkred;
+  color: darkred;
 }
 
 .boolean {
-    color: #0747A6;
+  color: #0747a6;
 }
 .number {
-    color: #ad7fa8;
+  color: #ad7fa8;
 }
 .string {
-    color: #4e9a06;
+  color: #4e9a06;
 }
 
-
 .dataTypeLabel {
-    color:red !important;
-  }
+  color: red !important;
+}

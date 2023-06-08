@@ -96,7 +96,8 @@ export const toolsListData: Array<ITools> = [
     title: "JSON parser",
     link: `/tools/${jsonParser}`,
     heading: "Online JSON Parser, Formatter, & Validator",
-    content: "Just load your JSON, System will automatically parse it",
+    content:
+      "Just load your JSON, and the system will validate, parse, and format it automatically.",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
