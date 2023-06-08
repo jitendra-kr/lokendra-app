@@ -1,6 +1,6 @@
 import Editor, { Theme } from "@monaco-editor/react";
 import { editor } from "monaco-editor";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { updateToolsInput } from "../../../common/state/tools";
 import { useAppDispatch } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
@@ -22,7 +22,8 @@ export default function Ide({
   minimapEnabled = true,
 }: IdeProps) {
   const dispatch = useAppDispatch();
-  const [paramsData, setParamsData] = useState<string>();
+  const [editorValue, setEditorValue] = useState<string>();
+  const paramsLoaded = useRef(false);
 
   const {
     params: { data },
@@ -46,27 +47,26 @@ export default function Ide({
   };
 
   useEffect(() => {
-    if (value) {
-      setParamsData(value);
+    if (data && !paramsLoaded.current) {
+      paramsLoaded.current = true;
+      const prettyInput = JSON.parse(data);
+      setEditorValue(JSON.stringify(prettyInput, null, "\t"));
+      onChange(data);
       return;
     }
-    if (data) {
-      const prettyInput = JSON.parse(data);
-      setParamsData(JSON.stringify(prettyInput, null, "\t"));
-      onChange(data);
-    }
+    setEditorValue(value);
   }, [data, value]);
 
   return (
     <>
       <Editor
         theme={theme}
-        height="100vh"
+        height="74vh"
         defaultLanguage="json"
         onValidate={handleEditorValidation}
         onChange={onChange}
         className={styles.editor}
-        value={paramsData}
+        value={editorValue}
         options={{
           selectOnLineNumbers: true,
           lineNumbersMinChars: 3,
