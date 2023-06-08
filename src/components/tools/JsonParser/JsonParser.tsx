@@ -5,10 +5,9 @@ import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import InputToConvertByToolsStyles from "../../../components/tools/helper/InputToConvertByTools/InputToConvertByTools.module.css";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
-import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, jsonStringifyPath, toolsListData } from "../ToolsList";
+import { ToolKeys, toolsListData } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { JsonViewer } from "../helper/JsonViewer";
 import { ToolDescription } from "../helper/ToolOverview";
@@ -25,10 +24,7 @@ function JsonParser() {
   const [editorError, setEditorError] = useState<string>("");
   const [input, setInput] = useState<string>("");
 
-  const { pathname } = useGetUrlPath();
   const onError = (errormsg: string | undefined) => {
-    console.log("onError");
-    console.log(errormsg);
     if (errormsg) {
       setEditorError(errormsg);
       return;
@@ -43,7 +39,6 @@ function JsonParser() {
   };
 
   function isJsonString(str: string | undefined) {
-    console.log("change");
     if (editorError) {
       setEditorError("");
     }
@@ -55,28 +50,6 @@ function JsonParser() {
     }
     setInput(str);
     try {
-      if (pathname.includes(jsonStringifyPath)) {
-        if (str.includes(`\": `)) {
-          str = JSON.parse(str);
-        } else {
-          str = str.trim();
-          str = str.substring(1, str.length - 1);
-        }
-      }
-      if (!str) {
-        resetStates();
-        return;
-      }
-      str = str.replace(/\r?\n?\s/g, "");
-      str = str.replaceAll(
-        /\b(Object)\b/g,
-        `"${STRING_CONSTANTS.tools.internalObject}"`,
-      );
-      str = str.replaceAll(
-        /\b(Array)\b/g,
-        `"${STRING_CONSTANTS.tools.internalArray}"`,
-      );
-
       parsedJSON = JSON.parse(str);
       if (typeof parsedJSON === "number") {
         throw "Invalid JSON";
