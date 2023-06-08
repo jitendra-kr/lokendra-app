@@ -21,7 +21,7 @@ type InputToConvertByToolsProps = {
 export const InputToConvertByTools = ({
   onChangeCb,
   rules,
-  placeholder = "Please enter",
+  placeholder = "Start typing ...",
   row = 14,
 }: InputToConvertByToolsProps) => {
   const dispatch = useAppDispatch();
@@ -60,6 +60,7 @@ export const InputToConvertByTools = ({
           onChange={onChange}
           placeholder={placeholder}
           rows={row}
+          // style={{ height: "100vh" }}
         />
       </Form.Item>
     </Form>

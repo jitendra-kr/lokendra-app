@@ -1,7 +1,7 @@
 .container {
   border-radius: 10px;
   border: 1px;
-  min-height: 56vh;
+  min-height: 100vh;
   width: 100%;
   border-color: darkgray;
   border-style: solid;
@@ -11,7 +11,17 @@
 .content {
   word-wrap: break-word;
   padding: 10px;
-  font-size: large;
+  font-size: medium;
   font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.error-content {
+  word-wrap: break-word;
+  padding: 10px;
+  font-size: medium;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: crimson;
   white-space: pre-wrap;
 }
