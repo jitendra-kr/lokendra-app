@@ -3,7 +3,6 @@ import { get } from "lodash";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import InputToConvertByToolsStyles from "../../../components/tools/helper/InputToConvertByTools/InputToConvertByTools.module.css";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { OfflineMetaTags } from "../../common";
 import Ide from "../../common/Ide/Ide";
@@ -74,7 +73,7 @@ function JsonParser() {
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6">
-          <div className={InputToConvertByToolsStyles.container}>
+          <div>
             <Ide cb={isJsonString} error={onError} />
           </div>
         </div>

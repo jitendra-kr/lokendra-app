@@ -1,40 +1,13 @@
-import { Button, Switch } from "antd";
-import { Dispatch, SetStateAction } from "react";
+import { Button } from "antd";
 
 type EditorActionsProps = {
-  setAuto: Dispatch<SetStateAction<boolean>>;
-  format: () => void;
   clear: () => void;
 };
-export const EditorActions = ({
-  setAuto,
-  clear,
-  format,
-}: EditorActionsProps) => {
-  const auto = (checked: boolean) => {
-    setAuto(checked);
-  };
-
+export const EditorActions = ({ clear }: EditorActionsProps) => {
   return (
     <div style={{ display: "flex", justifyContent: "start" }}>
-      <span style={{ marginRight: "10px" }}>
-        <Switch defaultChecked onChange={auto} /> auto
-      </span>
-      <Button
-        type="primary"
-        htmlType="submit"
-        style={{ marginRight: "10px" }}
-        onClick={format}
-      >
-        Format
-      </Button>
-      <Button
-        type="primary"
-        htmlType="submit"
-        style={{ marginRight: "10px" }}
-        onClick={clear}
-      >
-        Clear
+      <Button type="primary" htmlType="submit" onClick={clear}>
+        <span style={{ color: "white" }}>Clear</span>
       </Button>
     </div>
   );

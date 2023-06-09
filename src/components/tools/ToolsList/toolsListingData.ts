@@ -82,7 +82,7 @@ export const toolsListData: Array<ITools> = [
     link: "/tools/json-to-string",
     heading: "Online JSON to String Converter & Stringify Tool",
     content:
-      "Just load your JSON, System will automatically convert JSON string or text",
+      "Just load your JSON, and the system will instantly convert it to text or a string.",
     metaTitle: seoData.jsonToString.title,
     metaDescription: seoData.jsonToString.description,
     list: true,

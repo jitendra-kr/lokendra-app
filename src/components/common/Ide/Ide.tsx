@@ -1,9 +1,10 @@
-import Editor, { Theme } from "@monaco-editor/react";
+import Editor, { Monaco, Theme } from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
 import { updateToolsInput } from "../../../common/state/tools";
 import { useAppDispatch } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
+import { EditorActions } from "./EditorActions";
 import styles from "./Ide.module.css";
 
 type IdeProps = {
@@ -20,12 +21,13 @@ export default function Ide({
   theme,
   minimapEnabled = true,
 }: IdeProps) {
+  const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const dispatch = useAppDispatch();
   const [editorValue, setEditorValue] = useState<string>();
   const paramsLoaded = useRef(false);
 
   const {
-    params: { data },
+    params: { data: paramsData },
   } = useGetQueryString();
 
   function handleEditorValidation(markers: editor.IMarker[]) {
@@ -46,18 +48,32 @@ export default function Ide({
   };
 
   useEffect(() => {
-    if (data && !paramsLoaded.current) {
+    if (paramsData && !paramsLoaded.current) {
       paramsLoaded.current = true;
-      const prettyInput = JSON.parse(data);
+      const prettyInput = JSON.parse(paramsData);
       setEditorValue(JSON.stringify(prettyInput, null, "\t"));
-      onChange(data);
+      onChange(paramsData);
       return;
     }
-  }, [data]);
+  }, [paramsData]);
+
+  const clear = () => {
+    editorRef.current?.setValue("");
+  };
+
+  function handleEditorDidMount(
+    editor: editor.IStandaloneCodeEditor,
+    monaco: Monaco,
+  ) {
+    editorRef.current = editor;
+    editor.focus();
+  }
 
   return (
     <>
+      <EditorActions clear={clear} />
       <Editor
+        onMount={handleEditorDidMount}
         theme={theme}
         height="74vh"
         defaultLanguage="json"

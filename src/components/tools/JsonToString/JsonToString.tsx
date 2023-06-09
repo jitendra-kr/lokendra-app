@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import InputToConvertByToolsStyles from "../../../components/tools/helper/InputToConvertByTools/InputToConvertByTools.module.css";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
@@ -59,7 +58,7 @@ function JsonToString() {
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6">
-            <div className={InputToConvertByToolsStyles.container}>
+            <div>
               <Editor cb={isJsonString} error={onError} />
             </div>
           </div>
