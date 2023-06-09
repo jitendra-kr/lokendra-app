@@ -82,7 +82,7 @@ export const toolsListData: Array<ITools> = [
     link: "/tools/json-to-string",
     heading: "Online JSON to String Converter & Stringify Tool",
     content:
-      "Just load your JSON, and the system will instantly convert it to text or a string.",
+      "Just load your JSON, System will automatically convert JSON string or text",
     metaTitle: seoData.jsonToString.title,
     metaDescription: seoData.jsonToString.description,
     list: true,
@@ -95,16 +95,16 @@ export const toolsListData: Array<ITools> = [
   {
     title: "JSON parser",
     link: `/tools/${jsonParser}`,
-    heading: "Online JSON Parser, Formatter, & Validator",
+    heading: "Online JSON Formatter, Parser, Beautifier & Validator",
     content:
       "Just load your JSON, and the system will validate, parse, and format it automatically.",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
     key: ToolKeys.JSONParser,
-    toolDescription: `Easily parse and beautify JSON data with our reliable and secure online JSON Parser. Convert, validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets, without the need to download a special program or tool.
-      \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected. One of the most useful features of this tool is its ability to share your JSON output. \nYou can easily copy and paste your formatted and validated JSON code into an email or chat message. 
-      `,
+    toolDescription: `Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter. Validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets.
+      \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected.
+      \nYou can easily copy your formatted or validated JSON code into an email or chat message.`,
   },
   {
     title: "Text to Uppercase",
