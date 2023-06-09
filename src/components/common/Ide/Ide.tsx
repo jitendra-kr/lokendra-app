@@ -17,7 +17,6 @@ type IdeProps = {
 export default function Ide({
   cb,
   error,
-  value,
   theme,
   minimapEnabled = true,
 }: IdeProps) {
@@ -54,8 +53,7 @@ export default function Ide({
       onChange(data);
       return;
     }
-    setEditorValue(value);
-  }, [data, value]);
+  }, [data]);
 
   return (
     <>

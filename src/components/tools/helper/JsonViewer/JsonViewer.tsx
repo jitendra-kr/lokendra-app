@@ -1,4 +1,4 @@
-import Ide from "../../../common/Ide/Ide";
+import OutputIde from "../../../common/Ide/OutputIde";
 import { ToolOutputActions } from "../ToolOutputActions";
 import styles from "./JsonViewer.module.css";
 
@@ -25,7 +25,7 @@ export const JsonViewer = ({
   return (
     <>
       <ToolOutputActions content={content} />
-      <Ide value={content} minimapEnabled={false} />
+      <OutputIde value={content} minimapEnabled={false} />
     </>
   );
 };
