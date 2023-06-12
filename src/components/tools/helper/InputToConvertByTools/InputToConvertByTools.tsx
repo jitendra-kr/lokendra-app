@@ -59,8 +59,7 @@ export const InputToConvertByTools = ({
           className={`${styles.input}`}
           onChange={onChange}
           placeholder={placeholder}
-          rows={row}
-          // style={{ height: "100vh" }}
+          style={{ height: "74vh", resize: "none", pointerEvents: "none" }}
         />
       </Form.Item>
     </Form>
