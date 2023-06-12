@@ -1,7 +1,7 @@
-import styles from "./ToolOutputActions.module.css";
-import { CopyToClip } from "../CopyToClip";
-import { ShareData } from "../../ShareData";
 import { useGetToolsInput } from "../../../../hooks/useGetToolsInput";
+import { ShareData } from "../../ShareData";
+import { CopyToClip } from "../CopyToClip";
+import styles from "./ToolOutputActions.module.css";
 
 type JsonViewerProps = {
   content: string;
@@ -9,12 +9,10 @@ type JsonViewerProps = {
 
 export const ToolOutputActions = ({ content }: JsonViewerProps) => {
   const { value } = useGetToolsInput();
-  return content && (typeof content === "object" || content.length > 0) ? (
+  return (
     <div className={styles.container}>
       <CopyToClip content={content} />
       <ShareData data={value} />
     </div>
-  ) : (
-    <div className={styles.empty}></div>
   );
 };

@@ -69,9 +69,16 @@ export default function Ide({
     editor.focus();
   }
 
+  const loadValue = (value: string | undefined) => {
+    if (value) {
+      onChange(value);
+      setEditorValue(value);
+    }
+  };
+
   return (
     <>
-      <EditorActions clear={clear} />
+      <EditorActions clear={clear} onChange={loadValue} />
       <Editor
         onMount={handleEditorDidMount}
         theme={theme}

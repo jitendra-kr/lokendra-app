@@ -1,11 +1,13 @@
-import { Form, Input } from "antd";
 import { useEffect } from "react";
-import { updateToolsInput } from "../../../../common/state/tools/toolsInput.slice";
-import { useAppDispatch } from "../../../../hooks";
+import { getToolInput } from "../../../../common/selectors";
+import {
+  resetInput,
+  updateToolsInput,
+} from "../../../../common/state/tools/toolsInput.slice";
+import { useAppDispatch, useAppSelector, useGetUrl } from "../../../../hooks";
 import { useGetQueryString } from "../../../../hooks/useGetQueryString";
+import { EditorActions } from "../../../common/Ide/EditorActions";
 import styles from "./InputToConvertByTools.module.css";
-
-const { TextArea } = Input;
 
 type onChangeProp = {
   target: {
@@ -18,14 +20,16 @@ type InputToConvertByToolsProps = {
   placeholder?: string;
   row?: number;
 };
+
 export const InputToConvertByTools = ({
   onChangeCb,
   rules,
   placeholder = "Start typing ...",
-  row = 14,
 }: InputToConvertByToolsProps) => {
+  const { url } = useGetUrl();
   const dispatch = useAppDispatch();
-  const [form] = Form.useForm();
+  const { value } = useAppSelector(getToolInput);
+
   const {
     params: { data },
   } = useGetQueryString();
@@ -41,27 +45,35 @@ export const InputToConvertByTools = ({
 
   useEffect(() => {
     if (data) {
-      form.setFieldsValue({ title: data });
-      onChangeCb(data);
-      dispatch(
-        updateToolsInput({
-          value: data,
-        }),
-      );
+      onChange({ target: { value: data } });
     }
   }, [data]);
 
+  useEffect(() => {
+    dispatch(resetInput());
+    if (data) {
+      onChange({ target: { value: data } });
+    }
+  }, [url]);
+
   return (
-    <Form className={styles.container} form={form}>
-      <Form.Item name="title" label="" rules={rules}>
-        <TextArea
-          allowClear={true}
-          className={`${styles.input}`}
-          onChange={onChange}
-          placeholder={placeholder}
-          style={{ height: "74vh", resize: "none", pointerEvents: "none" }}
-        />
-      </Form.Item>
-    </Form>
+    <>
+      <EditorActions
+        clear={() => {
+          onChange({ target: { value: "" } });
+        }}
+        onChange={(value) => {
+          if (value) {
+            onChange({ target: { value } });
+          }
+        }}
+      />
+      <textarea
+        className={styles.textarea}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      ></textarea>
+    </>
   );
 };
