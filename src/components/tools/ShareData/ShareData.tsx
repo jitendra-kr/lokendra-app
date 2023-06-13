@@ -1,40 +1,40 @@
-import styles from "./ShareData.module.css";
-import {
-    ShareAltOutlined
-} from "@ant-design/icons";
-import { useGetUrl, useGetUrlPath } from "../../../hooks";
+import { ShareAltOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
 import { jsonParser } from "../ToolsList";
 
-
-
 type ShareDataProps = {
-    data: string
-}
+  data: string;
+};
 
 export function ShareData({ data }: ShareDataProps) {
   const { pathname } = useGetUrlPath();
-  if (pathname.includes(jsonParser)) {
-        if (data) {
+
+  const { originWithPath } = useGetUrl();
+
+  const handleShareUrlClick = () => {
+    if (pathname.includes(jsonParser)) {
+      if (data) {
         try {
-            data = JSON.stringify(JSON.parse(data))
+          data = JSON.stringify(JSON.parse(data));
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
+      }
     }
-  }
 
-    const { originWithPath } = useGetUrl()
+    const title = "URL copied to clipboard";
+    copyToClipboard(`${originWithPath}?data=${data}`, title);
+  };
 
-    const handleShareUrlClick = () => {
-        const title = "URL copied to clipboard"
-        copyToClipboard(`${originWithPath}?data=${data}`, title)
-    };
-
-    return (
-        <span className={styles.share}>
-            <Button type="primary" onClick={handleShareUrlClick} shape="circle" icon={<ShareAltOutlined />} size={"small"} />
-        </span>
-    );
+  return (
+    <Button
+      type="primary"
+      onClick={handleShareUrlClick}
+      icon={<ShareAltOutlined />}
+    >
+      <span style={{ color: "white" }}>Share</span>
+    </Button>
+  );
 }
