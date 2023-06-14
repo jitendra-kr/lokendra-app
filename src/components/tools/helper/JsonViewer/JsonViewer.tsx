@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import OutputIde from "../../../common/Ide/OutputIde";
 import { ToolOutputActions } from "../ToolOutputActions";
 import styles from "./JsonViewer.module.css";
@@ -13,6 +14,8 @@ export const JsonViewer = ({
   error,
   editorError,
 }: JsonViewerProps) => {
+  const fullscreenRef = useRef<HTMLDivElement>(null);
+
   if (error) {
     return (
       <div className={styles.container}>
@@ -23,9 +26,12 @@ export const JsonViewer = ({
   }
 
   return (
-    <>
-      <ToolOutputActions content={content} />
+    <div ref={fullscreenRef}>
+      <ToolOutputActions
+        fullscreenRef={fullscreenRef.current}
+        content={content}
+      />
       <OutputIde value={content} minimapEnabled={false} />
-    </>
+    </div>
   );
 };

@@ -32,8 +32,12 @@ export default function Ide({
 
   function handleEditorValidation(markers: editor.IMarker[]) {
     let errorMsg = "";
+    const errors: string[] = [];
     markers.forEach((marker) => {
-      errorMsg += ` \n${marker.message}`;
+      if (!errors.includes(marker.message)) {
+        errorMsg += ` \n${marker.message}`;
+        errors.push(marker.message);
+      }
     });
     error?.(errorMsg);
   }

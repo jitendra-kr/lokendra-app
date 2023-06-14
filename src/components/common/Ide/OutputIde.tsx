@@ -15,29 +15,27 @@ export default function OutputIde({
   minimapEnabled = true,
 }: IdeProps) {
   return (
-    <>
-      <Editor
-        theme={theme}
-        height="74vh"
-        defaultLanguage="json"
-        className={styles.editor}
-        value={value}
-        options={{
-          selectOnLineNumbers: true,
-          lineNumbersMinChars: 3,
-          lineDecorationsWidth: 1,
-          mouseWheelZoom: true,
-          smoothScrolling: true,
-          minimap: {
-            enabled: minimapEnabled,
-            showSlider: "always",
-          },
-          bracketPairColorization: {
-            enabled: true,
-          },
-          wordWrap: "on",
-        }}
-      />
-    </>
+    <Editor
+      theme={theme}
+      height="74vh"
+      defaultLanguage="json"
+      className={styles.editor}
+      value={value}
+      options={{
+        selectOnLineNumbers: true,
+        lineNumbersMinChars: 3,
+        lineDecorationsWidth: 1,
+        mouseWheelZoom: true,
+        smoothScrolling: true,
+        minimap: {
+          enabled: minimapEnabled,
+          showSlider: "always",
+        },
+        bracketPairColorization: {
+          enabled: true,
+        },
+        wordWrap: "on",
+      }}
+    />
   );
 }

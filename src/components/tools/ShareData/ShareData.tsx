@@ -33,6 +33,7 @@ export function ShareData({ data }: ShareDataProps) {
       type="primary"
       onClick={handleShareUrlClick}
       icon={<ShareAltOutlined />}
+      style={{ marginRight: "5px" }}
     >
       <span style={{ color: "white" }}>Share</span>
     </Button>

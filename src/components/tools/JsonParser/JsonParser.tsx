@@ -4,6 +4,7 @@ import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
+import { jsonlint } from "../../../externalLib";
 import { OfflineMetaTags } from "../../common";
 import Ide from "../../common/Ide/Ide";
 import { ToolsBody } from "../ToolsBody";
@@ -18,7 +19,6 @@ function JsonParser() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
-  const [input, setInput] = useState<string>("");
 
   const onError = (errormsg: string | undefined) => {
     if (errormsg) {
@@ -29,7 +29,6 @@ function JsonParser() {
   };
 
   const resetStates = () => {
-    setInput("");
     setError("");
     setByte("");
   };
@@ -48,17 +47,13 @@ function JsonParser() {
     }
 
     try {
-      const parsedJSON = JSON.parse(str);
+      const parsedJSON = jsonlint.parse(str);
       if (typeof parsedJSON === "number") {
         throw STRING_CONSTANTS.tools.invalidJson;
       }
       setByte(JSON.stringify(parsedJSON, null, "\t"));
     } catch (error: unknown) {
-      setError(
-        `${STRING_CONSTANTS.tools.invalidJson} ----> ${
-          get(error, "name") + " \n" + get(error, "message")
-        }  `,
-      );
+      setError(`${get(error, "name") + " \n" + get(error, "message")}  `);
     }
   }
 

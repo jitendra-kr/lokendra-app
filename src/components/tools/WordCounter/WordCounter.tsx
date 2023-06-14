@@ -87,7 +87,10 @@ function WordCounter() {
                 WORDS
               </strong>
               <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + wordCount} />
+                <ToolOutputActions
+                  content={"" + wordCount}
+                  fullscreen={false}
+                />
                 {wordCount} <br />
                 <span className="textTransformCapitalize">
                   {wordCountInWords}
@@ -99,7 +102,10 @@ function WordCounter() {
                 CHARACTERS
               </strong>
               <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + characterCount} />
+                <ToolOutputActions
+                  content={"" + characterCount}
+                  fullscreen={false}
+                />
                 {characterCount} <br />
                 <span className="textTransformCapitalize">
                   {characterCountInWords}
@@ -111,7 +117,10 @@ function WordCounter() {
                 SENTENCES
               </strong>
               <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + sentenceCount} />
+                <ToolOutputActions
+                  content={"" + sentenceCount}
+                  fullscreen={false}
+                />
                 {sentenceCount} <br />
                 <span className="textTransformCapitalize">
                   {sentenceCountInWords}

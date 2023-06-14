@@ -15,11 +15,6 @@ type InputOutputViewerProps = {
   byte: string;
 };
 
-type RenderDescriptionAndHowWorksProps = {
-  toolDescription: string;
-  showHowWorks?: boolean;
-};
-
 export function InputOutputViewer({
   toolId,
   onChangeCb,
