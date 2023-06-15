@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { ToolOutputActions } from "../ToolOutputActions";
 import ConvertedOutputByToolsStyles from "./ConvertedOutputByTools.module.css";
 
@@ -10,14 +9,9 @@ export const ConvertedOutputByTools = ({
   content,
   error,
 }: ConvertedOutputByToolsProps) => {
-  const fullscreenRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div ref={fullscreenRef}>
-      <ToolOutputActions
-        content={content}
-        fullscreenRef={fullscreenRef.current}
-      />
+    <div>
+      <ToolOutputActions content={content} />
       <div className={ConvertedOutputByToolsStyles.container}>
         {!error && content && (
           <p className={ConvertedOutputByToolsStyles.content}>{content}</p>

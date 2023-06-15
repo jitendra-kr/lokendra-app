@@ -1,20 +1,14 @@
 import { useGetToolsInput } from "../../../../hooks/useGetToolsInput";
-import { DownloadOutput, HandleFullScreen } from "../../../common";
+import { DownloadOutput } from "../../../common";
 import { ShareData } from "../../ShareData";
 import { CopyToClip } from "../CopyToClip";
 import styles from "./ToolOutputActions.module.css";
 
 type JsonViewerProps = {
   content: string;
-  fullscreenRef?: HTMLDivElement | null;
-  fullscreen?: boolean;
 };
 
-export const ToolOutputActions = ({
-  content,
-  fullscreenRef,
-  fullscreen = true,
-}: JsonViewerProps) => {
+export const ToolOutputActions = ({ content }: JsonViewerProps) => {
   const { value } = useGetToolsInput();
 
   return (
@@ -26,7 +20,6 @@ export const ToolOutputActions = ({
         </>
       )}
       <ShareData data={value} />
-      {fullscreen && <HandleFullScreen fullscreenRef={fullscreenRef} />}
     </div>
   );
 };
