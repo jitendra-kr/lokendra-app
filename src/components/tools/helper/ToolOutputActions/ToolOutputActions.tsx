@@ -1,5 +1,5 @@
 import { useGetToolsInput } from "../../../../hooks/useGetToolsInput";
-import { DownloadOutput } from "../../../common";
+import { DownloadOutput, HandleFullScreen } from "../../../common";
 import { ShareData } from "../../ShareData";
 import { CopyToClip } from "../CopyToClip";
 import styles from "./ToolOutputActions.module.css";
@@ -20,6 +20,7 @@ export const ToolOutputActions = ({ content }: JsonViewerProps) => {
         </>
       )}
       <ShareData data={value} />
+      <HandleFullScreen content={content} />
     </div>
   );
 };
