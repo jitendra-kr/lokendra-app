@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { jsonlint } from "../../../externalLib";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
 import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
@@ -37,7 +38,7 @@ function JsonToString() {
     }
     let parsedData;
     try {
-      parsedData = JSON.parse(str);
+      parsedData = jsonlint.parse(str);
     } catch (e) {
       setByte("Invalid JSON ----> " + e);
     }
@@ -63,7 +64,10 @@ function JsonToString() {
             </div>
           </div>
           <div className="col-lg-6">
-            <ConvertedOutputByTools content={`'${byte}'`} error={editorError} />
+            <ConvertedOutputByTools
+              content={byte ?? `'${byte}'`}
+              error={editorError}
+            />
           </div>
         </div>
         <ToolDescription content={result[0].toolDescription} />
