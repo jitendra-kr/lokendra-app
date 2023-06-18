@@ -1,4 +1,4 @@
-import Editor, { Monaco, Theme } from "@monaco-editor/react";
+import Editor, { Monaco } from "@monaco-editor/react";
 import { Select, Space } from "antd";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
@@ -8,45 +8,42 @@ import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { EditorActions } from "./EditorActions";
 import styles from "./Ide.module.css";
 
+type ThemeType = string;
 type IdeProps = {
   cb?: (value: string | undefined) => void;
   error?: (value: string | undefined) => void;
   value?: string;
-  theme?: Theme;
   minimapEnabled?: boolean;
 };
 
-function UpdateTheme() {
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+type UpdateThemeProps = {
+  handleThemeChange: (value: ThemeType) => void;
+};
 
+function UpdateTheme({ handleThemeChange }: UpdateThemeProps) {
   return (
     <Space wrap style={{ marginRight: "5px" }}>
       <Select
-        defaultValue="lucy"
+        defaultValue="light"
         style={{ width: 120 }}
-        onChange={handleChange}
+        onChange={handleThemeChange}
         options={[
-          { value: "jack", label: "Jack" },
-          { value: "lucy", label: "Lucy" },
-          { value: "Yiminghe", label: "yiminghe" },
+          { value: "light", label: "Light" },
+          { value: "vs-dark", label: "Vs Dark" },
+          { value: "hc-black", label: "Hc Black" },
+          { value: "hc-light", label: "Hc Light" },
         ]}
       />
     </Space>
   );
 }
 
-export default function Ide({
-  cb,
-  error,
-  theme,
-  minimapEnabled = true,
-}: IdeProps) {
+export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const dispatch = useAppDispatch();
   const [editorValue, setEditorValue] = useState<string>();
   const paramsLoaded = useRef(false);
+  const [theme, setTheme] = useState<string>();
 
   const {
     params: { data: paramsData },
@@ -102,9 +99,17 @@ export default function Ide({
     }
   };
 
+  const handleThemeChange = (value: ThemeType) => {
+    setTheme(value);
+  };
+
   return (
     <>
-      <EditorActions clear={clear} onChange={loadValue} />
+      <EditorActions
+        clear={clear}
+        onChange={loadValue}
+        children={<UpdateTheme handleThemeChange={handleThemeChange} />}
+      />
       <Editor
         onMount={handleEditorDidMount}
         theme={theme}
