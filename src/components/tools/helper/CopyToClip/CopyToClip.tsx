@@ -1,7 +1,7 @@
-import { CopyOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { useState } from "react";
+import { IoCopySharp } from "react-icons/io5";
 import { copyToClipboard } from "../../../../utils";
+import { ButtonUsingReactIcon } from "../../../common";
 
 export type CopyToClipProps = {
   content: string;
@@ -33,13 +33,10 @@ export const CopyToClip = ({ content }: CopyToClipProps) => {
   };
 
   return (
-    <Button
-      type="primary"
+    <ButtonUsingReactIcon
+      name="Share"
       onClick={handleClick}
-      icon={<CopyOutlined />}
-      style={{ marginRight: "5px" }}
-    >
-      <span style={{ color: "white" }}>Copy</span>
-    </Button>
+      mdIcon={<IoCopySharp />}
+    />
   );
 };

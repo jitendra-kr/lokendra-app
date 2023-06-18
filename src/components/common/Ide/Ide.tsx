@@ -1,4 +1,5 @@
 import Editor, { Monaco, Theme } from "@monaco-editor/react";
+import { Select, Space } from "antd";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
 import { updateToolsInput } from "../../../common/state/tools";
@@ -14,6 +15,27 @@ type IdeProps = {
   theme?: Theme;
   minimapEnabled?: boolean;
 };
+
+function UpdateTheme() {
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
+
+  return (
+    <Space wrap style={{ marginRight: "5px" }}>
+      <Select
+        defaultValue="lucy"
+        style={{ width: 120 }}
+        onChange={handleChange}
+        options={[
+          { value: "jack", label: "Jack" },
+          { value: "lucy", label: "Lucy" },
+          { value: "Yiminghe", label: "yiminghe" },
+        ]}
+      />
+    </Space>
+  );
+}
 
 export default function Ide({
   cb,

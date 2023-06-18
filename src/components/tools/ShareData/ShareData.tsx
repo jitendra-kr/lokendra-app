@@ -1,7 +1,7 @@
-import { ShareAltOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import { FaShareAlt } from "react-icons/fa";
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
+import { ButtonUsingReactIcon } from "../../common";
 import { jsonParser } from "../ToolsList";
 
 type ShareDataProps = {
@@ -29,13 +29,10 @@ export function ShareData({ data }: ShareDataProps) {
   };
 
   return (
-    <Button
-      type="primary"
+    <ButtonUsingReactIcon
+      name="Share"
       onClick={handleShareUrlClick}
-      icon={<ShareAltOutlined />}
-      style={{ marginRight: "5px" }}
-    >
-      <span style={{ color: "white" }}>Share</span>
-    </Button>
+      mdIcon={<FaShareAlt />}
+    />
   );
 }

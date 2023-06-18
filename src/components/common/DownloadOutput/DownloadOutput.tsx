@@ -1,8 +1,8 @@
-import { DownloadOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import { FaDownload } from "react-icons/fa";
 import { STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { jsonParser } from "../../tools/ToolsList/toolsListingData";
+import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
 
 export type DownloadOutputProps = {
   content: string;
@@ -25,13 +25,10 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
   };
 
   return (
-    <Button
-      type="primary"
+    <ButtonUsingReactIcon
+      name="Download"
       onClick={onClick}
-      icon={<DownloadOutlined />}
-      style={{ marginRight: "5px" }}
-    >
-      <span style={{ color: "white" }}>Download</span>
-    </Button>
+      mdIcon={<FaDownload color="white" />}
+    />
   );
 }
