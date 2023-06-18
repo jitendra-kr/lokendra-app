@@ -1,8 +1,8 @@
-import { Button, Upload } from "antd";
-import { FaUpload } from "react-icons/fa";
-
+import { Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
+import { AiFillDelete } from "react-icons/ai";
+import { FaUpload } from "react-icons/fa";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
 
 type EditorActionsProps = {
@@ -41,9 +41,11 @@ export const EditorActions = ({
         />
       </Upload>
       {children}
-      <Button type="primary" htmlType="submit" onClick={clear}>
-        <span style={{ color: "white" }}>Clear</span>
-      </Button>
+      <ButtonUsingReactIcon
+        name="Clear"
+        onClick={clear}
+        mdIcon={<AiFillDelete size={15} />}
+      />
     </div>
   );
 };
