@@ -29,6 +29,7 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
       name="Download"
       onClick={onClick}
       mdIcon={<FaDownload color="white" />}
+      tooltip="Download Output"
     />
   );
 }

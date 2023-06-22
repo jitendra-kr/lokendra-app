@@ -1,10 +1,14 @@
 import Editor, { Monaco } from "@monaco-editor/react";
-import { Select, Space } from "antd";
+import { Select, Space, Tooltip } from "antd";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
+import { AiFillTool } from "react-icons/ai";
+import { getToolInput } from "../../../common/selectors";
 import { updateToolsInput } from "../../../common/state/tools";
-import { useAppDispatch } from "../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
+import { messageError, messageSuccess, repairJSON } from "../../../utils";
+import { ButtonUsingReactIcon } from "../ButtonWithIcon";
 import { EditorActions } from "./EditorActions";
 import styles from "./Ide.module.css";
 
@@ -22,28 +26,30 @@ type UpdateThemeProps = {
 
 function UpdateTheme({ handleThemeChange }: UpdateThemeProps) {
   return (
-    <Space wrap style={{ marginRight: "5px" }}>
-      <Select
-        defaultValue="light"
-        style={{ width: 120 }}
-        onChange={handleThemeChange}
-        options={[
-          { value: "light", label: "Light" },
-          { value: "vs-dark", label: "Vs Dark" },
-          { value: "hc-black", label: "Hc Black" },
-          { value: "hc-light", label: "Hc Light" },
-        ]}
-      />
-    </Space>
+    <Tooltip title="Change Editor Theme">
+      <Space wrap style={{ marginRight: "5px" }}>
+        <Select
+          defaultValue="light"
+          style={{ width: 120 }}
+          onChange={handleThemeChange}
+          options={[
+            { value: "light", label: "Light" },
+            { value: "vs-dark", label: "Vs Dark" },
+            { value: "hc-black", label: "Hc Black" },
+            { value: "hc-light", label: "Hc Light" },
+          ]}
+        />
+      </Space>
+    </Tooltip>
   );
 }
 
 export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const dispatch = useAppDispatch();
-  const [editorValue, setEditorValue] = useState<string>();
   const paramsLoaded = useRef(false);
   const [theme, setTheme] = useState<string>();
+  const { value: globalInputValue } = useAppSelector(getToolInput);
 
   const {
     params: { data: paramsData },
@@ -74,8 +80,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
     if (paramsData && !paramsLoaded.current) {
       paramsLoaded.current = true;
       const prettyInput = JSON.parse(paramsData);
-      setEditorValue(JSON.stringify(prettyInput, null, "\t"));
-      onChange(paramsData);
+      onChange(JSON.stringify(prettyInput, null, "\t"));
       return;
     }
   }, [paramsData]);
@@ -95,7 +100,6 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
   const loadValue = (value: string | undefined) => {
     if (value) {
       onChange(value);
-      setEditorValue(value);
     }
   };
 
@@ -103,12 +107,46 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
     setTheme(value);
   };
 
+  const onRepairClick = () => {
+    if (!globalInputValue) {
+      return;
+    }
+    const repairedJSON = repairJSON(globalInputValue);
+    if (repairedJSON) {
+      messageSuccess({
+        content: "JSON Repaired.",
+        key: "repairJSON",
+        duration: 4,
+      });
+      onChange(repairedJSON);
+      return;
+    }
+    messageError({
+      content:
+        "Unable to repair the JSON. Please check the validity of the input.",
+      key: "repairJSON",
+      duration: 4,
+    });
+  };
+
   return (
     <>
       <EditorActions
         clear={clear}
         onChange={loadValue}
-        children={<UpdateTheme handleThemeChange={handleThemeChange} />}
+        children={
+          <>
+            <UpdateTheme handleThemeChange={handleThemeChange} />
+
+            <ButtonUsingReactIcon
+              name="Repair"
+              onClick={onRepairClick}
+              mdIcon={<AiFillTool size={18} />}
+              tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+            />
+            <></>
+          </>
+        }
       />
       <Editor
         onMount={handleEditorDidMount}
@@ -118,7 +156,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
         onValidate={handleEditorValidation}
         onChange={onChange}
         className={styles.editor}
-        value={editorValue}
+        value={globalInputValue}
         options={{
           selectOnLineNumbers: true,
           lineNumbersMinChars: 3,

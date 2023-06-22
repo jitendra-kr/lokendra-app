@@ -33,6 +33,7 @@ export function ShareData({ data }: ShareDataProps) {
       name="Share"
       onClick={handleShareUrlClick}
       mdIcon={<FaShareAlt />}
+      tooltip="Share Data"
     />
   );
 }

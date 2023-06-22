@@ -34,9 +34,10 @@ export const CopyToClip = ({ content }: CopyToClipProps) => {
 
   return (
     <ButtonUsingReactIcon
-      name="Share"
+      name="Copy"
       onClick={handleClick}
       mdIcon={<IoCopySharp />}
+      tooltip="Copy to Clipboard"
     />
   );
 };
