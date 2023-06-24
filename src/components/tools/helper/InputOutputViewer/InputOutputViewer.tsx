@@ -43,7 +43,13 @@ export function InputOutputViewer({
           <div className="col-lg-6">
             {input && <ToolsBody />}
             <span className={InputOutputViewerStyles["input-parent"]}>
-              <div style={{ width: "60%" }}>
+              <div
+                className={`${
+                  input
+                    ? InputOutputViewerStyles["input-true-w"]
+                    : InputOutputViewerStyles["input-false-w"]
+                }`}
+              >
                 <InputToConvertByTools
                   onChangeCb={onChangeCb}
                   type={input ? inputType.input : inputType.textarea}

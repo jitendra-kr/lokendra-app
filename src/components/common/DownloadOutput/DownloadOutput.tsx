@@ -13,9 +13,10 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
   const { pathname } = useGetUrlPath();
 
   const onClick = () => {
-    const fileName = pathname.match(jsonParser)
-      ? `${baseFileName}.json`
-      : `${baseFileName}.txt`;
+    const fileName =
+      pathname && pathname.match(jsonParser)
+        ? `${baseFileName}.json`
+        : `${baseFileName}.txt`;
     const url = window.URL.createObjectURL(new Blob([content]));
     const link = document.createElement("a");
     link.href = url;

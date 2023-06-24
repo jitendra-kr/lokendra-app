@@ -46,5 +46,9 @@
   "URLEncode": {
     "title": "URL Encode - Encode URL Easily and Quickly",
     "description": "Easily and securely encode URLs with our free online URL encoder in real time. Allowing you to protect sensitive information and ensure your links are safe!"
+  },
+  "UUIDGenerator": {
+    "title": "UUID Generator - Generate Unique Universal Identifiers",
+    "description": "Generate unique and reliable Universal Identifiers with our fast secure UUID generator tool. Our tool generates random and secure UUIDs in a matter of seconds!"
   }
 }

@@ -38,7 +38,7 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
         onCancel={closeModal}
         footer={null}
         children={
-          pathname.match(jsonParser) ? (
+          pathname && pathname.match(jsonParser) ? (
             <JsonViewer content={content} error="" editorError="" />
           ) : (
             <ConvertedOutputByTools content={content} />

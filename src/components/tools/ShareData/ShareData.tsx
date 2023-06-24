@@ -1,4 +1,5 @@
 import { FaShareAlt } from "react-icons/fa";
+import { SCREENS } from "../../../common/enums";
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
 import { ButtonUsingReactIcon } from "../../common";
@@ -10,11 +11,11 @@ type ShareDataProps = {
 
 export function ShareData({ data }: ShareDataProps) {
   const { pathname } = useGetUrlPath();
-
   const { originWithPath } = useGetUrl();
 
+  const hideMe = [SCREENS.UUID_GENERATOR].includes(pathname as SCREENS);
   const handleShareUrlClick = () => {
-    if (pathname.includes(jsonParser)) {
+    if (pathname && pathname.includes(jsonParser)) {
       if (data) {
         try {
           data = JSON.stringify(JSON.parse(data));
@@ -27,6 +28,8 @@ export function ShareData({ data }: ShareDataProps) {
     const title = "URL copied to clipboard";
     copyToClipboard(`${originWithPath}?data=${data}`, title);
   };
+
+  if (hideMe) return <></>;
 
   return (
     <ButtonUsingReactIcon

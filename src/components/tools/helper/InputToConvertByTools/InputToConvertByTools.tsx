@@ -1,5 +1,5 @@
 import { Input } from "antd";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SCREENS } from "../../../../common/enums";
 import { getToolInput } from "../../../../common/selectors";
 import {
@@ -94,6 +94,8 @@ export const InputToConvertByTools = ({
       {type === inputType.input ? (
         <Input
           placeholder={placeholder}
+          style={{ marginTop: "30px" }}
+          autoFocus
           onChange={(value) => {
             const errorKey = "invalidinput";
             messageDestroy(errorKey);
@@ -125,6 +127,7 @@ export const InputToConvertByTools = ({
         ></Input>
       ) : (
         <textarea
+          autoFocus
           className={styles.textarea}
           onChange={onChange}
           value={value}
