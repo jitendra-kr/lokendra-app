@@ -1,36 +1,40 @@
 import { message } from "antd";
 import { get } from "lodash";
 
-export const messageLoading = (
-  data = { content: "", duration: 0, key: "" },
-) => {
+type Message = {
+  content?: string;
+  duration?: number;
+  key?: string;
+};
+
+export const messageLoading = (data: Message) => {
   data = {
     content: get(data, "content", "Loading..."),
     duration: get(data, "duration", 10),
     key: data.key,
   };
 
-  message.loading(data);
+  message.loading({
+    content: get(data, "content", "Loading..."),
+    duration: get(data, "duration", 10),
+    key: data.key,
+  });
 };
 
-export const messageSuccess = (
-  data = { content: "", duration: 0, key: "" },
-) => {
-  data = {
+export const messageSuccess = (data: Message) => {
+  message.success({
     content: get(data, "content", "Success"),
     duration: get(data, "duration"),
     key: data.key,
-  };
-  message.success(data);
+  });
 };
 
-export const messageError = (data = { content: "", duration: 0, key: "" }) => {
-  data = {
+export const messageError = (data: Message) => {
+  message.error({
     content: get(data, "content", "something went wrong"),
-    duration: get(data, "duration"),
+    duration: get(data, "duration", 4),
     key: data.key,
-  };
-  message.error(data);
+  });
 };
 
 export const messageInfo = (data = { content: "", duration: 0, key: "" }) => {

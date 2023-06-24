@@ -6,5 +6,6 @@ export * from "./StringToAscii";
 export * from "./ToolsList";
 export * from "./URLDecode";
 export * from "./URLEncode";
+export * from "./UUIDGenerator";
 export * from "./WordCounter";
 export * from "./helper/JsonViewer";

@@ -1,3 +1,4 @@
+import { SCREENS } from "../../../common/enums";
 import seoData from "../../../seo/tools/tools.json";
 
 export enum ToolKeys {
@@ -14,11 +15,12 @@ export enum ToolKeys {
   ReplaceSpaces = "ReplaceSpaces",
   UrlDecode = "UrlDecode",
   URLEncode = "URLEncode",
+  UUIDGenerator = "UUIDGenerator",
 }
 
 export interface ITools {
   title: string;
-  link: string;
+  link: SCREENS;
   heading: string;
   metaTitle: string;
   metaDescription: string;
@@ -29,13 +31,12 @@ export interface ITools {
   howWorks?: string;
 }
 
-export const jsonStringifyPath = "json-stringify";
 export const jsonParser = "json-parser";
 
 export const toolsListData: Array<ITools> = [
   {
     title: "Salary Hike Percentage Calculator",
-    link: "/tools/salary-hike-percentage-calculator",
+    link: SCREENS.SALARY_HIKE_PERCENTAGE_CALCULATOR,
     heading: "Online Salary Hike Percentage Calculator",
     metaTitle: seoData.salaryHikePercentageCalculator.title,
     metaDescription: seoData.salaryHikePercentageCalculator.description,
@@ -49,7 +50,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "String to ASCII",
-    link: "/tools/string-to-ascii",
+    link: SCREENS.STRING_TO_ASCII,
     heading: "Convert String to ASCII Easily & Quickly Online",
     content:
       "Just load your text, System will automatically convert it to ASCII codes",
@@ -64,7 +65,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "ASCII to String",
-    link: "/tools/ascii-to-string",
+    link: SCREENS.ASCII_TO_STRING,
     heading: "Convert ASCII to String Online with Ease & Accuracy",
     content:
       "Just load your ASCII code, System will automatically convert it to text",
@@ -79,7 +80,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "JSON to String",
-    link: "/tools/json-to-string",
+    link: SCREENS.JSON_TO_STRING,
     heading: "Online JSON to String Converter & Stringify Tool",
     content:
       "Just load your JSON, System will automatically convert JSON string or text",
@@ -94,7 +95,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "JSON parser",
-    link: `/tools/${jsonParser}`,
+    link: SCREENS.JSON_PARSER,
     heading: "Online JSON Formatter, Parser, Beautifier & Validator",
     content:
       "Just load your JSON, and the system will validate, parse, and format it automatically.",
@@ -108,7 +109,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "Text to Uppercase",
-    link: "/tools/text-to-uppercase",
+    link: SCREENS.TEXT_TO_UPPERCASE,
     heading: "Easily Convert Text & Strings to Uppercase Online - Free Tool",
     content:
       "Just load your text, System will automatically convert it to upper case text",
@@ -123,7 +124,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "Text to Lowercase",
-    link: "/tools/text-to-lowercase",
+    link: SCREENS.TEXT_TO_LOWERCASE,
     heading: "Easily Convert Text & Strings to Lowercase Online - Free Tool",
     content:
       " Just load your text, System will automatically convert it to lower case text",
@@ -138,7 +139,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "Word Count",
-    link: "/tools/word-counter",
+    link: SCREENS.WORD_COUNTER,
     heading: "Accurate Word and Character Counter Tool - Free to Use",
     content: " Just load your text, System will automatically start counting ",
     metaTitle: seoData.wordCounter.title,
@@ -152,7 +153,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "Replace Spaces",
-    link: "/tools/replace-spaces",
+    link: SCREENS.REPLACE_SPACES,
     heading: "Replace Spaces Online - Easily Replace Spaces or Any Text ",
     metaTitle: seoData.ReplaceSpaces.title,
     metaDescription: seoData.ReplaceSpaces.description,
@@ -167,7 +168,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "Online string and JSON Tools",
-    link: "/tools",
+    link: SCREENS.TOOLS,
     heading: "Online string and JSON Tools",
     content:
       " Just load your text, System will automatically convert it to lower case text",
@@ -179,7 +180,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "URL Decode",
-    link: "/tools/url-decode",
+    link: SCREENS.URL_DECODE,
     heading: "Url Decode - Decode URL-encoded text",
     content: " Just load your text, System will automatically decode URL",
     metaTitle: seoData.UrlDecode.title,
@@ -191,7 +192,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "URL Encode",
-    link: "/tools/url-encode",
+    link: SCREENS.URL_ENCODE,
     heading: "Url Encode - Encode URL-encoded text",
     content: " Just load your text, System will automatically decode URL",
     metaTitle: seoData.URLEncode.title,
@@ -200,6 +201,18 @@ export const toolsListData: Array<ITools> = [
     key: ToolKeys.URLEncode,
     toolDescription: `Get your URLs encoded quickly, reliable and safely with our Encode URL tool. We use a secure encryption algorithm to ensure that your data is safe and private. You can easily encode your URLs in no time.
       \nOur encoder is simple to use and guarantees that your data is safe and secure because we never transfer it to a server.
+      `,
+  },
+  {
+    title: "UUID generator",
+    link: SCREENS.UUID_GENERATOR,
+    heading: "UUID generator",
+    content: "UUID generator",
+    metaTitle: seoData.URLEncode.title,
+    metaDescription: seoData.URLEncode.description,
+    list: true,
+    key: ToolKeys.UUIDGenerator,
+    toolDescription: `UUID generator.
       `,
   },
 ];

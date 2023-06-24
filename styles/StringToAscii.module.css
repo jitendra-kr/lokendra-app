@@ -1,20 +1,21 @@
 .button-div {
-    justify-content: center;
-    display: flex;
+  justify-content: center;
+  display: flex;
 }
 .paperClipOutlined {
-    float: right;
-    cursor: pointer;
-    font-size:x-large;
+  float: right;
+  cursor: pointer;
+  font-size: x-large;
 }
 
 .fileInput {
-    width: 50%;
-    border-color: white;
+  width: 50%;
+  border-color: white;
 }
 
 .mainDiv {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
