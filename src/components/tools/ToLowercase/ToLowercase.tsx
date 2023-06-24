@@ -35,7 +35,6 @@ function ToLowercase() {
         <div className="col-lg-6">
           <InputToConvertByTools
             onChangeCb={onChangeCb}
-            rules={[{ required: true, message: "Please enter text !" }]}
           />
         </div>
         <div className="col-lg-6">

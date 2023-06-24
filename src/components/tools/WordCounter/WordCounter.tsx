@@ -64,18 +64,6 @@ function WordCounter() {
         <ToolsBody />
         <div className="col-lg-9">
           <InputToConvertByTools
-            rules={[
-              { required: true, message: "Please enter" },
-              {
-                validator: async (_: any, value: any) => {
-                  if (!value) {
-                    return Promise.reject("Please enter any text!");
-                  } else {
-                    return Promise.resolve();
-                  }
-                },
-              },
-            ]}
             onChangeCb={onChangeCb}
             placeholder="Type or Paste Text to Begin"
           />

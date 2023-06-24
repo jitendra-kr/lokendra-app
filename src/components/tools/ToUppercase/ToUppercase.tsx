@@ -33,7 +33,6 @@ function ToUppercase() {
         <ToolsBody />
         <div className="col-lg-6">
           <InputToConvertByTools
-            rules={[{ required: true, message: "Please enter text !" }]}
             onChangeCb={onChangeCb}
           />
         </div>

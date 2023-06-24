@@ -49,12 +49,6 @@ function ReplaceSpaces() {
               }}
             />
             <InputToConvertByTools
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter text!",
-                },
-              ]}
               onChangeCb={(v) => setInput(v)}
             />
           </div>
