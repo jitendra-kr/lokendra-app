@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import { withRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
 import { OfflineMetaTags } from "../../common";
@@ -49,16 +49,7 @@ function AsciiToString() {
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6">
-            <InputToConvertByTools
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter ASCII codes to convert!",
-                },
-                { validator: () => {} },
-              ]}
-              onChangeCb={onChangeCb}
-            />
+            <InputToConvertByTools onChangeCb={onChangeCb} />
           </div>
           <div className="col-lg-6">
             <ConvertedOutputByTools content={byte} />
