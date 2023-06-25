@@ -3,16 +3,19 @@ import { withRouter } from "next/router";
 import styles from "../../../../styles/StringToAscii.module.css";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import characterCounterStyles from "./WordCounter.module.css";
 
 import { useState } from "react";
+import { useToolListData } from "../../../common/hooks/useToolListData";
 import { convertNumberToWords } from "../../../utils";
 import { ToolOutputActions } from "../helper/ToolOutputActions";
 import { ToolDescription } from "../helper/ToolOverview";
 
 function WordCounter() {
+  const { toolData } = useToolListData(ToolKeys.wordCounter);
+
   const [characterCount, setCharacterCount] = useState(0);
   const [wordCount, setWordCount] = useState(0);
   const [sentenceCount, setWordSentence] = useState(0);
@@ -53,13 +56,9 @@ function WordCounter() {
     countSentence(value);
   };
 
-  const result = toolsListData.filter((obj) => {
-    return obj.key === ToolKeys.wordCounter;
-  });
-
   return (
     <Content>
-      <OfflineMetaTags tagId={ToolKeys.wordCounter} />
+      <OfflineMetaTags tagData={toolData} />
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-9">
@@ -109,7 +108,7 @@ function WordCounter() {
           </div>
         </div>
       </div>
-      <ToolDescription content={result[0].toolDescription} />
+      <ToolDescription content={toolData.toolDescription} />
       <ToolsList />
     </Content>
   );

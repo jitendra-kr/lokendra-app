@@ -295,3 +295,7 @@ pre {
 .textTransformCapitalize {
   text-transform: capitalize;
 }
+
+a {
+  text-decoration: none;
+}

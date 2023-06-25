@@ -1,9 +1,9 @@
 import { Button, Layout } from "antd";
-import React from "react";
 import styles from "../../../../../styles/StringToAscii.module.css";
+import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../../common";
 import { ToolsBody } from "../../ToolsBody";
-import { ToolsList, toolsListData } from "../../ToolsList";
+import { ToolsList } from "../../ToolsList";
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
 import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
 import { ToolDescription } from "../ToolOverview";
@@ -30,14 +30,12 @@ export function InputOutputViewer({
   placeholder,
   inputNumber,
 }: InputOutputViewerProps) {
-  const result = toolsListData.filter((obj) => {
-    return obj.key === toolId;
-  })[0];
+  const { toolData } = useToolListData(toolId);
 
   return (
     <>
       <Content>
-        <OfflineMetaTags tagData={result} />
+        <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
           {!input && <ToolsBody />}
           <div className="col-lg-6">
@@ -74,7 +72,7 @@ export function InputOutputViewer({
             <ConvertedOutputByTools content={byte} />
           </div>
         </div>
-        <ToolDescription content={result?.toolDescription} />
+        <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
       </Content>
     </>

@@ -16,6 +16,7 @@ export enum ToolKeys {
   UrlDecode = "UrlDecode",
   URLEncode = "URLEncode",
   UUIDGenerator = "UUIDGenerator",
+  HOME = "HOME",
 }
 
 export interface ITools {
@@ -28,7 +29,6 @@ export interface ITools {
   list: boolean;
   key: ToolKeys;
   toolDescription: string;
-  howWorks?: string;
 }
 
 export const jsonParser = "json-parser";
@@ -217,6 +217,18 @@ export const toolsListData: Array<ITools> = [
     \nIntroducing our fast and reliable UUID Generator using version 4 - the ultimate tool for generating unique and universal identifiers for your databases and systems. With our tool, you can easily generate random and secure UUIDs in a matter of seconds, ensuring that your data is always protected. 
     \nSay goodbye to the hassle of creating unique identifiers manually and let our tool do the work for you. Our UUID Generator is user-friendly and easy to use, making it perfect for developers and non-technical users alike. Try it now and experience the benefits of having a fast and reliable tool for generating unique and secure identifiers.
       `,
+  },
+  {
+    title: "",
+    link: SCREENS.HOME,
+    heading: "",
+    content: "",
+    metaTitle: seoData.homePage.title,
+    metaDescription: seoData.homePage.description,
+    list: false,
+    key: ToolKeys.HOME,
+    toolDescription: `Choose our online tools for secure and reliable solutions. 
+    Our tools are designed to protect your data while providing you with the efficiency and convenience you need. Whether it's JSON Parser, ASCII to string, or UUID generator, our tools have got you covered. Try them out today and experience peace of mind knowing your information is secure.`,
   },
 ];
 

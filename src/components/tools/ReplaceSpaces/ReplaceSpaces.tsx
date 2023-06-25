@@ -2,9 +2,10 @@ import { Input, Layout } from "antd";
 import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { useToolListData } from "../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolDescription } from "../helper/ToolOverview";
@@ -30,14 +31,12 @@ function ReplaceSpaces() {
     replaceWithUnderscore();
   }, [input, toReplace, replaceWith]);
 
-  const result = toolsListData.filter((obj) => {
-    return obj.key === ToolKeys.ReplaceSpaces;
-  });
+  const { toolData } = useToolListData(ToolKeys.ReplaceSpaces);
 
   return (
     <>
       <Content>
-        <OfflineMetaTags tagId={ToolKeys.ReplaceSpaces} />
+        <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody className={ReplaceSpacesStyles.ToolsBody} />
           <div className="col-lg-6">
@@ -48,9 +47,7 @@ function ReplaceSpaces() {
                 setToReplace(v.target.value);
               }}
             />
-            <InputToConvertByTools
-              onChangeCb={(v) => setInput(v)}
-            />
+            <InputToConvertByTools onChangeCb={(v) => setInput(v)} />
           </div>
           <div className="col-lg-6">
             <Input
@@ -63,7 +60,7 @@ function ReplaceSpaces() {
             <ConvertedOutputByTools content={byte} />
           </div>
         </div>
-        <ToolDescription content={result[0].toolDescription} />
+        <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
       </Content>
     </>

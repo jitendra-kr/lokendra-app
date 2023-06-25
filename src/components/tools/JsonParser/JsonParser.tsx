@@ -3,12 +3,13 @@ import { get } from "lodash";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { useToolListData } from "../../../common/hooks/useToolListData";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { jsonlint } from "../../../externalLib";
 import { OfflineMetaTags } from "../../common";
 import Ide from "../../common/Ide/Ide";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, toolsListData } from "../ToolsList";
+import { ToolKeys } from "../ToolsList";
 import { ToolsList } from "../ToolsList/ToolsList";
 import { JsonViewer } from "../helper/JsonViewer";
 import { ToolDescription } from "../helper/ToolOverview";
@@ -16,6 +17,7 @@ import { ToolDescription } from "../helper/ToolOverview";
 const { Content } = Layout;
 
 function JsonParser() {
+  const { toolData } = useToolListData(ToolKeys.JSONParser);
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
@@ -57,13 +59,9 @@ function JsonParser() {
     }
   }
 
-  const result = toolsListData.filter((obj) => {
-    return obj.key === ToolKeys.JSONParser;
-  });
-
   return (
     <Content>
-      <OfflineMetaTags tagId={ToolKeys.JSONParser} />
+      <OfflineMetaTags tagData={toolData} />
 
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
@@ -76,7 +74,7 @@ function JsonParser() {
           <JsonViewer content={byte} error={error} editorError={editorError} />
         </div>
       </div>
-      <ToolDescription content={result[0].toolDescription} />
+      <ToolDescription content={toolData.toolDescription} />
       <ToolsList />
     </Content>
   );

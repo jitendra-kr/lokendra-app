@@ -50,5 +50,9 @@
   "UUIDGenerator": {
     "title": "UUID Generator - Generate Unique Universal Identifiers",
     "description": "Generate unique and reliable Universal Identifiers with our fast secure UUID generator tool. Our tool generates random and secure UUIDs in a matter of seconds!"
+  },
+  "homePage": {
+    "title": "Secure and Reliable Online Tools",
+    "description": "Introducing our suite of powerful and user-friendly tools designed to simplify your data management tasks for developers and non-technical users alike!"
   }
 }

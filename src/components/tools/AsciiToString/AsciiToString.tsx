@@ -1,18 +1,18 @@
 import { Layout } from "antd";
 import { withRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
-import { useGetToolsInput } from "../../../hooks/useGetToolsInput";
+import { useToolListData } from "../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import { ToolDescription } from "../helper/ToolOverview";
 const { Content } = Layout;
 
 function AsciiToString() {
-  const { value } = useGetToolsInput();
+  const { toolData } = useToolListData(ToolKeys.ASCIItoString);
   const [byte, setByte] = useState("");
 
   function asciiToSentence(str: any) {
@@ -38,14 +38,11 @@ function AsciiToString() {
       setByte("");
     }
   };
-  const result = toolsListData.filter((obj) => {
-    return obj.key === ToolKeys.ASCIItoString;
-  });
 
   return (
     <>
       <Content>
-        <OfflineMetaTags tagId={ToolKeys.ASCIItoString} />
+        <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6">
@@ -56,7 +53,7 @@ function AsciiToString() {
           </div>
         </div>
 
-        <ToolDescription content={result[0].toolDescription} />
+        <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
       </Content>
     </>

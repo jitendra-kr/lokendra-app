@@ -3,10 +3,11 @@ import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../../../styles/StringToAscii.module.css";
+import { useToolListData } from "../../../common/hooks/useToolListData";
 import { jsonlint } from "../../../externalLib";
 import { OfflineMetaTags } from "../../common";
 import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList, toolsListData } from "../ToolsList";
+import { ToolKeys, ToolsList } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { ToolDescription } from "../helper/ToolOverview";
 
@@ -17,6 +18,7 @@ const Editor = dynamic(() => import("../../common/Ide/Ide"), {
 const { Content } = Layout;
 
 function JsonToString() {
+  const { toolData } = useToolListData(ToolKeys.JSONtostring);
   const [byte, setByte] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
 
@@ -48,14 +50,10 @@ function JsonToString() {
     }
   }
 
-  const result = toolsListData.filter((obj) => {
-    return obj.key === ToolKeys.JSONtostring;
-  });
-
   return (
     <>
       <Content>
-        <OfflineMetaTags tagId={ToolKeys.JSONtostring} />
+        <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
           <ToolsBody />
           <div className="col-lg-6">
@@ -70,7 +68,7 @@ function JsonToString() {
             />
           </div>
         </div>
-        <ToolDescription content={result[0].toolDescription} />
+        <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
       </Content>
     </>
