@@ -9,13 +9,15 @@ export function WhyUs({
   content: string | React.ReactNode;
 }) {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div style={{ width: "70%" }}>
-        <h1 className={ToolDescriptionStyles.heading}>{heading}</h1>
-        <div className={WhyUsStyles.content}>
-          {typeof content === "string" ? <p>{content}</p> : content}
+    <>
+      <h1 className={ToolDescriptionStyles.heading}>{heading}</h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ width: "70Wvw" }}>
+          <div className={WhyUsStyles.content}>
+            {typeof content === "string" ? <p>{content}</p> : content}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

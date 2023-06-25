@@ -100,7 +100,9 @@ export default function MyApp({ Component, pageProps }) {
           <div className="row" style={{ minHeight: size.height + "px" }}>
             <div
               className="col-lg-10"
-              style={{ padding: "50px 0px 59px 30px" }}
+              style={{
+                padding: "50px",
+              }}
             >
               <Component {...pageProps} />
             </div>
