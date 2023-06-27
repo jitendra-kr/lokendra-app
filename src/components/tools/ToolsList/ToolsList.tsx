@@ -32,8 +32,10 @@ const Reasons = () => {
 
   return (
     <ul>
-      {reasons.map((r) => (
-        <li style={{ fontFamily: "Inter", padding: "4px" }}>{r}</li>
+      {reasons.map((r, i) => (
+        <li key={i} style={{ fontFamily: "Inter", padding: "4px" }}>
+          {r}
+        </li>
       ))}
     </ul>
   );
