@@ -1,14 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
-import { isEmpty, get } from "lodash";
+import { get, isEmpty } from "lodash";
 import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
 
+import { Col, Grid, Layout, Menu, Row } from "antd";
 import Link from "next/link";
-import { Layout, Menu, Dropdown, Grid, Drawer, Row, Col } from "antd";
-import {
-  UserOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from "@ant-design/icons";
 
 import { UserContext } from "../../contexts/UserContext";
 import { isAuthorisedToPostBlog, isAuthorisedToPwdManager } from "../../utils";
@@ -27,10 +22,10 @@ function MainHeader() {
   let [user, setUser] = useContext(UserContext);
   const [isDrawervisible, setDrawerVisibility] = useState(false);
   const [authorisedToPostBlog, setIsAuthorisedToPostBlog] = useState(
-    isAuthorisedToPostBlog()
+    isAuthorisedToPostBlog(),
   );
   const [authorisedToPwdManager, setIsAuthorisedToPwdManager] = useState(
-    isAuthorisedToPwdManager()
+    isAuthorisedToPwdManager(),
   );
   const router = useRouter();
   const selectedTab = keysMapper[router.pathname];
@@ -44,16 +39,16 @@ function MainHeader() {
   useEffect(() => {
     setIsAuthorisedToPostBlog(isAuthorisedToPostBlog());
     setIsAuthorisedToPwdManager(isAuthorisedToPostBlog());
-    window.addEventListener('storage', event => {
-      if (get(event, 'key') === 'auth' && !get(event, 'newValue')) {
+    window.addEventListener("storage", (event) => {
+      if (get(event, "key") === "auth" && !get(event, "newValue")) {
         window.location.reload();
       }
     });
   }, [user]);
 
   const logout = () => {
-    localStorage.removeItem('user')
-    localStorage.removeItem('auth')
+    localStorage.removeItem("user");
+    localStorage.removeItem("auth");
     setUser(null);
     setDrawerVisibility(false);
     router.push("/");
@@ -168,7 +163,7 @@ function MainHeader() {
           </Col>
           <Col span={8}></Col>
           <Col span={8}>
-            <div>
+            {/* <div>
               {md ? (
                 mainMenu()
               ) : (
@@ -207,7 +202,7 @@ function MainHeader() {
                   </Drawer>
                 </React.Fragment>
               )}
-            </div>
+            </div> */}
           </Col>
         </Row>
       </Header>

@@ -4,6 +4,7 @@ import { useToolListData } from "../../../common/hooks/useToolListData";
 import { STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags, WhyUs } from "../../common";
+import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import styles from "./ToolsList.module.css";
 import { ITools, ToolKeys, toolsListData } from "./toolsListingData";
 
@@ -58,15 +59,26 @@ export const ToolsList = () => {
         } row content-padding-left`}
       >
         {!isHome && (
-          <h3 className="text-align-center mainHeadingfontFamily">
-            Other tools
-          </h3>
+          <h3 className={ToolDescriptionStyles.heading}>Other Tools</h3>
         )}
+
+        {isHome && (
+          <h1
+            className={ToolDescriptionStyles.heading}
+            style={{
+              marginTop: "10px",
+              marginBottom: "50px",
+            }}
+          >
+            Empower Your Work with Our Tools
+          </h1>
+        )}
+
         <div className="row">
           {data.map((item, i) => {
             return (
               <div
-                className="col-lg-3 cursor-pointer"
+                className="col-lg-4 cursor-pointer"
                 key={i}
                 onClick={() => {
                   handleClick(item);

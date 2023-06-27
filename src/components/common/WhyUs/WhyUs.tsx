@@ -11,7 +11,12 @@ export function WhyUs({
   return (
     <>
       <h1 className={ToolDescriptionStyles.heading}>{heading}</h1>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <div style={{ width: "70Wvw" }}>
           <div className={WhyUsStyles.content}>
             {typeof content === "string" ? <p>{content}</p> : content}
