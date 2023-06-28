@@ -4,7 +4,7 @@ import { FcSearch } from "react-icons/fc";
 export function SearchBar({
   placeholder,
   allowClear = false,
-  autoFocus = true,
+  autoFocus = false,
   onSearch,
 }: {
   placeholder: string;
