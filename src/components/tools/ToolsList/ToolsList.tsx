@@ -1,10 +1,12 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Fuse from "fuse.js";
+import { useEffect, useState } from "react";
 import { useToolListData } from "../../../common/hooks/useToolListData";
 import { STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { OfflineMetaTags, WhyUs } from "../../common";
+import { SearchBar } from "../../common/SearchBar";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
+import { RenderToolsList } from "./RenderToolsList";
 import styles from "./ToolsList.module.css";
 import { ITools, ToolKeys, toolsListData } from "./toolsListingData";
 
@@ -42,68 +44,51 @@ const Reasons = () => {
 };
 
 export const ToolsList = () => {
-  const router = useRouter();
+  const [toolsList, setToolsList] = useState<ITools[]>([]);
   const { toolData } = useToolListData(ToolKeys.HOME);
-
   const { isHome, pathname } = useGetUrlPath();
-  const data = toolsListData.filter((tool) => tool.list);
+  const [placeholder, setPlaceholder] = useState<string>("Search...");
 
-  const handleClick = (item: ITools) => {
-    router.push(item.link);
+  const onSearch = (searchInput: string | undefined) => {
+    if (!searchInput) {
+      const data = toolsListData.filter((tool) => tool.list);
+      setToolsList(data);
+      return;
+    }
+    handleSearch(searchInput);
   };
+
+  const handleSearch = (searchInput: string) => {
+    const searchOptions: Fuse.IFuseOptions<ITools> = {
+      keys: ["title"],
+    };
+    const fuse = new Fuse(toolsList, searchOptions);
+    const results = fuse.search(searchInput);
+    setToolsList(results.map((result) => result.item));
+  };
+
+  useEffect(() => {
+    const data = toolsListData.filter((tool) => tool.list);
+    const randomTool = data[Math.floor(Math.random() * data.length)];
+    setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
+    setToolsList(data);
+  }, [toolsListData]);
 
   return (
     <>
       {isHome && <OfflineMetaTags tagData={toolData} />}
-      <div
-        className={`${
-          isHome || pathname === "/tools" ? styles.home : styles.otherTools
-        } row content-padding-left`}
-      >
-        {!isHome && (
-          <h3 className={ToolDescriptionStyles.heading}>Other Tools</h3>
-        )}
-
-        {isHome && (
-          <h1
-            className={ToolDescriptionStyles.heading}
-            style={{
-              marginTop: "10px",
-              marginBottom: "50px",
-            }}
-          >
-            Empower Your Work with Our Tools
-          </h1>
-        )}
-
-        <div className="row">
-          {data.map((item, i) => {
-            return (
-              <div
-                className="col-lg-4 cursor-pointer"
-                key={i}
-                onClick={() => {
-                  handleClick(item);
-                }}
-                style={{ marginTop: "25px" }}
-              >
-                <div className="listing border">
-                  <div
-                    className="home-page-title"
-                    style={{ textAlign: "center" }}
-                  >
-                    <Link href={item.link}>{item.title}</Link>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+      <div className={`row`}>
+        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
+          Empower Your Work with Our Tools
+        </h1>
+        <SearchBar placeholder={placeholder} onSearch={onSearch} />
+        <RenderToolsList toolsList={toolsList} />
+        <div className={styles.whyUsContainer}>
+          <WhyUs
+            heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
+            content={<Reasons />}
+          />
         </div>
-
-        <WhyUs
-          heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
-          content={<Reasons />}
-        />
       </div>
     </>
   );
