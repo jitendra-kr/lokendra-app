@@ -3,7 +3,13 @@ import { useRouter } from "next/router";
 import { NoMatchFound } from "./NoMatchFound";
 import { ITools } from "./toolsListingData";
 
-export function RenderToolsList({ toolsList }: { toolsList: ITools[] }) {
+export function RenderToolsList({
+  toolsList,
+  textInput,
+}: {
+  toolsList: ITools[];
+  textInput: string | undefined;
+}) {
   const router = useRouter();
 
   const handleClick = (item: ITools) => {
@@ -30,7 +36,7 @@ export function RenderToolsList({ toolsList }: { toolsList: ITools[] }) {
           </div>
         );
       })}
-      {toolsList.length === 0 && <NoMatchFound />}
+      {textInput && toolsList.length === 0 && <NoMatchFound />}
     </div>
   );
 }

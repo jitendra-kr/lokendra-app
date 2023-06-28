@@ -45,11 +45,13 @@ const Reasons = () => {
 
 export const ToolsList = () => {
   const [toolsList, setToolsList] = useState<ITools[]>([]);
+  const [textInput, setTextInput] = useState<string | undefined>();
   const { toolData } = useToolListData(ToolKeys.HOME);
-  const { isHome, pathname } = useGetUrlPath();
+  const { isHome } = useGetUrlPath();
   const [placeholder, setPlaceholder] = useState<string>("Search...");
 
   const onSearch = (searchInput: string | undefined) => {
+    setTextInput(searchInput);
     if (!searchInput) {
       const data = toolsListData.filter((tool) => tool.list);
       setToolsList(data);
@@ -81,8 +83,12 @@ export const ToolsList = () => {
         <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
           Empower Your Work with Our Tools
         </h1>
-        <SearchBar placeholder={placeholder} onSearch={onSearch} />
-        <RenderToolsList toolsList={toolsList} />
+        <SearchBar
+          placeholder={placeholder}
+          onSearch={onSearch}
+          autoFocus={true}
+        />
+        <RenderToolsList toolsList={toolsList} textInput={textInput} />
         <div className={styles.whyUsContainer}>
           <WhyUs
             heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
