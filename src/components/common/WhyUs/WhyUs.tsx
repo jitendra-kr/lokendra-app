@@ -15,6 +15,7 @@ export function WhyUs({
         style={{
           display: "flex",
           justifyContent: "center",
+          marginBottom: "80px",
         }}
       >
         <div style={{ width: "70Wvw" }}>
