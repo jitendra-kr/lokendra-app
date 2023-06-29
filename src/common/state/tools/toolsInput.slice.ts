@@ -1,11 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface InputState {
-  value: string;
+  value?: string;
+  diffLeftValue?: string;
+  diffRightValue?: string;
 }
 
 const initialState: InputState = {
   value: "",
+  diffLeftValue: "",
+  diffRightValue: "",
 };
 
 interface IValue {
@@ -19,10 +23,27 @@ export const counterSlice = createSlice({
     updateToolsInput: (state: InputState, value: IValue) => {
       state.value = value.payload.value;
     },
+    updateDiffLeftInput: (
+      state: InputState,
+      { payload }: PayloadAction<string>,
+    ) => {
+      state.diffLeftValue = payload;
+    },
+    updateDiffRightInput: (
+      state: InputState,
+      { payload }: PayloadAction<string>,
+    ) => {
+      state.diffRightValue = payload;
+    },
     resetInput: () => initialState,
   },
 });
 
-export const { updateToolsInput, resetInput } = counterSlice.actions;
+export const {
+  updateToolsInput,
+  updateDiffLeftInput,
+  updateDiffRightInput,
+  resetInput,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

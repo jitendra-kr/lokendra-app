@@ -5,22 +5,37 @@ import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-github";
 
 import AceEditor from "react-ace";
+import { getToolInput } from "../../../common/selectors";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 
 type AceIdeProps = {
-  value: any;
+  changeCb: (value: string) => void;
+  key: string;
 };
-export default function AceIde({ value }: AceIdeProps) {
+export default function AceIde({ changeCb, key }: AceIdeProps) {
+  const { value: globalInputValue } = useAppSelector(getToolInput);
+  const dispatch = useAppDispatch();
+
+  const onChange = (value: string | undefined) => {
+    changeCb(value ?? "");
+  };
+
   return (
-    <AceEditor
-      placeholder="Start typing"
-      height="100vh"
-      mode="json"
-      theme="github"
-      name="UNIQUE_ID_OF_DIV"
-      editorProps={{ $blockScrolling: true }}
-      fontSize={15}
-      style={{ border: "1px solid #ccc" }}
-      value={value}
-    />
+    <>
+      <AceEditor
+        key={key + 1}
+        placeholder="Start typing"
+        height="74vh"
+        width="100%"
+        mode="json"
+        theme="github"
+        name={"UNIQUE_ID_OF_DIV" + key + 2}
+        editorProps={{ $blockScrolling: true }}
+        fontSize={15}
+        style={{ border: "1px solid #ccc" }}
+        // value={globalInputValue}
+        onChange={onChange}
+      />
+    </>
   );
 }

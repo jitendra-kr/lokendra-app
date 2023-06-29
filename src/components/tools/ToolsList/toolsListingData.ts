@@ -96,6 +96,20 @@ export const toolsListData: Array<ITools> = [
       \nYou can easily copy your formatted or validated JSON code into an email or chat message.`,
   },
   {
+    title: "JSON Diff",
+    link: SCREENS.JSON_DIFF,
+    heading: "JSON Diff",
+    content:
+      "Just load your JSON, and the system will validate, parse, and format it automatically.",
+    metaTitle: seoData.jsonParser.title,
+    metaDescription: seoData.jsonParser.description,
+    list: false,
+    key: ToolKeys.JSONParser,
+    toolDescription: `Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter. Validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets.
+      \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected.
+      \nYou can easily copy your formatted or validated JSON code into an email or chat message.`,
+  },
+  {
     title: "Text to Uppercase",
     link: SCREENS.TEXT_TO_UPPERCASE,
     heading: "Easily Convert Text & Strings to Uppercase Online - Free Tool",
