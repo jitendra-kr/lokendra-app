@@ -1,1 +1,2 @@
-export * from "./stringConstants"
+export * from "./colorConstant";
+export * from "./stringConstants";

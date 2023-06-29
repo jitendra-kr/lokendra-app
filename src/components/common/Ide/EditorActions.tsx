@@ -3,6 +3,7 @@ import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaUpload } from "react-icons/fa";
+import { COLOR_CONST } from "../../../constants";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
 
 type EditorActionsProps = {
@@ -39,7 +40,7 @@ export const EditorActions = ({
           <ButtonUsingReactIcon
             name="Upload Data"
             onClick={() => {}}
-            mdIcon={<FaUpload />}
+            mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} />}
           />
         </Upload>
       </Tooltip>
@@ -47,7 +48,7 @@ export const EditorActions = ({
       <ButtonUsingReactIcon
         name="Clear"
         onClick={clear}
-        mdIcon={<AiFillDelete size={15} />}
+        mdIcon={<AiFillDelete size={15} color={COLOR_CONST.defaultIcon} />}
         tooltip="Clear Input"
       />
     </div>
