@@ -5,8 +5,6 @@ import { STRING_CONSTANTS } from "../src/constants";
 
 const { Content } = Layout;
 
-import styles from "../styles/aboutUs.module.css";
-
 function aboutUs() {
   return (
     <Content style={{ padding: "50px 50px" }}>
@@ -19,12 +17,13 @@ function aboutUs() {
             For new readers, let me introduce myself. I'm{" "}
             <strong>Jitendra Kumar</strong>, the Founder of &nbsp;
             <Link href="/">{STRING_CONSTANTS.global.appName}</Link> . With a
-            background as a Software Engineer, Professional Blogger, I am passionate about utilizing technology to its
-            fullest potential. I hold a Master's degree in Computer Applications
-            (MCA), which I completed in 2019. Through my journey, I aim to share
-            my knowledge and experiences, providing valuable insights to empower
-            and inspire others. Join me as we explore the fascinating world of
-            technology, tools and blogging together.
+            background as a Software Engineer, Professional Blogger, I am
+            passionate about utilizing technology to its fullest potential. I
+            hold a Master's degree in Computer Applications (MCA), which I
+            completed in 2019. Through my journey, I aim to share my knowledge
+            and experiences, providing valuable insights to empower and inspire
+            others. Join me as we explore the fascinating world of technology,
+            tools and blogging together.
           </p>
 
           <div style={{ marginTop: "50px" }}>

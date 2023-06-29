@@ -6,53 +6,98 @@
           http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
           
   <url>
-      <loc>https://www.fireboxtools.com/tools/ascii-to-string</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <loc>https://www.fireboxtools.com/about-me</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
-      <loc>https://www.fireboxtools.com/tools/character-counter</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <loc>https://www.fireboxtools.com</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/login</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/register</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/reset-password</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/ascii-to-string</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/json-parser</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/json-to-string</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/json-unstringify</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/replace-spaces</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/salary-hike-percentage-calculator</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/string-to-ascii</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/text-to-lowercase</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
   <url>
       <loc>https://www.fireboxtools.com/tools/text-to-uppercase</loc>
-      <lastmod>2023-05-30T08:54:36.263Z</lastmod>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/url-decode</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/url-encode</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/uuid-generator</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
+  </url>
+
+  <url>
+      <loc>https://www.fireboxtools.com/tools/word-counter</loc>
+      <lastmod>2023-06-29T16:15:56.645Z</lastmod>
   </url>
 
 </urlset>
