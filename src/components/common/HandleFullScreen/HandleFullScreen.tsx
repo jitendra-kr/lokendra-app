@@ -1,8 +1,8 @@
 import { Button, Modal, Tooltip } from "antd";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
-import { TfiClose } from "react-icons/tfi";
-
+import { MdCloseFullscreen } from "react-icons/md";
+import { COLOR_CONST } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { JsonViewer } from "../../tools";
 import { jsonParser } from "../../tools/ToolsList/toolsListingData";
@@ -50,14 +50,20 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
         destroyOnClose={true}
         closeIcon={
           <Tooltip title={"Exit Full Screen"}>
-            <TfiClose size={60} color="white" />
+            <Button
+              type="primary"
+              onClick={openModal}
+              style={{ marginRight: "4px", marginTop: "3px" }}
+            >
+              <MdCloseFullscreen size={20} color={COLOR_CONST.defaultIcon} />
+            </Button>
           </Tooltip>
         }
       />
       <Tooltip title={"Full Screen"}>
         <Button
           type="primary"
-          icon={<BiFullscreen size={30} />}
+          icon={<BiFullscreen size={20} color={COLOR_CONST.defaultIcon} />}
           onClick={openModal}
         ></Button>
       </Tooltip>

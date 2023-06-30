@@ -1,5 +1,5 @@
 import { FaDownload } from "react-icons/fa";
-import { STRING_CONSTANTS } from "../../../constants";
+import { COLOR_CONST, STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { jsonParser } from "../../tools/ToolsList/toolsListingData";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
@@ -29,7 +29,7 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
     <ButtonUsingReactIcon
       name="Download"
       onClick={onClick}
-      mdIcon={<FaDownload color="white" />}
+      mdIcon={<FaDownload color={COLOR_CONST.defaultIcon} />}
       tooltip="Download Output"
     />
   );

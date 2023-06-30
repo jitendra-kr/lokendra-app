@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoCopySharp } from "react-icons/io5";
+import { COLOR_CONST } from "../../../../constants";
 import { copyToClipboard } from "../../../../utils";
 import { ButtonUsingReactIcon } from "../../../common";
 
@@ -36,7 +37,7 @@ export const CopyToClip = ({ content }: CopyToClipProps) => {
     <ButtonUsingReactIcon
       name="Copy"
       onClick={handleClick}
-      mdIcon={<IoCopySharp />}
+      mdIcon={<IoCopySharp color={COLOR_CONST.defaultIcon} />}
       tooltip="Copy to Clipboard"
     />
   );

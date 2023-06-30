@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
 import { getToolInput } from "../../../common/selectors";
 import { updateToolsInput } from "../../../common/state/tools";
+import { COLOR_CONST } from "../../../constants";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { messageError, messageSuccess, repairJSON } from "../../../utils";
@@ -141,7 +142,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
             <ButtonUsingReactIcon
               name="Repair"
               onClick={onRepairClick}
-              mdIcon={<AiFillTool size={18} />}
+              mdIcon={<AiFillTool size={18} color={COLOR_CONST.defaultIcon} />}
               tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
             />
             <></>

@@ -1,5 +1,6 @@
 import { FaShareAlt } from "react-icons/fa";
 import { SCREENS } from "../../../common/enums";
+import { COLOR_CONST } from "../../../constants";
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
 import { ButtonUsingReactIcon } from "../../common";
@@ -35,7 +36,7 @@ export function ShareData({ data }: ShareDataProps) {
     <ButtonUsingReactIcon
       name="Share"
       onClick={handleShareUrlClick}
-      mdIcon={<FaShareAlt />}
+      mdIcon={<FaShareAlt color={COLOR_CONST.defaultIcon} />}
       tooltip="Share Data"
     />
   );
