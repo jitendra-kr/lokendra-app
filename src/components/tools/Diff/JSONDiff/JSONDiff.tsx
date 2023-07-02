@@ -1,5 +1,4 @@
 import { Content } from "antd/lib/layout/layout";
-import dynamic from "next/dynamic";
 import styles from "../../../../../styles/StringToAscii.module.css";
 import { getToolInput } from "../../../../common/selectors";
 import {
@@ -8,70 +7,80 @@ import {
 } from "../../../../common/state/tools";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 
+import { get } from "lodash";
 import { useState } from "react";
+import { useToolListData } from "../../../../common/hooks/useToolListData";
+import { jsonlint } from "../../../../externalLib";
+import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
 import { ToolsBody } from "../../ToolsBody";
-
-const DiffIde = dynamic(() => import("../../../common/Ide/DiffIde/DiffIde"), {
-  ssr: false,
-});
-const DiffViewer = dynamic(
-  () => import("../../../common/Ide/DiffViewer/DiffViewer"),
-  {
-    ssr: false,
-  },
-);
+import { ToolKeys, ToolsList } from "../../ToolsList";
+import { ToolDescription } from "../../helper/ToolOverview";
 
 export function JSONDiff() {
   const dispatch = useAppDispatch();
+  const { toolData } = useToolListData(ToolKeys.JSON_DIFF);
+
   const { diffLeftValue, diffRightValue } = useAppSelector(getToolInput);
-  const [showDiff, setShowDiff] = useState(false);
+  const [leftErrorMsg, setLeftErrorMsg] = useState("");
+  const [rightErrorMsg, setRightErrorMsg] = useState("");
 
   const onLeftChange = (valueL: string | undefined) => {
+    setLeftErrorMsg("");
     dispatch(updateDiffLeftInput(valueL ?? ""));
   };
 
   const onRightChange = (valueR: string | undefined) => {
+    setRightErrorMsg("");
     dispatch(updateDiffRightInput(valueR ?? ""));
   };
 
-  const onCompareClick = () => {
-    setShowDiff((v) => !v);
+  const formatLeftInput = (valueL: string | undefined) => {
+    setLeftErrorMsg("");
+    if (!valueL) {
+      return;
+    }
+    try {
+      const parsedJSON = jsonlint.parse(valueL);
+      onLeftChange(JSON.stringify(parsedJSON, null, "\t"));
+    } catch (error: unknown) {
+      setLeftErrorMsg(
+        `${get(error, "name") + " \n" + get(error, "message")}  `,
+      );
+    }
+  };
+
+  const formatRightInput = (valueR: string | undefined) => {
+    setRightErrorMsg("");
+    if (!valueR) {
+      return;
+    }
+    try {
+      const parsedJSON = jsonlint.parse(valueR);
+      onRightChange(JSON.stringify(parsedJSON, null, "\t"));
+    } catch (error: unknown) {
+      setRightErrorMsg(
+        `${get(error, "name") + " \n" + get(error, "message")}  `,
+      );
+    }
   };
 
   return (
     <Content>
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
-        <>
-          {!showDiff && (
-            <>
-              <div className="col-lg-6">
-                <DiffIde
-                  id={"leftIDE"}
-                  value={diffLeftValue ?? ""}
-                  onChange={onLeftChange}
-                  onCompareClick={onCompareClick}
-                />
-              </div>
-              <div className="col-lg-6">
-                <DiffIde
-                  id={"rightIDE"}
-                  value={diffRightValue ?? ""}
-                  onChange={onRightChange}
-                  onCompareClick={onCompareClick}
-                />
-              </div>
-            </>
-          )}
-          {showDiff && (
-            <DiffViewer
-              diffLeftValue={diffLeftValue ?? ""}
-              diffRightValue={diffRightValue ?? " "}
-            />
-          )}
-        </>
+        <DiffViewer
+          diffLeftValue={diffLeftValue ?? ""}
+          diffRightValue={diffRightValue ?? " "}
+          onLeftChange={onLeftChange}
+          onRightChange={onRightChange}
+          formatLeftInput={formatLeftInput}
+          formatRightInput={formatRightInput}
+          leftErrorMsg={leftErrorMsg}
+          rightErrorMsg={rightErrorMsg}
+        />
       </div>
+      <ToolDescription content={toolData.toolDescription} />
+      <ToolsList />
     </Content>
   );
-  // return <DiffIde value1={value1} value2={value2} />;
 }
