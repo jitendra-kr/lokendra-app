@@ -62,7 +62,6 @@ function JsonParser() {
   return (
     <Content>
       <OfflineMetaTags tagData={toolData} />
-
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <div className="col-lg-6">

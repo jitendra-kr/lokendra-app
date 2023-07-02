@@ -10,12 +10,14 @@ type EditorActionsProps = {
   clear: () => void;
   onChange: (value: string | undefined) => void;
   children?: ReactNode;
+  childrenAfter?: ReactNode;
 };
 
 export const EditorActions = ({
   clear,
   onChange,
   children,
+  childrenAfter,
 }: EditorActionsProps) => {
   return (
     <div
@@ -44,7 +46,7 @@ export const EditorActions = ({
           />
         </Upload>
       </Tooltip>
-
+      {childrenAfter}
       <ButtonUsingReactIcon
         name="Clear"
         onClick={clear}

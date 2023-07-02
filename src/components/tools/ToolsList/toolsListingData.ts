@@ -17,6 +17,7 @@ export enum ToolKeys {
   URLEncode = "URLEncode",
   UUIDGenerator = "UUIDGenerator",
   HOME = "HOME",
+  JSON_DIFF = "JSON_DIFF",
 }
 
 export interface ITools {
@@ -94,6 +95,19 @@ export const toolsListData: Array<ITools> = [
     toolDescription: `Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter. Validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets.
       \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected.
       \nYou can easily copy your formatted or validated JSON code into an email or chat message.`,
+  },
+  {
+    title: "JSON Diff",
+    link: SCREENS.JSON_DIFF,
+    heading: "JSON Diff",
+    content:
+      "Just load your JSON data, and the system will compare and highlight JSON data differences automatically.",
+    metaTitle: seoData.jsonDiff.title,
+    metaDescription: seoData.jsonDiff.description,
+    list: true,
+    key: ToolKeys.JSON_DIFF,
+    toolDescription: `JSON Diff is a secure and user-friendly tool designed to compare two sets of JSON data and highlight the differences with ease. This tool streamlines the data comparison process, making it effortless for developers and users to identify changes in their JSON objects. 
+    With JSON Diff, you can quickly and accurately pinpoint new, deleted, and modified properties in your JSON files. Whether you are working with large JSON datasets or smaller files, this tool offers advanced features such as formatting options, and editing functionalities to simplify the comparison process. JSON Diff ensures the security of your data by handling it with utmost care and providing a secure environment for performing comparisons. With its intuitive interface and comprehensive set of functionalities, JSON Diff is the go-to tool for developers and individuals looking to simplify the process of comparing and analyzing their JSON data efficiently and securely.`,
   },
   {
     title: "Text to Uppercase",

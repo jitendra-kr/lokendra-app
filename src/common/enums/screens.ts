@@ -13,4 +13,5 @@ export enum SCREENS {
   "URL_ENCODE" = "/tools/url-encode",
   "TOOLS" = "/tools",
   "UUID_GENERATOR" = "/tools/uuid-generator",
+  "JSON_DIFF" = "/tools/diff/json-diff-compare",
 }

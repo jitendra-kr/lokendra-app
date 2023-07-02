@@ -19,7 +19,7 @@ export const ToolOutputActions = ({ content }: JsonViewerProps) => {
           <CopyToClip content={content} />
         </>
       )}
-      <ShareData data={value} />
+      <ShareData data={value ?? ""} />
       <HandleFullScreen content={content} />
     </div>
   );

@@ -1,4 +1,5 @@
 export * from "./AsciiToString";
+export * from "./Diff";
 export * from "./JsonUnstringify";
 export * from "./ReplaceSpaces";
 export * from "./SalaryHikePercentageCalculator";
