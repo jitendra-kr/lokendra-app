@@ -11,6 +11,7 @@ import { get } from "lodash";
 import { useState } from "react";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { jsonlint } from "../../../../externalLib";
+import { OfflineMetaTags } from "../../../common";
 import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolKeys, ToolsList } from "../../ToolsList";
@@ -66,6 +67,7 @@ export function JSONDiff() {
 
   return (
     <Content>
+      <OfflineMetaTags tagData={toolData} />
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
         <DiffViewer
