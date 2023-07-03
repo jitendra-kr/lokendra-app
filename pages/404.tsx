@@ -16,7 +16,7 @@ function Page404() {
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <Button type="primary" htmlType="submit">
           <Link href={`/`} style={{ fontWeight: "bold" }}>
-            Explore {STRING_CONSTANTS.global.appName}`s tools
+            Return to {STRING_CONSTANTS.global.appName}`s Tools
           </Link>
         </Button>
       </div>
