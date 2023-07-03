@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { messageError, messageSuccess, repairJSON } from "../../../utils";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon";
-import { EditorActions } from "./EditorActions";
+import { EditorActions, EditorActionsButtons } from "./EditorActions";
 import styles from "./Ide.module.css";
 
 type ThemeType = string;
@@ -137,13 +137,20 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
         onChange={loadValue}
         children={
           <>
-            <UpdateTheme handleThemeChange={handleThemeChange} />
-
-            <ButtonUsingReactIcon
-              name="Repair"
-              onClick={onRepairClick}
-              mdIcon={<AiFillTool size={18} color={COLOR_CONST.defaultIcon} />}
-              tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+            <EditorActionsButtons
+              children={<UpdateTheme handleThemeChange={handleThemeChange} />}
+            />
+            <EditorActionsButtons
+              children={
+                <ButtonUsingReactIcon
+                  name="Repair"
+                  onClick={onRepairClick}
+                  mdIcon={
+                    <AiFillTool size={18} color={COLOR_CONST.defaultIcon} />
+                  }
+                  tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+                />
+              }
             />
             <></>
           </>

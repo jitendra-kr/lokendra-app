@@ -1,4 +1,4 @@
-import { Tooltip, Upload } from "antd";
+import { Col, Row, Tooltip, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -13,6 +13,22 @@ type EditorActionsProps = {
   childrenAfter?: ReactNode;
 };
 
+export function EditorActionsButtons({ children }: { children: ReactNode }) {
+  return (
+    <Col
+      xs={2}
+      sm={2}
+      md={2}
+      lg={1}
+      xl={1}
+      style={{ marginTop: "5px", padding: "0px" }}
+    >
+      {children}
+      {/* jimmy */}
+    </Col>
+  );
+}
+
 export const EditorActions = ({
   clear,
   onChange,
@@ -20,39 +36,50 @@ export const EditorActions = ({
   childrenAfter,
 }: EditorActionsProps) => {
   return (
-    <div
+    <Row
+      className="row"
       style={{ display: "flex", justifyContent: "start", marginBottom: "5px" }}
     >
       {children}
-      <Tooltip title="Load Data From Load File">
-        <Upload
-          accept=".txt, .json"
-          showUploadList={false}
-          beforeUpload={(file) => {
-            const reader = new FileReader();
 
-            reader.onload = (e) => {
-              onChange(get(e, "target.result") ?? "");
-            };
-            reader.readAsText(file);
+      <EditorActionsButtons
+        children={
+          <Tooltip title="Load Data From Load File">
+            <Upload
+              accept=".txt, .json"
+              showUploadList={false}
+              beforeUpload={(file) => {
+                const reader = new FileReader();
 
-            return false;
-          }}
-        >
-          <ButtonUsingReactIcon
-            name="Upload Data"
-            onClick={() => {}}
-            mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} />}
-          />
-        </Upload>
-      </Tooltip>
-      {childrenAfter}
-      <ButtonUsingReactIcon
-        name="Clear"
-        onClick={clear}
-        mdIcon={<AiFillDelete size={15} color={COLOR_CONST.defaultIcon} />}
-        tooltip="Clear Input"
+                reader.onload = (e) => {
+                  onChange(get(e, "target.result") ?? "");
+                };
+                reader.readAsText(file);
+
+                return false;
+              }}
+            >
+              <ButtonUsingReactIcon
+                name="Upload Data"
+                onClick={() => {}}
+                mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} />}
+              />
+            </Upload>
+          </Tooltip>
+        }
       />
-    </div>
+
+      {childrenAfter}
+      <EditorActionsButtons
+        children={
+          <ButtonUsingReactIcon
+            name="Clear"
+            onClick={clear}
+            mdIcon={<AiFillDelete size={15} color={COLOR_CONST.defaultIcon} />}
+            tooltip="Clear Input"
+          />
+        }
+      />
+    </Row>
   );
 };

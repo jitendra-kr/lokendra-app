@@ -5,7 +5,7 @@ import { PiBracketsCurlyBold } from "react-icons/pi";
 import { COLOR_CONST } from "../../../../constants";
 import { CopyToClip } from "../../../tools/helper/CopyToClip";
 import { ButtonUsingReactIcon } from "../../ButtonWithIcon";
-import { EditorActions } from "../EditorActions";
+import { EditorActions, EditorActionsButtons } from "../EditorActions";
 import styles from "../Ide.module.css";
 import DiffViewerStyles from "./DiffViewer.module.css";
 
@@ -80,18 +80,24 @@ export default function DiffViewer({
               onChange={onLeftChange}
               childrenAfter={
                 <>
-                  <ButtonUsingReactIcon
-                    name="Format"
-                    onClick={() => formatLeftInput(getOrignalValue())}
-                    mdIcon={
-                      <PiBracketsCurlyBold
-                        color={COLOR_CONST.defaultIcon}
-                        size={20}
+                  <EditorActionsButtons
+                    children={
+                      <ButtonUsingReactIcon
+                        name="Format"
+                        onClick={() => formatLeftInput(getOrignalValue())}
+                        mdIcon={
+                          <PiBracketsCurlyBold
+                            color={COLOR_CONST.defaultIcon}
+                            size={20}
+                          />
+                        }
+                        tooltip="Format input"
                       />
                     }
-                    tooltip="Format input"
                   />
-                  <CopyToClip content={getOrignalValue} />
+                  <EditorActionsButtons
+                    children={<CopyToClip content={getOrignalValue} />}
+                  />
                 </>
               }
             />
@@ -126,18 +132,24 @@ export default function DiffViewer({
                 onChange={onRightChange}
                 childrenAfter={
                   <>
-                    <ButtonUsingReactIcon
-                      name="Format"
-                      onClick={() => formatRightInput(getModifiedValue())}
-                      mdIcon={
-                        <PiBracketsCurlyBold
-                          color={COLOR_CONST.defaultIcon}
-                          size={20}
+                    <EditorActionsButtons
+                      children={
+                        <ButtonUsingReactIcon
+                          name="Format"
+                          onClick={() => formatRightInput(getModifiedValue())}
+                          mdIcon={
+                            <PiBracketsCurlyBold
+                              color={COLOR_CONST.defaultIcon}
+                              size={20}
+                            />
+                          }
+                          tooltip="Format input"
                         />
                       }
-                      tooltip="Format input"
                     />
-                    <CopyToClip content={getModifiedValue} />
+                    <EditorActionsButtons
+                      children={<CopyToClip content={getModifiedValue} />}
+                    />
                   </>
                 }
               />

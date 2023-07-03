@@ -29,9 +29,7 @@ export function ButtonUsingReactIcon({
         icon={mdIcon}
         style={{ marginRight: "5px", ...styles }}
       >
-        <span style={{ color: "white", marginLeft: "4px", ...textStyles }}>
-          {name}
-        </span>
+        <span style={{ color: "white", ...textStyles }}>{name}</span>
       </Button>
     </Tooltip>
   );

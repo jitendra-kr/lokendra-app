@@ -61,50 +61,45 @@ function WordCounter() {
       <OfflineMetaTags tagData={toolData} />
       <div className={`${styles.mainDiv} row`}>
         <ToolsBody />
-        <div className="col-lg-9">
+        <div className="col-lg-8">
           <InputToConvertByTools
             onChangeCb={onChangeCb}
             placeholder="Type or Paste Text to Begin"
           />
         </div>
-        <div className="col-lg-3">
+        <div className="col-lg-4">
           <div>
-            <div>
-              <strong className={characterCounterStyles["count-in-words"]}>
-                WORDS
-              </strong>
-              <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + wordCount} />
-                {wordCount} <br />
-                <span className="textTransformCapitalize">
-                  {wordCountInWords}
-                </span>
+            <strong className={characterCounterStyles["count-in-words"]}>
+              WORDS
+            </strong>
+            <span className={`${characterCounterStyles.count}`}>
+              <ToolOutputActions content={"" + wordCount} />
+              <p className="textTransformCapitalize">
+                {wordCount} - {wordCountInWords}
               </p>
-            </div>
-            <div>
-              <strong className={characterCounterStyles["count-in-words"]}>
-                CHARACTERS
-              </strong>
-              <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + characterCount} />
-                {characterCount} <br />
-                <span className="textTransformCapitalize">
-                  {characterCountInWords}
-                </span>
+            </span>
+          </div>
+          <div>
+            <strong className={characterCounterStyles["count-in-words"]}>
+              CHARACTERS
+            </strong>
+            <span className={`${characterCounterStyles.count}`}>
+              <ToolOutputActions content={"" + characterCount} />
+              <p className="textTransformCapitalize">
+                {characterCount} - {characterCountInWords}
               </p>
-            </div>
-            <div>
-              <strong className={characterCounterStyles["count-in-words"]}>
-                SENTENCES
-              </strong>
-              <p className={`${characterCounterStyles.count}`}>
-                <ToolOutputActions content={"" + sentenceCount} />
-                {sentenceCount} <br />
-                <span className="textTransformCapitalize">
-                  {sentenceCountInWords}
-                </span>
+            </span>
+          </div>
+          <div>
+            <strong className={characterCounterStyles["count-in-words"]}>
+              SENTENCES
+            </strong>
+            <span className={`${characterCounterStyles.count}`}>
+              <ToolOutputActions content={"" + sentenceCount} />
+              <p className="textTransformCapitalize">
+                {sentenceCount} - {sentenceCountInWords}
               </p>
-            </div>
+            </span>
           </div>
         </div>
       </div>
