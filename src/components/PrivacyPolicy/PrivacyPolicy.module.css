@@ -1,0 +1,25 @@
+.h1tag {
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.h2tag {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.ptag {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #444;
+  white-space: pre-wrap;
+}
+
+.effDate {
+  font-family: auto;
+  font-size: 20px;
+}

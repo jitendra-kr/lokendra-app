@@ -5,10 +5,24 @@ import { NoMatchFound } from "./NoMatchFound";
 import { ITools } from "./toolsListingData";
 
 function LoadingToolsList() {
+  const skeleton = [
+    "ljnv5yzi9o5d9",
+    "ljnv5yzia7141",
+    "ljnv5yzi0edff",
+    "ljnv5yzib31ow",
+    "ljnv5yzi5o6yj",
+    "ljnv5yziz3eov",
+    "ljnv5yzikzww6",
+    "ljnv5yzi6oz93",
+    "ljnv5yzifz6pq",
+    "ljnv5yzit2yjo",
+    "ljnv5yzipd2n9",
+    "ljnv5yzi9i4ty",
+  ];
   return (
     <div className="row" style={{ minHeight: "40vh" }}>
-      {[...Array(12)].map(() => (
-        <div className="col-lg-4">
+      {skeleton.map((v) => (
+        <div className="col-lg-4" key={v}>
           <div className="home-page-title" style={{ textAlign: "center" }}>
             <Skeleton.Button
               active={true}
@@ -43,7 +57,7 @@ export function RenderToolsList({
           return (
             <div
               className="col-lg-4 cursor-pointer"
-              key={i}
+              key={item.key}
               onClick={() => {
                 handleClick(item);
               }}

@@ -15,7 +15,7 @@ const Reasons = () => {
     `Our tools ensures that your data is 100% secure through its use of
     advanced encryption and secure data handling protocols.`,
 
-    `We process data locally in most cases without sending it to a server.`,
+    `We process data locally in most cases without sending it to external servers.`,
     `Our tools is lightning-fast because of its powerful algorithms and
     optimized performance, our tools can process and manipulate data much
     faster than other available tools`,

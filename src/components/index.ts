@@ -11,6 +11,7 @@ export { default as ResetPassword } from "./ResetPassword";
 
 export { default as AdComponent } from "./AdComponent";
 
+export * from "./PrivacyPolicy";
 export * from "./tools";
 export { default as AsciiToString } from "./tools/AsciiToString/AsciiToString";
 export { default as JsonParser } from "./tools/JsonParser/JsonParser";

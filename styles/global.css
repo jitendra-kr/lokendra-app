@@ -102,10 +102,6 @@ span {
   color: #8c0000;
 }
 
-.display-inline-block {
-  display: inline-block;
-}
-
 .display-none {
   display: none !important;
 }
