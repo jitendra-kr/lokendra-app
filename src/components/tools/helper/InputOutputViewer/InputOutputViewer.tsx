@@ -1,13 +1,18 @@
-import { Button, Layout } from "antd";
+import { Layout } from "antd";
+import dynamic from "next/dynamic";
 import styles from "../../../../../styles/StringToAscii.module.css";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../../common";
 import { ToolsBody } from "../../ToolsBody";
-import { ToolsList } from "../../ToolsList";
-import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
-import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
 import { ToolDescription } from "../ToolOverview";
-import InputOutputViewerStyles from "./InputOutputViewer.module.css";
+import { ToolInput } from "./ToolInput";
+
+const ToolsList = dynamic(() =>
+  import("../../ToolsList").then((mod) => mod.ToolsList),
+);
+const ToolOutput = dynamic(() =>
+  import("./ToolOutput").then((mod) => mod.ToolOutput),
+);
 
 const { Content } = Layout;
 
@@ -42,56 +47,18 @@ export function InputOutputViewer({
     <>
       <Content>
         <OfflineMetaTags tagData={toolData} />
-
         <div className={`${styles.mainDiv} row`}>
           {!input && <ToolsBody />}
-          {children ? (
-            children
-          ) : (
-            <>
-              {inputChild ? (
-                inputChild
-              ) : (
-                <div className="col-lg-6">
-                  {input && <ToolsBody />}
-                  <span className={InputOutputViewerStyles["input-parent"]}>
-                    <div
-                      className={`${
-                        input
-                          ? InputOutputViewerStyles["input-true-w"]
-                          : InputOutputViewerStyles["input-false-w"]
-                      }`}
-                    >
-                      <InputToConvertByTools
-                        onChangeCb={onChangeCb}
-                        type={input ? inputType.input : inputType.textarea}
-                        placeholder={placeholder}
-                        inputNumber={inputNumber}
-                      />
-                    </div>
-                    {input && (
-                      <Button
-                        type="primary"
-                        className={InputOutputViewerStyles["input-button"]}
-                        onClick={onClick}
-                      >
-                        <span className={InputOutputViewerStyles.buttonText}>
-                          Generate UUID
-                        </span>
-                      </Button>
-                    )}
-                  </span>
-                </div>
-              )}
-              {outputChild ? (
-                outputChild
-              ) : (
-                <div className="col-lg-6">
-                  <ConvertedOutputByTools content={byte} />
-                </div>
-              )}
-            </>
-          )}
+          {children && children}
+          <ToolInput
+            input={input}
+            inputChild={inputChild}
+            onChangeCb={onChangeCb}
+            placeholder={placeholder}
+            inputNumber={inputNumber}
+            onClick={onClick}
+          />
+          <ToolOutput byte={byte} outputChild={outputChild} />
         </div>
         <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
