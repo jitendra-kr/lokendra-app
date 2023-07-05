@@ -1,9 +1,17 @@
 import React from "react";
 import InputOutputViewerStyles from "./InputOutputViewer.module.css";
-
 import { Button } from "antd";
 import { ToolsBody } from "../../ToolsBody";
 import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
+
+export type ToolInputProps = {
+  input?: boolean;
+  inputChild?: React.ReactNode;
+  onChangeCb?: (value: string) => void;
+  placeholder?: string;
+  inputNumber?: boolean;
+  onClick?: () => void;
+};
 
 export function ToolInput({
   input,
@@ -12,14 +20,7 @@ export function ToolInput({
   placeholder,
   inputNumber,
   onClick,
-}: {
-  input?: boolean;
-  inputChild?: React.ReactNode;
-  onChangeCb?: (value: string) => void;
-  placeholder?: string;
-  inputNumber?: boolean;
-  onClick?: () => void;
-}) {
+}: ToolInputProps) {
   return (
     <>
       {inputChild && inputChild}

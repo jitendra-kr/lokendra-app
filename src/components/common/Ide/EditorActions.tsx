@@ -14,19 +14,7 @@ type EditorActionsProps = {
 };
 
 export function EditorActionsButtons({ children }: { children: ReactNode }) {
-  return (
-    <Col
-      xs={2}
-      sm={2}
-      md={2}
-      lg={1}
-      xl={1}
-      style={{ marginTop: "5px", padding: "0px" }}
-    >
-      {children}
-      {/* jimmy */}
-    </Col>
-  );
+  return <Col style={{ marginTop: "5px" }}>{children}</Col>;
 }
 
 export const EditorActions = ({
@@ -37,7 +25,6 @@ export const EditorActions = ({
 }: EditorActionsProps) => {
   return (
     <Row
-      className="row"
       style={{ display: "flex", justifyContent: "start", marginBottom: "5px" }}
     >
       {children}

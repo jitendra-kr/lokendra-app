@@ -5,7 +5,7 @@ import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../../common";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolDescription } from "../ToolOverview";
-import { ToolInput } from "./ToolInput";
+import { ToolInput, ToolInputProps } from "./ToolInput";
 
 const ToolsList = dynamic(() =>
   import("../../ToolsList").then((mod) => mod.ToolsList),
@@ -18,16 +18,10 @@ const { Content } = Layout;
 
 type InputOutputViewerProps = {
   toolId: any;
-  onChangeCb?: (value: string) => void;
   byte: string;
-  input?: boolean;
-  placeholder?: string;
-  onClick?: () => void;
-  inputNumber?: boolean;
-  inputChild?: React.ReactNode;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
-};
+} & ToolInputProps;
 
 export function InputOutputViewer({
   toolId,
