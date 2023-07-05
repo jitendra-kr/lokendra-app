@@ -1,4 +1,5 @@
 import { SCREENS } from "../../../common/enums";
+import { SeoTags } from "../../../seo/seo.interface";
 import seoData from "../../../seo/tools/tools.json";
 
 export enum ToolKeys {
@@ -20,12 +21,10 @@ export enum ToolKeys {
   JSON_DIFF = "JSON_DIFF",
 }
 
-export interface ITools {
+export interface ITools extends SeoTags {
   title: string;
   link: SCREENS;
   heading: string;
-  metaTitle: string;
-  metaDescription: string;
   content: string;
   list: boolean;
   key: ToolKeys;

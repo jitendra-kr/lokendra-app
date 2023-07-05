@@ -1,9 +1,9 @@
 import { useGetUrl } from "../../../hooks";
+import { SeoTags } from "../../../seo/seo.interface";
 import AppHead from "../../Head/head";
-import { ITools } from "../../tools/ToolsList";
 
 type OfflineMetaTagsProps = {
-  tagData?: ITools;
+  tagData?: SeoTags;
 };
 export function OfflineMetaTags({ tagData }: OfflineMetaTagsProps) {
   const { url } = useGetUrl();

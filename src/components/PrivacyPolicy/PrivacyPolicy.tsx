@@ -1,3 +1,5 @@
+import seoData from "../../seo/privacy-policy/privacy-policy.json";
+import { OfflineMetaTags } from "../common";
 import styles from "./PrivacyPolicy.module.css";
 
 export function PrivacyPolicy() {
@@ -32,6 +34,12 @@ Thank you for choosing FireboxTools. We are committed to delivering a secure and
   ];
   return (
     <div className="row">
+      <OfflineMetaTags
+        tagData={{
+          metaTitle: seoData.title,
+          metaDescription: seoData.description,
+        }}
+      />
       <h1 className={styles.h1tag}>Privacy and Policies</h1>
       <p className={styles.effDate}>Effective date: July 4, 2023</p>
       {privacyPolicyData.map((value) => {
