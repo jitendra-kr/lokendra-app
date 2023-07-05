@@ -21,7 +21,7 @@ const MainFooter = () => {
           </Link>
         </div>
         <div className="col-lg-3">
-          <Link href="/">
+          <Link href="/fireboxtools-privacy-policy">
             <span style={{ color: "#ffffff", cursor: "pointer" }}>
               Privacy Policy
             </span>
