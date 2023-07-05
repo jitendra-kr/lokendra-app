@@ -1,8 +1,9 @@
-import { Button, Image, InputNumber } from "antd";
+import { InputNumber } from "antd";
 import { useState } from "react";
-import { SalaryHikePercentageCalculatorConst } from "./const";
-import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
+import { CalculationFormula } from "./CalculationFormula";
 import { CalculatorOutput } from "./CalculatorOutput";
+import { SalaryHikePercentageCalculatorActions } from "./SalaryHikePercentageCalculatorActions";
+import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
 export function HikeInPercentageBySalary() {
   const [newSalary, setNewSalary] = useState<number>(0);
@@ -33,7 +34,7 @@ export function HikeInPercentageBySalary() {
       <label>Old Salary</label>
 
       <InputNumber
-        placeholder="Old salary"
+        placeholder="Old salary: 100"
         style={{ width: "100%" }}
         name="firstName"
         value={oldSalary === 0 ? "" : oldSalary}
@@ -46,7 +47,7 @@ export function HikeInPercentageBySalary() {
       <label>New Salary</label>
 
       <InputNumber
-        placeholder="New Salary"
+        placeholder="New Salary: 120"
         style={{ width: "100%" }}
         value={newSalary === 0 ? "" : newSalary}
         onChange={(v) => {
@@ -56,24 +57,21 @@ export function HikeInPercentageBySalary() {
         }}
       />
 
-      <Button
-        type="primary"
-        onClick={calculateByNewSalary}
-        style={{ width: "100%" }}
-      >
-        {SalaryHikePercentageCalculatorConst.submit}
-      </Button>
+      <SalaryHikePercentageCalculatorActions
+        calculate={calculateByNewSalary}
+        clear={clear}
+      />
 
-      <Button onClick={clear} style={{ width: "100%" }}>
-        {SalaryHikePercentageCalculatorConst.clear}
-      </Button>
+      <CalculatorOutput
+        text="Your percentage increase is"
+        value={`${result} %`}
+      />
 
-      <CalculatorOutput text="Your hike percentage is" value={result} />
-
-      <Image
+      <CalculationFormula
+        heading="Calculation Formula: How we determine hike percentage using old and new salaries"
         alt="Salary hike percentage"
         src="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/Hike_percentage_salary.webp"
-      ></Image>
+      />
     </div>
   );
 }

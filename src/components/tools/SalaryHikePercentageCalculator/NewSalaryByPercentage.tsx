@@ -1,8 +1,9 @@
-import { Button, Image, InputNumber } from "antd";
+import { InputNumber } from "antd";
 import { useState } from "react";
-import { SalaryHikePercentageCalculatorConst } from "./const";
-import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
+import { CalculationFormula } from "./CalculationFormula";
 import { CalculatorOutput } from "./CalculatorOutput";
+import { SalaryHikePercentageCalculatorActions } from "./SalaryHikePercentageCalculatorActions";
+import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
 export function NewSalaryByPercentage() {
   const [currentSalary, setCurrentSalary] = useState<number>(0);
@@ -18,7 +19,7 @@ export function NewSalaryByPercentage() {
 
   const calculateByNewSalary = () => {
     const result =
-      (currentSalary * (percentageByNewSalary / 100)) + currentSalary;
+      currentSalary * (percentageByNewSalary / 100) + currentSalary;
     setNewSalary(Number(result.toFixed(2)));
   };
 
@@ -33,9 +34,9 @@ export function NewSalaryByPercentage() {
       <SalaryHikePercentageCalculatorTitle title="New Salary by Percentage" />
       <label>Old Salary</label>
       <InputNumber
-        placeholder="Current Salary"
+        placeholder="Current Salary: 100"
         style={{ width: "100%" }}
-        value={currentSalary === 0  ? "" :  currentSalary}
+        value={currentSalary === 0 ? "" : currentSalary}
         onChange={(v) => {
           if (v) {
             setCurrentSalary(v);
@@ -45,35 +46,29 @@ export function NewSalaryByPercentage() {
       <label>Percentage of Increment</label>
 
       <InputNumber
-        placeholder="Percentage of Increment"
+        placeholder="Percentage of Increment: 15"
         style={{ width: "100%" }}
         name="firstName"
-        value={percentageByNewSalary === 0  ? "" :  percentageByNewSalary}
+        value={percentageByNewSalary === 0 ? "" : percentageByNewSalary}
         onChange={(v) => {
           if (v) {
             setPercentageByNewSalary(v);
           }
         }}
       />
-      <Button
-        type="primary"
-        onClick={calculateByNewSalary}
-        style={{ width: "100%" }}
-      >
-        {SalaryHikePercentageCalculatorConst.submit}
-      </Button>
 
-      <Button onClick={clear} style={{ width: "100%" }}>
-        {SalaryHikePercentageCalculatorConst.clear}
-      </Button>
+      <SalaryHikePercentageCalculatorActions
+        calculate={calculateByNewSalary}
+        clear={clear}
+      />
 
+      <CalculatorOutput text="New Salary after Increment" value={newSalary} />
 
-      <CalculatorOutput text="New Salary after Increment" value= {newSalary} />
-
-      <Image
+      <CalculationFormula
+        heading="Calculation Formula: How we determine new salary using percentage"
         alt="Salary hike percentage"
         src="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/newSalaryByPercentage.png"
-      ></Image>
+      />
     </div>
   );
 }

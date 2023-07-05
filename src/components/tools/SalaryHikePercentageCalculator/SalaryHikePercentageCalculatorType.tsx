@@ -1,7 +1,20 @@
 type SalaryHikePercentageCalculatorTitleProps = {
-    title: string
-}
+  title: string;
+};
 
-export function SalaryHikePercentageCalculatorTitle({title}: SalaryHikePercentageCalculatorTitleProps) {
-  return  <b style={{fontSize: "20px"}} >{title}</b> ;
+export function SalaryHikePercentageCalculatorTitle({
+  title,
+}: SalaryHikePercentageCalculatorTitleProps) {
+  return (
+    <p
+      style={{
+        fontSize: "20px",
+        marginTop: "50px",
+        textAlign: "center",
+        marginBottom: "20px",
+      }}
+    >
+      <b>Calculate {title}</b>
+    </p>
+  );
 }

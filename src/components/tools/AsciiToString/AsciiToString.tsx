@@ -1,18 +1,9 @@
-import { Layout } from "antd";
 import { withRouter } from "next/router";
 import { useState } from "react";
-import styles from "../../../../styles/StringToAscii.module.css";
-import { useToolListData } from "../../../common/hooks/useToolListData";
-import { OfflineMetaTags } from "../../common";
-import { ToolsBody } from "../ToolsBody";
-import { ToolKeys, ToolsList } from "../ToolsList";
-import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
-import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import { ToolDescription } from "../helper/ToolOverview";
-const { Content } = Layout;
+import { ToolKeys } from "../ToolsList";
+import { InputOutputViewer } from "../helper/InputOutputViewer";
 
 function AsciiToString() {
-  const { toolData } = useToolListData(ToolKeys.ASCIItoString);
   const [byte, setByte] = useState("");
 
   function asciiToSentence(str: any) {
@@ -40,23 +31,11 @@ function AsciiToString() {
   };
 
   return (
-    <>
-      <Content>
-        <OfflineMetaTags tagData={toolData} />
-        <div className={`${styles.mainDiv} row`}>
-          <ToolsBody />
-          <div className="col-lg-6">
-            <InputToConvertByTools onChangeCb={onChangeCb} />
-          </div>
-          <div className="col-lg-6">
-            <ConvertedOutputByTools content={byte} />
-          </div>
-        </div>
-
-        <ToolDescription content={toolData.toolDescription} />
-        <ToolsList />
-      </Content>
-    </>
+    <InputOutputViewer
+      toolId={ToolKeys.ASCIItoString}
+      byte={byte}
+      onChangeCb={onChangeCb}
+    />
   );
 }
 

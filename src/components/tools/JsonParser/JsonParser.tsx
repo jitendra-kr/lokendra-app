@@ -2,17 +2,13 @@ import { Layout } from "antd";
 import { get } from "lodash";
 import { withRouter } from "next/router";
 import { useState } from "react";
-import styles from "../../../../styles/StringToAscii.module.css";
 import { useToolListData } from "../../../common/hooks/useToolListData";
 import { STRING_CONSTANTS } from "../../../constants/stringConstants";
 import { jsonlint } from "../../../externalLib";
-import { OfflineMetaTags } from "../../common";
 import Ide from "../../common/Ide/Ide";
-import { ToolsBody } from "../ToolsBody";
 import { ToolKeys } from "../ToolsList";
-import { ToolsList } from "../ToolsList/ToolsList";
+import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { JsonViewer } from "../helper/JsonViewer";
-import { ToolDescription } from "../helper/ToolOverview";
 
 const { Content } = Layout;
 
@@ -60,22 +56,20 @@ function JsonParser() {
   }
 
   return (
-    <Content>
-      <OfflineMetaTags tagData={toolData} />
-      <div className={`${styles.mainDiv} row`}>
-        <ToolsBody />
+    <InputOutputViewer
+      inputChild={
         <div className="col-lg-6">
-          <div>
-            <Ide cb={isJsonString} error={onError} />
-          </div>
+          <Ide cb={isJsonString} error={onError} />
         </div>
+      }
+      outputChild={
         <div className="col-lg-6">
           <JsonViewer content={byte} error={error} editorError={editorError} />
         </div>
-      </div>
-      <ToolDescription content={toolData.toolDescription} />
-      <ToolsList />
-    </Content>
+      }
+      toolId={ToolKeys.JSONParser}
+      byte={byte}
+    />
   );
 }
 
