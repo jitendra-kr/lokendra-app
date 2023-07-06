@@ -9,7 +9,7 @@ export { default as UserProfile } from "./UserProfile";
 
 export { default as ResetPassword } from "./ResetPassword";
 
-export { default as AdComponent } from "./AdComponent";
+export * from "./AdComponent";
 
 export * from "./PrivacyPolicy";
 export * from "./tools";
