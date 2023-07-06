@@ -111,7 +111,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "Text to Uppercase",
     link: SCREENS.TEXT_TO_UPPERCASE,
-    heading: "Easily Convert Text & Strings to Uppercase Online - Free Tool",
+    heading: "Easily Convert Text & Strings to Uppercase Online",
     content:
       "Just load your text, System will automatically convert it to upper case text",
     metaTitle: seoData.toUppercase.title,
@@ -126,7 +126,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "Text to Lowercase",
     link: SCREENS.TEXT_TO_LOWERCASE,
-    heading: "Easily Convert Text & Strings to Lowercase Online - Free Tool",
+    heading: "Easily Convert Text & Strings to Lowercase Online",
     content:
       " Just load your text, System will automatically convert it to lower case text",
     metaTitle: seoData.toLowercase.title,
@@ -141,7 +141,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "Word Counter",
     link: SCREENS.WORD_COUNTER,
-    heading: "Accurate Word and Character Counter Tool - Free to Use",
+    heading: "Accurate Word and Character Counter Tool",
     content: " Just load your text, System will automatically start counting ",
     metaTitle: seoData.wordCounter.title,
     metaDescription: seoData.wordCounter.description,
