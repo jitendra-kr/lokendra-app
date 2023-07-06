@@ -82,7 +82,7 @@ export const toolsListData: Array<ITools> = [
     `,
   },
   {
-    title: "JSON parser",
+    title: "JSON Parser",
     link: SCREENS.JSON_PARSER,
     heading: "Online JSON Formatter, Parser, Beautifier & Validator",
     content:
@@ -139,7 +139,7 @@ export const toolsListData: Array<ITools> = [
       `,
   },
   {
-    title: "Word Count",
+    title: "Word Counter",
     link: SCREENS.WORD_COUNTER,
     heading: "Accurate Word and Character Counter Tool - Free to Use",
     content: " Just load your text, System will automatically start counting ",
