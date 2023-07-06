@@ -64,7 +64,7 @@ export default function MyApp({ Component, pageProps }) {
             <div
               className="col-lg-10"
               style={{
-                padding: "50px",
+                padding: "50px 15px 50px 50px",
               }}
             >
               <Component {...pageProps} />
