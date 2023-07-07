@@ -8,18 +8,18 @@ const MainFooter = () => {
   return (
     <Footer className={styles.footer}>
       <div className="row">
-        <div className="col-lg-3">
+        {/* <div className="col-lg-3">
           <Link href="/about-me">
             <span style={{ color: "#ffffff", cursor: "pointer" }}>
               About Me
             </span>
           </Link>
-        </div>
-        <div className="col-lg-3">
+        </div> */}
+        {/* <div className="col-lg-3">
           <Link href="/donate">
             <span style={{ color: "#ffffff", cursor: "pointer" }}>Donate</span>
           </Link>
-        </div>
+        </div> */}
         <div className="col-lg-3">
           <Link href="/fireboxtools-privacy-policy">
             <span style={{ color: "#ffffff", cursor: "pointer" }}>
