@@ -12,23 +12,12 @@ import { ITools, ToolKeys, toolsListData } from "./toolsListingData";
 
 const Reasons = () => {
   const reasons = [
-    `Our tools ensures that your data is 100% secure through its use of
-    advanced encryption and secure data handling protocols.`,
-
-    `We process data locally in most cases without sending it to external servers.`,
-    `Our tools is lightning-fast because of its powerful algorithms and
-    optimized performance, our tools can process and manipulate data much
-    faster than other available tools`,
-
-    ` Experience the power of precision with our tool's unbeatable quality and
-    reliability. Whether you're a student, data analyst, business owner, or
-    developer, our tool's quality and reliability make it the ultimate
-    choice.`,
-
-    `We believe that your data is your most valuable asset. That's why we
-    never use or sell your data to third parties. So why settle for tools
-    that compromise your data? Choose
-    ${STRING_CONSTANTS.global.appName} and take control of your data
+    `Our tools use cutting-edge encryption and safe data processing algorithms to guarantee that your data is completely secure.`,
+    `Data is processed locally rather than being sent to external servers.`,
+    `It analyse and alter data significantly more quickly than other solutions on the market because to their strong algorithms and optimised speed.`,
+    `Discover the power of precision with the unrivalled quality and dependability of ${STRING_CONSTANTS.global.domain}. Our tools is the best option regardless of whether you're a student, data analyst, business owner, or developer because of its superiority and dependability.`,
+    `Your data, in our opinion, is your most significant asset. We never use or sell your information to outside parties because of this. Therefore, why use tools that compromise your data?? Choose
+    ${STRING_CONSTANTS.global.domain} and take control of your data
     today!`,
   ];
 
