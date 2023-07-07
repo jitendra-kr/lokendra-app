@@ -84,7 +84,9 @@ export default function DiffViewer({
                 diffEditorRef.current?.getOriginalEditor().setValue("");
               }}
               children={
-                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+                <span style={{ marginTop: "5px" }}>
+                  <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+                </span>
               }
               onChange={onLeftChange}
               childrenAfter={
