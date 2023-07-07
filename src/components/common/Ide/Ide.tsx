@@ -1,5 +1,4 @@
 import Editor, { Monaco } from "@monaco-editor/react";
-import { Select, Space, Tooltip } from "antd";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
@@ -12,38 +11,14 @@ import { messageError, messageSuccess, repairJSON } from "../../../utils";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon";
 import { EditorActions, EditorActionsButtons } from "./EditorActions";
 import styles from "./Ide.module.css";
+import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
-type ThemeType = string;
 type IdeProps = {
   cb?: (value: string | undefined) => void;
   error?: (value: string | undefined) => void;
   value?: string;
   minimapEnabled?: boolean;
 };
-
-type UpdateThemeProps = {
-  handleThemeChange: (value: ThemeType) => void;
-};
-
-function UpdateTheme({ handleThemeChange }: UpdateThemeProps) {
-  return (
-    <Tooltip title="Change Editor Theme">
-      <Space wrap style={{ marginRight: "5px" }}>
-        <Select
-          defaultValue="light"
-          style={{ width: 120 }}
-          onChange={handleThemeChange}
-          options={[
-            { value: "light", label: "Light" },
-            { value: "vs-dark", label: "Vs Dark" },
-            { value: "hc-black", label: "Hc Black" },
-            { value: "hc-light", label: "Hc Light" },
-          ]}
-        />
-      </Space>
-    </Tooltip>
-  );
-}
 
 export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
@@ -104,7 +79,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
     }
   };
 
-  const handleThemeChange = (value: ThemeType) => {
+  const handleThemeChange = (value: string) => {
     setTheme(value);
   };
 
@@ -138,7 +113,9 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
         children={
           <>
             <EditorActionsButtons
-              children={<UpdateTheme handleThemeChange={handleThemeChange} />}
+              children={
+                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+              }
             />
             <EditorActionsButtons
               children={

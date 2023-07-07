@@ -1,12 +1,13 @@
 import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { PiBracketsCurlyBold } from "react-icons/pi";
 import { COLOR_CONST } from "../../../../constants";
 import { CopyToClip } from "../../../tools/helper/CopyToClip";
 import { ButtonUsingReactIcon } from "../../ButtonWithIcon";
 import { EditorActions, EditorActionsButtons } from "../EditorActions";
 import styles from "../Ide.module.css";
+import { UpdateMonacoTheme } from "../UpdateMonacoTheme";
 import DiffViewerStyles from "./DiffViewer.module.css";
 
 type DiffIdeProps = {
@@ -30,6 +31,7 @@ export default function DiffViewer({
   rightErrorMsg,
 }: DiffIdeProps) {
   const diffEditorRef = useRef<MonacoDiffEditor>();
+  const [theme, setTheme] = useState<string>();
 
   function handleEditorDidMount(editor: MonacoDiffEditor, monaco: Monaco) {
     diffEditorRef.current = editor;
@@ -42,6 +44,10 @@ export default function DiffViewer({
 
   const getModifiedValue = () => {
     return diffEditorRef.current?.getModifiedEditor().getValue() ?? "";
+  };
+
+  const handleThemeChange = (value: string) => {
+    setTheme(value);
   };
 
   return (
@@ -77,6 +83,9 @@ export default function DiffViewer({
                 onLeftChange("");
                 diffEditorRef.current?.getOriginalEditor().setValue("");
               }}
+              children={
+                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+              }
               onChange={onLeftChange}
               childrenAfter={
                 <>
@@ -103,65 +112,64 @@ export default function DiffViewer({
             />
           </>
         </Col>
-        {true && (
-          <Col
-            xs={24}
-            sm={24}
-            md={12}
-            lg={12}
-            xl={12}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <>
-              {rightErrorMsg && (
-                <div className={DiffViewerStyles.errorMessageBG}>
-                  <p className={DiffViewerStyles.errorMessageTxt}>
-                    {rightErrorMsg}
-                  </p>
-                </div>
-              )}
-              <EditorActions
-                clear={() => {
-                  onRightChange("");
-                  diffEditorRef.current?.getModifiedEditor().setValue("");
-                }}
-                onChange={onRightChange}
-                childrenAfter={
-                  <>
-                    <EditorActionsButtons
-                      children={
-                        <ButtonUsingReactIcon
-                          name="Format"
-                          onClick={() => formatRightInput(getModifiedValue())}
-                          mdIcon={
-                            <PiBracketsCurlyBold
-                              color={COLOR_CONST.defaultIcon}
-                              size={20}
-                            />
-                          }
-                          tooltip="Format input"
-                        />
-                      }
-                    />
-                    <EditorActionsButtons
-                      children={<CopyToClip content={getModifiedValue} />}
-                    />
-                  </>
-                }
-              />
-            </>
-          </Col>
-        )}
+        <Col
+          xs={24}
+          sm={24}
+          md={12}
+          lg={12}
+          xl={12}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <>
+            {rightErrorMsg && (
+              <div className={DiffViewerStyles.errorMessageBG}>
+                <p className={DiffViewerStyles.errorMessageTxt}>
+                  {rightErrorMsg}
+                </p>
+              </div>
+            )}
+            <EditorActions
+              clear={() => {
+                onRightChange("");
+                diffEditorRef.current?.getModifiedEditor().setValue("");
+              }}
+              onChange={onRightChange}
+              childrenAfter={
+                <>
+                  <EditorActionsButtons
+                    children={
+                      <ButtonUsingReactIcon
+                        name="Format"
+                        onClick={() => formatRightInput(getModifiedValue())}
+                        mdIcon={
+                          <PiBracketsCurlyBold
+                            color={COLOR_CONST.defaultIcon}
+                            size={20}
+                          />
+                        }
+                        tooltip="Format input"
+                      />
+                    }
+                  />
+                  <EditorActionsButtons
+                    children={<CopyToClip content={getModifiedValue} />}
+                  />
+                </>
+              }
+            />
+          </>
+        </Col>
       </Row>
 
       <DiffEditor
         onMount={handleEditorDidMount}
         className={styles.editor}
         language={"json"}
+        theme={theme}
         height="74vh"
         original={diffLeftValue}
         modified={diffRightValue}
