@@ -1,4 +1,5 @@
 import { messageSuccess } from "./antd";
+import { beautifyJSON } from "./json";
 
 const getLimitedText = (text: string, limit: number) => {
   limit = limit ? limit : 63;
@@ -124,7 +125,10 @@ export function convertNumberToWords(number: number): string {
 
 export function repairJSON(jsonString: string) {
   try {
-    JSON.parse(jsonString);
+    const parsedJSON = JSON.parse(jsonString);
+    if (typeof parsedJSON === "number") {
+      return null;
+    }
     return jsonString; // JSON is valid, return as is
   } catch (error) {
     console.log("Failed to Repair Invalid JSON:", error);
@@ -163,6 +167,13 @@ export function repairJSON(jsonString: string) {
     try {
       JSON.parse(repairedJSON);
       console.log("Repaired JSON Successfully");
+      const { beautifiedData, msg } = beautifyJSON(repairedJSON);
+      if (beautifiedData) {
+        return beautifiedData;
+      }
+      if (msg) {
+        return null;
+      }
       return repairedJSON;
     } catch (secondError) {
       console.log("Unable to repair JSON:", secondError);
