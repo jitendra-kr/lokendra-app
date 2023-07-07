@@ -44,15 +44,17 @@ export function InputOutputViewer({
         <div className={`${styles.mainDiv} row`}>
           {!input && <ToolsBody />}
           {children && children}
-          <ToolInput
-            input={input}
-            inputChild={inputChild}
-            onChangeCb={onChangeCb}
-            placeholder={placeholder}
-            inputNumber={inputNumber}
-            onClick={onClick}
-          />
-          <ToolOutput byte={byte} outputChild={outputChild} />
+          {!children && (
+            <ToolInput
+              input={input}
+              inputChild={inputChild}
+              onChangeCb={onChangeCb}
+              placeholder={placeholder}
+              inputNumber={inputNumber}
+              onClick={onClick}
+            />
+          )}
+          {!children && <ToolOutput byte={byte} outputChild={outputChild} />}
         </div>
         <ToolDescription content={toolData.toolDescription} />
         <ToolsList />
