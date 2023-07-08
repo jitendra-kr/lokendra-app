@@ -61,8 +61,9 @@ export default function MyApp({ Component, pageProps }) {
         <UserContext.Provider value={[user, setUser]}>
           <MainHeader />
           <div className="row" style={{ minHeight: size.height + "px" }}>
+            <div className="col-lg-2"></div>
             <div
-              className="col-lg-10"
+              className="col-lg-8"
               style={{
                 padding: "50px 5px 50px 5px",
               }}
