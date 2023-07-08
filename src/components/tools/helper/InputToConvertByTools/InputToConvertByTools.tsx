@@ -2,10 +2,7 @@ import { Input } from "antd";
 import { useEffect, useState } from "react";
 import { SCREENS } from "../../../../common/enums";
 import { getToolInput } from "../../../../common/selectors";
-import {
-  resetInput,
-  updateToolsInput,
-} from "../../../../common/state/tools/toolsInput.slice";
+import { updateToolsInput } from "../../../../common/state/tools/toolsInput.slice";
 import {
   useAppDispatch,
   useAppSelector,
@@ -71,12 +68,10 @@ export const InputToConvertByTools = ({
   }, [data]);
 
   useEffect(() => {
-    dispatch(resetInput());
     if (data) {
       onChange({ target: { value: data } });
     }
   }, [url]);
-
   return (
     <>
       {!hideEditorActions && (
