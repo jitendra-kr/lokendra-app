@@ -4,6 +4,7 @@ import styles from "../../../../../styles/StringToAscii.module.css";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { OfflineMetaTags } from "../../../common";
 import { ToolsBody } from "../../ToolsBody";
+import { ToolKeys } from "../../ToolsList";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInput, ToolInputProps } from "./ToolInput";
 
@@ -17,7 +18,7 @@ const ToolOutput = dynamic(() =>
 const { Content } = Layout;
 
 type InputOutputViewerProps = {
-  toolId: any;
+  toolId: ToolKeys;
   byte: string;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;

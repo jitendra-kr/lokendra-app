@@ -1,7 +1,8 @@
+import React from "react";
 import { JsonParser } from "../../src/components";
 
 function JsonParserPage() {
-    return <JsonParser />
+  return <JsonParser />;
 }
 
 export default JsonParserPage;

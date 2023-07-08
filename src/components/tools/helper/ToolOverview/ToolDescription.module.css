@@ -23,7 +23,7 @@
 
 .content {
   width: 100vh;
-  text-align: center;
+  /* text-align: center; */
   font-size: 20px;
   color: #666;
   white-space: pre-wrap;

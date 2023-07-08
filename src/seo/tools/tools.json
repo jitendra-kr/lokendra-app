@@ -7,6 +7,10 @@
     "title": "Fast and Reliable JSON Formatter, Beautifier and Validator",
     "description": "Make your JSON look beautiful with our fast and reliable JSON Formatter. Parse JSON Data quickly and accurately with our powerful online JSON Formatter tool!"
   },
+  "jsonMinifier": {
+    "title": "JSON Minify | Secure and Reliable JSON Minifier & Compressor",
+    "description": "Minify and compress your JSON files with our secure and reliable JSON Minify tool. Reduce file size, improve loading speed, and ensure data integrity."
+  },
   "jsonDiff": {
     "title": "JSON Diff - Compare and Highlight Differences Between JSON",
     "description": "JSON Diff is the ultimate tool for securely comparing and highlighting differences between JSON data. Identify changes, additions, and deletions in no time."

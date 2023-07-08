@@ -5,6 +5,7 @@ export enum SCREENS {
   "ASCII_TO_STRING" = "/tools/ascii-to-string",
   "JSON_TO_STRING" = "/tools/json-to-string",
   "JSON_PARSER" = "/tools/json-parser",
+  "JSON_MINIFIER" = "/tools/secure-reliable-json-minifier-compressor",
   "TEXT_TO_UPPERCASE" = "/tools/text-to-uppercase",
   "TEXT_TO_LOWERCASE" = "/tools/text-to-lowercase",
   "WORD_COUNTER" = "/tools/word-counter",

@@ -19,6 +19,7 @@ export enum ToolKeys {
   UUIDGenerator = "UUIDGenerator",
   HOME = "HOME",
   JSON_DIFF = "JSON_DIFF",
+  JSON_MINIFIER = "JSON_MINIFIER",
 }
 
 export interface ITools extends SeoTags {
@@ -94,6 +95,26 @@ export const toolsListData: Array<ITools> = [
     toolDescription: `Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter. Validate JSON effortlessly for seamless integration. Get instant results from large or complex JSON data sets.
       \nJSON parser is available as a free online tool.It offers a simple and user-friendly interface that allows you to enter your JSON code and instantly format it for readability. The tool also validates your JSON code and alerts you to any errors or syntax issues that need to be corrected.
       \nYou can easily copy your formatted or validated JSON code into an email or chat message.`,
+  },
+  {
+    title: "JSON Minifier",
+    link: SCREENS.JSON_MINIFIER,
+    heading: "Online JSON Minifier",
+    content:
+      "Simply load your JSON, and the system will automatically minify it",
+    metaTitle: seoData.jsonMinifier.title,
+    metaDescription: seoData.jsonMinifier.description,
+    list: true,
+    key: ToolKeys.JSON_MINIFIER,
+    toolDescription: `Are you tired of dealing with large, unwieldy JSON files that slow down your website? Do you wish there was an easy and secure way to compress and optimize your JSON data for better performance and faster load times? Look no further than our JSON Minify/Compressor tool!
+    \nWith our tool, you can effortlessly minify and compress your JSON data, reducing its size by up to 80% while still maintaining its original quality and data structure. Our tool uses advanced compression algorithms to ensure that your data remains secure throughout the process, protecting your sensitive information from prying eyes and data breaches.
+    \nBut that's not all - our JSON Minify/Compressor tool offers a range of benefits for your website or application, including:
+    \n1. Improved Performance: By reducing the size of your JSON data, our tool can help improve your website or application's overall performance and load times, resulting in a better user experience for your visitors.
+    \n2. Cost Savings: Smaller file sizes allow you to cut bandwidth usage and server storage expenses, which over time will save you a lot of money.    .
+    \n3. Faster Data Transfer: With compressed JSON data, you can transfer data more quickly, allowing for faster data transfers and quicker communication between the server and client.
+    \n4. Easy to use: Our tool is easy to use and can be quickly minify JSON data, Just after typing data tool starts compressing and minifying your JSON data right away.
+    \nSo why wait? Try our JSON Minify/Compressor tool today and see the benefits for yourself. Say goodbye to slow load times and hello to optimized JSON data with just a few clicks!
+    `,
   },
   {
     title: "JSON Diff",
