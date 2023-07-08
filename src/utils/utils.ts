@@ -26,10 +26,6 @@ export const getDefaultHeadValues = () => {
     url: window.location.href,
   };
 };
-export const minifyJSON = (data: object) => {
-  var jsonObject = JSON.stringify(data);
-  return JSON.stringify(jsonObject, null, 0);
-};
 
 export const copyToClipboard = (content: any, title?: string): void => {
   try {
