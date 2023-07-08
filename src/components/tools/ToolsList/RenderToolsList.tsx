@@ -22,7 +22,7 @@ function LoadingToolsList() {
   return (
     <div className="row" style={{ minHeight: "40vh" }}>
       {skeleton.map((v) => (
-        <div className="col-lg-4" key={v}>
+        <div className="col-lg-3" key={v}>
           <div className="home-page-title" style={{ textAlign: "center" }}>
             <Skeleton.Button
               active={true}
@@ -56,7 +56,7 @@ export function RenderToolsList({
         {toolsList.map((item, i) => {
           return (
             <div
-              className="col-lg-4 cursor-pointer"
+              className="col-lg-3 cursor-pointer"
               key={item.key}
               onClick={() => {
                 handleClick(item);

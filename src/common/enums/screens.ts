@@ -16,7 +16,7 @@ export enum SCREENS {
   "JSON_TO_STRING" = "/json-tools/json-to-string",
   "JSON_PARSER" = "/json-tools/json-parser",
   "JSON_MINIFIER" = "/json-tools/secure-reliable-json-minifier-compressor",
-  "JSON_DIFF" = "/json-tools/diff/json-diff-compare",
+  "JSON_DIFF" = "/json-tools/json-diff-compare",
 
   // encoding/decoding tools
   "URL_DECODE" = "/encoding-decoding-tools/url-decode",
