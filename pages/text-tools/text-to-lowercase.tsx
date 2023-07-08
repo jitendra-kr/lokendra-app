@@ -1,7 +1,8 @@
+import React from "react";
 import { ToLowercase } from "../../src/components";
 
 function ToUppercasePage() {
-    return <ToLowercase />
+  return <ToLowercase />;
 }
 
 export default ToUppercasePage;

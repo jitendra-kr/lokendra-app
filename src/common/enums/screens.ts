@@ -1,20 +1,31 @@
 export enum SCREENS {
-  "HOME" = "/",
-  "SALARY_HIKE_PERCENTAGE_CALCULATOR" = "/tools/salary-hike-percentage-calculator",
-  "STRING_TO_ASCII" = "/tools/string-to-ascii",
-  "ASCII_TO_STRING" = "/tools/ascii-to-string",
-  "JSON_TO_STRING" = "/tools/json-to-string",
-  "JSON_PARSER" = "/tools/json-parser",
-  "JSON_MINIFIER" = "/tools/secure-reliable-json-minifier-compressor",
-  "TEXT_TO_UPPERCASE" = "/tools/text-to-uppercase",
-  "TEXT_TO_LOWERCASE" = "/tools/text-to-lowercase",
-  "WORD_COUNTER" = "/tools/word-counter",
-  "REPLACE_SPACES" = "/tools/replace-spaces",
-  "REMOVE_SPACES" = "/texttools/remove-spaces",
-  "REMOVE_EXTRA_SPACES" = "/texttools/remove-extra-spaces",
-  "URL_DECODE" = "/tools/url-decode",
-  "URL_ENCODE" = "/tools/url-encode",
-  "TOOLS" = "/tools",
+  // text tools
+  "STRING_TO_ASCII" = "/text-tools/string-to-ascii",
+  "ASCII_TO_STRING" = "/text-tools/ascii-to-string",
+  "TEXT_TO_UPPERCASE" = "/text-tools/text-to-uppercase",
+  "TEXT_TO_LOWERCASE" = "/text-tools/text-to-lowercase",
+  "WORD_COUNTER" = "/text-tools/word-counter",
+  "REPLACE_SPACES" = "/text-tools/replace-spaces",
+  "REMOVE_SPACES" = "/text-tools/remove-spaces",
+  "REMOVE_EXTRA_SPACES" = "/text-tools/remove-extra-spaces",
+
+  // calculator tools
+  "SALARY_HIKE_PERCENTAGE_CALCULATOR" = "/calculator/salary-hike-percentage-calculator",
+
+  // JSON tools
+  "JSON_TO_STRING" = "/json-tools/json-to-string",
+  "JSON_PARSER" = "/json-tools/json-parser",
+  "JSON_MINIFIER" = "/json-tools/secure-reliable-json-minifier-compressor",
+  "JSON_DIFF" = "/json-tools/diff/json-diff-compare",
+
+  // encoding/decoding tools
+  "URL_DECODE" = "/encoding-decoding-tools/url-decode",
+  "URL_ENCODE" = "/encoding-decoding-tools/url-encode",
+
+  // Others
   "UUID_GENERATOR" = "/tools/uuid-generator",
-  "JSON_DIFF" = "/tools/diff/json-diff-compare",
+
+  // Other screens
+  "HOME" = "/",
+  "TOOLS" = "/tools",
 }
