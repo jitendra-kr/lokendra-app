@@ -1,5 +1,7 @@
-User-agent:  *
+User-agent: *
 Disallow: /404
 
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://www.fireboxtools.com/sitemap.xml
