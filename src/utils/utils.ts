@@ -1,5 +1,4 @@
 import { messageSuccess } from "./antd";
-import { beautifyJSON } from "./json";
 
 const getLimitedText = (text: string, limit: number) => {
   limit = limit ? limit : 63;
@@ -120,64 +119,5 @@ export function convertNumberToWords(number: number): string {
     );
   } else {
     return "Number is too large to convert.";
-  }
-}
-
-export function repairJSON(jsonString: string) {
-  try {
-    const parsedJSON = JSON.parse(jsonString);
-    if (typeof parsedJSON === "number") {
-      return null;
-    }
-    return jsonString; // JSON is valid, return as is
-  } catch (error) {
-    console.log("Failed to Repair Invalid JSON:", error);
-
-    // Attempt to repair the JSON
-    let repairedJSON = jsonString;
-
-    // Fix common issues
-    // Remove trailing commas
-    repairedJSON = repairedJSON.replace(/,\s*([\]}])/g, "$1");
-
-    // Fix single quotes to double quotes
-    repairedJSON = repairedJSON.replace(/'/g, '"');
-
-    // Wrap keys with double quotes: Fix missing or unquoted keys
-    repairedJSON = repairedJSON.replace(
-      /([{,]\s*)([a-zA-Z0-9_]+?)\s*:/g,
-      '$1"$2":',
-    );
-
-    // Remove single-line comments (// ...)
-    repairedJSON = repairedJSON.replace(/\/\/.*$/gm, "");
-
-    // Remove multi-line comments (/* ... */)
-    repairedJSON = repairedJSON.replace(/\/\*[\s\S]*?\*\//g, "");
-
-    // Resolve escape characters
-    repairedJSON = repairedJSON.replace(/\\'/g, "'");
-    repairedJSON = repairedJSON.replace(/\\\\/g, "\\");
-
-    // Normalize whitespace
-    repairedJSON = repairedJSON.replace(/\s+/g, " ");
-
-    // Additional fixes or modifications can be added as needed
-
-    try {
-      JSON.parse(repairedJSON);
-      console.log("Repaired JSON Successfully");
-      const { beautifiedData, msg } = beautifyJSON(repairedJSON);
-      if (beautifiedData) {
-        return beautifiedData;
-      }
-      if (msg) {
-        return null;
-      }
-      return repairedJSON;
-    } catch (secondError) {
-      console.log("Unable to repair JSON:", secondError);
-      return null;
-    }
   }
 }
