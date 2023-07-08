@@ -5,6 +5,7 @@ export * from "./JsonUnstringify";
 export * from "./ReplaceSpaces";
 export * from "./SalaryHikePercentageCalculator";
 export * from "./StringToAscii";
+export * from "./TextTools";
 export * from "./ToolsList";
 export * from "./URLDecode";
 export * from "./URLEncode";

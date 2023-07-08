@@ -20,6 +20,8 @@ export enum ToolKeys {
   HOME = "HOME",
   JSON_DIFF = "JSON_DIFF",
   JSON_MINIFIER = "JSON_MINIFIER",
+  REMOVE_EXTRA_SPACES = "REMOVE_EXTRA_SPACES",
+  REMOVE_SPACES = "REMOVE_SPACES",
 }
 
 export interface ITools extends SeoTags {
@@ -188,6 +190,46 @@ export const toolsListData: Array<ITools> = [
     \nAccurately replace any text in your documents. With one click, you can find and replace words, phrases, symbols, and more. Get the perfect result every time - no manual editing required
     `,
   },
+  {
+    title: "Remove Extra Spaces",
+    link: SCREENS.REMOVE_EXTRA_SPACES,
+    heading: "Easily Remove Extra Spaces",
+    metaTitle: seoData.RemoveExtraSpaces.title,
+    metaDescription: seoData.RemoveExtraSpaces.description,
+    content: `Just load your content, System will remove all extra spaces automatically `,
+
+    list: true,
+    key: ToolKeys.REMOVE_EXTRA_SPACES,
+    toolDescription: `Introducing our game-changing solution for removing extra spaces from your content - it's time to experience cleaner and more professional-looking text! Say goodbye to the frustration of uneven spacing and hello to streamlined, polished content with our innovative Remove Extra Spaces tool.
+    \nWhether you're a writer, editor, student, or professional, our tool is designed to make your life easier and enhance your work. Gone are the days of laboriously scanning through your text to manually fix those pesky extra spaces. With just a few clicks, our tool intelligently detects and removes all excessive spaces, transforming your content into a polished masterpiece.
+    \nHere's why our Remove Extra Spaces tool is an absolute must-have:
+    \n1. Enhanced Readability: Extra spaces can disrupt the flow and readability of your content. By eliminating those unnecessary spaces, our tool ensures that your text is easy on the eyes and a joy to read. Impress your readers with clean, well-formatted content that holds their attention from start to finish.
+    \n2. Professional Appearance: Whether it's an important business presentation, a school assignment, or a captivating blog post, the way your content looks matters. Our tool brings professionalism to the forefront by ensuring consistent spacing throughout your text. Stand out from the crowd with content that exudes quality and attention to detail.
+    \n3. Time-saving Efficiency: We understand that time is precious, and manual space removal is a tedious, time-consuming task. Our Remove Extra Spaces tool is lightning-fast, allowing you to quickly process and refine your content without breaking a sweat. Spend less time on formatting and more time on what truly matters - creating exceptional content.
+    \n4. Error Prevention: Extra spaces can often lead to unintended formatting errors or distortions in your content. Our tool eradicates these potential pitfalls, giving you peace of mind that your content will be error-free, professional, and ready to impress your audience.
+    \n5. Seamless Integration: Our Remove Extra Spaces tool seamlessly integrates into your existing workflow. With an intuitive interface and straightforward instructions, it's incredibly user-friendly, even for those with limited technical skills. Simply copy and paste your text, click a button, and watch as our tool works its magic.
+    \nDon't let extra spaces diminish the impact of your content. Harness the power of our Remove Extra Spaces tool and unlock a new level of professionalism and efficiency. Try it today and experience the transformation for yourself. Your content deserves to shine with precision and perfection!`,
+  },
+  {
+    title: "Remove Spaces",
+    link: SCREENS.REMOVE_SPACES,
+    heading: "Easily Remove Spaces",
+    metaTitle: seoData.RemoveSpaces.title,
+    metaDescription: seoData.RemoveSpaces.description,
+    content: `Just load your content, System will remove all spaces automatically `,
+    list: true,
+    key: ToolKeys.REMOVE_SPACES,
+    toolDescription: `Tired of dealing with messy data caused by unnecessary spaces? Our simple, yet powerful Remove Spaces tool is the solution you've been searching for. With just a few clicks, you can eliminate extra spaces and optimize your text for improved readability, easier analysis and sharing.
+    Our tool is designed to work seamlessly with text of any length, from small snippets to large datasets. It not only removes spaces, but also eradicates other common whitespace characters, such as tabs or newlines, to leave you with clean and organized text that's easy to use and understand.
+    Here are some of the key benefits of our Remove Spaces tool:
+    \n1. Saves Your Time: No more manual editing or complex tools to remove spaces from your text! Our simple solution does the job quickly and easily, allowing you to focus on other important tasks.
+    \n2. Increases Accuracy: Extra spaces and whitespace characters can be a serious distraction, making it harder to spot anomalies or irregularities in your data. By ensuring that your text is clean and properly formatted, our tool helps improve accuracy, reduce errors, and simplify analysis.
+    \n3. Improves Readability: Optimize your content for clear communication and easy comprehension. Remove Spaces can be especially useful as a preparation step before sending or sharing text, such as emails, reports, or articles.
+    \n4. Enhances SEO: Unnecessary spaces in your webpages or blog posts can hurt your SEO efforts by impacting keyword density and readability. By using our Remove Spaces tool, you can ensure that your website's content is properly formatted for optimal SEO rankings.
+    \nOur Remove Spaces tool is available online and is free to use. Don't let inefficient data harm your productivity or reputation - try our Remove Spaces tool today and experience the benefits for yourself!
+    `,
+  },
+
   {
     title: "Online string and JSON Tools",
     link: SCREENS.TOOLS,

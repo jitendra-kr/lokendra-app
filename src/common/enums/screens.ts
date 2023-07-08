@@ -10,6 +10,8 @@ export enum SCREENS {
   "TEXT_TO_LOWERCASE" = "/tools/text-to-lowercase",
   "WORD_COUNTER" = "/tools/word-counter",
   "REPLACE_SPACES" = "/tools/replace-spaces",
+  "REMOVE_SPACES" = "/texttools/remove-spaces",
+  "REMOVE_EXTRA_SPACES" = "/texttools/remove-extra-spaces",
   "URL_DECODE" = "/tools/url-decode",
   "URL_ENCODE" = "/tools/url-encode",
   "TOOLS" = "/tools",
