@@ -1,9 +1,17 @@
 import { InputNumber } from "antd";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import { CalculationFormula } from "./CalculationFormula";
 import { CalculatorOutput } from "./CalculatorOutput";
-import { SalaryHikePercentageCalculatorActions } from "./SalaryHikePercentageCalculatorActions";
 import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
+
+const CalculationFormula = dynamic(() =>
+  import("./CalculationFormula").then((mod) => mod.CalculationFormula),
+);
+const SalaryHikePercentageCalculatorActions = dynamic(() =>
+  import("./SalaryHikePercentageCalculatorActions").then(
+    (mod) => mod.SalaryHikePercentageCalculatorActions,
+  ),
+);
 
 export function NewSalaryByPercentage() {
   const [currentSalary, setCurrentSalary] = useState<number>(0);
