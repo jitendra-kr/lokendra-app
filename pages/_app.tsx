@@ -1,5 +1,5 @@
 import { LoadingOutlined } from "@ant-design/icons";
-import { Layout, Spin } from "antd";
+import { Spin } from "antd";
 import "bootstrap/dist/css/bootstrap.css";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -55,28 +55,35 @@ export default function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Spin indicator={antIcon} className="center-loader" spinning={loader} />
+    <>
       <Provider store={store}>
+        <Spin indicator={antIcon} className="center-loader" spinning={loader} />
         <UserContext.Provider value={[user, setUser]}>
           <MainHeader />
-          <div className="row" style={{ minHeight: size.height + "px" }}>
-            <div className="col-lg-2"></div>
+          <div
+            className="row"
+            style={{
+              minHeight: size.height + "px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div className="col col-12 col-md-2"></div>
             <div
-              className="col-lg-8"
+              className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
               style={{
-                padding: "50px 5px 50px 5px",
+                marginTop: "50px",
               }}
             >
               <Component {...pageProps} />
             </div>
-            <div className="col-lg-2">
+            <div className="col col-12 col-md-2">
               <AdComponent />
             </div>
           </div>
           <MainFooter />
         </UserContext.Provider>
       </Provider>
-    </Layout>
+    </>
   );
 }

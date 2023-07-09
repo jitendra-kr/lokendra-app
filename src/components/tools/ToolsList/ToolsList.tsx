@@ -68,7 +68,13 @@ export const ToolsList = () => {
   return (
     <>
       {isHome && <OfflineMetaTags tagData={toolData} />}
-      <div className={`row`}>
+      <div
+        className={"row"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
           Empower Your Work with Our Tools
         </h1>
