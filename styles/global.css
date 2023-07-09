@@ -8,82 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
-  add global CSS to add padding for code block 
-*/
-pre {
-  padding-left: 30px !important;
-}
-
-.mainHeadingfontFamily {
-  font-family: serif;
-}
-
-.contentPadding {
-  padding: 50px 50px;
-}
-
-.header-footer-bg {
-  background-color: #001529 !important;
-}
-
-.width-100-per {
-  width: 100%;
-}
-
-.header-footer-bc {
-  border-color: #001529 !important;
-}
-
-.ant-layout-content {
-  min-height: 100vh !important;
-  line-height: 30px !important;
-}
-
-p,
-span {
-  color: #000000;
-}
-
-.m-top-30 {
-  margin-top: 30px;
-}
-
-.m-bottom-30 {
-  margin-bottom: 30px;
-}
-
-.m-bottom-20 {
-  margin-bottom: 20px;
-}
-
-.m-top-55 {
-  margin-top: 55px;
-}
-
-.m-top-15 {
-  margin-top: 15px;
-}
-
-.m-top-10 {
-  margin-top: 10px;
-}
-
 .text-align-center {
   text-align: center;
 }
 .text-align {
   text-align: center;
-}
-
-.buy-now-button {
-  height: 40px !important;
-  background-color: #cc3d00 !important;
-  border: #cc3d00 !important;
-}
-
-.content-height {
-  height: calc(100vh - 232px);
 }
 
 .ant-layout {
@@ -94,22 +23,6 @@ span {
   cursor: pointer;
 }
 
-.m-top-50 {
-  margin-top: 50px;
-}
-
-.price-color {
-  color: #8c0000;
-}
-
-.display-none {
-  display: none !important;
-}
-
-.width-auto {
-  width: auto;
-}
-
 .ck-editor__editable_inline {
   min-height: 400px !important;
 }
@@ -118,23 +31,8 @@ span {
   color: #096dd9 !important;
 }
 
-.ant-tabs-tab-btn {
-  font-weight: 600 !important;
-}
-
 p {
   font-size: medium;
-}
-
-.image-blog-list {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 15px;
-}
-
-.margin-left-8 {
-  margin-left: 8px;
 }
 
 .listing {
@@ -148,17 +46,6 @@ p {
   font-weight: bold;
 }
 
-.question-by {
-  font-weight: bold;
-  font-size: 16px;
-  columns: #000000;
-  font-family: monospace;
-  font-style: italic;
-}
-
-.ant-tabs-nav {
-  left: 18px !important;
-}
 .center-loader {
   position: absolute !important;
   left: 50%;
@@ -167,126 +54,6 @@ p {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-
-/* start user page detail css */
-
-.ant-descriptions {
-  border-style: groove;
-}
-
-.ant-descriptions-item-label {
-  font-weight: bolder !important;
-  line-height: 2 !important;
-}
-
-.ant-descriptions-view {
-  padding: 40px;
-}
-
-.padding-20 {
-  padding: 20px;
-}
-
-/* End user page detail css */
-
-.ask-view {
-  font-size: 12px;
-  font-weight: 500;
-  margin-right: 2px;
-  font-family: inherit;
-}
-
-.font-weight-bold {
-  font-weight: bold;
-}
-
-.post-view-data {
-  font-size: 12px;
-  margin-right: 2px;
-  font-family: inherit;
-}
-
-.till-img-load {
-  height: 200px;
-  background-color: #b5b9c4; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to right, #b5b9c4, #cfd7e6, #ffffff);
-}
-
-.padding-right-30 {
-  padding-right: 30px;
-}
-
-.padding-left-40 {
-  padding-left: 40px;
-}
-
-.content-padding-left {
-  padding-left: 50px;
-}
-
-pre {
-  background-color: #d4d4d4 !important;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .image img {
-    display: block;
-    margin: auto;
-    height: 300px;
-    width: 100%;
-  }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .image img {
-    display: block;
-    margin: auto;
-    height: 300px;
-    width: 100%;
-  }
-}
-/* For tablets */
-
-@media only screen and (min-width: 768px) {
-  .image img {
-    display: block;
-    margin: auto;
-    height: 430px;
-    width: 100%;
-  }
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 992px) {
-  .image img {
-    display: block;
-    margin: auto;
-    height: 430px;
-    width: 80%;
-  }
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
-  .image img {
-    display: block;
-    margin: auto;
-    height: 430px;
-    width: 80%;
-  }
-}
-
-/* 
-  Start JSON viewer styles
-*/
-.data-type-label {
-  color: red !important;
-}
-
-/* 
-  End JSON viewer styles
-*/
 
 .textTransformCapitalize {
   text-transform: capitalize;

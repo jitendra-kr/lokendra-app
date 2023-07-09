@@ -1,4 +1,4 @@
-import { useGetUrl } from "../../../hooks";
+import { STRING_CONSTANTS } from "../../../constants";
 import { SeoTags } from "../../../seo/seo.interface";
 import AppHead from "../../Head/head";
 
@@ -6,15 +6,12 @@ type OfflineMetaTagsProps = {
   tagData?: SeoTags;
 };
 export function OfflineMetaTags({ tagData }: OfflineMetaTagsProps) {
-  const { url } = useGetUrl();
-
+  const url = `${STRING_CONSTANTS.global.domain}${tagData?.link}`;
   return (
     <AppHead
-      data={{
-        title: tagData?.metaTitle,
-        meta_description: tagData?.metaDescription,
-        url,
-      }}
+      title={tagData?.metaTitle ?? ""}
+      meta_description={tagData?.metaDescription ?? ""}
+      url={url}
     />
   );
 }

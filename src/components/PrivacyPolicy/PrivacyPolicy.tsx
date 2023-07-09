@@ -38,6 +38,7 @@ Thank you for choosing FireboxTools. We are committed to delivering a secure and
         tagData={{
           metaTitle: seoData.title,
           metaDescription: seoData.description,
+          link: "",
         }}
       />
       <h1 className={styles.h1tag}>Privacy and Policies</h1>

@@ -1,16 +1,7 @@
+export * from "./AdComponent";
+export { default as MainFooter } from "./Footer";
 export { default as AppHead } from "./Head/head";
 export { default as MainHeader } from "./Header";
-
-export { default as MainFooter } from "./Footer";
-
-export { default as Login } from "./Login";
-export { default as Register } from "./Register";
-export { default as UserProfile } from "./UserProfile";
-
-export { default as ResetPassword } from "./ResetPassword";
-
-export * from "./AdComponent";
-
 export * from "./PrivacyPolicy";
 export * from "./tools";
 export { default as AsciiToString } from "./tools/AsciiToString/AsciiToString";

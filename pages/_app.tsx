@@ -1,23 +1,20 @@
-import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import "bootstrap/dist/css/bootstrap.css";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import * as gtag from "../lib/gtag";
 import { store } from "../src/common/state";
-import { AdComponent, MainFooter, MainHeader } from "../src/components";
-import { UserContext } from "../src/contexts/UserContext";
-import { useWindowSize } from "../src/hooks/useWindowSize";
-import { getUser } from "../src/utils";
+import { AdComponent, MainHeader } from "../src/components";
+
 import "../styles/global.css";
 
-const antIcon = <LoadingOutlined style={{ fontSize: 70 }} spin />;
+const MainFooter = dynamic(() => import("../src/components/Footer"));
 
 export default function MyApp({ Component, pageProps }) {
   const [loader, setLoader] = useState(false);
-  const [user, setUser] = useState(getUser());
-  const size = useWindowSize();
+
   const router = useRouter();
 
   const startStopLoader = (value) => {
@@ -57,32 +54,29 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Provider store={store}>
-        <Spin indicator={antIcon} className="center-loader" spinning={loader} />
-        <UserContext.Provider value={[user, setUser]}>
-          <MainHeader />
+        <Spin className="center-loader" spinning={loader} size="large" />
+        <MainHeader />
+        <div
+          className="row"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div className="col col-12 col-md-2"></div>
           <div
-            className="row"
+            className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
             style={{
-              minHeight: size.height + "px",
-              display: "flex",
-              justifyContent: "center",
+              marginTop: "50px",
             }}
           >
-            <div className="col col-12 col-md-2"></div>
-            <div
-              className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
-              style={{
-                marginTop: "50px",
-              }}
-            >
-              <Component {...pageProps} />
-            </div>
-            <div className="col col-12 col-md-2">
-              <AdComponent />
-            </div>
+            <Component {...pageProps} />
           </div>
-          <MainFooter />
-        </UserContext.Provider>
+          <div className="col col-12 col-md-2">
+            <AdComponent />
+          </div>
+        </div>
+        <MainFooter />
       </Provider>
     </>
   );
