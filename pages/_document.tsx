@@ -18,7 +18,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
-        <Script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
         window.dataLayer = window.dataLayer || [];
