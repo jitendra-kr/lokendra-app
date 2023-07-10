@@ -120,14 +120,14 @@ Easily parse, beautify and Validate JSON data with our reliable and secure onlin
     metaDescription: seoData.jsonMinifier.description,
     list: true,
     key: ToolKeys.JSON_MINIFIER,
-    toolDescription: `Are you tired of dealing with large, unwieldy JSON files that slow down your website? Do you wish there was an easy and secure way to compress and optimize your JSON data for better performance and faster load times? Look no further than our JSON Minify/Compressor tool!
-    \nWith our tool, you can effortlessly minify and compress your JSON data, reducing its size by up to 80% while still maintaining its original quality and data structure. Our tool uses advanced compression algorithms to ensure that your data remains secure throughout the process, protecting your sensitive information from prying eyes and data breaches.
-    \nBut that's not all - our JSON Minify/Compressor tool offers a range of benefits for your website or application, including:
+    toolDescription: `Are you tired of dealing with large, unwieldy JSON files that slow down your website? Do you wish there was an easy and secure way to compress and optimize your JSON data for better performance and faster load times? Look no further than our JSON Minifier!
+    \nWith our tool, you can effortlessly minify and compress your JSON data, reducing its size by up to 80% while still maintaining its original quality and data structure. It uses advanced compression algorithms to ensure that your data remains secure throughout the process, protecting your sensitive information from prying eyes and data breaches.
+    \nBut that's not all - our JSON Minifier tool offers a range of benefits for your website or application, including:
     \n1. Improved Performance: By reducing the size of your JSON data, our tool can help improve your website or application's overall performance and load times, resulting in a better user experience for your visitors.
     \n2. Cost Savings: Smaller file sizes allow you to cut bandwidth usage and server storage expenses, which over time will save you a lot of money.    .
     \n3. Faster Data Transfer: With compressed JSON data, you can transfer data more quickly, allowing for faster data transfers and quicker communication between the server and client.
     \n4. Easy to use: Our tool is easy to use and can be quickly minify JSON data, Just after typing data tool starts compressing and minifying your JSON data right away.
-    \nSo why wait? Try our JSON Minify/Compressor tool today and see the benefits for yourself. Say goodbye to slow load times and hello to optimized JSON data with just a few clicks!
+    \nSo why wait? Try our JSON Minify tool today and see the benefits for yourself. Say goodbye to slow load times and hello to optimized JSON data with just a few clicks!
     `,
   },
   {
