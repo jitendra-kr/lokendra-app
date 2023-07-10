@@ -75,9 +75,16 @@ export const ToolsList = () => {
           justifyContent: "center",
         }}
       >
-        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
-          Empower Your Work with Our Tools
-        </h1>
+        {isHome && (
+          <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
+            Empower Your Work with Our Tools
+          </h1>
+        )}
+        {!isHome && (
+          <h3 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
+            Other Tools
+          </h3>
+        )}
         <SearchBar
           placeholder={placeholder}
           onSearch={onSearch}

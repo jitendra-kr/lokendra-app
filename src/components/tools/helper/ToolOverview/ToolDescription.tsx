@@ -6,9 +6,9 @@ export type ConvertedOutputByToolsProps = {
 export const ToolDescription = ({ content }: ConvertedOutputByToolsProps) => {
   return (
     <>
-      <h3 className={ToolDescriptionStyles.heading}>
+      <h2 className={ToolDescriptionStyles.heading}>
         How can this tool beneficial for you?
-      </h3>
+      </h2>
       <div className={ToolDescriptionStyles.container}>
         <p className={ToolDescriptionStyles.content}>{content}</p>
       </div>

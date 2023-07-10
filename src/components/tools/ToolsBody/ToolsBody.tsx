@@ -1,4 +1,3 @@
-import React from "react";
 import { useGetUrlPath } from "../../../hooks";
 import { toolsListData } from "../ToolsList/toolsListingData";
 import styles from "./ToolsBody.module.css";
@@ -20,7 +19,7 @@ export function ToolsBody({ className }: ToolsBodyProps) {
   return (
     <span className={className}>
       <h1 className={styles.bodyTitle}>{result.heading}</h1>
-      <h2 className={styles.bodyContent}>{result.content}</h2>
+      <p className={styles.bodyContent}>{result.content}</p>
     </span>
   );
 }
