@@ -57,7 +57,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "ASCII to String",
     link: SCREENS.ASCII_TO_STRING,
-    heading: "Convert ASCII to String Online with Ease & Accuracy",
+    heading: "Convert ASCII to String Online with Ease and Accuracy",
     content:
       "Just load your ASCII code, System will automatically convert it to text",
     metaTitle: seoData.asciiToString.title,
@@ -65,12 +65,11 @@ export const toolsListData: Array<ITools> = [
     list: true,
     key: ToolKeys.ASCIItoString,
     toolDescription: `With our cutting-edge ASCII to String converter, you can effortlessly transform your ASCII-encoded data into easily readable strings. This advanced tool is designed to be efficient, accurate, and user-friendly, catering to individuals who require swift processing of vast quantities of data.
-    \nUsing our converter is a breeze. You have multiple options at your disposal: typing, pasting, or uploading the ASCII-encoded data. This flexibility allows you to choose the method that best suits your preferences and requirements. Whether you have a small snippet of ASCII code or a massive dataset, our converter can handle it all with ease.   
+    \nUsing our converter is a breeze. You have multiple options at your disposal: typing, pasting, or uploading the ASCII codes to tool. This flexibility allows you to choose the method that best suits your preferences and requirements. Whether you have a small snippet of ASCII code or a massive dataset, our converter can handle it all with ease.   
     \nOne of the standout features of our ASCII to String converter is its speed. We understand the importance of time, especially when dealing with significant volumes of data. Our converter is optimized to process the information swiftly, ensuring that you can convert your ASCII-encoded data into readable strings without any unnecessary delays.
     \nAccuracy is another key aspect of our converter. We have implemented sophisticated algorithms and technologies to ensure that the conversion process is highly precise. You can trust that the resulting strings will be an accurate representation of the original ASCII-encoded data. This level of accuracy is crucial, particularly in scenarios where data integrity is paramount.
     \nThe user-friendly nature of our converter sets it apart from others in the market. We have designed the interface to be intuitive and straightforward, making it accessible to users of all skill levels. Whether you are a seasoned professional or a novice, you can navigate our converter with ease. The clear instructions and prompts provided throughout the conversion process further enhance the user experience, ensuring that you can effortlessly achieve the desired results.
     \nFurthermore, our converter is constantly updated to ensure compatibility with the latest ASCII standards and industry practices. We strive to stay ahead of the curve and provide our users with a reliable and up-to-date solution. This commitment to continuous improvement sets us apart as a trusted provider of ASCII to String conversion tools.
-    
     `,
   },
   {
