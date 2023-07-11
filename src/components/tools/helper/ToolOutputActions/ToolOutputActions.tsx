@@ -2,7 +2,6 @@ import { SCREENS } from "../../../../common/enums";
 import { useGetUrlPath } from "../../../../hooks";
 import { useGetToolsInput } from "../../../../hooks/useGetToolsInput";
 import { DownloadOutput, HandleFullScreen } from "../../../common";
-import { ShareData } from "../../ShareData";
 import { CopyToClip } from "../CopyToClip";
 import styles from "./ToolOutputActions.module.css";
 
@@ -25,7 +24,6 @@ export const ToolOutputActions = ({ content }: JsonViewerProps) => {
           <CopyToClip content={content} />
         </>
       )}
-      <ShareData data={value ?? ""} />
       {!hideFullScreen && <HandleFullScreen content={content} />}
     </div>
   );
