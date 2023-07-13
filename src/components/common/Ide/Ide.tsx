@@ -1,4 +1,4 @@
-import Editor, { Monaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
@@ -9,18 +9,29 @@ import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { messageError, messageSuccess, repairJSON } from "../../../utils";
 import { ButtonUsingReactIcon } from "../ButtonWithIcon";
-import { EditorActions, EditorActionsButtons } from "./EditorActions";
+import { EditorActions, EditorActionsButtons, MonoType } from "./EditorActions";
 import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
+export type EditorCallBackOptions = {
+  monoType?: boolean;
+};
 type IdeProps = {
-  cb?: (value: string | undefined) => void;
+  cb?: (value: string | undefined, options?: EditorCallBackOptions) => void;
   error?: (value: string | undefined) => void;
-  value?: string;
   minimapEnabled?: boolean;
+  options?: {
+    monotype: boolean;
+  };
 };
 
-export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
+export default function Ide({
+  cb,
+  error,
+  minimapEnabled = true,
+  options,
+}: IdeProps) {
+  const [monoType, setMonoType] = useState(false);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const dispatch = useAppDispatch();
   const paramsLoaded = useRef(false);
@@ -44,7 +55,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
   }
 
   const onChange = (value: string | undefined) => {
-    cb?.(value);
+    cb?.(value, { monoType: monoType });
     dispatch(
       updateToolsInput({
         value: value ?? "",
@@ -65,10 +76,7 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
     editorRef.current?.setValue("");
   };
 
-  function handleEditorDidMount(
-    editor: editor.IStandaloneCodeEditor,
-    monaco: Monaco,
-  ) {
+  function handleEditorDidMount(editor: editor.IStandaloneCodeEditor) {
     editorRef.current = editor;
     editor.focus();
   }
@@ -105,6 +113,13 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
     });
   };
 
+  const onMonoTypeChange = (status: boolean) => {
+    setMonoType(status);
+    cb?.(globalInputValue, {
+      monoType: status,
+    });
+  };
+
   return (
     <>
       <EditorActions
@@ -131,6 +146,9 @@ export default function Ide({ cb, error, minimapEnabled = true }: IdeProps) {
             />
             <></>
           </>
+        }
+        childrenAfter={
+          <>{options?.monotype && <MonoType onChange={onMonoTypeChange} />}</>
         }
       />
       <Editor

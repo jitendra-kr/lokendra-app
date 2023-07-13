@@ -20,6 +20,7 @@ export enum ToolKeys {
   HOME = "HOME",
   JSON_DIFF = "JSON_DIFF",
   JSON_MINIFIER = "JSON_MINIFIER",
+  JSON_TO_TYPESCRIPT = "JSON_TO_TYPESCRIPT",
   REMOVE_EXTRA_SPACES = "REMOVE_EXTRA_SPACES",
   REMOVE_SPACES = "REMOVE_SPACES",
 }
@@ -128,6 +129,28 @@ Easily parse, beautify and Validate JSON data with our reliable and secure onlin
     \n4. Easy to use: Our tool is easy to use and can be quickly minify JSON data, Just after typing data tool starts compressing and minifying your JSON data right away.
     \nSo why wait? Try our JSON Minify tool today and see the benefits for yourself. Say goodbye to slow load times and hello to optimized JSON data with just a few clicks!
     `,
+  },
+  {
+    title: "JSON to Typescript",
+    link: SCREENS.JSON_TO_TYPESCRIPT,
+    heading: "JSON to Typescript",
+    content:
+      "Simply load your JSON, and the system will automatically generate typescript from JSON",
+    metaTitle: seoData.jsonToTypescript.title,
+    metaDescription: seoData.jsonToTypescript.description,
+    list: true,
+    key: ToolKeys.JSON_TO_TYPESCRIPT,
+    toolDescription: `Are you tired of manually converting JSON data to TypeScript interfaces? Look no further! Introducing our online JSON to TypeScript Conversion tool, Our online Conversion tool is here to save you time and effort. With our secure and fast conversion process, you can effortlessly transform your JSON data into TypeScript interfaces.
+
+Our first emphasis is security. We recognize the importance of safeguarding sensitive material, so you can be confident that your JSON files will be handled with the utmost care and confidentiality during the conversion process. Your data is kept secure and private, providing peace of mind.
+
+But that's not all. Our tool goes beyond simple conversion. We offer an additional feature that allows you to fix minor errors (fix quotes, escape characters, remove comments and trailing commas) in your JSON data using the "Repair JSON" option. This handy feature ensures that your JSON data is valid and error-free before generating the TypeScript interfaces.
+
+Generating TypeScript interfaces based on your provided data has never been easier. Our tool analyzes the structure and content of your data and automatically generates the corresponding TypeScript interfaces. Say goodbye to manual coding and hello to automated code generation!
+
+Using our JSON conversion tool, you can streamline your development process and eliminate the tedious task of manually converting JSON to Interface. The generated TypeScript interfaces provide strong typing and improved code readability, enhancing the maintainability of your code.
+
+Whether you're a seasoned developer or just starting out, our tool is suitable for all skill levels. You don't have to be a TypeScript expert to benefit from the power of strong typing. Our user-friendly interface simplifies and intuitively converts your code, allowing you to focus on what matters most: creating outstanding software.`,
   },
   {
     title: "JSON Diff",

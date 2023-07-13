@@ -1,4 +1,4 @@
-import { Col, Row, Tooltip, Upload } from "antd";
+import { Col, Row, Switch, Tooltip, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -15,6 +15,22 @@ type EditorActionsProps = {
 
 export function EditorActionsButtons({ children }: { children: ReactNode }) {
   return <Col style={{ marginTop: "5px" }}>{children}</Col>;
+}
+
+export function MonoType({
+  onChange,
+}: {
+  onChange: (status: boolean) => void;
+}) {
+  return (
+    <Switch
+      style={{ marginTop: "10px", marginRight: "5px" }}
+      checkedChildren="Mono Type"
+      unCheckedChildren="Mono Type"
+      defaultChecked={false}
+      onChange={onChange}
+    />
+  );
 }
 
 export const EditorActions = ({
@@ -47,7 +63,7 @@ export const EditorActions = ({
               }}
             >
               <ButtonUsingReactIcon
-                name="Upload Data"
+                name="Load file"
                 onClick={() => {}}
                 mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} />}
               />

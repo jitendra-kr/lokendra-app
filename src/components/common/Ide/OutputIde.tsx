@@ -1,24 +1,22 @@
 import Editor, { Theme } from "@monaco-editor/react";
 import styles from "./Ide.module.css";
 
-type IdeProps = {
-  cb?: (value: string | undefined) => void;
-  error?: (value: string | undefined) => void;
+export type OutputIdeProps = {
   value?: string;
   theme?: Theme;
-  minimapEnabled?: boolean;
+  language?: string;
 };
 
 export default function OutputIde({
   value,
   theme,
-  minimapEnabled = true,
-}: IdeProps) {
+  language = "json",
+}: OutputIdeProps) {
   return (
     <Editor
       theme={theme}
       height="74vh"
-      defaultLanguage="json"
+      language={language}
       className={styles.editor}
       value={value}
       options={{
@@ -28,8 +26,7 @@ export default function OutputIde({
         mouseWheelZoom: true,
         smoothScrolling: true,
         minimap: {
-          enabled: minimapEnabled,
-          showSlider: "always",
+          enabled: false,
         },
         bracketPairColorization: {
           enabled: true,
