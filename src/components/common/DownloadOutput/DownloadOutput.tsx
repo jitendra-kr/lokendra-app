@@ -2,7 +2,7 @@ import { FaDownload } from "react-icons/fa";
 import { SCREENS } from "../../../common/enums";
 import { COLOR_CONST, STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
-import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
+import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 export type DownloadOutputProps = {
   content: string;
@@ -28,10 +28,10 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
   };
 
   return (
-    <ButtonUsingReactIcon
+    <InputOutputActionButton
       name="Download"
       onClick={onClick}
-      mdIcon={<FaDownload color={COLOR_CONST.defaultIcon} />}
+      mdIcon={<FaDownload color={COLOR_CONST.defaultIcon} size={8} />}
       tooltip="Download Output"
     />
   );

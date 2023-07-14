@@ -1,4 +1,4 @@
-export * from "./ButtonWithIcon/ButtonUsingReactIcon";
+export * from "./Buttons/InputOutputActionButton";
 export * from "./DownloadOutput";
 export * from "./HandleFullScreen";
 export * from "./OfflineMetaTags/OfflineMetaTags";

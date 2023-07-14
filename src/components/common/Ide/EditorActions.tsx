@@ -3,8 +3,10 @@ import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaUpload } from "react-icons/fa";
+import { PiBracketsCurlyBold } from "react-icons/pi";
 import { COLOR_CONST } from "../../../constants";
-import { ButtonUsingReactIcon } from "../ButtonWithIcon/ButtonUsingReactIcon";
+import { beautifyJSON } from "../../../utils";
+import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 type EditorActionsProps = {
   clear: () => void;
@@ -29,6 +31,35 @@ export function MonoType({
       unCheckedChildren="Mono Type"
       defaultChecked={false}
       onChange={onChange}
+    />
+  );
+}
+
+export function FormatInput({
+  value,
+  cb,
+}: {
+  value: (() => string) | string;
+  cb: (formattedValue: string, errorMsg?: string) => void;
+}) {
+  const format = () => {
+    value = typeof value === "string" ? value : value();
+    const { beautifiedData, msg } = beautifyJSON(value);
+    if (beautifiedData) {
+      cb(beautifiedData);
+    }
+    if (msg) {
+      cb("", msg);
+    }
+  };
+
+  return (
+    <InputOutputActionButton
+      styles={{ marginTop: "5px" }}
+      name="Format"
+      onClick={() => format()}
+      mdIcon={<PiBracketsCurlyBold color={COLOR_CONST.defaultIcon} />}
+      tooltip="Format input"
     />
   );
 }
@@ -62,10 +93,10 @@ export const EditorActions = ({
                 return false;
               }}
             >
-              <ButtonUsingReactIcon
+              <InputOutputActionButton
                 name="Load file"
                 onClick={() => {}}
-                mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} />}
+                mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
               />
             </Upload>
           </Tooltip>
@@ -75,10 +106,10 @@ export const EditorActions = ({
       {childrenAfter}
       <EditorActionsButtons
         children={
-          <ButtonUsingReactIcon
+          <InputOutputActionButton
             name="Clear"
             onClick={clear}
-            mdIcon={<AiFillDelete size={15} color={COLOR_CONST.defaultIcon} />}
+            mdIcon={<AiFillDelete size={13} color={COLOR_CONST.defaultIcon} />}
             tooltip="Clear Input"
           />
         }

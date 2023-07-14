@@ -6,7 +6,7 @@ import AceEditor from "react-ace";
 
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { CopyToClip } from "../../../tools/helper/CopyToClip";
-import { ButtonUsingReactIcon } from "../../ButtonWithIcon";
+import { InputOutputActionButton } from "../../Buttons";
 import { EditorActions } from "../EditorActions";
 
 type DiffIdeProps = {
@@ -33,7 +33,7 @@ export default function DiffIde({
         children={
           <>
             {id === "rightIDE" && (
-              <ButtonUsingReactIcon
+              <InputOutputActionButton
                 name="Compare"
                 onClick={onCompareClick}
                 mdIcon={<GiMagnifyingGlass size={18} />}

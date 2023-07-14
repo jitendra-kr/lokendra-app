@@ -3,7 +3,7 @@ import { SCREENS } from "../../../common/enums";
 import { COLOR_CONST } from "../../../constants";
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
-import { ButtonUsingReactIcon } from "../../common";
+import { InputOutputActionButton } from "../../common";
 import { jsonParser } from "../ToolsList";
 
 type ShareDataProps = {
@@ -33,7 +33,7 @@ export function ShareData({ data }: ShareDataProps) {
   if (hideMe) return <></>;
 
   return (
-    <ButtonUsingReactIcon
+    <InputOutputActionButton
       name="Share"
       onClick={handleShareUrlClick}
       mdIcon={<FaShareAlt color={COLOR_CONST.defaultIcon} />}

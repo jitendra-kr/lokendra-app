@@ -22,6 +22,7 @@ export function JSONToTypescript() {
   const resetStates = () => {
     setError("");
     setByte("");
+    setEditorError("");
   };
 
   const isJsonString = async (
@@ -32,14 +33,6 @@ export function JSONToTypescript() {
       resetStates();
       return;
     }
-
-    if (editorError) {
-      setEditorError("");
-    }
-    if (error) {
-      setError("");
-    }
-
     const { beautifiedData, msg } = beautifyJSON(str);
 
     if (beautifiedData) {
@@ -53,8 +46,10 @@ export function JSONToTypescript() {
             : "typescript",
         }),
       );
+      setError("");
       setByte(data);
     }
+
     if (msg) {
       setError(msg);
     }
@@ -64,7 +59,11 @@ export function JSONToTypescript() {
     <InputOutputViewer
       inputChild={
         <div className="col-lg-6">
-          <Ide cb={isJsonString} error={onError} options={{ monotype: true }} />
+          <Ide
+            cb={isJsonString}
+            error={onError}
+            options={{ monotype: true, format: true }}
+          />
         </div>
       }
       outputChild={

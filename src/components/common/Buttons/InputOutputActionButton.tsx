@@ -4,7 +4,7 @@ import { CSSProperties, ReactNode } from "react";
 
 type ButtonUsingProps = {
   onClick: () => void;
-  mdIcon: ReactNode;
+  mdIcon?: ReactNode;
   name: string;
   tooltip?: string;
   styles?: CSSProperties;
@@ -12,9 +12,8 @@ type ButtonUsingProps = {
   type?: ButtonType;
 };
 
-export function ButtonUsingReactIcon({
+export function InputOutputActionButton({
   onClick,
-  mdIcon,
   name,
   tooltip,
   styles,
@@ -26,7 +25,6 @@ export function ButtonUsingReactIcon({
       <Button
         type={type}
         onClick={onClick}
-        icon={mdIcon}
         style={{ marginRight: "5px", ...styles }}
       >
         <span style={{ color: "white", ...textStyles }}>{name}</span>

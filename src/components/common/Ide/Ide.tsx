@@ -8,8 +8,13 @@ import { COLOR_CONST } from "../../../constants";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { messageError, messageSuccess, repairJSON } from "../../../utils";
-import { ButtonUsingReactIcon } from "../ButtonWithIcon";
-import { EditorActions, EditorActionsButtons, MonoType } from "./EditorActions";
+import { InputOutputActionButton } from "../Buttons";
+import {
+  EditorActions,
+  EditorActionsButtons,
+  FormatInput,
+  MonoType,
+} from "./EditorActions";
 import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
@@ -21,7 +26,8 @@ type IdeProps = {
   error?: (value: string | undefined) => void;
   minimapEnabled?: boolean;
   options?: {
-    monotype: boolean;
+    monotype?: boolean;
+    format?: boolean;
   };
 };
 
@@ -120,6 +126,14 @@ export default function Ide({
     });
   };
 
+  const onFormat = (valueToFormat: string) => {
+    dispatch(
+      updateToolsInput({
+        value: valueToFormat,
+      }),
+    );
+  };
+
   return (
     <>
       <EditorActions
@@ -134,16 +148,17 @@ export default function Ide({
             />
             <EditorActionsButtons
               children={
-                <ButtonUsingReactIcon
+                <InputOutputActionButton
                   name="Repair"
                   onClick={onRepairClick}
-                  mdIcon={
-                    <AiFillTool size={18} color={COLOR_CONST.defaultIcon} />
-                  }
+                  mdIcon={<AiFillTool color={COLOR_CONST.defaultIcon} />}
                   tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
                 />
               }
             />
+            {options?.format && (
+              <FormatInput value={globalInputValue ?? ""} cb={onFormat} />
+            )}
             <></>
           </>
         }

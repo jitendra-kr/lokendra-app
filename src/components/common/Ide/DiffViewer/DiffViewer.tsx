@@ -1,11 +1,12 @@
 import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
 import { useRef, useState } from "react";
-import { PiBracketsCurlyBold } from "react-icons/pi";
-import { COLOR_CONST } from "../../../../constants";
 import { CopyToClip } from "../../../tools/helper/CopyToClip";
-import { ButtonUsingReactIcon } from "../../ButtonWithIcon";
-import { EditorActions, EditorActionsButtons } from "../EditorActions";
+import {
+  EditorActions,
+  EditorActionsButtons,
+  FormatInput,
+} from "../EditorActions";
 import styles from "../Ide.module.css";
 import { UpdateMonacoTheme } from "../UpdateMonacoTheme";
 import DiffViewerStyles from "./DiffViewer.module.css";
@@ -39,7 +40,11 @@ export default function DiffViewer({
   }
 
   const getOrignalValue = () => {
-    return diffEditorRef.current?.getOriginalEditor().getValue() ?? "ll";
+    console.log(
+      "diffEditorRef.current?.getOriginalEditor().getValue()",
+      diffEditorRef.current?.getOriginalEditor().getValue(),
+    );
+    return diffEditorRef.current?.getOriginalEditor().getValue() ?? "";
   };
 
   const getModifiedValue = () => {
@@ -91,21 +96,7 @@ export default function DiffViewer({
               onChange={onLeftChange}
               childrenAfter={
                 <>
-                  <EditorActionsButtons
-                    children={
-                      <ButtonUsingReactIcon
-                        name="Format"
-                        onClick={() => formatLeftInput(getOrignalValue())}
-                        mdIcon={
-                          <PiBracketsCurlyBold
-                            color={COLOR_CONST.defaultIcon}
-                            size={20}
-                          />
-                        }
-                        tooltip="Format input"
-                      />
-                    }
-                  />
+                  <FormatInput value={getOrignalValue} cb={formatLeftInput} />
                   <EditorActionsButtons
                     children={<CopyToClip content={getOrignalValue} />}
                   />
@@ -142,21 +133,7 @@ export default function DiffViewer({
               onChange={onRightChange}
               childrenAfter={
                 <>
-                  <EditorActionsButtons
-                    children={
-                      <ButtonUsingReactIcon
-                        name="Format"
-                        onClick={() => formatRightInput(getModifiedValue())}
-                        mdIcon={
-                          <PiBracketsCurlyBold
-                            color={COLOR_CONST.defaultIcon}
-                            size={20}
-                          />
-                        }
-                        tooltip="Format input"
-                      />
-                    }
-                  />
+                  <FormatInput value={getModifiedValue} cb={formatRightInput} />
                   <EditorActionsButtons
                     children={<CopyToClip content={getModifiedValue} />}
                   />

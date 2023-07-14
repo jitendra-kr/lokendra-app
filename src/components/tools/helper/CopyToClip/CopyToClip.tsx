@@ -1,7 +1,7 @@
 import { IoCopySharp } from "react-icons/io5";
 import { COLOR_CONST } from "../../../../constants";
 import { copyToClipboard } from "../../../../utils";
-import { ButtonUsingReactIcon } from "../../../common";
+import { InputOutputActionButton } from "../../../common";
 
 export type CopyToClipProps = {
   content: (() => string) | string;
@@ -20,10 +20,10 @@ export const CopyToClip = ({ content }: CopyToClipProps) => {
   };
 
   return (
-    <ButtonUsingReactIcon
+    <InputOutputActionButton
       name="Copy"
       onClick={handleClick}
-      mdIcon={<IoCopySharp color={COLOR_CONST.defaultIcon} />}
+      mdIcon={<IoCopySharp size={10} color={COLOR_CONST.defaultIcon} />}
       tooltip="Copy to Clipboard"
     />
   );

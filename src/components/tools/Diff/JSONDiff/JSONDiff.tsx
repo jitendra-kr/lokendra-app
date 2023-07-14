@@ -5,10 +5,8 @@ import {
 } from "../../../../common/state/tools";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 
-import { get } from "lodash";
 import { useState } from "react";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
-import { jsonlint } from "../../../../externalLib";
 import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
@@ -31,33 +29,32 @@ export function JSONDiff() {
     dispatch(updateDiffRightInput(valueR ?? ""));
   };
 
-  const formatLeftInput = (valueL: string | undefined) => {
+  const formatLeftInput = (valueL: string | undefined, errorMsg?: string) => {
     setLeftErrorMsg("");
-    if (!valueL) {
+    if (!valueL && !errorMsg) {
       return;
     }
-    try {
-      const parsedJSON = jsonlint.parse(valueL);
-      onLeftChange(JSON.stringify(parsedJSON, null, "\t"));
-    } catch (error: unknown) {
-      setLeftErrorMsg(
-        `${get(error, "name") + " \n" + get(error, "message")}  `,
-      );
+    if (errorMsg) {
+      setLeftErrorMsg(errorMsg);
+      return;
+    }
+    if (valueL) {
+      onLeftChange(valueL);
     }
   };
 
-  const formatRightInput = (valueR: string | undefined) => {
+  const formatRightInput = (valueR: string | undefined, errorMsg?: string) => {
     setRightErrorMsg("");
-    if (!valueR) {
+    if (!valueR && !errorMsg) {
       return;
     }
-    try {
-      const parsedJSON = jsonlint.parse(valueR);
-      onRightChange(JSON.stringify(parsedJSON, null, "\t"));
-    } catch (error: unknown) {
-      setRightErrorMsg(
-        `${get(error, "name") + " \n" + get(error, "message")}  `,
-      );
+    if (errorMsg) {
+      setLeftErrorMsg(errorMsg);
+      return;
+    }
+
+    if (valueR) {
+      onRightChange(valueR);
     }
   };
 
