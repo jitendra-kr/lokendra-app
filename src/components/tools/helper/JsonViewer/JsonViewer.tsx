@@ -27,12 +27,7 @@ export const JsonViewer = ({
   return (
     <div>
       <ToolOutputActions content={content} />
-      <OutputIde
-        value={content}
-        minimapEnabled={false}
-        theme={theme}
-        language={language}
-      />
+      <OutputIde value={content} theme={theme} language={language} />
     </div>
   );
 };
