@@ -89,6 +89,7 @@ export const ToolsList = () => {
           placeholder={placeholder}
           onSearch={onSearch}
           autoFocus={false}
+          allowClear={true}
         />
         <RenderToolsList toolsList={toolsList} textInput={textInput} />
         <div className={styles.whyUsContainer}>
