@@ -1,10 +1,10 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Spin } from "antd";
 import "bootstrap/dist/css/bootstrap.css";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
-import * as gtag from "../lib/gtag";
 import { store } from "../src/common/state";
 import { AdComponent, MainHeader } from "../src/components";
 
@@ -30,7 +30,7 @@ export default function MyApp({ Component, pageProps }) {
     });
     router.events.on("routeChangeComplete", (url, { shallow }) => {
       console.log(`Completely routed to ${url}`);
-      gtag.pageview(url);
+      // gtag.pageview(url);
       startStopLoader(false);
     });
     router.events.on("routeChangeError", (err, url) => {
@@ -71,6 +71,7 @@ export default function MyApp({ Component, pageProps }) {
             }}
           >
             <Component {...pageProps} />
+            <Analytics />
           </div>
           <div className="col col-12 col-md-2">
             <AdComponent />

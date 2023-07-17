@@ -8,11 +8,11 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <Script
+        {/* <Script
           id="googletagmanager"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        />
+        /> */}
         <Script
           id="adsbygoogle"
           async
@@ -20,7 +20,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
         window.dataLayer = window.dataLayer || [];
@@ -31,7 +31,7 @@ export default function Document() {
         });
       `,
           }}
-        />
+        /> */}
       </Head>
       <body>
         <Main />
