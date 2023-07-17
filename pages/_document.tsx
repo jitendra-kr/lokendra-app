@@ -1,18 +1,17 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
 import React from "react";
-
-const GA_TRACKING_ID = "G-R8F91VBWJT";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        {/* <Script
+        <Script
           id="googletagmanager"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        /> */}
+        />
         <Script
           id="adsbygoogle"
           async
@@ -20,7 +19,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
         window.dataLayer = window.dataLayer || [];
@@ -31,7 +30,7 @@ export default function Document() {
         });
       `,
           }}
-        /> */}
+        />
       </Head>
       <body>
         <Main />

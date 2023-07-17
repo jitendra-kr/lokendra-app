@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "../src/common/state";
 import { AdComponent, MainHeader } from "../src/components";
 
+import { pageview } from "../lib/gtag";
 import "../styles/global.css";
 
 const MainFooter = dynamic(() => import("../src/components/Footer"));
@@ -30,7 +31,7 @@ export default function MyApp({ Component, pageProps }) {
     });
     router.events.on("routeChangeComplete", (url, { shallow }) => {
       console.log(`Completely routed to ${url}`);
-      // gtag.pageview(url);
+      pageview(url);
       startStopLoader(false);
     });
     router.events.on("routeChangeError", (err, url) => {
