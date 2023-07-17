@@ -46,7 +46,11 @@ function JsonToString() {
       inputChild={
         <div className="col-lg-6">
           <div>
-            <Editor cb={isJsonString} error={onError} />
+            <Editor
+              cb={isJsonString}
+              error={onError}
+              options={{ format: true }}
+            />
           </div>
         </div>
       }

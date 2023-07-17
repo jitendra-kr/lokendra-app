@@ -35,7 +35,7 @@ type InputToConvertByToolsProps = {
 export const InputToConvertByTools = ({
   onChangeCb,
   type,
-  placeholder = "Start typing ...",
+  placeholder = "  Start typing ...",
   inputNumber,
 }: InputToConvertByToolsProps) => {
   const [inputValue, setInputValue] = useState("");
