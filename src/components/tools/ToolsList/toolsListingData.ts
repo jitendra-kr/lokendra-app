@@ -105,10 +105,10 @@ export const toolsListData: Array<ITools> = [
 Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter.    
     \nOne of the key features of our JSON validator is its robust validation process. Before formatting, our tool thoroughly validates the provided JSON data, ensuring that it is well-formed and free of errors. This validation step is crucial, as it guarantees that the resulting formatted JSON will be accurate and reliable.     
     \nIn addition to its validation capabilities, It is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
-    \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. The clear instructions and prompts provided throughout the formatting process further enhance the user experience, ensuring that you can achieve the desired results effortlessly.    
-    \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
-    \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers.     
-    \nIn conclusion, our secure JSON formatter tool is a fast, easy-to-use, and accurate solution for developers and data analysts. With its robust validation process, speedy formatting capabilities, and user-friendly interface, it simplifies the process of formatting JSON data while ensuring data integrity and security. Experience the convenience and reliability of it today and unlock the full potential of your JSON data.`,
+    \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
+    \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, wrap key and values to double quotes, fix incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
+    \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers. Once      
+    \nIn conclusion, our secure JSON formatter tool is a fast, easy-to-use, and accurate solution for developers and data analysts. With its robust validation process, speedy formatting capabilities, and user-friendly interface, it simplifies the process of beautify json data while ensuring data integrity and security. Experience the convenience and reliability of it today and unlock the full potential of your JSON data.`,
   },
   {
     title: "JSON Minifier",
@@ -400,6 +400,6 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
   },
 ];
 
-toolsListData.forEach((element) => {
-  element.toolDescription = `${element.toolDescription}The tool's Share option allows you to create a special URL that you may share with others.`;
-});
+// toolsListData.forEach((element) => {
+//   element.toolDescription = `${element.toolDescription}The tool's Share option allows you to create a special URL that you may share with others.`;
+// });
