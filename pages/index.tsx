@@ -1,12 +1,12 @@
 import React from "react";
-import { ToolsList } from "../src/components";
+import { HomePage } from "../src/components";
 
-function HomePage() {
+function Home() {
   return (
     <>
-      <ToolsList />
+      <HomePage />
     </>
   );
 }
 
-export default HomePage;
+export default Home;

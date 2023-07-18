@@ -1,14 +1,13 @@
 import Fuse from "fuse.js";
 import { useEffect, useState } from "react";
-import { useToolListData } from "../../../common/hooks/useToolListData";
 import { STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
-import { OfflineMetaTags, WhyUs } from "../../common";
+import { WhyUs } from "../../common";
 import { SearchBar } from "../../common/SearchBar";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
 import styles from "./ToolsList.module.css";
-import { ITools, ToolKeys, toolsListData } from "./toolsListingData";
+import { ITools, toolsListData } from "./toolsListingData";
 
 const Reasons = () => {
   const reasons = [
@@ -35,7 +34,6 @@ const Reasons = () => {
 export const ToolsList = () => {
   const [toolsList, setToolsList] = useState<ITools[]>([]);
   const [textInput, setTextInput] = useState<string | undefined>();
-  const { toolData } = useToolListData(ToolKeys.HOME);
   const { isHome } = useGetUrlPath();
   const [placeholder, setPlaceholder] = useState<string>("Search...");
 
@@ -67,7 +65,6 @@ export const ToolsList = () => {
 
   return (
     <>
-      {isHome && <OfflineMetaTags tagData={toolData} />}
       <div
         className={"row"}
         style={{
