@@ -3,11 +3,16 @@ import { useEffect, useState } from "react";
 import { STRING_CONSTANTS } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { WhyUs } from "../../common";
-import { SearchBar } from "../../common/SearchBar";
+
+import dynamic from "next/dynamic";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
 import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData";
+
+const SearchBar = dynamic(() =>
+  import("../../common/SearchBar").then((mod) => mod.SearchBar),
+);
 
 const Reasons = () => {
   const reasons = [
