@@ -1,0 +1,21 @@
+@keyframes changeColor {
+  0% {
+    color: orange;
+  }
+  25% {
+    color: palevioletred;
+  }
+  50% {
+    color: darkred;
+  }
+  75% {
+    color: darkgray;
+  }
+  100% {
+    color: green;
+  }
+}
+
+.changing-text-color {
+  animation: changeColor 6s infinite;
+}

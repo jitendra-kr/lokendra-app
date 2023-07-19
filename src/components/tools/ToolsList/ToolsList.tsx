@@ -66,6 +66,7 @@ export const ToolsList = () => {
   return (
     <>
       <div
+        id="tool-list"
         className={"row"}
         style={{
           display: "flex",

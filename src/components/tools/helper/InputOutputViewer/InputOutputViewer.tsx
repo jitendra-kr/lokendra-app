@@ -35,6 +35,7 @@ export function InputOutputViewer({
   children,
   inputChild,
   outputChild,
+  options,
 }: InputOutputViewerProps) {
   const { toolData } = useToolListData(toolId);
 
@@ -53,6 +54,7 @@ export function InputOutputViewer({
               placeholder={placeholder}
               inputNumber={inputNumber}
               onClick={onClick}
+              options={options}
             />
           )}
           {!children && <ToolOutput byte={byte} outputChild={outputChild} />}

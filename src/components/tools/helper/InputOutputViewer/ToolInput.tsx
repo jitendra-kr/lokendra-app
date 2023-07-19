@@ -1,8 +1,14 @@
-import React from "react";
-import InputOutputViewerStyles from "./InputOutputViewer.module.css";
 import { Button } from "antd";
+import React from "react";
 import { ToolsBody } from "../../ToolsBody";
 import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
+import InputOutputViewerStyles from "./InputOutputViewer.module.css";
+
+type InputOutputVieweoptions = {
+  options?: {
+    disable: boolean;
+  };
+};
 
 export type ToolInputProps = {
   input?: boolean;
@@ -11,7 +17,7 @@ export type ToolInputProps = {
   placeholder?: string;
   inputNumber?: boolean;
   onClick?: () => void;
-};
+} & InputOutputVieweoptions;
 
 export function ToolInput({
   input,
@@ -20,6 +26,7 @@ export function ToolInput({
   placeholder,
   inputNumber,
   onClick,
+  options,
 }: ToolInputProps) {
   return (
     <>
@@ -47,6 +54,7 @@ export function ToolInput({
                 type="primary"
                 className={InputOutputViewerStyles["input-button"]}
                 onClick={onClick}
+                disabled={options?.disable}
               >
                 <span className={InputOutputViewerStyles.buttonText}>
                   Generate UUID

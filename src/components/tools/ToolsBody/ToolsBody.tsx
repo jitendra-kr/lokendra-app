@@ -1,12 +1,9 @@
 import { useGetUrlPath } from "../../../hooks";
+import { RelevantTools } from "../../common";
 import { toolsListData } from "../ToolsList/toolsListingData";
 import styles from "./ToolsBody.module.css";
 
-type ToolsBodyProps = {
-  className?: string;
-};
-
-export function ToolsBody({ className }: ToolsBodyProps) {
+export function ToolsBody() {
   const { pathname } = useGetUrlPath();
 
   const result = toolsListData.find((obj) => {
@@ -17,9 +14,12 @@ export function ToolsBody({ className }: ToolsBodyProps) {
   }
 
   return (
-    <span className={className}>
-      <h1 className={styles.bodyTitle}>{result.heading}</h1>
+    <span>
+      <h1 className={styles.bodyTitle}>
+        <b>{result.heading}</b>
+      </h1>
       <p className={styles.bodyContent}>{result.content}</p>
+      {result && <RelevantTools toolLink={result.link} />}
     </span>
   );
 }

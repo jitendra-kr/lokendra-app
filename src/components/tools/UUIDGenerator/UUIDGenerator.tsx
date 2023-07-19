@@ -1,13 +1,13 @@
 import { message } from "antd";
 import { withRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { messageError } from "../../../utils";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
 function UUIDGenerator() {
-  const limit = 50000;
+  const limit = 70000;
   const [count, setCount] = useState(1);
   const [byte, setByte] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
@@ -31,6 +31,8 @@ function UUIDGenerator() {
       });
       return;
     }
+
+    console.log("1");
     openMessage();
     setByte("");
     let uuidStr = "";
