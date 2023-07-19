@@ -64,7 +64,9 @@ export default function MyApp({ Component, pageProps }) {
             justifyContent: "center",
           }}
         >
-          <div className="col col-12 col-md-2"></div>
+          <div className="col col-12 col-md-2">
+            <AdComponent />
+          </div>
           <div
             className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
             style={{
