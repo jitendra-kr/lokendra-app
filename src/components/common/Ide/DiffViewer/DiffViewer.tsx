@@ -36,7 +36,7 @@ export default function DiffViewer({
 
   function handleEditorDidMount(editor: MonacoDiffEditor, monaco: Monaco) {
     diffEditorRef.current = editor;
-    editor.focus();
+    editor.getOriginalEditor().focus();
   }
 
   const getOrignalValue = () => {

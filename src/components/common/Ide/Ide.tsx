@@ -1,5 +1,6 @@
 import Editor from "@monaco-editor/react";
 import { editor } from "monaco-editor";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
 import { getToolInput } from "../../../common/selectors";
@@ -10,13 +11,20 @@ import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { messageError, messageSuccess, repairJSON } from "../../../utils";
 import { InputOutputActionButton } from "../Buttons";
 import {
-  EditorActions,
   EditorActionsButtons,
   FormatInput,
+  MiniMap,
   MonoType,
 } from "./EditorActions";
 import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
+
+const EditorActions = dynamic(
+  () => import("./EditorActions").then((mod) => mod.EditorActions),
+  {
+    ssr: false,
+  },
+);
 
 export type EditorCallBackOptions = {
   monoType?: boolean;
@@ -24,20 +32,16 @@ export type EditorCallBackOptions = {
 type IdeProps = {
   cb?: (value: string | undefined, options?: EditorCallBackOptions) => void;
   error?: (value: string | undefined) => void;
-  minimapEnabled?: boolean;
   options?: {
     monotype?: boolean;
     format?: boolean;
   };
 };
 
-export default function Ide({
-  cb,
-  error,
-  minimapEnabled = true,
-  options,
-}: IdeProps) {
+export default function Ide({ cb, error, options }: IdeProps) {
   const [monoType, setMonoType] = useState(false);
+  const [miniMap, setMiniMap] = useState(false);
+
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const dispatch = useAppDispatch();
   const paramsLoaded = useRef(false);
@@ -134,6 +138,10 @@ export default function Ide({
     );
   };
 
+  const handleMiniMapChange = (status: boolean) => {
+    setMiniMap(status);
+  };
+
   return (
     <>
       <EditorActions
@@ -163,7 +171,10 @@ export default function Ide({
           </>
         }
         childrenAfter={
-          <>{options?.monotype && <MonoType onChange={onMonoTypeChange} />}</>
+          <>
+            {options?.monotype && <MonoType onChange={onMonoTypeChange} />}
+            <MiniMap onChange={handleMiniMapChange} />
+          </>
         }
       />
       <Editor
@@ -182,8 +193,7 @@ export default function Ide({
           mouseWheelZoom: true,
           smoothScrolling: true,
           minimap: {
-            enabled: minimapEnabled,
-            showSlider: "always",
+            enabled: miniMap,
           },
           bracketPairColorization: {
             enabled: true,

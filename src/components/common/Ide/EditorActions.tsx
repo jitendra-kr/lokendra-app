@@ -35,6 +35,20 @@ export function MonoType({
   );
 }
 
+export function MiniMap({ onChange }: { onChange: (status: boolean) => void }) {
+  return (
+    <Tooltip title="Show / Hide Mini Map">
+      <Switch
+        style={{ marginTop: "10px", marginRight: "5px" }}
+        checkedChildren="Mini Map"
+        unCheckedChildren="Mini Map"
+        defaultChecked={false}
+        onChange={onChange}
+      />
+    </Tooltip>
+  );
+}
+
 export function FormatInput({
   value,
   cb,
