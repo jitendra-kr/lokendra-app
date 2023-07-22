@@ -22,7 +22,7 @@ const Reasons = () => {
     `Discover the power of precision with the unrivalled quality and dependability of ${STRING_CONSTANTS.global.domain}. Our tools is the best option regardless of whether you're a student, data analyst, business owner, or developer because of its superiority and dependability.`,
     `Your data, in our opinion, is your most significant asset. We never use or sell your information to outside parties because of this. Therefore, why use tools that compromise your data?? Choose
     ${STRING_CONSTANTS.global.domain} and take control of your data
-    today!`,
+    today.`,
   ];
 
   return (
