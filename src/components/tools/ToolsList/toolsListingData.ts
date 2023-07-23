@@ -316,7 +316,7 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
   {
     title: "URL Decoder",
     link: SCREENS.URL_DECODE,
-    heading: "Url Decode - Decode URL-encoded text",
+    heading: "URL Decoder - Decode URL-encoded text",
     content: " Just load your text, System will automatically decode URL",
     metaTitle: seoData.UrlDecode.title,
     metaDescription: seoData.UrlDecode.description,
@@ -337,7 +337,7 @@ Another important quality of our URL decoder is its accuracy. We understand that
   {
     title: "URL Encoder",
     link: SCREENS.URL_ENCODE,
-    heading: "Url Encode - Encode URL-encoded text",
+    heading: "URL Encoder - Encode URL-encoded text",
     content: " Just load your text, System will automatically decode URL",
     metaTitle: seoData.URLEncode.title,
     metaDescription: seoData.URLEncode.description,
@@ -358,7 +358,7 @@ Not only is our URL encoder fast, but it is also incredibly user-friendly and 10
     link: SCREENS.UUID_GENERATOR,
     heading: "UUID Generator - v4",
     content:
-      "Type the desired number and then click Generate UUID to experience the Benefits of Our Fast and Secure UUID Generator. Eliminate the Risk of Duplicate Identifiers with Our Random UUID Generator",
+      "Experience the Benefits of Our Fast and Secure UUID Generator.\nEliminate the Risk of Duplicate Identifiers with Our Random UUID Generator",
     metaTitle: seoData.UUIDGenerator.title,
     metaDescription: seoData.UUIDGenerator.description,
     list: true,
