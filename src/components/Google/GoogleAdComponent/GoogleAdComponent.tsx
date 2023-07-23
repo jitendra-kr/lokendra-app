@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function AdComponent() {
+export function GoogleAdComponent() {
   useEffect(() => {
     var ads = document.getElementsByClassName("adsbygoogle").length;
     for (var i = 0; i < ads; i++) {
