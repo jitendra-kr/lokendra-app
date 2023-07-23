@@ -1,5 +1,6 @@
 export * from "./AdComponent";
 export { default as MainFooter } from "./Footer";
+export * from "./GoogleAnalytics";
 export { default as AppHead } from "./Head/head";
 export { default as MainHeader } from "./Header";
 export * from "./HomePage";
