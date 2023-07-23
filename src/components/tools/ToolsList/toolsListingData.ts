@@ -358,7 +358,7 @@ Not only is our URL encoder fast, but it is also incredibly user-friendly and 10
     link: SCREENS.UUID_GENERATOR,
     heading: "UUID Generator - v4",
     content:
-      "Experience the Benefits of Our Fast and Secure UUID Generator.\nEliminate the Risk of Duplicate Identifiers with Our Random UUID Generator",
+      "Type the desired number and then click Generate UUID to experience the Benefits of Our Fast and Secure UUID Generator. Eliminate the Risk of Duplicate Identifiers with Our Random UUID Generator",
     metaTitle: seoData.UUIDGenerator.title,
     metaDescription: seoData.UUIDGenerator.description,
     list: true,
