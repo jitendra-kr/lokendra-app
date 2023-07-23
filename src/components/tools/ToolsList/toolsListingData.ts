@@ -58,7 +58,7 @@ export const toolsListData: Array<ITools> = [
   {
     title: "ASCII to String",
     link: SCREENS.ASCII_TO_STRING,
-    heading: "Convert ASCII to String Online with Ease and Accuracy",
+    heading: "Convert ASCII to String: Online with Ease and Accuracy",
     content:
       "Just load your ASCII code, System will automatically convert it to text",
     metaTitle: seoData.asciiToString.title,
