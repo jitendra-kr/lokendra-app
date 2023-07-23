@@ -70,7 +70,7 @@ export default function MyApp({ Component, pageProps }) {
           <div
             className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
             style={{
-              marginTop: "50px",
+              marginTop: "25px",
             }}
           >
             <Component {...pageProps} />

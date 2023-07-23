@@ -22,7 +22,11 @@ export function RelevantTools({ toolLink }: { toolLink: SCREENS }) {
         <b>Relevant Tools:</b>
       </span>
       {releventTools[toolLink].map((tool) => (
-        <Button type="default" style={{ marginRight: "5px" }}>
+        <Button
+          type="default"
+          style={{ marginRight: "5px" }}
+          key={getTool(tool)?.link}
+        >
           <span>
             <Link href={getTool(tool)?.link ?? "/"}>
               {getTool(tool)?.title}
@@ -33,10 +37,9 @@ export function RelevantTools({ toolLink }: { toolLink: SCREENS }) {
       <Link
         className={RelevantToolsStyles["changing-text-color"]}
         href="#tool-list"
-        style={{ marginTop: "5px" }}
         scroll={false}
       >
-        <b>Explore More Options</b>
+        <b>Explore Other Tools</b>
       </Link>
     </div>
   );

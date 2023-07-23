@@ -18,7 +18,13 @@ export function ToolsBody() {
       <h1 className={styles.bodyTitle}>
         <b>{result.heading}</b>
       </h1>
-      <p className={styles.bodyContent}>{result.content}</p>
+      <div className={styles.container}>
+        <h2 className={styles.howToUse}>
+          <b>How to use: </b>
+        </h2>
+        <p className={styles.bodyContent}>{result.content}</p>
+      </div>
+
       {result && <RelevantTools toolLink={result.link} />}
     </span>
   );

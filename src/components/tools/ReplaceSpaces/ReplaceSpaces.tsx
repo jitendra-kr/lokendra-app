@@ -1,4 +1,4 @@
-import { Input, Layout } from "antd";
+import { Input } from "antd";
 import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ToolKeys } from "../ToolsList";
@@ -6,7 +6,6 @@ import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import ReplaceSpacesStyles from "./ReplaceSpaces.module.css";
-const { Content } = Layout;
 
 function ReplaceSpaces() {
   const [byte, setByte] = useState("");
@@ -15,11 +14,12 @@ function ReplaceSpaces() {
   const [replaceWith, setReplaceWith] = useState("");
 
   function replaceWithUnderscore() {
-    if (!input) {
+    if (!input || input === " ") {
       setByte("");
       return;
     }
     var reg = new RegExp(toReplace ? toReplace : / /, "g");
+    console.log("byte", input.length);
     setByte(input.replace(reg, replaceWith ? replaceWith : "_"));
   }
 

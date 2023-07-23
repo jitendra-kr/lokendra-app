@@ -1,21 +1,17 @@
-@keyframes changeColor {
+@keyframes blink {
   0% {
-    color: orange;
-  }
-  25% {
-    color: palevioletred;
+    opacity: 1;
   }
   50% {
-    color: darkred;
-  }
-  75% {
-    color: #e507e5;
+    opacity: 0.5;
   }
   100% {
-    color: green;
+    opacity: 1;
   }
 }
 
 .changing-text-color {
-  animation: changeColor 6s infinite;
+  margin-top: 5px;
+  color: #00b894;
+  animation: blink 1s linear infinite;
 }

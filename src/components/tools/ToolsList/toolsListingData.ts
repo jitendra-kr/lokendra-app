@@ -244,9 +244,9 @@ User-friendliness is at the core of our Word Counter tool. The interface is desi
 Accuracy is paramount when it comes to analyzing and understanding your content, and our Word Counter tool delivers exceptional results. It ensures that every word, character, and sentence is properly counted, without leaving room for errors or inconsistencies. This is particularly crucial for writers, editors, and students who rely on accurate data for various purposes such as meeting word count requirements, tracking progress, or analyzing text patterns.`,
   },
   {
-    title: "Replace Space with Underscore",
+    title: "Replace Spaces with Underscore",
     link: SCREENS.REPLACE_SPACES,
-    heading: "Replace Spaces Online - Easily Replace Spaces or Any Text",
+    heading: "Replace Spaces with Underscores",
     metaTitle: seoData.ReplaceSpaces.title,
     metaDescription: seoData.ReplaceSpaces.description,
     content: `Just load your content or text, By default system will replace all spaces with underscores
