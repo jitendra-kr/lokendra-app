@@ -91,7 +91,7 @@ export const toolsListData: Array<ITools> = [
     \nIn conclusion, our it is a fast, easy-to-use, and accurate tool that is indispensable for developers and data analysts. With its efficient processing capabilities, precise conversion algorithms, and user-friendly interface, it simplifies the process of converting JSON data to a string. Experience the convenience and reliability of our converter today and unlock the full potential of your JSON data.`,
   },
   {
-    title: "JSON Parser",
+    title: "JSON Formatter",
     link: SCREENS.JSON_PARSER,
     heading: "Online JSON Formatter, Parser, Beautifier & Validator",
     content:
