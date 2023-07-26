@@ -78,5 +78,9 @@
   "XML_FORMATTER": {
     "title": " XML Formatter Online Tool - Format and Beautify XML easily",
     "description": "Effortlessly format and organize your XML code with our reliable XML formatter tool. Format and beautify XML code for enhanced readability and maintainability!"
+  },
+  "XML_MINIFIER": {
+    "title": "XML Minifier - Compress XML Files Instantly",
+    "description": "Experience the power of our user-friendly XML Minifier, designed to compress XML documents effortlessly. It removes extra spaces, line breaks, comments, etc."
   }
 }

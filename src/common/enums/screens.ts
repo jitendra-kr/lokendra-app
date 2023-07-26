@@ -21,6 +21,7 @@ export enum SCREENS {
 
   // XML tools
   "XML_FORMATTER" = "/xml-tools/xml-formatter",
+  "XML_MINIFIER" = "/xml-tools/xml-minifier",
 
   // encoding/decoding tools
   "URL_DECODE" = "/encoding-decoding-tools/url-decode",

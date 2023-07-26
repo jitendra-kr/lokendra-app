@@ -24,6 +24,7 @@ export enum ToolKeys {
   REMOVE_EXTRA_SPACES = "REMOVE_EXTRA_SPACES",
   REMOVE_SPACES = "REMOVE_SPACES",
   XML_FORMATTER = "XML_FORMATTER",
+  XML_MINIFIER = "XML_MINIFIER",
 }
 
 export interface ITools extends SeoTags {
@@ -419,8 +420,30 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
       `Instant Results: Experience lightning-fast results as the XML Formatter works its magic in no time. No waiting around – see the beautifully formatted XML output right before your eyes.`,
       `Improved Readability: Properly formatted XML code improves readability, making it easier to understand the structure of your XML data. This is especially helpful for large XML files, configuration files, and data exchange between applications.`,
       `Error-Free Output: The XML Formatter's robust parsing and validation process ensures that the output is 100 % error-free.`,
-      `Compatible with Various XML Formats: Compatible with a variety of XML Formats: The XML Formatter can handle both simple configuration files and complicated XML data. It produces reliable, polished results and supports several XML formats.`,
+      `Compatible with a variety of XML Formats: The XML Formatter can handle both simple configuration files and complicated XML data. It produces reliable, polished results and supports several XML formats.`,
       `Download Formatted XML: The XML Formatter is also providing an option to download their well-formatted XML files. After formatting your XML code to perfection, simply click the "Download" button on top of the output window, and the XML file will be saved instantly to your device. This feature allows for seamless integration into your development workflow, enabling you to quickly access and share the formatted XML files with colleagues and clients.`,
+    ],
+  },
+  {
+    title: "XML Minifier",
+    link: SCREENS.XML_MINIFIER,
+    heading: "XML Minifier",
+    metaTitle: seoData.XML_MINIFIER.title,
+    metaDescription: seoData.XML_MINIFIER.description,
+    content:
+      "Just load your XML, and the system will validate and minify it automatically.",
+    list: true,
+    key: ToolKeys.XML_MINIFIER,
+    toolDescription: `Welcome to the XML Minifier, your go-to online tool for reducing the size of XML documents without sacrificing readability. With our efficient XML minification process, you can optimize your XML files, which will save space and improve performance. Whether you're a web developer or simply working with XML data, our easy-to-use XML Minifier is your key to transforming bloated XML into sleek, streamlined code.
+    \nTry it to Experience the power of our user-friendly XML Minifier, designed to compress and optimize your XML documents effortlessly`,
+    keyFeatures: [
+      `Simple and Intuitive Interface:  Our XML Minifier's user interface is simple and easy to use, enabling anyone to easily minify XML files without the need for complicated configurations or technical knowledge.`,
+      `Instant Minification: See results right away as your XML code is effectively compressed and cleared of extraneous elements by the XML Minifier, saving significant development time.`,
+      `Optimize SEO:  Quicker website loading times, and a better user experience are all benefits of optimising SEO with minified XML.`,
+      `Maintain XML Structure: You may be confident that our XML Minifier keeps your XML structure's integrity, guaranteeing that your data is correct and usable.`,
+      `Error-Free Minification: Our programme is made to work with XML files of all complexity levels, offering error-free minification and protecting your data in the process.`,
+      `Compatible with Various XML Formats: Compatible with a variety of XML Formats: The XML Minifier can handle both simple and complicated XML data.`,
+      `Download Minified XML: The XML Minifier is also providing an option to download their minified XML files. After Minifier your XML code to perfection, simply click the "Download" button on top of the output window, and the XML file will be saved instantly to your device.`,
     ],
   },
 ];
