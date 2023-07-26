@@ -23,6 +23,7 @@ export enum ToolKeys {
   JSON_TO_TYPESCRIPT = "JSON_TO_TYPESCRIPT",
   REMOVE_EXTRA_SPACES = "REMOVE_EXTRA_SPACES",
   REMOVE_SPACES = "REMOVE_SPACES",
+  XML_FORMATTER = "XML_FORMATTER",
 }
 
 export interface ITools extends SeoTags {
@@ -33,6 +34,7 @@ export interface ITools extends SeoTags {
   list: boolean;
   key: ToolKeys;
   toolDescription: string;
+  keyFeatures?: string[];
 }
 
 export const jsonParser = "json-parser";
@@ -398,8 +400,27 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
     \nCertainly! An online salary hike percentage calculator is a free online tool that allows you to calculate the percentage increase in your salary after a raise or promotion. This tool is especially useful for employees who are negotiating a salary increase or trying to estimate their future earnings. 
     \n To use the calculator, you simply enter your current salary, the amount of the raise, and any other relevant information, such as the frequency of pay periods. The calculator then calculates the percentage increase in your salary and displays the new salary amount.`,
   },
+  {
+    title: "XML Formatter",
+    link: SCREENS.XML_FORMATTER,
+    heading: "XML Formatter",
+    metaTitle: seoData.XML_FORMATTER.title,
+    metaDescription: seoData.XML_FORMATTER.description,
+    content:
+      "Just load your XML, and the system will validate and format it automatically.",
+    list: true,
+    key: ToolKeys.XML_FORMATTER,
+    toolDescription: `Welcome to the XML Formatter, an online tool designed to simplify the process of validating, formatting, and beautifying XML files. With this intuitive and efficient tool, you can transform your messy or unstructured XML code into well-organized, human-readable documents effortlessly. 
+    \nThe XML Formatter handles everything, saving you time and guaranteeing that your XML files are easy for you to understand and manage. No more manual indentation or aggravation.
+    \nTake advantage of the XML Formatter's simplicity and convenience to speed up your development process. Goodbye to XML formatting hassles and welcome to tidy, presentable XML files
+    \nStart formatting your XML files hassle-free with the XML Formatter tool now!`,
+    keyFeatures: [
+      `Simple and Intuitive Interface: The XML Formatter's user-friendly interface makes it accessible to both beginners and experienced developers. Just paste or upload your XML code, and witness the magic unfold.`,
+      `Instant Results: Experience lightning-fast results as the XML Formatter works its magic in no time. No waiting around – see the beautifully formatted XML output right before your eyes.`,
+      `Improved Readability: Properly formatted XML code improves readability, making it easier to understand the structure of your XML data. This is especially helpful for large XML files, configuration files, and data exchange between applications.`,
+      `Error-Free Output: The XML Formatter's robust parsing and validation process ensures that the output is 100 % error-free.`,
+      `Compatible with Various XML Formats: Compatible with a variety of XML Formats: The XML Formatter can handle both simple configuration files and complicated XML data. It produces reliable, polished results and supports several XML formats.`,
+      `Download Formatted XML: The XML Formatter is also providing an option to download their well-formatted XML files. After formatting your XML code to perfection, simply click the "Download" button on top of the output window, and the XML file will be saved instantly to your device. This feature allows for seamless integration into your development workflow, enabling you to quickly access and share the formatted XML files with colleagues and clients.`,
+    ],
+  },
 ];
-
-// toolsListData.forEach((element) => {
-//   element.toolDescription = `${element.toolDescription}The tool's Share option allows you to create a special URL that you may share with others.`;
-// });

@@ -19,6 +19,9 @@ export enum SCREENS {
   "JSON_DIFF" = "/json-tools/json-diff-compare",
   "JSON_TO_TYPESCRIPT" = "/json-tools/json-to-typescript-interface",
 
+  // XML tools
+  "XML_FORMATTER" = "/xml-tools/xml-formatter",
+
   // encoding/decoding tools
   "URL_DECODE" = "/encoding-decoding-tools/url-decode",
   "URL_ENCODE" = "/encoding-decoding-tools/url-encode",

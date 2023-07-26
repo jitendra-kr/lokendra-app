@@ -30,15 +30,22 @@ export type EditorCallBackOptions = {
   monoType?: boolean;
 };
 type IdeProps = {
+  language?: string;
   cb?: (value: string | undefined, options?: EditorCallBackOptions) => void;
   error?: (value: string | undefined) => void;
   options?: {
     monotype?: boolean;
     format?: boolean;
+    repair?: boolean;
   };
 };
 
-export default function Ide({ cb, error, options }: IdeProps) {
+export default function Ide({
+  language = "json",
+  cb,
+  error,
+  options,
+}: IdeProps) {
   const [monoType, setMonoType] = useState(false);
   const [miniMap, setMiniMap] = useState(false);
 
@@ -154,16 +161,18 @@ export default function Ide({ cb, error, options }: IdeProps) {
                 <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
               }
             />
-            <EditorActionsButtons
-              children={
-                <InputOutputActionButton
-                  name="Repair"
-                  onClick={onRepairClick}
-                  mdIcon={<AiFillTool color={COLOR_CONST.defaultIcon} />}
-                  tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
-                />
-              }
-            />
+            {options && options.repair && (
+              <EditorActionsButtons
+                children={
+                  <InputOutputActionButton
+                    name="Repair"
+                    onClick={onRepairClick}
+                    mdIcon={<AiFillTool color={COLOR_CONST.defaultIcon} />}
+                    tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+                  />
+                }
+              />
+            )}
             {options?.format && (
               <FormatInput value={globalInputValue ?? ""} cb={onFormat} />
             )}
@@ -181,7 +190,7 @@ export default function Ide({ cb, error, options }: IdeProps) {
         onMount={handleEditorDidMount}
         theme={theme}
         height="74vh"
-        defaultLanguage="json"
+        language={language}
         onValidate={handleEditorValidation}
         onChange={onChange}
         className={styles.editor}

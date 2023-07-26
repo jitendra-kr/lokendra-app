@@ -74,5 +74,9 @@
   "homePage": {
     "title": "Secure and Reliable Online Tools",
     "description": "Introducing our suite of powerful and user-friendly tools designed to simplify your data management tasks for developers and non-technical users alike!"
+  },
+  "XML_FORMATTER": {
+    "title": " XML Formatter Online Tool - Format and Beautify XML easily",
+    "description": "Effortlessly format and organize your XML code with our reliable XML formatter tool. Format and beautify XML code for enhanced readability and maintainability!"
   }
 }

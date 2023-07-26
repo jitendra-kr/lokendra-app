@@ -49,7 +49,7 @@ function JsonToString() {
             <Editor
               cb={isJsonString}
               error={onError}
-              options={{ format: true }}
+              options={{ format: true, repair: true }}
             />
           </div>
         </div>

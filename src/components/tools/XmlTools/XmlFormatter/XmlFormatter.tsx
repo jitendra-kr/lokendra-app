@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { minifyJSON } from "../../../../utils";
+import { formatXml } from "../../../../utils";
 import Ide from "../../../common/Ide/Ide";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { JsonViewer } from "../../helper/JsonViewer";
 
-export function JSONMinify() {
+export function XmlFormatter() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
@@ -23,7 +23,7 @@ export function JSONMinify() {
     setByte("");
   };
 
-  function isJsonString(str: string | undefined) {
+  function ideCb(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -35,9 +35,9 @@ export function JSONMinify() {
     if (error) {
       setError("");
     }
-    const { beautifiedData, msg } = minifyJSON(str);
-    if (beautifiedData) {
-      setByte(beautifiedData);
+    const { data, msg } = formatXml(str);
+    if (data) {
+      setByte(data);
     }
     if (msg) {
       setError(msg);
@@ -48,15 +48,25 @@ export function JSONMinify() {
     <InputOutputViewer
       inputChild={
         <div className="col-lg-6">
-          <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
+          <Ide
+            language="xml"
+            cb={ideCb}
+            error={onError}
+            options={{ repair: false }}
+          />
         </div>
       }
       outputChild={
         <div className="col-lg-6">
-          <JsonViewer content={byte} error={error} editorError={editorError} />
+          <JsonViewer
+            language="xml"
+            content={byte}
+            error={error}
+            editorError={editorError}
+          />
         </div>
       }
-      toolId={ToolKeys.JSON_MINIFIER}
+      toolId={ToolKeys.XML_FORMATTER}
       byte={byte}
     />
   );

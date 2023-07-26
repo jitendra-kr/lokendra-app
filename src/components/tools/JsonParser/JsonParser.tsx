@@ -49,7 +49,7 @@ function JsonParser() {
     <InputOutputViewer
       inputChild={
         <div className="col-lg-6">
-          <Ide cb={isJsonString} error={onError} />
+          <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
         </div>
       }
       outputChild={

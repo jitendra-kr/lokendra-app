@@ -62,7 +62,7 @@ export function JSONToTypescript() {
           <Ide
             cb={isJsonString}
             error={onError}
-            options={{ monotype: true, format: true }}
+            options={{ monotype: true, format: true, repair: true }}
           />
         </div>
       }

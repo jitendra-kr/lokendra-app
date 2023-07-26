@@ -59,7 +59,11 @@ export function InputOutputViewer({
           )}
           {!children && <ToolOutput byte={byte} outputChild={outputChild} />}
         </div>
-        <ToolDescription content={toolData.toolDescription} />
+        <ToolDescription
+          content={toolData.toolDescription}
+          name={toolData.title}
+          keyFeatures={toolData.keyFeatures}
+        />
         <ToolsList />
       </Content>
     </>

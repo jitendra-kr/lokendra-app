@@ -11,4 +11,5 @@ export * from "./URLDecode";
 export * from "./URLEncode";
 export * from "./UUIDGenerator";
 export * from "./WordCounter";
+export * from "./XmlTools";
 export * from "./helper/JsonViewer";
