@@ -1,0 +1,27 @@
+{
+  "storeName": "Fictional Electronics",
+  "location": "New York",
+  "contact": {
+    "email": "sample@email.com",
+    "phone": "(123) 456-7890"
+  },
+  "products": [
+    {
+      "id": "003",
+      "name": "Smart TV",
+      "brand": "FictoVision",
+      "price": 799.99,
+      "description": "An Ultra HD smart TV with a large display and built-in streaming services.",
+      "inStock": false,
+      "colors": ["Black"],
+      "specs": {
+        "screenSize": "55 inches",
+        "resolution": "4K Ultra HD",
+        "refreshRate": "120Hz",
+        "smartFeatures": true,
+        "connectivity": "Wi-Fi, Bluetooth",
+        "ports": ["HDMI", "USB", "Ethernet"]
+      }
+    }
+  ]
+}

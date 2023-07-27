@@ -14,5 +14,8 @@
   "editor.formatOnSave": true,
   "react-hooks/exhaustive-deps": "warn",
   "java.configuration.updateBuildConfiguration": "automatic",
-  "githubPullRequests.ignoredPullRequestBranches": ["master"]
+  "githubPullRequests.ignoredPullRequestBranches": ["master"],
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }

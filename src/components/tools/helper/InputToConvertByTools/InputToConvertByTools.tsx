@@ -54,11 +54,7 @@ export const InputToConvertByTools = ({
 
   const onChange = ({ target: { value } }: onChangeProp) => {
     onChangeCb(value);
-    dispatch(
-      updateToolsInput({
-        value: value,
-      }),
-    );
+    dispatch(updateToolsInput(value));
   };
 
   useEffect(() => {

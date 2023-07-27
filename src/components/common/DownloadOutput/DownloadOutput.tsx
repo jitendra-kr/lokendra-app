@@ -15,6 +15,8 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
     [SCREENS.JSON_PARSER]: ".json",
     [SCREENS.JSON_MINIFIER]: ".json",
     [SCREENS.JSON_TO_TYPESCRIPT]: ".ts",
+    [SCREENS.XML_FORMATTER]: ".xml",
+    [SCREENS.XML_MINIFIER]: ".xml",
   };
   const onClick = () => {
     const ext = pathname && fileExt[pathname];

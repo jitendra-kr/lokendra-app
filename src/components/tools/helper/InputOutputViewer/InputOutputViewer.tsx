@@ -2,7 +2,7 @@ import { Layout } from "antd";
 import dynamic from "next/dynamic";
 import styles from "../../../../../styles/StringToAscii.module.css";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
-import { OfflineMetaTags } from "../../../common";
+import { OfflineMetaTags, SampleData } from "../../../common";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolKeys } from "../../ToolsList";
 import { ToolDescription } from "../ToolOverview";
@@ -64,6 +64,7 @@ export function InputOutputViewer({
           name={toolData.title}
           keyFeatures={toolData.keyFeatures}
         />
+        <SampleData pathname={toolData.link} />
         <ToolsList />
       </Content>
     </>

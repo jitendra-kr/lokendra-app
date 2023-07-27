@@ -4,12 +4,14 @@ export interface InputState {
   value?: string;
   diffLeftValue?: string;
   diffRightValue?: string;
+  loadSampleData: boolean;
 }
 
 const initialState: InputState = {
   value: "",
   diffLeftValue: "",
   diffRightValue: "",
+  loadSampleData: false,
 };
 
 interface IValue {
@@ -20,8 +22,11 @@ export const counterSlice = createSlice({
   name: "updateToolsInput",
   initialState,
   reducers: {
-    updateToolsInput: (state: InputState, value: IValue) => {
-      state.value = value.payload.value;
+    updateToolsInput: (
+      state: InputState,
+      { payload }: PayloadAction<string>,
+    ) => {
+      state.value = payload;
     },
     updateDiffLeftInput: (
       state: InputState,
@@ -35,6 +40,13 @@ export const counterSlice = createSlice({
     ) => {
       state.diffRightValue = payload;
     },
+    updateSampleData: (
+      state: InputState,
+      { payload }: PayloadAction<boolean>,
+    ) => {
+      state.loadSampleData = payload;
+    },
+
     resetInput: () => initialState,
   },
 });
@@ -43,6 +55,7 @@ export const {
   updateToolsInput,
   updateDiffLeftInput,
   updateDiffRightInput,
+  updateSampleData,
   resetInput,
 } = counterSlice.actions;
 

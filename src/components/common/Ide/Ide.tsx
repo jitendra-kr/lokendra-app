@@ -4,7 +4,10 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
 import { getToolInput } from "../../../common/selectors";
-import { updateToolsInput } from "../../../common/state/tools";
+import {
+  updateSampleData,
+  updateToolsInput,
+} from "../../../common/state/tools";
 import { COLOR_CONST } from "../../../constants";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
@@ -53,7 +56,8 @@ export default function Ide({
   const dispatch = useAppDispatch();
   const paramsLoaded = useRef(false);
   const [theme, setTheme] = useState<string>();
-  const { value: globalInputValue } = useAppSelector(getToolInput);
+  const { value: globalInputValue, loadSampleData } =
+    useAppSelector(getToolInput);
 
   const {
     params: { data: paramsData },
@@ -73,11 +77,7 @@ export default function Ide({
 
   const onChange = (value: string | undefined) => {
     cb?.(value, { monoType: monoType });
-    dispatch(
-      updateToolsInput({
-        value: value ?? "",
-      }),
-    );
+    dispatch(updateToolsInput(value ?? ""));
   };
 
   useEffect(() => {
@@ -88,6 +88,13 @@ export default function Ide({
       return;
     }
   }, [paramsData]);
+
+  useEffect(() => {
+    if (loadSampleData && globalInputValue) {
+      onChange(globalInputValue);
+      dispatch(updateSampleData(false));
+    }
+  }, [loadSampleData, globalInputValue]);
 
   const clear = () => {
     editorRef.current?.setValue("");
@@ -138,11 +145,7 @@ export default function Ide({
   };
 
   const onFormat = (valueToFormat: string) => {
-    dispatch(
-      updateToolsInput({
-        value: valueToFormat,
-      }),
-    );
+    dispatch(updateToolsInput(valueToFormat));
   };
 
   const handleMiniMapChange = (status: boolean) => {

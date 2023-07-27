@@ -15,7 +15,7 @@ export function ToolsBody() {
 
   return (
     <span>
-      <h1 className={styles.bodyTitle}>
+      <h1 id="top" className={styles.bodyTitle}>
         <b>{result.heading}</b>
       </h1>
       <div className={styles.container}>
