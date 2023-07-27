@@ -22,7 +22,7 @@ export function GoogleAdComponent() {
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
-      <ins
+      {/* <ins
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-4375413214168925"
@@ -37,7 +37,7 @@ export function GoogleAdComponent() {
         data-ad-slot="6157382493"
         data-ad-format="auto"
         data-full-width-responsive="true"
-      ></ins>
+      ></ins> */}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Spin } from "antd";
+import { Col, Row, Spin } from "antd";
 import "bootstrap/dist/css/bootstrap.css";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
@@ -56,30 +56,20 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Spin className="center-loader" spinning={loader} size="large" />
+        <Analytics />
         <MainHeader />
-        <div
-          className="row"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <div className="col col-12 col-md-2">
+        <Row style={{ marginTop: "25px" }}>
+          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
             <GoogleAdComponent />
-          </div>
-          <div
-            className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-11"
-            style={{
-              marginTop: "25px",
-            }}
-          >
+          </Col>
+          <Col xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
             <Component {...pageProps} />
-            <Analytics />
-          </div>
-          <div className="col col-12 col-md-2">
+          </Col>
+          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
             <GoogleAdComponent />
-          </div>
-        </div>
+          </Col>
+        </Row>
+
         <MainFooter />
       </Provider>
     </>
