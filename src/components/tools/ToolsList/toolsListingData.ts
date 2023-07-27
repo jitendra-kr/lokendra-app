@@ -215,6 +215,14 @@ Moreover, our JSON Diff tool offers an additional benefit by allowing users to r
 When it comes to security, our JSON Diff tool prioritizes the protection of user data. We have implemented robust security measures to safeguard the confidentiality and integrity of the JSON files processed through our tool. Users can have peace of mind knowing that their sensitive data is protected at all times.
     
 In summary, our secure JSON Diff tool combines the functionalities of performing comparisons, validating JSON, and repairing minor issues, all while offering speed, user-friendliness, and accuracy. Whether you're a developer, data analyst, or someone working with JSON files, this tool is an invaluable resource for enhancing productivity and ensuring data quality.`,
+    keyFeatures: [
+      "Effortless JSON Comparison: JSON comparisons are simple to do, making it easy to spot discrepancies between two JSON objects and saving time and effort during data processing.",
+      "User-Friendly Interface: Our tool offers an intuitive layout that is simple to understand and use, making JSON comparison available to users of all levels of expertise.",
+      "Safe and Secure: The safety and confidentiality of your data is very important. To protect your input and results and to provide a secure comparison procedure, the JSON Diff Tool uses powerful safeguards techniques.",
+      "Download Comparison Output: Take complete control over your JSON diff results with the option to download them as a downloadable file.",
+      "Repair JSON Support: Our tool contains a special Repair JSON function that, prior to comparison, automatically finds and fixes syntax errors that occur inside JSON objects to ensure precise and error-free data.",
+      "JSON Formatting: Our technology also enables you to format JSON data during comparison, providing it with a clear framework and making it simpler to understand for improved data evaluation.",
+    ],
   },
   {
     title: "Text to Uppercase",
