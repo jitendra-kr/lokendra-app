@@ -1,3 +1,4 @@
+import { BiSolidRightArrow } from "react-icons/bi";
 import { useGetUrlPath } from "../../../hooks";
 import { RelevantTools } from "../../common";
 import { toolsListData } from "../ToolsList/toolsListingData";
@@ -20,7 +21,9 @@ export function ToolsBody() {
       </h1>
       <div className={styles.container}>
         <h2 className={styles.howToUse}>
-          <b>How to use: </b>
+          <b>
+            How to use {result.title} <BiSolidRightArrow />{" "}
+          </b>
         </h2>
         <p className={styles.bodyContent}>{result.content}</p>
       </div>

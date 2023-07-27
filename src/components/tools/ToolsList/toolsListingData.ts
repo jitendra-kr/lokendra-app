@@ -319,8 +319,8 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
   {
     title: "URL Decoder",
     link: SCREENS.URL_DECODE,
-    heading: "URL Decoder - Decode URL-encoded text",
-    content: " Just load your text, System will automatically decode URL",
+    heading: "URL Decoder",
+    content: " Just load your text, System will automatically decode it",
     metaTitle: seoData.UrlDecode.title,
     metaDescription: seoData.UrlDecode.description,
     list: true,
@@ -340,8 +340,8 @@ Another important quality of our URL decoder is its accuracy. We understand that
   {
     title: "URL Encoder",
     link: SCREENS.URL_ENCODE,
-    heading: "URL Encoder - Encode URL-encoded text",
-    content: " Just load your text, System will automatically decode URL",
+    heading: "URL Encoder",
+    content: " Just load your text, System will automatically encode ot",
     metaTitle: seoData.URLEncode.title,
     metaDescription: seoData.URLEncode.description,
     list: true,

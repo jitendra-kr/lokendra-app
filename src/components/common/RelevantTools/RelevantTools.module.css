@@ -12,6 +12,6 @@
 
 .changing-text-color {
   margin-top: 5px;
-  color: #00b894;
+  color: darkgreen;
   animation: blink 1s linear infinite;
 }

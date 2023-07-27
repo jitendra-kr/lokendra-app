@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import Link from "next/link";
+import { BiSolidRightArrow } from "react-icons/bi";
 import { SCREENS } from "../../../common/enums";
 import { toolsListData } from "../../tools";
 import RelevantToolsStyles from "./RelevantTools.module.css";
@@ -17,9 +18,11 @@ export function RelevantTools({ toolLink }: { toolLink: SCREENS }) {
   }
 
   return (
-    <div style={{ marginBottom: "10px" }}>
+    <div style={{ marginBottom: "3px" }}>
       <span style={{ marginRight: "5px" }}>
-        <b>Relevant Tools:</b>
+        <b>
+          Relevant Tools <BiSolidRightArrow />
+        </b>
       </span>
       {releventTools[toolLink].map((tool) => (
         <Button
