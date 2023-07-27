@@ -248,6 +248,11 @@ We also understand that cost can be a concern for many users. That's why we offe
     
 Don't waste another minute manually capitalizing text – try our Convert Text to Uppercase tool and experience the convenience and efficiency it brings to your life. Elevate your written communication, save time, and effortlessly make your words stand out with our irresistible tool
     `,
+    keyFeatures: [
+      "Text Conversion Made Simple: Convert text to UPPERCASE format quickly even without clicking.",
+      "User-Friendly Design: Our application has an intuitive and simple design that allows users of all professional levels to convert text to UPPERCASE.",
+      "Download Converted Output: Take pleasure in the convenience of obtaining the converted output as a downloadable file. Save and access your uppercase text offline for later use or sharing in a moment.",
+    ],
   },
   {
     title: "Text to Lowercase",
