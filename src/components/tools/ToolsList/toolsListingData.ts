@@ -181,6 +181,14 @@ Generating TypeScript interfaces based on your provided data has never been easi
 Using our JSON conversion tool, you can streamline your development process and eliminate the tedious task of manually converting JSON to Interface. The generated TypeScript interfaces provide strong typing and improved code readability, enhancing the maintainability of your code.
 
 Whether you're a seasoned developer or just starting out, our tool is suitable for all skill levels. You don't have to be a TypeScript expert to benefit from the power of strong typing. Our user-friendly interface simplifies and intuitively converts your code, allowing you to focus on what matters most: creating outstanding software.`,
+    keyFeatures: [
+      "Seamless JSON to TypeScript Conversion: Effortlessly convert JSON data into TypeScript interfaces and types, saving time and ensuring compatibility with TypeScript projects.",
+      "User-Friendly Interface: Our tool's user-friendly interface makes converting JSON to TypeScript accessible to developers of all skill levels.",
+      "Safe and Secure: The security of your data is very important. Strong methods of security are used by the JSON to Typescript Tool to protect your input and output, guaranteeing a secure conversion procedure.",
+      "Download Converted Result: With the option to download your TypeScript output as a downloaded file.",
+      "Repair JSON Support: In addition to Typescript transformation, our tool has a special Repair JSON capability that detects and corrects syntax mistakes in JSON automatically to make sure the JSON data is error-free.",
+      "JSON Formatting: Before the transformation, you can format JSON data using our tool to give it a well-organized, readable manner.",
+    ],
   },
   {
     title: "JSON Diff",
