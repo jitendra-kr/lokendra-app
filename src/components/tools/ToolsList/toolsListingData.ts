@@ -126,7 +126,14 @@ Easily parse, beautify and Validate JSON data with our reliable and secure onlin
     \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
     \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, wrap key and values to double quotes, fix incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
     \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers. Once      
-    \nIn conclusion, our secure JSON formatter tool is a fast, easy-to-use, and accurate solution for developers and data analysts. With its robust validation process, speedy formatting capabilities, and user-friendly interface, it simplifies the process of beautify json data while ensuring data integrity and security. Experience the convenience and reliability of it today and unlock the full potential of your JSON data.`,
+    `,
+    keyFeatures: [
+      "Easy JSON Formatting: Easily format your JSON data so that it is well-organized and easy to read and understand, improving code comprehension and data analysis.",
+      "User-Friendly Interface: Our tool has a user-friendly interface that allows users of all technical levels to access JSON formatting. You can instantly get the formatted version by entering your JSON data.",
+      "Safe and Secure: The security of your JSON data, which your aiming to formar is our primary concern. To protect your input and outcomes, the JSON Formatter uses powerful security techniques, resulting in a risk-free formatting procedure.",
+      `Download Formatted Output: Take advantage of the choice to obtain the formatted JSON as a downloadable file by clicking Download button`,
+      "Support for Repair JSON: In addition to regular formatting, our tool has a special Repair JSON capability. It instantly finds and fixes syntax mistakes in JSON objects to ensure accurate and error-free output.",
+    ],
   },
   {
     title: "JSON Minifier",
