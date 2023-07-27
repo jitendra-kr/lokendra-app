@@ -48,7 +48,7 @@ export function SampleData({ pathname }: { pathname: string }) {
   return (
     <>
       <h2 className="heading">
-        A Simple and Concise {data[category].toUpperCase()} Example{" "}
+        A Simple and Concise {example && example.toUpperCase()} Example{" "}
       </h2>
 
       <div>
