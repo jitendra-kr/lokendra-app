@@ -57,6 +57,14 @@ export const toolsListData: Array<ITools> = [
     \nOur online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, an paragraph or document, It can handle it all with ease. Simply enter your text or upload text file into the tool, and it will instantly generate the corresponding ASCII code for each character. 
     \nThis tool is particularly useful for developers, programmers, and anyone who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations. 
     `,
+    keyFeatures: [
+      "Instant ASCII Conversion: Effortlessly convert any text into its corresponding ASCII codes in real-time.",
+      "User-Friendly Interface: Our intuitive and easy-to-navigate interface ensures a seamless experience for users of all technical levels. Just enter your text, and the ASCII codes are generated instantly",
+      "Cross-Platform Accessibility: Use your desktop computer, laptop, tablet, or smartphone to easily access the String to ASCII Converter from any device.",
+      "Reliable Accuracy: The tool ensures exact and precise results, guaranteeing that your ASCII codes are precisely generated and that your data is consistent.",
+      "Safe and Secure: Rest assured that your data is treated with the utmost care. Our platform employs robust encryption measures to keep your input and results safe and secure",
+      "Download Converted Output: Download the converted ASCII codes for offline use or further processing. Easily save the results as a text file for convenient access and sharing.",
+    ],
   },
   {
     title: "ASCII to String",
@@ -73,8 +81,15 @@ export const toolsListData: Array<ITools> = [
     \nOne of the standout features of our ASCII codes to String converter is its speed. We understand the importance of time, especially when dealing with significant volumes of data. Our converter is optimized to process the information swiftly, ensuring that you can convert your ASCII-encoded data into readable strings without unnecessary delays.
     \nAccuracy is another key aspect of our converter. We have implemented sophisticated algorithms and technologies to ensure that the conversion process is highly precise. You can trust that the resulting strings will be an accurate representation of the original ASCII-encoded data. This level of accuracy is crucial, particularly in scenarios where data integrity is paramount.
     \nThe user-friendly nature of our converter sets it apart from others in the market. We have designed the interface to be intuitive and straightforward, making it accessible to users of all skill levels. Whether you are a seasoned professional or a novice, you can navigate our converter with ease. The clear instructions and prompts provided throughout the conversion process further enhance the user experience, ensuring that you can effortlessly achieve the desired results.
-    \nFurthermore, our converter is constantly updated to ensure compatibility with the latest ASCII standards and industry practices. We strive to stay ahead of the curve and provide our users with a reliable and up-to-date solution. This commitment to continuous improvement sets us apart as a trusted provider of ASCII to readable String conversion tools.
     `,
+    keyFeatures: [
+      "Easy ASCII Decoding: Quickly and easily transform ASCII codes back into readable text. No manual decoding is necessary because our technology takes care of it for you.",
+      "User-Friendly Interface: Our user-friendly interface guarantees a smooth experience for users of all technical abilities. It is clear and intuitive. You only need to enter your ASCII codes to instantly generate the relevant text.",
+      "Reliable Accuracy: You may be confident that your ASCII codes will be accurately and precisely translated into their original text form",
+      "Safe and Secure: The protection of your data is crucial. Our platform uses strong security controls to safeguard your input and output, guaranteeing a private and risk-free ASCII conversion process.",
+      "Speed and efficiency: Take advantage of our tool's high-speed capabilities for fast decoding.",
+      "Download Converted Output: Take command of your data by downloading the decoded text as a downloadable file. Save the results and access them offline",
+    ],
   },
   {
     title: "JSON to String",
@@ -125,13 +140,18 @@ Easily parse, beautify and Validate JSON data with our reliable and secure onlin
     key: ToolKeys.JSON_MINIFIER,
     toolDescription: `Are you tired of dealing with large, unwieldy JSON files that slow down your website? Do you wish there was an easy and secure way to compress and optimize your JSON data for better performance and faster load times? Look no further than our JSON Minifier!
     \nWith our tool, you can effortlessly minify and compress your JSON data, reducing its size by up to 80% while still maintaining its original quality and data structure. It uses advanced compression algorithms to ensure that your data remains secure throughout the process, protecting your sensitive information from prying eyes and data breaches.
-    \nBut that's not all - our JSON Minifier tool offers a range of benefits for your website or application, including:
-    \n1. Improved Performance: By reducing the size of your JSON data, our tool can help improve your website or application's overall performance and load times, resulting in a better user experience for your visitors.
-    \n2. Cost Savings: Smaller file sizes allow you to cut bandwidth usage and server storage expenses, which over time will save you a lot of money.    .
-    \n3. Faster Data Transfer: With compressed JSON data, you can transfer data more quickly, allowing for faster data transfers and quicker communication between the server and client.
-    \n4. Easy to use: Our tool is easy to use and can be quickly minify JSON data, Just after typing data tool starts compressing and minifying your JSON data right away.
     \nSo why wait? Try our JSON Minify tool today and see the benefits for yourself. Say goodbye to slow load times and hello to optimized JSON data with just a few clicks!
     `,
+    keyFeatures: [
+      "Effortless JSON Minification: Minify your JSON data quickly and easily, decreasing its size and optimising its structure for improve performance and data transmission efficiency.",
+      "User-Friendly Interface: Our tool features an easy-to-use interface that makes JSON minification accessible to users of all technical backgrounds. Simply enter your JSON data and it will be minified in no time.",
+      "Safe and Secure: Your data security is our top priority. The JSON Minify Tool applies reliable security techniques to protect your input and results, assuring a safe and secure minification procedure.",
+      "Cost Savings: Smaller file sizes allow you to cut bandwidth usage and server storage expenses, which over time will save you a lot of money.",
+      "Faster Data Transfer: With compressed JSON data, you can transfer data more quickly, allowing for faster data transfers and quicker communication between the server and client.",
+      "Easy to use: Our tool is easy to use and can be quickly minify JSON data, Just after typing data tool starts compressing and minifying your JSON data right away.",
+      "Repair JSON Support: Our tool has a one-of-a-kind Repair JSON feature. It recognizes and fixes syntax problems and inconsistencies within JSON objects, ensuring valid and error-free data.",
+      "Download Minified Output: Use the option to download the minified JSON as a downloaded file.",
+    ],
   },
   {
     title: "JSON to Typescript",

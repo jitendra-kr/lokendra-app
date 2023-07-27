@@ -44,14 +44,16 @@ export function SampleData({ pathname }: { pathname: string }) {
   };
 
   const example = data[category];
-
+  if (!example) {
+    return <></>;
+  }
   return (
     <>
       <h2 className="heading">
         A Simple and Concise {example && example.toUpperCase()} Example{" "}
       </h2>
 
-      <div>
+      <div style={{ marginBottom: "80px" }}>
         {example === "xml" && <ShowCodeBlock code={xmldata} language="xml" />}
         {example === "json" && (
           <ShowCodeBlock
