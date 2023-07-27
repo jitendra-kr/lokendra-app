@@ -227,9 +227,9 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
   {
     title: "Text to Uppercase",
     link: SCREENS.TEXT_TO_UPPERCASE,
-    heading: "Easily Convert Text & Strings to Uppercase Online",
+    heading: "Easily Convert Text to Uppercase Online",
     content:
-      "Just load your text, System will automatically convert it to upper case text",
+      "Just load your text, System will automatically convert it to uppercase",
     metaTitle: seoData.toUppercase.title,
     metaDescription: seoData.toUppercase.description,
     list: true,
@@ -252,9 +252,9 @@ Don't waste another minute manually capitalizing text – try our Convert Text t
   {
     title: "Text to Lowercase",
     link: SCREENS.TEXT_TO_LOWERCASE,
-    heading: "Easily Convert Text & Strings to Lowercase Online",
+    heading: "Easily Convert Text to Lowercase Online",
     content:
-      " Just load your text, System will automatically convert it to lower case text",
+      " Just load your text, System will automatically convert it to lowercase",
     metaTitle: seoData.toLowercase.title,
     metaDescription: seoData.toLowercase.description,
     list: true,

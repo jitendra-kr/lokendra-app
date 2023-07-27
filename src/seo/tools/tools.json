@@ -28,12 +28,12 @@
     "description": "Convert strings to ASCII with our free online tool. Quickly and accurately convert text, numbers, and symbols into binary code. Try it and see how easy it is!"
   },
   "toLowercase": {
-    "title": "Quickly Convert Text or Strings to Lowercase Online",
-    "description": "Effortlessly convert text to lowercase with TextToLower, an intuitive online tool. Transform uppercase and mixed-case text to lowercase. Try it now for free!"
+    "title": "Quickly Convert Text to Lowercase Online",
+    "description": "Effortlessly convert text to lowercase with our intuitive online tool. Transform uppercase and mixed-case text to lowercase. Try it now for free!"
   },
   "toUppercase": {
-    "title": "Quickly Convert Text or Strings to Uppercase Online",
-    "description": "Instantly convert your text or strings to uppercase, a convenient online tool. Transform lowercase and mixed-case text to uppercase easily. Try it now for free!"
+    "title": "Quickly Convert Text to Uppercase Online",
+    "description": "Instantly convert your text to uppercase, a convenient online tool. Transform lowercase and mixed-case text to uppercase easily. Try it now for free!"
   },
   "toolsList": {
     "title": "Developer Tools",
