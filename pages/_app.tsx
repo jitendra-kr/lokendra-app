@@ -58,7 +58,9 @@ export default function MyApp({ Component, pageProps }) {
         <Spin className="center-loader" spinning={loader} size="large" />
         <Analytics />
         <MainHeader />
-        <Row style={{ marginTop: "25px" }}>
+        <Row
+          style={{ marginTop: "25px", marginLeft: "5px", marginRight: "5px" }}
+        >
           <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
             <GoogleAdComponent />
           </Col>
