@@ -300,12 +300,12 @@ User-friendliness is at the core of our Word Counter tool. The interface is desi
 Accuracy is paramount when it comes to analyzing and understanding your content, and our Word Counter tool delivers exceptional results. It ensures that every word, character, and sentence is properly counted, without leaving room for errors or inconsistencies. This is particularly crucial for writers, editors, and students who rely on accurate data for various purposes such as meeting word count requirements, tracking progress, or analyzing text patterns.`,
   },
   {
-    title: "Replace Spaces with Underscore",
+    title: "Replace Space with Underscore",
     link: SCREENS.REPLACE_SPACES,
-    heading: "Replace Spaces with Underscores",
+    heading: "Replace Space with Underscore",
     metaTitle: seoData.ReplaceSpaces.title,
     metaDescription: seoData.ReplaceSpaces.description,
-    content: `Just load your content or text, By default system will replace all spaces with underscores
+    content: `Just load your content or text, By default system will replace all spaces with underscore
       if you need to replace specific character please use below input fields accordingly`,
     list: true,
     key: ToolKeys.ReplaceSpaces,
@@ -316,6 +316,10 @@ Our tool is designed to be fast, user-friendly, and accurate. Delete your need t
 But wait, there's more! Our tool goes beyond simple space replacement. We understand that there might be instances where you need to replace specific text with provided characters. Our tool caters to this need as well, providing an additional feature to replace any specific text with the characters of your choice. This versatility sets our tool apart, making it a powerful all-in-one solution.
     
 In addition to its speed and accuracy, our Replace Space with Underscore tool is also incredibly user-friendly. With its intuitive interface, you can quickly grasp how to use the tool, regardless of your technical expertise. Whether you're a professional in need of efficient file management or a casual user wanting to tidy up your text documents, our tool ensures a seamless experience for everyone.`,
+    keyFeatures: [
+      "Simple and efficient: Our application includes an easy-to-use UI that makes the procedure simple for users of all skill levels. Just after typing or pasting, you can rapidly turn spaces into underscores, improving URL readability and compatibility with browsers.",
+      "Download Your Results: Take control of your converted text by saving it as a handy file.",
+    ],
   },
   {
     title: "Remove Extra Spaces",
@@ -329,13 +333,15 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
     key: ToolKeys.REMOVE_EXTRA_SPACES,
     toolDescription: `Introducing our game-changing solution for removing extra spaces from your content - it's time to experience cleaner and more professional-looking text! Say goodbye to the frustration of uneven spacing and hello to streamlined, polished content with our innovative Remove Extra Spaces tool.
     \nWhether you're a writer, editor, student, or professional, our tool is designed to make your life easier and enhance your work. Gone are the days of laboriously scanning through your text to manually fix those pesky extra spaces. With just a few clicks, our tool intelligently detects and removes all excessive spaces, transforming your content into a polished masterpiece.
-    \nHere's why our Remove Extra Spaces tool is an absolute must-have:
-    \n1. Enhanced Readability: Extra spaces can disrupt the flow and readability of your content. By eliminating those unnecessary spaces, our tool ensures that your text is easy on the eyes and a joy to read. Impress your readers with clean, well-formatted content that holds their attention from start to finish.
-    \n2. Professional Appearance: Whether it's an important business presentation, a school assignment, or a captivating blog post, the way your content looks matters. Our tool brings professionalism to the forefront by ensuring consistent spacing throughout your text. Stand out from the crowd with content that exudes quality and attention to detail.
-    \n3. Time-saving Efficiency: We understand that time is precious, and manual space removal is a tedious, time-consuming task. Our Remove Extra Spaces tool is lightning-fast, allowing you to quickly process and refine your content without breaking a sweat. Spend less time on formatting and more time on what truly matters - creating exceptional content.
-    \n4. Error Prevention: Extra spaces can often lead to unintended formatting errors or distortions in your content. Our tool eradicates these potential pitfalls, giving you peace of mind that your content will be error-free, professional, and ready to impress your audience.
-    \n5. Seamless Integration: Our Remove Extra Spaces tool seamlessly integrates into your existing workflow. With an intuitive interface and straightforward instructions, it's incredibly user-friendly, even for those with limited technical skills. Simply copy and paste your text, click a button, and watch as our tool works its magic.
     \nDon't let extra spaces diminish the impact of your content. Harness the power of our Remove Extra Spaces tool and unlock a new level of professionalism and efficiency. Try it today and experience the transformation for yourself. Your content deserves to shine with precision and perfection!`,
+    keyFeatures: [
+      "Enhanced Readability: Extra spaces can disrupt the flow and readability of your content. By eliminating those unnecessary spaces, our tool ensures that your text is easy on the eyes and a joy to read. Impress your readers with clean, well-formatted content that holds their attention from start to finish.",
+      "Professional Appearance: Whether it's an important business presentation, a school assignment, or a captivating blog post, the way your content looks matters. Our tool brings professionalism to the forefront by ensuring consistent spacing throughout your text. Stand out from the crowd with content that exudes quality and attention to detail.",
+      "Time-saving Efficiency: We understand that time is precious, and manual space removal is a tedious, time-consuming task. Our Remove Extra Spaces tool is lightning-fast, allowing you to quickly process and refine your content without breaking a sweat. Spend less time on formatting and more time on what truly matters - creating exceptional content.",
+      "Error Prevention: Extra spaces can often lead to unintended formatting errors or distortions in your content. Our tool eradicates these potential pitfalls, giving you peace of mind that your content will be error-free, professional, and ready to impress your audience.",
+      "Seamless Integration: Our Remove Extra Spaces tool seamlessly integrates into your existing workflow. With an intuitive interface and straightforward instructions, it's incredibly user-friendly, even for those with limited technical skills. Simply copy and paste your text, click a button, and watch as our tool works its magic.",
+      "Download Results: Our tool allows you to download your converted content.",
+    ],
   },
   {
     title: "Remove Spaces",
@@ -348,13 +354,15 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
     key: ToolKeys.REMOVE_SPACES,
     toolDescription: `Tired of dealing with messy data caused by unnecessary spaces? Our simple, yet powerful Remove Spaces tool is the solution you've been searching for. With just a few clicks, you can eliminate extra spaces and optimize your text for improved readability, easier analysis and sharing.
     Our tool is designed to work seamlessly with text of any length, from small snippets to large datasets. It not only removes spaces, but also eradicates other common whitespace characters, such as tabs or newlines, to leave you with clean and organized text that's easy to use and understand.
-    Here are some of the key benefits of our Remove Spaces tool:
-    \n1. Saves Your Time: No more manual editing or complex tools to remove spaces from your text! Our simple solution does the job quickly and easily, allowing you to focus on other important tasks.
-    \n2. Increases Accuracy: Extra spaces and whitespace characters can be a serious distraction, making it harder to spot anomalies or irregularities in your data. By ensuring that your text is clean and properly formatted, our tool helps improve accuracy, reduce errors, and simplify analysis.
-    \n3. Improves Readability: Optimize your content for clear communication and easy comprehension. Remove Spaces can be especially useful as a preparation step before sending or sharing text, such as emails, reports, or articles.
-    \n4. Enhances SEO: Unnecessary spaces in your webpages or blog posts can hurt your SEO efforts by impacting keyword density and readability. By using our Remove Spaces tool, you can ensure that your website's content is properly formatted for optimal SEO rankings.
     \nOur Remove Spaces tool is available online and is free to use. Don't let inefficient data harm your productivity or reputation - try our Remove Spaces tool today and experience the benefits for yourself!
     `,
+    keyFeatures: [
+      "Saves Your Time: No more manual editing or complex tools to remove spaces from your text! Our simple solution does the job quickly and easily, allowing you to focus on other important tasks.",
+      "Increases Accuracy: Extra spaces and whitespace characters can be a serious distraction, making it harder to spot anomalies or irregularities in your data. By ensuring that your text is clean and properly formatted, our tool helps improve accuracy, reduce errors, and simplify analysis.",
+      "Improves Readability: Optimize your content for clear communication and easy comprehension. Remove Spaces can be especially useful as a preparation step before sending or sharing text, such as emails, reports, or articles.",
+      "Enhances SEO: Unnecessary spaces in your webpages or blog posts can hurt your SEO efforts by impacting keyword density and readability. By using our Remove Spaces tool, you can ensure that your website's content is properly formatted for optimal SEO rankings.",
+      "Download Results: You can use our tool to download your content after removing spaces.",
+    ],
   },
 
   {
@@ -389,6 +397,12 @@ Not only is our URL decoder fast, but it is also incredibly user-friendly. You d
 When it comes to privacy and security, our URL decoder tool takes every precaution to ensure your data remains safe and protected. We prioritize the confidentiality of your data and employ robust security measures to safeguard it.
     
 Another important quality of our URL decoder is its accuracy. We understand that precision matters when it comes to tasks such as decoding URLs, and our tool guarantees accurate results every time. Rest assured that the decoded URLs will retain their original integrity, ensuring seamless integration into your online activities.`,
+    keyFeatures: [
+      "Decode URL-encoded strings: URL Decoder is a tool designed for decoding URL-encoded strings, allowing users to effortlessly transform encoded characters back to their original form.",
+      "Simple and user-friendly interface: The tool offers a simple and intuitive interface that enables users to easily input URL-encoded strings and decode them.",
+      "Instant decoding results: Users will get the decoded output right away using just after stat trying or pasting, saving time and effort.",
+      "Download converted output: Users can download the decoded result as a file, making it easier to analyse or share with others.",
+    ],
   },
   {
     title: "URL Encoder",
@@ -408,6 +422,13 @@ What sets our URL encoder apart is its remarkable speed. We understand the impor
 Your privacy and security matter to us, and we are committed to maintaining the highest standards in protecting your data. Feel confident in using our URL encoder tool, knowing that your information is handled with the utmost care and security.
 
 Not only is our URL encoder fast, but it is also incredibly user-friendly and 100% secure. You don't need to be a tech guru to use it! Our intuitive interface guides you through the process, making it accessible for both beginners and experts alike. Simply type, paste, or upload your URL into the tool, and your encoded URL is ready to use.`,
+    keyFeatures: [
+      "Encode URLs fast and easily: The URL Encoder tool allows users to encode URLs quickly and easily, ensuring that special characters and reserved words are appropriately represented.",
+      "User-friendly interface: The application has a simple and straightforward interface that allows users to quickly enter URLs and encode them with a few clicks.",
+      "Instant encoding results: Users will get encoded output in an instant, saving time and eliminating the need for manual encoding.",
+      "Handling Errors: The URL Encoder tool tackles any encoding issues, delivering accurate and dependable results.",
+      "Download converted output: Users can download the encoded output as a file, making it easier to use or share with others.",
+    ],
   },
   {
     title: "UUID Generator",
@@ -427,6 +448,11 @@ One of the key features of our tool is its fast speed. We understand that time m
 A Version 4 UUID is a randomly generated universally unique identification number. To generate Version 4 UUIDs, this website employs a secure random UUID  generator algorithm.
 
 Furthermore, our UUID generation tool is really simple to and use ensuring that your data is always protected. Our user-friendly design eliminates the need for you to spend time learning how to utilise our application. Our tool is simple to use regardless of your technological ability, making it a versatile option for a wide range of users.`,
+    keyFeatures: [
+      "Effortless UUID Generation: Create unique identifiers with the press of a button. Our solution removes the complications, giving you trustworthy UUIDs without requiring any expertise in technology.",
+      "High-volume production: Do you require thousands of UUIDs? Not a problem! Our tool can easily generate up to 70,000 UUIDs, making it suitable for projects of any size.",
+      "Downloadable Output: Take control of your generated UUIDs by downloading them as files. Organize and integrate UUIDs into your projects as quickly as needed.",
+    ],
   },
   {
     title: "",
