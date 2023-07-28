@@ -276,6 +276,11 @@ Accuracy is paramount when it comes to converting text to lowercase, and our too
     
 By using our Text to Lowercase converter, you can enjoy a multitude of benefits. Firstly, it saves you time and energy by automating the conversion process. Secondly, it guarantees consistency and accuracy, eliminating the risk of manual errors. Lastly, it enhances productivity, allowing you to focus on other important tasks instead of spending valuable time converting text.
     `,
+    keyFeatures: [
+      "Seamless Conversion: Just after typing or loading a local file, you will see your text transform to lowercase.",
+      "Improve Readability: Because lowercase making is easier to read, your message will reach your audience with optimum clarity.",
+      "Downloadable Output: Gain the flexibility to store your converted text as a downloadable document, which makes it easier to bring it into your projects.",
+    ],
   },
   {
     title: "Word Counter",
