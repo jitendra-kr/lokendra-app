@@ -285,8 +285,8 @@ By using our Text to Lowercase converter, you can enjoy a multitude of benefits.
   {
     title: "Word Counter",
     link: SCREENS.WORD_COUNTER,
-    heading: "Accurate Word and Character Counter Tool",
-    content: " Just load your text, System will automatically start counting ",
+    heading: "Accurate Word Counter Tool",
+    content: " Just load your text, System will automatically count words ",
     metaTitle: seoData.wordCounter.title,
     metaDescription: seoData.wordCounter.description,
     list: true,
