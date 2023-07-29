@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import { Col, Row, Spin } from "antd";
 import "bootstrap/dist/css/bootstrap.css";
 import dynamic from "next/dynamic";
@@ -6,7 +5,11 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { store } from "../src/common/state";
-import { GoogleAdComponent, MainHeader } from "../src/components";
+import {
+  GoogleAdComponent,
+  MainHeader,
+  VercelAnalytics,
+} from "../src/components";
 
 import { pageview } from "../lib/gtag";
 import "../styles/global.css";
@@ -56,7 +59,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Spin className="center-loader" spinning={loader} size="large" />
-        <Analytics />
+        <VercelAnalytics />
         <MainHeader />
         <Row
           style={{ marginTop: "25px", marginLeft: "5px", marginRight: "5px" }}
