@@ -1,13 +1,6 @@
 import { GA_TRACKING_ID } from "../../../../lib/gtag";
-import { useAllowAnalytics } from "../../../hooks";
 
 export function GoogleAnalytics() {
-  const allow = useAllowAnalytics();
-
-  if (!allow) {
-    return <></>;
-  }
-
   return (
     <>
       <script

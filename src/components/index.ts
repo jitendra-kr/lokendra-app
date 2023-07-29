@@ -4,7 +4,6 @@ export { default as AppHead } from "./Head/head";
 export { default as MainHeader } from "./Header";
 export * from "./HomePage";
 export * from "./PrivacyPolicy";
-export * from "./Vercel";
 export * from "./tools";
 export { default as AsciiToString } from "./tools/AsciiToString/AsciiToString";
 export { default as JsonParser } from "./tools/JsonParser/JsonParser";
