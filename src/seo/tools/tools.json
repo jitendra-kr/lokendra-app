@@ -82,5 +82,13 @@
   "XML_MINIFIER": {
     "title": "XML Minifier - Compress XML Files Instantly",
     "description": "Experience the power of our user-friendly XML Minifier, designed to compress XML documents effortlessly. It removes extra spaces, line breaks, comments, etc."
+  },
+  "XML_TO_JSON": {
+    "title": "XML to JSON Converter | Convert XML to JSON with Ease",
+    "description": "Convert XML to JSON quickly with our user-friendly online tool. Seamlessly transform your XML data into JSON format, compatible with various XML structures."
+  },
+  "JSON_TO_XML": {
+    "title": "JSON to XML Converter | Transform JSON Data into XML Format",
+    "description": "Convert JSON to XML format effortlessly with our user-friendly online converter. Enjoy instant results, versatile compatibility, and complete data privacy."
   }
 }

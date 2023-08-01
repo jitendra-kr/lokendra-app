@@ -18,10 +18,12 @@ export enum SCREENS {
   "JSON_MINIFIER" = "/json-tools/secure-reliable-json-minifier-compressor",
   "JSON_DIFF" = "/json-tools/json-diff-compare",
   "JSON_TO_TYPESCRIPT" = "/json-tools/json-to-typescript-interface",
+  "JSON_TO_XML" = "/json-tools/json-to-xml-converter",
 
   // XML tools
   "XML_FORMATTER" = "/xml-tools/xml-formatter",
   "XML_MINIFIER" = "/xml-tools/xml-minifier",
+  "XML_TO_JSON" = "/xml-tools/xml-to-json-converter",
 
   // encoding/decoding tools
   "URL_DECODE" = "/encoding-decoding-tools/url-decode",

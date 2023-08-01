@@ -25,6 +25,8 @@ export enum ToolKeys {
   REMOVE_SPACES = "REMOVE_SPACES",
   XML_FORMATTER = "XML_FORMATTER",
   XML_MINIFIER = "XML_MINIFIER",
+  XML_TO_JSON = "XML_TO_JSON",
+  JSON_TO_XML = "JSON_TO_XML",
 }
 
 export interface ITools extends SeoTags {
@@ -222,6 +224,27 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
       "Download Comparison Output: Take complete control over your JSON diff results with the option to download them as a downloadable file.",
       "Repair JSON Support: Our tool contains a special Repair JSON function that, prior to comparison, automatically finds and fixes syntax errors that occur inside JSON objects to ensure precise and error-free data.",
       "JSON Formatting: Our technology also enables you to format JSON data during comparison, providing it with a clear framework and making it simpler to understand for improved data evaluation.",
+    ],
+  },
+  {
+    title: "JSON to XML",
+    link: SCREENS.JSON_TO_XML,
+    heading: "JSON to XML Converter",
+    metaTitle: seoData.JSON_TO_XML.title,
+    metaDescription: seoData.JSON_TO_XML.description,
+    content:
+      "Just load your JSON, and the system will automatically convert it to XML.",
+    list: true,
+    key: ToolKeys.JSON_TO_XML,
+    toolDescription: `We are pleased to welcome you to our cutting-edge Online JSON to XML Converter, the best choice for seamless data transformation. It has never been simpler or more effective to convert JSON to XML than it is with our user-friendly tool.
+    \nDiscover the power of automation as you quickly and easily convert your JSON data to XML format. The days of labor-intensive conversions and manual coding are long gone thanks to our converter, which automates the entire process and saves you a lot of time.`,
+    keyFeatures: [
+      "Simple and user-friendly interface: The JSON to XML Converter presents a simple, intuitive interface to make it simple for users to convert their JSON data into XML format.",
+      `Easy conversion process: By just pasting or uploading their JSON data into the tool's editor, users can instantly convert JSON to XML. There is no need for intricate configurations or settings.`,
+      `Repair JSON: Our tool has a capability that will automatically fix any input that is incomplete or improperly formed. It finds and fixes problems with the JSON structure to produce more precise conversion outcomes.`,
+      `Reliable and accurate conversion: The JSON to XML Converter ensures reliable and accurate conversion from JSON to XML.`,
+      `Download converted output:  Users have the option to download the transformed XML output as a file.
+      `,
     ],
   },
   {
@@ -521,8 +544,29 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
       `Optimize SEO:  Quicker website loading times, and a better user experience are all benefits of optimising SEO with minified XML.`,
       `Maintain XML Structure: You may be confident that our XML Minifier keeps your XML structure's integrity, guaranteeing that your data is correct and usable.`,
       `Error-Free Minification: Our programme is made to work with XML files of all complexity levels, offering error-free minification and protecting your data in the process.`,
-      `Compatible with Various XML Formats: Compatible with a variety of XML Formats: The XML Minifier can handle both simple and complicated XML data.`,
+      `Compatible with a variety of XML Formats: The XML Minifier can handle both simple and complicated XML data.`,
       `Download Minified XML: The XML Minifier is also providing an option to download their minified XML files. After Minifier your XML code to perfection, simply click the "Download" button on top of the output window, and the XML file will be saved instantly to your device.`,
+    ],
+  },
+  {
+    title: "XML to JSON",
+    link: SCREENS.XML_TO_JSON,
+    heading: "XML to JSON Converter",
+    metaTitle: seoData.XML_TO_JSON.title,
+    metaDescription: seoData.XML_TO_JSON.description,
+    content:
+      "Just load your XML, and the system will automatically convert it to JSON.",
+    list: true,
+    key: ToolKeys.XML_TO_JSON,
+    toolDescription: `We are pleased to present our state-of-the-art online XML to JSON Converter, a one-stop solution for simple data transformation! It has never been simpler or more convenient to convert XML to JSON than it is now thanks to our user-friendly tool.
+    \nSay goodbye to laborious coding and manual data manipulation. Just after typing or pasting, you can quickly convert XML files into JSON format using our streamlined XML to JSON Converter.
+    `,
+    keyFeatures: [
+      `Ease of Use: Our tool's design prioritises simplicity. It can be used without any technical expertise or programming expertise. Anyone may easily and rapidly convert XML to JSON without effort, from novices to seasoned professionals.`,
+      `Seamless Conversion: Easily convert your XML data to JSON format. Our converter guarantees dependability and accuracy while maintaining the integrity of your data.`,
+      `Privacy and Security: Data security is a responsibility we take seriously. Your privacy is always secured because your XML files and converted JSON outputs are never stored on our systems. `,
+      `Compatible with a variety of XML Formats: We designed our XML to JSON Converter to support a variety of XML formats. Our tool handles XML data with ease, regardless of whether it adheres to a specified standard or has unique tags.`,
+      `Downloadable Output: Obtain immediate access to your JSON files after transformation. There is no need to wait; simply download your results and incorporate them right away into your projects.`,
     ],
   },
 ];
