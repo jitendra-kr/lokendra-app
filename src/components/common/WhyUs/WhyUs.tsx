@@ -10,7 +10,7 @@ export function WhyUs({
 }) {
   return (
     <>
-      <h1 className={ToolDescriptionStyles.heading}>{heading}</h1>
+      <h2 className={ToolDescriptionStyles.heading}>{heading}</h2>
       <div
         style={{
           display: "flex",

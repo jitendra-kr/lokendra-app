@@ -1,8 +1,8 @@
 .content {
-  background-color: #0077be;
+  background-color: teal;
   color: white;
   padding: 10px;
   font-size: 18px;
   margin-top: 30px;
-  border-radius: 25px;
+  border-radius: 10px;
 }

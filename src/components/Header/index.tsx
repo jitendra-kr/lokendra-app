@@ -27,7 +27,7 @@ function MainHeader() {
   }, []);
 
   return (
-    <Header>
+    <Header id="heading">
       <Row>
         <Col span={24}>
           <Link
