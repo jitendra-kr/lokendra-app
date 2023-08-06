@@ -18,7 +18,7 @@ const Reasons = () => {
   const reasons = [
     `Our tools use cutting-edge encryption and safe data processing algorithms to guarantee that your data is completely secure.`,
     `Data is processed locally rather than being sent to external servers.`,
-    `It analyse and alter data significantly more quickly than other solutions on the market because to their strong algorithms and optimised speed.`,
+    `It analyse and alter data significantly more quickly than other solutions on the market because to its strong algorithms and optimised speed.`,
     `Discover the power of precision with the unrivalled quality and dependability of ${STRING_CONSTANTS.global.domain}. Our tools is the best option regardless of whether you're a student, data analyst, business owner, or developer because of its superiority and dependability.`,
     `Your data, in our opinion, is your most significant asset. We never use or sell your information to outside parties because of this. Therefore, why use tools that compromise your data?? Choose
     ${STRING_CONSTANTS.global.domain} and take control of your data
