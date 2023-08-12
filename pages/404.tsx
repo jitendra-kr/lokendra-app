@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 function Page404() {
   return (
-    <Content>
+    <Content style={{ height: "100vh" }}>
       <h1 style={{ textAlign: "center", marginTop: "50px" }}>Page Not Found</h1>
       <p style={{ textAlign: "center", marginTop: "50px", fontSize: "20px" }}>
         Oops! We couldn't find what you were looking for, but we're here to
