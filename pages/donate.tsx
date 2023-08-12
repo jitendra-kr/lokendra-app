@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import Link from "next/link";
 import React from "react";
 import { OfflineMetaTags } from "../src/components/common";
 import { STRING_CONSTANTS } from "../src/constants";
@@ -25,8 +26,8 @@ function DonatePage() {
         free, user-friendly online tools that empower developers, programmers,
         and tech enthusiasts. Our collection of tools, including JSON parsers,
         JSON minifiers, JSON to XML converters, XML to JSON converters, UUID
-        generators, and <a href="/">more</a>, are designed to simplify your work
-        and enhance your experience.
+        generators, and <Link href={"/"}>more</Link>, are designed to simplify
+        your work and enhance your experience.
       </p>
       <h2
         style={{ textAlign: "center", marginBottom: "50px", marginTop: "80px" }}
