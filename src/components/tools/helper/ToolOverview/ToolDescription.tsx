@@ -16,16 +16,7 @@ export const ToolDescription = ({
         How {`${name}`} is beneficial for you?
       </h2>
       <div className={ToolDescriptionStyles.container}>
-        <p
-          className={ToolDescriptionStyles.content}
-          style={
-            {
-              // fontFamily: "Inter",
-            }
-          }
-        >
-          {content}
-        </p>
+        <p className={ToolDescriptionStyles.content}>{content}</p>
       </div>
 
       {keyFeatures && keyFeatures.length && (
