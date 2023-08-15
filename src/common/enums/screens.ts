@@ -25,6 +25,9 @@ export enum SCREENS {
   "XML_MINIFIER" = "/xml-tools/xml-minifier",
   "XML_TO_JSON" = "/xml-tools/xml-to-json-converter",
 
+  // NUMBER tools
+  "NUMBER_TO_WORDS" = "/number-tools/number-to-word-converter",
+
   // encoding/decoding tools
   "URL_DECODE" = "/encoding-decoding-tools/url-decode",
   "URL_ENCODE" = "/encoding-decoding-tools/url-encode",

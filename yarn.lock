@@ -459,6 +459,11 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-18.17.0.tgz#35d44267a33dd46b49ee0f73d31b05fd7407e290"
   integrity sha512-GXZxEtOxYGFchyUzxvKI14iff9KZ2DI+A6a37o6EQevtg6uO9t+aUZKcaC1Te5Ng1OnLM7K9NVVj+FbecD9cJg==
 
+"@types/number-to-words@^1.2.1":
+  version "1.2.1"
+  resolved "https://spm-npm-registry-145797418373.d.codeartifact.eu-west-2.amazonaws.com/npm/private-npm-store/@types/number-to-words/-/number-to-words-1.2.1.tgz#45cbff14b655c30ebf584e6572c8440e788376cf"
+  integrity sha512-lwZhIftZ9f9NR6zfhgsH3lfRcmE/vpLSuGzKPQI7ypbVscoEWXMjp3dyC1xaPfolQZSqXszUwTtauMsS30OnWw==
+
 "@types/prettier@^2.6.1":
   version "2.7.3"
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.7.3.tgz#3e51a17e291d01d17d3fc61422015a933af7a08f"
@@ -1873,6 +1878,11 @@ node-releases@^2.0.12:
   version "2.0.13"
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.13.tgz#d5ed1627c23e3461e819b02e57b75e4899b1c81d"
   integrity sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==
+
+number-to-words@^1.2.4:
+  version "1.2.4"
+  resolved "https://spm-npm-registry-145797418373.d.codeartifact.eu-west-2.amazonaws.com/npm/private-npm-store/number-to-words/-/number-to-words-1.2.4.tgz#e0f124de9628f8d86c4eeb89bac6c07699264501"
+  integrity sha512-/fYevVkXRcyBiZDg6yzZbm0RuaD6i0qRfn8yr+6D0KgBMOndFPxuW10qCHpzs50nN8qKuv78k8MuotZhcVX6Pw==
 
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"

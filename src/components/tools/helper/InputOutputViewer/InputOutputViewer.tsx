@@ -22,6 +22,7 @@ type InputOutputViewerProps = {
   byte: string;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
+  error?: string;
 } & ToolInputProps;
 
 export function InputOutputViewer({
@@ -36,8 +37,10 @@ export function InputOutputViewer({
   inputChild,
   outputChild,
   options,
+  error = undefined,
 }: InputOutputViewerProps) {
   const { toolData } = useToolListData(toolId);
+  console.log("toolData", toolData);
 
   return (
     <>
@@ -57,7 +60,9 @@ export function InputOutputViewer({
               options={options}
             />
           )}
-          {!children && <ToolOutput byte={byte} outputChild={outputChild} />}
+          {!children && (
+            <ToolOutput byte={byte} outputChild={outputChild} error={error} />
+          )}
         </div>
         <ToolDescription
           content={toolData.toolDescription}

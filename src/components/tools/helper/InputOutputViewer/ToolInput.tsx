@@ -10,8 +10,13 @@ type InputOutputVieweoptions = {
   };
 };
 
+type Input = {
+  showInput: boolean;
+  buttonName: string;
+};
+
 export type ToolInputProps = {
-  input?: boolean;
+  input?: Input;
   inputChild?: React.ReactNode;
   onChangeCb?: (value: string) => void;
   placeholder?: string;
@@ -49,7 +54,7 @@ export function ToolInput({
                 inputNumber={inputNumber}
               />
             </div>
-            {input && (
+            {input?.buttonName && (
               <Button
                 type="primary"
                 className={InputOutputViewerStyles["input-button"]}
@@ -57,7 +62,7 @@ export function ToolInput({
                 disabled={options?.disable}
               >
                 <span className={InputOutputViewerStyles.buttonText}>
-                  Generate UUID
+                  {input.buttonName}
                 </span>
               </Button>
             )}

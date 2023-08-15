@@ -44,9 +44,10 @@ export const InputToConvertByTools = ({
   const { value } = useAppSelector(getToolInput);
   const { pathname } = useGetUrlPath();
 
-  const hideEditorActions = [SCREENS.UUID_GENERATOR].includes(
-    pathname as SCREENS,
-  );
+  const hideEditorActions = [
+    SCREENS.UUID_GENERATOR,
+    SCREENS.NUMBER_TO_WORDS,
+  ].includes(pathname as SCREENS);
 
   const {
     params: { data },
@@ -84,9 +85,11 @@ export const InputToConvertByTools = ({
       )}
       {type === inputType.input ? (
         <Input
+          size="large"
           placeholder={placeholder}
           style={{ marginTop: "30px" }}
           autoFocus
+          allowClear={true}
           onChange={(value) => {
             const errorKey = "invalidinput";
             messageDestroy(errorKey);

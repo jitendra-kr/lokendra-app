@@ -27,6 +27,7 @@ export enum ToolKeys {
   XML_MINIFIER = "XML_MINIFIER",
   XML_TO_JSON = "XML_TO_JSON",
   JSON_TO_XML = "JSON_TO_XML",
+  NUMBER_TO_WORDS = "NUMBER_TO_WORDS",
 }
 
 export interface ITools extends SeoTags {
@@ -475,6 +476,23 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
       "Effortless UUID Generation: Create unique identifiers with the press of a button. Our solution removes the complications, giving you trustworthy UUIDs without requiring any expertise in technology.",
       "High-volume production: Do you require thousands of UUIDs? Not a problem! Our tool can easily generate up to 70,000 UUIDs, making it suitable for projects of any size.",
       "Downloadable Output: Take control of your generated UUIDs by downloading them as files. Organize and integrate UUIDs into your projects as quickly as needed.",
+    ],
+  },
+  {
+    title: "Number To Word",
+    link: SCREENS.NUMBER_TO_WORDS,
+    heading: "Number To Word Converter",
+    metaTitle: seoData.NUMBER_TO_WORDS.title,
+    metaDescription: seoData.NUMBER_TO_WORDS.description,
+    content: "Just type number, and the system will convert it into word",
+    list: true,
+    key: ToolKeys.NUMBER_TO_WORDS,
+    toolDescription: `We are happy that you have chosen to use our free online Number to Word Converter! Our converter makes the procedure straightforward whether you're working with financial data, instructional materials, or any other scenario where it's needed to translate numbers into English.
+    \nHave you ever tried to verbalize a numerical value? Using our Number to Word Converter, you may convert any inputted number into the appropriate word form. When dealing with checks, invoices, legal documents, or anything else where verbalizing numbers is important, this can be quite helpful.`,
+    keyFeatures: [
+      `Quick and Accurate Conversion: By quickly and accurately converting numbers to words, our converter helps you save time and effort.`,
+
+      `Downloadable Output: You can download the translated words by choosing the download option..`,
     ],
   },
   {

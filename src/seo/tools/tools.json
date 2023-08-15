@@ -90,5 +90,9 @@
   "JSON_TO_XML": {
     "title": "JSON to XML Converter | Transform JSON Data into XML Format",
     "description": "Convert JSON to XML format effortlessly with our user-friendly online converter. Enjoy instant results, versatile compatibility, and complete data privacy."
+  },
+  "NUMBER_TO_WORDS": {
+    "title": "Number to Word Converter - Convert Numbers to Words Online",
+    "description": "Easily convert numbers to words with our online Number to Word Converter tool. Convert numeric values into their word representations."
   }
 }

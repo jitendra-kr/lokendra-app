@@ -1,6 +1,14 @@
 import { SCREENS } from "../../../common/enums";
 
 export const releventTools: Record<SCREENS, SCREENS[]> = {
+  // Number tools
+  [SCREENS.NUMBER_TO_WORDS]: [
+    SCREENS.UUID_GENERATOR,
+    SCREENS.JSON_PARSER,
+    SCREENS.JSON_DIFF,
+    SCREENS.XML_TO_JSON,
+  ],
+
   // XML tools
   [SCREENS.XML_FORMATTER]: [
     SCREENS.XML_MINIFIER,

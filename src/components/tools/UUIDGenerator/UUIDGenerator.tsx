@@ -59,7 +59,7 @@ function UUIDGenerator() {
         toolId={ToolKeys.UUIDGenerator}
         byte={byte}
         onChangeCb={onChangeCb}
-        input={true}
+        input={{ showInput: true, buttonName: "Generate UUID" }}
         onClick={onClick}
         inputNumber={true}
         placeholder={`Enter the desired number of UUIDs.: Max limit ${limit}`}
