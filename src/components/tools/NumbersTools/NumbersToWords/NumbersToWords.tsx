@@ -1,26 +1,60 @@
-import { toWords } from "number-to-words";
-import { useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+import { ToWords } from "to-words";
 import { capitalizeEveryWord, messageError } from "../../../../utils";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
+const NumbersToWordsOptions = dynamic(
+  () =>
+    import("./NumbersToWordsOptions").then((mod) => mod.NumbersToWordsOptions),
+  {
+    ssr: false,
+  },
+);
+
+const initialOptions = {
+  localeCode: "",
+  currency: false,
+};
+
+type InitialOptions = {
+  localeCode?: string;
+  currency?: boolean;
+};
+
 export function NumbersToWords() {
   const [byte, setByte] = useState("");
   const [error, setError] = useState("");
-
   const [number, setNumber] = useState<string>("");
+  const [options, setOptions] = useState<InitialOptions>(initialOptions);
 
-  const validateDot = (value: string) => {
-    var count = 0;
-    for (var i = 0; i < value.length; i++) {
-      if (value[i] === ".") {
-        count++;
-      }
-    }
-    return { isValid: count <= 1, array: value.split(".") };
+  useEffect(() => {
+    setOptions((value) => ({ ...value, localeCode: navigator.language }));
+  }, []);
+
+  const handleLocaleCodeChange = (v: string) => {
+    setOptions((value) => ({ ...value, localeCode: v }));
+    onChangeCb(number, v, options.currency);
   };
 
-  const onChangeCb = (value: string) => {
+  const handleCurrencyCheckboxChange = (v: boolean) => {
+    setOptions((value) => ({ ...value, currency: v }));
+    onChangeCb(number, options.localeCode, v);
+  };
+
+  const onChangeCb = (
+    value: string,
+    localeCode?: string,
+    currency?: boolean,
+  ) => {
+    const toWords = new ToWords({
+      localeCode: localeCode ?? options.localeCode,
+      converterOptions: {
+        currency: currency ?? options.currency,
+        doNotAddOnly: true,
+      },
+    });
     setByte("");
     setError("");
     setNumber("");
@@ -29,22 +63,9 @@ export function NumbersToWords() {
       return;
     }
     value = value.replaceAll(",", "");
-    const { isValid, array } = validateDot(value);
-    if (!isValid) {
-      setError("INVALID NUMBER");
-      return;
-    }
-    const afterDecimal = array[1];
     setNumber(value);
-    let words = "";
     try {
-      words += toWords(value);
-      if (afterDecimal) {
-        words += ` point ${toWords(afterDecimal)}`;
-      }
-      if (words) {
-        words = words.replaceAll("-", " ");
-      }
+      const words = toWords.convert(Number(value));
       setByte(capitalizeEveryWord(words));
     } catch (error) {
       setError("INVALID NUMBER");
@@ -63,7 +84,18 @@ export function NumbersToWords() {
       toolId={ToolKeys.NUMBER_TO_WORDS}
       byte={byte}
       onChangeCb={onChangeCb}
-      input={{ showInput: true, buttonName: "Convert" }}
+      input={{
+        showInput: true,
+        buttonName: "",
+        options: (
+          <>
+            <NumbersToWordsOptions
+              handleCurrencyCheckboxChange={handleCurrencyCheckboxChange}
+              handleLocaleCodeChange={handleLocaleCodeChange}
+            />
+          </>
+        ),
+      }}
       onClick={onClick}
       placeholder={`Enter desired number`}
       error={error}

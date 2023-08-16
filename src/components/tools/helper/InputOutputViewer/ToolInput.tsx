@@ -13,6 +13,7 @@ type InputOutputVieweoptions = {
 type Input = {
   showInput: boolean;
   buttonName: string;
+  options?: React.ReactNode;
 };
 
 export type ToolInputProps = {
@@ -54,17 +55,24 @@ export function ToolInput({
                 inputNumber={inputNumber}
               />
             </div>
-            {input?.buttonName && (
-              <Button
-                type="primary"
-                className={InputOutputViewerStyles["input-button"]}
-                onClick={onClick}
-                disabled={options?.disable}
-              >
-                <span className={InputOutputViewerStyles.buttonText}>
-                  {input.buttonName}
-                </span>
-              </Button>
+            {input && (
+              <>
+                {input.buttonName && (
+                  <Button
+                    type="primary"
+                    className={InputOutputViewerStyles["input-button"]}
+                    onClick={onClick}
+                    disabled={options?.disable}
+                  >
+                    <span className={InputOutputViewerStyles.buttonText}>
+                      {input.buttonName}
+                    </span>
+                  </Button>
+                )}
+                <div style={{ marginTop: "20px" }}>
+                  {input.options && input.options}
+                </div>
+              </>
             )}
           </span>
         </div>
