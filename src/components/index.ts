@@ -1,3 +1,4 @@
+export * from "./Donate";
 export { default as MainFooter } from "./Footer";
 export * from "./Google";
 export { default as AppHead } from "./Head/head";

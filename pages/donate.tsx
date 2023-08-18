@@ -1,6 +1,7 @@
 import { Layout } from "antd";
 import Link from "next/link";
 import React from "react";
+import { DonationCheckout } from "../src/components";
 import { OfflineMetaTags } from "../src/components/common";
 import { STRING_CONSTANTS } from "../src/constants";
 
@@ -8,7 +9,7 @@ const { Content } = Layout;
 
 function DonatePage() {
   return (
-    <Content style={{ height: "100vh" }}>
+    <Content style={{ height: "200vh" }}>
       <OfflineMetaTags
         tagData={{
           link: "/donate",
@@ -16,6 +17,7 @@ function DonatePage() {
           metaDescription: `Donate to ${STRING_CONSTANTS.global.appName} and support our free online tools. Help us empower developers and enhance the coding experience.`,
         }}
       />
+      <DonationCheckout />
       <h1
         style={{ textAlign: "center", marginBottom: "50px", marginTop: "50px" }}
       >
