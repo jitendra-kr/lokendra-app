@@ -16,7 +16,7 @@ export function PaypalCheckout({
         .create({
           purchase_units: [
             {
-              description: "description",
+              description: "FirboxTools",
               amount: {
                 currency_code: currency ?? "USD",
                 value: value,
@@ -74,7 +74,7 @@ export function PaypalCheckout({
         <PayPalScriptProvider
           options={{
             clientId:
-              "Ab5gjUiXn1nXusCN0DBAhJfSMdu8myOXdEeYbElNWoBpa8dz2B706KoQiN-3kFQ9b34J2-TAQUsoAth_",
+              "AYvKnZCV4cAdGIYdid89PJHH2duqZ_YiigIIu8YFWLY921ILMVBI9FyW82PnZYb88uihMsZcAZv88Nr9",
           }}
         >
           <PayPalButtons

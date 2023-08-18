@@ -9,7 +9,7 @@ import currencyList from "./currencyList";
 export function DonationCheckout() {
   const router = useRouter();
 
-  const [value, setValue] = useState<string>("5");
+  const [value, setValue] = useState<string>("");
   const [currency, setCurrency] = useState<string>("USD");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
