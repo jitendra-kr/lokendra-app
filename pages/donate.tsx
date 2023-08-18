@@ -1,7 +1,6 @@
 import { Layout } from "antd";
 import Link from "next/link";
 import React from "react";
-import { DonationCheckout } from "../src/components";
 import { OfflineMetaTags } from "../src/components/common";
 import { STRING_CONSTANTS } from "../src/constants";
 
@@ -17,7 +16,6 @@ function DonatePage() {
           metaDescription: `Donate to ${STRING_CONSTANTS.global.appName} and support our free online tools. Help us empower developers and enhance the coding experience.`,
         }}
       />
-      <DonationCheckout />
       <h1
         style={{ textAlign: "center", marginBottom: "50px", marginTop: "50px" }}
       >
