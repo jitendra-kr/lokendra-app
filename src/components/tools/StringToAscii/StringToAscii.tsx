@@ -6,15 +6,20 @@ import { InputOutputViewer } from "../helper/InputOutputViewer";
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
 
-  const textToASCIIConvert = (text: string) => {
-    const utf8Encode = new TextEncoder();
-    const byteArray = utf8Encode.encode(text);
-    console.log(byteArray);
-    setByte(byteArray.join(" ") as any);
+  const textToASCIIConvert = (inputText: string) => {
+    const asciiArray = [];
+
+    for (let i = 0; i < inputText.length; i++) {
+      const asciiValue = inputText.charCodeAt(i);
+      asciiArray.push(asciiValue);
+    }
+
+    return asciiArray;
   };
 
   const onChangeCb = (value: string) => {
-    textToASCIIConvert(value);
+    const asciiCodes = textToASCIIConvert(value);
+    setByte(asciiCodes.join(" "));
   };
 
   return (
