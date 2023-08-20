@@ -6,18 +6,16 @@ import { InputOutputViewer } from "../helper/InputOutputViewer";
 function AsciiToString() {
   const [byte, setByte] = useState("");
 
-  function asciiToSentence(str: any) {
-    let sentence = "";
-    var num = 0;
-    let zero: any = "0";
-    for (var i = 0; i < str.length; i++) {
-      num = num * 10 + (str[i] - zero);
-      if (num >= 32 && num <= 122) {
-        var ch = String.fromCharCode(num);
-        sentence += ch;
-        num = 0;
-      }
-    }
+  function asciiToSentence(inputStr: string) {
+    const asciiArray = inputStr
+      .split(" ")
+      .map((code) => parseInt(code.trim(), 10))
+      .filter((item) => !isNaN(item));
+
+    const sentence = asciiArray
+      .map((asciiValue) => String.fromCharCode(asciiValue))
+      .join("");
+
     return sentence;
   }
 
