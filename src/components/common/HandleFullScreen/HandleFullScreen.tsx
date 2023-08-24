@@ -53,7 +53,7 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
             <Button
               type="primary"
               onClick={openModal}
-              style={{ marginRight: "4px", marginTop: "3px" }}
+              style={{ marginRight: "4px", marginTop: "7px" }}
             >
               <MdCloseFullscreen size={20} color={COLOR_CONST.defaultIcon} />
             </Button>

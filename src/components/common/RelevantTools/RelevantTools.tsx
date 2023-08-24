@@ -6,7 +6,13 @@ import { toolsListData } from "../../tools";
 import RelevantToolsStyles from "./RelevantTools.module.css";
 import { releventTools } from "./releventTools";
 
-export function RelevantTools({ toolLink }: { toolLink: SCREENS }) {
+export function RelevantTools({
+  toolLink,
+  showOtherToolsLink = true,
+}: {
+  toolLink: SCREENS;
+  showOtherToolsLink?: boolean;
+}) {
   const getTool = (link: SCREENS) => {
     return toolsListData.find((obj) => {
       return obj.link === link;
@@ -37,13 +43,15 @@ export function RelevantTools({ toolLink }: { toolLink: SCREENS }) {
           </span>
         </Button>
       ))}
-      <Link
-        className={RelevantToolsStyles["changing-text-color"]}
-        href="#tool-list"
-        scroll={false}
-      >
-        <b>Explore Other Tools</b>
-      </Link>
+      {showOtherToolsLink && (
+        <Link
+          className={RelevantToolsStyles["changing-text-color"]}
+          href="#tool-list"
+          scroll={false}
+        >
+          <b>Explore Other Tools</b>
+        </Link>
+      )}
     </div>
   );
 }
