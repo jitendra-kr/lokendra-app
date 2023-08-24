@@ -147,4 +147,5 @@ export const releventTools: Record<SCREENS, SCREENS[]> = {
   ],
   [SCREENS.HOME]: [],
   [SCREENS.TOOLS]: [],
+  [SCREENS.JSON_EXAMPLES]: [],
 };

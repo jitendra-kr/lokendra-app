@@ -38,4 +38,5 @@ export enum SCREENS {
   // Other screens
   "HOME" = "/",
   "TOOLS" = "/tools",
+  "JSON_EXAMPLES" = "/sample-data/json-examples",
 }
