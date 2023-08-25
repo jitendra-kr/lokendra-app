@@ -33,9 +33,11 @@ function UseIt({ code }: { code: string }) {
 export const ShowCodeBlock = ({
   code,
   language,
+  trySample,
 }: {
   code: string;
   language: string;
+  trySample?: boolean;
 }) => {
   return (
     <>
@@ -47,7 +49,7 @@ export const ShowCodeBlock = ({
         }}
       >
         <CopyToClip content={code} />
-        <UseIt code={code} />
+        {trySample && <UseIt code={code} />}
         <DownloadOutput content={code} />
       </div>
       <SyntaxHighlighter

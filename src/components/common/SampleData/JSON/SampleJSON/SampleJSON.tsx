@@ -1,13 +1,26 @@
 import Link from "next/link";
+import { AiOutlineLink } from "react-icons/ai";
 import { SCREENS } from "../../../../../common/enums";
 import { OfflineMetaTags } from "../../../OfflineMetaTags/OfflineMetaTags";
 import { RelevantTools } from "../../../RelevantTools";
+import { ShowCodeBlock } from "../../../ShowCodeBlock";
 import {
+  DaysJSON,
   FormattedJSON,
   InvalidJSON,
+  JSONExamples,
   MinifiedJSON,
+  ProductJSON,
   SampleData,
+  UserJSON,
+  employeeJSON,
+  employersJSON,
+  monthsJSON,
 } from "./sampleJSONData";
+
+const headingToID = (heading: string) => {
+  return heading.toLocaleLowerCase().replaceAll(" ", "-");
+};
 
 function RenderSampleData({
   jsonData,
@@ -57,7 +70,52 @@ function RenderSampleData({
   );
 }
 
+function RenderJSONExamples({ data }: { data: JSONExamples }) {
+  const id = headingToID(data.heading);
+  return (
+    <div className="col">
+      <h2
+        className="heading"
+        style={{ marginBottom: "20px", fontSize: "20px" }}
+        id={id}
+      >
+        {data.heading}
+        <Link href={"#" + id} style={{ marginLeft: "5px" }}>
+          <AiOutlineLink />
+        </Link>
+      </h2>
+      <ShowCodeBlock
+        code={JSON.stringify(data.data, null, "\t")}
+        language="json"
+        trySample={false}
+      />
+    </div>
+  );
+}
+function RenderJSON({
+  data1,
+  data2,
+}: {
+  data1: JSONExamples;
+  data2: JSONExamples;
+}) {
+  return (
+    <div style={{ marginTop: "20px" }} className="row">
+      <RenderJSONExamples data={data1} />
+      <RenderJSONExamples data={data2} />
+    </div>
+  );
+}
+
 export function SampleJSON() {
+  const JSONExampleArray = [
+    UserJSON,
+    ProductJSON,
+    monthsJSON,
+    employeeJSON,
+    employersJSON,
+  ];
+
   return (
     <>
       <OfflineMetaTags
@@ -92,7 +150,51 @@ export function SampleJSON() {
             showOtherToolsLink={false}
           />
         </div>
+
+        <h2 id="#json-examples" className="heading">
+          JSON Examples: Users, Products, Days, Weeks, Months etc
+          <Link href={"#json-examples"} style={{ marginLeft: "5px" }}>
+            <AiOutlineLink />
+          </Link>
+        </h2>
+        <p style={{ marginTop: "20px", fontSize: "19px" }}>
+          Are you looking for JSON examples? Users, Products, Days, Weeks, and
+          Months are among the many items in our collection. These examples will
+          help you grasp the structure of JSON for various data kinds. They are
+          user-friendly and precise, have been validated, and may be used as a
+          reference. Explore our JSON Examples.
+        </p>
+
+        <div>
+          <ul>
+            {JSONExampleArray.map((data) => (
+              <li key={data?.heading} style={{ fontSize: "17px" }}>
+                <Link href={`#${headingToID(data.heading)}`} scroll={false}>
+                  {data?.heading}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div style={{ marginBottom: "80px" }}>
+          <RenderJSON data1={UserJSON} data2={ProductJSON} />
+          <RenderJSON data1={DaysJSON} data2={monthsJSON} />
+          <RenderJSON data1={employeeJSON} data2={employersJSON} />
+        </div>
       </div>
+      {/* <div style={{ marginBottom: "80px" }} id="what-is-json">
+          <h2 className="heading">What is JSON</h2>
+
+          <p style={{ marginTop: "20px", fontSize: "19px" }}>
+            JSON (JavaScript Object Notation) is a lightweight data-exchange
+            format that expresses structured data as key-value pairs using a
+            simple and well-known vocabulary. It is used to communicate between
+            a server and a web application by sending data, configuration files,
+            and APIs. JSON is a popular choice for data representation and
+            transmission in modern software development due to its ease of use
+            and compatibility with a variety of programming languages.
+          </p>
+        </div> */}
     </>
   );
 }
