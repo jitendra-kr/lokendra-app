@@ -11,9 +11,11 @@ function SalaryHikePercentageCalculator() {
       toolId={ToolKeys.SalaryHike}
       byte={""}
       inputChild={
-        <div className={"col-lg-4 " + styles.container}>
-          <HikeInPercentageBySalary />
-        </div>
+        <>
+          <div className={"col-lg-4 " + styles.container}>
+            <HikeInPercentageBySalary />
+          </div>
+        </>
       }
       outputChild={
         <>

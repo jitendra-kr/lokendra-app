@@ -2,6 +2,7 @@ import { InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { CalculatorOutput } from "./CalculatorOutput";
+import { Label } from "./Label";
 import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
 const CalculationFormula = dynamic(() =>
@@ -36,16 +37,16 @@ export function HikeInPercentageBySalary() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "15px",
+        gap: "20px",
       }}
     >
       <SalaryHikePercentageCalculatorTitle title=" Hike Percentage by Salary" />
-      <label>Old Salary</label>
+      <Label label="Old Salary" />
 
       <InputNumber
         placeholder="Old salary: 100"
-        style={{ width: "100%" }}
-        name="firstName"
+        style={{ width: "100%", height: "40px" }}
+        name="Old salary"
         value={oldSalary === 0 ? "" : oldSalary}
         onChange={(v) => {
           if (v) {
@@ -53,11 +54,12 @@ export function HikeInPercentageBySalary() {
           }
         }}
       />
-      <label>New Salary</label>
 
+      <Label label="New Salary" />
       <InputNumber
         placeholder="New Salary: 120"
-        style={{ width: "100%" }}
+        name="New salary"
+        style={{ width: "100%", height: "40px" }}
         value={newSalary === 0 ? "" : newSalary}
         onChange={(v) => {
           if (v) {

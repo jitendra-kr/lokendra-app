@@ -5,7 +5,7 @@ type CalculatorOutputProps = {
 
 export const CalculatorOutput = ({ text, value }: CalculatorOutputProps) => {
   return (
-    <b style={{ textAlign: "center", color: "brown" }}>
+    <b style={{ textAlign: "center", color: "brown", fontSize: "18px" }}>
       {text}: {value}
     </b>
   );

@@ -6,15 +6,15 @@ export function SalaryHikePercentageCalculatorTitle({
   title,
 }: SalaryHikePercentageCalculatorTitleProps) {
   return (
-    <p
+    <h2
       style={{
-        fontSize: "20px",
+        fontSize: "22px",
         marginTop: "50px",
         textAlign: "center",
         marginBottom: "20px",
       }}
     >
       <b>Calculate {title}</b>
-    </p>
+    </h2>
   );
 }

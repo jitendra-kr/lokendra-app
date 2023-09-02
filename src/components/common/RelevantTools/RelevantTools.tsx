@@ -26,7 +26,7 @@ export function RelevantTools({
   return (
     <div style={{ marginBottom: "3px" }}>
       <span style={{ marginRight: "5px" }}>
-        <b>
+        <b style={{ fontSize: "17px" }}>
           Relevant Tools <BiSolidRightArrow />
         </b>
       </span>
