@@ -56,6 +56,7 @@ export const ShowCodeBlock = ({
         language={language}
         style={stackoverflowDark}
         showLineNumbers={true}
+        customStyle={{ fontSize: "19px" }}
       >
         {code}
       </SyntaxHighlighter>
