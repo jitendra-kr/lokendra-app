@@ -4,6 +4,7 @@ import { SCREENS } from "../../../../../common/enums";
 import { OfflineMetaTags } from "../../../OfflineMetaTags/OfflineMetaTags";
 import { RelevantTools } from "../../../RelevantTools";
 import { ShowCodeBlock } from "../../../ShowCodeBlock";
+import styles from "./SampleJSON.module.css";
 import {
   DaysJSON,
   FormattedJSON,
@@ -29,12 +30,6 @@ function RenderSampleData({
   jsonData: SampleData[];
   heading: string;
 }) {
-  // const [isModalOpen, setIsModalOpen] = useState<{
-  //   status: boolean;
-  //   data: string;
-  //   url: string;
-  // }>({ status: false, url: "", data: "" });
-
   return (
     <>
       <div className="col">
@@ -48,24 +43,13 @@ function RenderSampleData({
         <ul>
           {jsonData.map((data) => (
             <li key={data.value} style={{ fontSize: "17px" }}>
-              <Link href={data.value} target="_blank">
+              <Link className={styles.link} href={data.value} target="_blank">
                 {data.key}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      {/* <Modal
-        closable={false}
-        width="90%"
-        destroyOnClose={true}
-        onOk={() => setIsModalOpen({ status: false, url: "", data: "" })}
-        open={isModalOpen.status}
-        cancelText={<></>}
-        okText="Close"
-      >
-        <JsonViewer content={isModalOpen.data} error={""} editorError={""} />
-      </Modal> */}
     </>
   );
 }
@@ -76,7 +60,7 @@ function RenderJSONExamples({ data }: { data: JSONExamples }) {
     <div className="col">
       <h2
         className="heading"
-        style={{ marginBottom: "20px", fontSize: "20px" }}
+        style={{ marginBottom: "20px", fontSize: "22px" }}
         id={id}
       >
         {data.heading}
@@ -131,7 +115,7 @@ export function SampleJSON() {
           Explore Sample JSON Data: Discover Formatted, Interactive, and Useful
           JSON Examples
         </h1>
-        <p style={{ marginTop: "20px", fontSize: "19px" }}>
+        <p className={styles.content}>
           Welcome to our Sample JSON Data page, where you can explore a wide
           variety of JSON examples to enhance your understanding and improve
           your programming skills. We offer a range of valuable resources,
@@ -157,7 +141,7 @@ export function SampleJSON() {
             <AiOutlineLink />
           </Link>
         </h2>
-        <p style={{ marginTop: "20px", fontSize: "19px" }}>
+        <p className={styles.content}>
           Are you looking for JSON examples? Users, Products, Days, Weeks, and
           Months are among the many items in our collection. These examples will
           help you grasp the structure of JSON for various data kinds. They are
@@ -169,7 +153,11 @@ export function SampleJSON() {
           <ul>
             {JSONExampleArray.map((data) => (
               <li key={data?.heading} style={{ fontSize: "17px" }}>
-                <Link href={`#${headingToID(data.heading)}`} scroll={false}>
+                <Link
+                  className={styles.link}
+                  href={`#${headingToID(data.heading)}`}
+                  scroll={false}
+                >
                   {data?.heading}
                 </Link>
               </li>
@@ -182,19 +170,6 @@ export function SampleJSON() {
           <RenderJSON data1={employeeJSON} data2={employersJSON} />
         </div>
       </div>
-      {/* <div style={{ marginBottom: "80px" }} id="what-is-json">
-          <h2 className="heading">What is JSON</h2>
-
-          <p style={{ marginTop: "20px", fontSize: "19px" }}>
-            JSON (JavaScript Object Notation) is a lightweight data-exchange
-            format that expresses structured data as key-value pairs using a
-            simple and well-known vocabulary. It is used to communicate between
-            a server and a web application by sending data, configuration files,
-            and APIs. JSON is a popular choice for data representation and
-            transmission in modern software development due to its ease of use
-            and compatibility with a variety of programming languages.
-          </p>
-        </div> */}
     </>
   );
 }
