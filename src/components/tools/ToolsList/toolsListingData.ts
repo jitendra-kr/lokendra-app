@@ -121,9 +121,8 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.jsonParser.description,
     list: true,
     key: ToolKeys.JSONParser,
-    toolDescription: `Are you in need of a secure JSON formatter tool to formal JSON data that ensures the integrity and safety of your data? 
-    \nLook no further! Our advanced JSON formatter is designed to provide a fast, easy-to-use, and accurate solution for developers and data analysts who value data security and precision.    
-Easily parse, beautify and Validate JSON data with our reliable and secure online JSON formatter.    
+    toolDescription: `Are you in need of a secure JSON formatter tool to beautify JSON that ensures the integrity and safety of your data? 
+    \nLook no further! Our advanced JSON tool is designed to provide a fast, easy-to-use, and accurate solution for developers and data analysts who value data security and precision.    
     \nOne of the key features of our JSON validator is its robust validation process. Before formatting, our tool thoroughly validates the provided JSON data, ensuring that it is well-formed and free of errors. This validation step is crucial, as it guarantees that the resulting formatted JSON will be accurate and reliable.     
     \nIn addition to its validation capabilities, It is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
     \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
@@ -133,7 +132,7 @@ Easily parse, beautify and Validate JSON data with our reliable and secure onlin
     keyFeatures: [
       "Easy JSON Formatting: Easily format your JSON data so that it is well-organized and easy to read and understand, improving code comprehension and data analysis.",
       "User-Friendly Interface: Our tool has a user-friendly interface that allows users of all technical levels to access JSON formatting. You can instantly get the formatted version by entering your JSON data.",
-      "Safe and Secure: The security of your JSON data, which your aiming to formar is our primary concern. To protect your input and outcomes, the JSON Formatter uses powerful security techniques, resulting in a risk-free formatting procedure.",
+      "Safe and Secure: The security of your JSON data, which your aiming to formar is our primary concern. To protect your input and outcomes, the JSON parser uses powerful security techniques, resulting in a risk-free formatting procedure.",
       `Download Formatted Output: Take advantage of the choice to obtain the formatted JSON as a downloadable file by clicking Download button`,
       "Support for Repair JSON: In addition to regular formatting, our tool has a special Repair JSON capability. It instantly finds and fixes syntax mistakes in JSON objects to ensure accurate and error-free output.",
     ],
