@@ -116,11 +116,11 @@ export function SampleJSON() {
           JSON Examples
         </h1>
         <p className={styles.content}>
-          Welcome to our Sample JSON Data page, where you can explore a wide
-          variety of JSON examples to enhance your understanding and improve
-          your programming skills. We offer a range of valuable resources,
-          including Formatted JSON, Interactive JSON, and Useful JSON examples,
-          to cater to your specific needs
+          Welcome to our Sample JSON (Javascript Object Notation) data page,
+          where you can explore a wide variety of JSON examples to enhance your
+          understanding and improve your programming skills. We offer a range of
+          valuable resources, including Formatted JSON, Interactive JSON, and
+          Useful JSON examples, to cater to your specific needs
         </p>
         <div className="row">
           <RenderSampleData jsonData={FormattedJSON} heading="Formatted JSON" />
@@ -146,7 +146,7 @@ export function SampleJSON() {
           Months are among the many items in our collection. These examples will
           help you grasp the structure of JSON for various data kinds. They are
           user-friendly and precise, have been validated, and may be used as a
-          reference. Explore our JSON Examples.
+          reference. Explore our JSON data samples.
         </p>
 
         <div>
