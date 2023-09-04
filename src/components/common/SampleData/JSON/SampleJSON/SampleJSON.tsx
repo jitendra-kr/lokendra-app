@@ -14,6 +14,7 @@ import {
   ProductJSON,
   SampleData,
   UserJSON,
+  blogPostCommentJSON,
   employeeJSON,
   employersJSON,
   monthsJSON,
@@ -81,12 +82,12 @@ function RenderJSON({
   data2,
 }: {
   data1: JSONExamples;
-  data2: JSONExamples;
+  data2?: JSONExamples;
 }) {
   return (
     <div style={{ marginTop: "20px" }} className="row">
       <RenderJSONExamples data={data1} />
-      <RenderJSONExamples data={data2} />
+      {data2 && <RenderJSONExamples data={data2} />}
     </div>
   );
 }
@@ -168,6 +169,7 @@ export function SampleJSON() {
           <RenderJSON data1={UserJSON} data2={ProductJSON} />
           <RenderJSON data1={DaysJSON} data2={monthsJSON} />
           <RenderJSON data1={employeeJSON} data2={employersJSON} />
+          <RenderJSON data1={blogPostCommentJSON} />
         </div>
       </div>
     </>

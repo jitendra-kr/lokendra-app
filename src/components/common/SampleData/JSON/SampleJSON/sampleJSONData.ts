@@ -241,3 +241,28 @@ export const employersJSON: JSONExamples = {
     ],
   },
 };
+
+export const blogPostCommentJSON: JSONExamples = {
+  heading: "Sample JSON data representing comments on a blog post",
+  data: {
+    blog_post_id: 69,
+    comments: [
+      {
+        comment_id: 1,
+        user_id: 456,
+        username: "User1",
+        comment_text:
+          "I just wanted to thank you for giving sample JSON data on your website.",
+        timestamp: "2023-09-04T10:30:00Z",
+      },
+      {
+        comment_id: 2,
+        user_id: 789,
+        username: "User2",
+        comment_text:
+          "I appreciate your efforts in choosing and maintaining this data collection.",
+        timestamp: "2023-09-04T11:15:00Z",
+      },
+    ],
+  },
+};
