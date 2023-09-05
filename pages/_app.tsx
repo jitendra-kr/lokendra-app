@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { store } from "../src/common/state";
-import { GoogleAdComponent, MainHeader } from "../src/components";
+import { MainHeader } from "../src/components";
 
 import { pageview } from "../lib/gtag";
 import "../styles/global.css";
@@ -62,13 +62,13 @@ export default function MyApp({ Component, pageProps }) {
           style={{ marginTop: "25px", marginLeft: "5px", marginRight: "5px" }}
         >
           <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
-            <GoogleAdComponent />
+            {/* <GoogleAdComponent /> */}
           </Col>
           <Col xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
             <Component {...pageProps} />
           </Col>
           <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
-            <GoogleAdComponent />
+            {/* <GoogleAdComponent /> */}
           </Col>
         </Row>
 
