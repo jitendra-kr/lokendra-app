@@ -27,7 +27,9 @@ export function InputOutputActionButton({
         onClick={onClick}
         style={{ marginRight: "5px", ...styles }}
       >
-        <span style={{ color: "white", ...textStyles }}>{name}</span>
+        <span style={{ color: "white", ...textStyles }}>
+          <b>{name}</b>
+        </span>
       </Button>
     </Tooltip>
   );

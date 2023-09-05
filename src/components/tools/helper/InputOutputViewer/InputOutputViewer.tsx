@@ -1,5 +1,6 @@
 import { Layout } from "antd";
 import dynamic from "next/dynamic";
+import React from "react";
 import styles from "../../../../../styles/StringToAscii.module.css";
 import { useToolListData } from "../../../../common/hooks/useToolListData";
 import { OfflineMetaTags, SampleData } from "../../../common";
@@ -38,9 +39,9 @@ export function InputOutputViewer({
   outputChild,
   options,
   error = undefined,
+  inputEditorActionChild,
 }: InputOutputViewerProps) {
   const { toolData } = useToolListData(toolId);
-  console.log("toolData", toolData);
 
   return (
     <>
@@ -58,6 +59,7 @@ export function InputOutputViewer({
               inputNumber={inputNumber}
               onClick={onClick}
               options={options}
+              inputEditorActionChild={inputEditorActionChild}
             />
           )}
           {!children && (

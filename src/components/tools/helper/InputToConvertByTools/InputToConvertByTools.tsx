@@ -1,4 +1,5 @@
 import { Input } from "antd";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { SCREENS } from "../../../../common/enums";
 import { getToolInput } from "../../../../common/selectors";
@@ -11,8 +12,17 @@ import {
 } from "../../../../hooks";
 import { useGetQueryString } from "../../../../hooks/useGetQueryString";
 import { messageDestroy, messageError } from "../../../../utils";
-import { EditorActions } from "../../../common/Ide/EditorActions";
 import styles from "./InputToConvertByTools.module.css";
+
+const EditorActions = dynamic(
+  () =>
+    import("../../../common/Ide/EditorActions").then(
+      (mod) => mod.EditorActions,
+    ),
+  {
+    ssr: false,
+  },
+);
 
 export enum inputType {
   input = "input",
@@ -30,6 +40,7 @@ type InputToConvertByToolsProps = {
   row?: number;
   type?: inputType;
   inputNumber?: boolean;
+  inputEditorActionChild?: React.ReactNode;
 };
 
 export const InputToConvertByTools = ({
@@ -37,6 +48,7 @@ export const InputToConvertByTools = ({
   type,
   placeholder = "  Start typing ...",
   inputNumber,
+  inputEditorActionChild,
 }: InputToConvertByToolsProps) => {
   const [inputValue, setInputValue] = useState("");
   const { url } = useGetUrl();
@@ -81,6 +93,7 @@ export const InputToConvertByTools = ({
               onChange({ target: { value } });
             }
           }}
+          children={inputEditorActionChild}
         />
       )}
       {type === inputType.input ? (

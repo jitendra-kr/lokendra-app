@@ -23,6 +23,7 @@ export type ToolInputProps = {
   placeholder?: string;
   inputNumber?: boolean;
   onClick?: () => void;
+  inputEditorActionChild?: React.ReactNode;
 } & InputOutputVieweoptions;
 
 export function ToolInput({
@@ -33,6 +34,7 @@ export function ToolInput({
   inputNumber,
   onClick,
   options,
+  inputEditorActionChild,
 }: ToolInputProps) {
   return (
     <>
@@ -53,6 +55,7 @@ export function ToolInput({
                 type={input ? inputType.input : inputType.textarea}
                 placeholder={placeholder}
                 inputNumber={inputNumber}
+                inputEditorActionChild={inputEditorActionChild}
               />
             </div>
             {input && (
