@@ -67,6 +67,7 @@ export default function AppHead({
       <meta property="al:web:url" content={url} key="al:web:url" />
 
       <meta name="author" content={author} key="author" />
+      <meta name="monetag" content="3d6165b14aca906aacae0371b102121f"></meta>
     </Head>
   );
 }
