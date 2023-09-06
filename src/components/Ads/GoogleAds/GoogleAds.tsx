@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function GoogleAdComponent() {
+export function GoogleAds() {
   useEffect(() => {
     var ads = document.getElementsByClassName("adsbygoogle").length;
     for (var i = 0; i < ads; i++) {
@@ -22,22 +22,6 @@ export function GoogleAdComponent() {
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
-      {/* <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-4375413214168925"
-        data-ad-slot="6157382493"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-4375413214168925"
-        data-ad-slot="6157382493"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins> */}
     </>
   );
 }

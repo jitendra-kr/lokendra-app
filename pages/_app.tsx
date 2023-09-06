@@ -61,15 +61,11 @@ export default function MyApp({ Component, pageProps }) {
         <Row
           style={{ marginTop: "25px", marginLeft: "5px", marginRight: "5px" }}
         >
-          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
-            {/* <GoogleAdComponent /> */}
-          </Col>
+          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}></Col>
           <Col xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
             <Component {...pageProps} />
           </Col>
-          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}>
-            {/* <GoogleAdComponent /> */}
-          </Col>
+          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}></Col>
         </Row>
 
         <MainFooter />
