@@ -118,10 +118,10 @@ export function SampleJSON() {
         </h1>
         <p className={styles.content}>
           Welcome to our Sample JSON (Javascript Object Notation) data page,
-          where you can explore a wide variety of JSON examples to enhance your
+          where you can explore a wide variety of sample JSON to enhance your
           understanding and improve your programming skills. We offer a range of
-          valuable resources, including Formatted JSON, Interactive JSON, and
-          Useful JSON examples, to cater to your specific needs
+          valuable resources, including Formatted JSON, and Interactive JSON to
+          cater to your specific needs
         </p>
         <div className="row">
           <RenderSampleData jsonData={FormattedJSON} heading="Formatted JSON" />
