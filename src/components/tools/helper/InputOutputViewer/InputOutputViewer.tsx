@@ -9,8 +9,11 @@ import { ToolKeys } from "../../ToolsList";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInput, ToolInputProps } from "./ToolInput";
 
-const ToolsList = dynamic(() =>
-  import("../../ToolsList").then((mod) => mod.ToolsList),
+const ToolsList = dynamic(
+  () => import("../../ToolsList").then((mod) => mod.ToolsList),
+  {
+    ssr: false,
+  },
 );
 const ToolOutput = dynamic(() =>
   import("./ToolOutput").then((mod) => mod.ToolOutput),

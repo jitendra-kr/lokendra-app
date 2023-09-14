@@ -1,7 +1,6 @@
 import Fuse from "fuse.js";
 import { useEffect, useState } from "react";
 import { STRING_CONSTANTS } from "../../../constants";
-import { useGetUrlPath } from "../../../hooks";
 import { WhyUs } from "../../common";
 
 import dynamic from "next/dynamic";
@@ -39,7 +38,6 @@ const Reasons = () => {
 export const ToolsList = () => {
   const [toolsList, setToolsList] = useState<ITools[]>([]);
   const [textInput, setTextInput] = useState<string | undefined>();
-  const { isHome } = useGetUrlPath();
   const [placeholder, setPlaceholder] = useState<string>("Search...");
 
   const onSearch = (searchInput: string | undefined) => {
@@ -78,16 +76,9 @@ export const ToolsList = () => {
           justifyContent: "center",
         }}
       >
-        {isHome && (
-          <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
-            Empower Your Work with Our Tools
-          </h1>
-        )}
-        {!isHome && (
-          <h3 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
-            Other Tools
-          </h3>
-        )}
+        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
+          Empower Your Work with Our Tools
+        </h1>
         <SearchBar
           placeholder={placeholder}
           onSearch={onSearch}
