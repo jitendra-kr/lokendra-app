@@ -1,6 +1,7 @@
 export * from "./Buttons/InputOutputActionButton";
 export * from "./DownloadOutput";
 export * from "./HandleFullScreen";
+export * from "./HtmlTags";
 export * from "./OfflineMetaTags/OfflineMetaTags";
 export * from "./RelevantTools";
 export * from "./SampleData";

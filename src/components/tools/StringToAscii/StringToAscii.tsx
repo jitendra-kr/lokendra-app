@@ -2,6 +2,7 @@ import { withRouter } from "next/router";
 import { useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
+import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
 
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
@@ -23,11 +24,14 @@ function StringToAscii() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.StringtoASCII}
-      byte={byte ?? ""}
-      onChangeCb={onChangeCb}
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.StringtoASCII}
+        byte={byte ?? ""}
+        onChangeCb={onChangeCb}
+      />
+      <StringToAsciiInJavascript />
+    </>
   );
 }
 

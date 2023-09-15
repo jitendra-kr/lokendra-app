@@ -76,7 +76,7 @@ export function InputOutputViewer({
           keyFeatures={toolData.keyFeatures}
         />
         <SampleData pathname={toolData.link} />
-        <ToolsList />
+        {/* <ToolsList /> */}
       </Content>
     </>
   );

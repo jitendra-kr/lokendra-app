@@ -123,3 +123,7 @@ export function capitalizeEveryWord(str: string) {
     return match.toUpperCase();
   });
 }
+
+export const textToID = (text: string) => {
+  return `#${text.toLocaleLowerCase().replaceAll(" ", "-")}`;
+};

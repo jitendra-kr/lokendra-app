@@ -34,10 +34,12 @@ export const ShowCodeBlock = ({
   code,
   language,
   trySample,
+  download,
 }: {
   code: string;
   language: string;
   trySample?: boolean;
+  download?: boolean;
 }) => {
   return (
     <>
@@ -50,13 +52,15 @@ export const ShowCodeBlock = ({
       >
         <CopyToClip content={code} />
         {trySample && <UseIt code={code} />}
-        <DownloadOutput content={code} />
+        {download && <DownloadOutput content={code} />}
       </div>
       <SyntaxHighlighter
         language={language}
         style={stackoverflowDark}
         showLineNumbers={true}
         customStyle={{ fontSize: "19px" }}
+        wrapLongLines={true}
+        wrapLines={true}
       >
         {code}
       </SyntaxHighlighter>
