@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import React from "react";
 import { ToolsBody } from "../../ToolsBody";
+import { ITools } from "../../ToolsList";
 import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
 import InputOutputViewerStyles from "./InputOutputViewer.module.css";
 
@@ -24,6 +25,7 @@ export type ToolInputProps = {
   inputNumber?: boolean;
   onClick?: () => void;
   inputEditorActionChild?: React.ReactNode;
+  toolData: ITools;
 } & InputOutputVieweoptions;
 
 export function ToolInput({
@@ -35,13 +37,14 @@ export function ToolInput({
   onClick,
   options,
   inputEditorActionChild,
+  toolData,
 }: ToolInputProps) {
   return (
     <>
       {inputChild && inputChild}
       {!inputChild && (
         <div className="col-lg-6">
-          {input && <ToolsBody />}
+          {input && <ToolsBody toolData={toolData} />}
           <span className={InputOutputViewerStyles["input-parent"]}>
             <div
               className={`${

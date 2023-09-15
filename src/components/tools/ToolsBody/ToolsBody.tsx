@@ -1,34 +1,24 @@
 import { BiSolidRightArrow } from "react-icons/bi";
-import { useGetUrlPath } from "../../../hooks";
 import { RelevantTools } from "../../common";
-import { toolsListData } from "../ToolsList/toolsListingData";
+import { ITools } from "../ToolsList/toolsListingData";
 import styles from "./ToolsBody.module.css";
 
-export function ToolsBody() {
-  const { pathname } = useGetUrlPath();
-
-  const result = toolsListData.find((obj) => {
-    return obj.link === pathname;
-  });
-  if (!result) {
-    return <></>;
-  }
-
+export function ToolsBody({ toolData }: { toolData: ITools }) {
   return (
     <span>
       <h1 id="top" className={styles.bodyTitle}>
-        <b>{result.heading}</b>
+        <b>{toolData.heading}</b>
       </h1>
       <div className={styles.container}>
         <h2 className={styles.howToUse}>
           <b>
-            How to use {result.title} <BiSolidRightArrow />{" "}
+            How to use {toolData.title} <BiSolidRightArrow />{" "}
           </b>
         </h2>
-        <p className={styles.bodyContent}>{result.content}</p>
+        <p className={styles.bodyContent}>{toolData.content}</p>
       </div>
 
-      {result && <RelevantTools toolLink={result.link} />}
+      <RelevantTools toolLink={toolData.link} />
     </span>
   );
 }

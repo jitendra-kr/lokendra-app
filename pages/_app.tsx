@@ -61,11 +61,11 @@ export default function MyApp({ Component, pageProps }) {
         <Row
           style={{ marginTop: "25px", marginLeft: "5px", marginRight: "5px" }}
         >
-          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}></Col>
-          <Col xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
+          <Col xs={24} sm={24} md={2} lg={2} xl={2} xxl={2}></Col>
+          <Col xs={24} sm={24} md={20} lg={20} xl={20} xxl={20}>
             <Component {...pageProps} />
           </Col>
-          <Col xs={24} sm={24} md={3} lg={3} xl={3} xxl={3}></Col>
+          <Col xs={24} sm={24} md={2} lg={2} xl={2} xxl={2}></Col>
         </Row>
 
         <MainFooter />

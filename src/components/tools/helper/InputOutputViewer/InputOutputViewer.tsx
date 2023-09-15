@@ -27,7 +27,7 @@ type InputOutputViewerProps = {
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
   error?: string;
-} & ToolInputProps;
+} & Omit<ToolInputProps, "toolData">;
 
 export function InputOutputViewer({
   toolId,
@@ -51,10 +51,11 @@ export function InputOutputViewer({
       <Content>
         <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
-          {!input && <ToolsBody />}
+          {!input && <ToolsBody toolData={toolData} />}
           {children && children}
           {!children && (
             <ToolInput
+              toolData={toolData}
               input={input}
               inputChild={inputChild}
               onChangeCb={onChangeCb}
