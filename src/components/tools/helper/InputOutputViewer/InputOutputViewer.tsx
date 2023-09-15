@@ -26,6 +26,7 @@ type InputOutputViewerProps = {
   byte: string;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
+  pageContent?: React.ReactNode;
   error?: string;
 } & Omit<ToolInputProps, "toolData">;
 
@@ -38,6 +39,7 @@ export function InputOutputViewer({
   placeholder,
   inputNumber,
   children,
+  pageContent,
   inputChild,
   outputChild,
   options,
@@ -76,7 +78,8 @@ export function InputOutputViewer({
           keyFeatures={toolData.keyFeatures}
         />
         <SampleData pathname={toolData.link} />
-        {/* <ToolsList /> */}
+        {pageContent && pageContent}
+        <ToolsList />
       </Content>
     </>
   );

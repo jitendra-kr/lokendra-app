@@ -29,8 +29,12 @@ function StringToAscii() {
         toolId={ToolKeys.StringtoASCII}
         byte={byte ?? ""}
         onChangeCb={onChangeCb}
+        pageContent={
+          <>
+            <StringToAsciiInJavascript />
+          </>
+        }
       />
-      <StringToAsciiInJavascript />
     </>
   );
 }

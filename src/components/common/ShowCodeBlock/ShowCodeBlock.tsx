@@ -42,7 +42,11 @@ export const ShowCodeBlock = ({
   download?: boolean;
 }) => {
   return (
-    <>
+    <div
+      style={{
+        marginBottom: "60px",
+      }}
+    >
       <div
         style={{
           marginBottom: "8px",
@@ -64,6 +68,6 @@ export const ShowCodeBlock = ({
       >
         {code}
       </SyntaxHighlighter>
-    </>
+    </div>
   );
 };

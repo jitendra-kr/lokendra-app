@@ -5,9 +5,8 @@ export const StringToAsciiInJavascript = () => {
   return (
     <>
       <H1Tag heading="Convert text to ASCII codes in Javascript" />
-      <div style={{ marginTop: "30px" }}>
-        <PTag text="In JavaScript, we can use the charCodeAt method to get the ASCII codes. In the below example, stringToAsciiCodes function takes an input string and converts it to ASCII codes " />
-      </div>
+      <PTag text="In JavaScript, we can use the charCodeAt method to get the ASCII codes. In the below example, stringToAsciiCodes function takes an input string and converts it to ASCII codes " />
+
       <ShowCodeBlock
         download={false}
         language="javascript"
