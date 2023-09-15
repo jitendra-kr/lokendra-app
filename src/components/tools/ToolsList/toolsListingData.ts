@@ -54,18 +54,13 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.stringToAscii.description,
     list: true,
     key: ToolKeys.StringtoASCII,
-    toolDescription: `Are you tired of spending hours manually converting characters to ASCII codes? Look no further than our Convert String to ASCII tool!
-    \nIt is not only effective but also remarkably easy to use. You won't have any trouble entering and translating your content because to the simple and clear UI for ASCII Conversion.
-    \nConvert text to ASCII quickly and accurately with our free online tool for easy ASCII conversion. Save time and effort with this easy-to-use tool. No coding skills required - just enter your string and get the result instantly.
-    \nOur online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, an paragraph or document, It can handle it all with ease. Simply enter your text or upload text file into the tool, and it will instantly generate the corresponding ASCII code for each character. 
-    \nThis tool is particularly useful for developers, programmers, and anyone who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations. 
-    `,
+    toolDescription: `Are you tired of spending hours manually converting characters to ASCII codes? Look no further than our Convert String to ASCII tool! You won't have any trouble entering and translating your content because of the simple and clear UI for ASCII Conversion. Convert text to ASCII quickly and accurately with our free online tool for easy ASCII conversion. Save time and effort with this simple tool. No coding skills are required - just enter your string and get the result instantly. Our online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, a paragraph, or a document, It can handle all with ease. Simply enter your text or upload a text file into the tool, and it will instantly generate the corresponding ASCII code for each character.  This tool is beneficial for every person who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations. `,
     keyFeatures: [
       "Instant ASCII Conversion: Effortlessly convert any text into its corresponding ASCII codes in real-time.",
       "User-Friendly Interface: Our intuitive and easy-to-navigate interface ensures a seamless experience for users of all technical levels. Just enter your text, and the ASCII codes are generated instantly",
       "Cross-Platform Accessibility: Use your desktop computer, laptop, tablet, or smartphone to easily access the String to ASCII Converter from any device.",
       "Reliable Accuracy: The tool ensures exact and precise results, guaranteeing that your ASCII codes are precisely generated and that your data is consistent.",
-      "Safe and Secure: Rest assured that your data is treated with the utmost care. Our platform employs robust encryption measures to keep your input and results safe and secure",
+      "Safe and Secure: Rest assured that your data is treated with the utmost care.",
       "Download Converted Output: Download the converted ASCII codes for offline use or further processing. Easily save the results as a text file for convenient access and sharing.",
     ],
   },
