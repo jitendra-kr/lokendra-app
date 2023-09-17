@@ -3,6 +3,7 @@ import { withRouter } from "next/router";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import { EncodeURLInJavascript } from "./EncodeURLInJavascript";
 
 type SelectEncodingFn = "encodeURIComponent" | "encodeURI";
 
@@ -73,6 +74,11 @@ function URLEncode() {
       onChangeCb={(value) => setInput(value)}
       inputEditorActionChild={
         <SelectEncodeFn selectEncodingFn={selectEncodingFn} />
+      }
+      pageContent={
+        <>
+          <EncodeURLInJavascript />
+        </>
       }
     />
   );

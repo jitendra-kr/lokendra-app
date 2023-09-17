@@ -2,6 +2,7 @@ import { withRouter } from "next/router";
 import { useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import { DecodeURLInJavascript } from "./DecodeURLInJavascript";
 
 function URLDecode() {
   const [byte, setByte] = useState("");
@@ -23,6 +24,11 @@ function URLDecode() {
       toolId={ToolKeys.UrlDecode}
       byte={byte}
       onChangeCb={onChangeCb}
+      pageContent={
+        <>
+          <DecodeURLInJavascript />
+        </>
+      }
     />
   );
 }
