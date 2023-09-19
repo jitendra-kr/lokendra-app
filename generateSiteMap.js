@@ -7,12 +7,9 @@ async function generateSiteMap() {
   const pagesList = await globby([
     "pages/**/*.js",
     "pages/**/*.tsx",
-    "!pages/_*.js",
     "!pages/_*.tsx",
-    "!pages/donate.js",
-    "!pages/password-manager/*.js",
-    "!pages/404.js",
-    "!pages/user.js",
+    "!pages/donate.*",
+    "!pages/404.*",
   ]);
 
   const pages = [];
