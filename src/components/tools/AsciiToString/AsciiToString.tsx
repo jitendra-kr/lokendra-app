@@ -2,6 +2,7 @@ import { withRouter } from "next/router";
 import { useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
+import { AsciiToStringInJavascript } from "./AsciiToStringInJavascript";
 
 function AsciiToString() {
   const [byte, setByte] = useState("");
@@ -33,6 +34,11 @@ function AsciiToString() {
       toolId={ToolKeys.ASCIItoString}
       byte={byte}
       onChangeCb={onChangeCb}
+      pageContent={
+        <>
+          <AsciiToStringInJavascript />
+        </>
+      }
     />
   );
 }
