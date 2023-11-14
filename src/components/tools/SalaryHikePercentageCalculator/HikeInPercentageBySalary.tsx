@@ -1,8 +1,11 @@
-import { InputNumber } from "antd";
+import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { messageError } from "../../../utils";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";
+import styles from "./SalaryHikePercentageCalculator.module.css";
+import { HikeInPercentageBySalaryField } from "./SalaryHikePercentageCalculator.types";
 import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
 const CalculationFormula = dynamic(() =>
@@ -16,20 +19,27 @@ const SalaryHikePercentageCalculatorActions = dynamic(() =>
 );
 
 export function HikeInPercentageBySalary() {
-  const [newSalary, setNewSalary] = useState<number>(0);
-  const [oldSalary, setOldSalary] = useState<number>(0);
-
   const [result, setResult] = useState<number>(0);
+  const [form] = Form.useForm();
 
-  const clear = () => {
-    setNewSalary(0);
-    setOldSalary(0);
-    setResult(0);
-  };
+  const onFinish = (values: HikeInPercentageBySalaryField) => {
+    const newSalary = values.newSalary;
+    const oldSalary = values.oldSalary;
+    if (!newSalary || !oldSalary) {
+      messageError({ content: "Provided inputs are invalid " });
 
-  const calculateByNewSalary = () => {
+      return;
+    }
     const result = ((newSalary - oldSalary) / oldSalary) * 100;
-    setResult(Number(result.toFixed(2)));
+    if (isNaN(result)) {
+      messageError({ content: "Provided inputs are invalid " });
+      return;
+    }
+    setResult(result);
+    console.log("Success:", values);
+  };
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
   };
 
   return (
@@ -41,37 +51,43 @@ export function HikeInPercentageBySalary() {
       }}
     >
       <SalaryHikePercentageCalculatorTitle title=" Hike Percentage by Salary" />
-      <Label label="Old Salary" />
+      <Form
+        form={form}
+        name="basic"
+        layout="vertical"
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+      >
+        <Form.Item<HikeInPercentageBySalaryField>
+          label={<Label label="Old Salary" />}
+          name="oldSalary"
+          rules={[{ required: true, message: "Please input your old salary!" }]}
+        >
+          <InputNumber placeholder="Old salary: 100" className={styles.input} />
+        </Form.Item>
 
-      <InputNumber
-        placeholder="Old salary: 100"
-        style={{ width: "100%", height: "40px" }}
-        name="Old salary"
-        value={oldSalary === 0 ? "" : oldSalary}
-        onChange={(v) => {
-          if (v) {
-            setOldSalary(v);
-          }
-        }}
-      />
+        <Form.Item<HikeInPercentageBySalaryField>
+          label={<Label label="New Salary" />}
+          name="newSalary"
+          rules={[{ required: true, message: "Please input your new salary!" }]}
+        >
+          <InputNumber
+            placeholder="New Salary: 120"
+            style={{ width: "100%", height: "40px" }}
+          />
+        </Form.Item>
 
-      <Label label="New Salary" />
-      <InputNumber
-        placeholder="New Salary: 120"
-        name="New salary"
-        style={{ width: "100%", height: "40px" }}
-        value={newSalary === 0 ? "" : newSalary}
-        onChange={(v) => {
-          if (v) {
-            setNewSalary(v);
-          }
-        }}
-      />
-
-      <SalaryHikePercentageCalculatorActions
-        calculate={calculateByNewSalary}
-        clear={clear}
-      />
+        <Form.Item>
+          <SalaryHikePercentageCalculatorActions
+            clear={() => {
+              form.resetFields();
+              setResult(0);
+            }}
+          />
+        </Form.Item>
+      </Form>
 
       <CalculatorOutput
         text="Your percentage increase is"

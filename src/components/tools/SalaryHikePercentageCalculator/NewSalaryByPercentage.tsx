@@ -1,8 +1,11 @@
-import { InputNumber } from "antd";
+import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { messageError } from "../../../utils";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";
+import styles from "./SalaryHikePercentageCalculator.module.css";
+import { NewSalaryByPercentageField } from "./SalaryHikePercentageCalculator.types";
 import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
 const CalculationFormula = dynamic(() =>
@@ -15,21 +18,23 @@ const SalaryHikePercentageCalculatorActions = dynamic(() =>
 );
 
 export function NewSalaryByPercentage() {
-  const [currentSalary, setCurrentSalary] = useState<number>(0);
-  const [newSalary, setNewSalary] = useState<number>(0);
+  const [result, setResult] = useState<number>(0);
+  const [form] = Form.useForm();
 
-  const [percentageByNewSalary, setPercentageByNewSalary] = useState<number>(0);
-
-  const clear = () => {
-    setCurrentSalary(0);
-    setNewSalary(0);
-    setPercentageByNewSalary(0);
+  const onFinish = ({
+    currentSalary,
+    percentage,
+  }: NewSalaryByPercentageField) => {
+    const result = currentSalary * (percentage / 100) + currentSalary;
+    if (isNaN(result)) {
+      messageError({ content: "Provided inputs are invalid " });
+      return;
+    }
+    setResult(Number(result.toFixed(2)));
   };
 
-  const calculateByNewSalary = () => {
-    const result =
-      currentSalary * (percentageByNewSalary / 100) + currentSalary;
-    setNewSalary(Number(result.toFixed(2)));
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
   };
 
   return (
@@ -41,38 +46,46 @@ export function NewSalaryByPercentage() {
       }}
     >
       <SalaryHikePercentageCalculatorTitle title="New Salary by Percentage" />
-      <Label label="Old Salary" />
 
-      <InputNumber
-        name="Current Salary"
-        placeholder="Current Salary: 100"
-        style={{ width: "100%", height: "40px" }}
-        value={currentSalary === 0 ? "" : currentSalary}
-        onChange={(v) => {
-          if (v) {
-            setCurrentSalary(v);
-          }
-        }}
-      />
-      <Label label="Percentage of Increment(%)" />
-      <InputNumber
-        placeholder="Percentage of Increment: 15"
-        style={{ width: "100%", height: "40px" }}
-        name="Percentage of Increment"
-        value={percentageByNewSalary === 0 ? "" : percentageByNewSalary}
-        onChange={(v) => {
-          if (v) {
-            setPercentageByNewSalary(v);
-          }
-        }}
-      />
+      <Form
+        form={form}
+        name="basic"
+        layout="vertical"
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+      >
+        <Form.Item<NewSalaryByPercentageField>
+          label={<Label label="Old Salary" />}
+          name="currentSalary"
+          rules={[{ required: true, message: "Please input your old salary!" }]}
+        >
+          <InputNumber placeholder="Old salary: 100" className={styles.input} />
+        </Form.Item>
 
-      <SalaryHikePercentageCalculatorActions
-        calculate={calculateByNewSalary}
-        clear={clear}
-      />
+        <Form.Item<NewSalaryByPercentageField>
+          label={<Label label="Percentage of Increment(%)" />}
+          name="percentage"
+          rules={[{ required: true, message: "Please input your percentage!" }]}
+        >
+          <InputNumber
+            placeholder="New Salary: 120"
+            style={{ width: "100%", height: "40px" }}
+          />
+        </Form.Item>
 
-      <CalculatorOutput text="New Salary after Increment" value={newSalary} />
+        <Form.Item>
+          <SalaryHikePercentageCalculatorActions
+            clear={() => {
+              form.resetFields();
+              setResult(0);
+            }}
+          />
+        </Form.Item>
+      </Form>
+
+      <CalculatorOutput text="New Salary after Increment" value={result} />
 
       <CalculationFormula
         heading="Calculation Formula: How we determine new salary using percentage"

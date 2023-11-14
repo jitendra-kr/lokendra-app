@@ -3,10 +3,8 @@ import { SalaryHikePercentageCalculatorConst } from "./const";
 
 export function SalaryHikePercentageCalculatorActions({
   clear,
-  calculate,
 }: {
   clear: () => void;
-  calculate: () => void;
 }) {
   return (
     <div
@@ -16,7 +14,7 @@ export function SalaryHikePercentageCalculatorActions({
         alignItems: "center",
       }}
     >
-      <Button type="primary" onClick={calculate} style={{ width: "40%" }}>
+      <Button type="primary" htmlType="submit" style={{ width: "40%" }}>
         <span style={{ color: "white", fontWeight: "bold" }}>
           {SalaryHikePercentageCalculatorConst.submit}
         </span>
