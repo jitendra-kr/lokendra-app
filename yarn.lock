@@ -1687,10 +1687,10 @@ json_typegen_wasm@^0.7.0:
   resolved "https://registry.npmjs.org/json_typegen_wasm/-/json_typegen_wasm-0.7.0.tgz#65b31a125edbac3647232a83ecefad14adbb6c90"
   integrity sha512-xTDD7jlMpXB8S/6lD00aqOmHPuVszG4vtrJTaED8Mb6ziryGtXmtkREWpuvJbWWj45aVFGO3O/WjwxRBLw8dUQ==
 
-jsonrepair@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.2.0.tgz#ca1b6fdd23ae76bb8c82742f7a5773a7cef3d651"
-  integrity sha512-6eHBc2z5vipym4S8rzTcCXQBLWpkSzi9bk7I3xTdUxRzXyYvfjoVZzJ97N4C/9vcKI9NgNp3slPwHufDr0rFYw==
+jsonrepair@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.5.0.tgz#8bafd2c772047ceef9532e6ce1e73f3c138f8017"
+  integrity sha512-SavvDsUP9Xnqo2MoC6Wl6zNyX3f+I5199hRbXBtAITyP2NTPyAgyx5xM0bgcIljRjzsIvOBANbgfWe8XXlyeLA==
 
 levn@^0.4.1:
   version "0.4.1"
