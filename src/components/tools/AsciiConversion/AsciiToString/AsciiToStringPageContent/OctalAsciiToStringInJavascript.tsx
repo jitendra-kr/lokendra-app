@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../../../common";
+import { H2Tag, PTag } from "../../../../common";
 import { ShowCodeBlock } from "../../../../common/ShowCodeBlock";
 
 export function OctalAsciiToStringInJavascript() {
   return (
     <>
-      <H1Tag heading="Convert Octal ASCII Codes to String in Javascript" />
+      <H2Tag heading="Convert Octal ASCII Codes to String in Javascript" />
       <PTag text="If you have ASCII values represented in octal and you want to convert them to text in JavaScript. you can use a similar approach as before but specify base 8 for the parseInt function. Here's an example" />
 
       <ShowCodeBlock

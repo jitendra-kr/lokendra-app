@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../../common";
+import { H2Tag, PTag } from "../../../common";
 import { ShowCodeBlock } from "../../../common/ShowCodeBlock";
 
 export const StringToAsciiInJavascript = () => {
   return (
     <>
-      <H1Tag heading="Convert text to ASCII codes in Javascript" />
+      <H2Tag heading="Convert text to ASCII codes in Javascript" />
       <PTag text="In JavaScript, we can use the charCodeAt method to get the ASCII codes. In the below example, stringToAsciiCodes function takes an input string and converts it to ASCII codes " />
 
       <ShowCodeBlock

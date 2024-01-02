@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../../../common";
+import { H2Tag, PTag } from "../../../../common";
 import { ShowCodeBlock } from "../../../../common/ShowCodeBlock";
 
 export function BinaryAsciiToStringInJavascript() {
   return (
     <>
-      <H1Tag heading="Convert Binary ASCII Codes to String in Javascript" />
+      <H2Tag heading="Convert Binary ASCII Codes to String in Javascript" />
       <PTag text="In JavaScript, you need to parse each binary representation and transform it back to its decimal ASCII equivalent in order to convert Binary ASCII to text. This is an example of code." />
 
       <ShowCodeBlock

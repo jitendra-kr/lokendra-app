@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../../../common";
+import { H2Tag, PTag } from "../../../../common";
 import { ShowCodeBlock } from "../../../../common/ShowCodeBlock";
 
 export function AsciiToStringInJavascript() {
   return (
     <>
-      <H1Tag heading="Convert ASCII Codes to String in Javascript" />
+      <H2Tag heading="Convert ASCII Codes to String in Javascript" />
       <PTag text="JavaScript provides the `fromCharCode` method for obtaining characters from ASCII values. This function allows you to retrieve characters based on their corresponding ASCII values. By passing in the desired ASCII code as an argument, you can effortlessly obtain the corresponding character" />
 
       <ShowCodeBlock

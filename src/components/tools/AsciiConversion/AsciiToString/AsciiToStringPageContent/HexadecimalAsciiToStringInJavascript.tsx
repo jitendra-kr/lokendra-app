@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../../../common";
+import { H2Tag, PTag } from "../../../../common";
 import { ShowCodeBlock } from "../../../../common/ShowCodeBlock";
 
 export function HexadecimalAsciiToStringInJavascript() {
   return (
     <>
-      <H1Tag heading="Convert Hexadecimal ASCII Codes to String in Javascript" />
+      <H2Tag heading="Convert Hexadecimal ASCII Codes to String in Javascript" />
       <PTag
         text="In hexadecimal The term ASCII describes how ASCII characters are represented using hexadecimal (base-16) numbers. American Standard Code for Information Interchange) has a unique number value, which can be represented in different numeral systems as binary, hexadecimal, or decimal.
       Hexadecimal representation is a useful way to represent binary-coded numbers since each digit corresponds to four binary digits (bits). The letters A-F and the numbers 0–9 are used in hexadecimal, where A stands for 10, B for 11, and so on up to F for 15.

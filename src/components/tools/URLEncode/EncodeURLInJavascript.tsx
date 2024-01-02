@@ -1,10 +1,10 @@
-import { H1Tag, PTag } from "../../common";
+import { H2Tag, PTag } from "../../common";
 import { ShowCodeBlock } from "../../common/ShowCodeBlock";
 
 export const EncodeURLInJavascript = () => {
   return (
     <>
-      <H1Tag heading="Encode URL in Javascript " />
+      <H2Tag heading="Encode URL in Javascript " />
       <PTag
         text={`There are two in-build methods in JavaScript encodeURIComponent and encodeURI that are used to URL encoding. Here's how you can use them.`}
       />
