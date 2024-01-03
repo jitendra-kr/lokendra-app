@@ -11,7 +11,7 @@ export function AsciiToStringInJavascript() {
         download={false}
         language="javascript"
         code={`
-function convertToAsciiCodesToCharacters(asciiCodes) {
+function convertAsciiCodesToCharacters(asciiCodes) {
     var text = "";
   
     // Convert ASCII codes to text
@@ -23,7 +23,7 @@ function convertToAsciiCodesToCharacters(asciiCodes) {
   }
   
   const asciiCodesArray = [102, 105, 114, 101, 98, 111, 120, 116, 111, 111, 108, 115, 46, 99, 111, 109];
-  const text = convertToAsciiCodesToCharacters(asciiCodesArray);
+  const text = convertAsciiCodesToCharacters(asciiCodesArray);
   console.log(text);
   
 // fireboxtools.com
