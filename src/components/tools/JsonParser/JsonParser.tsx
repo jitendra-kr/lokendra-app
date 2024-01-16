@@ -1,10 +1,12 @@
 import { withRouter } from "next/router";
 import { useState } from "react";
 import { beautifyJSON } from "../../../utils";
+import { Faq } from "../../common";
 import Ide from "../../common/Ide/Ide";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { JsonViewer } from "../helper/JsonViewer";
+import jsonParserFaqData from "./jsonParserFaqData";
 
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
@@ -59,6 +61,11 @@ function JsonParser() {
       }
       toolId={ToolKeys.JSONParser}
       byte={byte}
+      pageContent={
+        <>
+          <Faq data={jsonParserFaqData}></Faq>
+        </>
+      }
     />
   );
 }

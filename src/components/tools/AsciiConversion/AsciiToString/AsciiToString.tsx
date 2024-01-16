@@ -1,9 +1,11 @@
 import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { Faq } from "../../../common";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { AsciiFormat, SelectASCIIConversionType } from "../common";
 import { AsciiToStringPageContent } from "./AsciiToStringPageContent";
+import asciiToStringFaqData from "./asciiToStringFaqData";
 
 function AsciiToString() {
   const [byte, setByte] = useState("");
@@ -112,7 +114,12 @@ function AsciiToString() {
       inputEditorActionChild={
         <SelectASCIIConversionType setInputType={setInputType} />
       }
-      pageContent={<AsciiToStringPageContent />}
+      pageContent={
+        <>
+          <AsciiToStringPageContent />
+          <Faq data={asciiToStringFaqData}></Faq>
+        </>
+      }
     />
   );
 }

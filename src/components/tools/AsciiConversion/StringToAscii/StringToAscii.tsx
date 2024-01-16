@@ -1,8 +1,10 @@
 import { withRouter } from "next/router";
 import { useState } from "react";
+import { Faq } from "../../../common";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
+import stringToAsciiFaqData from "./stringToAsciiFaqData";
 
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
@@ -32,6 +34,7 @@ function StringToAscii() {
         pageContent={
           <>
             <StringToAsciiInJavascript />
+            <Faq data={stringToAsciiFaqData}></Faq>
           </>
         }
       />

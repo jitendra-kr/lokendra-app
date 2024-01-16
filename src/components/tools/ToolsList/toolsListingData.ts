@@ -48,8 +48,7 @@ export const toolsListData: Array<ITools> = [
     title: "String to ASCII",
     link: SCREENS.STRING_TO_ASCII,
     heading: "Convert Text to ASCII: Online Tool for Easy ASCII Conversion",
-    content:
-      "Just load your text, System will automatically convert it to ASCII codes",
+    content: "",
     metaTitle: seoData.stringToAscii.title,
     metaDescription: seoData.stringToAscii.description,
     list: true,
@@ -68,8 +67,7 @@ export const toolsListData: Array<ITools> = [
     title: "ASCII to String",
     link: SCREENS.ASCII_TO_STRING,
     heading: "Convert ASCII to String: Online with Ease and Accuracy",
-    content:
-      "Just load your ASCII code, System will automatically convert it to text",
+    content: "",
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,
     list: true,
@@ -110,8 +108,7 @@ export const toolsListData: Array<ITools> = [
     title: "JSON Formatter",
     link: SCREENS.JSON_PARSER,
     heading: "Online JSON Formatter, Parser, Beautifier & Validator",
-    content:
-      "Just load your JSON, and the system will validate, parse, and format it automatically.",
+    content: "",
     metaTitle: seoData.jsonParser.title,
     metaDescription: seoData.jsonParser.description,
     list: true,
@@ -122,7 +119,7 @@ export const toolsListData: Array<ITools> = [
     \nIn addition to its validation capabilities, It is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
     \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
     \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, wrap key and values to double quotes, fix incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
-    \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers. Once      
+    \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers.      
     `,
     keyFeatures: [
       "Easy JSON Formatting: Easily format your JSON data so that it is well-organized and easy to read and understand, improving code comprehension and data analysis.",
