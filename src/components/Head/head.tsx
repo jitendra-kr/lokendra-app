@@ -42,7 +42,7 @@ export default function AppHead({
       <meta property="og:image:width" content="720" />
       <meta property="og:image:height" content="404" />
       <meta property="og:type" content="article" key="og:type" />
-
+      <link rel="canonical" href={url} />
       <meta property="og:url" content={`${url}`} key="og:url" />
 
       <meta property="og:title" content={title} key="og:title" />

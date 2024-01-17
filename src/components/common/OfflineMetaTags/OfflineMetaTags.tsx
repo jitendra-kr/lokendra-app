@@ -6,7 +6,7 @@ type OfflineMetaTagsProps = {
   tagData?: SeoTags;
 };
 export function OfflineMetaTags({ tagData }: OfflineMetaTagsProps) {
-  const url = `${STRING_CONSTANTS.global.domain}${tagData?.link}`;
+  const url = `${STRING_CONSTANTS.global.websiteURL}${tagData?.link}`;
   return (
     <AppHead
       title={tagData?.metaTitle ?? ""}

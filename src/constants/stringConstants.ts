@@ -12,6 +12,7 @@ export const STRING_CONSTANTS = {
   },
   global: {
     appName: "FireboxTools",
-    domain: "FireboxTools.com",
+    domain: "fireboxTools.com",
+    websiteURL: "https://www.fireboxtools.com",
   },
 };
