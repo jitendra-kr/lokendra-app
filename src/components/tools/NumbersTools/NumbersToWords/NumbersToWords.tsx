@@ -2,8 +2,10 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ToWords } from "to-words";
 import { capitalizeEveryWord, messageError } from "../../../../utils";
+import { Faq } from "../../../common";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
+import numbersToWordsFaqData from "./numbersToWordsFaqData";
 
 const NumbersToWordsOptions = dynamic(
   () =>
@@ -99,6 +101,11 @@ export function NumbersToWords() {
       onClick={onClick}
       placeholder={`Enter desired number`}
       error={error}
+      pageContent={
+        <>
+          <Faq data={numbersToWordsFaqData}></Faq>
+        </>
+      }
     />
   );
 }

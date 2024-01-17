@@ -17,5 +17,6 @@
   "githubPullRequests.ignoredPullRequestBranches": ["master"],
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "cSpell.words": ["Kharab", "करोड़"]
 }

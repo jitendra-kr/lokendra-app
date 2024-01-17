@@ -477,7 +477,7 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
     heading: "Number To Word Converter",
     metaTitle: seoData.NUMBER_TO_WORDS.title,
     metaDescription: seoData.NUMBER_TO_WORDS.description,
-    content: "Just type number, and the system will convert it into word",
+    content: "",
     list: true,
     key: ToolKeys.NUMBER_TO_WORDS,
     toolDescription: `We are happy that you have chosen to use our free online Number to Word Converter! Our converter makes the procedure straightforward whether you're working with financial data, instructional materials, or any other scenario where it's needed to translate numbers into English.
