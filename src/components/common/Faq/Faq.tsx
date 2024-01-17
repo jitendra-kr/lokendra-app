@@ -1,3 +1,4 @@
+import { CaretRightOutlined } from "@ant-design/icons";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 import { H2Tag } from "../HtmlTags";
@@ -11,18 +12,21 @@ export const Faq = ({ data }: { data: FaqProps[] }) => {
   const faqData: CollapseProps["items"] = data.map(
     ({ ans, question }, index) => ({
       key: index,
-      label: question,
+      label: <strong>{question}</strong>,
       children: typeof ans === "string" ? <p>{ans}</p> : ans,
     }),
   );
+
   return (
     <>
       <H2Tag heading="FAQ" link={false}></H2Tag>
       <Collapse
-        defaultActiveKey={[0]}
+        defaultActiveKey={faqData.map((_, index) => index)}
         style={{ marginTop: "20px", marginBottom: "20px" }}
-        accordion
         items={faqData}
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
       />
     </>
   );

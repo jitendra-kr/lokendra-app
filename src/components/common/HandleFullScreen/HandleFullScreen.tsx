@@ -46,7 +46,11 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
         }
         width="90%"
         style={{ top: 0 }}
-        bodyStyle={{ height: "100vh" }}
+        styles={{
+          body: {
+            height: "100vh",
+          },
+        }}
         destroyOnClose={true}
         closeIcon={
           <Tooltip title={"Exit Full Screen"}>
