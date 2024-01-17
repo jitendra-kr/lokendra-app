@@ -17,7 +17,7 @@ export default function AppHead({
 
   image =
     image ??
-    "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/FireBoxTools-logo.png";
+    "https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/FireBoxTools-logo-250-250.jpg";
 
   return (
     <Head>
