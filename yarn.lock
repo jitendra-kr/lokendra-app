@@ -2838,10 +2838,10 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-to-words@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.npmjs.org/to-words/-/to-words-3.6.1.tgz#3f895c41b27bf7146595614c3f4af08cd1ae2f16"
-  integrity sha512-X2KDRjBXM0bQ4eTblqNnVfIBGEwhSClR3eWubD6B7gY29vh1k+ntQGSaShwgrsQT3Akt/tbIjKkn8mMOYHihnw==
+to-words@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/to-words/-/to-words-4.0.0.tgz#586e5214c346c2eb1283a21302bd20086613f4ce"
+  integrity sha512-a05O5RDrjBcnNWR1GHXo7PH9GMsESNtoqmm60EnTMdCIWefcVKMwrzWQGxN0jSaYwwxnU6iBu5oWNV2lsRT5/g==
 
 toggle-selection@^1.0.6:
   version "1.0.6"

@@ -27,24 +27,24 @@ const howManyZero = (
 
 const numbersToWordsFaqData: FaqProps[] = [
   {
-    question: "What is the 'Numbers to Words Converter'?",
-    ans: "The 'Numbers to Words Converter' is a free online tool that allows you to convert any numerical value into written words in a matter of seconds.",
+    question: "What is the Numbers to Words Converter'?",
+    ans: "The Numbers to Words Converter' is a free online tool that allows you to convert any numerical value into written words in a matter of seconds.",
   },
   {
-    question: "How do I use the 'Numbers to Words Converter'?",
+    question: "How do I use the Numbers to Words Converter'?",
     ans: "Simply enter the number you wish to convert into the input field and the tool will instantly display the number in word form.",
   },
   {
-    question: "Is the 'Numbers to Words Converter' free to use?",
-    ans: "Yes, the 'Numbers to Words Converter' is completely free to use. There are no hidden charges or subscription fees.",
+    question: "Is the Numbers to Words Converter' free to use?",
+    ans: "Yes, the Numbers to Words Converter' is completely free to use. There are no hidden charges or subscription fees.",
   },
   {
-    question: "Can I use the 'Numbers to Words Converter' for large numbers?",
+    question: "Can I use the Numbers to Words Converter' for large numbers?",
     ans: "Absolutely! Our tool can handle any size of number, making it perfect for converting large numbers into words.",
   },
   {
-    question: "Why should I use the 'Numbers to Words Converter'?",
-    ans: "The 'Numbers to Words Converter' is a handy tool for anyone who needs to write out numbers in words, such as for check-writing, legal documents, or educational purposes.",
+    question: "Why should I use the Numbers to Words Converter'?",
+    ans: "The Numbers to Words Converter' is a handy tool for anyone who needs to write out numbers in words, such as for check-writing, legal documents, or educational purposes.",
   },
   {
     question: "How can I download my number conversion results?",
@@ -121,5 +121,13 @@ const numbersToWordsFaqData: FaqProps[] = [
       </>
     ),
   },
+  // {
+  //   question: "how this tool transforms numbers into words?",
+  //   ans: (
+  //     <>
+  //       <HowThisToolIsConvertingNumberToWords />
+  //     </>
+  //   ),
+  // },
 ];
 export default numbersToWordsFaqData;
