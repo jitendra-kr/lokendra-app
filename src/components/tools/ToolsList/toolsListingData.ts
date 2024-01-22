@@ -45,7 +45,7 @@ export const jsonParser = "json-parser";
 
 export const toolsListData: Array<ITools> = [
   {
-    title: "String to ASCII",
+    title: "text to ASCII",
     link: SCREENS.STRING_TO_ASCII,
     heading: "Convert Text to ASCII: Online Tool for Easy ASCII Conversion",
     content: "",
@@ -64,9 +64,9 @@ export const toolsListData: Array<ITools> = [
     ],
   },
   {
-    title: "ASCII to String",
+    title: "ASCII to text",
     link: SCREENS.ASCII_TO_STRING,
-    heading: "Convert ASCII to String: Online with Ease and Accuracy",
+    heading: "Convert ASCII to text: Online with Ease and Accuracy",
     content: "",
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,

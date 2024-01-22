@@ -3,15 +3,15 @@ import { FaqProps } from "../../../common";
 const asciiToStringFaqData: FaqProps[] = [
   {
     question: "What is an ASCII to Text Converter?",
-    ans: "An ASCII to Text Converter is a tool that converts ASCII codes back into their corresponding characters.",
+    ans: "A tool that turns ASCII codes back into the relevant characters is known as an ASCII-to-text converter.",
   },
   {
     question: "How do I use the ASCII to Text Converter?",
     ans: "To use the ASCII to Text Converter, simply input the ASCII codes into the provided field and system will automatically convert it to text.",
   },
   {
-    question: "Is it free to use the ASCII to Text Converter?",
-    ans: "Yes, our ASCII to Text Converter is completely free to use.",
+    question: "Is using the ASCII to Text Converter free of charge?",
+    ans: "Yes.",
   },
   {
     question:

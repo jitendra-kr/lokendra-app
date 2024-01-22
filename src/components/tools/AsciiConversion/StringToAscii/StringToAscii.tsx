@@ -1,3 +1,4 @@
+import { textToAscii } from "ascii-text-converter";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import { Faq } from "../../../common";
@@ -9,19 +10,8 @@ import stringToAsciiFaqData from "./stringToAsciiFaqData";
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
 
-  const textToASCIIConvert = (inputText: string) => {
-    const asciiArray = [];
-
-    for (let i = 0; i < inputText.length; i++) {
-      const asciiValue = inputText.charCodeAt(i);
-      asciiArray.push(asciiValue);
-    }
-
-    return asciiArray;
-  };
-
   const onChangeCb = (value: string) => {
-    const asciiCodes = textToASCIIConvert(value);
+    const asciiCodes = textToAscii(value);
     setByte(asciiCodes.join(" "));
   };
 

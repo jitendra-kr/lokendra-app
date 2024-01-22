@@ -816,6 +816,11 @@ array-tree-filter@^2.1.0:
   resolved "https://registry.npmjs.org/array-tree-filter/-/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
   integrity sha512-4ROwICNlNw/Hqa9v+rk5h22KjmzB1JGTMVKP2AKJBOCgb0yL0ASf0+YvCcLNNwquOHNX48jkeZIJ3a+oOQqKcw==
 
+ascii-text-converter@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/ascii-text-converter/-/ascii-text-converter-1.0.7.tgz#5148eb01716bef05faaf5e9bb4f1fc5864d23f2e"
+  integrity sha512-zcsKFPlGN0CHGTG4DzImnRhuoj9yS/1sI6wDFCdNLNIOOYlqGyQSpbBfJ+afj2h+MQVKwDsUTvDOCR9DuAHMdw==
+
 async-validator@^4.1.0:
   version "4.2.5"
   resolved "https://registry.npmjs.org/async-validator/-/async-validator-4.2.5.tgz#c96ea3332a521699d0afaaceed510a54656c6339"
