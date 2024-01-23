@@ -45,7 +45,7 @@ export const jsonParser = "json-parser";
 
 export const toolsListData: Array<ITools> = [
   {
-    title: "text to ASCII",
+    title: "String to ASCII",
     link: SCREENS.STRING_TO_ASCII,
     heading: "Convert Text to ASCII: Online Tool for Easy ASCII Conversion",
     content: "",
@@ -53,7 +53,7 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.stringToAscii.description,
     list: true,
     key: ToolKeys.StringtoASCII,
-    toolDescription: `Are you tired of spending hours manually converting characters to ASCII codes? Look no further than our Convert String to ASCII tool! You won't have any trouble entering and translating your content because of the simple and clear UI for ASCII Conversion. Convert text to ASCII quickly and accurately with our free online tool for easy ASCII conversion. Save time and effort with this simple tool. No coding skills are required - just enter your string and get the result instantly. Our online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, a paragraph, or a document, It can handle all with ease. Simply enter your text or upload a text file into the tool, and it will instantly generate the corresponding ASCII code for each character.  This tool is beneficial for every person who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations. `,
+    toolDescription: `Are you tired of spending hours manually converting characters to ASCII codes? Look no further than our Convert String to ASCII tool! You won't have any trouble entering and translating your content because of the simple and clear UI for ASCII Conversion. Convert text to ASCII quickly and accurately with our free online tool for easy ASCII conversion. Save time and effort with this simple tool. No coding skills are required - just enter your string and get the result instantly. Our online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, a paragraph, or a document, it can be handled all with ease. Simply enter your text or upload a text file into the tool, and it will instantly generate the corresponding ASCII code for each character.  This tool is beneficial for every person who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations. `,
     keyFeatures: [
       "Instant ASCII Conversion: Effortlessly convert any text into its corresponding ASCII codes in real-time.",
       "User-Friendly Interface: Our intuitive and easy-to-navigate interface ensures a seamless experience for users of all technical levels. Just enter your text, and the ASCII codes are generated instantly",
@@ -64,9 +64,9 @@ export const toolsListData: Array<ITools> = [
     ],
   },
   {
-    title: "ASCII to text",
+    title: "ASCII to String",
     link: SCREENS.ASCII_TO_STRING,
-    heading: "Convert ASCII to text: Online with Ease and Accuracy",
+    heading: "Convert ASCII to String: Online with Ease and Accuracy",
     content: "",
     metaTitle: seoData.asciiToString.title,
     metaDescription: seoData.asciiToString.description,
@@ -116,7 +116,7 @@ export const toolsListData: Array<ITools> = [
     toolDescription: `Are you in need of a secure JSON formatter tool to beautify JSON that ensures the integrity and safety of your data? 
     \nLook no further! Our advanced JSON tool is designed to provide a fast, easy-to-use, and accurate solution for developers and data analysts who value data security and precision.    
     \nOne of the key features of our JSON validator is its robust validation process. Before formatting, our tool thoroughly validates the provided JSON data, ensuring that it is well-formed and free of errors. This validation step is crucial, as it guarantees that the resulting formatted JSON will be accurate and reliable.     
-    \nIn addition to its validation capabilities, It is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
+    \nIn addition to its validation capabilities, it is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
     \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
     \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, wrap key and values to double quotes, fix incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
     \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers.      
@@ -164,7 +164,7 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.jsonToTypescript.description,
     list: true,
     key: ToolKeys.JSON_TO_TYPESCRIPT,
-    toolDescription: `Are you tired of manually converting JSON data to TypeScript interfaces? Look no further! Introducing our online JSON to TypeScript Conversion tool, Our online Conversion tool is here to save you time and effort. With our secure and fast conversion process, you can effortlessly transform your JSON data into TypeScript interfaces.
+    toolDescription: `Are you tired of manually converting JSON data to TypeScript interfaces? Look no further! Introducing our online JSON to TypeScript Conversion tool, our online Conversion tool is here to save you time and effort. With our secure and fast conversion process, you can effortlessly transform your JSON data into TypeScript interfaces.
 
 Our first emphasis is security. We recognize the importance of safeguarding sensitive material, so you can be confident that your JSON files will be handled with the utmost care and confidentiality during the conversion process. Your data is kept secure and private, providing peace of mind.
 
@@ -204,7 +204,7 @@ Speed is another highlight of our JSON Diff tool. Thanks to its optimized algori
     
 The user-friendly interface makes it accessible to both novice and experienced users. The intuitive design guides users through the diffing and validation process with ease. Even those without a technical background can navigate through the tool effortlessly and make use of its powerful functionality.
     
-Moreover, our JSON Diff tool offers an additional benefit by allowing users to repair JSON files with minor issues. It gives a repair JSON feature to fixe common problems such as trailing commas, corrects inconsistent quote usage, and removes unnecessary whitespace, comments. This feature saves users from the hassle of manually editing JSON files and ensures that the resulting JSON is error-free.
+Moreover, our JSON Diff tool offers an additional benefit by allowing users to repair JSON files with minor issues. It gives a repair JSON feature to fix common problems such as trailing commas, corrects inconsistent quote usage, and removes unnecessary whitespace, comments. This feature saves users from the hassle of manually editing JSON files and ensures that the resulting JSON is error-free.
     
 When it comes to security, our JSON Diff tool prioritizes the protection of user data. We have implemented robust security measures to safeguard the confidentiality and integrity of the JSON files processed through our tool. Users can have peace of mind knowing that their sensitive data is protected at all times.
     
@@ -249,7 +249,7 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
     metaDescription: seoData.toUppercase.description,
     list: true,
     key: ToolKeys.UppercaseTextconverter,
-    toolDescription: `Introducing our revolutionary Convert Text to Uppercase tool – the ultimate solution for effortless capitalization. Are you tired of spending precious time manually capitalizing text? Look no further! Our tool will transform your experience and make sure your words stand out with just a click.
+    toolDescription: `Introducing our Revolutionary Convert Text to Uppercase tool – the ultimate solution for effortless capitalization. Are you tired of spending precious time manually capitalizing text? Look no further! our tool will transform your experience and make sure your words stand out with just a click.
 
 Whether you're a professional writer, a student, or simply someone dealing with the text on a daily basis, our Text to Uppercase Converter tool is the ultimate choice. Gone are the days of painstakingly capitalizing word by word or sentence by sentence. With our tool, you can capitalize an entire document.
     
@@ -457,7 +457,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
     metaDescription: seoData.UUIDGenerator.description,
     list: true,
     key: ToolKeys.UUIDGenerator,
-    toolDescription: `Are you in need of a unique identifier for your projects? Look no further than our UUID generator tool! With its lightning-fast speed and user-friendly interface, our tool provides an easy solution for generating universally unique identifiers (UUIDs).
+    toolDescription: `Are you in need of a unique identifier for your projects? Look no further than our UUID generator tool! With its lightning-fast speed and user-friendly interface, our tool provides an easy solution for generating universally unique identifiers.
 
 UUIDs are crucial for assigning unique identification to digital objects, ensuring that they are easily searchable and retrievable. Our tool simplifies the process, generating a random and unique UUID with just a few clicks. Whether you're working on a programming project or need an identifier for your online database, our tool produces accurate and reliable UUIDs every time.
     
