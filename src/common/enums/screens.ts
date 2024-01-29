@@ -8,6 +8,7 @@ export enum SCREENS {
   "REPLACE_SPACES" = "/text-tools/replace-spaces",
   "REMOVE_SPACES" = "/text-tools/remove-spaces",
   "REMOVE_EXTRA_SPACES" = "/text-tools/remove-extra-spaces",
+  "GENERATE_RANDOM_STRING" = "/text-tools/random-string-generator",
 
   // calculator tools
   "SALARY_HIKE_PERCENTAGE_CALCULATOR" = "/calculator/salary-hike-percentage-calculator",

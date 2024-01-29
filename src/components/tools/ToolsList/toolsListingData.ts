@@ -28,6 +28,7 @@ export enum ToolKeys {
   XML_TO_JSON = "XML_TO_JSON",
   JSON_TO_XML = "JSON_TO_XML",
   NUMBER_TO_WORDS = "NUMBER_TO_WORDS",
+  GENERATE_RANDOM_STRING = "GENERATE_RANDOM_STRING",
 }
 
 export interface ITools extends SeoTags {
@@ -574,11 +575,29 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
     \nSay goodbye to laborious coding and manual data manipulation. Just after typing or pasting, you can quickly convert XML files into JSON format using our streamlined XML to JSON Converter.
     `,
     keyFeatures: [
-      `Ease of Use: Our tool's design prioritises simplicity. It can be used without any technical expertise or programming expertise. Anyone may easily and rapidly convert XML to JSON without effort, from novices to seasoned professionals.`,
+      `Ease of Use: Our tool's design prioritize simplicity. It can be used without any technical expertise or programming expertise. Anyone may easily and rapidly convert XML to JSON without effort, from novices to seasoned professionals.`,
       `Seamless Conversion: Easily convert your XML data to JSON format. Our converter guarantees dependability and accuracy while maintaining the integrity of your data.`,
       `Privacy and Security: Data security is a responsibility we take seriously. Your privacy is always secured because your XML files and converted JSON outputs are never stored on our systems. `,
       `Compatible with a variety of XML Formats: We designed our XML to JSON Converter to support a variety of XML formats. Our tool handles XML data with ease, regardless of whether it adheres to a specified standard or has unique tags.`,
       `Downloadable Output: Obtain immediate access to your JSON files after transformation. There is no need to wait; simply download your results and incorporate them right away into your projects.`,
     ],
   },
+  {
+    title: "Random String Generator",
+    link: SCREENS.GENERATE_RANDOM_STRING,
+    heading: "Random String Generator",
+    metaTitle: seoData.GENERATE_RANDOM_STRING.title,
+    metaDescription: seoData.GENERATE_RANDOM_STRING.description,
+    content: "",
+    list: true,
+    key: ToolKeys.GENERATE_RANDOM_STRING,
+    toolDescription: `Random String Generator is an online tool that can help you with various tasks, such as testing your software, creating strong passwords, generating coupon codes, and more. You can easily create strings of any length and type using Random String Generator. You can download the results as a text file or copy them to your clipboard.`,
+    keyFeatures: [
+      "You can customize the length, charset, and format of the random strings according to your needs.",
+      "You can copy the generated strings to your clipboard, or download it as a text file.",
+      "You can generate up to ten thousand random text in a single click.",
+      "You can generate a text up to seventy characters long with just a single click.",
+    ],
+  },
+  // Keywords: random string generator, online string generator, password generator, secure string, unique string, username generator, API key generator, data masking, text generation, online tool, free
 ];

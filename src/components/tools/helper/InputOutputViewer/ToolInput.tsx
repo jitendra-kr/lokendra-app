@@ -1,17 +1,20 @@
-import { Button } from "antd";
 import React from "react";
 import { ToolsBody } from "../../ToolsBody";
 import { ITools } from "../../ToolsList";
 import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
 import InputOutputViewerStyles from "./InputOutputViewer.module.css";
+import { RenderActionButton } from "./RenderActionButton";
+import { RenderInputOptions } from "./RenderInputOptions";
 
 type InputOutputVieweoptions = {
   options?: {
-    disable: boolean;
+    disable?: boolean;
+    hideInput?: boolean;
+    buttonAfterOption?: boolean;
   };
 };
 
-type Input = {
+export type Input = {
   showInput: boolean;
   buttonName: string;
   options?: React.ReactNode;
@@ -53,32 +56,32 @@ export function ToolInput({
                   : InputOutputViewerStyles["input-false-w"]
               }`}
             >
-              <InputToConvertByTools
-                onChangeCb={onChangeCb}
-                type={input ? inputType.input : inputType.textarea}
-                placeholder={placeholder}
-                inputNumber={inputNumber}
-                inputEditorActionChild={inputEditorActionChild}
-              />
+              {!options?.hideInput && (
+                <InputToConvertByTools
+                  onChangeCb={onChangeCb}
+                  type={input ? inputType.input : inputType.textarea}
+                  placeholder={placeholder}
+                  inputNumber={inputNumber}
+                  inputEditorActionChild={inputEditorActionChild}
+                />
+              )}
             </div>
             {input && (
-              <>
-                {input.buttonName && (
-                  <Button
-                    type="primary"
-                    className={InputOutputViewerStyles["input-button"]}
-                    onClick={onClick}
-                    disabled={options?.disable}
-                  >
-                    <span className={InputOutputViewerStyles.buttonText}>
-                      {input.buttonName}
-                    </span>
-                  </Button>
-                )}
-                <div style={{ marginTop: "20px" }}>
-                  {input.options && input.options}
-                </div>
-              </>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: options?.buttonAfterOption
+                    ? "column-reverse"
+                    : "column",
+                }}
+              >
+                <RenderActionButton
+                  onClick={onClick}
+                  options={options}
+                  input={input}
+                />
+                <RenderInputOptions input={input} />
+              </div>
             )}
           </span>
         </div>

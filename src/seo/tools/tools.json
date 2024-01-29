@@ -94,5 +94,9 @@
   "NUMBER_TO_WORDS": {
     "title": "Number to Word Converter - Convert Numbers to Words Online",
     "description": "Easily convert numbers to words instantly with our online tool. Say goodbye to number spelling struggles: Easy-to-use tool to writes numbers in words."
+  },
+  "GENERATE_RANDOM_STRING": {
+    "title": "Random String Generator - Customize Length, Charset & More",
+    "description": "Generate strong, secure, and unique random strings instantly with our free online tool. Choose the length, character set, and output format of your strings."
   }
 }

@@ -59,6 +59,7 @@ export const InputToConvertByTools = ({
   const hideEditorActions = [
     SCREENS.UUID_GENERATOR,
     SCREENS.NUMBER_TO_WORDS,
+    SCREENS.GENERATE_RANDOM_STRING,
   ].includes(pathname as SCREENS);
 
   const {

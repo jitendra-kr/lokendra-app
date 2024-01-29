@@ -19,7 +19,7 @@ export function RelevantTools({
     });
   };
 
-  if (!releventTools[toolLink].length) {
+  if (!releventTools[toolLink]?.length) {
     return <></>;
   }
 
@@ -48,6 +48,7 @@ export function RelevantTools({
           className={RelevantToolsStyles["changing-text-color"]}
           href="#tool-list"
           scroll={false}
+          style={{ marginLeft: "8px" }}
         >
           <b>Explore Other Tools</b>
         </Link>

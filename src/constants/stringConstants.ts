@@ -11,7 +11,7 @@ export const STRING_CONSTANTS = {
     outputHeight: 29,
   },
   global: {
-    appName: "FireboxTools",
+    appName: "fireboxTools",
     domain: "fireboxTools.com",
     websiteURL: "https://www.fireboxtools.com",
   },

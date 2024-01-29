@@ -9,7 +9,8 @@ export type DownloadOutputProps = {
 };
 
 export function DownloadOutput({ content }: DownloadOutputProps) {
-  const baseFileName = `${STRING_CONSTANTS.global.appName}`;
+  const path = window.location.pathname.split("/").pop();
+  const baseFileName = `${STRING_CONSTANTS.global.appName}-${path}`;
   const { pathname } = useGetUrlPath();
   const fileExt: Record<string, string> = {
     [SCREENS.JSON_PARSER]: ".json",
