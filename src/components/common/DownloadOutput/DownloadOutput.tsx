@@ -9,9 +9,10 @@ export type DownloadOutputProps = {
 };
 
 export function DownloadOutput({ content }: DownloadOutputProps) {
-  const path = window.location.pathname.split("/").pop();
-  const baseFileName = `${STRING_CONSTANTS.global.appName}-${path}`;
   const { pathname } = useGetUrlPath();
+  const toolName = pathname?.split("/").pop();
+  const baseFileName = `${STRING_CONSTANTS.global.appName}-${toolName}`;
+
   const fileExt: Record<string, string> = {
     [SCREENS.JSON_PARSER]: ".json",
     [SCREENS.JSON_MINIFIER]: ".json",
@@ -24,6 +25,7 @@ export function DownloadOutput({ content }: DownloadOutputProps) {
     const fileName = `${baseFileName}${ext ?? ".txt"}`;
     const url = window.URL.createObjectURL(new Blob([content]));
     const link = document.createElement("a");
+    console.log("fileName", fileName);
     link.href = url;
     link.setAttribute("download", fileName);
     document.body.appendChild(link);

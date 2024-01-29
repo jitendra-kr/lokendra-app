@@ -75,7 +75,6 @@ export function RandomStringGenerator() {
         options.charset = inputValue.customAlphabets;
       }
 
-      console.log(generate(options));
       for (let index = 0; index < inputValue?.howManyStrings ?? 1; index++) {
         result += generate(options) + "\n";
       }
