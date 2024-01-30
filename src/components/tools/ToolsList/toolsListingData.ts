@@ -166,23 +166,14 @@ export const toolsListData: Array<ITools> = [
     list: true,
     key: ToolKeys.JSON_TO_TYPESCRIPT,
     toolDescription: `Are you tired of manually converting JSON data to TypeScript interfaces? Look no further! Introducing our online JSON to TypeScript Conversion tool, our online Conversion tool is here to save you time and effort. With our secure and fast conversion process, you can effortlessly transform your JSON data into TypeScript interfaces.
-
-Our first emphasis is security. We recognize the importance of safeguarding sensitive material, so you can be confident that your JSON files will be handled with the utmost care and confidentiality during the conversion process. Your data is kept secure and private, providing peace of mind.
-
-But that's not all. Our tool goes beyond simple conversion. We offer an additional feature that allows you to fix minor errors (fix quotes, escape characters, remove comments and trailing commas) in your JSON data using the "Repair JSON" option. This handy feature ensures that your JSON data is valid and error-free before generating the TypeScript interfaces.
-
-Generating TypeScript interfaces based on your provided data has never been easier. Our tool analyzes the structure and content of your data and automatically generates the corresponding TypeScript interfaces. Say goodbye to manual coding and hello to automated code generation!
-
-Using our JSON conversion tool, you can streamline your development process and eliminate the tedious task of manually converting JSON to Interface. The generated TypeScript interfaces provide strong typing and improved code readability, enhancing the maintainability of your code.
-
-Whether you're a seasoned developer or just starting out, our tool is suitable for all skill levels. You don't have to be a TypeScript expert to benefit from the power of strong typing. Our user-friendly interface simplifies and intuitively converts your code, allowing you to focus on what matters most: creating outstanding software.`,
+Our first emphasis is security. We recognize the importance of safeguarding sensitive material, so you can be confident that your JSON files will be handled with the utmost care and confidentiality during the conversion process. Our tool analyzes the structure and content of your data and automatically generates the corresponding TypeScript code.
+Whether you're a seasoned developer or just starting out, our tool is suitable for all skill levels. You don't have to be a TypeScript expert to benefit from the power of strong typing. Our user-friendly interface simplifies and intuitively converts your code, allowing you to focus on what matters most: creating outstanding software. Say goodbye to manual coding.`,
     keyFeatures: [
-      "Seamless JSON to TypeScript Conversion: Effortlessly convert JSON data into TypeScript interfaces and types, saving time and ensuring compatibility with TypeScript projects.",
-      "User-Friendly Interface: Our tool's user-friendly interface makes converting JSON to TypeScript accessible to developers of all skill levels.",
-      "Safe and Secure: The security of your data is very important. Strong methods of security are used by the JSON to Typescript Tool to protect your input and output, guaranteeing a secure conversion procedure.",
-      "Download Converted Result: With the option to download your TypeScript output as a downloaded file.",
-      "Repair JSON Support: In addition to Typescript transformation, our tool has a special Repair JSON capability that detects and corrects syntax mistakes in JSON automatically to make sure the JSON data is error-free.",
-      "JSON Formatting: Before the transformation, you can format JSON data using our tool to give it a well-organized, readable manner.",
+      "Effortlessly convert JSON data into TypeScript interfaces and types, saving time and ensuring compatibility with TypeScript projects.",
+      "The security of your data is very important. Strong methods of security are used by the JSON to Typescript Tool to protect your input and output, guaranteeing a secure conversion procedure.",
+      "With the option to download your TypeScript output as a downloaded file.",
+      "In addition to Typescript transformation, our tool has a special Repair JSON capability that detects and corrects syntax mistakes in JSON automatically to make sure the JSON data is error-free.",
+      "Before the transformation, you can format JSON data using our tool to give it a well-organized, readable manner.",
     ],
   },
   {
