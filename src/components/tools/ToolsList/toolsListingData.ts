@@ -160,7 +160,7 @@ export const toolsListData: Array<ITools> = [
     link: SCREENS.JSON_TO_TYPESCRIPT,
     heading: "JSON to Typescript",
     content:
-      "Simply load your JSON, and the system will automatically generate typescript from JSON",
+      "Simply load your JSON, and the system will automatically generate a typescript from JSON",
     metaTitle: seoData.jsonToTypescript.title,
     metaDescription: seoData.jsonToTypescript.description,
     list: true,
