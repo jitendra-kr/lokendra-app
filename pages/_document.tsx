@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
-import { GoogleAnalytics } from "../src/components";
+import { GoogleAnalytics, MonetagAds } from "../src/components";
 
 export default function Document() {
   return (
