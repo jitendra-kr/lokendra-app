@@ -7,7 +7,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <GoogleAnalytics />
-        {/* <MonetagAds /> */}
+        <MonetagAds />
       </Head>
       <body>
         <Main />
