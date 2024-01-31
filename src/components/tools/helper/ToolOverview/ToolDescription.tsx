@@ -10,6 +10,9 @@ export const ToolDescription = ({
   name,
   keyFeatures,
 }: ConvertedOutputByToolsProps) => {
+  if (!content) {
+    return <></>;
+  }
   return (
     <>
       <h2 className={ToolDescriptionStyles.heading}>

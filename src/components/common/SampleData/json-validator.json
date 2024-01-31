@@ -1,0 +1,25 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "address": {
+    "street": "123 Main Street",
+    "city": "Any town",
+    "state": "CA",
+    "zip": "12345"
+  },
+  "phone_numbers": ["(555) 555-1212", "(555) 555-1234"],
+  "hobbies": ["reading", "hiking", "photography"],
+  "pets": [
+    {
+      "name": "Fido",
+      "type": "Dog",
+      "breed": "Golden Retriever"
+    },
+    {
+      "name": "Mittens",
+      "type": "Cat",
+      "breed": "Persian"
+    }
+  ],
+  "random_data": [69, 91, 50]
+}

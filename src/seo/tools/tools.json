@@ -4,8 +4,12 @@
     "description": "Convert ASCII codes to readable text effortlessly with our reliable ASCII to Text Converter. Paste the ASCII codes and instantly decode them into plain text!"
   },
   "jsonParser": {
-    "title": "JSON Formatter | JSON Parser",
-    "description": "Make your JSON look beautiful with our fast and reliable JSON Formatter. Format, parse, and validate JSON Data quickly with our powerful online JSON parser!"
+    "title": "Online JSON Formatter - Beautify and Format JSON Data",
+    "description": "Our online JSON formatter instantly cleans & beautifies JSON code. Free, easy to use, & works in your browser. Get perfect, readable JSON code in just a click."
+  },
+  "JSON_VALIDATOR": {
+    "title": "Online JSON Validator - Beautify and Format JSON Data",
+    "description": "Worried about invalid JSON? Our JSON validator instantly checks your code for syntax errors and provides clear explanations. Free, fast, and easy to use."
   },
   "jsonMinifier": {
     "title": "JSON Minify | Secure JSON Minifier and Compressor",

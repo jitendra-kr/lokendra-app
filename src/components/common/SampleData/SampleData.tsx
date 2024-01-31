@@ -1,4 +1,8 @@
+import { SCREENS } from "../../../common/enums";
 import { ShowCodeBlock } from "../ShowCodeBlock";
+import jsonTypeData from "./json-to-typescript-interface.json";
+import jsonValidatorData from "./json-validator.json";
+
 import jsonData from "./sample.json";
 
 const xmldata = `<?xml version="1.0" encoding="UTF-8"?>
@@ -35,15 +39,27 @@ const xmldata = `<?xml version="1.0" encoding="UTF-8"?>
 
 type Example = "json" | "xml";
 
-export function SampleData({ pathname }: { pathname: string }) {
-  const category = pathname && pathname.split("/")[1];
-
+export function SampleData({ pathname }: { pathname: SCREENS }) {
   const data: Record<string, Example> = {
     "json-tools": "json",
     "xml-tools": "xml",
   };
-
+  const category = pathname && pathname.split("/")[1];
   const example = data[category];
+
+  const decideJSONData = () => {
+    switch (pathname) {
+      case SCREENS.JSON_PARSER:
+        return jsonData;
+      case SCREENS.JSON_VALIDATOR:
+        return jsonValidatorData;
+      case SCREENS.JSON_TO_TYPESCRIPT:
+        return jsonTypeData;
+      default:
+        return jsonData;
+    }
+  };
+
   if (!example) {
     return <></>;
   }
@@ -57,7 +73,7 @@ export function SampleData({ pathname }: { pathname: string }) {
         {example === "xml" && <ShowCodeBlock code={xmldata} language="xml" />}
         {example === "json" && (
           <ShowCodeBlock
-            code={`${JSON.stringify(jsonData, null, 2)}`}
+            code={`${JSON.stringify(decideJSONData(), null, 2)}`}
             language="json"
           />
         )}

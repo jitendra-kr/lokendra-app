@@ -1,3 +1,4 @@
+import { WithRouterProps } from "next/dist/client/with-router";
 import { withRouter } from "next/router";
 import { useState } from "react";
 import { beautifyJSON } from "../../../utils";
@@ -7,15 +8,19 @@ import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { JsonViewer } from "../helper/JsonViewer";
 import jsonParserFaqData from "./jsonParserFaqData";
+import jsonValidatorFaqData from "./jsonValidatorFaqData";
 
-function JsonParser() {
+type JsonParserProps = {
+  toolKey: ToolKeys.JSONParser | ToolKeys.JSON_VALIDATOR;
+};
+function JsonParser({ toolKey }: JsonParserProps) {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
 
-  const onError = (errormsg: string | undefined) => {
-    if (errormsg) {
-      setEditorError(errormsg);
+  const onError = (errorMsg: string | undefined) => {
+    if (errorMsg) {
+      setEditorError(errorMsg);
       return;
     }
     setEditorError("");
@@ -59,15 +64,21 @@ function JsonParser() {
           <JsonViewer content={byte} error={error} editorError={editorError} />
         </div>
       }
-      toolId={ToolKeys.JSONParser}
+      toolId={toolKey}
       byte={byte}
       pageContent={
         <>
-          <Faq data={jsonParserFaqData}></Faq>
+          <Faq
+            data={
+              toolKey === ToolKeys.JSONParser
+                ? jsonParserFaqData
+                : jsonValidatorFaqData
+            }
+          ></Faq>
         </>
       }
     />
   );
 }
 
-export default withRouter(JsonParser);
+export default withRouter<JsonParserProps & WithRouterProps>(JsonParser);

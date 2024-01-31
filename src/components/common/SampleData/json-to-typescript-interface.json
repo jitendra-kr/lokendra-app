@@ -1,0 +1,25 @@
+{
+  "name": "Jane Doe",
+  "age": 25,
+  "address": {
+    "street": "456 Maple Avenue",
+    "city": "Newvill",
+    "state": "NY",
+    "zip": "54321"
+  },
+  "phone_numbers": ["(123) 456-7890", "(987) 654-3210"],
+  "hobbies": ["programming", "cooking", "traveling"],
+  "pets": [
+    {
+      "name": "Luna",
+      "type": "Cat",
+      "breed": "Siamese"
+    },
+    {
+      "name": "Buddy",
+      "type": "Dog",
+      "breed": "Labrador Retriever"
+    }
+  ],
+  "random_data": [36, 26, 3, 48, 82]
+}
