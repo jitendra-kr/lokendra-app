@@ -28,8 +28,8 @@
     "description": "Easily convert JSON to string with our efficient online tool. Stringify JSON data in seconds for seamless integration and manipulation. Try it now, it's free!"
   },
   "stringToAscii": {
-    "title": "Text to ASCII Converter: Convert Text to ASCII Codes",
-    "description": "Use our online Text to ASCII Converter to easily convert your plain text to ASCII codes. Simply paste your text, and the tool will convert it to ASCII codes!"
+    "title": "Text to ASCII Converter: Convert Characters to ASCII Codes",
+    "description": "Use our online Text to ASCII Converter to easily convert your plain text to ASCII codes. Simply enter your text and get the ASCII values instantly."
   },
   "toLowercase": {
     "title": "Quickly Convert Text to Lowercase Online",
