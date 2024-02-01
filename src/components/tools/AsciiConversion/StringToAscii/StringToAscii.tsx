@@ -1,8 +1,8 @@
+import { ToolKeys } from "@ft/components";
+import { Faq } from "@ft/components/common";
 import { textToAscii } from "ascii-text-converter";
 import { withRouter } from "next/router";
 import { useState } from "react";
-import { Faq } from "../../../common";
-import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
 import stringToAsciiFaqData from "./stringToAsciiFaqData";

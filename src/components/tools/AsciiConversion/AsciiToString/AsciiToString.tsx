@@ -22,7 +22,6 @@ function AsciiToString() {
     const text = asciiToText(value, {
       type: inputType,
     });
-    console.log("text", text);
     setByte(text);
   };
 
