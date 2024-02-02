@@ -59,7 +59,7 @@ export const toolsListData: Array<ITools> = [
     keyFeatures: [
       "Create stunning ASCII art in milliseconds.",
       "No coding skills are required - just enter your text and get the result instantly",
-      "Effortlessly convert any text into its corresponding ASCII codes in real-time.",
+      "Effortlessly convert any text into its corresponding ASCII codes in real time.",
       "Our intuitive and easy-to-navigate interface ensures a seamless experience for users of all technical levels",
       "Use your desktop computer, laptop, tablet, or smartphone to easily access the online tool from any device.",
       "The tool ensures exact and precise results, guaranteeing that your ASCII codes are precisely generated and that your data is consistent.",
