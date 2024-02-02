@@ -24,9 +24,7 @@ export const ToolDescription = ({
 
       {keyFeatures && keyFeatures.length && (
         <>
-          <h2 className={ToolDescriptionStyles.heading}>
-            Key Features of {`${name}`}
-          </h2>
+          <h2 className={ToolDescriptionStyles.heading}>Key Features of it</h2>
           <div className={ToolDescriptionStyles.keyFeaturesContainer}>
             <ul>
               {keyFeatures.map((r, i) => (
