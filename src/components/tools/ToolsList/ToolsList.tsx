@@ -1,4 +1,4 @@
-import Fuse from "fuse.js";
+import Fuse, { IFuseOptions } from "fuse.js";
 import { useEffect, useState } from "react";
 import { STRING_CONSTANTS } from "../../../constants";
 import { WhyUs } from "../../common";
@@ -51,7 +51,7 @@ export const ToolsList = () => {
   };
 
   const handleSearch = (searchInput: string) => {
-    const searchOptions: Fuse.IFuseOptions<ITools> = {
+    const searchOptions: IFuseOptions<ITools> = {
       keys: ["title"],
     };
     const fuse = new Fuse(toolsList, searchOptions);
