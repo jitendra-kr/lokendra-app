@@ -1,5 +1,3 @@
-import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
-
 import { useCallback } from "react";
 
 export function PaypalCheckout({
@@ -69,20 +67,6 @@ export function PaypalCheckout({
             improvement, and paves the way for exciting new features.
           </b>
         </p>
-      </div>
-      <div className="col">
-        <PayPalScriptProvider
-          options={{
-            clientId:
-              "AYvKnZCV4cAdGIYdid89PJHH2duqZ_YiigIIu8YFWLY921ILMVBI9FyW82PnZYb88uihMsZcAZv88Nr9",
-          }}
-        >
-          <PayPalButtons
-            createOrder={createOrder}
-            style={{ layout: "vertical" }}
-            onApprove={onApprove}
-          />
-        </PayPalScriptProvider>
       </div>
     </div>
   );

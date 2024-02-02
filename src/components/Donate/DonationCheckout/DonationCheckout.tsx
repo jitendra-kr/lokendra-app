@@ -1,10 +1,9 @@
-import CurrencyInput from "react-currency-input-field";
+// import CurrencyInput from "react-currency-input-field";
 
-import { Button, Modal, Select } from "antd";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { PaypalCheckout } from "./PaypalCheckout";
-import currencyList from "./currencyList";
 
 export function DonationCheckout() {
   const router = useRouter();
@@ -38,7 +37,7 @@ export function DonationCheckout() {
         <label>
           <b style={{ fontSize: "19px" }}>Enter your donation amount</b>{" "}
         </label>
-        <div style={{ marginTop: "10px" }}>
+        {/* <div style={{ marginTop: "10px" }}>
           <CurrencyInput
             style={{
               height: "42px",
@@ -91,7 +90,7 @@ export function DonationCheckout() {
               Next
             </Button>
           </div>
-        </div>
+        </div> */}
 
         <Modal
           open={isModalOpen}
