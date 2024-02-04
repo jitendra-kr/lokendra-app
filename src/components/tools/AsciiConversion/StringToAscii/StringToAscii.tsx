@@ -1,11 +1,11 @@
-import { ToolKeys } from "@ft/components";
+"use client"
 import { Faq } from "@ft/components/common";
 import { textToAscii } from "ascii-text-converter";
-import { withRouter } from "next/router";
 import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
 import stringToAsciiFaqData from "./stringToAsciiFaqData";
+import { ToolKeys } from "../../ToolsList/toolsListingData";
 
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
@@ -32,4 +32,4 @@ function StringToAscii() {
   );
 }
 
-export default withRouter(StringToAscii);
+export default StringToAscii;

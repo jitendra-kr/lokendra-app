@@ -1,1 +1,5 @@
-export * from "./UUIDGenerator";
+import  UUIDGenerator from "./UUIDGenerator";
+
+export {
+    UUIDGenerator
+}

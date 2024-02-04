@@ -1,3 +1,4 @@
+"use client";
 import Fuse, { IFuseOptions } from "fuse.js";
 import { useEffect, useState } from "react";
 import { STRING_CONSTANTS } from "../../../constants";

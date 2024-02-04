@@ -1,5 +1,5 @@
+"use client";
 import { message } from "antd";
-import { withRouter } from "next/router";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { messageError } from "../../../utils";
@@ -32,7 +32,6 @@ function UUIDGenerator() {
       return;
     }
 
-    console.log("1");
     openMessage();
     setByte("");
     let uuidStr = "";
@@ -68,4 +67,4 @@ function UUIDGenerator() {
   );
 }
 
-export default withRouter(UUIDGenerator);
+export default UUIDGenerator;

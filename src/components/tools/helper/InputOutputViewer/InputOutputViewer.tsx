@@ -4,7 +4,7 @@ import { OfflineMetaTags, SampleData } from "@ft/components/common";
 import { Layout } from "antd";
 import dynamic from "next/dynamic";
 import React from "react";
-import styles from "../../../../../styles/StringToAscii.module.css";
+import styles from "@ft/styles/StringToAscii.module.css";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInput, ToolInputProps } from "./ToolInput";

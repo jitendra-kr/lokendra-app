@@ -1,5 +1,5 @@
+"use client";
 import { Select, Space, Tooltip } from "antd";
-import { withRouter } from "next/router";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
@@ -84,4 +84,4 @@ function URLEncode() {
   );
 }
 
-export default withRouter(URLEncode);
+export default URLEncode;

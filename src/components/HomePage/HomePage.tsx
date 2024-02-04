@@ -1,4 +1,7 @@
+
+'use client'
 import { useToolListData } from "../../common/hooks/useToolListData";
+import MainHeader from "../Header";
 import { OfflineMetaTags } from "../common";
 import { ToolKeys, ToolsList } from "../tools";
 import ToolDescriptionStyles from "../tools/helper/ToolOverview/ToolDescription.module.css";
@@ -7,6 +10,8 @@ export function HomePage() {
   const { toolData } = useToolListData(ToolKeys.HOME);
   return (
     <>
+       
+
       <OfflineMetaTags tagData={toolData} />
 
       <ToolsList />

@@ -1,12 +1,12 @@
+"use client"
 // import CurrencyInput from "react-currency-input-field";
-
 import { Modal } from "antd";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useState } from "react";
 import { PaypalCheckout } from "./PaypalCheckout";
 
 export function DonationCheckout() {
-  const router = useRouter();
+  // const router = useRouter();
 
   const [value, setValue] = useState<string>("");
   const [currency, setCurrency] = useState<string>("USD");
@@ -108,7 +108,7 @@ export function DonationCheckout() {
           title={"Are you sure you want to cancel your donation?"}
           open={isCancel}
           onCancel={() => setCancel(false)}
-          onOk={() => router.push("/")}
+          // onOk={() => router.push("/")}
           closable={false}
         >
           <p style={{ marginTop: "30px" }}>

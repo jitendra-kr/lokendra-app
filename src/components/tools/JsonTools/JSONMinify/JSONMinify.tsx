@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { minifyJSON } from "../../../../utils";
 import Ide from "../../../common/Ide/Ide";

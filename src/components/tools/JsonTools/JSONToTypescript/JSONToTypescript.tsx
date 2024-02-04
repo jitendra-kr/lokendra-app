@@ -36,18 +36,18 @@ export function JSONToTypescript() {
     const { beautifiedData, msg } = beautifyJSON(str);
 
     if (beautifiedData) {
-      const { run } = await import("json_typegen_wasm");
-      const data = run(
-        "Root",
-        beautifiedData,
-        JSON.stringify({
-          output_mode: options?.monoType
-            ? "typescript/typealias"
-            : "typescript",
-        }),
-      );
+      // const { run } = await import("json_typegen_wasm");
+      // const data = run(
+      //   "Root",
+      //   beautifiedData,
+      //   JSON.stringify({
+      //     output_mode: options?.monoType
+      //       ? "typescript/typealias"
+      //       : "typescript",
+      //   }),
+      // );
       setError("");
-      setByte(data);
+      // setByte(data);
     }
 
     if (msg) {

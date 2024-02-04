@@ -1,1 +1,1 @@
-export const googleAnalyticsConst = {};
+export const GA_TRACKING_ID = "G-QH4Q1094NQ"

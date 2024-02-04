@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";

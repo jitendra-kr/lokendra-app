@@ -1,3 +1,4 @@
+"use client"
 import { getToolInput } from "../../../../common/selectors";
 import {
   updateDiffLeftInput,
@@ -62,6 +63,7 @@ export function JSONDiff() {
     <InputOutputViewer
       toolId={ToolKeys.JSON_DIFF}
       byte={""}
+      // eslint-disable-next-line react/no-children-prop
       children={
         <DiffViewer
           diffLeftValue={diffLeftValue ?? ""}

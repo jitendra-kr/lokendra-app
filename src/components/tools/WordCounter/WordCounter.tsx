@@ -1,4 +1,4 @@
-import { withRouter } from "next/router";
+"use client";
 import { ToolKeys } from "../ToolsList";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import characterCounterStyles from "./WordCounter.module.css";
@@ -102,4 +102,4 @@ function WordCounter() {
   );
 }
 
-export default withRouter(WordCounter);
+export default WordCounter;

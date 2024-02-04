@@ -1,5 +1,5 @@
+"use client";
 import { Input } from "antd";
-import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
@@ -59,4 +59,4 @@ function ReplaceSpaces() {
   );
 }
 
-export default withRouter(ReplaceSpaces);
+export default ReplaceSpaces;

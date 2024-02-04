@@ -1,4 +1,4 @@
-import { withRouter } from "next/router";
+"use client";
 import { useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
@@ -23,4 +23,4 @@ function ToUppercase() {
   );
 }
 
-export default withRouter(ToUppercase);
+export default ToUppercase;

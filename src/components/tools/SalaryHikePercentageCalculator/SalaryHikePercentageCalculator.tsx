@@ -1,4 +1,4 @@
-import { withRouter } from "next/router";
+"use client";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
@@ -29,4 +29,4 @@ function SalaryHikePercentageCalculator() {
   );
 }
 
-export default withRouter(SalaryHikePercentageCalculator);
+export default SalaryHikePercentageCalculator;

@@ -1,5 +1,5 @@
-import { AsciiToTextType, asciiToText } from "ascii-text-converter";
-import { withRouter } from "next/router";
+"use client"
+import { AsciiToTextType, asciiToText } from "ascii-text-converter";;
 import { useEffect, useState } from "react";
 import { Faq } from "../../../common";
 import { ToolKeys } from "../../ToolsList";
@@ -47,4 +47,4 @@ function AsciiToString() {
   );
 }
 
-export default withRouter(AsciiToString);
+export default AsciiToString;
