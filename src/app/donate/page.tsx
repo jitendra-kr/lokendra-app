@@ -1,8 +1,7 @@
-import { Layout } from "antd";
-import Link from "next/link";
-import React from "react";
 import { OfflineMetaTags } from "@ft/components/common";
 import { STRING_CONSTANTS } from "@ft/constants";
+import { Layout } from "antd";
+import Link from "next/link";
 
 const { Content } = Layout;
 
@@ -73,12 +72,6 @@ function DonatePage() {
       </p>
     </Content>
   );
-}
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
 }
 
 export default DonatePage;
