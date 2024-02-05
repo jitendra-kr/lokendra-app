@@ -1,5 +1,5 @@
+"use client";
 import { Input } from "antd";
-import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
@@ -25,6 +25,7 @@ function ReplaceSpaces() {
 
   useEffect(() => {
     replaceWithUnderscore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input, toReplace, replaceWith]);
 
   return (
@@ -59,4 +60,4 @@ function ReplaceSpaces() {
   );
 }
 
-export default withRouter(ReplaceSpaces);
+export default ReplaceSpaces;

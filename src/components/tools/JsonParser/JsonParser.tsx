@@ -1,5 +1,4 @@
-import { WithRouterProps } from "next/dist/client/with-router";
-import { withRouter } from "next/router";
+"use client";
 import { useState } from "react";
 import { beautifyJSON } from "../../../utils";
 import { Faq } from "../../common";
@@ -81,4 +80,4 @@ function JsonParser({ toolKey }: JsonParserProps) {
   );
 }
 
-export default withRouter<JsonParserProps & WithRouterProps>(JsonParser);
+export default JsonParser;

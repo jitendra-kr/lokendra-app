@@ -2,7 +2,6 @@ export * from "./Ads";
 export * from "./Analytics";
 export * from "./Donate";
 export { default as MainFooter } from "./Footer";
-export { default as AppHead } from "./Head/head";
 export { default as MainHeader } from "./Header";
 export * from "./HomePage";
 export * from "./PrivacyPolicy";

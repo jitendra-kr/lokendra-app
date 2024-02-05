@@ -1,3 +1,4 @@
+"use client";
 import { message } from "antd";
 import { get } from "lodash";
 

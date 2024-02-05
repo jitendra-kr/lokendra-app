@@ -1,12 +1,12 @@
-import { Col, Layout, Row } from "antd";
+"use client";
+
+import styles from "@ft/styles/MainHeader.module.css";
 import Link from "next/link";
 import router from "next/router";
 import { useEffect } from "react";
 import { resetInput } from "../../common/state/tools";
 import { STRING_CONSTANTS } from "../../constants";
 import { useAppDispatch } from "../../hooks";
-
-const { Header } = Layout;
 
 function MainHeader() {
   const dispatch = useAppDispatch();
@@ -24,26 +24,23 @@ function MainHeader() {
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
-    <Header id="heading">
-      <Row>
-        <Col span={24}>
-          <Link
-            href="/"
-            style={{
-              color: "#ffffff",
-              fontSize: "x-large",
-              fontFamily: "math",
-              cursor: "pointer",
-            }}
-          >
-            {STRING_CONSTANTS.global.appName}
-          </Link>
-        </Col>
-      </Row>
-    </Header>
+    <header className={styles.header}>
+      <Link
+        href="/"
+        style={{
+          color: "#ffffff",
+          fontSize: "x-large",
+          fontFamily: "math",
+          cursor: "pointer",
+          textTransform: "capitalize",
+        }}
+      >
+        {STRING_CONSTANTS.global.appName}
+      </Link>
+    </header>
   );
 }
 

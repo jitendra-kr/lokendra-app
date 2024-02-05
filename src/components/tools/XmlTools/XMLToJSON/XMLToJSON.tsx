@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { xmlToJson } from "../../../../utils/xml/xmlToJson";
 import Ide from "../../../common/Ide/Ide";

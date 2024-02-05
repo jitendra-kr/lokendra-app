@@ -1,10 +1,10 @@
+"use client";
 import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { messageError } from "../../../utils";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";
-import styles from "./SalaryHikePercentageCalculator.module.css";
 import { HikeInPercentageBySalaryField } from "./SalaryHikePercentageCalculator.types";
 import { SalaryHikePercentageCalculatorTitle } from "./SalaryHikePercentageCalculatorType";
 
@@ -53,7 +53,7 @@ export function HikeInPercentageBySalary() {
       <SalaryHikePercentageCalculatorTitle title=" Hike Percentage by Salary" />
       <Form
         form={form}
-        name="basic"
+        name="HikeInPercentageBySalary"
         layout="vertical"
         initialValues={{ remember: true }}
         onFinish={onFinish}
@@ -65,7 +65,10 @@ export function HikeInPercentageBySalary() {
           name="oldSalary"
           rules={[{ required: true, message: "Please input your old salary!" }]}
         >
-          <InputNumber placeholder="Old salary: 100" className={styles.input} />
+          <InputNumber
+            placeholder="Old salary: 100"
+            style={{ width: "100%", height: "40px" }}
+          />
         </Form.Item>
 
         <Form.Item<HikeInPercentageBySalaryField>

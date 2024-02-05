@@ -1,3 +1,4 @@
+"use client";
 import { Input, InputNumber } from "antd";
 import { CSSProperties } from "react";
 

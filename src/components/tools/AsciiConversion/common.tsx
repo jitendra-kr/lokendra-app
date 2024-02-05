@@ -1,3 +1,4 @@
+"use client";
 import { Select, Space, Tooltip } from "antd";
 import { AsciiToTextType } from "ascii-text-converter";
 import { Dispatch, SetStateAction } from "react";

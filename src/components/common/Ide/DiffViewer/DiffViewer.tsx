@@ -1,3 +1,4 @@
+"use client";
 import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
 import { useRef, useState } from "react";
@@ -40,10 +41,6 @@ export default function DiffViewer({
   }
 
   const getOrignalValue = () => {
-    console.log(
-      "diffEditorRef.current?.getOriginalEditor().getValue()",
-      diffEditorRef.current?.getOriginalEditor().getValue(),
-    );
     return diffEditorRef.current?.getOriginalEditor().getValue() ?? "";
   };
 
@@ -88,6 +85,7 @@ export default function DiffViewer({
                 onLeftChange("");
                 diffEditorRef.current?.getOriginalEditor().setValue("");
               }}
+              // eslint-disable-next-line react/no-children-prop
               children={
                 <span style={{ marginTop: "5px" }}>
                   <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
@@ -98,6 +96,7 @@ export default function DiffViewer({
                 <>
                   <FormatInput value={getOrignalValue} cb={formatLeftInput} />
                   <EditorActionsButtons
+                    // eslint-disable-next-line react/no-children-prop
                     children={<CopyToClip content={getOrignalValue} />}
                   />
                 </>
@@ -135,6 +134,7 @@ export default function DiffViewer({
                 <>
                   <FormatInput value={getModifiedValue} cb={formatRightInput} />
                   <EditorActionsButtons
+                    // eslint-disable-next-line react/no-children-prop
                     children={<CopyToClip content={getModifiedValue} />}
                   />
                 </>

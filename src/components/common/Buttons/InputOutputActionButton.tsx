@@ -1,3 +1,4 @@
+"use client";
 import { Button, Tooltip } from "antd";
 import { ButtonType } from "antd/lib/button";
 import { CSSProperties, ReactNode } from "react";

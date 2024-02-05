@@ -1,1 +1,5 @@
-export * from "./WordCounter"
+import  WordCounter from "./WordCounter"
+
+export {
+    WordCounter
+}

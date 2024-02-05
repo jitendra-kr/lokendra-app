@@ -1,12 +1,13 @@
+"use client"
 import { Button, Modal, Tooltip } from "antd";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
 import { MdCloseFullscreen } from "react-icons/md";
 import { COLOR_CONST } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
-import { JsonViewer } from "../../tools";
 import { jsonParser } from "../../tools/ToolsList/toolsListingData";
 import { ConvertedOutputByTools } from "../../tools/helper/ConvertedOutputByTools";
+import { JsonViewer } from "@ft/components/tools/helper/JsonViewer";
 
 type HandleFullScreenProps = {
   content: string;
@@ -37,6 +38,7 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
         open={open}
         onCancel={closeModal}
         footer={null}
+        // eslint-disable-next-line react/no-children-prop
         children={
           pathname && pathname.match(jsonParser) ? (
             <JsonViewer content={content} error="" editorError="" />

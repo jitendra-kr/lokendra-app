@@ -1,5 +1,5 @@
+"use client";
 import dynamic from "next/dynamic";
-import { withRouter } from "next/router";
 import { useState } from "react";
 import { jsonlint } from "../../../externalLib";
 import { ToolKeys } from "../ToolsList";
@@ -60,4 +60,4 @@ function JsonToString() {
   );
 }
 
-export default withRouter(JsonToString);
+export default JsonToString;

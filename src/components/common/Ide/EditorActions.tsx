@@ -1,3 +1,4 @@
+"use client";
 import { Col, Row, Switch, Tooltip, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
@@ -91,7 +92,9 @@ export const EditorActions = ({
       {children}
 
       <EditorActionsButtons
-        children={
+        // eslint-disable-next-line react/no-children-prop
+        children={[
+          // eslint-disable-next-line react/jsx-key
           <Tooltip title="Load Data From Load File">
             <Upload
               accept=".txt, .json"
@@ -113,12 +116,13 @@ export const EditorActions = ({
                 mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
               />
             </Upload>
-          </Tooltip>
-        }
+          </Tooltip>,
+        ]}
       />
 
       {childrenAfter}
       <EditorActionsButtons
+        // eslint-disable-next-line react/no-children-prop
         children={
           <InputOutputActionButton
             name="Clear"

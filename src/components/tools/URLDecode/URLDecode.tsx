@@ -1,4 +1,4 @@
-import { withRouter } from "next/router";
+"use client";
 import { useState } from "react";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
@@ -33,4 +33,4 @@ function URLDecode() {
   );
 }
 
-export default withRouter(URLDecode);
+export default URLDecode;

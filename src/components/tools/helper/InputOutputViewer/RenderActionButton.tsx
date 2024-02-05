@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "antd";
 import InputOutputViewerStyles from "./InputOutputViewer.module.css";
 import { Input, ToolInputProps } from "./ToolInput";

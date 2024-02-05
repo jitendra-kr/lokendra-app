@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { convertJSONToXML } from "../../../../utils";
 import Ide from "../../../common/Ide/Ide";
@@ -37,7 +38,6 @@ export function JSONToXML() {
     }
     const { data, msg } = convertJSONToXML(str) as any;
     if (data) {
-      console.log(data);
       setByte(data);
     }
     if (msg) {

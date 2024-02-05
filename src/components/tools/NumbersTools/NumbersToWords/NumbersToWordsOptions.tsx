@@ -1,3 +1,4 @@
+"use client";
 import { Checkbox, Select, Space, Tooltip } from "antd";
 
 export function NumbersToWordsOptions({

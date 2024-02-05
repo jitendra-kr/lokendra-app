@@ -1,3 +1,4 @@
+"use client";
 import { getToolInput } from "../../../../common/selectors";
 import {
   updateDiffLeftInput,
@@ -6,14 +7,12 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 
 import { useState } from "react";
-import { useToolListData } from "../../../../common/hooks/useToolListData";
 import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 export function JSONDiff() {
   const dispatch = useAppDispatch();
-  const { toolData } = useToolListData(ToolKeys.JSON_DIFF);
 
   const { diffLeftValue, diffRightValue } = useAppSelector(getToolInput);
   const [leftErrorMsg, setLeftErrorMsg] = useState("");
@@ -62,6 +61,7 @@ export function JSONDiff() {
     <InputOutputViewer
       toolId={ToolKeys.JSON_DIFF}
       byte={""}
+      // eslint-disable-next-line react/no-children-prop
       children={
         <DiffViewer
           diffLeftValue={diffLeftValue ?? ""}

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AiOutlineLink } from "react-icons/ai";
 import { SCREENS } from "../../../../../common/enums";
-import { OfflineMetaTags } from "../../../OfflineMetaTags/OfflineMetaTags";
 import { RelevantTools } from "../../../RelevantTools";
 import { ShowCodeBlock } from "../../../ShowCodeBlock";
 import styles from "./SampleJSON.module.css";
@@ -103,14 +102,6 @@ export function SampleJSON() {
 
   return (
     <>
-      <OfflineMetaTags
-        tagData={{
-          link: SCREENS.JSON_EXAMPLES,
-          metaTitle: `JSON Examples: Explore Minified and Formatted JSON Samples.`,
-          metaDescription: `Discover the power of JSON with our extensive collection of JSON examples. You can go through a variety of sample JSON, including Minified, and Formatted JSON.`,
-        }}
-      />
-      ;
       <div style={{ minHeight: "100vh" }}>
         <h1 id="already-formatted-json" className="heading">
           Explore Sample JSON Data: Discover Formatted, Interactive, and Useful
