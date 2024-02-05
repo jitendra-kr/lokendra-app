@@ -1,15 +1,15 @@
+import Script from "next/script";
+
 export function MonetagAds() {
   return (
     <>
       {/* Start  in-page-push-banner*/}
-      <script
+      <Script
         id="moneyTag-in-page-push-banner-anti-adblock"
-        async
         src={`../../../monetagCdn/in-page-push-banner-anti-adblock/anti-adblock.js`}
       />
-      <script
+      <Script
         id="moneyTag-in-page-push-banner-anti-adblock-main"
-        async
         src={`../../../monetagCdn/in-page-push-banner-anti-adblock/main.js`}
       />
       {/* End  in-page-push-banner*/}
