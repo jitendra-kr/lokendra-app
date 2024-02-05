@@ -1,3 +1,4 @@
+"use client";
 import { IoCopySharp } from "react-icons/io5";
 import { COLOR_CONST } from "../../../../constants";
 import { copyToClipboard } from "../../../../utils";

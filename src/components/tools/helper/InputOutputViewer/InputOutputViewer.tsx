@@ -1,3 +1,4 @@
+"use client";
 import { useToolListData } from "@ft/common/hooks/useToolListData";
 import { ToolKeys } from "@ft/components";
 import { SampleData } from "@ft/components/common";

@@ -1,9 +1,6 @@
 import { STRING_CONSTANTS } from "@ft/constants";
-import { Layout } from "antd";
 import { Metadata } from "next";
 import Link from "next/link";
-
-const { Content } = Layout;
 
 export const metadata: Metadata = {
   title: `Support Our Free Online Tools - Donate to ${STRING_CONSTANTS.global.appName}`,
@@ -12,7 +9,7 @@ export const metadata: Metadata = {
 
 function DonatePage() {
   return (
-    <Content style={{ height: "200vh" }}>
+    <div style={{ height: "200vh" }}>
       <h1
         style={{ textAlign: "center", marginBottom: "50px", marginTop: "50px" }}
       >
@@ -68,7 +65,7 @@ function DonatePage() {
         developers everywhere. Together, we&apos;re building a stronger, more
         connected tech community.
       </p>
-    </Content>
+    </div>
   );
 }
 

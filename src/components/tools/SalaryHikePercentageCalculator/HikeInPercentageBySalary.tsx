@@ -1,3 +1,4 @@
+"use client";
 import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";

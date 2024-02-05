@@ -1,3 +1,4 @@
+"use client";
 import { messageSuccess } from "./antd";
 
 const getLimitedText = (text: string, limit: number) => {

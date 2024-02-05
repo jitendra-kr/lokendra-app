@@ -1,3 +1,4 @@
+"use client";
 import { Select, Space, Tooltip } from "antd";
 
 type UpdateThemeProps = {

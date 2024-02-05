@@ -1,9 +1,9 @@
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { GoogleAnalytics, MainFooter, MainHeader } from "@ft/components";
 import { Analytics } from "@vercel/analytics/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
-import UIRegistry from "./UIRegistry";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +17,7 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <Analytics />
-        <UIRegistry>
+        <AntdRegistry>
           <body className={inter.className}>
             <MainHeader />
             <div className="row">
@@ -31,7 +31,7 @@ export default function RootLayout({
             </div>
             <MainFooter />
           </body>
-        </UIRegistry>
+        </AntdRegistry>
         <GoogleAnalytics />
       </html>
     </StoreProvider>

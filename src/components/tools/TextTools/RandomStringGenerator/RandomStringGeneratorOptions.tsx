@@ -1,3 +1,4 @@
+"use client";
 import { Select, Tooltip } from "antd";
 import { CSSProperties, Dispatch, SetStateAction, useState } from "react";
 import {

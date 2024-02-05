@@ -1,3 +1,4 @@
+"use client";
 import { Empty } from "antd";
 
 export function NoMatchFound() {

@@ -1,3 +1,4 @@
+"use client";
 import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
 import { useRef, useState } from "react";

@@ -1,3 +1,4 @@
+"use client";
 import { Image } from "antd";
 import styles from "./CalculationFormula.module.css";
 

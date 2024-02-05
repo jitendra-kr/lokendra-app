@@ -1,3 +1,4 @@
+"use client";
 import { Col, Row, Switch, Tooltip, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
