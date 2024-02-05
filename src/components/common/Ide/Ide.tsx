@@ -87,6 +87,7 @@ export default function Ide({
       onChange(JSON.stringify(prettyInput, null, "\t"));
       return;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paramsData]);
 
   useEffect(() => {
@@ -94,6 +95,7 @@ export default function Ide({
       onChange(globalInputValue);
       dispatch(updateSampleData(false));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadSampleData, globalInputValue]);
 
   const clear = () => {
@@ -157,15 +159,18 @@ export default function Ide({
       <EditorActions
         clear={clear}
         onChange={loadValue}
+        // eslint-disable-next-line react/no-children-prop
         children={
           <>
             <EditorActionsButtons
+              // eslint-disable-next-line react/no-children-prop
               children={
                 <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
               }
             />
             {options && options.repair && (
               <EditorActionsButtons
+                // eslint-disable-next-line react/no-children-prop
                 children={
                   <InputOutputActionButton
                     name="Repair"

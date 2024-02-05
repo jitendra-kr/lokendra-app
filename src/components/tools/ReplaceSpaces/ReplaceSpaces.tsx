@@ -25,6 +25,7 @@ function ReplaceSpaces() {
 
   useEffect(() => {
     replaceWithUnderscore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input, toReplace, replaceWith]);
 
   return (

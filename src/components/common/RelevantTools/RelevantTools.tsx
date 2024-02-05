@@ -4,7 +4,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { SCREENS } from "../../../common/enums";
 import { toolsListData } from "../../tools";
 import RelevantToolsStyles from "./RelevantTools.module.css";
-import { releventTools } from "./releventTools";
+import { relevantTools } from "./releventTools";
 
 export function RelevantTools({
   toolLink,
@@ -19,7 +19,7 @@ export function RelevantTools({
     });
   };
 
-  if (!releventTools[toolLink]?.length) {
+  if (!relevantTools[toolLink]?.length) {
     return <></>;
   }
 
@@ -30,7 +30,7 @@ export function RelevantTools({
           Relevant Tools <BiSolidRightArrow />
         </b>
       </span>
-      {releventTools[toolLink].map((tool) => (
+      {relevantTools[toolLink].map((tool) => (
         <Button
           type="default"
           style={{ marginRight: "5px" }}

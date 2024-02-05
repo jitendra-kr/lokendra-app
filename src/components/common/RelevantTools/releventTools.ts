@@ -1,6 +1,6 @@
 import { SCREENS } from "../../../common/enums";
 
-export const releventTools: Record<SCREENS, SCREENS[]> = {
+export const relevantTools: Record<SCREENS, SCREENS[]> = {
   // Number tools
   [SCREENS.NUMBER_TO_WORDS]: [
     SCREENS.UUID_GENERATOR,
@@ -160,4 +160,5 @@ export const releventTools: Record<SCREENS, SCREENS[]> = {
     SCREENS.URL_DECODE,
     SCREENS.JSON_DIFF,
   ],
+  [SCREENS["PRIVACY_POLICY"]]: [],
 };

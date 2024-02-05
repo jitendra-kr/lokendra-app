@@ -63,7 +63,7 @@ export function PaypalCheckout({
         </p>
         <p style={{ textAlign: "center", color: "darkgreen" }}>
           <b>
-            Your support is helping us to upkeep the platform's , continuous
+            Your support is helping us to upkeep the platform’s , continuous
             improvement, and paves the way for exciting new features.
           </b>
         </p>

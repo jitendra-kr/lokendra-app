@@ -1,4 +1,4 @@
-export default [
+const data = [
   { label: "AUD", value: "AUD" },
   { label: "BRL", value: "BRL" },
   { label: "CAD", value: "CAD" },
@@ -24,3 +24,5 @@ export default [
   { label: "THB", value: "THB" },
   { label: "USD", value: "USD" },
 ];
+
+export default data;

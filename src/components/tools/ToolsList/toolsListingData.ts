@@ -30,6 +30,7 @@ export enum ToolKeys {
   JSON_TO_XML = "JSON_TO_XML",
   NUMBER_TO_WORDS = "NUMBER_TO_WORDS",
   GENERATE_RANDOM_STRING = "GENERATE_RANDOM_STRING",
+  JSON_EXAMPLES = "JSON_EXAMPLES",
 }
 
 export interface ITools extends SeoTags {

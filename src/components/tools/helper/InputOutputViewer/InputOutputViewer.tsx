@@ -1,10 +1,10 @@
 import { useToolListData } from "@ft/common/hooks/useToolListData";
 import { ToolKeys } from "@ft/components";
-import { OfflineMetaTags, SampleData } from "@ft/components/common";
+import { SampleData } from "@ft/components/common";
+import styles from "@ft/styles/StringToAscii.module.css";
 import { Layout } from "antd";
 import dynamic from "next/dynamic";
 import React from "react";
-import styles from "@ft/styles/StringToAscii.module.css";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInput, ToolInputProps } from "./ToolInput";
@@ -51,7 +51,6 @@ export function InputOutputViewer({
   return (
     <>
       <Content>
-        <OfflineMetaTags tagData={toolData} />
         <div className={`${styles.mainDiv} row`}>
           {!input && <ToolsBody toolData={toolData} />}
           {children && children}

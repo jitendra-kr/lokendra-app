@@ -30,6 +30,7 @@ export default function DiffIde({
       <EditorActions
         clear={clear}
         onChange={onChange}
+        // eslint-disable-next-line react/no-children-prop
         children={
           <>
             {id === "rightIDE" && (

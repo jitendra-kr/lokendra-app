@@ -75,12 +75,14 @@ export const InputToConvertByTools = ({
     if (data) {
       onChange({ target: { value: data } });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   useEffect(() => {
     if (data) {
       onChange({ target: { value: data } });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
   return (
     <>
@@ -94,6 +96,7 @@ export const InputToConvertByTools = ({
               onChange({ target: { value } });
             }
           }}
+          // eslint-disable-next-line react/no-children-prop
           children={inputEditorActionChild}
         />
       )}

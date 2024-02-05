@@ -41,4 +41,5 @@ export enum SCREENS {
   "HOME" = "/",
   "TOOLS" = "/tools",
   "JSON_EXAMPLES" = "/sample-data/json-examples",
+  "PRIVACY_POLICY" = "fireboxtools-privacy-policy",
 }

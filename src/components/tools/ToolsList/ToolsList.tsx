@@ -18,7 +18,7 @@ const Reasons = () => {
   const reasons = [
     `Our tools use cutting-edge encryption and safe data processing algorithms to guarantee that your data is completely secure.`,
     `Data is processed locally rather than being sent to external servers.`,
-    `It analyse and alter data significantly more quickly than other solutions on the market because to its strong algorithms and optimised speed.`,
+    `It analyze and alter data significantly more quickly than other solutions on the market because to its strong algorithms and optimised speed.`,
     `Discover the power of precision with the unrivalled quality and dependability of ${STRING_CONSTANTS.global.domain}. Our tools is the best option regardless of whether you're a student, data analyst, business owner, or developer because of its superiority and dependability.`,
     `Our opinion is that your most valuable asset is your data. We never make use of or sell your information to third parties. Therefore, why use tools that compromise your data?? Choose
     ${STRING_CONSTANTS.global.domain} and take control of your data
@@ -65,6 +65,7 @@ export const ToolsList = () => {
     const randomTool = data[Math.floor(Math.random() * data.length)];
     setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
     setToolsList(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toolsListData]);
 
   return (
