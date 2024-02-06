@@ -2,29 +2,21 @@
 
 import styles from "@ft/styles/MainHeader.module.css";
 import Link from "next/link";
-import router from "next/router";
+// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+
+import { resetInput } from "@ft/common/state/tools";
 import { useEffect } from "react";
-import { resetInput } from "../../common/state/tools";
 import { STRING_CONSTANTS } from "../../constants";
 import { useAppDispatch } from "../../hooks";
 
 function MainHeader() {
   const dispatch = useAppDispatch();
 
+  const pathname = usePathname();
   useEffect(() => {
-    const handleRouteChange = () => {
-      // Dispatch reset action when the route changes
-      dispatch(resetInput());
-    };
-
-    // Add event listener for route change
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [dispatch]);
+    dispatch(resetInput());
+  }, [dispatch, pathname]);
 
   return (
     <header className={styles.header}>

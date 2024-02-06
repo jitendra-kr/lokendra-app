@@ -1,4 +1,3 @@
-"use client";
 import { Col, Row, Switch, Tooltip, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
@@ -91,47 +90,41 @@ export const EditorActions = ({
     >
       {children}
 
-      <EditorActionsButtons
-        // eslint-disable-next-line react/no-children-prop
-        children={[
-          // eslint-disable-next-line react/jsx-key
-          <Tooltip title="Load Data From Load File">
-            <Upload
-              accept=".txt, .json"
-              showUploadList={false}
-              beforeUpload={(file) => {
-                const reader = new FileReader();
+      <EditorActionsButtons>
+        <Tooltip title="Load Data From Load File">
+          <Upload
+            accept=".txt, .json"
+            showUploadList={false}
+            beforeUpload={(file) => {
+              const reader = new FileReader();
 
-                reader.onload = (e) => {
-                  onChange(get(e, "target.result") ?? "");
-                };
-                reader.readAsText(file);
+              reader.onload = (e) => {
+                onChange(get(e, "target.result") ?? "");
+              };
+              reader.readAsText(file);
 
-                return false;
-              }}
-            >
-              <InputOutputActionButton
-                name="Load file"
-                onClick={() => {}}
-                mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
-              />
-            </Upload>
-          </Tooltip>,
-        ]}
-      />
+              return false;
+            }}
+          >
+            <InputOutputActionButton
+              name="Load file"
+              onClick={() => {}}
+              mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
+            />
+          </Upload>
+        </Tooltip>
+        ,
+      </EditorActionsButtons>
 
       {childrenAfter}
-      <EditorActionsButtons
-        // eslint-disable-next-line react/no-children-prop
-        children={
-          <InputOutputActionButton
-            name="Clear"
-            onClick={clear}
-            mdIcon={<AiFillDelete size={13} color={COLOR_CONST.defaultIcon} />}
-            tooltip="Clear Input"
-          />
-        }
-      />
+      <EditorActionsButtons>
+        <InputOutputActionButton
+          name="Clear"
+          onClick={clear}
+          mdIcon={<AiFillDelete size={13} color={COLOR_CONST.defaultIcon} />}
+          tooltip="Clear Input"
+        />
+      </EditorActionsButtons>
     </Row>
   );
 };

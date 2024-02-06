@@ -5,17 +5,12 @@ import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-github";
 
 import AceEditor from "react-ace";
-import { getToolInput } from "../../../common/selectors";
-import { useAppDispatch, useAppSelector } from "../../../hooks";
 
 type AceIdeProps = {
   changeCb: (value: string) => void;
   key: string;
 };
 export default function AceIde({ changeCb, key }: AceIdeProps) {
-  const { value: globalInputValue } = useAppSelector(getToolInput);
-  const dispatch = useAppDispatch();
-
   const onChange = (value: string | undefined) => {
     changeCb(value ?? "");
   };
