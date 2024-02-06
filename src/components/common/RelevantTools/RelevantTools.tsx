@@ -23,37 +23,51 @@ export function RelevantTools({
   if (!relevantTools[toolLink]?.length) {
     return <></>;
   }
-
   return (
-    <div style={{ marginBottom: "3px" }}>
-      <span style={{ marginRight: "5px" }}>
-        <b style={{ fontSize: "17px" }}>
+    <div className="row justify-content-center">
+      <div className="col-auto">
+        <b style={{ fontSize: "17px", marginRight: "10px" }}>
           Relevant Tools <BiSolidRightArrow />
         </b>
-      </span>
-      {relevantTools[toolLink].map((tool) => (
-        <Button
-          type="default"
-          style={{ marginRight: "5px" }}
-          key={getTool(tool)?.link}
-        >
-          <span>
-            <Link href={getTool(tool)?.link ?? "/"}>
-              {getTool(tool)?.title}
-            </Link>
-          </span>
-        </Button>
-      ))}
-      {showOtherToolsLink && (
-        <Link
-          className={RelevantToolsStyles["changing-text-color"]}
-          href="#tool-list"
-          scroll={false}
-          style={{ marginLeft: "8px" }}
-        >
-          <b>Explore Other Tools</b>
-        </Link>
-      )}
+        {relevantTools[toolLink].map((tool) => {
+          const data = getTool(tool);
+          if (!data) {
+            return <></>;
+          }
+          return (
+            <Button
+              type="default"
+              key={data?.link}
+              className={RelevantToolsStyles.button}
+            >
+              <Link
+                style={{
+                  color: "#1677ff",
+                  fontSize: "15px",
+                  fontWeight: "bold",
+                }}
+                href={data?.link}
+              >
+                {data?.title}
+              </Link>
+            </Button>
+          );
+        })}
+        {showOtherToolsLink && (
+          <Button
+            type="default"
+            className={RelevantToolsStyles.button}
+            onClick={() => {
+              const elem = document.getElementById("tool-list");
+              elem?.scrollIntoView();
+            }}
+          >
+            <b className={RelevantToolsStyles["changing-text-color"]}>
+              View More Tools
+            </b>
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

@@ -21,10 +21,9 @@ export function RenderActionButton({
       className={InputOutputViewerStyles["input-button"]}
       onClick={onClick}
       disabled={options?.disable}
+      size="large"
     >
-      <span className={InputOutputViewerStyles.buttonText}>
-        {input.buttonName}
-      </span>
+      <b className={InputOutputViewerStyles.buttonText}>{input.buttonName}</b>
     </Button>
   );
 }

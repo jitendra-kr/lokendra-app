@@ -113,7 +113,6 @@ export const EditorActions = ({
             />
           </Upload>
         </Tooltip>
-        ,
       </EditorActionsButtons>
 
       {childrenAfter}
