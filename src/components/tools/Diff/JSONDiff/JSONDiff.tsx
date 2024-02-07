@@ -13,7 +13,6 @@ import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 export function JSONDiff() {
   const dispatch = useAppDispatch();
-
   const { diffLeftValue, diffRightValue } = useAppSelector(getToolInput);
   const [leftErrorMsg, setLeftErrorMsg] = useState("");
   const [rightErrorMsg, setRightErrorMsg] = useState("");
@@ -58,22 +57,17 @@ export function JSONDiff() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.JSON_DIFF}
-      byte={""}
-      // eslint-disable-next-line react/no-children-prop
-      children={
-        <DiffViewer
-          diffLeftValue={diffLeftValue ?? ""}
-          diffRightValue={diffRightValue ?? " "}
-          onLeftChange={onLeftChange}
-          onRightChange={onRightChange}
-          formatLeftInput={formatLeftInput}
-          formatRightInput={formatRightInput}
-          leftErrorMsg={leftErrorMsg}
-          rightErrorMsg={rightErrorMsg}
-        />
-      }
-    />
+    <InputOutputViewer toolId={ToolKeys.JSON_DIFF} byte={""}>
+      <DiffViewer
+        diffLeftValue={diffLeftValue ?? ""}
+        diffRightValue={diffRightValue ?? " "}
+        onLeftChange={onLeftChange}
+        onRightChange={onRightChange}
+        formatLeftInput={formatLeftInput}
+        formatRightInput={formatRightInput}
+        leftErrorMsg={leftErrorMsg}
+        rightErrorMsg={rightErrorMsg}
+      />
+    </InputOutputViewer>
   );
 }

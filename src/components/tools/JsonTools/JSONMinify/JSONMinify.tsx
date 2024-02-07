@@ -1,10 +1,15 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { minifyJSON } from "../../../../utils";
-import Ide from "../../../common/Ide/Ide";
+
+import dynamic from "next/dynamic";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
-import { JsonViewer } from "../../helper/JsonViewer";
+
+const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
+const JsonViewer = dynamic(
+  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
+);
 
 export function JSONMinify() {
   const [byte, setByte] = useState<string>("");

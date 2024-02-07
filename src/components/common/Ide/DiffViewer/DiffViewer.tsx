@@ -10,7 +10,7 @@ import {
 } from "../EditorActions";
 import styles from "../Ide.module.css";
 import { UpdateMonacoTheme } from "../UpdateMonacoTheme";
-import DiffViewerStyles from "./DiffViewer.module.css";
+import { DiffErrorMessage } from "./DiffErrorMessage";
 
 type DiffIdeProps = {
   diffLeftValue: string;
@@ -22,6 +22,7 @@ type DiffIdeProps = {
   leftErrorMsg: string;
   rightErrorMsg: string;
 };
+
 export default function DiffViewer({
   diffLeftValue,
   diffRightValue,
@@ -40,7 +41,7 @@ export default function DiffViewer({
     editor.getOriginalEditor().focus();
   }
 
-  const getOrignalValue = () => {
+  const getOriginalValue = () => {
     return diffEditorRef.current?.getOriginalEditor().getValue() ?? "";
   };
 
@@ -56,8 +57,7 @@ export default function DiffViewer({
     <>
       <Row
         style={{
-          marginBottom: "5px",
-          display: "fl",
+          marginBottom: "2px",
         }}
       >
         <Col
@@ -73,35 +73,26 @@ export default function DiffViewer({
           }}
         >
           <>
-            {leftErrorMsg && (
-              <div className={DiffViewerStyles.errorMessageBG}>
-                <p className={DiffViewerStyles.errorMessageTxt}>
-                  {leftErrorMsg}
-                </p>
-              </div>
-            )}
+            <DiffErrorMessage message={leftErrorMsg} />
             <EditorActions
               clear={() => {
                 onLeftChange("");
                 diffEditorRef.current?.getOriginalEditor().setValue("");
               }}
-              // eslint-disable-next-line react/no-children-prop
-              children={
-                <span style={{ marginTop: "5px" }}>
-                  <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
-                </span>
-              }
               onChange={onLeftChange}
               childrenAfter={
                 <>
-                  <FormatInput value={getOrignalValue} cb={formatLeftInput} />
-                  <EditorActionsButtons
-                    // eslint-disable-next-line react/no-children-prop
-                    children={<CopyToClip content={getOrignalValue} />}
-                  />
+                  <FormatInput value={getOriginalValue} cb={formatLeftInput} />
+                  <EditorActionsButtons>
+                    <CopyToClip content={getOriginalValue} />
+                  </EditorActionsButtons>
                 </>
               }
-            />
+            >
+              <span style={{ marginTop: "5px" }}>
+                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+              </span>
+            </EditorActions>
           </>
         </Col>
         <Col
@@ -117,13 +108,7 @@ export default function DiffViewer({
           }}
         >
           <>
-            {rightErrorMsg && (
-              <div className={DiffViewerStyles.errorMessageBG}>
-                <p className={DiffViewerStyles.errorMessageTxt}>
-                  {rightErrorMsg}
-                </p>
-              </div>
-            )}
+            <DiffErrorMessage message={rightErrorMsg} />
             <EditorActions
               clear={() => {
                 onRightChange("");
@@ -162,7 +147,6 @@ export default function DiffViewer({
           },
           wordWrap: "on",
           originalEditable: true,
-
           enableSplitViewResizing: true,
           diffCodeLens: true,
           formatOnPaste: true,

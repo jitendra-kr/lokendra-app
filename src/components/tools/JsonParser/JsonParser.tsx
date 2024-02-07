@@ -1,13 +1,17 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { beautifyJSON } from "../../../utils";
 import { Faq } from "../../common";
-import Ide from "../../common/Ide/Ide";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
-import { JsonViewer } from "../helper/JsonViewer";
 import jsonParserFaqData from "./jsonParserFaqData";
 import jsonValidatorFaqData from "./jsonValidatorFaqData";
+
+const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
+const JsonViewer = dynamic(
+  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
+);
 
 type JsonParserProps = {
   toolKey: ToolKeys.JSONParser | ToolKeys.JSON_VALIDATOR;

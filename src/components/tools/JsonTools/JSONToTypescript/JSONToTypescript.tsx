@@ -1,10 +1,15 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { beautifyJSON } from "../../../../utils";
-import Ide, { EditorCallBackOptions } from "../../../common/Ide/Ide";
+import { EditorCallBackOptions } from "../../../common/Ide/Ide";
 import { ToolKeys } from "../../ToolsList";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
-import { JsonViewer } from "../../helper/JsonViewer";
+
+const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
+const JsonViewer = dynamic(
+  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
+);
 
 export function JSONToTypescript() {
   const [byte, setByte] = useState<string>("");

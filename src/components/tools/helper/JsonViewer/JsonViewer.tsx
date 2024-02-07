@@ -8,7 +8,7 @@ type JsonViewerProps = {
   editorError: string;
 } & OutputIdeProps;
 
-export const JsonViewer = ({
+const JsonViewer = ({
   content,
   error,
   editorError,
@@ -31,3 +31,5 @@ export const JsonViewer = ({
     </div>
   );
 };
+
+export default JsonViewer;

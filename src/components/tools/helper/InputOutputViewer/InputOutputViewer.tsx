@@ -3,12 +3,18 @@ import { useToolListData } from "@ft/common/hooks/useToolListData";
 import { ToolKeys } from "@ft/components";
 import { SampleData } from "@ft/components/common";
 import styles from "@ft/styles/StringToAscii.module.css";
-import { Layout } from "antd";
 import dynamic from "next/dynamic";
 import React from "react";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolDescription } from "../ToolOverview";
-import { ToolInput, ToolInputProps } from "./ToolInput";
+import { ToolInputProps } from "./ToolInput";
+
+const ToolInput = dynamic(
+  () => import("./ToolInput").then((mod) => mod.ToolInput),
+  {
+    ssr: false,
+  },
+);
 
 const ToolsList = dynamic(
   () => import("../../ToolsList").then((mod) => mod.ToolsList),
@@ -19,8 +25,6 @@ const ToolsList = dynamic(
 const ToolOutput = dynamic(() =>
   import("./ToolOutput").then((mod) => mod.ToolOutput),
 );
-
-const { Content } = Layout;
 
 type InputOutputViewerProps = {
   toolId: ToolKeys;
@@ -51,36 +55,34 @@ export function InputOutputViewer({
 
   return (
     <>
-      <Content>
-        <div className={`${styles.mainDiv} row`}>
-          {!input && <ToolsBody toolData={toolData} />}
-          {children && children}
-          {!children && (
-            <ToolInput
-              toolData={toolData}
-              input={input}
-              inputChild={inputChild}
-              onChangeCb={onChangeCb}
-              placeholder={placeholder}
-              inputNumber={inputNumber}
-              onClick={onClick}
-              options={options}
-              inputEditorActionChild={inputEditorActionChild}
-            />
-          )}
-          {!children && (
-            <ToolOutput byte={byte} outputChild={outputChild} error={error} />
-          )}
-        </div>
-        <ToolDescription
-          content={toolData.toolDescription}
-          name={toolData.title}
-          keyFeatures={toolData.keyFeatures}
-        />
-        <SampleData pathname={toolData.link} />
-        {pageContent && pageContent}
-        <ToolsList />
-      </Content>
+      <div className={`${styles.mainDiv} row`}>
+        {!input && <ToolsBody toolData={toolData} />}
+        {children && children}
+        {!children && (
+          <ToolInput
+            toolData={toolData}
+            input={input}
+            inputChild={inputChild}
+            onChangeCb={onChangeCb}
+            placeholder={placeholder}
+            inputNumber={inputNumber}
+            onClick={onClick}
+            options={options}
+            inputEditorActionChild={inputEditorActionChild}
+          />
+        )}
+        {!children && (
+          <ToolOutput byte={byte} outputChild={outputChild} error={error} />
+        )}
+      </div>
+      <ToolDescription
+        content={toolData.toolDescription}
+        name={toolData.title}
+        keyFeatures={toolData.keyFeatures}
+      />
+      <SampleData pathname={toolData.link} />
+      {pageContent && pageContent}
+      <ToolsList />
     </>
   );
 }
