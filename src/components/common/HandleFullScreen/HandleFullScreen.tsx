@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import { Button, Modal, Tooltip } from "antd";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
 import { MdCloseFullscreen } from "react-icons/md";
@@ -7,7 +8,10 @@ import { COLOR_CONST } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
 import { jsonParser } from "../../tools/ToolsList/toolsListingData";
 import { ConvertedOutputByTools } from "../../tools/helper/ConvertedOutputByTools";
-import { JsonViewer } from "@ft/components/tools/helper/JsonViewer";
+
+const JsonViewer = dynamic(
+  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
+);
 
 type HandleFullScreenProps = {
   content: string;
