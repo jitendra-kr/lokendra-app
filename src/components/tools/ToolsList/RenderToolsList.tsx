@@ -68,7 +68,10 @@ export function RenderToolsList({
                 className="listing border"
                 style={{ backgroundColor: "white" }}
               >
-                <div className="home-page-title text-align-center">
+                <div
+                  className="home-page-title text-align-center"
+                  style={{ textAlign: "center" }}
+                >
                   <Link href={item.link}>{item.title}</Link>
                 </div>
               </div>
