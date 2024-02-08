@@ -6,6 +6,7 @@ import {
   MonetagAds,
 } from "@ft/components";
 import { Analytics } from "@vercel/analytics/react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import "./globals.css";
@@ -19,13 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          crossOrigin="anonymous"
-        />
-      </head>
       <StoreProvider>
         <AntdRegistry>
           <body className={inter.className}>
