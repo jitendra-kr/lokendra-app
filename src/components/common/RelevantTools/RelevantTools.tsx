@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "antd";
+import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
 import Link from "next/link";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { SCREENS } from "../../../common/enums";
@@ -35,10 +35,11 @@ export function RelevantTools({
             return <></>;
           }
           return (
-            <Button
+            <CustomButton
               type="default"
               key={data?.link}
-              className={RelevantToolsStyles.button}
+              style={{ marginRight: "8px", marginBottom: "8px" }}
+              onClick={() => {}}
             >
               <Link
                 style={{
@@ -50,13 +51,13 @@ export function RelevantTools({
               >
                 {data?.title}
               </Link>
-            </Button>
+            </CustomButton>
           );
         })}
         {showOtherToolsLink && (
-          <Button
+          <CustomButton
             type="default"
-            className={RelevantToolsStyles.button}
+            style={{ marginRight: "8px", marginBottom: "8px" }}
             onClick={() => {
               const elem = document.getElementById("tool-list");
               elem?.scrollIntoView();
@@ -65,7 +66,7 @@ export function RelevantTools({
             <b className={RelevantToolsStyles["changing-text-color"]}>
               View More Tools
             </b>
-          </Button>
+          </CustomButton>
         )}
       </div>
     </div>

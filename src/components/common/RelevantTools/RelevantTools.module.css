@@ -15,8 +15,3 @@
   color: darkgreen;
   animation: blink 1s linear infinite;
 }
-
-.button {
-  margin-right: 8px;
-  margin-bottom: 8px;
-}

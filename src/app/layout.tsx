@@ -21,7 +21,6 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
-        <Analytics />
         <AntdRegistry>
           <body className={inter.className}>
             <MainHeader />
@@ -37,6 +36,7 @@ export default function RootLayout({
         </AntdRegistry>
         <GoogleAnalytics />
         <MonetagAds />
+        <Analytics mode={"production"} />
       </html>
     </StoreProvider>
   );
