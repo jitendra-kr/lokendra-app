@@ -389,18 +389,6 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
   },
 
   {
-    title: "Online string and JSON Tools",
-    link: SCREENS.TOOLS,
-    heading: "Online string and JSON Tools",
-    content:
-      " Just load your text, System will automatically convert it to lower case text",
-    metaTitle: seoData.toolsList.title,
-    metaDescription: seoData.toolsList.description,
-    list: false,
-    key: ToolKeys.Tools,
-    toolDescription: "",
-  },
-  {
     title: "URL Decoder",
     link: SCREENS.URL_DECODE,
     heading: "URL Decoder",
