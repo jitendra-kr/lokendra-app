@@ -31,7 +31,7 @@ function ReplaceSpaces() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
+        <>
           <Input
             className={ReplaceSpacesStyles.Input}
             placeholder="Please enter the text you would like to replace"
@@ -40,10 +40,10 @@ function ReplaceSpaces() {
             }}
           />
           <InputToConvertByTools onChangeCb={(v) => setInput(v)} />
-        </div>
+        </>
       }
       outputChild={
-        <div className="col-lg-6">
+        <>
           <Input
             className={ReplaceSpacesStyles.Input}
             placeholder="Please enter the replacement"
@@ -52,7 +52,7 @@ function ReplaceSpaces() {
             }}
           />
           <ConvertedOutputByTools content={byte} />
-        </div>
+        </>
       }
       toolId={ToolKeys.ReplaceSpaces}
       byte={byte}

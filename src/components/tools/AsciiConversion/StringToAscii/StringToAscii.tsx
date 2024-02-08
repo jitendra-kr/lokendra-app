@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { Faq } from "@ft/components/common";
 import { textToAscii } from "ascii-text-converter";
 import { useState } from "react";
+import { ToolKeys } from "../../ToolsList/toolsListingData";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
 import stringToAsciiFaqData from "./stringToAsciiFaqData";
-import { ToolKeys } from "../../ToolsList/toolsListingData";
 
 function StringToAscii() {
   const [byte, setByte] = useState<string>();
@@ -21,13 +21,9 @@ function StringToAscii() {
         toolId={ToolKeys.StringtoASCII}
         byte={byte ?? ""}
         onChangeCb={onChangeCb}
-        pageContent={
-          <>
-            <StringToAsciiInJavascript />
-            <Faq data={stringToAsciiFaqData}></Faq>
-          </>
-        }
       />
+      <StringToAsciiInJavascript />
+      <Faq data={stringToAsciiFaqData}></Faq>
     </>
   );
 }

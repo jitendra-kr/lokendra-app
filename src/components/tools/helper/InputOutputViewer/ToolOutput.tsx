@@ -8,15 +8,12 @@ type ToolOutputProps = {
 };
 
 export function ToolOutput({ byte, outputChild, error }: ToolOutputProps) {
+  if (outputChild) {
+    return <div className="col-lg-6">{outputChild}</div>;
+  }
   return (
-    <>
-      {outputChild ? (
-        outputChild
-      ) : (
-        <div className="col-lg-6">
-          <ConvertedOutputByTools content={byte} error={error} />
-        </div>
-      )}
-    </>
+    <div className="col-lg-6">
+      <ConvertedOutputByTools content={byte} error={error} />
+    </div>
   );
 }

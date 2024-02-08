@@ -20,16 +20,14 @@ function URLDecode() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.UrlDecode}
-      byte={byte}
-      onChangeCb={onChangeCb}
-      pageContent={
-        <>
-          <DecodeURLInJavascript />
-        </>
-      }
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.UrlDecode}
+        byte={byte}
+        onChangeCb={onChangeCb}
+      />
+      <DecodeURLInJavascript />
+    </>
   );
 }
 

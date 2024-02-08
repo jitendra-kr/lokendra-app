@@ -42,50 +42,48 @@ export function ToolInput({
   inputEditorActionChild,
   toolData,
 }: ToolInputProps) {
+  if (inputChild) {
+    return <div className="col-lg-6">{inputChild}</div>;
+  }
   return (
-    <>
-      {inputChild && inputChild}
-      {!inputChild && (
-        <div className="col-lg-6">
-          {input && <ToolsBody toolData={toolData} />}
-          <span className={InputOutputViewerStyles["input-parent"]}>
-            <div
-              className={`${
-                input
-                  ? InputOutputViewerStyles["input-true-w"]
-                  : InputOutputViewerStyles["input-false-w"]
-              }`}
-            >
-              {!options?.hideInput && (
-                <InputToConvertByTools
-                  onChangeCb={onChangeCb}
-                  type={input ? inputType.input : inputType.textarea}
-                  placeholder={placeholder}
-                  inputNumber={inputNumber}
-                  inputEditorActionChild={inputEditorActionChild}
-                />
-              )}
-            </div>
-            {input && (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: options?.buttonAfterOption
-                    ? "column-reverse"
-                    : "column",
-                }}
-              >
-                <RenderActionButton
-                  onClick={onClick}
-                  options={options}
-                  input={input}
-                />
-                <RenderInputOptions input={input} />
-              </div>
-            )}
-          </span>
+    <div className="col-lg-6">
+      {input && <ToolsBody toolData={toolData} />}
+      <span className={InputOutputViewerStyles["input-parent"]}>
+        <div
+          className={`${
+            input
+              ? InputOutputViewerStyles["input-true-w"]
+              : InputOutputViewerStyles["input-false-w"]
+          }`}
+        >
+          {!options?.hideInput && (
+            <InputToConvertByTools
+              onChangeCb={onChangeCb}
+              type={input ? inputType.input : inputType.textarea}
+              placeholder={placeholder}
+              inputNumber={inputNumber}
+              inputEditorActionChild={inputEditorActionChild}
+            />
+          )}
         </div>
-      )}
-    </>
+        {input && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: options?.buttonAfterOption
+                ? "column-reverse"
+                : "column",
+            }}
+          >
+            <RenderActionButton
+              onClick={onClick}
+              options={options}
+              input={input}
+            />
+            <RenderInputOptions input={input} />
+          </div>
+        )}
+      </span>
+    </div>
   );
 }

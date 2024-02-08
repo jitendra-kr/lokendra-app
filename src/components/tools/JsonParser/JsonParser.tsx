@@ -56,31 +56,25 @@ function JsonParser({ toolKey }: JsonParserProps) {
   }
 
   return (
-    <InputOutputViewer
-      inputChild={
-        <div className="col-lg-6">
+    <>
+      <InputOutputViewer
+        inputChild={
           <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
-        </div>
-      }
-      outputChild={
-        <div className="col-lg-6">
+        }
+        outputChild={
           <JsonViewer content={byte} error={error} editorError={editorError} />
-        </div>
-      }
-      toolId={toolKey}
-      byte={byte}
-      pageContent={
-        <>
-          <Faq
-            data={
-              toolKey === ToolKeys.JSONParser
-                ? jsonParserFaqData
-                : jsonValidatorFaqData
-            }
-          ></Faq>
-        </>
-      }
-    />
+        }
+        toolId={toolKey}
+        byte={byte}
+      />
+      <Faq
+        data={
+          toolKey === ToolKeys.JSONParser
+            ? jsonParserFaqData
+            : jsonValidatorFaqData
+        }
+      ></Faq>
+    </>
   );
 }
 

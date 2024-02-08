@@ -2,18 +2,18 @@
 import { useToolListData } from "@ft/common/hooks/useToolListData";
 import { ToolKeys } from "@ft/components";
 import { SampleData } from "@ft/components/common";
-import styles from "@ft/styles/StringToAscii.module.css";
 import dynamic from "next/dynamic";
 import React from "react";
 import { ToolsBody } from "../../ToolsBody";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInputProps } from "./ToolInput";
 
-const ToolInput = dynamic(
-  () => import("./ToolInput").then((mod) => mod.ToolInput),
-  {
-    ssr: false,
-  },
+const ToolInput = dynamic(() =>
+  import("./ToolInput").then((mod) => mod.ToolInput),
+);
+
+const ToolOutput = dynamic(() =>
+  import("./ToolOutput").then((mod) => mod.ToolOutput),
 );
 
 const ToolsList = dynamic(
@@ -22,16 +22,12 @@ const ToolsList = dynamic(
     ssr: false,
   },
 );
-const ToolOutput = dynamic(() =>
-  import("./ToolOutput").then((mod) => mod.ToolOutput),
-);
 
 type InputOutputViewerProps = {
   toolId: ToolKeys;
   byte: string;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
-  pageContent?: React.ReactNode;
   error?: string;
 } & Omit<ToolInputProps, "toolData">;
 
@@ -44,7 +40,6 @@ export function InputOutputViewer({
   placeholder,
   inputNumber,
   children,
-  pageContent,
   inputChild,
   outputChild,
   options,
@@ -55,7 +50,7 @@ export function InputOutputViewer({
 
   return (
     <>
-      <div className={`${styles.mainDiv} row`}>
+      <div className={"row editorMinHeight"}>
         {!input && <ToolsBody toolData={toolData} />}
         {children && children}
         {!children && (
@@ -81,7 +76,6 @@ export function InputOutputViewer({
         keyFeatures={toolData.keyFeatures}
       />
       <SampleData pathname={toolData.link} />
-      {pageContent && pageContent}
       <ToolsList />
     </>
   );

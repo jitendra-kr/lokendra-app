@@ -63,23 +63,19 @@ export function JSONToTypescript() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
-          <Ide
-            cb={isJsonString}
-            error={onError}
-            options={{ monotype: true, format: true, repair: true }}
-          />
-        </div>
+        <Ide
+          cb={isJsonString}
+          error={onError}
+          options={{ monotype: true, format: true, repair: true }}
+        />
       }
       outputChild={
-        <div className="col-lg-6">
-          <JsonViewer
-            content={byte}
-            error={error}
-            editorError={editorError}
-            language={"typescript"}
-          />
-        </div>
+        <JsonViewer
+          content={byte}
+          error={error}
+          editorError={editorError}
+          language={"typescript"}
+        />
       }
       toolId={ToolKeys.JSON_TO_TYPESCRIPT}
       byte={byte}

@@ -47,3 +47,7 @@ p {
 a {
   text-decoration: none;
 }
+
+.editorMinHeight {
+  min-height: 75vh;
+}

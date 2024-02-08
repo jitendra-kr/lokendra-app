@@ -68,19 +68,17 @@ function URLEncode() {
   }, [encodingFn, input]);
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.URLEncode}
-      byte={byte}
-      onChangeCb={(value) => setInput(value)}
-      inputEditorActionChild={
-        <SelectEncodeFn selectEncodingFn={selectEncodingFn} />
-      }
-      pageContent={
-        <>
-          <EncodeURLInJavascript />
-        </>
-      }
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.URLEncode}
+        byte={byte}
+        onChangeCb={(value) => setInput(value)}
+        inputEditorActionChild={
+          <SelectEncodeFn selectEncodingFn={selectEncodingFn} />
+        }
+      />
+      <EncodeURLInJavascript />
+    </>
   );
 }
 

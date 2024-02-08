@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import dynamic from "next/dynamic";
 import { Charset, GenerateOptions, generate } from "randomstring";
 import { useState } from "react";
@@ -88,31 +88,29 @@ export function RandomStringGenerator() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.GENERATE_RANDOM_STRING}
-      byte={byte}
-      onChangeCb={onChangeCb}
-      options={{ hideInput: true, buttonAfterOption: true }}
-      input={{
-        showInput: true,
-        buttonName: "Generate String",
-        options: (
-          <>
-            <RandomStringGeneratorOptions
-              setInputValue={setInputValue}
-              inputValue={inputValue}
-            />
-          </>
-        ),
-      }}
-      onClick={onClick}
-      placeholder={`Enter desired number`}
-      error={error}
-      pageContent={
-        <>
-          <Faq data={randomStringGeneratorFaqData}></Faq>
-        </>
-      }
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.GENERATE_RANDOM_STRING}
+        byte={byte}
+        onChangeCb={onChangeCb}
+        options={{ hideInput: true, buttonAfterOption: true }}
+        input={{
+          showInput: true,
+          buttonName: "Generate String",
+          options: (
+            <>
+              <RandomStringGeneratorOptions
+                setInputValue={setInputValue}
+                inputValue={inputValue}
+              />
+            </>
+          ),
+        }}
+        onClick={onClick}
+        placeholder={`Enter desired number`}
+        error={error}
+      />
+      <Faq data={randomStringGeneratorFaqData}></Faq>
+    </>
   );
 }

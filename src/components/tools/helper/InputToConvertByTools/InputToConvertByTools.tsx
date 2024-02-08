@@ -15,14 +15,8 @@ import { useGetQueryString } from "../../../../hooks/useGetQueryString";
 import { messageDestroy, messageError } from "../../../../utils";
 import styles from "./InputToConvertByTools.module.css";
 
-const EditorActions = dynamic(
-  () =>
-    import("../../../common/Ide/EditorActions").then(
-      (mod) => mod.EditorActions,
-    ),
-  {
-    ssr: false,
-  },
+const EditorActions = dynamic(() =>
+  import("../../../common/Ide/EditorActions").then((mod) => mod.EditorActions),
 );
 
 export enum inputType {

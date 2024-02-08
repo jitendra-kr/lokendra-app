@@ -53,14 +53,10 @@ export function JSONMinify() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
-          <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
-        </div>
+        <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
       }
       outputChild={
-        <div className="col-lg-6">
-          <JsonViewer content={byte} error={error} editorError={editorError} />
-        </div>
+        <JsonViewer content={byte} error={error} editorError={editorError} />
       }
       toolId={ToolKeys.JSON_MINIFIER}
       byte={byte}

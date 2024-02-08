@@ -53,25 +53,15 @@ export function XMLToJSON() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
-          <Ide
-            language="xml"
-            cb={ideCb}
-            error={onError}
-            options={{ repair: false }}
-          />
-        </div>
+        <Ide
+          language="xml"
+          cb={ideCb}
+          error={onError}
+          options={{ repair: false }}
+        />
       }
       outputChild={
-        <div className="col-lg-6">
-          {true && (
-            <JsonViewer
-              content={byte}
-              error={error}
-              editorError={editorError}
-            />
-          )}
-        </div>
+        <JsonViewer content={byte} error={error} editorError={editorError} />
       }
       toolId={ToolKeys.XML_TO_JSON}
       byte={byte}

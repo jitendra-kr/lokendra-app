@@ -53,24 +53,20 @@ export function XmlFormatter() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
-          <Ide
-            language="xml"
-            cb={ideCb}
-            error={onError}
-            options={{ repair: false }}
-          />
-        </div>
+        <Ide
+          language="xml"
+          cb={ideCb}
+          error={onError}
+          options={{ repair: false }}
+        />
       }
       outputChild={
-        <div className="col-lg-6">
-          <JsonViewer
-            language="xml"
-            content={byte}
-            error={error}
-            editorError={editorError}
-          />
-        </div>
+        <JsonViewer
+          language="xml"
+          content={byte}
+          error={error}
+          editorError={editorError}
+        />
       }
       toolId={ToolKeys.XML_FORMATTER}
       byte={byte}

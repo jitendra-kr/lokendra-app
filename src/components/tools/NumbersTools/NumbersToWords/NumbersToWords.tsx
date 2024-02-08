@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ToWords } from "to-words";
@@ -83,30 +83,28 @@ export function NumbersToWords() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.NUMBER_TO_WORDS}
-      byte={byte}
-      onChangeCb={onChangeCb}
-      input={{
-        showInput: true,
-        buttonName: "",
-        options: (
-          <>
-            <NumbersToWordsOptions
-              handleCurrencyCheckboxChange={handleCurrencyCheckboxChange}
-              handleLocaleCodeChange={handleLocaleCodeChange}
-            />
-          </>
-        ),
-      }}
-      onClick={onClick}
-      placeholder={`Enter desired number`}
-      error={error}
-      pageContent={
-        <>
-          <Faq data={numbersToWordsFaqData}></Faq>
-        </>
-      }
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.NUMBER_TO_WORDS}
+        byte={byte}
+        onChangeCb={onChangeCb}
+        input={{
+          showInput: true,
+          buttonName: "",
+          options: (
+            <>
+              <NumbersToWordsOptions
+                handleCurrencyCheckboxChange={handleCurrencyCheckboxChange}
+                handleLocaleCodeChange={handleLocaleCodeChange}
+              />
+            </>
+          ),
+        }}
+        onClick={onClick}
+        placeholder={`Enter desired number`}
+        error={error}
+      />
+      <Faq data={numbersToWordsFaqData}></Faq>
+    </>
   );
 }

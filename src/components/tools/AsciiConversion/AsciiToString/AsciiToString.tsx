@@ -32,20 +32,18 @@ function AsciiToString() {
   }, [input, inputType, onChangeCb]);
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.ASCIItoString}
-      byte={byte}
-      onChangeCb={onChangeCb}
-      inputEditorActionChild={
-        <SelectASCIIConversionType setInputType={setInputType} />
-      }
-      pageContent={
-        <>
-          <AsciiToStringPageContent />
-          <Faq data={asciiToStringFaqData}></Faq>
-        </>
-      }
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.ASCIItoString}
+        byte={byte}
+        onChangeCb={onChangeCb}
+        inputEditorActionChild={
+          <SelectASCIIConversionType setInputType={setInputType} />
+        }
+      />
+      <AsciiToStringPageContent />
+      <Faq data={asciiToStringFaqData}></Faq>
+    </>
   );
 }
 

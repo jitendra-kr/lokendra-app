@@ -1,12 +1,16 @@
 "use client";
-import { ToolKeys } from "../ToolsList";
-import { InputToConvertByTools } from "../helper/InputToConvertByTools";
-import characterCounterStyles from "./WordCounter.module.css";
-
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { convertNumberToWords } from "../../../utils";
+import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { ToolOutputActions } from "../helper/ToolOutputActions";
+import characterCounterStyles from "./WordCounter.module.css";
+const InputToConvertByTools = dynamic(() =>
+  import("../helper/InputToConvertByTools").then(
+    (mod) => mod.InputToConvertByTools,
+  ),
+);
 
 function WordCounter() {
   const [characterCount, setCharacterCount] = useState(0);
@@ -54,16 +58,14 @@ function WordCounter() {
       toolId={ToolKeys.wordCounter}
       byte={""}
       inputChild={
-        <div className="col-lg-8">
-          <InputToConvertByTools
-            onChangeCb={onChangeCb}
-            placeholder="Type or Paste Text to Begin"
-          />
-        </div>
+        <InputToConvertByTools
+          onChangeCb={onChangeCb}
+          placeholder="Type or Paste Text to Begin"
+        />
       }
       outputChild={
-        <div className="col-lg-4">
-          <div>
+        <>
+          <div style={{ marginTop: "30px" }}>
             <strong className={characterCounterStyles["count-in-words"]}>
               WORDS
             </strong>
@@ -96,7 +98,7 @@ function WordCounter() {
               </p>
             </span>
           </div>
-        </div>
+        </>
       }
     />
   );

@@ -44,15 +44,11 @@ function JsonToString() {
   return (
     <InputOutputViewer
       inputChild={
-        <div className="col-lg-6">
-          <div>
-            <Editor
-              cb={isJsonString}
-              error={onError}
-              options={{ format: true, repair: true }}
-            />
-          </div>
-        </div>
+        <Editor
+          cb={isJsonString}
+          error={onError}
+          options={{ format: true, repair: true }}
+        />
       }
       toolId={ToolKeys.JSONtostring}
       byte={byte}
