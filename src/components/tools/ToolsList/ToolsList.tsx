@@ -1,18 +1,13 @@
 "use client";
+import { SearchBar } from "@ft/components/common/SearchBar";
+import { WhyUs } from "@ft/components/common/WhyUs";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import Fuse, { IFuseOptions } from "fuse.js";
 import { useEffect, useState } from "react";
-import { STRING_CONSTANTS } from "../../../constants";
-import { WhyUs } from "../../common";
-
-import dynamic from "next/dynamic";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
 import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData";
-
-const SearchBar = dynamic(() =>
-  import("../../common/SearchBar").then((mod) => mod.SearchBar),
-);
 
 const Reasons = () => {
   const reasons = [
@@ -83,7 +78,6 @@ export const ToolsList = () => {
       />
       <div
         id="tool-list"
-        className={"row"}
         style={{
           display: "flex",
           justifyContent: "center",
