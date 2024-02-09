@@ -1,12 +1,7 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import {
-  GoogleAnalytics,
-  MainFooter,
-  MainHeader,
-  MonetagAds,
-} from "@ft/components";
+import { GoogleAnalytics, MainFooter, MainHeader } from "@ft/components";
 import { Analytics } from "@vercel/analytics/react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap-grid.css";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import "./globals.css";
@@ -27,7 +22,9 @@ export default function RootLayout({
             <div className="row" style={{ marginTop: "50px" }}>
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>
               <div className="col-lg-10 col-md-8 col-sm-12 col-12">
-                {children}
+                <div style={{ marginLeft: "10px", marginRight: "10px" }}>
+                  {children}
+                </div>
               </div>
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>
             </div>
@@ -36,7 +33,7 @@ export default function RootLayout({
         </AntdRegistry>
       </StoreProvider>
       <GoogleAnalytics />
-      <MonetagAds />
+      {/* <MonetagAds /> */}
       <Analytics mode={"production"} />
     </html>
   );

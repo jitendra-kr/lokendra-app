@@ -24,7 +24,7 @@ export function RelevantTools({
     return <></>;
   }
   return (
-    <div className="row justify-content-center">
+    <div className="row">
       <div className="col-auto">
         <b style={{ fontSize: "17px", marginRight: "10px" }}>
           Relevant Tools <BiSolidRightArrow />

@@ -1,23 +1,8 @@
-"use client";
-
 import styles from "@ft/styles/MainHeader.module.css";
 import Link from "next/link";
-// import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
-
-import { resetInput } from "@ft/common/state/tools";
-import { useEffect } from "react";
 import { STRING_CONSTANTS } from "../../constants";
-import { useAppDispatch } from "../../hooks";
 
 function MainHeader() {
-  const dispatch = useAppDispatch();
-
-  const pathname = usePathname();
-  useEffect(() => {
-    dispatch(resetInput());
-  }, [dispatch, pathname]);
-
   return (
     <header className={styles.header}>
       <Link
@@ -28,6 +13,7 @@ function MainHeader() {
           fontFamily: "math",
           cursor: "pointer",
           textTransform: "capitalize",
+          marginLeft: "20px",
         }}
       >
         {STRING_CONSTANTS.global.appName}

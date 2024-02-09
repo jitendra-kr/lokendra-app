@@ -70,6 +70,17 @@ export const ToolsList = () => {
 
   return (
     <>
+      <div>
+        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
+          Empower Your Work with Our Tools
+        </h1>
+      </div>
+      <SearchBar
+        placeholder={placeholder}
+        onSearch={onSearch}
+        autoFocus={false}
+        allowClear={true}
+      />
       <div
         id="tool-list"
         className={"row"}
@@ -78,22 +89,13 @@ export const ToolsList = () => {
           justifyContent: "center",
         }}
       >
-        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
-          Empower Your Work with Our Tools
-        </h1>
-        <SearchBar
-          placeholder={placeholder}
-          onSearch={onSearch}
-          autoFocus={false}
-          allowClear={true}
-        />
         <RenderToolsList toolsList={toolsList} textInput={textInput} />
-        <div className={styles.whyUsContainer}>
-          <WhyUs
-            heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
-            content={<Reasons />}
-          />
-        </div>
+      </div>
+      <div className={styles.whyUsContainer}>
+        <WhyUs
+          heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
+          content={<Reasons />}
+        />
       </div>
     </>
   );
