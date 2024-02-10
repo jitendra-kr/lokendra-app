@@ -1,7 +1,6 @@
-import { jsonrepair } from "jsonrepair";
-
-export function repairJSON(jsonString: string) {
+export async function repairJSON(jsonString: string) {
   try {
+    const { jsonrepair } = await import("jsonrepair");
     const repaired = jsonrepair(jsonString);
     return repaired;
   } catch (err) {

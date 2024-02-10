@@ -1,7 +1,7 @@
 "use client";
-import { Skeleton } from "antd";
+import Skeleton from "antd/es/skeleton/Skeleton";
+import { useRouter } from "next/dist/client/components/navigation";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { NoMatchFound } from "./NoMatchFound";
 import { ITools } from "./toolsListingData";
 

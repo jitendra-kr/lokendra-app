@@ -1,5 +1,6 @@
 "use client";
-import { Empty } from "antd";
+
+import Empty from "antd/es/empty";
 
 export function NoMatchFound() {
   return (

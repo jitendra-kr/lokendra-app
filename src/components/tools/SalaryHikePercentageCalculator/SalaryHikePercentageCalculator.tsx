@@ -1,4 +1,3 @@
-"use client";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
@@ -12,15 +11,14 @@ function SalaryHikePercentageCalculator() {
       byte={""}
       inputChild={
         <>
-          <div className={"col-lg-4 " + styles.container}>
+          <div className={styles.container}>
             <HikeInPercentageBySalary />
           </div>
         </>
       }
       outputChild={
         <>
-          <div className="col-lg-3"></div>
-          <div className={"col-lg-4 " + styles.container}>
+          <div className={styles.container}>
             <NewSalaryByPercentage />
           </div>
         </>

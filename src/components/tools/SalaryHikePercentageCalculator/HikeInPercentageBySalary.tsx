@@ -3,6 +3,7 @@ import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { messageError } from "../../../utils";
+import styles from "./CalculationFormula.module.css";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";
 import { HikeInPercentageBySalaryField } from "./SalaryHikePercentageCalculator.types";
@@ -43,15 +44,10 @@ export function HikeInPercentageBySalary() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-      }}
-    >
+    <div className={styles["calculator-container"]}>
       <SalaryHikePercentageCalculatorTitle title=" Hike Percentage by Salary" />
       <Form
+        style={{ marginLeft: "40px", marginRight: "40px" }}
         form={form}
         name="HikeInPercentageBySalary"
         layout="vertical"

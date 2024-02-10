@@ -2,7 +2,6 @@
 import { SearchBar } from "@ft/components/common/SearchBar";
 import { WhyUs } from "@ft/components/common/WhyUs";
 import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
-import Fuse, { IFuseOptions } from "fuse.js";
 import { useEffect, useState } from "react";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
@@ -46,11 +45,12 @@ export const ToolsList = () => {
     handleSearch(searchInput);
   };
 
-  const handleSearch = (searchInput: string) => {
-    const searchOptions: IFuseOptions<ITools> = {
+  const handleSearch = async (searchInput: string) => {
+    const Fuse = await import("fuse.js");
+    const searchOptions = {
       keys: ["title"],
     };
-    const fuse = new Fuse(toolsList, searchOptions);
+    const fuse = new Fuse.default(toolsList, searchOptions);
     const results = fuse.search(searchInput);
     setToolsList(results.map((result) => result.item));
   };
@@ -60,8 +60,7 @@ export const ToolsList = () => {
     const randomTool = data[Math.floor(Math.random() * data.length)];
     setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
     setToolsList(data);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toolsListData]);
+  }, []);
 
   return (
     <>

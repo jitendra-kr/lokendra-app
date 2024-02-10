@@ -29,7 +29,7 @@ export function XmlFormatter() {
     setByte("");
   };
 
-  function ideCb(str: string | undefined) {
+  async function ideCb(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -41,7 +41,7 @@ export function XmlFormatter() {
     if (error) {
       setError("");
     }
-    const { data, msg } = formatXml(str);
+    const { data, msg } = await formatXml(str);
     if (data) {
       setByte(data);
     }

@@ -22,11 +22,8 @@ import {
 import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
-const EditorActions = dynamic(
-  () => import("./EditorActions").then((mod) => mod.EditorActions),
-  {
-    ssr: false,
-  },
+const EditorActions = dynamic(() =>
+  import("./EditorActions").then((mod) => mod.EditorActions),
 );
 
 export type EditorCallBackOptions = {
@@ -117,11 +114,11 @@ export default function Ide({
     setTheme(value);
   };
 
-  const onRepairClick = () => {
+  const onRepairClick = async () => {
     if (!globalInputValue) {
       return;
     }
-    const repairedJSON = repairJSON(globalInputValue);
+    const repairedJSON = await repairJSON(globalInputValue);
     if (repairedJSON) {
       messageSuccess({
         content: "JSON Repaired.",

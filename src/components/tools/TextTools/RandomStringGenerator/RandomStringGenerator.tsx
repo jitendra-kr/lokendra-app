@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { Charset, GenerateOptions, generate } from "randomstring";
+import { Charset, GenerateOptions } from "randomstring";
 import { useState } from "react";
 import { Faq } from "../../../common";
 import { ToolKeys } from "../../ToolsList";
@@ -59,7 +59,7 @@ export function RandomStringGenerator() {
     "Custom character set": "",
   };
 
-  const onClick = () => {
+  const onClick = async () => {
     try {
       if (error) {
         setError("");
@@ -75,7 +75,7 @@ export function RandomStringGenerator() {
       if (inputValue.customAlphabets) {
         options.charset = inputValue.customAlphabets;
       }
-
+      const { generate } = await import("randomstring");
       for (let index = 0; index < inputValue?.howManyStrings ?? 1; index++) {
         result += generate(options) + "\n";
       }

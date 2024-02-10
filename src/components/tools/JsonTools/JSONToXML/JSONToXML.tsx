@@ -29,7 +29,7 @@ export function JSONToXML() {
     setByte("");
   };
 
-  function ideCb(str: string | undefined) {
+  async function ideCb(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -41,7 +41,7 @@ export function JSONToXML() {
     if (error) {
       setError("");
     }
-    const { data, msg } = convertJSONToXML(str) as any;
+    const { data, msg } = await convertJSONToXML(str);
     if (data) {
       setByte(data);
     }

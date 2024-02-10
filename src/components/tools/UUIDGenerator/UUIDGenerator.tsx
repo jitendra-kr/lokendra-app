@@ -1,7 +1,6 @@
 "use client";
 import { message } from "antd";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { messageError } from "../../../utils";
 import { ToolKeys } from "../ToolsList";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
@@ -24,7 +23,7 @@ function UUIDGenerator() {
     });
   };
 
-  const onClick = () => {
+  const onClick = async () => {
     if (count > limit) {
       messageError({
         content: `Maximum of ${limit} UUIDs created at once.`,
@@ -35,7 +34,7 @@ function UUIDGenerator() {
     openMessage();
     setByte("");
     let uuidStr = "";
-
+    const uuidv4 = (await import("uuid")).v4;
     for (let index = 0; index < count; index++) {
       const uuid = uuidv4();
       uuidStr += uuid + "\n";

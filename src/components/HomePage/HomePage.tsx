@@ -1,4 +1,3 @@
-"use client";
 import { ToolsList } from "../tools";
 import ToolDescriptionStyles from "../tools/helper/ToolOverview/ToolDescription.module.css";
 

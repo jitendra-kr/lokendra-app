@@ -4,3 +4,10 @@
   font-weight: bold;
   margin-bottom: 30px;
 }
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 74vh;
+}

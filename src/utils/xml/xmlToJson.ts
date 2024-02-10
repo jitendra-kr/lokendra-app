@@ -1,7 +1,7 @@
-import { XMLParser } from "fast-xml-parser";
 import { get } from "lodash";
 
-export const xmlToJson = (xml: string) => {
+export const xmlToJson = async (xml: string) => {
+  const { XMLParser } = await import("fast-xml-parser");
   const result = { data: "", msg: "" };
   try {
     const parser = new XMLParser();

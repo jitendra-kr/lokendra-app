@@ -28,7 +28,7 @@ export function XmlMinifier() {
     setByte("");
   };
 
-  function ideCb(str: string | undefined) {
+  async function ideCb(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -40,7 +40,7 @@ export function XmlMinifier() {
     if (error) {
       setError("");
     }
-    const { data, msg } = xmlMinifier(str);
+    const { data, msg } = await xmlMinifier(str);
     if (data) {
       setByte(data);
     }

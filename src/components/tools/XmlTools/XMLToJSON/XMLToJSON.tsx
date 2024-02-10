@@ -28,7 +28,7 @@ export function XMLToJSON() {
     setByte("");
   };
 
-  function ideCb(str: string | undefined) {
+  async function ideCb(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -40,7 +40,7 @@ export function XMLToJSON() {
     if (error) {
       setError("");
     }
-    const { data, msg } = xmlToJson(str) as any;
+    const { data, msg } = (await xmlToJson(str)) as any;
     if (data) {
       delete data["?xml"];
       setByte(JSON.stringify(data, null, "\t"));

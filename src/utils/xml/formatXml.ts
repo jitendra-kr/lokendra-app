@@ -1,16 +1,16 @@
 import { get } from "lodash";
-import xmlFormat from "xml-formatter";
 
-export const formatXml = (
+export const formatXml = async (
   xml: string,
-): {
+): Promise<{
   data: string;
   msg: string;
-} => {
+}> => {
   const result = { data: "", msg: "" };
 
   try {
-    const data = xmlFormat(xml, {
+    const xmlFormat = await import("xml-formatter");
+    const data = xmlFormat.default(xml, {
       indentation: "  ",
       filter: (node) => node.type !== "Comment",
       collapseContent: true,
