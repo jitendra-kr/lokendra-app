@@ -1,18 +1,26 @@
 "use client";
+import { toolsListData } from "@ft/components/tools/ToolsList";
 import { Col, Input, Row } from "antd";
+import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 
 export function SearchBar({
-  placeholder,
   allowClear = false,
   autoFocus = false,
   onSearch,
 }: {
-  placeholder: string;
   allowClear?: boolean;
   autoFocus?: boolean;
   onSearch: (value: string | undefined) => void;
 }) {
+  const [placeholder, setPlaceholder] = useState<string>("Search...");
+
+  useEffect(() => {
+    const data = toolsListData.filter((tool) => tool.list);
+    const randomTool = data[Math.floor(Math.random() * data.length)];
+    setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
+  }, []);
+
   return (
     <Row
       style={{

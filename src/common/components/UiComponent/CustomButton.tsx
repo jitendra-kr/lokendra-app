@@ -17,7 +17,7 @@ export function CustomButton({
   type = "default",
 }: CustomButtonProps) {
   return (
-    <Button type={type} style={style} onClick={onClick}>
+    <Button type={type} size="large" style={style} onClick={onClick}>
       {children}
     </Button>
   );

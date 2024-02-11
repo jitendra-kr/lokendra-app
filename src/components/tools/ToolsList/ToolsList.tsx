@@ -2,7 +2,7 @@
 import { SearchBar } from "@ft/components/common/SearchBar";
 import { WhyUs } from "@ft/components/common/WhyUs";
 import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
 import styles from "./ToolsList.module.css";
@@ -22,7 +22,10 @@ const Reasons = () => {
   return (
     <ul>
       {reasons.map((r, i) => (
-        <li key={i} style={{ fontFamily: "Inter", padding: "4px" }}>
+        <li
+          key={i}
+          style={{ fontFamily: "Inter", padding: "4px", color: "#000" }}
+        >
           {r}
         </li>
       ))}
@@ -31,9 +34,10 @@ const Reasons = () => {
 };
 
 export const ToolsList = () => {
-  const [toolsList, setToolsList] = useState<ITools[]>([]);
+  const [toolsList, setToolsList] = useState<ITools[]>(
+    toolsListData.filter((tool) => tool.list),
+  );
   const [textInput, setTextInput] = useState<string | undefined>();
-  const [placeholder, setPlaceholder] = useState<string>("Search...");
 
   const onSearch = (searchInput: string | undefined) => {
     setTextInput(searchInput);
@@ -55,13 +59,6 @@ export const ToolsList = () => {
     setToolsList(results.map((result) => result.item));
   };
 
-  useEffect(() => {
-    const data = toolsListData.filter((tool) => tool.list);
-    const randomTool = data[Math.floor(Math.random() * data.length)];
-    setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
-    setToolsList(data);
-  }, []);
-
   return (
     <>
       <div>
@@ -69,12 +66,7 @@ export const ToolsList = () => {
           Empower Your Work with Our Tools
         </h1>
       </div>
-      <SearchBar
-        placeholder={placeholder}
-        onSearch={onSearch}
-        autoFocus={false}
-        allowClear={true}
-      />
+      <SearchBar onSearch={onSearch} autoFocus={false} allowClear={true} />
       <div
         id="tool-list"
         style={{

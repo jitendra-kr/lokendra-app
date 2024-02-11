@@ -64,19 +64,23 @@ export function RenderToolsList({
               }}
               style={{ marginTop: "25px" }}
             >
-              <div
-                className="home-page-title text-align-center"
-                style={{
-                  backgroundColor: "white",
-                  textAlign: "center",
-                  borderRadius: "8px",
-                  border: "1px solid rgb(211, 211, 211)",
-                }}
-              >
-                <Link href={item.link} style={{ color: "rgb(22, 119, 255)" }}>
-                  {item.title}
-                </Link>
-              </div>
+              {
+                <div
+                  className="home-page-title text-align-center"
+                  style={{
+                    backgroundColor: "#4096FF",
+                    textAlign: "center",
+                    borderRadius: "8px",
+                    border: "1px solid rgb(211, 211, 211)",
+                  }}
+                >
+                  <Link href={item.link}>
+                    <b style={{ color: "white", fontSize: "17px" }}>
+                      {item.title}
+                    </b>
+                  </Link>
+                </div>
+              }
             </div>
           );
         })}
