@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ToolsList } from "../tools";
 import ToolDescriptionStyles from "../tools/helper/ToolOverview/ToolDescription.module.css";
 
@@ -14,9 +15,12 @@ export function HomePage() {
           such tools as code formatter, minifier, beautifier, UUID generate,
           converter, and many more. Discover a suite of time-saving tools for
           both technical and non-technical users on this platform. Access
-          various tools easily through our{" "}
-          <a href="#heading">search functionality</a> to find the best tools for
-          your needs.
+          various tools easily through our
+          <Link href={"#heading"} style={{ color: "#2962ff" }}>
+            {" "}
+            search functionality{" "}
+          </Link>
+          to find the best tools for your needs.
         </p>
       </div>
     </>
