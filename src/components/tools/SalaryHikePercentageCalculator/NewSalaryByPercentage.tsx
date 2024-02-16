@@ -88,7 +88,7 @@ export function NewSalaryByPercentage() {
       <CalculationFormula
         heading="Calculation Formula: How we determine new salary using percentage"
         alt="salary hike percentage calculator"
-        src="=https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/newSalaryByPercentage.jpg"
+        src="https://raw.githubusercontent.com/jitendra-kr/jimmy-point-images/master/newSalaryByPercentage.jpg"
       />
     </div>
   );
