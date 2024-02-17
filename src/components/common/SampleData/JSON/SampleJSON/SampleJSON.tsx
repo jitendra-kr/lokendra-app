@@ -2,16 +2,16 @@ import Link from "next/link";
 import { AiOutlineLink } from "react-icons/ai";
 import { SCREENS } from "../../../../../common/enums";
 import { RelevantTools } from "../../../RelevantTools";
-import { ShowCodeBlock } from "../../../ShowCodeBlock";
+import RenderJSON from "./RenderJSON";
+import RenderSampleData from "./RenderSampleData";
 import styles from "./SampleJSON.module.css";
+import { headingToID } from "./sampleJSON.helper";
 import {
   DaysJSON,
   FormattedJSON,
   InvalidJSON,
-  JSONExamples,
   MinifiedJSON,
   ProductJSON,
-  SampleData,
   UserJSON,
   blogPostCommentJSON,
   employeeJSON,
@@ -19,79 +19,7 @@ import {
   monthsJSON,
 } from "./sampleJSONData";
 
-const headingToID = (heading: string) => {
-  return heading.toLocaleLowerCase().replaceAll(" ", "-");
-};
-
-function RenderSampleData({
-  jsonData,
-  heading,
-}: {
-  jsonData: SampleData[];
-  heading: string;
-}) {
-  return (
-    <>
-      <div className="col">
-        <h2
-          className="heading"
-          style={{ textAlign: "left", marginBottom: "20px" }}
-        >
-          {heading}
-        </h2>
-
-        <ul>
-          {jsonData.map((data) => (
-            <li key={data.value} style={{ fontSize: "17px" }}>
-              <Link className={styles.link} href={data.value} target="_blank">
-                {data.key}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
-}
-
-function RenderJSONExamples({ data }: { data: JSONExamples }) {
-  const id = headingToID(data.heading);
-  return (
-    <div className="col">
-      <h2
-        className="heading"
-        style={{ marginBottom: "20px", fontSize: "22px" }}
-        id={id}
-      >
-        {data.heading}
-        <Link href={"#" + id} style={{ marginLeft: "5px" }}>
-          <AiOutlineLink />
-        </Link>
-      </h2>
-      <ShowCodeBlock
-        code={JSON.stringify(data.data, null, "\t")}
-        language="json"
-        trySample={false}
-      />
-    </div>
-  );
-}
-function RenderJSON({
-  data1,
-  data2,
-}: {
-  data1: JSONExamples;
-  data2?: JSONExamples;
-}) {
-  return (
-    <div style={{ marginTop: "20px" }} className="row">
-      <RenderJSONExamples data={data1} />
-      {data2 && <RenderJSONExamples data={data2} />}
-    </div>
-  );
-}
-
-export function SampleJSON() {
+export default function SampleJSON() {
   const JSONExampleArray = [
     UserJSON,
     ProductJSON,

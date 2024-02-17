@@ -1,12 +1,4 @@
-export type SampleData = {
-  key: string;
-  value: string;
-};
-
-export type JSONExamples = {
-  heading: string;
-  data: object;
-};
+import { JSONExamples, SampleData } from "./sampleJSON.types";
 
 export const FormattedJSON: SampleData[] = [
   {
