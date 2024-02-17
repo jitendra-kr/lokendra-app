@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Charset, GenerateOptions } from "randomstring";
 import { useState } from "react";
 import { Faq } from "../../../common";
-import { ToolKeys } from "../../ToolsList";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { RandomStringOptions } from "./RandomStringGeneratorOptions";
 import { InputValue, RandomStringFormat } from "./randomStringGenerator.types";

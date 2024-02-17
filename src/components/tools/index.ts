@@ -1,4 +1,5 @@
-import { AsciiToString, StringToAscii } from "./AsciiConversion";
+import { StringToAscii } from "./AsciiConversion";
+import { WordCounter } from "./WordCounter";
 export * from "./Diff";
 export * from "./JsonTools";
 export * from "./JsonUnstringify";
@@ -10,8 +11,7 @@ export * from "./ToolsList";
 export * from "./URLDecode";
 export * from "./URLEncode";
 export { UUIDGenerator } from "./UUIDGenerator";
-import { WordCounter } from "./WordCounter";
 export * from "./XmlTools";
 export * from "./helper/JsonViewer";
 
-export { AsciiToString, StringToAscii, WordCounter };
+export { StringToAscii, WordCounter };

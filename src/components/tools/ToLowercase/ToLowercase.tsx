@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 
 function ToLowercase() {

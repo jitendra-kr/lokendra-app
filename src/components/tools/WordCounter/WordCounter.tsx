@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { convertNumberToWords } from "../../../utils";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { ToolOutputActions } from "../helper/ToolOutputActions";
 import characterCounterStyles from "./WordCounter.module.css";

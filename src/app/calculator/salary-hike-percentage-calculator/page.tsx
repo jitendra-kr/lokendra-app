@@ -1,5 +1,5 @@
-import { ToolKeys } from "@ft/components";
 import SalaryHikePercentageCalculator from "@ft/components/tools/SalaryHikePercentageCalculator/SalaryHikePercentageCalculator";
+import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 

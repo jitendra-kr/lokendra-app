@@ -2,7 +2,7 @@
 import { message } from "antd";
 import { useState } from "react";
 import { messageError } from "../../../utils";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
 function UUIDGenerator() {

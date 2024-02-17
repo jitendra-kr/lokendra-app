@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../../../hooks";
 
 import { useState } from "react";
 import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
-import { ToolKeys } from "../../ToolsList";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 export function JSONDiff() {

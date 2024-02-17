@@ -1,5 +1,5 @@
 import { Faq } from "@ft/components/common";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
 import { NewSalaryByPercentage } from "./NewSalaryByPercentage";

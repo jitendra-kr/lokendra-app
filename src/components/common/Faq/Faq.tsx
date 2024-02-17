@@ -1,8 +1,6 @@
-"use client";
-import { CaretRightOutlined } from "@ant-design/icons";
+import CustomCollapse from "@ft/common/components/UiComponent/CustomCollapse";
 import type { CollapseProps } from "antd";
-import { Collapse } from "antd";
-import { H2Tag } from "../HtmlTags";
+import { H2Tag } from "../HtmlTags/H2Tag/H2Tag";
 
 export type FaqProps = {
   question: string;
@@ -21,14 +19,7 @@ export const Faq = ({ data }: { data: FaqProps[] }) => {
   return (
     <>
       <H2Tag heading="FAQ" link={false}></H2Tag>
-      <Collapse
-        defaultActiveKey={faqData.map((_, index) => index)}
-        style={{ marginTop: "20px", marginBottom: "20px" }}
-        items={faqData}
-        expandIcon={({ isActive }) => (
-          <CaretRightOutlined rotate={isActive ? 90 : 0} />
-        )}
-      />
+      <CustomCollapse faqData={faqData} />
     </>
   );
 };

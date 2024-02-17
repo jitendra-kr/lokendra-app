@@ -2,7 +2,7 @@
 import { Faq } from "@ft/components/common";
 import { textToAscii } from "ascii-text-converter";
 import { useState } from "react";
-import { ToolKeys } from "../../ToolsList/toolsListingData";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import { StringToAsciiInJavascript } from "./StringToAsciiInJavascript";
 import stringToAsciiFaqData from "./stringToAsciiFaqData";

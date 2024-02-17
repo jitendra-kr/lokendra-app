@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { xmlToJson } from "../../../../utils/xml/xmlToJson";
-import { ToolKeys } from "../../ToolsList";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));

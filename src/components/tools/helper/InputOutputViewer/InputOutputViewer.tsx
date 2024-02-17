@@ -1,10 +1,10 @@
 "use client";
 import { useToolListData } from "@ft/common/hooks/useToolListData";
-import { ToolKeys } from "@ft/components";
 import { SampleData } from "@ft/components/common";
 import dynamic from "next/dynamic";
 import React from "react";
 import { ToolsBody } from "../../ToolsBody";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { ToolDescription } from "../ToolOverview";
 import { ToolInputProps } from "./ToolInput";
 

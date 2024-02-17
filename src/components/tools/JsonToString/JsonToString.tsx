@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { jsonlint } from "../../../externalLib";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 
 const Editor = dynamic(() => import("../../common/Ide/Ide"), {

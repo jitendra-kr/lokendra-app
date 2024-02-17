@@ -1,6 +1,6 @@
 import { SCREENS } from "@ft/common/enums";
-import { ToolKeys } from "@ft/components";
 import { SampleJSON } from "@ft/components/common";
+import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 

@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { capitalizeEveryWord, messageError } from "../../../../utils";
 import { Faq } from "../../../common";
-import { ToolKeys } from "../../ToolsList";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import numbersToWordsFaqData from "./numbersToWordsFaqData";
 

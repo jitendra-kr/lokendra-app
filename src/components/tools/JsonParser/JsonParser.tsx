@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { beautifyJSON } from "../../../utils";
 import { Faq } from "../../common";
-import { ToolKeys } from "../ToolsList";
+import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import jsonParserFaqData from "./jsonParserFaqData";
 import jsonValidatorFaqData from "./jsonValidatorFaqData";

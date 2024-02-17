@@ -1,5 +1,6 @@
 import { SCREENS } from "@ft/common/enums";
-import { ToolKeys, toolsListData } from "@ft/components";
+import { toolsListData } from "@ft/components";
+import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { STRING_CONSTANTS } from "@ft/constants";
 import { Metadata } from "next";
 

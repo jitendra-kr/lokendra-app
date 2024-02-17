@@ -1,4 +1,5 @@
-import { ReplaceSpaces, ToolKeys } from "@ft/components/tools";
+import { ReplaceSpaces } from "@ft/components/tools";
+import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 
