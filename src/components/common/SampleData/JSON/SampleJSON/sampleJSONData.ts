@@ -127,7 +127,7 @@ export const ProductJSON: JSONExamples = {
 };
 
 export const DaysJSON: JSONExamples = {
-  heading: "Example of a JSON Array Representing Days of The Week",
+  heading: "Sample JSON for Weekdays",
   data: {
     days: [
       "Monday",
@@ -142,7 +142,7 @@ export const DaysJSON: JSONExamples = {
 };
 
 export const monthsJSON: JSONExamples = {
-  heading: "Example of a JSON Array Representing Months of the Year",
+  heading: "JSON Examples for Months",
   data: {
     months: [
       "January",
@@ -162,7 +162,7 @@ export const monthsJSON: JSONExamples = {
 };
 
 export const employeeJSON: JSONExamples = {
-  heading: "Example of a Json Array Representing Employee Information",
+  heading: "JSON example for Employee Information",
   data: {
     employees: [
       {

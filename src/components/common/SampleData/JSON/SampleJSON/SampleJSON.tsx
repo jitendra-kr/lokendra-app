@@ -1,8 +1,7 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { AiOutlineLink } from "react-icons/ai";
 import { SCREENS } from "../../../../../common/enums";
 import { RelevantTools } from "../../../RelevantTools";
-import RenderJSON from "./RenderJSON";
 import RenderSampleData from "./RenderSampleData";
 import styles from "./SampleJSON.module.css";
 import { headingToID } from "./sampleJSON.helper";
@@ -18,6 +17,8 @@ import {
   employersJSON,
   monthsJSON,
 } from "./sampleJSONData";
+
+const RenderJSON = dynamic(() => import("./RenderJSON"));
 
 export default function SampleJSON() {
   const JSONExampleArray = [
@@ -56,9 +57,11 @@ export default function SampleJSON() {
         </div>
 
         <h2 id="#json-examples" className="heading">
-          JSON Examples: Users, Products, Days, Weeks, Months etc
-          <Link href={"#json-examples"} style={{ marginLeft: "5px" }}>
-            <AiOutlineLink />
+          <Link
+            href={"#json-examples"}
+            style={{ marginLeft: "5px", color: "black" }}
+          >
+            JSON Examples: Users, Products, Days, Weeks, Months etc
           </Link>
         </h2>
         <p className={styles.content}>
@@ -76,7 +79,7 @@ export default function SampleJSON() {
                 <Link
                   className={styles.link}
                   href={`#${headingToID(data.heading)}`}
-                  scroll={false}
+                  // scroll={false}
                 >
                   {data?.heading}
                 </Link>
@@ -85,9 +88,11 @@ export default function SampleJSON() {
           </ul>
         </div>
         <div style={{ marginBottom: "80px" }}>
-          <RenderJSON data1={UserJSON} data2={ProductJSON} />
           <RenderJSON data1={DaysJSON} data2={monthsJSON} />
-          <RenderJSON data1={employeeJSON} data2={employersJSON} />
+          <RenderJSON data1={UserJSON} />
+          <RenderJSON data1={ProductJSON} />
+          <RenderJSON data1={employeeJSON} />
+          <RenderJSON data1={employersJSON} />
           <RenderJSON data1={blogPostCommentJSON} />
         </div>
       </div>

@@ -1,22 +1,16 @@
 import { ShowCodeBlock } from "@ft/components/common/ShowCodeBlock";
-import Link from "next/link";
-import { AiOutlineLink } from "react-icons/ai";
 import { headingToID } from "./sampleJSON.helper";
 import { JSONExamples } from "./sampleJSON.types";
 
 function RenderJSONExamples({ data }: { data: JSONExamples }) {
   const id = headingToID(data.heading);
   return (
-    <div className="col">
+    <div className="col" id={id}>
       <h2
         className="heading"
-        style={{ marginBottom: "20px", fontSize: "22px" }}
-        id={id}
+        style={{ marginBottom: "20px", fontSize: "20px" }}
       >
         {data.heading}
-        <Link href={"#" + id} style={{ marginLeft: "5px" }}>
-          <AiOutlineLink />
-        </Link>
       </h2>
       <ShowCodeBlock
         code={JSON.stringify(data.data, null, "\t")}
