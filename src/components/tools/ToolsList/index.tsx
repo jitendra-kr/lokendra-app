@@ -1,2 +1,1 @@
-export * from "./ToolsList"
-export * from "./toolsListingData"
+export * from "./toolsListingData";

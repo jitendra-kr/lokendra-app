@@ -2,7 +2,7 @@
 
 import Empty from "antd/es/empty";
 
-export function NoMatchFound() {
+export default function NoMatchFound() {
   return (
     <>
       <Empty

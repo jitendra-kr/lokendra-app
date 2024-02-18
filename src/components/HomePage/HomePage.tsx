@@ -1,28 +1,14 @@
-import Link from "next/link";
-import { ToolsList } from "../tools";
-import ToolDescriptionStyles from "../tools/helper/ToolOverview/ToolDescription.module.css";
+import dynamic from "next/dynamic";
+const ToolsList = dynamic(() => import("../tools/ToolsList/ToolsList"));
+const Reasons = dynamic(() => import("./Reasons"));
+const WhatIsFireboxTools = dynamic(() => import("./WhatIsFireboxTools"));
 
 export function HomePage() {
   return (
     <>
       <ToolsList />
-      <div style={{ marginBottom: "80px" }}>
-        <h2 className={`${ToolDescriptionStyles.heading} `}>
-          What is FireboxTools?
-        </h2>
-        <p style={{ fontSize: "19px", marginTop: "20px" }}>
-          FireboxTools is a powerful and secure online platform which comes with
-          such tools as code formatter, minifier, beautifier, UUID generate,
-          converter, and many more. Discover a suite of time-saving tools for
-          both technical and non-technical users on this platform. Access
-          various tools easily through our
-          <Link href={"#heading"} style={{ color: "#2962ff" }}>
-            {" "}
-            search functionality{" "}
-          </Link>
-          to find the best tools for your needs.
-        </p>
-      </div>
+      <Reasons />
+      <WhatIsFireboxTools />
     </>
   );
 }

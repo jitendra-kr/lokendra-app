@@ -1,42 +1,9 @@
-"use client";
-import Skeleton from "antd/es/skeleton/Skeleton";
-import { useRouter } from "next/dist/client/components/navigation";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { NoMatchFound } from "./NoMatchFound";
+import { useRouter } from "next/navigation";
 import { ITools } from "./toolsListingData";
 
-function LoadingToolsList() {
-  const skeleton = [
-    "ljnv5yzi9o5d9",
-    "ljnv5yzia7141",
-    "ljnv5yzi0edff",
-    "ljnv5yzib31ow",
-    "ljnv5yzi5o6yj",
-    "ljnv5yziz3eov",
-    "ljnv5yzikzww6",
-    "ljnv5yzi6oz93",
-    "ljnv5yzifz6pq",
-    "ljnv5yzit2yjo",
-    "ljnv5yzipd2n9",
-    "ljnv5yzi9i4ty",
-  ];
-  return (
-    <div className="row" style={{ minHeight: "40vh" }}>
-      {skeleton.map((v) => (
-        <div className="col-lg-3" key={v}>
-          <div className="home-page-title" style={{ textAlign: "center" }}>
-            <Skeleton.Button
-              active={true}
-              size={"large"}
-              shape={"round"}
-              block={false}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
+const NoMatchFound = dynamic(() => import("./NoMatchFound"));
 
 export function RenderToolsList({
   toolsList,
@@ -64,29 +31,26 @@ export function RenderToolsList({
               }}
               style={{ marginTop: "25px" }}
             >
-              {
-                <div
-                  className="home-page-title text-align-center"
-                  style={{
-                    backgroundColor: "#4096FF",
-                    textAlign: "center",
-                    borderRadius: "8px",
-                    border: "1px solid rgb(211, 211, 211)",
-                  }}
-                >
-                  <Link href={item.link}>
-                    <b style={{ color: "white", fontSize: "17px" }}>
-                      {item.title}
-                    </b>
-                  </Link>
-                </div>
-              }
+              <div
+                className="home-page-title text-align-center"
+                style={{
+                  backgroundColor: "#4096FF",
+                  textAlign: "center",
+                  borderRadius: "8px",
+                  border: "1px solid rgb(211, 211, 211)",
+                }}
+              >
+                <Link href={item.link}>
+                  <b style={{ color: "white", fontSize: "17px" }}>
+                    {item.title}
+                  </b>
+                </Link>
+              </div>
             </div>
           );
         })}
         {textInput && toolsList.length === 0 && <NoMatchFound />}
       </div>
-      {!textInput && toolsList.length === 0 && <LoadingToolsList />}
     </>
   );
 }

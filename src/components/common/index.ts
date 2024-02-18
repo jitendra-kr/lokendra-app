@@ -5,4 +5,3 @@ export * from "./HandleFullScreen";
 export * from "./HtmlTags";
 export * from "./RelevantTools";
 export * from "./SampleData";
-export * from "./WhyUs";

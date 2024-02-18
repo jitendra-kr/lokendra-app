@@ -1,39 +1,11 @@
 "use client";
+import { H1Tag } from "@ft/components/common";
 import { SearchBar } from "@ft/components/common/SearchBar";
-import { WhyUs } from "@ft/components/common/WhyUs";
-import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import { useState } from "react";
-import ToolDescriptionStyles from "../helper/ToolOverview/ToolDescription.module.css";
 import { RenderToolsList } from "./RenderToolsList";
-import styles from "./ToolsList.module.css";
 import { ITools, toolsListData } from "./toolsListingData";
 
-const Reasons = () => {
-  const reasons = [
-    `Our tools use cutting-edge encryption and safe data processing algorithms to guarantee that your data is completely secure.`,
-    `Data is processed locally rather than being sent to external servers.`,
-    `It analyze and alter data significantly more quickly than other solutions on the market because to its strong algorithms and optimised speed.`,
-    `Discover the power of precision with the unrivalled quality and dependability of ${STRING_CONSTANTS.global.domain}. Our tools is the best option regardless of whether you're a student, data analyst, business owner, or developer because of its superiority and dependability.`,
-    `Our opinion is that your most valuable asset is your data. We never make use of or sell your information to third parties. Therefore, why use tools that compromise your data?? Choose
-    ${STRING_CONSTANTS.global.domain} and take control of your data
-    today.`,
-  ];
-
-  return (
-    <ul>
-      {reasons.map((r, i) => (
-        <li
-          key={i}
-          style={{ fontFamily: "Inter", padding: "4px", color: "#000" }}
-        >
-          {r}
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-export const ToolsList = () => {
+const ToolsList = () => {
   const [toolsList, setToolsList] = useState<ITools[]>(
     toolsListData.filter((tool) => tool.list),
   );
@@ -61,10 +33,8 @@ export const ToolsList = () => {
 
   return (
     <>
-      <div>
-        <h1 className={`${ToolDescriptionStyles.heading} ${styles.heading}`}>
-          Empower Your Work with Our Tools
-        </h1>
+      <div style={{ marginBottom: "50px" }}>
+        <H1Tag heading="Empower Your Work with Our Tools" />
       </div>
       <SearchBar onSearch={onSearch} autoFocus={false} allowClear={true} />
       <div
@@ -76,12 +46,8 @@ export const ToolsList = () => {
       >
         <RenderToolsList toolsList={toolsList} textInput={textInput} />
       </div>
-      <div className={styles.whyUsContainer}>
-        <WhyUs
-          heading="5 Reasons Why Our Suite of Online Tools is a Must-Have"
-          content={<Reasons />}
-        />
-      </div>
     </>
   );
 };
+
+export default ToolsList;
