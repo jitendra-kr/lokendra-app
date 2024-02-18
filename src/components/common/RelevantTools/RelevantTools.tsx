@@ -1,9 +1,9 @@
 "use client";
 import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
+import { SCREENS } from "@ft/common/enums/screens";
+import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import Link from "next/link";
 import { BiSolidRightArrow } from "react-icons/bi";
-import { SCREENS } from "../../../common/enums";
-import { toolsListData } from "../../tools";
 import RelevantToolsStyles from "./RelevantTools.module.css";
 import { relevantTools } from "./releventTools";
 
