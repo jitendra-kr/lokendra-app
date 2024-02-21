@@ -5,7 +5,7 @@ import { ITools } from "./toolsListingData";
 
 const NoMatchFound = dynamic(() => import("./NoMatchFound"));
 
-export function RenderToolsList({
+function RenderToolsList({
   toolsList,
   textInput,
 }: {
@@ -20,25 +20,28 @@ export function RenderToolsList({
 
   return (
     <>
-      <div className="row" id="tool-list">
+      <div className="row">
         {toolsList.map((item, i) => {
           return (
-            <div className="col-lg-3" key={item.key} style={{}}>
+            <div
+              className="col-lg-3 cursor-pointer"
+              key={item.key}
+              onClick={() => {
+                handleClick(item);
+              }}
+              style={{ marginTop: "25px" }}
+            >
               <div
-                className="home-page-title text-align-center cursor-pointer"
+                className="home-page-title text-align-center"
                 style={{
-                  backgroundColor: "#1a73e8",
+                  backgroundColor: "#4096FF",
                   textAlign: "center",
                   borderRadius: "8px",
                   border: "1px solid rgb(211, 211, 211)",
-                  marginTop: "25px",
-                }}
-                onClick={() => {
-                  handleClick(item);
                 }}
               >
                 <Link href={item.link}>
-                  <b style={{ color: "#fff", fontSize: "17px" }}>
+                  <b style={{ color: "white", fontSize: "17px" }}>
                     {item.title}
                   </b>
                 </Link>
@@ -51,3 +54,5 @@ export function RenderToolsList({
     </>
   );
 }
+
+export default RenderToolsList;

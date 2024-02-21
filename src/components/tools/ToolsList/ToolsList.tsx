@@ -1,34 +1,36 @@
 "use client";
 import { H1Tag } from "@ft/components/common";
-import { SearchBar } from "@ft/components/common/SearchBar";
-import { useState } from "react";
-import { RenderToolsList } from "./RenderToolsList";
+import dynamic from "next/dynamic";
+import { useMemo, useState } from "react";
+import RenderToolsList from "./RenderToolsList";
 import { ITools, toolsListData } from "./toolsListingData";
 
-const ToolsList = () => {
-  const [toolsList, setToolsList] = useState<ITools[]>(
-    toolsListData.filter((tool) => tool.list),
-  );
-  const [textInput, setTextInput] = useState<string | undefined>();
+const SearchBar = dynamic(
+  () => import("@ft/components/common/SearchBar/SearchBar"),
+);
 
-  const onSearch = (searchInput: string | undefined) => {
-    setTextInput(searchInput);
-    if (!searchInput) {
-      const data = toolsListData.filter((tool) => tool.list);
-      setToolsList(data);
-      return;
-    }
-    handleSearch(searchInput);
-  };
+const ToolsList = () => {
+  const listData = useMemo(() => toolsListData.filter((tool) => tool.list), []);
+  const [toolsList, setToolsList] = useState<ITools[]>();
+  const [textInput, setTextInput] = useState<string | undefined>();
 
   const handleSearch = async (searchInput: string) => {
     const Fuse = await import("fuse.js");
     const searchOptions = {
       keys: ["title"],
     };
-    const fuse = new Fuse.default(toolsList, searchOptions);
+    const fuse = new Fuse.default(listData, searchOptions);
     const results = fuse.search(searchInput);
     setToolsList(results.map((result) => result.item));
+  };
+
+  const onSearch = (searchInput: string | undefined) => {
+    setTextInput(searchInput);
+    if (!searchInput) {
+      setToolsList(listData);
+      return;
+    }
+    handleSearch(searchInput);
   };
 
   return (
@@ -37,7 +39,18 @@ const ToolsList = () => {
         <H1Tag heading="Empower Your Work with Our Tools" />
       </div>
       <SearchBar onSearch={onSearch} autoFocus={false} allowClear={true} />
-      <RenderToolsList toolsList={toolsList} textInput={textInput} />
+      <div
+        id="tool-list"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <RenderToolsList
+          toolsList={toolsList ?? listData}
+          textInput={textInput}
+        />
+      </div>
     </>
   );
 };

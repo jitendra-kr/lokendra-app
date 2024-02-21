@@ -4,7 +4,7 @@ import { Col, Input, Row } from "antd";
 import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 
-export function SearchBar({
+export default function SearchBar({
   allowClear = false,
   autoFocus = false,
   onSearch,
