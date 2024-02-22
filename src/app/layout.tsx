@@ -1,10 +1,14 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { GoogleAnalytics, MainFooter, MainHeader } from "@ft/components";
+import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnalytics";
+import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
 import "bootstrap/dist/css/bootstrap-grid.css";
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import "./globals.css";
+
+const MainFooter = dynamic(() => import("@ft/components/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });
 
