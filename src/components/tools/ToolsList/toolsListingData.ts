@@ -226,7 +226,7 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
     metaTitle: seoData.toUppercase.title,
     metaDescription: seoData.toUppercase.description,
     list: true,
-    key: ToolKeys.UppercaseTextconverter,
+    key: ToolKeys.UppercaseTextConverter,
     toolDescription: `Introducing our revolutionary tool to convert text to uppercase, the ultimate solution for effortless capitalization. Are you tired of spending precious time manually capitalizing text? Look no further! our tool will transform your experience and make sure your words stand out with just a click.
 
 Whether you're a professional writer, a student, or simply someone dealing with the text on a daily basis, our Text to Uppercase Converter tool is the ultimate choice. Gone are the days of painstaking capitalizing words by word or sentence by sentence. With our tool, you can capitalize an entire document.

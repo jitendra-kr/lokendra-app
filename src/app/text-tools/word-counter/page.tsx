@@ -4,7 +4,7 @@ import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 
 export const metadata: Metadata = generateMetaTags(
-  ToolKeys.UppercaseTextconverter,
+  ToolKeys.UppercaseTextConverter,
 );
 
 function WordsCounterPage() {

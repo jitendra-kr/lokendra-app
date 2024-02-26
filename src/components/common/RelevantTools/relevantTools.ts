@@ -1,4 +1,4 @@
-import { SCREENS } from "../../../common/enums";
+import { SCREENS } from "../../../common/enums/screens";
 
 export const relevantTools: Record<SCREENS, SCREENS[]> = {
   // Number tools

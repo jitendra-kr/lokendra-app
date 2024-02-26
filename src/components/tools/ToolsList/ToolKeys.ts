@@ -6,7 +6,7 @@ export enum ToolKeys {
   JSONParser = "JSONParser",
   JSON_VALIDATOR = "JSON_VALIDATOR",
   JSONUnstringify = "JSONUnstringify",
-  UppercaseTextconverter = "UppercaseTextconverter",
+  UppercaseTextConverter = "UppercaseTextConverter",
   LowercaseTextconverter = "LowercaseTextconverter",
   wordCounter = "wordCounter",
   Tools = "Tools",

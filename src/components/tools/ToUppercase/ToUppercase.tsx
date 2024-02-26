@@ -17,7 +17,7 @@ function ToUppercase({ children }: { children: React.ReactNode }) {
   return (
     <>
       <InputOutputViewer
-        toolId={ToolKeys.UppercaseTextconverter}
+        toolId={ToolKeys.UppercaseTextConverter}
         byte={byte}
         onChangeCb={onChangeCb}
       />

@@ -23,7 +23,7 @@ export default function RootLayout({
         <AntdRegistry>
           <body className={inter.className}>
             <MainHeader />
-            <div className="row" style={{ marginTop: "50px" }}>
+            <div className="row">
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>
               <div className="col-lg-10 col-md-8 col-sm-12 col-12">
                 <div style={{ marginLeft: "10px", marginRight: "10px" }}>

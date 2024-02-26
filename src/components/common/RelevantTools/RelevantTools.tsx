@@ -5,7 +5,7 @@ import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import Link from "next/link";
 import { BiSolidRightArrow } from "react-icons/bi";
 import RelevantToolsStyles from "./RelevantTools.module.css";
-import { relevantTools } from "./releventTools";
+import { relevantTools } from "./relevantTools";
 
 export function RelevantTools({
   toolLink,
