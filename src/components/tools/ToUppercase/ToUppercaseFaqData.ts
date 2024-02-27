@@ -11,7 +11,7 @@ const toUppercaseFaqData: FaqProps[] = [
   },
   {
     question: "What is the maximum amount of text I can convert?",
-    ans: "You have the freedom to convert text without constraints. However, for extensive conversions, it's advisable to break the text into smaller segments for smoother processing",
+    ans: "You have the freedom to convert text without constraints. However, for extensive conversions, it's advisable to break the text into smaller segments for smoother processing.",
   },
   {
     question: "Does this tool preserve formatting?",

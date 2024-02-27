@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 
-function ToLowercase() {
+function ToLowercase({ children }: { children: React.ReactNode }) {
   const [byte, setByte] = useState<string>("");
 
   const onChangeCb = (value: string) => {
@@ -15,11 +15,14 @@ function ToLowercase() {
   };
 
   return (
-    <InputOutputViewer
-      toolId={ToolKeys.LowercaseTextconverter}
-      byte={byte}
-      onChangeCb={onChangeCb}
-    />
+    <>
+      <InputOutputViewer
+        toolId={ToolKeys.LowercaseTextconverter}
+        byte={byte}
+        onChangeCb={onChangeCb}
+      />
+      {children}
+    </>
   );
 }
 
