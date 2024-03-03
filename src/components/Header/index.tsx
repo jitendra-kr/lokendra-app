@@ -13,10 +13,20 @@ function MainHeader() {
           fontFamily: "math",
           cursor: "pointer",
           textTransform: "capitalize",
-          marginLeft: "20px",
         }}
       >
         {STRING_CONSTANTS.global.appName}
+      </Link>
+      <Link
+        href={"#feedback"}
+        style={{
+          color: "#ffffff",
+          fontFamily: "math",
+          cursor: "pointer",
+          textTransform: "capitalize",
+        }}
+      >
+        Give Feedback
       </Link>
     </header>
   );
