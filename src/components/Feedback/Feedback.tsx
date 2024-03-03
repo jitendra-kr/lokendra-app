@@ -1,17 +1,18 @@
-import { sql } from "@vercel/postgres";
+// import { sql } from "@vercel/postgres";
 import { H2Tag } from "../common";
 import styles from "./Feedback.module.css";
 
 function Feedback() {
   async function saveFeedback(name: string, feedback: string) {
     "use server";
-    try {
-      const resp =
-        await sql`INSERT INTO feedback (name, feedback) VALUES (${name}, ${feedback});`;
-      console.log("rows", resp);
-    } catch (e) {
-      console.log(e);
-    }
+    // try {
+    //   const resp =
+    //     await sql`INSERT INTO feedback (name, feedback) VALUES (${name}, ${feedback});`;
+    //   console.log("rows", resp);
+    // } catch (e) {
+    //   console.log(e);
+    // }
+    console.log({ name, feedback });
   }
 
   async function onSubmit(data: FormData) {
