@@ -1,22 +1,18 @@
 // import { sql } from "@vercel/postgres";
+import { redirect } from "next/navigation";
 import { H2Tag } from "../common";
 import styles from "./Feedback.module.css";
 
 function Feedback() {
   async function saveFeedback(name: string, feedback: string) {
     "use server";
-    // try {
-    //   const resp =
-    //     await sql`INSERT INTO feedback (name, feedback) VALUES (${name}, ${feedback});`;
-    //   console.log("rows", resp);
-    // } catch (e) {
-    //   console.log(e);
-    // }
     console.log({ name, feedback });
+    redirect("/save-feedback");
   }
 
   async function onSubmit(data: FormData) {
     "use server";
+    data;
     let name = "";
     let feedback = "";
     data.forEach((value: FormDataEntryValue, key: string) => {
@@ -26,8 +22,8 @@ function Feedback() {
       if (key === "feedback") {
         feedback = value as string;
       }
-      saveFeedback(name, feedback);
     });
+    await saveFeedback(name, feedback);
   }
 
   return (
@@ -38,7 +34,13 @@ function Feedback() {
           <label className={styles.label} htmlFor="name">
             Name:
           </label>
-          <input className={styles.input} type="text" name="name" required />
+          <input
+            className={styles.input}
+            type="text"
+            name="name"
+            id="name"
+            required
+          />
 
           <label className={styles.label} htmlFor="feedback">
             Feedback:
@@ -47,6 +49,7 @@ function Feedback() {
             className={styles.input}
             style={{ height: "150px" }}
             name="feedback"
+            id="feedbackMsg"
             required
           ></textarea>
           <input className={styles.button} type="submit" value="Submit" />

@@ -159,4 +159,5 @@ export const relevantTools: Record<SCREENS, SCREENS[]> = {
     SCREENS.JSON_DIFF,
   ],
   [SCREENS["PRIVACY_POLICY"]]: [],
+  [SCREENS.SAVE_FEEDBACK]: [],
 };

@@ -17,19 +17,17 @@ function MainHeader() {
       >
         {STRING_CONSTANTS.global.appName}
       </Link>
-      {false && (
-        <Link
-          href={"#feedback"}
-          style={{
-            color: "#ffffff",
-            fontFamily: "math",
-            cursor: "pointer",
-            textTransform: "capitalize",
-          }}
-        >
-          Give Feedback
-        </Link>
-      )}
+      <Link
+        href={"#feedback"}
+        style={{
+          color: "#ffffff",
+          fontFamily: "math",
+          cursor: "pointer",
+          textTransform: "capitalize",
+        }}
+      >
+        Give Feedback
+      </Link>
     </header>
   );
 }

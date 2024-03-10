@@ -1,5 +1,6 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnalytics";
+import Feedback from "@ft/components/Feedback/Feedback";
 import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
 import "bootstrap/dist/css/bootstrap-grid.css";
@@ -23,7 +24,7 @@ export default function RootLayout({
         <AntdRegistry>
           <body className={inter.className}>
             <MainHeader />
-            <div className="row">
+            <div className="row" style={{ minHeight: "100vh" }}>
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>
               <div className="col-lg-10 col-md-8 col-sm-12 col-12">
                 <div style={{ marginLeft: "10px", marginRight: "10px" }}>
@@ -31,8 +32,8 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>
+              <Feedback />
             </div>
-            {/* <Feedback /> */}
             <MainFooter />
           </body>
         </AntdRegistry>
