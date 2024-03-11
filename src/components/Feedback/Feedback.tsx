@@ -15,7 +15,7 @@ function Feedback() {
     setDisable(true);
     try {
       setValue({ name: "", feedback: "" });
-      fetch("https://fireboxtools.com/api/save-feedback", {
+      fetch("https://www.fireboxtools.com/api/save-feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
