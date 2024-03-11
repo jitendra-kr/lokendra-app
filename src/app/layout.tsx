@@ -1,6 +1,5 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnalytics";
-import Feedback from "@ft/components/Feedback/Feedback";
 import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
 import "bootstrap/dist/css/bootstrap-grid.css";
@@ -9,6 +8,7 @@ import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import "./globals.css";
 
+const Feedback = dynamic(() => import("@ft/components/Feedback/Feedback"));
 const MainFooter = dynamic(() => import("@ft/components/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });

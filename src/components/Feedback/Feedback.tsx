@@ -1,36 +1,50 @@
-// import { sql } from "@vercel/postgres";
-import { redirect } from "next/navigation";
+"use client";
+import { messageSuccess } from "@ft/utils/antd";
+import Form from "antd/es/form";
+import { useState } from "react";
 import { H2Tag } from "../common";
 import styles from "./Feedback.module.css";
 
-function Feedback() {
-  async function saveFeedback(name: string, feedback: string) {
-    "use server";
-    console.log({ name, feedback });
-    redirect("/save-feedback");
-  }
+type Value = { name: string; feedback: string };
 
-  async function onSubmit(data: FormData) {
-    "use server";
-    data;
-    let name = "";
-    let feedback = "";
-    data.forEach((value: FormDataEntryValue, key: string) => {
-      if (key === "name") {
-        name = value as string;
-      }
-      if (key === "feedback") {
-        feedback = value as string;
-      }
-    });
-    await saveFeedback(name, feedback);
+function Feedback() {
+  const [value, setValue] = useState<Value>({ name: "", feedback: "" });
+  const [disable, setDisable] = useState(false);
+
+  function onSubmit() {
+    setDisable(true);
+    try {
+      setValue({ name: "", feedback: "" });
+      fetch("https://fireboxtools.com/api/save-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: value.name, feedback: value.feedback }),
+      });
+      messageSuccess({
+        content: "Thank you for taking the time to share your feedback with us",
+        key: "Feedback",
+        duration: 6,
+      });
+    } catch (e) {
+      // console.log(e);
+    } finally {
+      setDisable(false);
+    }
   }
 
   return (
     <div id="feedback" style={{ marginBottom: "30px" }}>
       <H2Tag heading="Your Feedback Matters"></H2Tag>
       <div className={styles["feedback-form"]}>
-        <form style={{ padding: "20px" }} action={onSubmit}>
+        <Form
+          style={{ padding: "20px" }}
+          layout="vertical"
+          initialValues={{ remember: true }}
+          onFinish={onSubmit}
+          autoComplete="off"
+        >
           <label className={styles.label} htmlFor="name">
             Name:
           </label>
@@ -39,6 +53,13 @@ function Feedback() {
             type="text"
             name="name"
             id="name"
+            value={value.name}
+            onChange={(value) => {
+              setValue((prev) => ({
+                ...prev,
+                name: value.target.value,
+              }));
+            }}
             required
           />
 
@@ -50,10 +71,23 @@ function Feedback() {
             style={{ height: "150px" }}
             name="feedback"
             id="feedbackMsg"
+            value={value.feedback}
+            onChange={(value) => {
+              setValue((prev) => ({
+                ...prev,
+                feedback: value.target.value,
+              }));
+            }}
             required
           ></textarea>
-          <input className={styles.button} type="submit" value="Submit" />
-        </form>
+          <button
+            onSubmit={onSubmit}
+            disabled={disable}
+            className={styles.button}
+          >
+            Submit
+          </button>
+        </Form>
       </div>
     </div>
   );
