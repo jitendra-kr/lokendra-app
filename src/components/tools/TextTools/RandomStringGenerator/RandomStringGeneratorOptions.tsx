@@ -106,7 +106,7 @@ export function RandomStringGeneratorOptions({
           </Tooltip>
         </div>
 
-        <div style={{ alignSelf: "center" }}>
+        <div style={{ alignSelf: "center", marginTop: "20px" }}>
           <Label style={LabelStyle} label="String length:"></Label>
           <div>
             <CustomNumberInput
@@ -122,7 +122,7 @@ export function RandomStringGeneratorOptions({
             ></CustomNumberInput>
           </div>
         </div>
-        <div style={{ alignSelf: "center" }}>
+        <div style={{ alignSelf: "center", marginTop: "20px" }}>
           <Label style={LabelStyle} label="How Many Strings:"></Label>
 
           <div>
@@ -139,7 +139,7 @@ export function RandomStringGeneratorOptions({
             ></CustomNumberInput>
           </div>
         </div>
-        <div style={{ alignSelf: "center" }}>
+        <div style={{ alignSelf: "center", marginTop: "20px" }}>
           <Label
             style={LabelStyle}
             label={
