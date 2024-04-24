@@ -467,9 +467,9 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
     Our tools are designed to protect your data while providing you with the efficiency and convenience you need. Whether it's JSON Parser, ASCII to string, or UUID generator, our tools have got you covered. Try them out today and experience peace of mind knowing your information is secure.`,
   },
   {
-    title: "Salary Hike Percentage Calculator",
+    title: "Salary Hike Calculator",
     link: SCREENS.SALARY_HIKE_PERCENTAGE_CALCULATOR,
-    heading: "Online Salary Hike Percentage Calculator",
+    heading: "Online Salary Hike Calculator",
     metaTitle: seoData.salaryHikePercentageCalculator.title,
     metaDescription: seoData.salaryHikePercentageCalculator.description,
     content:
@@ -478,13 +478,13 @@ Furthermore, our UUID generation tool is really simple to and use ensuring that 
     key: ToolKeys.SalaryHike,
     keyFeatures: [
       "The Online Salary Hike Percentage Calculator offers an interface that is easy to use.",
-      "The Online Salary Hike Percentage Calculator is built to be mobile-friendly, making it easy for individuals to access and use the tool on their smartphones or tablets.",
-      "With the help of the Online Salary Hike Percentage Calculator, salary hike calculations can be simplified.",
+      "It is built to be mobile-friendly, making it easy for individuals to access and use the tool on their smartphones or tablets.",
+      "With the help of the salary hike calculator, salary hike calculations can be simplified.",
     ],
     toolDescription: `The percentage change calculator is useful for figuring out how much an amount has increased or decreased in relative terms. It allows you to compare the significance of changes in various statistics, such as pay increases or drops.
     \nGet an accurate salary hike percentage calculation with our Salary Hike Percentage Calculator. Quickly enter your wage information and get a personalized salary hike percentage in just one click. Easily compare your wages against industry standards and ensure you're getting the raise you deserve.
-    \nCertainly! An online salary hike percentage calculator is a free online tool that allows you to calculate the percentage increase in your salary after a raise or promotion. This tool is especially useful for employees who are negotiating a salary increase or trying to estimate their future earnings. 
-    \n To use the calculator, you simply enter your current salary, the amount of the raise, and any other relevant information, such as the frequency of pay periods. The calculator then calculates the percentage increase in your salary and displays the new salary amount.`,
+    \nCertainly! Salary calculator is a free online tool that allows you to calculate the percentage increase in your salary after a raise or promotion. This tool is especially useful for employees who are negotiating a salary increase or trying to estimate their future earnings. 
+    \n To use salary raise calculator, you simply enter your current salary, the amount of the raise, and any other relevant information, such as the frequency of pay periods. The calculator then calculates the percentage increase in your salary and displays the new salary amount.`,
   },
   {
     title: "XML Formatter",
