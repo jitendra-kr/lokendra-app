@@ -34,7 +34,7 @@ export function NewSalaryByPercentage() {
       return;
     }
     setResult(Number(result.toFixed(2)));
-    setIncreasedValue(result - currentSalary);
+    setIncreasedValue(Number((result - currentSalary).toFixed(2)));
   };
 
   const onFinishFailed = (errorInfo: any) => {

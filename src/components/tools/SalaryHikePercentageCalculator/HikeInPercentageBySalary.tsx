@@ -39,7 +39,7 @@ export function HikeInPercentageBySalary() {
       return;
     }
     setResult(result);
-    setIncreasedValue(newSalary - oldSalary);
+    setIncreasedValue(Number((newSalary - oldSalary).toFixed(2)));
     console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo: any) => {
