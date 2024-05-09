@@ -21,6 +21,8 @@ const SalaryHikePercentageCalculatorActions = dynamic(() =>
 
 export function HikeInPercentageBySalary() {
   const [result, setResult] = useState<number>(0);
+  const [increasedValue, setIncreasedValue] = useState<number>(0);
+
   const [form] = Form.useForm();
 
   const onFinish = (values: HikeInPercentageBySalaryField) => {
@@ -37,6 +39,7 @@ export function HikeInPercentageBySalary() {
       return;
     }
     setResult(result);
+    setIncreasedValue(newSalary - oldSalary);
     console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo: any) => {
@@ -83,14 +86,18 @@ export function HikeInPercentageBySalary() {
             clear={() => {
               form.resetFields();
               setResult(0);
+              setIncreasedValue(0);
             }}
           />
         </Form.Item>
       </Form>
-
       <CalculatorOutput
         text="Your percentage increase is"
         value={`${result} %`}
+      />
+      <CalculatorOutput
+        text="Your salary has increased by"
+        value={`${increasedValue}`}
       />
 
       <CalculationFormula

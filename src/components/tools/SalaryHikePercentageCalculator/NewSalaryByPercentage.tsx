@@ -20,6 +20,8 @@ const SalaryHikePercentageCalculatorActions = dynamic(() =>
 
 export function NewSalaryByPercentage() {
   const [result, setResult] = useState<number>(0);
+  const [increasedValue, setIncreasedValue] = useState<number>(0);
+
   const [form] = Form.useForm();
 
   const onFinish = ({
@@ -32,6 +34,7 @@ export function NewSalaryByPercentage() {
       return;
     }
     setResult(Number(result.toFixed(2)));
+    setIncreasedValue(result - currentSalary);
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -57,7 +60,7 @@ export function NewSalaryByPercentage() {
           rules={[{ required: true, message: "Please input your old salary!" }]}
         >
           <InputNumber
-            placeholder="Old salary: 100"
+            placeholder="Salary: 100"
             style={{ width: "100%", height: "40px" }}
           />
         </Form.Item>
@@ -68,7 +71,7 @@ export function NewSalaryByPercentage() {
           rules={[{ required: true, message: "Please input your percentage!" }]}
         >
           <InputNumber
-            placeholder="New Salary: 120"
+            placeholder="Percentage: 12"
             style={{ width: "100%", height: "40px" }}
           />
         </Form.Item>
@@ -78,12 +81,17 @@ export function NewSalaryByPercentage() {
             clear={() => {
               form.resetFields();
               setResult(0);
+              setIncreasedValue(0);
             }}
           />
         </Form.Item>
       </Form>
 
-      <CalculatorOutput text="New Salary after Increment" value={result} />
+      <CalculatorOutput text="New salary after increment is" value={result} />
+      <CalculatorOutput
+        text="Your new salary is now"
+        value={`${increasedValue}`}
+      />
 
       <CalculationFormula
         heading="Calculation Formula: How we determine new salary using percentage"
