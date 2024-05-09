@@ -38,7 +38,7 @@ export function HikeInPercentageBySalary() {
       messageError({ content: "Provided inputs are invalid " });
       return;
     }
-    setResult(result);
+    setResult(Number(result.toFixed(2)));
     setIncreasedValue(Number((newSalary - oldSalary).toFixed(2)));
     console.log("Success:", values);
   };
