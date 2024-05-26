@@ -1,9 +1,11 @@
 "use client";
+import { Faq } from "@ft/components/common/Faq";
 import { message } from "antd";
 import { useState } from "react";
 import { messageError } from "../../../utils";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import UUIDGeneratorFaqData from "./UUIDGeneratorFaqData";
 
 function UUIDGenerator() {
   const limit = 70000;
@@ -62,6 +64,7 @@ function UUIDGenerator() {
         inputNumber={true}
         placeholder={`Enter the desired number of UUIDs.: Max limit ${limit}`}
       />
+      <Faq data={UUIDGeneratorFaqData}></Faq>
     </>
   );
 }
