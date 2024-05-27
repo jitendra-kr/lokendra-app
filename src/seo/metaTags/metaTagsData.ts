@@ -90,9 +90,9 @@ const data = {
       "Easily and securely encode URLs with our free online URL encoder in real time. Allowing you to protect sensitive information and ensure your links are safe!",
   },
   UUIDGenerator: {
-    title: "UUID Generator - Generate Unique Universal Identifiers",
+    title: "Online UUID Generator - Generate Unique IDs Quickly",
     description:
-      "Generate unique and reliable Universal Identifiers with our fast secure UUID generator tool. Our tool generates random and secure UUIDs in a matter of seconds!",
+      "Generate random, secure UUIDs (Universally Unique Identifiers) instantly with our free online tool.",
   },
   homePage: {
     title: "Secure and Reliable Online Tools",
