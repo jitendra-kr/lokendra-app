@@ -1,7 +1,7 @@
 "use client";
 import { Faq } from "@ft/components/common/Faq";
 import { message } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { messageError } from "../../../utils";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
@@ -51,6 +51,11 @@ function UUIDGenerator() {
       });
     }, 500);
   };
+
+  useEffect(() => {
+    onClick();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
