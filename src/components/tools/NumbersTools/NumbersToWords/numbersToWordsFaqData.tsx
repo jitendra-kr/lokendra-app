@@ -44,7 +44,7 @@ const numbersToWordsFaqData: FaqProps[] = [
   },
   {
     question: "Why should I use the Numbers to Words Converter'?",
-    ans: "The Numbers to Words Converter' is a handy tool for anyone who needs to write out numbers in words, such as for check-writing, legal documents, or educational purposes.",
+    ans: "The Numbers to Words Converter' is a handy tool for anyone who needs to write out numbers in words, such as for cheque writing, legal documents, or educational purposes.",
   },
   {
     question: "How can I download my number conversion results?",
