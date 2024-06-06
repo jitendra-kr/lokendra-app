@@ -90,7 +90,7 @@ export function NewSalaryByPercentage() {
       <CalculatorOutput text="New salary after increment is" value={result} />
       <CalculatorOutput
         text="Your salary has increased by"
-        value={`${increasedValue}`}
+        value={increasedValue}
       />
 
       <CalculationFormula

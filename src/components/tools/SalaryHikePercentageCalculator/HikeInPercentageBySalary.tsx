@@ -91,13 +91,10 @@ export function HikeInPercentageBySalary() {
           />
         </Form.Item>
       </Form>
-      <CalculatorOutput
-        text="Your percentage increase is"
-        value={`${result} %`}
-      />
+      <CalculatorOutput text="Your percentage increase is" value={result} />
       <CalculatorOutput
         text="Your salary has increased by"
-        value={`${increasedValue}`}
+        value={increasedValue}
       />
 
       <CalculationFormula
