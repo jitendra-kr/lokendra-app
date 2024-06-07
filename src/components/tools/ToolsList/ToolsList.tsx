@@ -39,18 +39,10 @@ const ToolsList = () => {
         <H1Tag heading="Empower Your Work with Our Tools" />
       </div>
       <SearchBar onSearch={onSearch} autoFocus={false} allowClear={true} />
-      <div
-        id="tool-list"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <RenderToolsList
-          toolsList={toolsList ?? listData}
-          textInput={textInput}
-        />
-      </div>
+      <RenderToolsList
+        toolsList={toolsList ?? listData}
+        textInput={textInput}
+      />
     </>
   );
 };

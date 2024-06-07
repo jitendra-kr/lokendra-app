@@ -4,7 +4,7 @@ import { STRING_CONSTANTS } from "../../constants";
 
 function MainHeader() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="heading">
       <Link
         href="/"
         style={{

@@ -1,3 +1,4 @@
+import { Col, Row } from "antd";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -19,39 +20,48 @@ function RenderToolsList({
   };
 
   return (
-    <>
-      <div className="row">
-        {toolsList.map((item, i) => {
-          return (
-            <div
-              className="col-lg-3 cursor-pointer"
-              key={item.key}
-              onClick={() => {
-                handleClick(item);
-              }}
-              style={{ marginTop: "25px" }}
-            >
-              <div
-                className="home-page-title text-align-center"
+    <Row
+      style={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      {toolsList.map((item, i) => {
+        return (
+          <Col
+            xs={24}
+            sm={12}
+            md={12}
+            lg={6}
+            key={item.key}
+            onClick={() => {
+              handleClick(item);
+            }}
+            style={{
+              backgroundColor: "whitesmoke",
+              textAlign: "center",
+              borderRadius: "5px",
+              marginTop: "15px",
+              padding: "10px",
+            }}
+          >
+            <span>
+              <Link
+                href={item.link}
                 style={{
-                  backgroundColor: "#4096FF",
-                  textAlign: "center",
-                  borderRadius: "8px",
-                  border: "1px solid rgb(211, 211, 211)",
+                  color: "blue",
+                  fontSize: "17px",
+                  fontWeight: "bold",
                 }}
               >
-                <Link href={item.link}>
-                  <b style={{ color: "white", fontSize: "17px" }}>
-                    {item.title}
-                  </b>
-                </Link>
-              </div>
-            </div>
-          );
-        })}
-        {textInput && toolsList.length === 0 && <NoMatchFound />}
-      </div>
-    </>
+                {item.title}
+              </Link>
+            </span>
+          </Col>
+        );
+      })}
+      {textInput && toolsList.length === 0 && <NoMatchFound />}
+    </Row>
   );
 }
 
