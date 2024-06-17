@@ -36,7 +36,7 @@ const ToolsList = () => {
   return (
     <>
       <div style={{ marginBottom: "50px" }}>
-        <H1Tag heading="Empower Your Work with Our Tools" />
+        <H1Tag id="tool-list" heading="Empower Your Work with Our Tools" />
       </div>
       <SearchBar onSearch={onSearch} autoFocus={false} allowClear={true} />
       <RenderToolsList
