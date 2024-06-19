@@ -2,9 +2,11 @@
 import { useState } from "react";
 import { formatXml } from "../../../../utils";
 
+import { Faq } from "@ft/components/common/Faq/Faq";
 import dynamic from "next/dynamic";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
+import XmlFormatterFaqData from "./XmlFormatterFaqData";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(
@@ -51,25 +53,28 @@ export function XmlFormatter() {
   }
 
   return (
-    <InputOutputViewer
-      inputChild={
-        <Ide
-          language="xml"
-          cb={ideCb}
-          error={onError}
-          options={{ repair: false }}
-        />
-      }
-      outputChild={
-        <JsonViewer
-          language="xml"
-          content={byte}
-          error={error}
-          editorError={editorError}
-        />
-      }
-      toolId={ToolKeys.XML_FORMATTER}
-      byte={byte}
-    />
+    <>
+      <InputOutputViewer
+        inputChild={
+          <Ide
+            language="xml"
+            cb={ideCb}
+            error={onError}
+            options={{ repair: false }}
+          />
+        }
+        outputChild={
+          <JsonViewer
+            language="xml"
+            content={byte}
+            error={error}
+            editorError={editorError}
+          />
+        }
+        toolId={ToolKeys.XML_FORMATTER}
+        byte={byte}
+      />
+      <Faq data={XmlFormatterFaqData}></Faq>
+    </>
   );
 }
