@@ -492,9 +492,9 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
     list: true,
     key: ToolKeys.XML_FORMATTER,
     toolDescription: `Welcome to the XML Formatter, an online tool designed to simplify the process of validating, formatting, and beautifying XML files. With this intuitive and efficient tool, you can transform your messy or unstructured XML code into well-organized, human-readable documents effortlessly. 
-    \nThe XML Formatter handles everything, saving you time and guaranteeing that your XML files are easy for you to understand and manage. No more manual indentation or aggravation.
-    \nTake advantage of the XML Formatter's simplicity and convenience to speed up your development process. Goodbye to XML formatting hassles and welcome to tidy, presentable XML files
-    \nStart formatting your XML files hassle-free with the XML Formatter tool now!`,
+    \nIt handles everything, saving you time and guaranteeing that your XML files are easy for you to understand and manage. No more manual indentation or aggravation.
+    \nTake advantage of the XML beautifier's simplicity and convenience to speed up your development process. Goodbye to XML formatting hassles and welcome to tidy, presentable XML files
+    \nStart formatting your XML files hassle-free with the XML tool now!`,
     keyFeatures: [
       `Simply paste your XML code or upload your file, and our tool gets to work in seconds. No waiting around for complex software to load`,
       ` No downloads or installations required. Use any device with a web browser to access our online tool and format your XML on the go`,
