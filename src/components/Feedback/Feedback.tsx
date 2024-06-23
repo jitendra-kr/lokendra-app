@@ -1,26 +1,39 @@
 "use client";
 import { messageSuccess } from "@ft/utils/antd";
 import Form from "antd/es/form";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { H2Tag } from "../common";
 import styles from "./Feedback.module.css";
 
-type Value = { name: string; feedback: string };
+type Value = { name: string; feedback: string; email: string; page: string };
 
 function Feedback() {
-  const [value, setValue] = useState<Value>({ name: "", feedback: "" });
+  const pathname = usePathname();
+
+  const [value, setValue] = useState<Value>({
+    name: "",
+    feedback: "",
+    email: "",
+    page: "",
+  });
   const [disable, setDisable] = useState(false);
 
   function onSubmit() {
     setDisable(true);
     try {
-      setValue({ name: "", feedback: "" });
+      setValue({ name: "", feedback: "", email: "", page: "" });
       fetch("https://www.fireboxtools.com/api/save-feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: value.name, feedback: value.feedback }),
+        body: JSON.stringify({
+          name: value.name,
+          feedback: value.feedback,
+          email: value.email,
+          page: pathname,
+        }),
       });
       messageSuccess({
         content: "Thank you for taking the time to share your feedback with us",
@@ -58,6 +71,24 @@ function Feedback() {
               setValue((prev) => ({
                 ...prev,
                 name: value.target.value,
+              }));
+            }}
+            required
+          />
+
+          <label className={styles.label} htmlFor="email">
+            Email:
+          </label>
+          <input
+            className={styles.input}
+            type="email"
+            name="email"
+            id="email"
+            value={value.email}
+            onChange={(value) => {
+              setValue((prev) => ({
+                ...prev,
+                email: value.target.value,
               }));
             }}
             required
