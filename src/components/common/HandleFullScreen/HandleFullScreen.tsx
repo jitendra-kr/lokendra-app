@@ -12,7 +12,13 @@ const JsonViewer = dynamic(
   () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
 );
 
-const decideFullScreenModal = ["/json-tools/json-formatter"];
+const decideFullScreenModal = [
+  "/json-tools/json-formatter",
+  "/json-tools/json-to-typescript-interface",
+  "/json-tools/json-validator",
+  "/json-tools/secure-reliable-json-minifier-compressor",
+  "/xml-tools/xml-to-json-converter",
+];
 
 export function HandleFullScreen({ content }: { content: string }) {
   const [open, setOpen] = useState(false);
