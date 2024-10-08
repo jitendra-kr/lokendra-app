@@ -1,4 +1,4 @@
-import { JSONToTypescript } from "@ft/components";
+import { JSONToTypescript } from "@ft/components/tools/JsonTools/JSONToTypescript/JSONToTypescript";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
