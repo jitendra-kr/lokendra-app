@@ -3,21 +3,18 @@ import { Button, Modal, Tooltip } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
-import { MdCloseFullscreen } from "react-icons/md";
+import { RiFullscreenExitLine } from "react-icons/ri";
 import { COLOR_CONST } from "../../../constants";
 import { useGetUrlPath } from "../../../hooks";
-import { jsonParser } from "../../tools/ToolsList/toolsListingData";
 import { ConvertedOutputByTools } from "../../tools/helper/ConvertedOutputByTools";
 
 const JsonViewer = dynamic(
   () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
 );
 
-type HandleFullScreenProps = {
-  content: string;
-};
+const decideFullScreenModal = ["/json-tools/json-formatter"];
 
-export function HandleFullScreen({ content }: HandleFullScreenProps) {
+export function HandleFullScreen({ content }: { content: string }) {
   const [open, setOpen] = useState(false);
   const { pathname } = useGetUrlPath();
 
@@ -31,20 +28,16 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
     Modal.destroyAll();
   };
 
-  const closeModal = () => {
-    setOpen(false);
-  };
-
   return (
     <>
       <Modal
         className="fullscreenModal"
         open={open}
-        onCancel={closeModal}
+        onCancel={() => setOpen(false)}
         footer={null}
         // eslint-disable-next-line react/no-children-prop
         children={
-          pathname && pathname.match(jsonParser) ? (
+          pathname && decideFullScreenModal.includes(pathname) ? (
             <JsonViewer content={content} error="" editorError="" />
           ) : (
             <ConvertedOutputByTools content={content} />
@@ -63,9 +56,9 @@ export function HandleFullScreen({ content }: HandleFullScreenProps) {
             <Button
               type="primary"
               onClick={openModal}
-              style={{ marginRight: "4px", marginTop: "7px" }}
+              style={{ marginTop: "8px" }}
             >
-              <MdCloseFullscreen size={20} color={COLOR_CONST.defaultIcon} />
+              <RiFullscreenExitLine size={20} color={COLOR_CONST.defaultIcon} />
             </Button>
           </Tooltip>
         }
