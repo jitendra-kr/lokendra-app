@@ -1,5 +1,5 @@
 import { H1Tag } from "@ft/components/common/HtmlTags/H1Tag";
-import { RelevantTools } from "@ft/components/common/RelevantTools";
+import { RelevantTools } from "@ft/components/common/RelevantTools/RelevantTools";
 import { ITools } from "../ToolsList/toolsListingData";
 
 export function ToolsBody({ toolData }: { toolData: ITools }) {

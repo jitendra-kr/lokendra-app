@@ -1,10 +1,8 @@
 "use client";
+import { CustomNumberInput } from "@ft/common/components/UiComponent/CustomInput";
+import { CustomTextarea } from "@ft/common/components/UiComponent/CustomTextarea";
 import { Select, Tooltip } from "antd";
 import { CSSProperties, Dispatch, SetStateAction, useState } from "react";
-import {
-  CustomNumberInput,
-  CustomTextarea,
-} from "../../../../common/components/UiComponent";
 import { Label } from "../../SalaryHikePercentageCalculator/Label";
 import {
   Format,

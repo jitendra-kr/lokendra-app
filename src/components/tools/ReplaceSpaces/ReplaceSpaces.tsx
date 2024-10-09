@@ -1,10 +1,10 @@
 "use client";
 import { Input } from "antd";
 import { useEffect, useState } from "react";
+import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools/ConvertedOutputByTools";
+import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import { InputToConvertByTools } from "../helper/InputToConvertByTools/InputToConvertByTools";
 import { ToolKeys } from "../ToolsList/ToolKeys";
-import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools";
-import { InputOutputViewer } from "../helper/InputOutputViewer";
-import { InputToConvertByTools } from "../helper/InputToConvertByTools";
 import ReplaceSpacesStyles from "./ReplaceSpaces.module.css";
 
 function ReplaceSpaces() {

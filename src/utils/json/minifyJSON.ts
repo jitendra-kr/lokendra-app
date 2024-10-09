@@ -1,6 +1,7 @@
 import { get } from "lodash";
-import { STRING_CONSTANTS } from "../../constants";
-import { jsonlint } from "../../externalLib";
+
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
+import { jsonlint } from "../../externalLib/jsonLint";
 
 export const minifyJSON = (
   str: string,

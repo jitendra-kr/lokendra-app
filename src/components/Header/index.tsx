@@ -1,6 +1,6 @@
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import styles from "@ft/styles/MainHeader.module.css";
 import Link from "next/link";
-import { STRING_CONSTANTS } from "../../constants";
 
 function MainHeader() {
   return (

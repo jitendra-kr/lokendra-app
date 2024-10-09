@@ -1,9 +1,9 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { jsonlint } from "../../../externalLib";
+import { jsonlint } from "../../../externalLib/jsonLint";
 import { ToolKeys } from "../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../helper/InputOutputViewer";
+import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
 const Editor = dynamic(() => import("../../common/Ide/Ide"), {
   ssr: false,

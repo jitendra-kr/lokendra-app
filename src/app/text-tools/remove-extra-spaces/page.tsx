@@ -1,4 +1,4 @@
-import { RemoveExtraSpaces } from "@ft/components";
+import { RemoveExtraSpaces } from "@ft/components/tools/TextTools/RemoveExtraSpaces/RemoveExtraSpaces";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";

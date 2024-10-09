@@ -1,10 +1,11 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { beautifyJSON } from "../../../../utils";
+
+import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
 import { EditorCallBackOptions } from "../../../common/Ide/Ide";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(

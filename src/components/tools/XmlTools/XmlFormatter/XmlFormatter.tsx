@@ -1,10 +1,10 @@
 "use client";
 import Faq from "@ft/components/common/Faq";
+import { formatXml } from "@ft/utils/xml/formatXml";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { formatXml } from "../../../../utils";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import XmlFormatterFaqData from "./XmlFormatterFaqData";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));

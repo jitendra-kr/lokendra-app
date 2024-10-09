@@ -1,15 +1,16 @@
 "use client";
-import { getToolInput } from "../../../../common/selectors";
+
+import { getToolInput } from "@ft/common/selectors/toolsSelectors";
 import {
   updateDiffLeftInput,
   updateDiffRightInput,
-} from "../../../../common/state/tools";
-import { useAppDispatch, useAppSelector } from "../../../../hooks";
-
+} from "@ft/common/state/tools/toolsInput.slice";
+import { useAppDispatch } from "@ft/hooks/useAppDispatch";
+import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { useState } from "react";
 import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 export function JSONDiff() {
   const dispatch = useAppDispatch();

@@ -1,13 +1,15 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { convertNumberToWords } from "../../../utils";
+
 import { ToolKeys } from "../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../helper/InputOutputViewer";
-import { ToolOutputActions } from "../helper/ToolOutputActions";
+
+import { convertNumberToWords } from "@ft/utils/utils";
+import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import { ToolOutputActions } from "../helper/ToolOutputActions/ToolOutputActions";
 import characterCounterStyles from "./WordCounter.module.css";
 const InputToConvertByTools = dynamic(() =>
-  import("../helper/InputToConvertByTools").then(
+  import("../helper/InputToConvertByTools/InputToConvertByTools").then(
     (mod) => mod.InputToConvertByTools,
   ),
 );

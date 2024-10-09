@@ -1,5 +1,5 @@
-import { XmlFormatter } from "@ft/components";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
+import { XmlFormatter } from "@ft/components/tools/XmlTools/XmlFormatter/XmlFormatter";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 

@@ -1,12 +1,12 @@
 "use client";
+import { ConvertedOutputByTools } from "@ft/components/tools/helper/ConvertedOutputByTools/ConvertedOutputByTools";
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { Button, Modal, Tooltip } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
 import { RiFullscreenExitLine } from "react-icons/ri";
-import { COLOR_CONST } from "../../../constants";
-import { useGetUrlPath } from "../../../hooks";
-import { ConvertedOutputByTools } from "../../tools/helper/ConvertedOutputByTools";
 
 const JsonViewer = dynamic(
   () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),

@@ -1,8 +1,8 @@
+import { SCREENS } from "@ft/common/enums/screens";
 import { DownloadOutput } from "@ft/components/common/DownloadOutput";
 import HandleFullScreen from "@ft/components/common/HandleFullScreen";
-import { SCREENS } from "../../../../common/enums";
-import { useGetUrlPath } from "../../../../hooks";
-import { CopyToClip } from "../CopyToClip";
+import { useGetUrlPath } from "@ft/hooks/useGetUrl";
+import { CopyToClip } from "../CopyToClip/CopyToClip";
 import styles from "./ToolOutputActions.module.css";
 
 type JsonViewerProps = {

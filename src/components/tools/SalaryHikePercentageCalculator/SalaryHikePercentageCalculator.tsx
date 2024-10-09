@@ -1,6 +1,6 @@
 import Faq from "@ft/components/common/Faq";
 import { ToolKeys } from "../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../helper/InputOutputViewer";
+import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";
 import { NewSalaryByPercentage } from "./NewSalaryByPercentage";
 import styles from "./SalaryHikePercentageCalculator.module.css";

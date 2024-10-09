@@ -1,4 +1,4 @@
-import { ToolOutputActions } from "../ToolOutputActions";
+import { ToolOutputActions } from "../ToolOutputActions/ToolOutputActions";
 import ConvertedOutputByToolsStyles from "./ConvertedOutputByTools.module.css";
 
 export type ConvertedOutputByToolsProps = {

@@ -2,17 +2,17 @@
 import { Input } from "antd";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { SCREENS } from "../../../../common/enums";
-import { getToolInput } from "../../../../common/selectors";
+
 import { updateToolsInput } from "../../../../common/state/tools/toolsInput.slice";
-import {
-  useAppDispatch,
-  useAppSelector,
-  useGetUrl,
-  useGetUrlPath,
-} from "../../../../hooks";
+
 import { useGetQueryString } from "../../../../hooks/useGetQueryString";
-import { messageDestroy, messageError } from "../../../../utils";
+
+import { SCREENS } from "@ft/common/enums/screens";
+import { getToolInput } from "@ft/common/selectors/toolsSelectors";
+import { useAppDispatch } from "@ft/hooks/useAppDispatch";
+import { useAppSelector } from "@ft/hooks/useAppSelector";
+import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
+import { messageDestroy, messageError } from "@ft/utils/antd";
 import styles from "./InputToConvertByTools.module.css";
 
 const EditorActions = dynamic(() =>

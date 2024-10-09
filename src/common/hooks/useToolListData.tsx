@@ -1,6 +1,6 @@
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
+import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import { useMemo } from "react";
-import { toolsListData } from "../../components";
 
 export function useToolListData(key: ToolKeys) {
   const toolData = useMemo(

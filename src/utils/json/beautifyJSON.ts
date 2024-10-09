@@ -1,6 +1,6 @@
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import { get } from "lodash";
-import { STRING_CONSTANTS } from "../../constants";
-import { jsonlint } from "../../externalLib";
+import { jsonlint } from "../../externalLib/jsonLint";
 
 export const beautifyJSON = (
   str: string,

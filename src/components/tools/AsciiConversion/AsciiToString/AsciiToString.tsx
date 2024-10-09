@@ -2,7 +2,8 @@
 import { AsciiToTextType, asciiToText } from "ascii-text-converter";
 import { useCallback, useEffect, useState } from "react";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
+
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { SelectASCIIConversionType } from "../common";
 
 function AsciiToString({ children }: { children: React.ReactNode }) {

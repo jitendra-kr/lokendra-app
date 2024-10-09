@@ -1,5 +1,5 @@
-import { SCREENS } from "@ft/common/enums";
-import { STRING_CONSTANTS } from "@ft/constants";
+import { SCREENS } from "@ft/common/enums/screens";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

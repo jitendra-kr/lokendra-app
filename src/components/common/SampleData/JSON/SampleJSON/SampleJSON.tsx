@@ -1,7 +1,7 @@
 import { RelevantTools } from "@ft/components/common/RelevantTools/RelevantTools";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { SCREENS } from "../../../../../common/enums";
+import { SCREENS } from "../../../../../common/enums/screens";
 import RenderSampleData from "./RenderSampleData";
 import styles from "./SampleJSON.module.css";
 import { headingToID } from "./sampleJSON.helper";

@@ -1,12 +1,12 @@
 "use client";
-import { resetInput } from "@ft/common/state/tools";
+
+import { resetInput } from "@ft/common/state/tools/toolsInput.slice";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
+import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import styles from "@ft/styles/MainFooter.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { STRING_CONSTANTS } from "../../constants";
-import { useAppDispatch } from "../../hooks";
-
 const MainFooter = () => {
   const dispatch = useAppDispatch();
   const pathname = usePathname();

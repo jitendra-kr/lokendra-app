@@ -1,4 +1,5 @@
-import { STRING_CONSTANTS } from "@ft/constants";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
+
 import { Metadata } from "next";
 import Link from "next/link";
 

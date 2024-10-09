@@ -4,8 +4,9 @@ import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaUpload } from "react-icons/fa";
 import { PiBracketsCurlyBold } from "react-icons/pi";
-import { COLOR_CONST } from "../../../constants";
-import { beautifyJSON } from "../../../utils";
+
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 type EditorActionsProps = {

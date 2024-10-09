@@ -1,5 +1,5 @@
 import OutputIde, { OutputIdeProps } from "../../../common/Ide/OutputIde";
-import { ToolOutputActions } from "../ToolOutputActions";
+import { ToolOutputActions } from "../ToolOutputActions/ToolOutputActions";
 import styles from "./JsonViewer.module.css";
 
 type JsonViewerProps = {

@@ -1,4 +1,4 @@
-import { SCREENS } from "../../../common/enums";
+import { SCREENS } from "@ft/common/enums/screens";
 import { SeoTags } from "../../../seo/seo.interface";
 import seoData from "../../../seo/tools/tools.json";
 import { ToolKeys } from "./ToolKeys";

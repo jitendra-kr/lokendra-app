@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { minifyJSON } from "../../../../utils";
 
+import { minifyJSON } from "@ft/utils/json/minifyJSON";
 import dynamic from "next/dynamic";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(

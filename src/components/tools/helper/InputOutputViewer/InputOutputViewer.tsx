@@ -3,9 +3,11 @@ import { useToolListData } from "@ft/common/hooks/useToolListData";
 import { SampleData } from "@ft/components/common/SampleData";
 import dynamic from "next/dynamic";
 import React from "react";
-import { ToolsBody } from "../../ToolsBody";
+
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { ToolDescription } from "../ToolOverview";
+
+import { ToolsBody } from "../../ToolsBody/ToolsBody";
+import { ToolDescription } from "../ToolOverview/ToolDescription";
 import { ToolInputProps } from "./ToolInput";
 
 const ToolInput = dynamic(() =>

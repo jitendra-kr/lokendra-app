@@ -5,7 +5,7 @@ import "ace-builds/webpack-resolver";
 import AceEditor from "react-ace";
 
 import { GiMagnifyingGlass } from "react-icons/gi";
-import { CopyToClip } from "../../../tools/helper/CopyToClip";
+import { CopyToClip } from "../../../tools/helper/CopyToClip/CopyToClip";
 import { InputOutputActionButton } from "../../Buttons/InputOutputActionButton";
 import { EditorActions } from "../EditorActions";
 

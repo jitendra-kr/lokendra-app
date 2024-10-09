@@ -1,4 +1,4 @@
-import { getToolInput } from "../common/selectors";
+import { getToolInput } from "../common/selectors/toolsSelectors";
 import { useAppSelector } from "./useAppSelector";
 
 export const useGetToolsInput = () => {

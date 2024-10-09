@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 export function RemoveExtraSpaces() {
   const [byte, setByte] = useState<string>("");

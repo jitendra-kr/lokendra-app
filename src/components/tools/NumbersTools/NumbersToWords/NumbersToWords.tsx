@@ -2,9 +2,12 @@
 import Faq from "@ft/components/common/Faq";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { capitalizeEveryWord, messageError } from "../../../../utils";
+
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
+
+import { messageError } from "@ft/utils/antd";
+import { capitalizeEveryWord } from "@ft/utils/utils";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import numbersToWordsFaqData from "./numbersToWordsFaqData";
 
 const NumbersToWordsOptions = dynamic(

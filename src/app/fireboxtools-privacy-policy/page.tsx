@@ -1,4 +1,4 @@
-import { SCREENS } from "@ft/common/enums";
+import { SCREENS } from "@ft/common/enums/screens";
 import { PrivacyPolicy } from "@ft/components/PrivacyPolicy/PrivacyPolicy";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";

@@ -1,6 +1,6 @@
 import { H2Tag } from "@ft/components/common/HtmlTags/H2Tag";
 import { PTag } from "@ft/components/common/HtmlTags/PTag";
-import { ShowCodeBlock } from "../../../common/ShowCodeBlock";
+import { ShowCodeBlock } from "../../../common/ShowCodeBlock/ShowCodeBlock";
 
 export const StringToAsciiInJavascript = () => {
   return (

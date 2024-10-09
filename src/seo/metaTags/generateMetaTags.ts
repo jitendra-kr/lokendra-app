@@ -1,7 +1,7 @@
-import { SCREENS } from "@ft/common/enums";
-import { toolsListData } from "@ft/components";
+import { SCREENS } from "@ft/common/enums/screens";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
-import { STRING_CONSTANTS } from "@ft/constants";
+import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 import { Metadata } from "next";
 
 type NonToolPageTags = {

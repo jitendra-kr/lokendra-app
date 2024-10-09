@@ -1,9 +1,9 @@
 "use client";
+import { xmlMinifier } from "@ft/utils/xml/xmlMinifier";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { xmlMinifier } from "../../../../utils";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { InputOutputViewer } from "../../helper/InputOutputViewer";
+import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(

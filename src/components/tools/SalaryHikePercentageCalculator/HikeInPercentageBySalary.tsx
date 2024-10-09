@@ -2,7 +2,7 @@
 import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { messageError } from "../../../utils";
+import { messageError } from "../../../utils/antd";
 import styles from "./CalculationFormula.module.css";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";

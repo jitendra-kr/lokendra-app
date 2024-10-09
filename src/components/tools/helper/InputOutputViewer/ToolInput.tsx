@@ -1,7 +1,11 @@
 import React from "react";
-import { ToolsBody } from "../../ToolsBody";
-import { ITools } from "../../ToolsList";
-import { InputToConvertByTools, inputType } from "../InputToConvertByTools";
+
+import { ToolsBody } from "../../ToolsBody/ToolsBody";
+import { ITools } from "../../ToolsList/toolsListingData";
+import {
+  InputToConvertByTools,
+  inputType,
+} from "../InputToConvertByTools/InputToConvertByTools";
 import InputOutputViewerStyles from "./InputOutputViewer.module.css";
 import { RenderActionButton } from "./RenderActionButton";
 import { RenderInputOptions } from "./RenderInputOptions";

@@ -3,15 +3,19 @@ import { editor } from "monaco-editor";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
-import { getToolInput } from "../../../common/selectors";
+
+import { useGetQueryString } from "../../../hooks/useGetQueryString";
+
+import { getToolInput } from "@ft/common/selectors/toolsSelectors";
 import {
   updateSampleData,
   updateToolsInput,
-} from "../../../common/state/tools";
-import { COLOR_CONST } from "../../../constants";
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { useGetQueryString } from "../../../hooks/useGetQueryString";
-import { messageError, messageSuccess, repairJSON } from "../../../utils";
+} from "@ft/common/state/tools/toolsInput.slice";
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { useAppDispatch } from "@ft/hooks/useAppDispatch";
+import { useAppSelector } from "@ft/hooks/useAppSelector";
+import { messageError, messageSuccess } from "@ft/utils/antd";
+import { repairJSON } from "@ft/utils/json/repairJSON";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 import {
   EditorActionsButtons,

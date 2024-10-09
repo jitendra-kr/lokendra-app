@@ -1,4 +1,4 @@
-import { ShowCodeBlock } from "@ft/components/common/ShowCodeBlock";
+import { ShowCodeBlock } from "@ft/components/common/ShowCodeBlock/ShowCodeBlock";
 import { headingToID } from "./sampleJSON.helper";
 import { JSONExamples } from "./sampleJSON.types";
 

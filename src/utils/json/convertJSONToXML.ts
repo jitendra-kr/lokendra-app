@@ -1,5 +1,5 @@
 import { get } from "lodash";
-import { formatXml } from "../xml";
+import { formatXml } from "../xml/formatXml";
 
 export const convertJSONToXML = async (json: string) => {
   const result = { data: "", msg: "" };

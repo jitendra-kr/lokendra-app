@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
-import { SCREENS } from "../common/enums";
+import { SCREENS } from "../common/enums/screens";
 
 export const useGetUrl = () => {
   const [url, setUrl] = useState("");

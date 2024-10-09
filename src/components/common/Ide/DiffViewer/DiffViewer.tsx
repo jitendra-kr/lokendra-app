@@ -1,8 +1,8 @@
 "use client";
+import { CopyToClip } from "@ft/components/tools/helper/CopyToClip/CopyToClip";
 import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
 import { useRef, useState } from "react";
-import { CopyToClip } from "../../../tools/helper/CopyToClip";
 import {
   EditorActions,
   EditorActionsButtons,

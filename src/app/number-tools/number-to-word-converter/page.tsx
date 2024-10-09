@@ -1,4 +1,4 @@
-import { NumbersToWords } from "@ft/components";
+import { NumbersToWords } from "@ft/components/tools/NumbersTools/NumbersToWords/NumbersToWords";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";

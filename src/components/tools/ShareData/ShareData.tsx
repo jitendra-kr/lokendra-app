@@ -1,10 +1,10 @@
+import { SCREENS } from "@ft/common/enums/screens";
 import { InputOutputActionButton } from "@ft/components/common/Buttons/InputOutputActionButton";
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
+import { copyToClipboard } from "@ft/utils/utils";
 import { FaShareAlt } from "react-icons/fa";
-import { SCREENS } from "../../../common/enums";
-import { COLOR_CONST } from "../../../constants";
-import { useGetUrl, useGetUrlPath } from "../../../hooks";
-import { copyToClipboard } from "../../../utils";
-import { jsonParser } from "../ToolsList";
+import { jsonParser } from "../ToolsList/toolsListingData";
 
 type ShareDataProps = {
   data: string;

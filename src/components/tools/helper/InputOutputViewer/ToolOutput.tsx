@@ -1,5 +1,5 @@
 import React from "react";
-import { ConvertedOutputByTools } from "../ConvertedOutputByTools";
+import { ConvertedOutputByTools } from "../ConvertedOutputByTools/ConvertedOutputByTools";
 
 type ToolOutputProps = {
   byte: string;

@@ -1,7 +1,9 @@
 import { FaDownload } from "react-icons/fa";
-import { SCREENS } from "../../../common/enums";
-import { COLOR_CONST, STRING_CONSTANTS } from "../../../constants";
-import { useGetUrlPath } from "../../../hooks";
+
+import { SCREENS } from "@ft/common/enums/screens";
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
+import { useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 export type DownloadOutputProps = {

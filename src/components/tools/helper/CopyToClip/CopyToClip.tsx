@@ -1,8 +1,8 @@
 "use client";
 import { InputOutputActionButton } from "@ft/components/common/Buttons/InputOutputActionButton";
+import { COLOR_CONST } from "@ft/constants/colorConstant";
+import { copyToClipboard } from "@ft/utils/utils";
 import { IoCopySharp } from "react-icons/io5";
-import { COLOR_CONST } from "../../../../constants";
-import { copyToClipboard } from "../../../../utils";
 
 export type CopyToClipProps = {
   content: (() => string) | string;

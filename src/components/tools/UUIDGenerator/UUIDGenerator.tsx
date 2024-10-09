@@ -2,7 +2,7 @@
 import Faq from "@ft/components/common/Faq";
 import { message } from "antd";
 import { useEffect, useState } from "react";
-import { messageError } from "../../../utils";
+import { messageError } from "../../../utils/antd";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import UUIDGeneratorFaqData from "./UUIDGeneratorFaqData";
