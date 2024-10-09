@@ -1,4 +1,4 @@
-import { FaqProps } from "../../common";
+import { FaqProps } from "@ft/components/common/Faq";
 
 const jsonParserFaqData: FaqProps[] = [
   {

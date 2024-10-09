@@ -1,4 +1,4 @@
-import { FaqProps } from "../../../common";
+import { FaqProps } from "@ft/components/common/Faq";
 import { WhatAreTheNamesLargeNumbers } from "./WhatAreTheNamesLargeNumbers";
 
 type NumberingSystem = "Indian" | "international";

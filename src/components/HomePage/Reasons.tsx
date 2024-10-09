@@ -1,5 +1,5 @@
 import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
-import { H2Tag } from "../common";
+import { H2Tag } from "../common/HtmlTags/H2Tag";
 
 export default function Reasons() {
   const reasons = [

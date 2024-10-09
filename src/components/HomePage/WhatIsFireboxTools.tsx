@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { H2Tag } from "../common";
+import { H2Tag } from "../common/HtmlTags/H2Tag";
 
 export default function WhatIsFireboxTools() {
   return (

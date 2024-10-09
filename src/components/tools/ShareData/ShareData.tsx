@@ -1,9 +1,9 @@
+import { InputOutputActionButton } from "@ft/components/common/Buttons/InputOutputActionButton";
 import { FaShareAlt } from "react-icons/fa";
 import { SCREENS } from "../../../common/enums";
 import { COLOR_CONST } from "../../../constants";
 import { useGetUrl, useGetUrlPath } from "../../../hooks";
 import { copyToClipboard } from "../../../utils";
-import { InputOutputActionButton } from "../../common";
 import { jsonParser } from "../ToolsList";
 
 type ShareDataProps = {

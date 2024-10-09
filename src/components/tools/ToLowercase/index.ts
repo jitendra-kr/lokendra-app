@@ -1,1 +1,0 @@
-export * as ToLowercase from "./ToLowercase"

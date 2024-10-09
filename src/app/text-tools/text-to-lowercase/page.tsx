@@ -1,5 +1,5 @@
-import { ToLowercase } from "@ft/components";
-import { Faq } from "@ft/components/common/Faq";
+import Faq from "@ft/components/common/Faq";
+import ToLowercase from "@ft/components/tools/ToLowercase";
 import ToLowercaseFaqData from "@ft/components/tools/ToLowercase/ToLowercaseFaqData";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";

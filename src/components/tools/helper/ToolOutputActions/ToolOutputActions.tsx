@@ -1,6 +1,7 @@
+import { DownloadOutput } from "@ft/components/common/DownloadOutput";
+import HandleFullScreen from "@ft/components/common/HandleFullScreen";
 import { SCREENS } from "../../../../common/enums";
 import { useGetUrlPath } from "../../../../hooks";
-import { DownloadOutput, HandleFullScreen } from "../../../common";
 import { CopyToClip } from "../CopyToClip";
 import styles from "./ToolOutputActions.module.css";
 

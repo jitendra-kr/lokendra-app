@@ -1,4 +1,5 @@
-import { H2Tag, PTag } from "../../../../common";
+import { H2Tag } from "@ft/components/common/HtmlTags/H2Tag";
+import { PTag } from "@ft/components/common/HtmlTags/PTag";
 import { ShowCodeBlock } from "../../../../common/ShowCodeBlock";
 
 export function AsciiToStringInJavascript() {

@@ -1,4 +1,4 @@
-import { Faq } from "@ft/components/common/Faq/Faq";
+import Faq from "@ft/components/common/Faq";
 import AsciiToString from "@ft/components/tools/AsciiConversion/AsciiToString/AsciiToString";
 import { AsciiToStringPageContent } from "@ft/components/tools/AsciiConversion/AsciiToString/AsciiToStringPageContent";
 import asciiToStringFaqData from "@ft/components/tools/AsciiConversion/AsciiToString/asciiToStringFaqData";

@@ -1,9 +1,8 @@
 "use client";
+import Faq from "@ft/components/common/Faq";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { formatXml } from "../../../../utils";
-
-import { Faq } from "@ft/components/common/Faq/Faq";
-import dynamic from "next/dynamic";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer";
 import XmlFormatterFaqData from "./XmlFormatterFaqData";

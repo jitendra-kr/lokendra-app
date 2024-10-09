@@ -1,5 +1,5 @@
 "use client";
-import { Faq } from "@ft/components/common/Faq";
+import Faq from "@ft/components/common/Faq";
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { messageError } from "../../../utils";

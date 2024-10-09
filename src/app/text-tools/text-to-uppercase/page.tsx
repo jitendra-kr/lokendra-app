@@ -1,5 +1,5 @@
-import { ToUppercase } from "@ft/components";
-import { Faq } from "@ft/components/common/Faq/Faq";
+import Faq from "@ft/components/common/Faq";
+import ToUppercase from "@ft/components/tools/ToUppercase";
 import toUppercaseFaqData from "@ft/components/tools/ToUppercase/ToUppercaseFaqData";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";

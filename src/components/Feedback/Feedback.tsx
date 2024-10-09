@@ -3,7 +3,7 @@ import { messageSuccess } from "@ft/utils/antd";
 import Form from "antd/es/form";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { H2Tag } from "../common";
+import { H2Tag } from "../common/HtmlTags/H2Tag";
 import styles from "./Feedback.module.css";
 
 type Value = { name: string; feedback: string; email: string; page: string };

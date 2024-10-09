@@ -1,5 +1,5 @@
 "use client";
-import { Faq } from "@ft/components/common";
+import Faq from "@ft/components/common/Faq";
 import { textToAscii } from "ascii-text-converter";
 import { useState } from "react";
 import { ToolKeys } from "../../ToolsList/ToolKeys";

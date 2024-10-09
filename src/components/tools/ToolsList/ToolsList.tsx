@@ -1,5 +1,6 @@
 "use client";
-import { H1Tag } from "@ft/components/common";
+
+import { H1Tag } from "@ft/components/common/HtmlTags/H1Tag";
 import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import RenderToolsList from "./RenderToolsList";

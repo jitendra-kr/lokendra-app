@@ -1,13 +1,13 @@
 import CustomCollapse from "@ft/common/components/UiComponent/CustomCollapse";
 import type { CollapseProps } from "antd";
-import { H2Tag } from "../HtmlTags/H2Tag/H2Tag";
+import { H2Tag } from "../HtmlTags/H2Tag";
 
 export type FaqProps = {
   question: string;
   ans: string | React.ReactNode;
 };
 
-export const Faq = ({ data }: { data: FaqProps[] }) => {
+const Faq = ({ data }: { data: FaqProps[] }) => {
   const faqData: CollapseProps["items"] = data.map(
     ({ ans, question }, index) => ({
       key: index,
@@ -23,3 +23,5 @@ export const Faq = ({ data }: { data: FaqProps[] }) => {
     </>
   );
 };
+
+export default Faq;

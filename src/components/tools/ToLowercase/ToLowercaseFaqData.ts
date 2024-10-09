@@ -1,4 +1,4 @@
-import { FaqProps } from "@ft/components/common/Faq/Faq";
+import { FaqProps } from "@ft/components/common/Faq";
 
 const ToLowercaseFaqData: FaqProps[] = [
   {

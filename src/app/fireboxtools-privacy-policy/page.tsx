@@ -1,5 +1,5 @@
 import { SCREENS } from "@ft/common/enums";
-import { PrivacyPolicy } from "@ft/components";
+import { PrivacyPolicy } from "@ft/components/PrivacyPolicy/PrivacyPolicy";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";

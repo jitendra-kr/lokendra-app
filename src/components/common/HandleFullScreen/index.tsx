@@ -20,7 +20,7 @@ const decideFullScreenModal = [
   "/xml-tools/xml-to-json-converter",
 ];
 
-export function HandleFullScreen({ content }: { content: string }) {
+export default function HandleFullScreen({ content }: { content: string }) {
   const [open, setOpen] = useState(false);
   const { pathname } = useGetUrlPath();
 

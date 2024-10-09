@@ -1,4 +1,4 @@
-import { Faq } from "@ft/components/common";
+import Faq from "@ft/components/common/Faq";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer";
 import { HikeInPercentageBySalary } from "./HikeInPercentageBySalary";

@@ -6,7 +6,7 @@ import {
 } from "../../../common/state/tools";
 import { useAppDispatch } from "../../../hooks";
 import { CopyToClip } from "../../tools/helper/CopyToClip";
-import { InputOutputActionButton } from "../Buttons";
+import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 import { DownloadOutput } from "../DownloadOutput";
 
 function UseIt({ code }: { code: string }) {
