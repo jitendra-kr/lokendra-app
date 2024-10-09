@@ -1,13 +1,9 @@
 "use client";
-import dynamic from "next/dynamic";
+import Ide from "@ft/components/common/Ide/Ide";
 import { useState } from "react";
 import { jsonlint } from "../../../externalLib/jsonLint";
 import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
-
-const Editor = dynamic(() => import("../../common/Ide/Ide"), {
-  ssr: false,
-});
 
 function JsonToString() {
   const [byte, setByte] = useState<string>("");
@@ -44,7 +40,7 @@ function JsonToString() {
   return (
     <InputOutputViewer
       inputChild={
-        <Editor
+        <Ide
           cb={isJsonString}
           error={onError}
           options={{ format: true, repair: true }}

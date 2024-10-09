@@ -1,4 +1,5 @@
-import OutputIde, { OutputIdeProps } from "../../../common/Ide/OutputIde";
+import { OutputIdeProps } from "@ft/components/common/Ide/ide.types";
+import OutputIde from "../../../common/Ide/OutputIde";
 import { ToolOutputActions } from "../ToolOutputActions/ToolOutputActions";
 import styles from "./JsonViewer.module.css";
 

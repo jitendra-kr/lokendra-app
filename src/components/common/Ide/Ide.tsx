@@ -1,4 +1,3 @@
-import Editor from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
@@ -23,7 +22,7 @@ import {
   MiniMap,
   MonoType,
 } from "./EditorActions";
-import styles from "./Ide.module.css";
+import MonacoEditorLoader from "./MonacoEditorLoader";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
 const EditorActions = dynamic(() =>
@@ -195,29 +194,14 @@ export default function Ide({
           </>
         }
       />
-      <Editor
-        onMount={handleEditorDidMount}
+      <MonacoEditorLoader
+        handleEditorDidMount={handleEditorDidMount}
         theme={theme}
-        height="74vh"
         language={language}
-        onValidate={handleEditorValidation}
+        handleEditorValidation={handleEditorValidation}
         onChange={onChange}
-        className={styles.editor}
-        value={globalInputValue}
-        options={{
-          selectOnLineNumbers: true,
-          lineNumbersMinChars: 3,
-          lineDecorationsWidth: 1,
-          mouseWheelZoom: true,
-          smoothScrolling: true,
-          minimap: {
-            enabled: miniMap,
-          },
-          bracketPairColorization: {
-            enabled: true,
-          },
-          wordWrap: "on",
-        }}
+        globalInputValue={globalInputValue}
+        miniMap={miniMap}
       />
     </>
   );

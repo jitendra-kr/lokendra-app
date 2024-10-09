@@ -1,12 +1,24 @@
+import { editor } from "monaco-editor";
 import { useEffect, useState } from "react";
 import styles from "./Ide.module.css";
-import { OutputIdeProps } from "./ide.types";
 
-export default function OutputIde({
-  value,
+function MonacoEditorLoader({
+  handleEditorDidMount,
   theme,
-  language = "json",
-}: OutputIdeProps) {
+  language,
+  handleEditorValidation,
+  onChange,
+  globalInputValue,
+  miniMap,
+}: {
+  handleEditorDidMount(editor: editor.IStandaloneCodeEditor): void;
+  theme: string | undefined;
+  language: string;
+  handleEditorValidation(markers: editor.IMarker[]): void;
+  onChange: (value: string | undefined) => void;
+  globalInputValue: string | undefined;
+  miniMap: boolean;
+}) {
   const [MonacoEditor, setMonacoEditor] = useState<any>(null);
 
   useEffect(() => {
@@ -21,11 +33,14 @@ export default function OutputIde({
 
   return (
     <MonacoEditor
+      onMount={handleEditorDidMount}
       theme={theme}
       height="74vh"
       language={language}
+      onValidate={handleEditorValidation}
+      onChange={onChange}
       className={styles.editor}
-      value={value}
+      value={globalInputValue}
       options={{
         selectOnLineNumbers: true,
         lineNumbersMinChars: 3,
@@ -33,7 +48,7 @@ export default function OutputIde({
         mouseWheelZoom: true,
         smoothScrolling: true,
         minimap: {
-          enabled: false,
+          enabled: miniMap,
         },
         bracketPairColorization: {
           enabled: true,
@@ -43,3 +58,5 @@ export default function OutputIde({
     />
   );
 }
+
+export default MonacoEditorLoader;

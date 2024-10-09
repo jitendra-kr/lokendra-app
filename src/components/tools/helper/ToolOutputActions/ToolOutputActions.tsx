@@ -3,7 +3,6 @@ import { DownloadOutput } from "@ft/components/common/DownloadOutput";
 import HandleFullScreen from "@ft/components/common/HandleFullScreen";
 import { useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { CopyToClip } from "../CopyToClip/CopyToClip";
-import styles from "./ToolOutputActions.module.css";
 
 type JsonViewerProps = {
   content: string;
@@ -17,7 +16,15 @@ export const ToolOutputActions = ({ content }: JsonViewerProps) => {
 
   if (typeof content === "object" || content.length > 0) {
     return (
-      <div className={styles.container}>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "flex-end",
+          marginBottom: "5px",
+          marginTop: "5px",
+        }}
+      >
         {!hideDownloads && <DownloadOutput content={content} />}
         <CopyToClip content={content} />
         {!hideFullScreen && <HandleFullScreen content={content} />}
@@ -25,7 +32,15 @@ export const ToolOutputActions = ({ content }: JsonViewerProps) => {
     );
   }
   return (
-    <div className={styles.container}>
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        justifyContent: "flex-end",
+        marginBottom: "5px",
+        marginTop: "5px",
+      }}
+    >
       <div style={{ height: "32px" }}></div>
     </div>
   );

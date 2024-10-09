@@ -69,6 +69,7 @@ function JsonParser({ toolKey }: JsonParserProps) {
         toolId={toolKey}
         byte={byte}
       />
+
       <Faq
         data={
           toolKey === ToolKeys.JSONParser
