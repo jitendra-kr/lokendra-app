@@ -63,6 +63,7 @@ function Feedback() {
           </label>
           <input
             className={styles.input}
+            aria-label="Name"
             type="text"
             name="name"
             id="name"
@@ -80,6 +81,7 @@ function Feedback() {
             Email:
           </label>
           <input
+            aria-label="email"
             className={styles.input}
             type="email"
             name="email"
@@ -98,6 +100,7 @@ function Feedback() {
             Feedback:
           </label>
           <textarea
+            aria-label="feedbackMsg"
             className={styles.input}
             style={{ height: "150px" }}
             name="feedback"
