@@ -10,6 +10,7 @@ export function UpdateMonacoTheme({ handleThemeChange }: UpdateThemeProps) {
     <Tooltip title="Change Editor Theme">
       <Space wrap style={{ marginRight: "5px" }}>
         <Select
+          aria-label="change-theme"
           defaultValue="light"
           style={{ width: 120 }}
           onChange={handleThemeChange}
