@@ -1,21 +1,28 @@
 "use client";
 import { useToolListData } from "@ft/common/hooks/useToolListData";
+import LoadingMonaco from "@ft/components/common/Ide/LoadingMonaco";
 import { SampleData } from "@ft/components/common/SampleData";
 import dynamic from "next/dynamic";
 import React from "react";
-
-import { ToolKeys } from "../../ToolsList/ToolKeys";
-
 import { ToolsBody } from "../../ToolsBody/ToolsBody";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { ToolDescription } from "../ToolOverview/ToolDescription";
 import { ToolInputProps } from "./ToolInput";
 
-const ToolInput = dynamic(() =>
-  import("./ToolInput").then((mod) => mod.ToolInput),
+const ToolInput = dynamic(
+  () => import("./ToolInput").then((mod) => mod.ToolInput),
+  {
+    ssr: false,
+    loading: () => <LoadingMonaco />,
+  },
 );
 
-const ToolOutput = dynamic(() =>
-  import("./ToolOutput").then((mod) => mod.ToolOutput),
+const ToolOutput = dynamic(
+  () => import("./ToolOutput").then((mod) => mod.ToolOutput),
+  {
+    ssr: false,
+    loading: () => <LoadingMonaco />,
+  },
 );
 const ToolsList = dynamic(() => import("../../ToolsList/ToolsList"), {
   ssr: false,
