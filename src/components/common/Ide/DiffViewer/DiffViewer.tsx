@@ -1,7 +1,8 @@
 "use client";
 import { CopyToClip } from "@ft/components/tools/helper/CopyToClip/CopyToClip";
-import { DiffEditor, Monaco, MonacoDiffEditor } from "@monaco-editor/react";
+import { Monaco, MonacoDiffEditor } from "@monaco-editor/react";
 import { Col, Row } from "antd";
+import dynamic from "next/dynamic";
 import { useRef, useState } from "react";
 import {
   EditorActions,
@@ -9,6 +10,7 @@ import {
   FormatInput,
 } from "../EditorActions";
 import styles from "../Ide.module.css";
+import LoadingMonaco from "../LoadingMonaco";
 import { UpdateMonacoTheme } from "../UpdateMonacoTheme";
 import { DiffErrorMessage } from "./DiffErrorMessage";
 
@@ -22,6 +24,14 @@ type DiffIdeProps = {
   leftErrorMsg: string;
   rightErrorMsg: string;
 };
+
+const DiffEditor = dynamic(
+  () => import("@monaco-editor/react").then((mod) => mod.DiffEditor),
+  {
+    ssr: false,
+    loading: () => <LoadingMonaco />,
+  },
+);
 
 export default function DiffViewer({
   diffLeftValue,

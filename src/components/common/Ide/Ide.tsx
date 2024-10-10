@@ -2,8 +2,8 @@ import { editor } from "monaco-editor";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AiFillTool } from "react-icons/ai";
-
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
+import styles from "./Ide.module.css";
 
 import { getToolInput } from "@ft/common/selectors/toolsSelectors";
 import {
@@ -16,13 +16,13 @@ import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { messageError, messageSuccess } from "@ft/utils/antd";
 import { repairJSON } from "@ft/utils/json/repairJSON";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
+import CustomMonacoEditor from "./CustomMonacoEditor";
 import {
   EditorActionsButtons,
   FormatInput,
   MiniMap,
   MonoType,
 } from "./EditorActions";
-import MonacoEditorLoader from "./MonacoEditorLoader";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
 
 const EditorActions = dynamic(() =>
@@ -194,14 +194,29 @@ export default function Ide({
           </>
         }
       />
-      <MonacoEditorLoader
-        handleEditorDidMount={handleEditorDidMount}
+      <CustomMonacoEditor
+        onMount={handleEditorDidMount}
         theme={theme}
+        height="74vh"
         language={language}
-        handleEditorValidation={handleEditorValidation}
+        onValidate={handleEditorValidation}
         onChange={onChange}
-        globalInputValue={globalInputValue}
-        miniMap={miniMap}
+        className={styles.editor}
+        value={globalInputValue}
+        options={{
+          selectOnLineNumbers: true,
+          lineNumbersMinChars: 3,
+          lineDecorationsWidth: 1,
+          mouseWheelZoom: true,
+          smoothScrolling: true,
+          minimap: {
+            enabled: miniMap,
+          },
+          bracketPairColorization: {
+            enabled: true,
+          },
+          wordWrap: "on",
+        }}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import CustomMonacoEditor from "./CustomMonacoEditor";
 import styles from "./Ide.module.css";
 import { OutputIdeProps } from "./ide.types";
 
@@ -7,20 +7,8 @@ export default function OutputIde({
   theme,
   language = "json",
 }: OutputIdeProps) {
-  const [MonacoEditor, setMonacoEditor] = useState<any>(null);
-
-  useEffect(() => {
-    import("@monaco-editor/react").then((module) => {
-      setMonacoEditor(module.default);
-    });
-  }, []);
-
-  if (!MonacoEditor) {
-    return <div style={{ height: "74vh" }}> </div>;
-  }
-
   return (
-    <MonacoEditor
+    <CustomMonacoEditor
       theme={theme}
       height="74vh"
       language={language}

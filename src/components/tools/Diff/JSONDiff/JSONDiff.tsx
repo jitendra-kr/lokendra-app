@@ -5,10 +5,10 @@ import {
   updateDiffLeftInput,
   updateDiffRightInput,
 } from "@ft/common/state/tools/toolsInput.slice";
+import DiffViewer from "@ft/components/common/Ide/DiffViewer/DiffViewer";
 import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { useState } from "react";
-import DiffViewer from "../../../common/Ide/DiffViewer/DiffViewer";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
 

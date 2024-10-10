@@ -1,19 +1,15 @@
 "use client";
 import Faq from "@ft/components/common/Faq";
-import dynamic from "next/dynamic";
 import { useState } from "react";
 
 import { ToolKeys } from "../ToolsList/ToolKeys";
 
+import Ide from "@ft/components/common/Ide/Ide";
 import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
+import JsonViewer from "../helper/JsonViewer/JsonViewer";
 import jsonParserFaqData from "./jsonParserFaqData";
 import jsonValidatorFaqData from "./jsonValidatorFaqData";
-
-const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
-const JsonViewer = dynamic(
-  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
-);
 
 type JsonParserProps = {
   toolKey: ToolKeys.JSONParser | ToolKeys.JSON_VALIDATOR;
@@ -76,7 +72,7 @@ function JsonParser({ toolKey }: JsonParserProps) {
             ? jsonParserFaqData
             : jsonValidatorFaqData
         }
-      ></Faq>
+      />
     </>
   );
 }
