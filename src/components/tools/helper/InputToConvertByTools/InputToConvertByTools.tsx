@@ -93,6 +93,7 @@ export const InputToConvertByTools = ({
       )}
       {type === inputType.input ? (
         <Input
+          aria-label="input-antd"
           size="large"
           placeholder={placeholder}
           style={{ marginTop: "30px" }}
@@ -129,6 +130,7 @@ export const InputToConvertByTools = ({
         ></Input>
       ) : (
         <textarea
+          aria-label="input-textarea"
           autoFocus
           className={styles.textarea}
           onChange={onChange}
