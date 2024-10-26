@@ -1,5 +1,6 @@
 .heading {
-  margin-top: 60px;
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
   font-display: swap;
 }

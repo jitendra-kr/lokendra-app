@@ -1,6 +1,6 @@
 "use client";
+import { H3Tag } from "@ft/components/common/HtmlTags/H3Tag";
 import { Image } from "antd";
-import styles from "./CalculationFormula.module.css";
 
 export function CalculationFormula({
   alt,
@@ -13,7 +13,7 @@ export function CalculationFormula({
 }) {
   return (
     <div>
-      <h3 className={styles.heading}>{heading}</h3>
+      <H3Tag heading={heading}></H3Tag>
       <Image alt={alt} src={src}></Image>
     </div>
   );
