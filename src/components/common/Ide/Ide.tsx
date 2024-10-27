@@ -52,7 +52,7 @@ export default function Ide({
   const [monoType, setMonoType] = useState(false);
   const [miniMap, setMiniMap] = useState(false);
 
-  const editorRef = useRef<editor.IStandaloneCodeEditor>();
+  const editorRef = useRef<editor.IStandaloneCodeEditor>(null);
   const dispatch = useAppDispatch();
   const paramsLoaded = useRef(false);
   const [theme, setTheme] = useState<string>();

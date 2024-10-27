@@ -43,7 +43,7 @@ export default function DiffViewer({
   leftErrorMsg,
   rightErrorMsg,
 }: DiffIdeProps) {
-  const diffEditorRef = useRef<MonacoDiffEditor>();
+  const diffEditorRef = useRef<MonacoDiffEditor>(null);
   const [theme, setTheme] = useState<string>();
 
   function handleEditorDidMount(editor: MonacoDiffEditor, monaco: Monaco) {
