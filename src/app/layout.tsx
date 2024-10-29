@@ -2,14 +2,16 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnalytics";
 import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
-import "bootstrap/dist/css/bootstrap-grid.css";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+
 import StoreProvider from "./StoreProvider";
-import "./globals.css";
 
 const Feedback = dynamic(() => import("@ft/components/Feedback/Feedback"));
 const MainFooter = dynamic(() => import("@ft/components/Footer"));
+const LazyBootstrapComponentCss = dynamic(
+  () => import("./LazyBootstrapComponentCss"),
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <LazyBootstrapComponentCss />
       <StoreProvider>
         <AntdRegistry>
           <body className={inter.className}>

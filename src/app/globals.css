@@ -8,30 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-align {
-  text-align: center;
-}
-
 .ant-layout {
   background-color: #ffffff !important;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.anticon-edit svg {
-  color: #096dd9 !important;
-}
-
 p {
   font-size: medium;
-}
-
-.home-page-title {
-  padding: 10px;
-  font-size: 15px;
-  font-weight: bold;
 }
 
 .textTransformCapitalize {
