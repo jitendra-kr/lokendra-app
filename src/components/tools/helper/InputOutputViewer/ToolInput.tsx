@@ -1,5 +1,4 @@
 import React from "react";
-import ToolsBody from "../../ToolsBody/ToolsBody";
 import { ITools } from "../../ToolsList/toolsListingData";
 import {
   InputToConvertByTools,
@@ -50,7 +49,6 @@ export function ToolInput({
   }
   return (
     <div className="col-lg-6">
-      {input && <ToolsBody toolData={toolData} />}
       <span className={InputOutputViewerStyles["input-parent"]}>
         <div
           className={`${

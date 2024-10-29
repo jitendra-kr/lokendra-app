@@ -1,5 +1,4 @@
 "use client";
-import Faq from "@ft/components/common/Faq";
 import { capitalizeEveryWord } from "@ft/utils/utils";
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -9,7 +8,6 @@ import {
   ConvertNumberToWord,
   InitialNumToWordOptions,
 } from "./NumbersToWords.types";
-import numbersToWordsFaqData from "./numbersToWordsFaqData";
 
 const NumbersToWordsOptions = dynamic(
   () =>
@@ -99,7 +97,6 @@ export function NumbersToWords() {
         placeholder={`Enter desired number`}
         error={error}
       />
-      <Faq data={numbersToWordsFaqData} />
     </>
   );
 }

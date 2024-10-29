@@ -1,5 +1,4 @@
 "use client";
-import Faq from "@ft/components/common/Faq";
 import dynamic from "next/dynamic";
 import { Charset, GenerateOptions } from "randomstring";
 import { useState } from "react";
@@ -7,7 +6,6 @@ import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { RandomStringOptions } from "./RandomStringGeneratorOptions";
 import { InputValue, RandomStringFormat } from "./randomStringGenerator.types";
-import randomStringGeneratorFaqData from "./randomStringGeneratorFaqData";
 
 const RandomStringGeneratorOptions = dynamic(
   () =>
@@ -110,7 +108,6 @@ export function RandomStringGenerator() {
         placeholder={`Enter desired number`}
         error={error}
       />
-      <Faq data={randomStringGeneratorFaqData}></Faq>
     </>
   );
 }

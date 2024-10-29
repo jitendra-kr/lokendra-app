@@ -1,5 +1,4 @@
 "use client";
-import { useToolListData } from "@ft/common/hooks/useToolListData";
 import LoadingMonaco from "@ft/components/common/Ide/LoadingMonaco";
 import { SampleData } from "@ft/components/common/SampleData";
 import dynamic from "next/dynamic";
@@ -8,6 +7,7 @@ import ToolsBody from "../../ToolsBody/ToolsBody";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { ToolDescription } from "../ToolOverview/ToolDescription";
 import { ToolInputProps } from "./ToolInput";
+import getToolListDataByToolID from "./getToolListDataByToolID";
 
 const ToolInput = dynamic(
   () => import("./ToolInput").then((mod) => mod.ToolInput),
@@ -51,7 +51,11 @@ export function InputOutputViewer({
   error = undefined,
   inputEditorActionChild,
 }: InputOutputViewerProps) {
-  const { toolData } = useToolListData(toolId);
+  const toolData = getToolListDataByToolID(toolId);
+
+  if (!toolData) {
+    return <></>;
+  }
 
   return (
     <>
