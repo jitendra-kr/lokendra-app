@@ -74,7 +74,7 @@ export function RandomStringGenerator() {
         options.charset = inputValue.customAlphabets;
       }
       const { generate } = await import("randomstring");
-      for (let index = 0; index < inputValue?.howManyStrings ?? 1; index++) {
+      for (let index = 0; index < inputValue?.howManyStrings; index++) {
         result += generate(options) + "\n";
       }
       setByte(result);
