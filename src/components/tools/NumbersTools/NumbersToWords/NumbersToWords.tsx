@@ -20,10 +20,7 @@ const NumbersToWordsOptions = dynamic(
 );
 
 const getLanguage = (): string => {
-  if (navigator) {
-    return navigator.language;
-  }
-  return "en-US";
+  return typeof window !== "undefined" ? navigator.language : "en-US";
 };
 
 export function NumbersToWords() {
