@@ -1,13 +1,11 @@
 "use client";
 import Faq from "@ft/components/common/Faq";
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-
-import { ToolKeys } from "../../ToolsList/ToolKeys";
-
 import { messageError } from "@ft/utils/antd";
 import { capitalizeEveryWord } from "@ft/utils/utils";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
+import { ToolKeys } from "../../ToolsList/ToolKeys";
 import numbersToWordsFaqData from "./numbersToWordsFaqData";
 
 const NumbersToWordsOptions = dynamic(
@@ -95,19 +93,17 @@ export function NumbersToWords() {
           showInput: true,
           buttonName: "",
           options: (
-            <>
-              <NumbersToWordsOptions
-                handleCurrencyCheckboxChange={handleCurrencyCheckboxChange}
-                handleLocaleCodeChange={handleLocaleCodeChange}
-              />
-            </>
+            <NumbersToWordsOptions
+              handleCurrencyCheckboxChange={handleCurrencyCheckboxChange}
+              handleLocaleCodeChange={handleLocaleCodeChange}
+            />
           ),
         }}
         onClick={onClick}
         placeholder={`Enter desired number`}
         error={error}
       />
-      <Faq data={numbersToWordsFaqData}></Faq>
+      <Faq data={numbersToWordsFaqData} />
     </>
   );
 }
