@@ -1,6 +1,5 @@
 import React from "react";
-
-import { ToolsBody } from "../../ToolsBody/ToolsBody";
+import ToolsBody from "../../ToolsBody/ToolsBody";
 import { ITools } from "../../ToolsList/toolsListingData";
 import {
   InputToConvertByTools,

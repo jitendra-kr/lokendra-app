@@ -4,7 +4,7 @@ import LoadingMonaco from "@ft/components/common/Ide/LoadingMonaco";
 import { SampleData } from "@ft/components/common/SampleData";
 import dynamic from "next/dynamic";
 import React from "react";
-import { ToolsBody } from "../../ToolsBody/ToolsBody";
+import ToolsBody from "../../ToolsBody/ToolsBody";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { ToolDescription } from "../ToolOverview/ToolDescription";
 import { ToolInputProps } from "./ToolInput";
