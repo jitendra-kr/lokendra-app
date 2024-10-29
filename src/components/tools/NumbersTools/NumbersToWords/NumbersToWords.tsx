@@ -1,11 +1,14 @@
 "use client";
 import Faq from "@ft/components/common/Faq";
-import { messageError } from "@ft/utils/antd";
 import { capitalizeEveryWord } from "@ft/utils/utils";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { ToolKeys } from "../../ToolsList/ToolKeys";
+import {
+  ConvertNumberToWord,
+  InitialNumToWordOptions,
+} from "./NumbersToWords.types";
 import numbersToWordsFaqData from "./numbersToWordsFaqData";
 
 const NumbersToWordsOptions = dynamic(
@@ -16,34 +19,51 @@ const NumbersToWordsOptions = dynamic(
   },
 );
 
-const initialOptions = {
-  localeCode: "",
-  currency: false,
-};
-
-type InitialOptions = {
-  localeCode?: string;
-  currency?: boolean;
+const getLanguage = (): string => {
+  if (navigator) {
+    return navigator.language;
+  }
+  return "en-US";
 };
 
 export function NumbersToWords() {
   const [byte, setByte] = useState("");
   const [error, setError] = useState("");
   const [number, setNumber] = useState<string>("");
-  const [options, setOptions] = useState<InitialOptions>(initialOptions);
+  const [options, setOptions] = useState<InitialNumToWordOptions>({
+    localeCode: getLanguage(),
+    currency: false,
+  });
 
-  useEffect(() => {
-    setOptions((value) => ({ ...value, localeCode: navigator.language }));
-  }, []);
-
-  const handleLocaleCodeChange = (v: string) => {
-    setOptions((value) => ({ ...value, localeCode: v }));
-    onChangeCb(number, v, options.currency);
+  const handleLocaleCodeChange = (localeCode: string) => {
+    setOptions((value) => ({ ...value, localeCode }));
+    onChangeCb(number, localeCode, options.currency);
   };
 
-  const handleCurrencyCheckboxChange = (v: boolean) => {
-    setOptions((value) => ({ ...value, currency: v }));
-    onChangeCb(number, options.localeCode, v);
+  const handleCurrencyCheckboxChange = (currency: boolean) => {
+    setOptions((value) => ({ ...value, currency }));
+    onChangeCb(number, options.localeCode, currency);
+  };
+
+  const convertNumberToWord = async ({
+    value,
+    localeCode,
+    currency,
+  }: ConvertNumberToWord) => {
+    try {
+      const ToWords = (await import("to-words")).ToWords;
+      const toWords = new ToWords({
+        localeCode: localeCode ?? options.localeCode,
+        converterOptions: {
+          currency: currency ?? options.currency,
+          doNotAddOnly: true,
+        },
+      });
+      const words = toWords.convert(Number(value));
+      setByte(capitalizeEveryWord(words));
+    } catch (error) {
+      setError("INVALID NUMBER");
+    }
   };
 
   const onChangeCb = async (
@@ -51,14 +71,6 @@ export function NumbersToWords() {
     localeCode?: string,
     currency?: boolean,
   ) => {
-    const { ToWords } = await import("to-words");
-    const toWords = new ToWords({
-      localeCode: localeCode ?? options.localeCode,
-      converterOptions: {
-        currency: currency ?? options.currency,
-        doNotAddOnly: true,
-      },
-    });
     setByte("");
     setError("");
     setNumber("");
@@ -68,19 +80,7 @@ export function NumbersToWords() {
     }
     value = value.replaceAll(",", "");
     setNumber(value);
-    try {
-      const words = toWords.convert(Number(value));
-      setByte(capitalizeEveryWord(words));
-    } catch (error) {
-      setError("INVALID NUMBER");
-    }
-  };
-
-  const onClick = () => {
-    if (!number) {
-      messageError({ content: "Please type number" });
-    }
-    onChangeCb(number);
+    convertNumberToWord({ value, localeCode, currency });
   };
 
   return (
@@ -99,7 +99,6 @@ export function NumbersToWords() {
             />
           ),
         }}
-        onClick={onClick}
         placeholder={`Enter desired number`}
         error={error}
       />

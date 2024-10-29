@@ -1,5 +1,5 @@
 "use client";
-import { Checkbox, Select, Space, Tooltip } from "antd";
+import { Select } from "antd";
 
 const localeOptions = [
   { value: "pt-BR", label: "Brazil (pt-BR)" },
@@ -20,24 +20,27 @@ export function NumbersToWordsOptions({
   handleCurrencyCheckboxChange: (value: boolean) => void;
 }) {
   return (
-    <div style={{ marginTop: "30px" }}>
-      <Tooltip title="Locale">
-        <Space wrap style={{ marginRight: "5px" }}>
-          <Select
-            defaultValue={`${navigator ? navigator.language : "en-US"}`}
-            style={{ width: 150 }}
-            onChange={handleLocaleCodeChange}
-            options={localeOptions}
-          />
-        </Space>
-      </Tooltip>
-      <Checkbox
-        onChange={(status) =>
-          handleCurrencyCheckboxChange(status.target.checked)
-        }
-      >
+    <div style={{ marginTop: "20px" }}>
+      <Select
+        defaultValue={`${navigator ? navigator.language : "en-US"}`}
+        style={{ width: 150, marginRight: "30px" }}
+        onChange={handleLocaleCodeChange}
+        options={localeOptions}
+      />
+
+      <label htmlFor="Currency">
+        <input
+          onChange={(status) =>
+            handleCurrencyCheckboxChange(status.target.checked)
+          }
+          type="checkbox"
+          id="Currency"
+          name="Currency"
+          aria-label="Currency"
+          value="Bike"
+        ></input>
         Currency
-      </Checkbox>
+      </label>
     </div>
   );
 }
