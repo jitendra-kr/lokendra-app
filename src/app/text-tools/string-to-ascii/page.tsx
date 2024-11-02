@@ -5,11 +5,11 @@ import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 
-export const metadata: Metadata = generateMetaTags(ToolKeys.StringtoASCII);
+export const metadata: Metadata = generateMetaTags(ToolKeys.StringToASCII);
 
 function StringToAsciiPage() {
   return (
-    <ToolRenderer toolKey={ToolKeys.StringtoASCII}>
+    <ToolRenderer toolKey={ToolKeys.StringToASCII}>
       <StringToAscii />;
       <StringToAsciiInJavascript />
     </ToolRenderer>

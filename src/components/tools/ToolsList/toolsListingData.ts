@@ -37,7 +37,7 @@ export const toolsListData: Array<ITools> = [
     metaTitle: seoData.stringToAscii.title,
     metaDescription: seoData.stringToAscii.description,
     list: true,
-    key: ToolKeys.StringtoASCII,
+    key: ToolKeys.StringToASCII,
     toolDescription: `Are you tired of spending hours manually converting text to ASCII codes? Our tool is the best way for creating ASCII art from text. You won't have any trouble entering and translating your content because of the simple and clear UI for ASCII Conversion. Convert text quickly and accurately with our free online tool for easy ASCII conversion. Save time and effort with this simple tool. Our online ASCII converter is a powerful that allows you to easily convert any string of text into its corresponding ASCII code. Whether you need to convert a single word, a paragraph, or a document, it can be handled with ease. Simply enter your text or upload a text file into the tool, and it will instantly generate the corresponding ASCII code for each character.  This tool is beneficial for every person who needs to work with ASCII codes. Best of all, our online ASCII converter is completely free to use and requires no downloads or installations.`,
     keyFeatures: [
       "Create stunning ASCII art in milliseconds.",

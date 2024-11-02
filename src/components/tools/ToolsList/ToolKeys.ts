@@ -1,6 +1,6 @@
 export enum ToolKeys {
   SalaryHike = "SalaryHike",
-  StringtoASCII = "StringtoASCII",
+  StringToASCII = "StringToASCII",
   ASCIItoString = "ASCIItoString",
   JSONtostring = "JSONtostring",
   JSONParser = "JSONParser",

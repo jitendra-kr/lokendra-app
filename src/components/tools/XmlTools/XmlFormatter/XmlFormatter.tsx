@@ -1,22 +1,18 @@
 "use client";
+import Ide from "@ft/components/common/Ide/Ide";
 import { formatXml } from "@ft/utils/xml/formatXml";
-import dynamic from "next/dynamic";
 import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-
-const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
-const JsonViewer = dynamic(
-  () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
-);
+import JsonViewer from "../../helper/JsonViewer/JsonViewer";
 
 export function XmlFormatter() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
 
-  const onError = (errormsg: string | undefined) => {
-    if (errormsg) {
-      setEditorError(errormsg);
+  const onError = (errorMsg: string | undefined) => {
+    if (errorMsg) {
+      setEditorError(errorMsg);
       return;
     }
     setEditorError("");

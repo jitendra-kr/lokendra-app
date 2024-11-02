@@ -1,10 +1,3 @@
-import { editor } from "monaco-editor";
-import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
-import { AiFillTool } from "react-icons/ai";
-import { useGetQueryString } from "../../../hooks/useGetQueryString";
-import styles from "./Ide.module.css";
-
 import { getToolInput } from "@ft/common/selectors/toolsSelectors";
 import {
   updateSampleData,
@@ -15,19 +8,21 @@ import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { messageError, messageSuccess } from "@ft/utils/antd";
 import { repairJSON } from "@ft/utils/json/repairJSON";
+import { editor } from "monaco-editor";
+import { useEffect, useRef, useState } from "react";
+import { AiFillTool } from "react-icons/ai";
+import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 import CustomMonacoEditor from "./CustomMonacoEditor";
 import {
+  EditorActions,
   EditorActionsButtons,
   FormatInput,
   MiniMap,
   MonoType,
 } from "./EditorActions";
+import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
-
-const EditorActions = dynamic(() =>
-  import("./EditorActions").then((mod) => mod.EditorActions),
-);
 
 export type EditorCallBackOptions = {
   monoType?: boolean;
