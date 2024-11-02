@@ -2,7 +2,7 @@
 import { ConvertedOutputByTools } from "@ft/components/tools/helper/ConvertedOutputByTools/ConvertedOutputByTools";
 import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useGetUrlPath } from "@ft/hooks/useGetUrl";
-import { Button, Modal, Tooltip } from "antd";
+import { Button, Modal } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";
@@ -58,24 +58,20 @@ export default function HandleFullScreen({ content }: { content: string }) {
         }}
         destroyOnClose={true}
         closeIcon={
-          <Tooltip title={"Exit Full Screen"}>
-            <Button
-              type="primary"
-              onClick={openModal}
-              style={{ marginTop: "8px" }}
-            >
-              <RiFullscreenExitLine size={20} color={COLOR_CONST.defaultIcon} />
-            </Button>
-          </Tooltip>
+          <Button
+            type="primary"
+            onClick={openModal}
+            style={{ marginTop: "8px" }}
+          >
+            <RiFullscreenExitLine size={20} color={COLOR_CONST.defaultIcon} />
+          </Button>
         }
       />
-      <Tooltip title={"Full Screen"}>
-        <Button
-          type="primary"
-          icon={<BiFullscreen size={20} color={COLOR_CONST.defaultIcon} />}
-          onClick={openModal}
-        ></Button>
-      </Tooltip>
+      <Button
+        type="primary"
+        icon={<BiFullscreen size={20} color={COLOR_CONST.defaultIcon} />}
+        onClick={openModal}
+      ></Button>
     </>
   );
 }

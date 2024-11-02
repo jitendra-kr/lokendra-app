@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
+import beautifyJSON from "@ft/utils/json/beautifyJSON";
 import { EditorCallBackOptions } from "../../../common/Ide/Ide";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
@@ -38,7 +38,7 @@ export function JSONToTypescript() {
       resetStates();
       return;
     }
-    const { beautifiedData, msg } = beautifyJSON(str);
+    const { beautifiedData, msg } = await beautifyJSON(str);
 
     if (beautifiedData) {
       const { run } = await import("json_typegen_wasm");

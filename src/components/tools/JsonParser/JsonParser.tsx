@@ -1,16 +1,10 @@
 "use client";
-import { useState } from "react";
-
-import { ToolKeys } from "../ToolsList/ToolKeys";
-
 import Ide from "@ft/components/common/Ide/Ide";
-import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
+import beautifyJSON from "@ft/utils/json/beautifyJSON";
+import { useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import JsonViewer from "../helper/JsonViewer/JsonViewer";
 
-type JsonParserProps = {
-  toolKey: ToolKeys.JSONParser | ToolKeys.JSON_VALIDATOR;
-};
 function JsonParser() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -29,7 +23,7 @@ function JsonParser() {
     setByte("");
   };
 
-  function isJsonString(str: string | undefined) {
+  async function isJsonString(str: string | undefined) {
     if (!str) {
       resetStates();
       return;
@@ -41,7 +35,7 @@ function JsonParser() {
     if (error) {
       setError("");
     }
-    const { beautifiedData, msg } = beautifyJSON(str);
+    const { beautifiedData, msg } = await beautifyJSON(str);
     if (beautifiedData) {
       setByte(beautifiedData);
     }

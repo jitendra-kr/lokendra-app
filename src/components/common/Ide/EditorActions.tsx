@@ -1,4 +1,4 @@
-import { Col, Row, Switch, Tooltip, Upload } from "antd";
+import { Col, Row, Switch, Upload } from "antd";
 import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -6,7 +6,7 @@ import { FaUpload } from "react-icons/fa";
 import { PiBracketsCurlyBold } from "react-icons/pi";
 
 import { COLOR_CONST } from "@ft/constants/colorConstant";
-import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
+import beautifyJSON from "@ft/utils/json/beautifyJSON";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 type EditorActionsProps = {
@@ -38,15 +38,13 @@ export function MonoType({
 
 export function MiniMap({ onChange }: { onChange: (status: boolean) => void }) {
   return (
-    <Tooltip title="Show / Hide Mini Map">
-      <Switch
-        style={{ marginTop: "10px", marginRight: "5px" }}
-        checkedChildren="Mini Map"
-        unCheckedChildren="Mini Map"
-        defaultChecked={false}
-        onChange={onChange}
-      />
-    </Tooltip>
+    <Switch
+      style={{ marginTop: "10px", marginRight: "5px" }}
+      checkedChildren="Mini Map"
+      unCheckedChildren="Mini Map"
+      defaultChecked={false}
+      onChange={onChange}
+    />
   );
 }
 
@@ -57,9 +55,9 @@ export function FormatInput({
   value: (() => string) | string;
   cb: (formattedValue: string, errorMsg?: string) => void;
 }) {
-  const format = () => {
+  const format = async () => {
     value = typeof value === "string" ? value : value();
-    const { beautifiedData, msg } = beautifyJSON(value);
+    const { beautifiedData, msg } = await beautifyJSON(value);
     if (beautifiedData) {
       cb(beautifiedData);
     }
@@ -92,28 +90,26 @@ export const EditorActions = ({
       {children}
 
       <EditorActionsButtons>
-        <Tooltip title="Load Data From Load File">
-          <Upload
-            accept=".txt, .json"
-            showUploadList={false}
-            beforeUpload={(file) => {
-              const reader = new FileReader();
+        <Upload
+          accept=".txt, .json"
+          showUploadList={false}
+          beforeUpload={(file) => {
+            const reader = new FileReader();
 
-              reader.onload = (e) => {
-                onChange(get(e, "target.result") ?? "");
-              };
-              reader.readAsText(file);
+            reader.onload = (e) => {
+              onChange(get(e, "target.result") ?? "");
+            };
+            reader.readAsText(file);
 
-              return false;
-            }}
-          >
-            <InputOutputActionButton
-              name="Load file"
-              onClick={() => {}}
-              mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
-            />
-          </Upload>
-        </Tooltip>
+            return false;
+          }}
+        >
+          <InputOutputActionButton
+            name="Load file"
+            onClick={() => {}}
+            mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
+          />
+        </Upload>
       </EditorActionsButtons>
 
       {childrenAfter}
