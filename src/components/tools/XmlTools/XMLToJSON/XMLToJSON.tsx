@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { xmlToJson } from "../../../../utils/xml/xmlToJson";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
@@ -63,7 +62,6 @@ export function XMLToJSON() {
       outputChild={
         <JsonViewer content={byte} error={error} editorError={editorError} />
       }
-      toolId={ToolKeys.XML_TO_JSON}
       byte={byte}
     />
   );

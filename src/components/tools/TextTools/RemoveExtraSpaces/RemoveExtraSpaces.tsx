@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 export function RemoveExtraSpaces() {
@@ -14,11 +13,5 @@ export function RemoveExtraSpaces() {
     }
   };
 
-  return (
-    <InputOutputViewer
-      toolId={ToolKeys.REMOVE_EXTRA_SPACES}
-      byte={byte}
-      onChangeCb={onChangeCb}
-    />
-  );
+  return <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />;
 }

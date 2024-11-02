@@ -2,7 +2,6 @@
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { messageError } from "../../../utils/antd";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
 function UUIDGenerator() {
@@ -59,7 +58,6 @@ function UUIDGenerator() {
     <>
       {contextHolder}
       <InputOutputViewer
-        toolId={ToolKeys.UUIDGenerator}
         byte={byte}
         onChangeCb={onChangeCb}
         input={{ showInput: true, buttonName: "Generate UUID" }}

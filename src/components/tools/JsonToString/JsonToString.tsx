@@ -2,7 +2,6 @@
 import Ide from "@ft/components/common/Ide/Ide";
 import { useState } from "react";
 import { jsonlint } from "../../../externalLib/jsonLint";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
 function JsonToString() {
@@ -46,7 +45,6 @@ function JsonToString() {
           options={{ format: true, repair: true }}
         />
       }
-      toolId={ToolKeys.JSONtostring}
       byte={byte}
     />
   );

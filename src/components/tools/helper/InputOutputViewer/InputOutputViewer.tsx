@@ -1,13 +1,8 @@
 "use client";
 import LoadingMonaco from "@ft/components/common/Ide/LoadingMonaco";
-import { SampleData } from "@ft/components/common/SampleData";
 import dynamic from "next/dynamic";
 import React from "react";
-import ToolsBody from "../../ToolsBody/ToolsBody";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
-import { ToolDescription } from "../ToolOverview/ToolDescription";
 import { ToolInputProps } from "./ToolInput";
-import getToolListDataByToolID from "./getToolListDataByToolID";
 
 const ToolInput = dynamic(
   () => import("./ToolInput").then((mod) => mod.ToolInput),
@@ -24,12 +19,8 @@ const ToolOutput = dynamic(
     loading: () => <LoadingMonaco />,
   },
 );
-const ToolsList = dynamic(() => import("../../ToolsList/ToolsList"), {
-  ssr: false,
-});
 
 type InputOutputViewerProps = {
-  toolId: ToolKeys;
   byte: string;
   outputChild?: React.ReactNode;
   children?: React.ReactNode;
@@ -37,7 +28,6 @@ type InputOutputViewerProps = {
 } & Omit<ToolInputProps, "toolData">;
 
 export function InputOutputViewer({
-  toolId,
   onChangeCb = () => {},
   byte,
   input,
@@ -51,41 +41,24 @@ export function InputOutputViewer({
   error = undefined,
   inputEditorActionChild,
 }: InputOutputViewerProps) {
-  const toolData = getToolListDataByToolID(toolId);
-
-  if (!toolData) {
-    return <></>;
-  }
-
   return (
-    <>
-      <div className={"row editorMinHeight"}>
-        {!input && <ToolsBody toolData={toolData} />}
-        {children && children}
-        {!children && (
-          <ToolInput
-            toolData={toolData}
-            input={input}
-            inputChild={inputChild}
-            onChangeCb={onChangeCb}
-            placeholder={placeholder}
-            inputNumber={inputNumber}
-            onClick={onClick}
-            options={options}
-            inputEditorActionChild={inputEditorActionChild}
-          />
-        )}
-        {!children && (
-          <ToolOutput byte={byte} outputChild={outputChild} error={error} />
-        )}
-      </div>
-      <ToolDescription
-        content={toolData.toolDescription}
-        name={toolData.title}
-        keyFeatures={toolData.keyFeatures}
-      />
-      <SampleData pathname={toolData.link} />
-      <ToolsList />
-    </>
+    <div className={"row editorMinHeight"}>
+      {children && children}
+      {!children && (
+        <ToolInput
+          input={input}
+          inputChild={inputChild}
+          onChangeCb={onChangeCb}
+          placeholder={placeholder}
+          inputNumber={inputNumber}
+          onClick={onClick}
+          options={options}
+          inputEditorActionChild={inputEditorActionChild}
+        />
+      )}
+      {!children && (
+        <ToolOutput byte={byte} outputChild={outputChild} error={error} />
+      )}
+    </div>
   );
 }

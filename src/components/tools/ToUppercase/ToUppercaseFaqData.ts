@@ -1,6 +1,6 @@
 import { FaqProps } from "@ft/components/common/Faq";
 
-const toUppercaseFaqData: FaqProps[] = [
+const textToUppercaseFaqData: FaqProps[] = [
   {
     question: "What does this tool do?",
     ans: "This tool converts any text you enter from lowercase letters to uppercase letters.",
@@ -39,4 +39,4 @@ const toUppercaseFaqData: FaqProps[] = [
   },
 ];
 
-export default toUppercaseFaqData;
+export default textToUppercaseFaqData;

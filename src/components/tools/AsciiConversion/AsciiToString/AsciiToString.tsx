@@ -1,12 +1,11 @@
 "use client";
 import { AsciiToTextType, asciiToText } from "ascii-text-converter";
 import { useCallback, useEffect, useState } from "react";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { SelectASCIIConversionType } from "../common";
 
-function AsciiToString({ children }: { children: React.ReactNode }) {
+function AsciiToString() {
   const [byte, setByte] = useState("");
   const [input, setInput] = useState("");
   const [inputType, setInputType] = useState<AsciiToTextType>("decimal");
@@ -33,14 +32,12 @@ function AsciiToString({ children }: { children: React.ReactNode }) {
   return (
     <>
       <InputOutputViewer
-        toolId={ToolKeys.ASCIItoString}
         byte={byte}
         onChangeCb={onChangeCb}
         inputEditorActionChild={
           <SelectASCIIConversionType setInputType={setInputType} />
         }
       />
-      {children}
     </>
   );
 }

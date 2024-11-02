@@ -1,6 +1,6 @@
 import { FaqProps } from "@ft/components/common/Faq";
 
-const jsonParserFaqData: FaqProps[] = [
+const RandomStringGeneratorFaq: FaqProps[] = [
   {
     question: "What is the definition of a Random String Generator?",
     ans: `
@@ -36,4 +36,4 @@ const jsonParserFaqData: FaqProps[] = [
   },
 ];
 
-export default jsonParserFaqData;
+export default RandomStringGeneratorFaq;

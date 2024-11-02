@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { DecodeURLInJavascript } from "./DecodeURLInJavascript";
 
@@ -21,11 +20,7 @@ function URLDecode() {
 
   return (
     <>
-      <InputOutputViewer
-        toolId={ToolKeys.UrlDecode}
-        byte={byte}
-        onChangeCb={onChangeCb}
-      />
+      <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />
       <DecodeURLInJavascript />
     </>
   );

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
 import { EditorCallBackOptions } from "../../../common/Ide/Ide";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(
@@ -78,7 +77,6 @@ export function JSONToTypescript() {
           language={"typescript"}
         />
       }
-      toolId={ToolKeys.JSON_TO_TYPESCRIPT}
       byte={byte}
     />
   );

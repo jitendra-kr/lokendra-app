@@ -2,8 +2,6 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-import { ToolKeys } from "../ToolsList/ToolKeys";
-
 import { convertNumberToWords } from "@ft/utils/utils";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { ToolOutputActions } from "../helper/ToolOutputActions/ToolOutputActions";
@@ -57,7 +55,6 @@ function WordCounter() {
 
   return (
     <InputOutputViewer
-      toolId={ToolKeys.wordCounter}
       byte={""}
       inputChild={
         <InputToConvertByTools

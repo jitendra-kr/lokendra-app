@@ -4,7 +4,6 @@ import { useState } from "react";
 import { minifyJSON } from "@ft/utils/json/minifyJSON";
 import dynamic from "next/dynamic";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
 const JsonViewer = dynamic(
@@ -58,7 +57,6 @@ export function JSONMinify() {
       outputChild={
         <JsonViewer content={byte} error={error} editorError={editorError} />
       }
-      toolId={ToolKeys.JSON_MINIFIER}
       byte={byte}
     />
   );

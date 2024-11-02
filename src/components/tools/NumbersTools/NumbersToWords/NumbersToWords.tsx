@@ -3,7 +3,6 @@ import { capitalizeEveryWord } from "@ft/utils/utils";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 import {
   ConvertNumberToWord,
   InitialNumToWordOptions,
@@ -81,7 +80,6 @@ export function NumbersToWords() {
   return (
     <>
       <InputOutputViewer
-        toolId={ToolKeys.NUMBER_TO_WORDS}
         byte={byte}
         onChangeCb={onChangeCb}
         input={{

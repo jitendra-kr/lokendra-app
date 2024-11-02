@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools/ConvertedOutputByTools";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { InputToConvertByTools } from "../helper/InputToConvertByTools/InputToConvertByTools";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import ReplaceSpacesStyles from "./ReplaceSpaces.module.css";
 
 function ReplaceSpaces() {
@@ -54,7 +53,6 @@ function ReplaceSpaces() {
           <ConvertedOutputByTools content={byte} />
         </>
       }
-      toolId={ToolKeys.ReplaceSpaces}
       byte={byte}
     />
   );

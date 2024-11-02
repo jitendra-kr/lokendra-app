@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
-function ToLowercase({ children }: { children: React.ReactNode }) {
+function ToLowercase() {
   const [byte, setByte] = useState<string>("");
 
   const onChangeCb = (value: string) => {
@@ -14,16 +13,7 @@ function ToLowercase({ children }: { children: React.ReactNode }) {
     }
   };
 
-  return (
-    <>
-      <InputOutputViewer
-        toolId={ToolKeys.LowercaseTextconverter}
-        byte={byte}
-        onChangeCb={onChangeCb}
-      />
-      {children}
-    </>
-  );
+  return <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />;
 }
 
 export default ToLowercase;

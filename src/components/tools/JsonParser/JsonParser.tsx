@@ -1,5 +1,4 @@
 "use client";
-import Faq from "@ft/components/common/Faq";
 import { useState } from "react";
 
 import { ToolKeys } from "../ToolsList/ToolKeys";
@@ -8,13 +7,11 @@ import Ide from "@ft/components/common/Ide/Ide";
 import { beautifyJSON } from "@ft/utils/json/beautifyJSON";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import JsonViewer from "../helper/JsonViewer/JsonViewer";
-import jsonParserFaqData from "./jsonParserFaqData";
-import jsonValidatorFaqData from "./jsonValidatorFaqData";
 
 type JsonParserProps = {
   toolKey: ToolKeys.JSONParser | ToolKeys.JSON_VALIDATOR;
 };
-function JsonParser({ toolKey }: JsonParserProps) {
+function JsonParser() {
   const [byte, setByte] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [editorError, setEditorError] = useState<string>("");
@@ -54,26 +51,15 @@ function JsonParser({ toolKey }: JsonParserProps) {
   }
 
   return (
-    <>
-      <InputOutputViewer
-        inputChild={
-          <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
-        }
-        outputChild={
-          <JsonViewer content={byte} error={error} editorError={editorError} />
-        }
-        toolId={toolKey}
-        byte={byte}
-      />
-
-      <Faq
-        data={
-          toolKey === ToolKeys.JSONParser
-            ? jsonParserFaqData
-            : jsonValidatorFaqData
-        }
-      />
-    </>
+    <InputOutputViewer
+      inputChild={
+        <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
+      }
+      outputChild={
+        <JsonViewer content={byte} error={error} editorError={editorError} />
+      }
+      byte={byte}
+    />
   );
 }
 

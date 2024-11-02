@@ -1,7 +1,6 @@
 "use client";
 import { Select, Space, Tooltip } from "antd";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { EncodeURLInJavascript } from "./EncodeURLInJavascript";
 
@@ -70,7 +69,6 @@ function URLEncode() {
   return (
     <>
       <InputOutputViewer
-        toolId={ToolKeys.URLEncode}
         byte={byte}
         onChangeCb={(value) => setInput(value)}
         inputEditorActionChild={

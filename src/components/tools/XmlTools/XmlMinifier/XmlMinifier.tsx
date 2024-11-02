@@ -2,7 +2,6 @@
 import { xmlMinifier } from "@ft/utils/xml/xmlMinifier";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
@@ -67,7 +66,6 @@ export function XmlMinifier() {
           editorError={editorError}
         />
       }
-      toolId={ToolKeys.XML_MINIFIER}
       byte={byte}
     />
   );

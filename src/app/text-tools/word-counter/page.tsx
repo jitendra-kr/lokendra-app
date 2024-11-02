@@ -1,13 +1,18 @@
+import ToolRenderer from "@ft/components/ToolContentRenderer";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import WordCounter from "@ft/components/tools/WordCounter";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
-export const metadata: Metadata = generateMetaTags(
-  ToolKeys.UppercaseTextConverter,
-);
+
+const toolKey = ToolKeys.wordCounter;
+export const metadata: Metadata = generateMetaTags(toolKey);
 
 function WordsCounterPage() {
-  return <WordCounter />;
+  return (
+    <ToolRenderer toolKey={toolKey}>
+      <WordCounter />;
+    </ToolRenderer>
+  );
 }
 
 export default WordsCounterPage;

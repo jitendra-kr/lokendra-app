@@ -16,6 +16,10 @@ const Faq = ({ data }: { data: FaqProps[] }) => {
     }),
   );
 
+  if (!faqData.length) {
+    return <></>;
+  }
+
   return (
     <>
       <H2Tag heading="FAQ" link={false}></H2Tag>

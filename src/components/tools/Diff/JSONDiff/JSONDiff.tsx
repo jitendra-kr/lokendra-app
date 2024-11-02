@@ -10,7 +10,6 @@ import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-import { ToolKeys } from "../../ToolsList/ToolKeys";
 
 export function JSONDiff() {
   const dispatch = useAppDispatch();
@@ -58,7 +57,7 @@ export function JSONDiff() {
   };
 
   return (
-    <InputOutputViewer toolId={ToolKeys.JSON_DIFF} byte={""}>
+    <InputOutputViewer byte={""}>
       <DiffViewer
         diffLeftValue={diffLeftValue ?? ""}
         diffRightValue={diffRightValue ?? " "}

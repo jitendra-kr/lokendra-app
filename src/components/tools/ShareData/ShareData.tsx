@@ -4,11 +4,13 @@ import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { copyToClipboard } from "@ft/utils/utils";
 import { FaShareAlt } from "react-icons/fa";
-import { jsonParser } from "../ToolsList/toolsListingData";
+
 
 type ShareDataProps = {
   data: string;
 };
+
+const jsonParser = "json-parser";
 
 export function ShareData({ data }: ShareDataProps) {
   const { pathname } = useGetUrlPath();

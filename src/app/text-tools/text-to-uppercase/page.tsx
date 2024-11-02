@@ -1,6 +1,5 @@
-import Faq from "@ft/components/common/Faq";
+import ToolRenderer from "@ft/components/ToolContentRenderer";
 import ToUppercase from "@ft/components/tools/ToUppercase";
-import toUppercaseFaqData from "@ft/components/tools/ToUppercase/ToUppercaseFaqData";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
@@ -11,9 +10,9 @@ export const metadata: Metadata = generateMetaTags(
 
 function ToUppercasePage() {
   return (
-    <ToUppercase>
-      <Faq data={toUppercaseFaqData}></Faq>
-    </ToUppercase>
+    <ToolRenderer toolKey={ToolKeys.UppercaseTextConverter}>
+      <ToUppercase />;
+    </ToolRenderer>
   );
 }
 

@@ -1,19 +1,17 @@
-import Faq from "@ft/components/common/Faq";
+import ToolRenderer from "@ft/components/ToolContentRenderer";
 import ToLowercase from "@ft/components/tools/ToLowercase";
-import ToLowercaseFaqData from "@ft/components/tools/ToLowercase/ToLowercaseFaqData";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
 import { Metadata } from "next";
 
-export const metadata: Metadata = generateMetaTags(
-  ToolKeys.LowercaseTextconverter,
-);
+const toolKey = ToolKeys.LowercaseTextconverter;
+export const metadata: Metadata = generateMetaTags(toolKey);
 
 function ToUppercasePage() {
   return (
-    <ToLowercase>
-      <Faq data={ToLowercaseFaqData}></Faq>
-    </ToLowercase>
+    <ToolRenderer toolKey={toolKey}>
+      <ToLowercase />;
+    </ToolRenderer>
   );
 }
 

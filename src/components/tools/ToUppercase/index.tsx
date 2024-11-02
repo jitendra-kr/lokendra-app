@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import { ToolKeys } from "../ToolsList/ToolKeys";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 
-function ToUppercase({ children }: { children: React.ReactNode }) {
+function ToUppercase() {
   const [byte, setByte] = useState<string>("");
 
   const onChangeCb = (value: string) => {
@@ -16,12 +15,7 @@ function ToUppercase({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <InputOutputViewer
-        toolId={ToolKeys.UppercaseTextConverter}
-        byte={byte}
-        onChangeCb={onChangeCb}
-      />
-      {children}
+      <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />
     </>
   );
 }

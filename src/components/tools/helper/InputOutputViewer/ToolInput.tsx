@@ -1,5 +1,4 @@
 import React from "react";
-import { ITools } from "../../ToolsList/toolsListingData";
 import {
   InputToConvertByTools,
   inputType,
@@ -30,7 +29,6 @@ export type ToolInputProps = {
   inputNumber?: boolean;
   onClick?: () => void;
   inputEditorActionChild?: React.ReactNode;
-  toolData: ITools;
 } & InputOutputVieweoptions;
 
 export function ToolInput({
@@ -42,7 +40,6 @@ export function ToolInput({
   onClick,
   options,
   inputEditorActionChild,
-  toolData,
 }: ToolInputProps) {
   if (inputChild) {
     return <div className="col-lg-6">{inputChild}</div>;

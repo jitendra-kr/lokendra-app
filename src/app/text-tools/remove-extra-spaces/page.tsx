@@ -1,3 +1,4 @@
+import ToolRenderer from "@ft/components/ToolContentRenderer";
 import { RemoveExtraSpaces } from "@ft/components/tools/TextTools/RemoveExtraSpaces/RemoveExtraSpaces";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { generateMetaTags } from "@ft/seo/metaTags/generateMetaTags";
@@ -8,7 +9,11 @@ export const metadata: Metadata = generateMetaTags(
 );
 
 function RemoveExtraSpacesPage() {
-  return <RemoveExtraSpaces />;
+  return (
+    <ToolRenderer toolKey={ToolKeys.REMOVE_EXTRA_SPACES}>
+      <RemoveExtraSpaces />;
+    </ToolRenderer>
+  );
 }
 
 export default RemoveExtraSpacesPage;

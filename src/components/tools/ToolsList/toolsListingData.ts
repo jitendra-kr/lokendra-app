@@ -1,9 +1,21 @@
 import { SCREENS } from "@ft/common/enums/screens";
+import { FaqProps } from "@ft/components/common/Faq";
 import { SeoTags } from "../../../seo/seo.interface";
 import seoData from "../../../seo/tools/tools.json";
+import asciiTpStringFaqData from "../AsciiConversion/AsciiToString/asciiToStringFaqData";
+import stringToAsciiFaqData from "../AsciiConversion/StringToAscii/stringToAsciiFaqData";
+import jsonParserFaqData from "../JsonParser/jsonParserFaqData";
+import jsonValidatorFaqData from "../JsonParser/jsonValidatorFaqData";
+import numbersToWordsFaqData from "../NumbersTools/NumbersToWords/numbersToWordsFaqData";
+import SalaryHikePercentageCalculatorFaq from "../SalaryHikePercentageCalculator/SalaryHikePercentageCalculatorFaq";
+import RandomStringGeneratorFaq from "../TextTools/RandomStringGenerator/randomStringGeneratorFaqData";
+import ToLowercaseFaqData from "../ToLowercase/ToLowercaseFaqData";
+import textToUppercaseFaqData from "../ToUppercase/ToUppercaseFaqData";
+import UUIDGeneratorFaqData from "../UUIDGenerator/UUIDGeneratorFaqData";
+import XmlFormatterFaqData from "../XmlTools/XmlFormatter/XmlFormatterFaqData";
 import { ToolKeys } from "./ToolKeys";
 
-export interface ITools extends SeoTags {
+export type ITools = SeoTags & {
   title: string;
   link: SCREENS;
   heading: string;
@@ -12,13 +24,13 @@ export interface ITools extends SeoTags {
   key: ToolKeys;
   toolDescription: string;
   keyFeatures?: string[];
-}
-
-export const jsonParser = "json-parser";
+  faq: FaqProps[];
+};
 
 export const toolsListData: Array<ITools> = [
   {
     title: "Text to ASCII",
+    faq: stringToAsciiFaqData,
     link: SCREENS.STRING_TO_ASCII,
     heading: "Convert Text to ASCII: Online Tool for Easy ASCII Conversion",
     content: "",
@@ -40,6 +52,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "ASCII to Text",
+    faq: asciiTpStringFaqData,
     link: SCREENS.ASCII_TO_STRING,
     heading: "Convert ASCII to Text: Online with Ease and Accuracy",
     content: "",
@@ -72,6 +85,7 @@ export const toolsListData: Array<ITools> = [
     metaDescription: seoData.jsonToString.description,
     list: true,
     key: ToolKeys.JSONtostring,
+    faq: [],
     toolDescription: `Are you looking for a fast, easy-to-use, and accurate tool that can convert JSON object to strings? Look no further! Our cutting-edge converter is the perfect solution for developers and data analysts who need to process JSON data quickly and efficiently.
     \nOne of the standout features of our converter is its speed. We understand the importance of time, especially in the fast-paced world of software development and data analysis. Our tool is optimized to convert JSON to a string in the blink of an eye, allowing you to save precious minutes and focus on other critical tasks.
     \nAccuracy is another key aspect of our tool. We have implemented advanced algorithms and validation techniques to ensure that the conversion process is highly precise. Before converting, our tool validates the JSON data, ensuring that it is well-formed and error-free. This level of accuracy is crucial, particularly when working with large datasets or when data integrity is of the utmost importance.
@@ -81,6 +95,7 @@ export const toolsListData: Array<ITools> = [
   },
   {
     title: "JSON Formatter",
+    faq: jsonParserFaqData,
     link: SCREENS.JSON_PARSER,
     heading: "Online JSON Formatter",
     content: "",
@@ -96,6 +111,7 @@ export const toolsListData: Array<ITools> = [
     \nIt goes beyond basic formatting, offering additional features to enhance the overall functionality. For instance, if the provided JSON has minor issues like trailing commas, wrap key and values to double quotes, fix incorrect quotes, or unnecessary comments, our tool can automatically repair them. This feature saves you the hassle of manually fixing these small errors, allowing you to focus on more critical aspects of your work.     
     \nMoreover, our JSON tool prioritizes data security. We understand the importance of protecting sensitive information, which is why our tool operates in a secure environment, giving you peace of mind to know that your data is safe throughout the formatting process without sending to external servers.      
     `,
+
     keyFeatures: [
       "Easy JSON Formatting: Easily format your JSON data so that it is well-organized and easy to read and understand, improving code comprehension and data analysis.",
       "User-Friendly Interface: Our tool has a user-friendly interface that allows users of all technical levels to access JSON formatting. You can instantly get the formatted version by entering your JSON data.",
@@ -115,6 +131,7 @@ export const toolsListData: Array<ITools> = [
     key: ToolKeys.JSON_VALIDATOR,
     toolDescription: "",
     keyFeatures: [],
+    faq: jsonValidatorFaqData,
   },
   {
     title: "JSON Minifier",
@@ -140,6 +157,7 @@ export const toolsListData: Array<ITools> = [
       "Repair JSON Support: Our tool has a one-of-a-kind Repair JSON feature. It recognizes and fixes syntax problems and inconsistencies within JSON objects, ensuring valid and error-free data.",
       "Download Minified Output: Use the option to download the minified JSON as a downloaded file.",
     ],
+    faq: [],
   },
   {
     title: "JSON to Typescript",
@@ -161,6 +179,7 @@ Whether you're a seasoned developer or just starting out, our tool is suitable f
       "In addition to Typescript transformation, our tool has a special Repair JSON capability that detects and corrects syntax mistakes in JSON automatically to make sure the JSON data is error-free.",
       "Before the transformation, you can format JSON data using our tool to give it a well-organized, readable manner.",
     ],
+    faq: [],
   },
   {
     title: "JSON Diff",
@@ -195,9 +214,11 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
       "Repair JSON Support: Our tool contains a special Repair JSON function that, prior to comparison, automatically finds and fixes syntax errors that occur inside JSON objects to ensure precise and error-free data.",
       "JSON Formatting: Our technology also enables you to format JSON data during comparison, providing it with a clear framework and making it simpler to understand for improved data evaluation.",
     ],
+    faq: [],
   },
   {
     title: "JSON to XML",
+    faq: [],
     link: SCREENS.JSON_TO_XML,
     heading: "JSON to XML Converter",
     metaTitle: seoData.JSON_TO_XML.title,
@@ -219,6 +240,7 @@ In summary, our secure JSON Diff tool combines the functionalities of performing
   },
   {
     title: "Text to Uppercase",
+    faq: textToUppercaseFaqData,
     link: SCREENS.TEXT_TO_UPPERCASE,
     heading: "Easily Convert Text to Uppercase Online",
     content:
@@ -249,6 +271,7 @@ Don't waste another minute manually capitalizing text try our Convert Text to Up
   },
   {
     title: "Text to Lowercase",
+    faq: ToLowercaseFaqData,
     link: SCREENS.TEXT_TO_LOWERCASE,
     heading: "Easily Convert Text to Lowercase Online",
     content:
@@ -277,6 +300,7 @@ By using our tool, you can enjoy a multitude of benefits. Firstly, it saves you 
   },
   {
     title: "Word Counter",
+    faq: [],
     link: SCREENS.WORD_COUNTER,
     heading: "Accurate Word Counter Tool",
     content: " Just load your text, System will automatically count words ",
@@ -294,6 +318,7 @@ Accuracy is paramount when it comes to analyzing and understanding your content,
   },
   {
     title: "Replace Space with Underscore",
+    faq: [],
     link: SCREENS.REPLACE_SPACES,
     heading: "Replace Space with Underscore",
     metaTitle: seoData.ReplaceSpaces.title,
@@ -316,6 +341,7 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
   },
   {
     title: "Remove Extra Spaces",
+    faq: [],
     link: SCREENS.REMOVE_EXTRA_SPACES,
     heading: "Easily Remove Extra Spaces",
     metaTitle: seoData.RemoveExtraSpaces.title,
@@ -338,6 +364,7 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
   },
   {
     title: "Remove Spaces",
+    faq: [],
     link: SCREENS.REMOVE_SPACES,
     heading: "Easily Remove Spaces",
     metaTitle: seoData.RemoveSpaces.title,
@@ -360,6 +387,7 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
 
   {
     title: "URL Decoder",
+    faq: [],
     link: SCREENS.URL_DECODE,
     heading: "URL Decoder",
     content:
@@ -388,6 +416,7 @@ Another important quality of our tool is its accuracy. We understand that precis
   },
   {
     title: "URL Encoder",
+    faq: [],
     link: SCREENS.URL_ENCODE,
     heading: "URL Encoder",
     content:
@@ -415,6 +444,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "UUID Generator",
+    faq: UUIDGeneratorFaqData,
     link: SCREENS.UUID_GENERATOR,
     heading: "UUID Generator - v4",
     content:
@@ -434,6 +464,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "Number To Word",
+    faq: numbersToWordsFaqData,
     link: SCREENS.NUMBER_TO_WORDS,
     heading: "Number To Word Converter",
     metaTitle: seoData.NUMBER_TO_WORDS.title,
@@ -451,6 +482,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "",
+    faq: [],
     link: SCREENS.HOME,
     heading: "",
     content: "",
@@ -463,6 +495,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "Salary Hike Calculator",
+    faq: SalaryHikePercentageCalculatorFaq,
     link: SCREENS.SALARY_HIKE_PERCENTAGE_CALCULATOR,
     heading: "Online Salary Hike Calculator",
     metaTitle: seoData.salaryHikePercentageCalculator.title,
@@ -483,6 +516,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "XML Formatter",
+    faq: XmlFormatterFaqData,
     link: SCREENS.XML_FORMATTER,
     heading: "XML Formatter",
     metaTitle: seoData.XML_FORMATTER.title,
@@ -504,6 +538,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "XML Minifier",
+    faq: [],
     link: SCREENS.XML_MINIFIER,
     heading: "XML Minifier",
     metaTitle: seoData.XML_MINIFIER.title,
@@ -526,6 +561,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "XML to JSON",
+    faq: [],
     link: SCREENS.XML_TO_JSON,
     heading: "XML to JSON Converter",
     metaTitle: seoData.XML_TO_JSON.title,
@@ -547,6 +583,7 @@ It is also incredibly user-friendly and 100% secure. You don't need to be a tech
   },
   {
     title: "Random String Generator",
+    faq: RandomStringGeneratorFaq,
     link: SCREENS.GENERATE_RANDOM_STRING,
     heading: "Random String Generator",
     metaTitle: seoData.GENERATE_RANDOM_STRING.title,
