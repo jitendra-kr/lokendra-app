@@ -1,5 +1,3 @@
-import { get } from "lodash";
-
 export const formatXml = async (
   xml: string,
 ): Promise<{
@@ -19,6 +17,7 @@ export const formatXml = async (
     result.data = data;
     return result;
   } catch (error) {
+    const get = (await import("lodash")).get;
     const msg = `${get(error, "name") + " \n" + get(error, "message")}  `;
     result.msg = msg;
     return result;
