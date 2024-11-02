@@ -1,3 +1,4 @@
+"use client";
 import { CaretRightOutlined } from "@ant-design/icons";
 import { Collapse, CollapseProps } from "antd";
 
