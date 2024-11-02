@@ -1,4 +1,4 @@
-import { Select } from "antd";
+import Select from "antd/es/select";
 
 const localeOptions = [
   { value: "pt-BR", label: "Brazil (pt-BR)" },

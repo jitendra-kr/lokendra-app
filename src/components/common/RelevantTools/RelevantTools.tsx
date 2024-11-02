@@ -1,4 +1,3 @@
-"use client";
 import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
 import { SCREENS } from "@ft/common/enums/screens";
 import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";

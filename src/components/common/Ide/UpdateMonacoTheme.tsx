@@ -1,5 +1,6 @@
 "use client";
-import { Select, Space, Tooltip } from "antd";
+
+import Select from "antd/es/select";
 
 type UpdateThemeProps = {
   handleThemeChange: (value: string) => void;
@@ -7,21 +8,17 @@ type UpdateThemeProps = {
 
 export function UpdateMonacoTheme({ handleThemeChange }: UpdateThemeProps) {
   return (
-    <Tooltip title="Change Editor Theme">
-      <Space wrap style={{ marginRight: "5px" }}>
-        <Select
-          aria-label="change-theme"
-          defaultValue="light"
-          style={{ width: 120 }}
-          onChange={handleThemeChange}
-          options={[
-            { value: "light", label: "Light" },
-            { value: "vs-dark", label: "Vs Dark" },
-            { value: "hc-black", label: "Hc Black" },
-            { value: "hc-light", label: "Hc Light" },
-          ]}
-        />
-      </Space>
-    </Tooltip>
+    <Select
+      aria-label="change-theme"
+      defaultValue="light"
+      style={{ width: 120, marginRight: "5px" }}
+      onChange={handleThemeChange}
+      options={[
+        { value: "light", label: "Light" },
+        { value: "vs-dark", label: "Vs Dark" },
+        { value: "hc-black", label: "Hc Black" },
+        { value: "hc-light", label: "Hc Light" },
+      ]}
+    />
   );
 }

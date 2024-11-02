@@ -1,7 +1,8 @@
 "use client";
 import { CustomNumberInput } from "@ft/common/components/UiComponent/CustomInput";
 import { CustomTextarea } from "@ft/common/components/UiComponent/CustomTextarea";
-import { Select, Tooltip } from "antd";
+
+import Select from "antd/es/select";
 import { CSSProperties, Dispatch, SetStateAction, useState } from "react";
 import { Label } from "../../SalaryHikePercentageCalculator/Label";
 import {
@@ -83,30 +84,29 @@ export function RandomStringGeneratorOptions({
         }}
       >
         <div>
-          <Tooltip title="Locale">
-            <Label style={LabelStyle} label="Format:"></Label>
-            <div>
-              <Select
-                value={randomStringOptionsValue}
-                defaultValue={inputValue.format}
-                style={{ width: 400 }}
-                onChange={(value) => {
-                  setRandomStringOptionsValue(value);
-                  setInputValue((previous) => ({
-                    ...previous,
-                    format: value,
-                    customAlphabets: "",
-                  }));
-                }}
-                options={RandomStringOptions}
-              />
-            </div>
-          </Tooltip>
+          <Label style={LabelStyle} label="Format:"></Label>
+          <div style={{ marginTop: "10px" }}>
+            <Select
+              aria-label="Choose format"
+              value={randomStringOptionsValue}
+              defaultValue={inputValue.format}
+              style={{ width: 400 }}
+              onChange={(value) => {
+                setRandomStringOptionsValue(value);
+                setInputValue((previous) => ({
+                  ...previous,
+                  format: value,
+                  customAlphabets: "",
+                }));
+              }}
+              options={RandomStringOptions}
+            />
+          </div>
         </div>
 
         <div style={{ alignSelf: "center", marginTop: "20px" }}>
           <Label style={LabelStyle} label="String length:"></Label>
-          <div>
+          <div style={{ marginTop: "10px" }}>
             <CustomNumberInput
               maxValue={70}
               defaultValue={inputValue.stringLength}
@@ -122,8 +122,7 @@ export function RandomStringGeneratorOptions({
         </div>
         <div style={{ alignSelf: "center", marginTop: "20px" }}>
           <Label style={LabelStyle} label="How Many Strings:"></Label>
-
-          <div>
+          <div style={{ marginTop: "10px" }}>
             <CustomNumberInput
               maxValue={1000}
               defaultValue={inputValue.howManyStrings}
@@ -147,7 +146,7 @@ export function RandomStringGeneratorOptions({
             }
           ></Label>
 
-          <div>
+          <div style={{ marginTop: "10px" }}>
             <CustomTextarea
               onChange={(value: string) => {
                 if (value) {

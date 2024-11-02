@@ -1,7 +1,6 @@
 "use client";
 import { AsciiToTextType, asciiToText } from "ascii-text-converter";
 import { useCallback, useEffect, useState } from "react";
-
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 import { SelectASCIIConversionType } from "../common";
 
@@ -30,15 +29,13 @@ function AsciiToString() {
   }, [input, inputType, onChangeCb]);
 
   return (
-    <>
-      <InputOutputViewer
-        byte={byte}
-        onChangeCb={onChangeCb}
-        inputEditorActionChild={
-          <SelectASCIIConversionType setInputType={setInputType} />
-        }
-      />
-    </>
+    <InputOutputViewer
+      byte={byte}
+      onChangeCb={onChangeCb}
+      inputEditorActionChild={
+        <SelectASCIIConversionType setInputType={setInputType} />
+      }
+    />
   );
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import { Select, Space, Tooltip } from "antd";
+import Select from "antd/es/select";
 import { AsciiToTextType } from "ascii-text-converter";
 import { Dispatch, SetStateAction } from "react";
 
@@ -22,15 +22,11 @@ export function SelectASCIIConversionType({
   ];
 
   return (
-    <Tooltip title="Input Format">
-      <Space wrap style={{ marginRight: "5px" }}>
-        <Select
-          defaultValue="decimal"
-          style={{ width: 230 }}
-          onChange={setInputType}
-          options={options}
-        />
-      </Space>
-    </Tooltip>
+    <Select
+      defaultValue="decimal"
+      style={{ width: 230, marginRight: "5px", marginTop: "5px" }}
+      onChange={setInputType}
+      options={options}
+    />
   );
 }

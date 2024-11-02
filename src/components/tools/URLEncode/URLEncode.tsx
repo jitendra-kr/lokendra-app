@@ -1,5 +1,5 @@
 "use client";
-import { Select, Space, Tooltip } from "antd";
+import Select from "antd/es/select";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { EncodeURLInJavascript } from "./EncodeURLInJavascript";
@@ -12,19 +12,15 @@ function SelectEncodeFn({
   selectEncodingFn: Dispatch<SetStateAction<SelectEncodingFn>>;
 }) {
   return (
-    <Tooltip title="Change encoding function">
-      <Space wrap style={{ marginRight: "5px", marginTop: "5px" }}>
-        <Select
-          defaultValue="encodeURIComponent"
-          style={{ width: 190 }}
-          onChange={(value: SelectEncodingFn) => selectEncodingFn(value)}
-          options={[
-            { value: "encodeURIComponent", label: "encodeURIComponent" },
-            { value: "encodeURI", label: "encodeURI" },
-          ]}
-        />
-      </Space>
-    </Tooltip>
+    <Select
+      defaultValue="encodeURIComponent"
+      style={{ width: 190, marginRight: "5px", marginTop: "5px" }}
+      onChange={(value: SelectEncodingFn) => selectEncodingFn(value)}
+      options={[
+        { value: "encodeURIComponent", label: "encodeURIComponent" },
+        { value: "encodeURI", label: "encodeURI" },
+      ]}
+    />
   );
 }
 
