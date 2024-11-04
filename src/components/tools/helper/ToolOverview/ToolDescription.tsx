@@ -1,3 +1,4 @@
+import { PTag } from "@ft/components/common/HtmlTags/PTag";
 import ToolDescriptionStyles from "./ToolDescription.module.css";
 
 export type ConvertedOutputByToolsProps = {
@@ -19,7 +20,7 @@ export const ToolDescription = ({
         How {`${name}`} is beneficial for you?
       </h2>
       <div className={ToolDescriptionStyles.container}>
-        <p className={ToolDescriptionStyles.content}>{content}</p>
+        <PTag text={content} />
       </div>
 
       {keyFeatures && keyFeatures.length && (
@@ -31,9 +32,8 @@ export const ToolDescription = ({
                 <li
                   key={i}
                   style={{
-                    fontFamily: "Inter",
                     padding: "4px",
-                    fontSize: "20px",
+                    fontSize: "22px",
                   }}
                 >
                   {r}

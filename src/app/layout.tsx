@@ -3,8 +3,6 @@ import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnal
 import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
-
 import StoreProvider from "./StoreProvider";
 
 const Feedback = dynamic(() => import("@ft/components/Feedback/Feedback"));
@@ -12,8 +10,6 @@ const MainFooter = dynamic(() => import("@ft/components/Footer"));
 const LazyBootstrapComponentCss = dynamic(
   () => import("./LazyBootstrapComponentCss"),
 );
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -25,7 +21,7 @@ export default function RootLayout({
       <LazyBootstrapComponentCss />
       <StoreProvider>
         <AntdRegistry>
-          <body className={inter.className}>
+          <body>
             <MainHeader />
             <div className="row" style={{ minHeight: "100vh" }}>
               <div className="col-lg-1 col-md-2 col-sm-12 col-12"></div>

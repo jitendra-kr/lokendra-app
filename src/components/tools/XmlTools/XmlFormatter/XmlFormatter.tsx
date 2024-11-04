@@ -7,64 +7,60 @@ import JsonViewer from "../../helper/JsonViewer/JsonViewer";
 
 export function XmlFormatter() {
   const [byte, setByte] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [editorError, setEditorError] = useState<string>("");
+  const [errors, setErrors] = useState<{ error: string; editorError: string }>({
+    error: "",
+    editorError: "",
+  });
 
   const onError = (errorMsg: string | undefined) => {
-    if (errorMsg) {
-      setEditorError(errorMsg);
-      return;
-    }
-    setEditorError("");
+    setErrors((prev) => ({ ...prev, editorError: errorMsg || "" }));
   };
 
   const resetStates = () => {
-    setError("");
+    setErrors({ error: "", editorError: "" });
     setByte("");
   };
 
-  async function ideCb(str: string | undefined) {
+  const onChange = async (str: string | undefined) => {
     if (!str) {
       resetStates();
       return;
     }
 
-    if (editorError) {
-      setEditorError("");
+    if (errors.editorError) {
+      setErrors((prev) => ({ ...prev, editorError: "" }));
     }
-    if (error) {
-      setError("");
+    if (errors.error) {
+      setErrors((prev) => ({ ...prev, error: "" }));
     }
     const { data, msg } = await formatXml(str);
     if (data) {
       setByte(data);
     }
     if (msg) {
-      setError(msg);
+      setErrors((prev) => ({ ...prev, error: msg }));
     }
-  }
+  };
 
   return (
-    <>
-      <InputOutputViewer
-        inputChild={
-          <Ide
-            language="xml"
-            cb={ideCb}
-            error={onError}
-            options={{ repair: false }}
-          />
-        }
-        outputChild={
-          <JsonViewer
-            language="xml"
-            content={byte}
-            error={error}
-            editorError={editorError}
-          />
-        }
-        byte={byte}
-      />
-    </>
+    <InputOutputViewer
+      inputChild={
+        <Ide
+          language="xml"
+          cb={onChange}
+          error={onError}
+          options={{ repair: false }}
+        />
+      }
+      outputChild={
+        <JsonViewer
+          language="xml"
+          content={byte}
+          error={errors.error}
+          editorError={errors.editorError}
+        />
+      }
+      byte={""}
+    />
   );
 }

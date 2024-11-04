@@ -72,11 +72,10 @@ export function WhatAreTheNamesLargeNumbers() {
         </li>
       </ul>
       <p>
-        {" "}
         References for
         <Link href={"https://en.wikipedia.org/wiki/Names_of_large_numbers"}>
           &nbsp; Names of large numbers
-        </Link>{" "}
+        </Link>
       </p>
     </>
   );

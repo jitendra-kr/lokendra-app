@@ -1,7 +1,7 @@
 .text {
-  font-size: 20px;
-  color: #666;
+  font-size: 22px;
   white-space: pre-wrap;
-  font-family: "Inter";
   text-align: center;
+  line-height: 1.5;
+  text-align: left;
 }

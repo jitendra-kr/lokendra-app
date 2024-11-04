@@ -5,7 +5,7 @@ export default function WhatIsFireboxTools() {
   return (
     <div style={{ marginBottom: "80px" }}>
       <H2Tag heading="What is FireboxTools?" />
-      <p style={{ fontSize: "19px", marginTop: "20px" }}>
+      <p style={{ fontSize: "22px", marginTop: "20px" }}>
         FireboxTools is a powerful and secure online platform which comes with
         such tools as code formatter, minifier, beautifier, UUID generate,
         converter, and many more. Discover a suite of time-saving tools for both

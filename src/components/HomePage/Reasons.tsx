@@ -21,7 +21,11 @@ export default function Reasons() {
         {reasons.map((r, i) => (
           <li
             key={i}
-            style={{ fontFamily: "Inter", padding: "4px", color: "#000" }}
+            style={{
+              padding: "4px",
+              color: "#000",
+              fontSize: "22px",
+            }}
           >
             {r}
           </li>

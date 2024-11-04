@@ -1,7 +1,6 @@
-import dynamic from "next/dynamic";
-const ToolsList = dynamic(() => import("../tools/ToolsList/ToolsList"));
-const Reasons = dynamic(() => import("./Reasons"));
-const WhatIsFireboxTools = dynamic(() => import("./WhatIsFireboxTools"));
+import ToolsList from "../tools/ToolsList/ToolsList";
+import Reasons from "./Reasons";
+import WhatIsFireboxTools from "./WhatIsFireboxTools";
 
 export default function HomePage() {
   return (
