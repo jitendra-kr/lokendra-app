@@ -1,6 +1,6 @@
 "use client";
 import { CaretRightOutlined } from "@ant-design/icons";
-import { Collapse, CollapseProps } from "antd";
+import Collapse, { CollapseProps } from "antd/es/collapse/Collapse";
 
 export default function CustomCollapse({
   faqData,

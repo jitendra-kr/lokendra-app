@@ -1,7 +1,9 @@
 "use client";
 
 import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
-import { Col, Input, Row } from "antd";
+import Col from "antd/es/grid/col";
+import Row from "antd/es/grid/row";
+import Input from "antd/es/input/Input";
 import { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 

@@ -1,6 +1,5 @@
 "use client";
-import { Button } from "antd";
-import { ButtonType } from "antd/lib/button";
+import Button, { ButtonType } from "antd/lib/button";
 import { CSSProperties, ReactNode } from "react";
 
 type ButtonUsingProps = {

@@ -2,7 +2,8 @@
 import { ConvertedOutputByTools } from "@ft/components/tools/helper/ConvertedOutputByTools/ConvertedOutputByTools";
 import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useGetUrlPath } from "@ft/hooks/useGetUrl";
-import { Button, Modal } from "antd";
+import Button from "antd/es/button/button";
+import Modal from "antd/es/modal";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { BiFullscreen } from "react-icons/bi";

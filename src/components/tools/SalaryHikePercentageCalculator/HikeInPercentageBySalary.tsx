@@ -1,5 +1,6 @@
 "use client";
-import { Form, InputNumber } from "antd";
+import Form from "antd/es/form";
+import InputNumber from "antd/es/input-number";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { messageError } from "../../../utils/antd";

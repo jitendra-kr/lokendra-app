@@ -1,4 +1,5 @@
-import { Col, Row } from "antd";
+import Col from "antd/es/grid/col";
+import Row from "antd/es/grid/row";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

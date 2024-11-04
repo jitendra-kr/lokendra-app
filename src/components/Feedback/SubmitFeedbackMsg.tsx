@@ -1,5 +1,5 @@
 "use client";
-import { Modal } from "antd";
+import Modal from "antd/es/modal";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

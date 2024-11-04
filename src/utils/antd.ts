@@ -1,6 +1,6 @@
 "use client";
-import { message } from "antd";
-import { get } from "lodash";
+import message from "antd/es/message";
+import get from "lodash/get";
 
 type Message = {
   content?: string;

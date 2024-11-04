@@ -1,5 +1,5 @@
 "use client";
-import { Input } from "antd";
+import Input from "antd/es/input/Input";
 import { useEffect, useState } from "react";
 import { ConvertedOutputByTools } from "../helper/ConvertedOutputByTools/ConvertedOutputByTools";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";

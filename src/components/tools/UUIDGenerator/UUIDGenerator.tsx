@@ -1,5 +1,5 @@
 "use client";
-import { message } from "antd";
+import message from "antd/es/message";
 import { useEffect, useState } from "react";
 import { messageError } from "../../../utils/antd";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";

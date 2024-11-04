@@ -1,5 +1,5 @@
 import CustomCollapse from "@ft/common/components/UiComponent/CustomCollapse";
-import type { CollapseProps } from "antd";
+import { CollapseProps } from "antd/es/collapse/Collapse";
 import { H2Tag } from "../HtmlTags/H2Tag";
 
 export type FaqProps = {

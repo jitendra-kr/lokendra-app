@@ -1,9 +1,10 @@
 "use client";
-import { Form, InputNumber } from "antd";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
 import { messageError } from "@ft/utils/antd";
+import Form from "antd/es/form";
+import InputNumber from "antd/es/input-number";
 import styles from "./CalculationFormula.module.css";
 import { CalculatorOutput } from "./CalculatorOutput";
 import { Label } from "./Label";

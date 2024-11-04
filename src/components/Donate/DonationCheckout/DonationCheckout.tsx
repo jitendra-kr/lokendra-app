@@ -1,7 +1,8 @@
-"use client"
+"use client";
 // import CurrencyInput from "react-currency-input-field";
-import { Modal } from "antd";
+
 // import { useRouter } from "next/router";
+import Modal from "antd/es/modal";
 import { useState } from "react";
 import { PaypalCheckout } from "./PaypalCheckout";
 

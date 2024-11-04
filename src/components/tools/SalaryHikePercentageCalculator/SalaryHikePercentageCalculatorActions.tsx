@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "antd";
+import Button from "antd/es/button/button";
 import { SalaryHikePercentageCalculatorConst } from "./const";
 
 export function SalaryHikePercentageCalculatorActions({

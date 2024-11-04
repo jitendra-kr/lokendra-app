@@ -1,5 +1,6 @@
 "use client";
-import { Input, InputNumber } from "antd";
+import InputNumber from "antd/es/input-number";
+import Input from "antd/es/input/Input";
 import { CSSProperties } from "react";
 
 type CustomInputProps = {

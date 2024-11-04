@@ -1,4 +1,5 @@
-import { Col, Row, Switch, Upload } from "antd";
+import Col from "antd/es/grid/col";
+import Row from "antd/es/grid/row";
 import { get } from "lodash";
 import { ReactNode } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -7,6 +8,8 @@ import { PiBracketsCurlyBold } from "react-icons/pi";
 
 import { COLOR_CONST } from "@ft/constants/colorConstant";
 import beautifyJSON from "@ft/utils/json/beautifyJSON";
+import Switch from "antd/es/switch";
+import Upload from "antd/es/upload";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 
 type EditorActionsProps = {
