@@ -1,12 +1,11 @@
-import { EditorProps } from "@monaco-editor/react";
+import { EditorProps, loader } from "@monaco-editor/react";
 import dynamic from "next/dynamic";
 import LoadingMonaco from "./LoadingMonaco";
 
-// import { loader } from "@monaco-editor/react";
-
-// // https://github.com/suren-atoyan/monaco-react/issues/12
-// // load monaco from node_modules
-// loader.config({ paths: { vs: "../vs" } });
+// custom configure load to use latest version of monaco-editor
+loader.config({
+  paths: { vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.0/min/vs" },
+});
 
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
