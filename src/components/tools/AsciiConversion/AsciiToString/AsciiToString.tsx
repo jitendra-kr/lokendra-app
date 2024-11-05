@@ -1,8 +1,21 @@
 "use client";
+import { CustomSelect } from "@ft/common/components/UiComponent/CustomSelect";
 import { AsciiToTextType, asciiToText } from "ascii-text-converter";
 import { useCallback, useEffect, useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
-import { SelectASCIIConversionType } from "../common";
+
+const options: {
+  label: string;
+  value: AsciiToTextType;
+}[] = [
+  { value: "decimal", label: "Decimal ASCII" },
+  { value: "octal", label: "Octal ASCII" },
+  { value: "binary", label: "Binary ASCII" },
+  {
+    value: "hex",
+    label: "Hexadecimal ASCII",
+  },
+];
 
 function AsciiToString() {
   const [byte, setByte] = useState("");
@@ -33,7 +46,14 @@ function AsciiToString() {
       byte={byte}
       onChangeCb={onChangeCb}
       inputEditorActionChild={
-        <SelectASCIIConversionType setInputType={setInputType} />
+        <CustomSelect
+          onChange={(value: AsciiToTextType) => {
+            setInputType(value);
+          }}
+          label="Select type"
+          options={options}
+          defaultValue={options[0].value}
+        />
       }
     />
   );

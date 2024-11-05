@@ -3,14 +3,12 @@ import {
   updateSampleData,
   updateToolsInput,
 } from "@ft/common/state/tools/toolsInput.slice";
-import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { messageError, messageSuccess } from "@ft/utils/antd";
 import { repairJSON } from "@ft/utils/json/repairJSON";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
-import { AiFillTool } from "react-icons/ai";
 import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 import CustomMonacoEditor from "./CustomMonacoEditor";
@@ -157,29 +155,21 @@ export default function Ide({
         // eslint-disable-next-line react/no-children-prop
         children={
           <>
-            <EditorActionsButtons
-              // eslint-disable-next-line react/no-children-prop
-              children={
-                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
-              }
-            />
+            <EditorActionsButtons>
+              <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+            </EditorActionsButtons>
             {options && options.repair && (
-              <EditorActionsButtons
-                // eslint-disable-next-line react/no-children-prop
-                children={
-                  <InputOutputActionButton
-                    name="Repair"
-                    onClick={onRepairClick}
-                    mdIcon={<AiFillTool color={COLOR_CONST.defaultIcon} />}
-                    tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
-                  />
-                }
-              />
+              <EditorActionsButtons>
+                <InputOutputActionButton
+                  name="Repair"
+                  onClick={onRepairClick}
+                  tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+                />
+              </EditorActionsButtons>
             )}
             {options?.format && (
               <FormatInput value={globalInputValue ?? ""} cb={onFormat} />
             )}
-            <></>
           </>
         }
         childrenAfter={

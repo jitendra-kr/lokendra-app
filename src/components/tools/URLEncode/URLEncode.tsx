@@ -1,10 +1,14 @@
 "use client";
-import Select from "antd/es/select";
+import CustomSelect from "@ft/common/components/UiComponent/CustomSelect";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import { EncodeURLInJavascript } from "./EncodeURLInJavascript";
 
 type SelectEncodingFn = "encodeURIComponent" | "encodeURI";
+const options: { value: SelectEncodingFn; label: SelectEncodingFn }[] = [
+  { value: "encodeURIComponent", label: "encodeURIComponent" },
+  { value: "encodeURI", label: "encodeURI" },
+];
 
 function SelectEncodeFn({
   selectEncodingFn,
@@ -12,14 +16,13 @@ function SelectEncodeFn({
   selectEncodingFn: Dispatch<SetStateAction<SelectEncodingFn>>;
 }) {
   return (
-    <Select
-      defaultValue="encodeURIComponent"
-      style={{ width: 190, marginRight: "5px", marginTop: "5px" }}
-      onChange={(value: SelectEncodingFn) => selectEncodingFn(value)}
-      options={[
-        { value: "encodeURIComponent", label: "encodeURIComponent" },
-        { value: "encodeURI", label: "encodeURI" },
-      ]}
+    <CustomSelect
+      onChange={(value: SelectEncodingFn) => {
+        selectEncodingFn(value);
+      }}
+      label="Select format"
+      options={options}
+      defaultValue={options[0].value}
     />
   );
 }

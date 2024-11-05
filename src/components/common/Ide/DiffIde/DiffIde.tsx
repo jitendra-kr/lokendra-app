@@ -4,7 +4,6 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/webpack-resolver";
 import AceEditor from "react-ace";
 
-import { GiMagnifyingGlass } from "react-icons/gi";
 import { CopyToClip } from "../../../tools/helper/CopyToClip/CopyToClip";
 import { InputOutputActionButton } from "../../Buttons/InputOutputActionButton";
 import { EditorActions } from "../EditorActions";
@@ -37,7 +36,6 @@ export default function DiffIde({
               <InputOutputActionButton
                 name="Compare"
                 onClick={onCompareClick}
-                mdIcon={<GiMagnifyingGlass size={18} />}
                 tooltip="Perform Diff"
                 styles={{
                   backgroundColor: "lightseagreen",

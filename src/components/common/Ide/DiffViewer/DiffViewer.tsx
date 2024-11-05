@@ -100,9 +100,7 @@ export default function DiffViewer({
                 </>
               }
             >
-              <span style={{ marginTop: "5px" }}>
-                <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
-              </span>
+              <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
             </EditorActions>
           </>
         </Col>

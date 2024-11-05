@@ -1,10 +1,7 @@
 import { SCREENS } from "@ft/common/enums/screens";
 import { InputOutputActionButton } from "@ft/components/common/Buttons/InputOutputActionButton";
-import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { copyToClipboard } from "@ft/utils/utils";
-import { FaShareAlt } from "react-icons/fa";
-
 
 type ShareDataProps = {
   data: string;
@@ -38,7 +35,6 @@ export function ShareData({ data }: ShareDataProps) {
     <InputOutputActionButton
       name="Share"
       onClick={handleShareUrlClick}
-      mdIcon={<FaShareAlt color={COLOR_CONST.defaultIcon} />}
       tooltip="Share Data"
     />
   );

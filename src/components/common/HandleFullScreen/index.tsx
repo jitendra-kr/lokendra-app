@@ -1,14 +1,10 @@
 "use client";
 import { ConvertedOutputByTools } from "@ft/components/tools/helper/ConvertedOutputByTools/ConvertedOutputByTools";
-import { COLOR_CONST } from "@ft/constants/colorConstant";
 import { useGetUrlPath } from "@ft/hooks/useGetUrl";
-import Button from "antd/es/button/button";
 import Modal from "antd/es/modal";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { BiFullscreen } from "react-icons/bi";
-import { RiFullscreenExitLine } from "react-icons/ri";
-
+import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 const JsonViewer = dynamic(
   () => import("@ft/components/tools/helper/JsonViewer/JsonViewer"),
 );
@@ -29,10 +25,7 @@ export default function HandleFullScreen({ content }: { content: string }) {
     const opened = document.getElementsByClassName("fullscreenModal").item(0);
     if (!opened) {
       setOpen(true);
-      return;
     }
-    setOpen(false);
-    Modal.destroyAll();
   };
 
   return (
@@ -45,9 +38,17 @@ export default function HandleFullScreen({ content }: { content: string }) {
         // eslint-disable-next-line react/no-children-prop
         children={
           pathname && decideFullScreenModal.includes(pathname) ? (
-            <JsonViewer content={content} error="" editorError="" />
+            <JsonViewer
+              content={content}
+              error=""
+              editorError=""
+              hideOutputActions={true}
+            />
           ) : (
-            <ConvertedOutputByTools content={content} />
+            <ConvertedOutputByTools
+              content={content}
+              hideOutputActions={true}
+            />
           )
         }
         width="90%"
@@ -59,20 +60,16 @@ export default function HandleFullScreen({ content }: { content: string }) {
         }}
         destroyOnClose={true}
         closeIcon={
-          <Button
-            type="primary"
-            onClick={openModal}
-            style={{ marginTop: "8px" }}
-          >
-            <RiFullscreenExitLine size={20} color={COLOR_CONST.defaultIcon} />
-          </Button>
+          <InputOutputActionButton
+            onClick={() => {
+              setOpen(false);
+              Modal.destroyAll();
+            }}
+            name={"Close"}
+          />
         }
       />
-      <Button
-        type="primary"
-        icon={<BiFullscreen size={20} color={COLOR_CONST.defaultIcon} />}
-        onClick={openModal}
-      ></Button>
+      <InputOutputActionButton onClick={openModal} name={"Fullscreen"} />
     </>
   );
 }

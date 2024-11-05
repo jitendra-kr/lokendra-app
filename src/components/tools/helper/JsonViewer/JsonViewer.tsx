@@ -7,6 +7,7 @@ type JsonViewerProps = {
   content: string;
   error: string;
   editorError: string;
+  hideOutputActions?: boolean;
 } & OutputIdeProps;
 
 const JsonViewer = ({
@@ -15,6 +16,7 @@ const JsonViewer = ({
   editorError,
   theme,
   language,
+  hideOutputActions,
 }: JsonViewerProps) => {
   if (error) {
     return (
@@ -27,7 +29,7 @@ const JsonViewer = ({
 
   return (
     <div>
-      <ToolOutputActions content={content} />
+      {!hideOutputActions && <ToolOutputActions content={content} />}
       <OutputIde value={content} theme={theme} language={language} />
     </div>
   );

@@ -1,33 +1,26 @@
 "use client";
-import Button, { ButtonType } from "antd/lib/button";
-import { CSSProperties, ReactNode } from "react";
+import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
+import { CSSProperties } from "react";
 
-type ButtonUsingProps = {
+type InputOutputActionButtonProps = {
   onClick: () => void;
-  mdIcon?: ReactNode;
   name: string;
   tooltip?: string;
   styles?: CSSProperties;
   textStyles?: CSSProperties;
-  type?: ButtonType;
 };
 
 export function InputOutputActionButton({
   onClick,
   name,
-  styles,
-  textStyles,
-  type = "primary",
-}: ButtonUsingProps) {
+}: InputOutputActionButtonProps) {
   return (
-    <Button
-      type={type}
+    <CustomButton
+      name={name}
       onClick={onClick}
-      style={{ marginRight: "5px", ...styles }}
-    >
-      <span style={{ color: "white", ...textStyles }}>
-        <b>{name}</b>
-      </span>
-    </Button>
+      textStyles={{ color: "white", fontSize: "small" }}
+      styles={{ height: "30px" }}
+      type="primary"
+    />
   );
 }

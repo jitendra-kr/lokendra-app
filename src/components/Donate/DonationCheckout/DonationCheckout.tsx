@@ -59,7 +59,7 @@ export function DonationCheckout() {
               setValue(value);
             }}
           />
-          <Select
+          <select
             showSearch
             defaultValue={currency}
             style={{ width: 100, marginRight: "15px" }}
@@ -75,21 +75,8 @@ export function DonationCheckout() {
               marginTop: "35px",
             }}
           >
-            <Button
-              size="large"
-              style={{ marginRight: "10px" }}
-              onClick={() => setCancel(true)}
-            >
-              Cancel
-            </Button>
-            <Button
-              type="primary"
-              size="large"
-              onClick={showModal}
-              disabled={!value || Number(value) <= 0}
-            >
-              Next
-            </Button>
+
+
           </div>
         </div> */}
 

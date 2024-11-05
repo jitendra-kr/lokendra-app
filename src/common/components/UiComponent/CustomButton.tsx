@@ -1,24 +1,65 @@
 "use client";
-import { ButtonType } from "antd/lib/button";
-import Button from "antd/lib/button/button";
+
 import React, { CSSProperties } from "react";
 
+declare const _ButtonTypes: readonly [
+  "default",
+  "primary",
+  "dashed",
+  "link",
+  "text",
+];
+export type ButtonType = (typeof _ButtonTypes)[number];
+
 type CustomButtonProps = {
-  style?: CSSProperties | undefined;
-  children: React.ReactNode;
-  type: ButtonType;
+  name: string;
+  styles?: CSSProperties;
+  textStyles?: CSSProperties;
+  children?: React.ReactNode;
+  type?: ButtonType;
   onClick: () => void;
+  disable?: boolean;
 };
 
 export function CustomButton({
-  style,
+  styles,
   children,
   onClick,
-  type = "default",
+  textStyles,
+  name,
+  disable,
+  type = "primary",
 }: CustomButtonProps) {
   return (
-    <Button type={type} size="large" style={style} onClick={onClick}>
-      {children}
-    </Button>
+    <button
+      disabled={disable}
+      type="submit"
+      onClick={onClick}
+      style={
+        type === "primary"
+          ? {
+              marginRight: "5px",
+              height: "40px",
+              borderColor: "#1677FF",
+              borderRadius: "5px",
+              backgroundColor: "#1677FF",
+              cursor: "pointer",
+              ...styles,
+            }
+          : {
+              marginRight: "5px",
+              height: "40px",
+              borderRadius: "5px",
+              cursor: "pointer",
+              ...styles,
+            }
+      }
+    >
+      {children || (
+        <b style={{ color: "white", fontSize: "larger", ...textStyles }}>
+          {name}
+        </b>
+      )}
+    </button>
   );
 }

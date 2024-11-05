@@ -2,7 +2,7 @@
 import { CustomNumberInput } from "@ft/common/components/UiComponent/CustomInput";
 import { CustomTextarea } from "@ft/common/components/UiComponent/CustomTextarea";
 
-import Select from "antd/es/select";
+import CustomSelect from "@ft/common/components/UiComponent/CustomSelect";
 import { CSSProperties, Dispatch, SetStateAction, useState } from "react";
 import { Label } from "../../SalaryHikePercentageCalculator/Label";
 import {
@@ -86,11 +86,7 @@ export function RandomStringGeneratorOptions({
         <div>
           <Label style={LabelStyle} label="Format:"></Label>
           <div style={{ marginTop: "10px" }}>
-            <Select
-              aria-label="Choose format"
-              value={randomStringOptionsValue}
-              defaultValue={inputValue.format}
-              style={{ width: 400 }}
+            <CustomSelect
               onChange={(value) => {
                 setRandomStringOptionsValue(value);
                 setInputValue((previous) => ({
@@ -99,7 +95,9 @@ export function RandomStringGeneratorOptions({
                   customAlphabets: "",
                 }));
               }}
+              label="Select format"
               options={RandomStringOptions}
+              defaultValue={inputValue.format}
             />
           </div>
         </div>

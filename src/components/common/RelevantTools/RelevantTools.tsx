@@ -38,18 +38,19 @@ export function RelevantTools({
             <CustomButton
               type="default"
               key={data?.link}
-              style={{ marginRight: "8px", marginBottom: "8px" }}
+              styles={{
+                height: "30px",
+                marginRight: "8px",
+                marginBottom: "8px",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderBottomColor: "blue",
+              }}
               onClick={() => {}}
+              name={""}
             >
-              <Link
-                style={{
-                  color: "#1677ff",
-                  fontSize: "15px",
-                  fontWeight: "bold",
-                }}
-                href={data?.link}
-              >
-                {data?.title}
+              <Link href={data?.link}>
+                <b style={{ color: "blue" }}>{data?.title}</b>
               </Link>
             </CustomButton>
           );
@@ -57,11 +58,12 @@ export function RelevantTools({
         {showOtherToolsLink && (
           <CustomButton
             type="default"
-            style={{ marginRight: "8px", marginBottom: "8px" }}
+            styles={{ marginRight: "8px", marginBottom: "8px", height: "30px" }}
             onClick={() => {
               const elem = document.getElementById("tool-list");
               elem?.scrollIntoView();
             }}
+            name={""}
           >
             <b className={RelevantToolsStyles["changing-text-color"]}>
               View More Tools

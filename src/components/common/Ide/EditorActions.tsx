@@ -2,11 +2,7 @@ import Col from "antd/es/grid/col";
 import Row from "antd/es/grid/row";
 import { get } from "lodash";
 import { ReactNode } from "react";
-import { AiFillDelete } from "react-icons/ai";
-import { FaUpload } from "react-icons/fa";
-import { PiBracketsCurlyBold } from "react-icons/pi";
 
-import { COLOR_CONST } from "@ft/constants/colorConstant";
 import beautifyJSON from "@ft/utils/json/beautifyJSON";
 import Switch from "antd/es/switch";
 import Upload from "antd/es/upload";
@@ -20,7 +16,7 @@ type EditorActionsProps = {
 };
 
 export function EditorActionsButtons({ children }: { children: ReactNode }) {
-  return <Col style={{ marginTop: "5px" }}>{children}</Col>;
+  return <Col>{children}</Col>;
 }
 
 export function MonoType({
@@ -71,10 +67,8 @@ export function FormatInput({
 
   return (
     <InputOutputActionButton
-      styles={{ marginTop: "5px" }}
       name="Format"
       onClick={() => format()}
-      mdIcon={<PiBracketsCurlyBold color={COLOR_CONST.defaultIcon} />}
       tooltip="Format input"
     />
   );
@@ -107,11 +101,7 @@ export const EditorActions = ({
             return false;
           }}
         >
-          <InputOutputActionButton
-            name="Load file"
-            onClick={() => {}}
-            mdIcon={<FaUpload color={COLOR_CONST.defaultIcon} size={10} />}
-          />
+          <InputOutputActionButton name="Load file" onClick={() => {}} />
         </Upload>
       </EditorActionsButtons>
 
@@ -120,7 +110,6 @@ export const EditorActions = ({
         <InputOutputActionButton
           name="Clear"
           onClick={clear}
-          mdIcon={<AiFillDelete size={13} color={COLOR_CONST.defaultIcon} />}
           tooltip="Clear Input"
         />
       </EditorActionsButtons>

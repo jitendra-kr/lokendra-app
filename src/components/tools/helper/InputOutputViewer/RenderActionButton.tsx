@@ -1,6 +1,5 @@
 "use client";
-import Button from "antd/es/button/button";
-import InputOutputViewerStyles from "./InputOutputViewer.module.css";
+import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
 import { Input, ToolInputProps } from "./ToolInput";
 
 type RenderActionButtonProps = {
@@ -16,14 +15,13 @@ export function RenderActionButton({
     return <></>;
   }
   return (
-    <Button
-      type="primary"
-      className={InputOutputViewerStyles["input-button"]}
-      onClick={onClick}
-      disabled={options?.disable}
-      size="large"
-    >
-      <b className={InputOutputViewerStyles.buttonText}>{input.buttonName}</b>
-    </Button>
+    <CustomButton
+      onClick={() => {
+        onClick && onClick();
+      }}
+      name={input.buttonName}
+      styles={{ marginTop: "30px" }}
+      disable={options?.disable}
+    />
   );
 }

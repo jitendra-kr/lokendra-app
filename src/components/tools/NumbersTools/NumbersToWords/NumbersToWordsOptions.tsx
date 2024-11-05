@@ -1,4 +1,4 @@
-import Select from "antd/es/select";
+import CustomSelect from "@ft/common/components/UiComponent/CustomSelect";
 
 const localeOptions = [
   { value: "pt-BR", label: "Brazil (pt-BR)" },
@@ -20,11 +20,12 @@ export function NumbersToWordsOptions({
 }) {
   return (
     <div style={{ marginTop: "20px" }}>
-      <Select
-        defaultValue={`${navigator ? navigator.language : "en-US"}`}
-        style={{ width: 150, marginRight: "30px" }}
+      <CustomSelect
         onChange={handleLocaleCodeChange}
+        label="Select locale"
         options={localeOptions}
+        defaultValue={localeOptions[0].value}
+        // customStyles={{ select: { marginRight: "150px" } }}
       />
 
       <label htmlFor="Currency">
