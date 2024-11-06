@@ -2,7 +2,7 @@ import { SCREENS } from "@ft/common/enums/screens";
 import { ToolKeys } from "@ft/components/tools/ToolsList/ToolKeys";
 import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
-import { Metadata } from "next";
+import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 type NonToolPageTags = {
   link: SCREENS;

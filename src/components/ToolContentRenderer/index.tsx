@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import Faq from "../common/Faq";
 import { SampleData } from "../common/SampleData";
 import getToolListDataByToolID from "../tools/helper/InputOutputViewer/getToolListDataByToolID";
@@ -9,7 +9,7 @@ import ToolsList from "../tools/ToolsList/ToolsList";
 
 type ToolRendererType = {
   toolKey: ToolKeys;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function ToolRenderer({ toolKey, children }: ToolRendererType) {

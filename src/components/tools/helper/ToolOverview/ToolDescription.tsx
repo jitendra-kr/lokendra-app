@@ -1,7 +1,7 @@
 import { PTag } from "@ft/components/common/HtmlTags/PTag";
 import ToolDescriptionStyles from "./ToolDescription.module.css";
 
-export type ConvertedOutputByToolsProps = {
+type ConvertedOutputByToolsProps = {
   content: string;
   name: string;
   keyFeatures?: string[];

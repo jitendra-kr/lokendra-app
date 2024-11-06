@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import {
   InputToConvertByTools,
   inputType,
@@ -18,17 +18,17 @@ type InputOutputVieweoptions = {
 export type Input = {
   showInput: boolean;
   buttonName: string;
-  options?: React.ReactNode;
+  options?: ReactNode;
 };
 
 export type ToolInputProps = {
   input?: Input;
-  inputChild?: React.ReactNode;
+  inputChild?: ReactNode;
   onChangeCb?: (value: string) => void;
   placeholder?: string;
   inputNumber?: boolean;
   onClick?: () => void;
-  inputEditorActionChild?: React.ReactNode;
+  inputEditorActionChild?: ReactNode;
 } & InputOutputVieweoptions;
 
 export function ToolInput({

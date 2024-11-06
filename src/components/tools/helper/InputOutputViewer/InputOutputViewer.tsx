@@ -1,7 +1,7 @@
 "use client";
 import LoadingMonaco from "@ft/components/common/Ide/LoadingMonaco";
 import dynamic from "next/dynamic";
-import React from "react";
+import { ReactNode } from "react";
 import { ToolInputProps } from "./ToolInput";
 
 const ToolInput = dynamic(
@@ -22,8 +22,8 @@ const ToolOutput = dynamic(
 
 type InputOutputViewerProps = {
   byte: string;
-  outputChild?: React.ReactNode;
-  children?: React.ReactNode;
+  outputChild?: ReactNode;
+  children?: ReactNode;
   error?: string;
 } & Omit<ToolInputProps, "toolData">;
 

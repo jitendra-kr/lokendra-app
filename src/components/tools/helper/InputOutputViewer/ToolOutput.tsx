@@ -1,9 +1,9 @@
-import React from "react";
+import { ReactNode } from "react";
 import { ConvertedOutputByTools } from "../ConvertedOutputByTools/ConvertedOutputByTools";
 
 type ToolOutputProps = {
   byte: string;
-  outputChild: React.ReactNode;
+  outputChild: ReactNode;
   error?: string;
 };
 

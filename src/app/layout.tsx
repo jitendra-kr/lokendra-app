@@ -3,6 +3,7 @@ import GoogleAnalytics from "@ft/components/Analytics/GoogleAnalytics/GoogleAnal
 import MainHeader from "@ft/components/Header";
 import { Analytics } from "@vercel/analytics/react";
 import dynamic from "next/dynamic";
+import { ReactNode } from "react";
 import StoreProvider from "./StoreProvider";
 
 const Feedback = dynamic(() => import("@ft/components/Feedback/Feedback"));
@@ -14,7 +15,7 @@ const LazyBootstrapComponentCss = dynamic(
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

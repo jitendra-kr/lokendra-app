@@ -1,6 +1,6 @@
 "use client";
 
-import React, { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 declare const _ButtonTypes: readonly [
   "default",
@@ -15,7 +15,7 @@ type CustomButtonProps = {
   name: string;
   styles?: CSSProperties;
   textStyles?: CSSProperties;
-  children?: React.ReactNode;
+  children?: ReactNode;
   type?: ButtonType;
   onClick: () => void;
   disable?: boolean;

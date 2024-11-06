@@ -1,6 +1,6 @@
 import { STRING_CONSTANTS } from "@ft/constants/stringConstants";
 
-import { Metadata } from "next";
+import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import Link from "next/link";
 
 export const metadata: Metadata = {

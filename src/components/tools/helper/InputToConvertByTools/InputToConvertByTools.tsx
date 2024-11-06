@@ -8,7 +8,7 @@ import { useAppSelector } from "@ft/hooks/useAppSelector";
 import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { messageDestroy, messageError } from "@ft/utils/antd";
 import Input from "antd/es/input/Input";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { updateToolsInput } from "../../../../common/state/tools/toolsInput.slice";
 import { useGetQueryString } from "../../../../hooks/useGetQueryString";
 import styles from "./InputToConvertByTools.module.css";
@@ -29,7 +29,7 @@ type InputToConvertByToolsProps = {
   row?: number;
   type?: inputType;
   inputNumber?: boolean;
-  inputEditorActionChild?: React.ReactNode;
+  inputEditorActionChild?: ReactNode;
 };
 
 export const InputToConvertByTools = ({

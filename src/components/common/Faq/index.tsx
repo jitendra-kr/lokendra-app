@@ -1,10 +1,11 @@
 import CustomCollapse from "@ft/common/components/UiComponent/CustomCollapse";
 import { CollapseProps } from "antd/es/collapse/Collapse";
+import { ReactNode } from "react";
 import { H2Tag } from "../HtmlTags/H2Tag";
 
 export type FaqProps = {
   question: string;
-  ans: string | React.ReactNode;
+  ans: string | ReactNode;
 };
 
 const Faq = ({ data }: { data: FaqProps[] }) => {

@@ -1,8 +1,7 @@
 import { SCREENS } from "@ft/common/enums/screens";
+import { ShowCodeBlock } from "../ShowCodeBlock/ShowCodeBlock";
 import jsonTypeData from "./json-to-typescript-interface.json";
 import jsonValidatorData from "./json-validator.json";
-
-import { ShowCodeBlock } from "../ShowCodeBlock/ShowCodeBlock";
 import jsonData from "./sample.json";
 
 const xmldata = `<?xml version="1.0" encoding="UTF-8"?>
