@@ -11,27 +11,25 @@ export function SalaryHikePercentageCalculatorActions({
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        justifyContent: "center",
       }}
     >
+      <CustomButton
+        onClick={clear}
+        styles={{
+          width: "40%",
+          backgroundColor: "white",
+          height: "40px",
+        }}
+        textStyles={{ color: "black" }}
+        name={SalaryHikePercentageCalculatorConst.clear}
+      />
       <CustomButton
         type="primary"
         styles={{ width: "40%", height: "40px" }}
         name={SalaryHikePercentageCalculatorConst.submit}
         onClick={() => {}}
-      ></CustomButton>
-      <CustomButton
-        onClick={clear}
-        styles={{
-          width: "40%",
-          marginTop: "10px",
-          backgroundColor: "white",
-          height: "35px",
-        }}
-        textStyles={{ color: "black" }}
-        name={SalaryHikePercentageCalculatorConst.clear}
-      ></CustomButton>
+      />
     </div>
   );
 }
