@@ -1,7 +1,20 @@
-import { GA_TRACKING_ID } from "@ft/constants/googleAnalyticsConst";
-import { GoogleAnalytics as NextGoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/dist/client/script";
 
 function GoogleAnalytics() {
-  return <NextGoogleAnalytics gaId={GA_TRACKING_ID} />;
+  return (
+    <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-QH4Q1094NQ"
+      ></Script>
+      <Script>
+        {`    window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-QH4Q1094NQ');`}
+      </Script>
+    </>
+  );
 }
 export default GoogleAnalytics;
