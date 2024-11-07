@@ -5,54 +5,68 @@ import { useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
 import JsonViewer from "../helper/JsonViewer/JsonViewer";
 
+const defaultOutput = {
+  data: "",
+  error: "",
+  editorError: "",
+};
+
 function JsonParser() {
-  const [byte, setByte] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [editorError, setEditorError] = useState<string>("");
+  const [output, setOutput] = useState(defaultOutput);
 
-  const onError = (errorMsg: string | undefined) => {
-    if (errorMsg) {
-      setEditorError(errorMsg);
-      return;
-    }
-    setEditorError("");
+  const clearErrors = () => {
+    setOutput((prev) => ({ ...prev, error: "", editorError: "" }));
   };
 
-  const resetStates = () => {
-    setError("");
-    setByte("");
+  const resetState = () => {
+    setOutput({ data: "", error: "", editorError: "" });
   };
 
-  async function isJsonString(str: string | undefined) {
-    if (!str) {
-      resetStates();
+  const handleEditorError = (errorMsg: string | undefined) => {
+    setOutput((prev) => ({ ...prev, editorError: errorMsg || "" }));
+  };
+
+  async function parseJson(input: string | undefined) {
+    if (!input) {
+      resetState();
       return;
     }
 
-    if (editorError) {
-      setEditorError("");
-    }
-    if (error) {
-      setError("");
-    }
-    const { beautifiedData, msg } = await beautifyJSON(str);
-    if (beautifiedData) {
-      setByte(beautifiedData);
-    }
-    if (msg) {
-      setError(msg);
+    clearErrors();
+
+    try {
+      const { beautifiedData, msg } = await beautifyJSON(input);
+      setOutput((prev) => ({
+        ...prev,
+        data: beautifiedData || "",
+        error: msg || "",
+      }));
+    } catch (e) {
+      setOutput((prev) => ({
+        ...prev,
+        data: "",
+        error: "Failed to parse JSON",
+      }));
     }
   }
 
   return (
     <InputOutputViewer
       inputChild={
-        <Ide cb={isJsonString} error={onError} options={{ repair: true }} />
+        <Ide
+          cb={parseJson}
+          error={handleEditorError}
+          options={{ repair: true }}
+        />
       }
       outputChild={
-        <JsonViewer content={byte} error={error} editorError={editorError} />
+        <JsonViewer
+          content={output.data}
+          error={output.error}
+          editorError={output.editorError}
+        />
       }
-      byte={byte}
+      byte={""}
     />
   );
 }
