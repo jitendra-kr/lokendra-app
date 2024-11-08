@@ -3,7 +3,6 @@ import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
 import { SCREENS } from "@ft/common/enums/screens";
 import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import Link from "next/link";
-import { BiSolidRightArrow } from "react-icons/bi";
 import RelevantToolsStyles from "./RelevantTools.module.css";
 import { relevantTools } from "./relevantTools";
 
@@ -26,9 +25,7 @@ export function RelevantTools({
   return (
     <div className="row">
       <div className="col-auto">
-        <b style={{ fontSize: "17px", marginRight: "10px" }}>
-          Relevant Tools <BiSolidRightArrow />
-        </b>
+        <b style={{ fontSize: "17px", marginRight: "10px" }}>Relevant Tools:</b>
         {relevantTools[toolLink].map((tool) => {
           const data = getTool(tool);
           if (!data) {

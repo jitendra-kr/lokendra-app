@@ -1,5 +1,3 @@
-"use client";
-
 import Empty from "antd/es/empty";
 
 export default function NoMatchFound() {

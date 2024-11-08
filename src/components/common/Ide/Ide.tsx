@@ -9,7 +9,6 @@ import { messageError, messageSuccess } from "@ft/utils/antd";
 import { repairJSON } from "@ft/utils/json/repairJSON";
 import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
-import { useGetQueryString } from "../../../hooks/useGetQueryString";
 import { InputOutputActionButton } from "../Buttons/InputOutputActionButton";
 import CustomMonacoEditor from "./CustomMonacoEditor";
 import {
@@ -21,20 +20,7 @@ import {
 } from "./EditorActions";
 import styles from "./Ide.module.css";
 import { UpdateMonacoTheme } from "./UpdateMonacoTheme";
-
-export type EditorCallBackOptions = {
-  monoType?: boolean;
-};
-type IdeProps = {
-  language?: string;
-  cb?: (value: string | undefined, options?: EditorCallBackOptions) => void;
-  error?: (value: string | undefined) => void;
-  options?: {
-    monotype?: boolean;
-    format?: boolean;
-    repair?: boolean;
-  };
-};
+import { IdeProps } from "./ide.types";
 
 export default function Ide({
   language = "json",
@@ -44,17 +30,12 @@ export default function Ide({
 }: IdeProps) {
   const [monoType, setMonoType] = useState(false);
   const [miniMap, setMiniMap] = useState(false);
-
   const editorRef = useRef<editor.IStandaloneCodeEditor>(null);
   const dispatch = useAppDispatch();
-  const paramsLoaded = useRef(false);
+
   const [theme, setTheme] = useState<string>();
   const { value: globalInputValue, loadSampleData } =
     useAppSelector(getToolInput);
-
-  const {
-    params: { data: paramsData },
-  } = useGetQueryString();
 
   function handleEditorValidation(markers: editor.IMarker[]) {
     let errorMsg = "";
@@ -72,16 +53,6 @@ export default function Ide({
     cb?.(value, { monoType: monoType });
     dispatch(updateToolsInput(value ?? ""));
   };
-
-  useEffect(() => {
-    if (paramsData && !paramsLoaded.current) {
-      paramsLoaded.current = true;
-      const prettyInput = JSON.parse(paramsData);
-      onChange(JSON.stringify(prettyInput, null, "\t"));
-      return;
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [paramsData]);
 
   useEffect(() => {
     if (loadSampleData && globalInputValue) {
@@ -110,7 +81,7 @@ export default function Ide({
     setTheme(value);
   };
 
-  const onRepairClick = async () => {
+  const handleRepair = async () => {
     if (!globalInputValue) {
       return;
     }
@@ -122,14 +93,14 @@ export default function Ide({
         duration: 4,
       });
       onChange(repairedJSON);
-      return;
+    } else {
+      messageError({
+        content:
+          "Unable to repair the JSON. Please check the validity of the input.",
+        key: "repairJSON",
+        duration: 4,
+      });
     }
-    messageError({
-      content:
-        "Unable to repair the JSON. Please check the validity of the input.",
-      key: "repairJSON",
-      duration: 4,
-    });
   };
 
   const onMonoTypeChange = (status: boolean) => {
@@ -152,33 +123,31 @@ export default function Ide({
       <EditorActions
         clear={clear}
         onChange={loadValue}
-        // eslint-disable-next-line react/no-children-prop
-        children={
-          <>
-            <EditorActionsButtons>
-              <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
-            </EditorActionsButtons>
-            {options && options.repair && (
-              <EditorActionsButtons>
-                <InputOutputActionButton
-                  name="Repair"
-                  onClick={onRepairClick}
-                  tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
-                />
-              </EditorActionsButtons>
-            )}
-            {options?.format && (
-              <FormatInput value={globalInputValue ?? ""} cb={onFormat} />
-            )}
-          </>
-        }
         childrenAfter={
           <>
             {options?.monotype && <MonoType onChange={onMonoTypeChange} />}
             <MiniMap onChange={handleMiniMapChange} />
           </>
         }
-      />
+      >
+        <>
+          <EditorActionsButtons>
+            <UpdateMonacoTheme handleThemeChange={handleThemeChange} />
+          </EditorActionsButtons>
+          {options && options.repair && (
+            <EditorActionsButtons>
+              <InputOutputActionButton
+                name="Repair"
+                onClick={handleRepair}
+                tooltip="Repair JSON: fix quotes, escape characters, remove comments and  trailing commas."
+              />
+            </EditorActionsButtons>
+          )}
+          {options?.format && (
+            <FormatInput value={globalInputValue ?? ""} cb={onFormat} />
+          )}
+        </>
+      </EditorActions>
       <CustomMonacoEditor
         onMount={handleEditorDidMount}
         theme={theme}

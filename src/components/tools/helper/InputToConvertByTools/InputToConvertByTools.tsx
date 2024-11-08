@@ -5,12 +5,11 @@ import { getToolInput } from "@ft/common/selectors/toolsSelectors";
 import { EditorActions } from "@ft/components/common/Ide/EditorActions";
 import { useAppDispatch } from "@ft/hooks/useAppDispatch";
 import { useAppSelector } from "@ft/hooks/useAppSelector";
-import { useGetUrl, useGetUrlPath } from "@ft/hooks/useGetUrl";
+import { useGetUrlPath } from "@ft/hooks/useGetUrl";
 import { messageDestroy, messageError } from "@ft/utils/antd";
 import Input from "antd/es/input/Input";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import { updateToolsInput } from "../../../../common/state/tools/toolsInput.slice";
-import { useGetQueryString } from "../../../../hooks/useGetQueryString";
 import styles from "./InputToConvertByTools.module.css";
 
 export enum inputType {
@@ -40,7 +39,6 @@ export const InputToConvertByTools = ({
   inputEditorActionChild,
 }: InputToConvertByToolsProps) => {
   const [inputValue, setInputValue] = useState("");
-  const { url } = useGetUrl();
   const dispatch = useAppDispatch();
   const { value } = useAppSelector(getToolInput);
   const { pathname } = useGetUrlPath();
@@ -51,28 +49,11 @@ export const InputToConvertByTools = ({
     SCREENS.GENERATE_RANDOM_STRING,
   ].includes(pathname as SCREENS);
 
-  const {
-    params: { data },
-  } = useGetQueryString();
-
   const onChange = ({ target: { value } }: onChangeProp) => {
     onChangeCb(value);
     dispatch(updateToolsInput(value));
   };
 
-  useEffect(() => {
-    if (data) {
-      onChange({ target: { value: data } });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
-
-  useEffect(() => {
-    if (data) {
-      onChange({ target: { value: data } });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url]);
   return (
     <>
       {!hideEditorActions && (
@@ -85,9 +66,9 @@ export const InputToConvertByTools = ({
               onChange({ target: { value } });
             }
           }}
-          // eslint-disable-next-line react/no-children-prop
-          children={inputEditorActionChild}
-        />
+        >
+          {inputEditorActionChild}
+        </EditorActions>
       )}
       {type === inputType.input ? (
         <Input

@@ -1,11 +1,7 @@
 "use client";
-
-import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
 import Col from "antd/es/grid/col";
 import Row from "antd/es/grid/row";
 import Input from "antd/es/input/Input";
-import { useEffect, useState } from "react";
-import { FcSearch } from "react-icons/fc";
 
 export default function SearchBar({
   allowClear = false,
@@ -16,14 +12,6 @@ export default function SearchBar({
   autoFocus?: boolean;
   onSearch: (value: string | undefined) => void;
 }) {
-  const [placeholder, setPlaceholder] = useState<string>("Search...");
-
-  useEffect(() => {
-    const data = toolsListData.filter((tool) => tool.list);
-    const randomTool = data[Math.floor(Math.random() * data.length)];
-    setPlaceholder(`Search... ( Ex- ${randomTool.title})`);
-  }, []);
-
   return (
     <Row
       style={{
@@ -40,8 +28,7 @@ export default function SearchBar({
           }}
           size="large"
           autoFocus={autoFocus}
-          placeholder={placeholder}
-          prefix={<FcSearch />}
+          placeholder={"Search... (Ex- JSON Formatter)"}
           onChange={(value) => {
             onSearch(value.target.value);
           }}

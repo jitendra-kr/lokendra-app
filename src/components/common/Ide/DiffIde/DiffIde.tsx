@@ -7,46 +7,35 @@ import AceEditor from "react-ace";
 import { CopyToClip } from "../../../tools/helper/CopyToClip/CopyToClip";
 import { InputOutputActionButton } from "../../Buttons/InputOutputActionButton";
 import { EditorActions } from "../EditorActions";
+import { DiffIdeProps } from "./DiffIde.types";
 
-type DiffIdeProps = {
-  id: "leftIDE" | "rightIDE";
-  value: string;
-  onChange: (value: string | undefined) => void;
-  onCompareClick: () => void;
-};
 export default function DiffIde({
   id,
   value,
   onChange,
   onCompareClick,
 }: DiffIdeProps) {
-  const clear = () => {
-    onChange("");
-  };
-
   return (
     <>
       <EditorActions
-        clear={clear}
+        clear={() => onChange("")}
         onChange={onChange}
-        // eslint-disable-next-line react/no-children-prop
-        children={
-          <>
-            {id === "rightIDE" && (
-              <InputOutputActionButton
-                name="Compare"
-                onClick={onCompareClick}
-                tooltip="Perform Diff"
-                styles={{
-                  backgroundColor: "lightseagreen",
-                  fontWeight: "bold",
-                }}
-              />
-            )}
-          </>
-        }
         childrenAfter={<CopyToClip content={value} />}
-      />
+      >
+        <>
+          {id === "rightIDE" && (
+            <InputOutputActionButton
+              name="Compare"
+              onClick={onCompareClick}
+              tooltip="Perform Diff"
+              styles={{
+                backgroundColor: "lightseagreen",
+                fontWeight: "bold",
+              }}
+            />
+          )}
+        </>
+      </EditorActions>
       <AceEditor
         mode="json"
         theme="github"
