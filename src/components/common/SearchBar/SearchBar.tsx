@@ -28,7 +28,7 @@ export default function SearchBar({
           }}
           size="large"
           autoFocus={autoFocus}
-          placeholder={"Search... (Ex- JSON Formatter)"}
+          placeholder={"Search... (Ex- UUID Generator)"}
           onChange={(value) => {
             onSearch(value.target.value);
           }}
