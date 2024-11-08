@@ -1,8 +1,7 @@
 "use client";
-import { useState } from "react";
-
 import { minifyJSON } from "@ft/utils/json/minifyJSON";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 import { InputOutputViewer } from "../../helper/InputOutputViewer/InputOutputViewer";
 
 const Ide = dynamic(() => import("@ft/components/common/Ide/Ide"));
@@ -57,7 +56,7 @@ export function JSONMinify() {
       outputChild={
         <JsonViewer content={byte} error={error} editorError={editorError} />
       }
-      byte={byte}
+      byte={""}
     />
   );
 }
