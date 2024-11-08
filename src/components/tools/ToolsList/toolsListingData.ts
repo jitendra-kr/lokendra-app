@@ -105,7 +105,7 @@ export const toolsListData: Array<ITools> = [
     list: true,
     key: ToolKeys.JSONParser,
     toolDescription: `Are you in need of a secure JSON tool to beautify JSON that ensures the integrity and safety of your data? 
-    \nLook no further! Our advanced JSON tool is designed to provide a fast, easy-to-use, and accurate solution for developers and data analysts who value data security and precision.    
+    \nLook no further! Our advanced JSON data formatter is designed to provide a fast, easy-to-use, and accurate solution for developers and data analysts who value data security and precision.    
     \nOne of the key features of our JSON validator is its robust validation process. Before formatting, our tool thoroughly validates the provided JSON data, ensuring that it is well-formed and free of errors. This validation step is crucial, as it guarantees that the resulting formatted JSON will be accurate and reliable.     
     \nIn addition to its validation capabilities, it is incredibly fast. We understand that time is of the essence, especially when dealing with large datasets. Our tool is optimized to process JSON formatting swiftly, allowing you to save valuable time and increase productivity.  
     \nUser-friendliness is another standout aspect of our JSON parser. We have designed the interface to be intuitive and straightforward, catering to users of all skill levels. Whether you are a seasoned developer or a beginner, you can easily navigate our tool with ease. Following beautifying, you may easily download a json file..
