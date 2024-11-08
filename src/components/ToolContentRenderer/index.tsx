@@ -29,7 +29,7 @@ export default function ToolRenderer({ toolKey, children }: ToolRendererType) {
         keyFeatures={toolData.keyFeatures}
       />
       <SampleData pathname={toolData.link} />
-      <ToolsList />
+      <ToolsList skipToolFromList={toolData.key} />
       <Faq data={toolData.faq} />
     </>
   );

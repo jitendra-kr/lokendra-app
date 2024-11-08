@@ -15,7 +15,7 @@ const stringToAsciiFaqData: FaqProps[] = [
   },
   {
     question: "Is my data safe here?",
-    ans: "Absolutely! We prioritize your privacy. The Text to ASCII Converter does not store or share your data. It is used only for the conversion process and is immediately discarded afterwards.",
+    ans: "Absolutely! We prioritize your privacy. The words to ASCII Converter does not store or share your data. It is used only for the conversion process and is immediately discarded afterwards.",
   },
   {
     question: "Can I convert large amounts of text?",

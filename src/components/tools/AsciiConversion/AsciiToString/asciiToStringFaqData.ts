@@ -11,7 +11,7 @@ const asciiTpStringFaqData: FaqProps[] = [
   },
   {
     question: "Why do I need to convert ASCII codes to text?",
-    ans: "Converting ASCII to text helps you understand coded messages or see readable text instead of numbers.",
+    ans: "Converting ASCII to plaintext helps you understand coded messages or see readable text instead of numbers.",
   },
   {
     question: "Is there a cost to use this ASCII translator?",

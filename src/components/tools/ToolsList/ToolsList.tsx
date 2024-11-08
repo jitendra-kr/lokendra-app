@@ -3,14 +3,21 @@ import { H1Tag } from "@ft/components/common/HtmlTags/H1Tag";
 import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import RenderToolsList from "./RenderToolsList";
+import { ToolKeys } from "./ToolKeys";
 import { ITools, toolsListData } from "./toolsListingData";
 
 const SearchBar = dynamic(
   () => import("@ft/components/common/SearchBar/SearchBar"),
 );
 
-const ToolsList = () => {
-  const listData = useMemo(() => toolsListData.filter((tool) => tool.list), []);
+const ToolsList = ({ skipToolFromList }: { skipToolFromList?: ToolKeys }) => {
+  const listData = useMemo(
+    () =>
+      toolsListData.filter(
+        (tool) => tool.list && tool.key !== skipToolFromList,
+      ),
+    [skipToolFromList],
+  );
   const [toolsList, setToolsList] = useState<ITools[]>();
   const [textInput, setTextInput] = useState<string | undefined>();
 
