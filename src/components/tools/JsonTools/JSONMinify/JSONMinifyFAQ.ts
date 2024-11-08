@@ -6,8 +6,8 @@ const jsonMinifierFaqData: FaqProps[] = [
     ans: "A JSON Minifier, also known as a JSON Compressor, is a tool that removes unnecessary characters from JSON data, such as spaces and line breaks. This process reduces the file size while keeping the data structure intact, making it faster to load and transfer.",
   },
   {
-    question: "Why should I use a JSON Minifier?",
-    ans: "Using a JSON Minifier is beneficial for optimizing web performance. Smaller JSON files reduce bandwidth usage, improve load times, and can enhance user experience on websites and applications by loading data more quickly.",
+    question: "Why should I use a JSON compressor?",
+    ans: "Using a JSON compressor is beneficial for optimizing web performance. Smaller JSON files reduce bandwidth usage, improve load times, and can enhance user experience on websites and applications by loading data more quickly.",
   },
   {
     question: "Is it safe to minify JSON? Will I lose any data?",
@@ -18,11 +18,11 @@ const jsonMinifierFaqData: FaqProps[] = [
     ans: "A JSON Compressor reduces the size of JSON files, which leads to quicker data transfer and lower bandwidth usage. This helps improve website performance, especially for users on slower connections.",
   },
   {
-    question: "Can I use a JSON Minifier for large JSON files?",
-    ans: "Yes, JSON Minifier can be used for large JSON files.",
+    question: "Can I use a it for large JSON files?",
+    ans: "Yes, It can be used for large JSON files.",
   },
   {
-    question: "Is this JSON Minifier tool free to use?",
+    question: "Is this tool free to minify JSON?",
     ans: "Yes.",
   },
   {
