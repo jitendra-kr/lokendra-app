@@ -49,6 +49,7 @@ const ToolsList = ({ skipToolFromList }: { skipToolFromList?: ToolKeys }) => {
       <RenderToolsList
         toolsList={toolsList ?? listData}
         textInput={textInput}
+        skipToolFromList={skipToolFromList}
       />
     </>
   );

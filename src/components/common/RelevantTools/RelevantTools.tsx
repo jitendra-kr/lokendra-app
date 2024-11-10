@@ -2,7 +2,8 @@
 import { CustomButton } from "@ft/common/components/UiComponent/CustomButton";
 import { SCREENS } from "@ft/common/enums/screens";
 import { toolsListData } from "@ft/components/tools/ToolsList/toolsListingData";
-import Link from "next/link";
+import Link from "next/dist/client/link";
+import { useRouter } from "next/navigation";
 import RelevantToolsStyles from "./RelevantTools.module.css";
 import { relevantTools } from "./relevantTools";
 
@@ -13,6 +14,8 @@ export function RelevantTools({
   toolLink: SCREENS;
   showOtherToolsLink?: boolean;
 }) {
+  const router = useRouter();
+
   const getTool = (link: SCREENS) => {
     return toolsListData.find((obj) => {
       return obj.link === link;
@@ -26,7 +29,7 @@ export function RelevantTools({
     <div className="row">
       <div className="col-auto">
         <b style={{ fontSize: "17px", marginRight: "10px" }}>Relevant Tools:</b>
-        {relevantTools[toolLink].map((tool) => {
+        {relevantTools[toolLink].map((tool, index) => {
           const data = getTool(tool);
           if (!data) {
             return <></>;
@@ -43,12 +46,15 @@ export function RelevantTools({
                 borderWidth: 1,
                 borderBottomColor: "blue",
               }}
-              onClick={() => {}}
+              onClick={() => router.push(data.link)}
               name={""}
             >
-              <Link href={data?.link}>
-                <b style={{ color: "blue" }}>{data?.title}</b>
-              </Link>
+              {index <= 1 && (
+                <Link href={data?.link}>
+                  <b style={{ color: "blue" }}>{data?.title}</b>
+                </Link>
+              )}
+              {index > 1 && <b style={{ color: "blue" }}>{data?.title}</b>}
             </CustomButton>
           );
         })}
