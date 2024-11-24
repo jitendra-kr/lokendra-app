@@ -1,4 +1,5 @@
 import { SCREENS } from "@ft/common/enums/screens";
+import { H2Tag } from "../HtmlTags/H2Tag";
 import { ShowCodeBlock } from "../ShowCodeBlock/ShowCodeBlock";
 import jsonTypeData from "./json-to-typescript-interface.json";
 import jsonValidatorData from "./json-validator.json";
@@ -36,15 +37,33 @@ const xmldata = `<?xml version="1.0" encoding="UTF-8"?>
   </products>
 </store>`;
 
-type Example = "json" | "xml";
+type Example = "json" | "xml" | "ascii";
 
 export function SampleData({ pathname }: { pathname: SCREENS }) {
   const data: Record<string, Example> = {
-    "json-tools": "json",
-    "xml-tools": "xml",
+    "json-diff-compare": "json",
+    "json-formatter": "json",
+    "json-to-string": "json",
+    "json-to-typescript-interface": "json",
+    "json-to-xml-converter": "json",
+
+    "xml-formatter": "xml",
+    "xml-minifier": "xml",
+    "xml-to-json-converter": "xml",
+
+    "ascii-to-string": "ascii",
   };
-  const category = pathname && pathname.split("/")[1];
-  const example = data[category];
+  const category = () => {
+    if (!pathname) {
+      return "";
+    }
+    const arr = (pathname as string).split("/");
+
+    const toolName = arr[arr.length - 1];
+    return data[toolName];
+  };
+
+  const example = category();
 
   const decideJSONData = () => {
     switch (pathname) {
@@ -64,16 +83,24 @@ export function SampleData({ pathname }: { pathname: SCREENS }) {
   }
   return (
     <>
-      <h2 className="heading">
-        A Simple and Concise {example && example.toUpperCase()} Example{" "}
-      </h2>
-
+      <H2Tag
+        heading={`A Simple and Concise ${
+          example && example.toUpperCase()
+        } Example`}
+      ></H2Tag>
       <div style={{ marginBottom: "80px" }}>
         {example === "xml" && <ShowCodeBlock code={xmldata} language="xml" />}
         {example === "json" && (
           <ShowCodeBlock
             code={`${JSON.stringify(decideJSONData(), null, 2)}`}
             language="json"
+          />
+        )}
+        {example === "ascii" && (
+          <ShowCodeBlock
+            code={`72 101 121 32 70 105 114 101 98 111 120 116 111 111 108 115`}
+            language="text"
+            showLineNumbers={false}
           />
         )}
       </div>

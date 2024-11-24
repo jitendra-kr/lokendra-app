@@ -14,7 +14,7 @@ function RenderToolLink({
   skipToolFromList?: ToolKeys;
 }) {
   if (skipToolFromList) {
-    return <b style={{ color: "blue", cursor: "pointer" }}>{item.title + 1}</b>;
+    return <b style={{ color: "blue", cursor: "pointer" }}>{item.title}</b>;
   }
   return (
     <Link

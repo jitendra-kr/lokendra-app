@@ -18,5 +18,5 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "cSpell.words": ["Antd", "Kharab", "करोड़"]
+  "cSpell.words": ["Antd", "Kharab", "xmldata", "करोड़"]
 }

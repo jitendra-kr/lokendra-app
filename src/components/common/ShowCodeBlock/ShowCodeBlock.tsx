@@ -34,11 +34,13 @@ export const ShowCodeBlock = ({
   language,
   trySample,
   download,
+  showLineNumbers = true,
 }: {
   code: string;
   language: string;
   trySample?: boolean;
   download?: boolean;
+  showLineNumbers?: boolean;
 }) => {
   return (
     <div
@@ -60,7 +62,7 @@ export const ShowCodeBlock = ({
       <SyntaxHighlighter
         language={language}
         style={stackoverflowDark}
-        showLineNumbers={true}
+        showLineNumbers={showLineNumbers}
         customStyle={{ fontSize: "19px" }}
         wrapLongLines={true}
         wrapLines={true}
