@@ -12,6 +12,7 @@ import SalaryHikePercentageCalculatorFaq from "../SalaryHikePercentageCalculator
 import RandomStringGeneratorFaq from "../TextTools/RandomStringGenerator/randomStringGeneratorFaqData";
 import ToLowercaseFaqData from "../ToLowercase/ToLowercaseFaqData";
 import textToUppercaseFaqData from "../ToUppercase/ToUppercaseFaqData";
+import URLDecoderFaqData from "../URLDecode/URLDecoderFaqData";
 import UUIDGeneratorFaqData from "../UUIDGenerator/UUIDGeneratorFaqData";
 import XmlFormatterFaqData from "../XmlTools/XmlFormatter/XmlFormatterFaqData";
 import { ToolKeys } from "./ToolKeys";
@@ -383,7 +384,7 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
 
   {
     title: "URL Decoder",
-    faq: [],
+    faq: URLDecoderFaqData,
     link: SCREENS.URL_DECODE,
     heading: "URL Decoder",
     content:
@@ -392,22 +393,15 @@ In addition to its speed and accuracy, our Replace Space with Underscore tool is
     metaDescription: seoData.UrlDecode.description,
     list: true,
     key: ToolKeys.UrlDecode,
-    toolDescription: `Looking for a secure, fast, user-friendly, and accurate URL decoder tool? Look no further! Our tool is meant to make the decoding process as simple and efficient as possible, ensuring that you obtain accurate results every time.
-
-With it, you can easily decode encoded URLs and convert them back to their original format. Whether you need to decode special characters, percent-encoded elements, or any other encoded components, our decoder can handle it with ease.
-    
-One of the key advantages is its amazing speed. We understand the importance of quick results, and our tool is optimized to deliver them. Say goodbye to wasting time on decoding URLs manually - our tool provides rapid decoding, allowing you to move on to more important work.
-    
-Not only is our tool fast, but it is also incredibly user-friendly. You don't need to possess advanced technical knowledge to use it! Our intuitive interface guides you through the decoding process effortlessly, making it accessible for both beginners and experts. Simply type, paste, or upload your encoded URL into the designated field, and watch as your URL is transformed back to its original form.
-    
-When it comes to privacy and security, we takes every precaution to ensure your data remains safe and protected. We prioritize the confidentiality of your data and employ robust security measures to safeguard it.
-    
-Another important quality of our tool is its accuracy. We understand that precision matters when it comes to tasks such as decoding URLs, and our tool guarantees accurate results every time. Rest assured that the decoded URLs will retain their original integrity, ensuring seamless integration into your online activities.`,
+    toolDescription: `Are you in search of a secure, fast, user-friendly, and accurate URL decoder tool? Look no further! Our tool is designed to make the decoding process straightforward and efficient, ensuring you get reliable results every time. With this tool, you can easily decode encoded URLs and revert them to their original format. Whether you need to decode special characters, percent-encoded elements, or any other encoded components, our decoder can handle it effortlessly.   
+One of the standout features is its impressive speed. We recognize the importance of quick results, and our tool is optimized for just that. Say goodbye to the hassle of manually decoding URLs—our tool offers rapid decoding, allowing you to focus on more important tasks.
+Not only is our tool fast, but it is also extremely user-friendly. You don’t need to have advanced technical skills to use it! Our intuitive interface guides you through the decoding process with ease, making it accessible for both beginners and experts alike. Just type, paste, or upload your encoded URL into the designated field, and watch as it transforms back to its original form.
+When it comes to privacy and security, we take every precaution to keep your data safe and protected. We prioritize the confidentiality of your information and implement strong security measures to safeguard it. Another key feature of our tool is its accuracy. We understand that precision is crucial when decoding URLs, and our tool ensures accurate results every time. You can trust that the decoded URLs will maintain their original integrity, allowing for seamless integration into your online activities.`,
     keyFeatures: [
-      "Decode URL-encoded strings: This tool designed for decoding URL-encoded strings, allowing users to effortlessly transform encoded characters back to their original form.",
-      "Simple and user-friendly interface: The tool offers a simple and intuitive interface that enables users to easily input URL-encoded strings and decode them.",
-      "Instant decoding results: Users will get the decoded output right away using just after stat trying or pasting, saving time and effort.",
-      "Download converted output: Users can download the decoded result as a file, making it easier to analyse or share with others.",
+      "This tool is designed to decode URL-encoded strings, allowing users to easily convert encoded characters back to their original form.",
+      "It features a simple and user-friendly interface that makes it easy for users to input URL-encoded strings and decode them.",
+      "Users receive instant decoding results as soon as they start typing or pasting, saving both time and effort.",
+      "Additionally, users can download the decoded output as a file, making it convenient to analyze or share with others.",
     ],
   },
   {
