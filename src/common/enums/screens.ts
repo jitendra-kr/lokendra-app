@@ -31,8 +31,8 @@ export enum SCREENS {
   "NUMBER_TO_WORDS" = "/number-tools/number-to-word-converter",
 
   // encoding/decoding tools
-  "URL_DECODE" = "/encoding-decoding-tools/url-decode",
-  "URL_ENCODE" = "/encoding-decoding-tools/url-encode",
+  "URL_DECODE" = "/encoding-decoding-tools/url-decoder",
+  "URL_ENCODE" = "/encoding-decoding-tools/url-encoder",
 
   // Others
   "UUID_GENERATOR" = "/tools/uuid-generator",
