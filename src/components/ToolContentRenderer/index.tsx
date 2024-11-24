@@ -14,7 +14,6 @@ type ToolRendererType = {
 
 export default function ToolRenderer({ toolKey, children }: ToolRendererType) {
   const toolData = getToolListDataByToolID(toolKey);
-
   if (!toolData) {
     return <></>;
   }

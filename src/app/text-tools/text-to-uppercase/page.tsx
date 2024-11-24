@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetaTags(
 function ToUppercasePage() {
   return (
     <ToolRenderer toolKey={ToolKeys.UppercaseTextConverter}>
-      <ToUppercase />;
+      <ToUppercase />
     </ToolRenderer>
   );
 }

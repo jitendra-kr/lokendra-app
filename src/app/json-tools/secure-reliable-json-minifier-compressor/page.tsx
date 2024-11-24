@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaTags(toolKey);
 function JSONMinifyPage() {
   return (
     <ToolRenderer toolKey={toolKey}>
-      <JSONMinify />;
+      <JSONMinify />
     </ToolRenderer>
   );
 }

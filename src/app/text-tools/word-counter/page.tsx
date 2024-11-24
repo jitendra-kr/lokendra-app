@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaTags(toolKey);
 function WordsCounterPage() {
   return (
     <ToolRenderer toolKey={toolKey}>
-      <WordCounter />;
+      <WordCounter />
     </ToolRenderer>
   );
 }

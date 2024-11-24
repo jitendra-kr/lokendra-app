@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaTags(toolKey);
 function ToUppercasePage() {
   return (
     <ToolRenderer toolKey={toolKey}>
-      <ToLowercase />;
+      <ToLowercase />
     </ToolRenderer>
   );
 }

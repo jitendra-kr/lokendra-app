@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.JSON_TO_XML);
 function JSONToXMLPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.JSON_TO_XML}>
-      <JSONToXML />;
+      <JSONToXML />
     </ToolRenderer>
   );
 }

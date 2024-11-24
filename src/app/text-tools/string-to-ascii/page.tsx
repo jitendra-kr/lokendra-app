@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.StringToASCII);
 function StringToAsciiPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.StringToASCII}>
-      <StringToAscii />;
+      <StringToAscii />
     </ToolRenderer>
   );
 }

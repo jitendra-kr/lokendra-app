@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.XML_MINIFIER);
 function XmlMinifierPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.XML_MINIFIER}>
-      <XmlMinifier />;
+      <XmlMinifier />
     </ToolRenderer>
   );
 }

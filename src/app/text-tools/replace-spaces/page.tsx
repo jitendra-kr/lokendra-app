@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.ReplaceSpaces);
 function ReplaceSpacesPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.ReplaceSpaces}>
-      <ReplaceSpaces />;
+      <ReplaceSpaces />
     </ToolRenderer>
   );
 }

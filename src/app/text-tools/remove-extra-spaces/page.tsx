@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetaTags(
 function RemoveExtraSpacesPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.REMOVE_EXTRA_SPACES}>
-      <RemoveExtraSpaces />;
+      <RemoveExtraSpaces />
     </ToolRenderer>
   );
 }

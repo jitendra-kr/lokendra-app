@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.JSON_TO_TYPESCRIPT);
 function JsonTOTypescriptPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.JSON_TO_TYPESCRIPT}>
-      <JSONToTypescript />;
+      <JSONToTypescript />
     </ToolRenderer>
   );
 }

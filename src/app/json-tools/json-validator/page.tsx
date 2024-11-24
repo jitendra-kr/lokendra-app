@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.JSON_VALIDATOR);
 function JsonValidatorPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.JSON_VALIDATOR}>
-      <JsonParser />;
+      <JsonParser 
     </ToolRenderer>
   );
 }

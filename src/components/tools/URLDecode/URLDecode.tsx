@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
-import { DecodeURLInJavascript } from "./DecodeURLInJavascript";
 
 function URLDecode() {
   const [byte, setByte] = useState("");
@@ -18,12 +17,7 @@ function URLDecode() {
     }
   };
 
-  return (
-    <>
-      <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />
-      <DecodeURLInJavascript />
-    </>
-  );
+  return <InputOutputViewer byte={byte} onChangeCb={onChangeCb} />;
 }
 
 export default URLDecode;

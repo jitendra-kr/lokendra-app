@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.SalaryHike);
 function SalaryHikePercentageCalculatorPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.SalaryHike}>
-      <SalaryHikePercentageCalculator />;
+      <SalaryHikePercentageCalculator />
     </ToolRenderer>
   );
 }

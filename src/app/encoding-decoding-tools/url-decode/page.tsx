@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.UrlDecode);
 function URLDecodePage() {
   return (
     <ToolRenderer toolKey={ToolKeys.UrlDecode}>
-      <URLDecode />;
+      <URLDecode />
     </ToolRenderer>
   );
 }

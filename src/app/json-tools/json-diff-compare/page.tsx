@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.JSON_DIFF);
 function JsonDiffPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.JSON_DIFF}>
-      <JSONDiff />;
+      <JSONDiff />
     </ToolRenderer>
   );
 }

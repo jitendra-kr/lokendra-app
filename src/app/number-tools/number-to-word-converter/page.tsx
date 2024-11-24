@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.NUMBER_TO_WORDS);
 function NumbersToWordsPage() {
   return (
     <ToolRenderer toolKey={ToolKeys.NUMBER_TO_WORDS}>
-      <NumbersToWords />;
+      <NumbersToWords />
     </ToolRenderer>
   );
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaTags(ToolKeys.REMOVE_SPACES);
 function RemoveSpacesPage() {
   return (
     <ToolRenderer toolKey={toolKey}>
-      <RemoveSpaces />;
+      <RemoveSpaces />
     </ToolRenderer>
   );
 }
