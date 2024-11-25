@@ -13,6 +13,7 @@ import RandomStringGeneratorFaq from "../TextTools/RandomStringGenerator/randomS
 import ToLowercaseFaqData from "../ToLowercase/ToLowercaseFaqData";
 import textToUppercaseFaqData from "../ToUppercase/ToUppercaseFaqData";
 import URLDecoderFaqData from "../URLDecode/URLDecoderFaqData";
+import URLEncoderFaqData from "../URLEncode/URLEncoderFaqData";
 import UUIDGeneratorFaqData from "../UUIDGenerator/UUIDGeneratorFaqData";
 import XmlFormatterFaqData from "../XmlTools/XmlFormatter/XmlFormatterFaqData";
 import { ToolKeys } from "./ToolKeys";
@@ -406,7 +407,7 @@ When it comes to privacy and security, we take every precaution to keep your dat
   },
   {
     title: "URL Encoder",
-    faq: [],
+    faq: URLEncoderFaqData,
     link: SCREENS.URL_ENCODE,
     heading: "URL Encoder",
     content:
@@ -415,21 +416,17 @@ When it comes to privacy and security, we take every precaution to keep your dat
     metaDescription: seoData.URLEncode.description,
     list: true,
     key: ToolKeys.URLEncode,
-    toolDescription: `Looking for a fast and user-friendly tool to dcode URL? There is no need to look any further! Our tool is meant to give you a smooth experience, making the procedure quick and very easy.
-
-With our tool, you can easily encode your URLs, ensuring their compatibility with various systems and avoiding any potential errors. Whether you need to encode special characters, spaces, or any other elements, Our tool will take care of it.
-    
-We understand the importance of time, which is why we designed our tool to get results in record time. Say goodbye to waiting around for your URLs to be encoded – our tool ensures a swift encoding process, enabling you to work on more important activities.
-
-Your privacy and security matter to us, and we are committed to maintaining the highest standards in protecting your data. Feel confident in using our URL encoder tool, knowing that your information is handled with the utmost care and security.
-
-It is also incredibly user-friendly and 100% secure. You don't need to be a tech guru to use it! Our intuitive interface guides you through the process, making it accessible for both beginners and experts alike. Simply type, paste, or upload your URL into the tool, and your encoded URL is ready to use.`,
+    toolDescription: `Are you searching for a quick and easy tool to decode URLs? Look no further! Our tool is designed to provide you with a seamless experience, making the process fast and straightforward. With our tool, you can effortlessly encode your URLs, ensuring they work well with different systems and preventing any possible errors. Whether you need to encode special characters, spaces, or other elements, our tool has you covered.
+We recognize how valuable your time is, which is why we created our tool to deliver results in no time. Say goodbye to long waits for your URLs to be encoded – our tool guarantees a speedy encoding process, allowing you to focus on more important tasks.
+Your privacy and security are our top priorities, and we are dedicated to upholding the highest standards in data protection. You can use our URL encoder tool with confidence, knowing that your information is treated with the utmost care and security.
+Additionally, it is extremely user-friendly and completely secure. You don’t have to be a tech expert to navigate it! Our intuitive interface walks you through the process, making it easy for both beginners and seasoned users. Just type, paste, or upload your URL into the tool, and your encoded URL will be ready to go.`,
     keyFeatures: [
-      "Encode URLs fast and easily: This tool allows users to encode URLs quickly and easily, ensuring that special characters and reserved words are appropriately represented.",
-      "User-friendly interface: The application has a simple and straightforward interface that allows users to quickly enter URLs and encode them with a few clicks.",
-      "Instant encoding results: Users will get encoded output in an instant, saving time and eliminating the need for manual encoding.",
-      "Handling Errors: This tool tackles any encoding issues, delivering accurate and dependable results.",
-      "Download converted output: Users can download the encoded output as a file, making it easier to use or share with others.",
+      "This tool enables users to encode URLs in a fast and efficient manner, ensuring that special characters and reserved words are correctly represented.",
+      "The application features a clean and user-friendly interface that allows users to easily input URLs and encode them with just a few clicks.",
+      "Immediate encoding results: Users receive the encoded output almost instantly, saving time and removing the hassle of manual encoding.",
+      "Users receive the encoded output almost instantly, saving time and removing the hassle of manual encoding.",
+      "This tool effectively addresses any encoding problems, providing accurate and reliable results.",
+      "Users can download the encoded output as a file, making it convenient to use or share with others.",
     ],
   },
   {

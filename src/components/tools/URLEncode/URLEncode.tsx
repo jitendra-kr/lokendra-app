@@ -2,7 +2,6 @@
 import CustomSelect from "@ft/common/components/UiComponent/CustomSelect";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { InputOutputViewer } from "../helper/InputOutputViewer/InputOutputViewer";
-import { EncodeURLInJavascript } from "./EncodeURLInJavascript";
 
 type SelectEncodingFn = "encodeURIComponent" | "encodeURI";
 const options: { value: SelectEncodingFn; label: SelectEncodingFn }[] = [
@@ -74,7 +73,6 @@ function URLEncode() {
           <SelectEncodeFn selectEncodingFn={selectEncodingFn} />
         }
       />
-      <EncodeURLInJavascript />
     </>
   );
 }
